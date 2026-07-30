@@ -1,0 +1,9 @@
+node_modules
+dist
+.astro
+.git
+docs/private
+Intelligence-Snacks-Vision.md
+Website-Build-Brief.md
+apps
+ecosystem.config.cjs

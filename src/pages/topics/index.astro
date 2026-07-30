@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const topics = await getCollection('topics');
+---
+<BaseLayout title="Topics — Intelligence Snacks" description="Explore the central territories in the Intelligence Snacks archive." active="topics">
+  <header class="topics-head page-shell"><p class="eyebrow">Explore by topic</p><h1>The territories<br />we keep returning to.</h1></header>
+  <section class="topic-grid page-shell section">{topics.map((topic, index) => <a href={`/topics/${topic.id}/`} style={`--topic:${topic.data.colour}`}><span>{String(index + 1).padStart(2, '0')}</span><h2>{topic.data.name}</h2><p>{topic.data.description}</p><b>Explore ↗</b></a>)}</section>
+</BaseLayout>
+<style>
+  .topics-head { padding-block: clamp(4rem, 10vw, 10rem); border-bottom: 1px solid var(--line); }
+  .topics-head h1 { font-size: clamp(4rem, 10vw, 10rem); font-weight: 510; line-height: .82; letter-spacing: -.085em; }
+  .topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
+  .topic-grid a { min-height: 480px; display: flex; flex-direction: column; padding: 2rem; background: var(--topic); }
+  .topic-grid span, .topic-grid b { font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; }
+  .topic-grid h2 { margin: auto 0 1rem; font-size: clamp(2.5rem, 4vw, 5rem); line-height: .88; letter-spacing: -.07em; font-weight: 550; }
+  .topic-grid p { min-height: 6rem; }
+  .topic-grid b { margin-top: 2rem; }
+  @media (max-width: 800px) { .topic-grid { grid-template-columns: 1fr; } }
+</style>

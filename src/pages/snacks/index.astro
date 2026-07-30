@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SnackCard from '@/components/SnackCard.astro';
+import { isVisible } from '@/lib/content';
+
+const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status));
+const topics = new Map((await getCollection('topics')).map((topic) => [topic.id, topic]));
+---
+<BaseLayout title="All Snacks — Intelligence Snacks" description="Browse developed ideas about AI, software, business and work." active="snacks">
+  <header class="archive-head page-shell"><p class="eyebrow">The archive</p><h1>Every idea,<br />given room to work.</h1><p>Each snack is a self-contained argument developed from a long-form conversation.</p></header>
+  <section class="page-shell section"><div class="snack-grid">{snacks.map((snack, index) => { const topic = topics.get(snack.data.primaryTopic.id)!; return <SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} />; })}</div></section>
+</BaseLayout>
+<style>
+  .archive-head { padding-block: clamp(4rem, 10vw, 10rem); border-bottom: 1px solid var(--line); }
+  .archive-head h1 { max-width: 1200px; font-size: clamp(4rem, 10vw, 10rem); font-weight: 510; line-height: .82; letter-spacing: -.085em; margin-bottom: 3rem; }
+  .archive-head > p:last-child { max-width: 34rem; margin-left: auto; color: var(--muted); font-size: 1.1rem; }
+</style>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Search — Intelligence Snacks" description="Search the Intelligence Snacks archive.">
+  <header class="search-head page-shell"><p class="eyebrow">Search the archive</p><h1>Find an idea.</h1><div><input type="search" placeholder="Search is coming in the next foundation pass" disabled /><span>⌕</span></div></header>
+</BaseLayout>
+<style>
+  .search-head { min-height: 70vh; padding-block: var(--section-space); }
+  .search-head h1 { font-size: clamp(4rem, 12vw, 12rem); line-height: .8; letter-spacing: -.09em; font-weight: 520; }
+  .search-head div { display: flex; align-items: center; border-bottom: 1px solid var(--ink); }
+  .search-head input { width: 100%; border: 0; background: transparent; font: inherit; font-size: clamp(1.2rem, 3vw, 3rem); padding: 1.5rem 0; }
+  .search-head span { font-size: 2rem; }
+</style>

@@ -1,0 +1,13 @@
+:root {
+  --paper: #f2f1ec;
+  --paper-raised: #faf9f5;
+  --ink: #171816;
+  --muted: #62645f;
+  --line: #c7c7c0;
+  --acid: #c4f256;
+  --orange: #ef5b3f;
+  --periwinkle: #9aa7ff;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --page-pad: clamp(1rem, 3vw, 3.5rem);
+  --section-space: clamp(4rem, 9vw, 9rem);
+}

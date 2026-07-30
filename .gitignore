@@ -1,0 +1,18 @@
+# Private planning documents
+Intelligence-Snacks-Vision.md
+Website-Build-Brief.md
+
+# Private implementation references
+docs/private/
+
+# Astro and local tooling
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+
+# Autopilot-managed runtime files
+apps/
+ecosystem.config.cjs

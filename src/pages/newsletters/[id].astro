@@ -1,0 +1,26 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { isVisible } from '@/lib/content';
+export async function getStaticPaths() { const entries = (await getCollection('newsletters')).filter(({ data }) => isVisible(data.status)); return entries.map((edition) => ({ params: { id: edition.id }, props: { edition } })); }
+const { edition } = Astro.props;
+const { Content } = await render(edition);
+const episode = await getEntry(edition.data.sourceEpisode);
+const snacks = await Promise.all(edition.data.snacks.map((snack) => getEntry(snack)));
+---
+<BaseLayout title={`${edition.data.title} — Intelligence Snacks`} description={`Edition ${edition.data.editionNumber} of the Intelligence Snacks newsletter.`}>
+  <header class="edition-head page-shell"><p class="eyebrow">Newsletter edition {String(edition.data.editionNumber).padStart(2, '0')}</p><h1>{edition.data.title}</h1><div class="edition-note"><Content /></div><p>From <a href={`/episodes/${episode?.id}/`}>Episode {episode?.data.number}: {episode?.data.title}</a></p></header>
+  <section class="edition-list page-shell section">{snacks.filter(Boolean).map((snack, index) => <article><p>{String(index + 1).padStart(2, '0')}</p><div><p class="eyebrow">{snack!.data.editorialTitle ?? 'Intelligence Snack'}</p><h2><a href={`/snacks/${snack!.id}/`}>{snack!.data.title}</a></h2><p>{snack!.data.standfirst}</p><a class="text-link" href={`/snacks/${snack!.id}/`}>Read the idea <span>↗</span></a></div></article>)}</section>
+</BaseLayout>
+<style>
+  .edition-head { padding-block: clamp(4rem, 10vw, 10rem); border-bottom: 1px solid var(--line); }
+  .edition-head h1 { max-width: 1300px; font-size: clamp(4rem, 11vw, 11rem); font-weight: 510; line-height: .8; letter-spacing: -.085em; }
+  .edition-note { max-width: 720px; margin: 5rem 0 2rem auto; font-family: Georgia, serif; font-size: 1.3rem; }
+  .edition-head > p:last-child { max-width: 720px; margin-left: auto; font-size: .8rem; }
+  .edition-head a { text-decoration: underline; }
+  .edition-list article { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; padding-block: 4rem; border-bottom: 1px solid var(--line); }
+  .edition-list article > p { font-size: clamp(3rem, 7vw, 7rem); line-height: 1; color: var(--line); }
+  .edition-list h2 { max-width: 900px; font-size: clamp(2.5rem, 5vw, 5.5rem); font-weight: 520; line-height: .9; letter-spacing: -.07em; }
+  .edition-list article div > p:not(.eyebrow) { max-width: 50rem; color: var(--muted); }
+  @media (max-width: 700px) { .edition-list article { grid-template-columns: 1fr; } }
+</style>

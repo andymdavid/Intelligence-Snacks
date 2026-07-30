@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SnackCard from '@/components/SnackCard.astro';
+import { isVisible } from '@/lib/content';
+export async function getStaticPaths() { return (await getCollection('topics')).map((topic) => ({ params: { id: topic.id }, props: { topic } })); }
+const { topic } = Astro.props;
+const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status) && (data.primaryTopic.id === topic.id || data.relatedTopics.some(({ id }) => id === topic.id)));
+---
+<BaseLayout title={`${topic.data.name} — Intelligence Snacks`} description={topic.data.description} active="topics">
+  <header class="topic-head page-shell" style={`--topic:${topic.data.colour}`}><p class="eyebrow">Topic</p><h1>{topic.data.name}</h1><p>{topic.data.description}</p></header>
+  <section class="page-shell section"><div class="section-heading"><h2>Ideas in {topic.data.name}</h2><p>{snacks.length} connected ideas in the current archive.</p></div><div class="snack-grid">{snacks.map((snack, index) => <SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} />)}</div></section>
+</BaseLayout>
+<style>
+  .topic-head { margin-top: var(--page-pad); padding: clamp(2rem, 5vw, 5rem); min-height: min(680px, 75vh); background: var(--topic); display: flex; flex-direction: column; }
+  .topic-head h1 { margin: auto 0 2rem; font-size: clamp(5rem, 15vw, 15rem); font-weight: 520; line-height: .75; letter-spacing: -.09em; }
+  .topic-head > p:last-child { max-width: 38rem; margin-left: auto; font-size: 1.15rem; }
+</style>

@@ -1,0 +1,26 @@
+---
+const { active = '' } = Astro.props;
+const links: Array<readonly [string, string]> = [
+  ['Latest', '/'],
+  ['Snacks', '/snacks/'],
+  ['Episodes', '/episodes/'],
+  ['Topics', '/topics/'],
+];
+---
+
+<header class="site-header">
+  <a class="wordmark" href="/" aria-label="Intelligence Snacks home">
+    <span>Intelligence</span><span>Snacks</span>
+  </a>
+  <nav class="primary-nav" aria-label="Primary navigation">
+    {links.map(([label, href]) => (
+      <a href={href} aria-current={active === label.toLowerCase() ? 'page' : undefined}>{label}</a>
+    ))}
+  </nav>
+  <div class="header-actions">
+    <a class="search-link" href="/search/" aria-label="Search Intelligence Snacks">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg>
+    </a>
+    <a class="subscribe-button" href="#subscribe">Subscribe <span aria-hidden="true">↗</span></a>
+  </div>
+</header>

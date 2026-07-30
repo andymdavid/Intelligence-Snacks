@@ -1,0 +1,10 @@
+---
+const { label, index = 1, colour = '#c4f256', compact = false } = Astro.props;
+---
+
+<div class:list={['story-visual', compact && 'story-visual--compact']} style={`--story-colour:${colour}; --story-index:${index}`} aria-hidden="true">
+  <div class="story-visual__grid"></div>
+  <span class="story-visual__index">{String(index).padStart(2, '0')}</span>
+  <span class="story-visual__label">{label}</span>
+  <span class="story-visual__orb"></span>
+</div>

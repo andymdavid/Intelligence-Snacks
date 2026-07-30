@@ -1,0 +1,47 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SnackCard from '@/components/SnackCard.astro';
+import StoryVisual from '@/components/StoryVisual.astro';
+import { isVisible } from '@/lib/content';
+
+export async function getStaticPaths() {
+  const entries = (await getCollection('episodes')).filter(({ data }) => isVisible(data.status));
+  return entries.map((episode) => ({ params: { id: episode.id }, props: { episode } }));
+}
+const { episode } = Astro.props;
+const { Content } = await render(episode);
+const participants = await Promise.all(episode.data.participants.map((participant) => getEntry(participant)));
+const topic = await getEntry(episode.data.primaryTopic);
+const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status) && data.sourceEpisode.id === episode.id);
+const topics = new Map((await getCollection('topics')).map((entry) => [entry.id, entry]));
+---
+<BaseLayout title={`Episode ${episode.data.number}: ${episode.data.title} — Intelligence Snacks`} description={episode.data.summary} active="episodes">
+  <header class="episode-head page-shell">
+    <div class="episode-kicker"><span>Episode {episode.data.number}</span><span>{episode.data.legacyTitle ? 'Formerly The Good Stuff' : 'Intelligence Snacks Podcast'}</span></div>
+    <h1>{episode.data.title}</h1>
+    <p>{episode.data.summary}</p>
+    <div class="episode-byline"><p>With {participants.filter(Boolean).map((person) => person!.data.name).join(', ')}</p><p>{snacks.length} ideas developed from this conversation</p></div>
+  </header>
+  <div class="page-shell episode-media"><StoryVisual label="Full conversation" colour={topic?.data.colour ?? '#9aa7ff'} index={episode.data.number} /><button type="button" disabled aria-label="Media embed coming with source episode">Media source to be connected <span>↗</span></button></div>
+  <section class="episode-intro page-shell section"><p class="eyebrow">About this conversation</p><div><Content /></div></section>
+  <section class="page-shell section">
+    <div class="section-heading"><h2>Ideas from Episode {episode.data.number}</h2><p>The distinct arguments developed from the source conversation.</p></div>
+    <div class="snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.primaryTopic.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} />; })}</div>
+  </section>
+  <section class="transcript page-shell section"><div class="section-heading"><h2>Transcript</h2><p>The complete source conversation will remain available alongside the developed ideas.</p></div><div class="transcript-placeholder"><p class="eyebrow">Episode 64 transcript</p><p>Transcript content will be attached during the first ingestion pipeline run. The page structure is ready for speaker-labelled, timestamped chapters.</p></div></section>
+</BaseLayout>
+<style>
+  .episode-head { padding-block: clamp(4rem, 9vw, 9rem); }
+  .episode-kicker, .episode-byline { display: flex; justify-content: space-between; gap: 2rem; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; }
+  .episode-head h1 { max-width: 1300px; margin: 8vw 0 3rem; font-size: clamp(4rem, 11vw, 11rem); font-weight: 510; line-height: .8; letter-spacing: -.085em; }
+  .episode-head > p { max-width: 760px; margin-left: auto; font-size: clamp(1.3rem, 2.4vw, 2.4rem); line-height: 1.15; }
+  .episode-byline { max-width: 760px; margin: 4rem 0 0 auto; border-top: 1px solid var(--line); padding-top: 1rem; }
+  .episode-media { position: relative; }
+  .episode-media :global(.story-visual) { min-height: clamp(420px, 60vw, 850px); }
+  .episode-media button { position: absolute; bottom: 2rem; right: calc(var(--page-pad) + 2rem); border: 0; background: var(--ink); color: white; padding: 1rem 1.25rem; text-transform: uppercase; letter-spacing: .08em; }
+  .episode-intro { display: grid; grid-template-columns: 1fr 2fr 1fr; }
+  .episode-intro > div { grid-column: 2; font-family: Georgia, serif; font-size: 1.35rem; }
+  .transcript-placeholder { max-width: 850px; margin-inline: auto; padding: 4rem; border: 1px solid var(--line); background: var(--paper-raised); }
+  @media (max-width: 800px) { .episode-intro { grid-template-columns: 1fr; } .episode-intro > div { grid-column: 1; } .episode-kicker, .episode-byline { flex-direction: column; } }
+</style>
