@@ -13,10 +13,10 @@ const episodes = (await getCollection('episodes')).filter(({ data }) => isVisibl
 </BaseLayout>
 <style>
   .person-head { min-height: 680px; display: grid; grid-template-columns: 1fr 2fr; align-items: center; gap: 7vw; padding-block: var(--section-space); }
-  .person-mark { aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: var(--acid); font-size: clamp(4rem, 10vw, 10rem); font-weight: 600; letter-spacing: -.08em; }
-  .person-head h1 { font-size: clamp(4rem, 10vw, 10rem); font-weight: 510; line-height: .82; letter-spacing: -.085em; }
-  .person-head div > p:last-child { max-width: 38rem; font-size: 1.2rem; color: var(--muted); }
-  .person-body { display: grid; grid-template-columns: 2fr 1fr; gap: 8vw; font-family: Georgia, serif; font-size: 1.3rem; }
-  .person-body aside { display: flex; flex-direction: column; gap: 1rem; font-family: var(--font-sans); font-size: .8rem; }
+  .person-mark { aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: var(--coral); font-family: var(--font-display); font-size: var(--type-page); font-weight: 500; letter-spacing: var(--tracking-hero); }
+  .person-head h1 { font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
+  .person-head div > p:last-child { max-width: 38rem; font-size: var(--type-body-large); color: var(--text-secondary); }
+  .person-body { display: grid; grid-template-columns: 2fr 1fr; gap: 8vw; font-family: var(--font-body); font-size: var(--type-body-large); line-height: 1.5; }
+  .person-body aside { display: flex; flex-direction: column; gap: 1rem; font-family: var(--font-mono); font-size: .8rem; }
   @media (max-width: 700px) { .person-head, .person-body { grid-template-columns: 1fr; } }
 </style>

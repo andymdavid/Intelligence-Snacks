@@ -10,7 +10,16 @@ const links: Array<readonly [string, string]> = [
 
 <header class="site-header">
   <a class="wordmark" href="/" aria-label="Intelligence Snacks home">
-    <span>Intelligence</span><span>Snacks</span>
+    <img
+      class="wordmark__mark"
+      src="/images/intelligence-snacks-cassette-pixel.webp"
+      alt=""
+      width="384"
+      height="256"
+    />
+    <span class="wordmark__text">
+      <span>Intelligence</span><span>Snacks</span>
+    </span>
   </a>
   <nav class="primary-nav" aria-label="Primary navigation">
     {links.map(([label, href]) => (
@@ -21,6 +30,6 @@ const links: Array<readonly [string, string]> = [
     <a class="search-link" href="/search/" aria-label="Search Intelligence Snacks">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg>
     </a>
-    <a class="subscribe-button" href="#subscribe">Subscribe <span aria-hidden="true">↗</span></a>
+    <a class="subscribe-button" href="#subscribe">Send me snacks <span aria-hidden="true">↗</span></a>
   </div>
 </header>

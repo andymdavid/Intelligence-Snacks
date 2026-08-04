@@ -13,6 +13,6 @@ const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(da
 </BaseLayout>
 <style>
   .topic-head { margin-top: var(--page-pad); padding: clamp(2rem, 5vw, 5rem); min-height: min(680px, 75vh); background: var(--topic); display: flex; flex-direction: column; }
-  .topic-head h1 { margin: auto 0 2rem; font-size: clamp(5rem, 15vw, 15rem); font-weight: 520; line-height: .75; letter-spacing: -.09em; }
+  .topic-head h1 { margin: auto 0 2rem; font-size: var(--type-hero); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
   .topic-head > p:last-child { max-width: 38rem; margin-left: auto; font-size: 1.15rem; }
 </style>

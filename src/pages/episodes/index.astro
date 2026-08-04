@@ -11,10 +11,10 @@ const episodes = (await getCollection('episodes')).filter(({ data }) => isVisibl
 </BaseLayout>
 <style>
   .episodes-head { padding-block: clamp(4rem, 10vw, 10rem); border-bottom: 1px solid var(--line); }
-  .episodes-head h1 { font-size: clamp(4rem, 10vw, 10rem); font-weight: 510; line-height: .82; letter-spacing: -.085em; }
-  .episodes-head > p:last-child { max-width: 34rem; margin-left: auto; color: var(--muted); }
+  .episodes-head h1 { font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
+  .episodes-head > p:last-child { max-width: 34rem; margin-left: auto; color: var(--text-secondary); }
   .episode-list article { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5vw; align-items: center; }
-  .episode-list h2 { font-size: clamp(3rem, 6vw, 6rem); font-weight: 520; line-height: .88; letter-spacing: -.075em; }
-  .episode-list article > div > p:not(.eyebrow) { max-width: 38rem; color: var(--muted); }
+  .episode-list h2 { font-size: var(--type-feature); font-weight: 500; line-height: var(--leading-display); letter-spacing: var(--tracking-display); }
+  .episode-list article > div > p:not(.eyebrow) { max-width: 38rem; color: var(--text-secondary); }
   @media (max-width: 800px) { .episode-list article { grid-template-columns: 1fr; } }
 </style>

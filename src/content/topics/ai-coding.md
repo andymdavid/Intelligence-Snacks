@@ -1,7 +1,7 @@
 ---
 name: AI Coding
 description: How coding agents alter the tools, practices and responsibilities involved in making software.
-colour: "#ef5b3f"
+colour: "#fe7141"
 featured: true
 ---
 

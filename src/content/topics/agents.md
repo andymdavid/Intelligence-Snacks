@@ -1,7 +1,7 @@
 ---
 name: Agents
 description: The systems, harnesses and feedback loops that allow models to act through tools.
-colour: "#c4f256"
+colour: "#d1ddd3"
 featured: true
 ---
 

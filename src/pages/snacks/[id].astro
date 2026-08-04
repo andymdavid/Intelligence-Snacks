@@ -2,6 +2,7 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import StoryVisual from '@/components/StoryVisual.astro';
+import ContributorRow from '@/components/ContributorRow.astro';
 import { formatDate, isVisible } from '@/lib/content';
 
 export async function getStaticPaths() {
@@ -12,6 +13,9 @@ export async function getStaticPaths() {
 const { snack } = Astro.props;
 const { Content } = await render(snack);
 const episode = await getEntry(snack.data.sourceEpisode);
+const contributors = episode
+  ? (await Promise.all(episode.data.participants.map((participant) => getEntry(participant)))).filter((person) => person?.data.image)
+  : [];
 const topic = await getEntry(snack.data.primaryTopic);
 const related = await Promise.all(snack.data.relationships.map(async (relationship) => ({ relationship, snack: await getEntry(relationship.target) })));
 ---
@@ -21,7 +25,7 @@ const related = await Promise.all(snack.data.relationships.map(async (relationsh
       <div class="article-head__meta"><a href={`/topics/${topic?.id}/`}>{topic?.data.name}</a><span>Intelligence Snack</span></div>
       <h1>{snack.data.title}</h1>
       <p class="standfirst">{snack.data.standfirst}</p>
-      <div class="article-head__source"><p>{snack.data.attribution}</p><p>{episode && <>From <a href={`/episodes/${episode.id}/`}>Episode {episode.data.number}: {episode.data.title}</a></>}</p></div>
+      <div class="article-head__source"><div><ContributorRow people={contributors} /><p>{snack.data.attribution}</p></div><p>{episode && <>From <a href={`/episodes/${episode.id}/`}>Episode {episode.data.number}: {episode.data.title}</a></>}</p></div>
     </header>
     <div class="article-visual page-shell"><StoryVisual label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#c4f256'} index={episode?.data.number ?? 1} /></div>
     <div class="article-layout page-shell">
@@ -34,19 +38,20 @@ const related = await Promise.all(snack.data.relationships.map(async (relationsh
 <style>
   .article-head { padding-block: clamp(4rem, 8vw, 8rem); }
   .article-head__meta { display: flex; justify-content: space-between; font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 7vw; }
-  .article-head h1 { max-width: 1400px; font-size: clamp(4rem, 10.3vw, 10.5rem); font-weight: 510; line-height: .82; letter-spacing: -.085em; margin-bottom: 4rem; }
-  .standfirst { max-width: 780px; margin-left: auto; font-size: clamp(1.35rem, 2.4vw, 2.4rem); line-height: 1.15; letter-spacing: -.035em; }
+  .article-head h1 { max-width: 1400px; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); margin-bottom: 4rem; }
+  .standfirst { max-width: 780px; margin-left: auto; font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.2; letter-spacing: -.02em; }
   .article-head__source { max-width: 780px; margin: 4rem 0 0 auto; display: flex; justify-content: space-between; gap: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+  .article-head__source > div > p { margin: .7rem 0 0; }
   .article-head__source a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
   .article-visual :global(.story-visual) { min-height: clamp(380px, 55vw, 800px); }
   .article-layout { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.3fr) 1fr; gap: 4vw; padding-block: var(--section-space); }
   .article-layout aside { font-size: .8rem; color: var(--muted); }
-  .prose { grid-column: 2; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.2rem, 1.65vw, 1.65rem); line-height: 1.62; }
-  .prose :global(p:first-child::first-letter) { float: left; font-family: var(--font-sans); font-size: 5.6em; line-height: .72; padding: .12em .08em 0 0; font-weight: 650; }
+  .prose { grid-column: 2; font-family: var(--font-body); font-size: var(--type-body-large); line-height: 1.5; }
+  .prose :global(p:first-child::first-letter) { float: left; font-family: var(--font-display); font-size: 5.6em; line-height: .72; padding: .12em .08em 0 0; font-weight: 500; }
   .prose :global(p) { margin-bottom: 1.6em; }
   .related__grid { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--line); background: var(--line); gap: 1px; }
   .related article { background: var(--paper); padding: clamp(1.5rem, 3vw, 3rem); }
-  .related h3 { font-size: clamp(2rem, 4vw, 4.5rem); line-height: .92; letter-spacing: -.065em; font-weight: 520; }
-  .related article > p:not(.eyebrow) { max-width: 36rem; color: var(--muted); }
+  .related h3 { font-size: var(--type-section); line-height: var(--leading-display); letter-spacing: var(--tracking-display); font-weight: 500; }
+  .related article > p:not(.eyebrow) { max-width: 36rem; color: var(--text-secondary); }
   @media (max-width: 800px) { .article-layout { grid-template-columns: 1fr; } .article-layout aside, .prose { grid-column: 1; } .article-head__source { flex-direction: column; } .related__grid { grid-template-columns: 1fr; } }
 </style>

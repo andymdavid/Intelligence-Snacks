@@ -13,6 +13,6 @@ const topics = new Map((await getCollection('topics')).map((topic) => [topic.id,
 </BaseLayout>
 <style>
   .archive-head { padding-block: clamp(4rem, 10vw, 10rem); border-bottom: 1px solid var(--line); }
-  .archive-head h1 { max-width: 1200px; font-size: clamp(4rem, 10vw, 10rem); font-weight: 510; line-height: .82; letter-spacing: -.085em; margin-bottom: 3rem; }
-  .archive-head > p:last-child { max-width: 34rem; margin-left: auto; color: var(--muted); font-size: 1.1rem; }
+  .archive-head h1 { max-width: 1200px; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); margin-bottom: 3rem; }
+  .archive-head > p:last-child { max-width: 34rem; margin-left: auto; color: var(--text-secondary); font-size: var(--type-body-large); }
 </style>
