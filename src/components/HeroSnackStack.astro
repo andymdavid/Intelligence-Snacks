@@ -1,0 +1,106 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ContributorRow from './ContributorRow.astro';
+
+interface Props {
+  snacks: CollectionEntry<'snacks'>[];
+  topics: Map<string, CollectionEntry<'topics'>>;
+  contributors: CollectionEntry<'people'>[];
+  episodeNumber: number;
+}
+
+const { snacks, topics, contributors, episodeNumber } = Astro.props;
+---
+
+<div class="snack-stack" aria-label="Featured Intelligence Snacks" data-snack-stack>
+  <div class="snack-stack__stage" data-snack-stack-stage>
+    {snacks.map((snack, index) => {
+      const topic = topics.get(snack.data.primaryTopic.id);
+      return (
+        <article class="stack-card" style={`--card-index: ${index}; --card-colour: ${topic?.data.colour ?? 'var(--coral)'}`}>
+          <a href={`/snacks/${snack.id}/`}>
+            <header class="stack-card__meta">
+              <span>{topic?.data.name ?? 'Intelligence Snack'}</span>
+              <span>Episode {episodeNumber}</span>
+            </header>
+            <div class="stack-card__copy">
+              <h2>{snack.data.editorialTitle ?? snack.data.title}</h2>
+              <p>{snack.data.standfirst}</p>
+            </div>
+            <footer class="stack-card__footer">
+              <img class="stack-card__mark" src="/images/intelligence-snacks-cassette-transparent.webp" alt="" width="48" height="32" />
+              <ContributorRow people={contributors} compact avatarsOnly />
+            </footer>
+          </a>
+        </article>
+      );
+    })}
+  </div>
+</div>
+
+<script is:inline>
+  const supportsCardTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (supportsCardTilt) {
+    document.querySelectorAll('[data-snack-stack-stage]').forEach((stage) => {
+      stage.addEventListener('pointermove', (event) => {
+        const bounds = stage.getBoundingClientRect();
+        const horizontal = (event.clientX - bounds.left) / bounds.width - .5;
+        const vertical = (event.clientY - bounds.top) / bounds.height - .5;
+        stage.style.setProperty('--tilt-x', `${vertical * -5}deg`);
+        stage.style.setProperty('--tilt-y', `${horizontal * 6}deg`);
+      });
+
+      stage.addEventListener('pointerleave', () => {
+        stage.style.setProperty('--tilt-x', '0deg');
+        stage.style.setProperty('--tilt-y', '0deg');
+      });
+    });
+  }
+</script>
+
+<style>
+  .snack-stack { min-width: 0; width: 100%; }
+  .snack-stack__stage { position: relative; width: min(100%, 24.3rem); aspect-ratio: 1.34 / 1; margin-inline: auto; perspective: 1200px; }
+  .stack-card {
+    position: absolute;
+    inset: 6% 3% 5%;
+    overflow: visible;
+    border-radius: 6px;
+    background: var(--card-colour);
+    color: var(--ink);
+    box-shadow: 0 .55rem 1.15rem rgba(0, 0, 0, .2), 0 1.8rem 3.8rem rgba(0, 0, 0, .13);
+    transform-origin: 50% 110%;
+    animation: deal-card 18s cubic-bezier(.4, 0, .2, 1) infinite;
+    animation-delay: calc(var(--card-index) * -6s);
+    will-change: transform;
+  }
+  .snack-stack:hover .stack-card,
+  .snack-stack:focus-within .stack-card { animation-play-state: paused; }
+  .stack-card:focus-within { z-index: 4 !important; animation: none; transform: translate3d(0, 0, 2px) rotate(0); outline: 2px solid var(--ink); outline-offset: 3px; }
+  .stack-card > a { display: grid; grid-template-rows: auto 1fr auto; height: 100%; overflow: hidden; border-radius: 6px; background: var(--card-colour); padding: clamp(1rem, 1.4vw, 1.3rem); transition: transform .18s ease-out; transform: perspective(900px) rotateX(0) rotateY(0); }
+  .stack-card:hover > a { transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); }
+  .stack-card__meta { display: flex; justify-content: space-between; gap: 1rem; font-family: var(--font-mono); font-size: .7rem; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+  .stack-card__copy { align-self: center; display: grid; max-width: 90%; gap: .85rem; }
+  .stack-card h2 { max-width: 22rem; margin: 0; font-size: clamp(1.25rem, 1.6vw, 1.625rem); font-weight: 500; line-height: 1; letter-spacing: -.035em; }
+  .stack-card__copy p { display: -webkit-box; max-width: 21rem; margin: 0; overflow: hidden; color: rgba(0, 0, 0, .72); font-size: .72rem; line-height: 1.4; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .stack-card__footer { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; padding-top: .75rem; border-top: 1px solid rgba(0, 0, 0, .28); }
+  .stack-card__mark { width: 3rem; height: 2rem; border-radius: 0; object-fit: contain; }
+
+  @keyframes deal-card {
+    0%, 27% { z-index: 3; transform: translate3d(0, 0, 0) rotate(0); }
+    30% { z-index: 3; transform: translate3d(10%, -7%, 1px) rotate(5deg); }
+    33%, 60% { z-index: 1; transform: translate3d(4%, -5%, -20px) rotate(3deg); }
+    63%, 96% { z-index: 2; transform: translate3d(-3%, -2%, -10px) rotate(-2deg); }
+    100% { z-index: 3; transform: translate3d(0, 0, 0) rotate(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stack-card > a, .stack-card:hover > a { transition: none; transform: none; }
+    .stack-card { animation: none; }
+    .stack-card:nth-child(1) { z-index: 3; transform: translate3d(0, 0, 0); }
+    .stack-card:nth-child(2) { z-index: 2; transform: translate3d(-3%, -2%, 0) rotate(-2deg); }
+    .stack-card:nth-child(3) { z-index: 1; transform: translate3d(4%, -5%, 0) rotate(3deg); }
+  }
+</style>

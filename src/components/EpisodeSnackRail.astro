@@ -1,0 +1,235 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import StoryVisual from './StoryVisual.astro';
+
+interface Props {
+  episode: CollectionEntry<'episodes'>;
+  snacks: CollectionEntry<'snacks'>[];
+  topics: Map<string, CollectionEntry<'topics'>>;
+}
+
+const { episode, snacks, topics } = Astro.props;
+const railId = `episode-rail-${episode.id}`;
+---
+
+<section class="episode-snacks section" data-snack-rail>
+  <div class="episode-snacks__head">
+    <div>
+      <p class="eyebrow">From the conversation</p>
+      <h2>Episode {episode.data.number}: {episode.data.title}</h2>
+    </div>
+    <div class="episode-snacks__actions">
+      <a href={`/episodes/${episode.id}/`}>View episode</a>
+      <button type="button" data-rail-previous aria-label={`Scroll Episode ${episode.data.number} snacks left`} disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"></path></svg>
+      </button>
+      <button type="button" data-rail-next aria-label={`Scroll Episode ${episode.data.number} snacks right`}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="episode-snacks__viewport" id={railId} data-rail-viewport tabindex="0" aria-label={`Snacks from Episode ${episode.data.number}`}>
+    <div class="episode-snacks__track">
+      {snacks.map((snack, index) => {
+        const topic = topics.get(snack.data.primaryTopic.id);
+        return (
+          <article class="rail-card">
+            <a class="rail-card__visual" href={`/snacks/${snack.id}/`} tabindex="-1">
+              <StoryVisual label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#c4f256'} index={index + 1} compact />
+            </a>
+            <div class="rail-card__body">
+              <a class="rail-card__topic" href={`/topics/${topic?.id}/`}>{topic?.data.name}</a>
+              <h3><a href={`/snacks/${snack.id}/`}>{snack.data.title}</a></h3>
+              <p>{snack.data.standfirst}</p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+  <div class="episode-snacks__progress" aria-hidden="true">
+    <span data-rail-progress></span>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-snack-rail]').forEach((rail) => {
+    const viewport = rail.querySelector<HTMLElement>('[data-rail-viewport]');
+    const previous = rail.querySelector<HTMLButtonElement>('[data-rail-previous]');
+    const next = rail.querySelector<HTMLButtonElement>('[data-rail-next]');
+    const progress = rail.querySelector<HTMLElement>('[data-rail-progress]');
+    if (!viewport || !previous || !next || !progress) return;
+
+    const updateButtons = () => {
+      previous.disabled = viewport.scrollLeft < 8;
+      next.disabled = viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 8;
+      const visibleRatio = Math.min(1, viewport.clientWidth / viewport.scrollWidth);
+      const travelRatio = viewport.scrollWidth === viewport.clientWidth
+        ? 0
+        : viewport.scrollLeft / (viewport.scrollWidth - viewport.clientWidth);
+      progress.style.width = `${visibleRatio * 100}%`;
+      progress.style.transform = `translateX(${travelRatio * ((1 - visibleRatio) / visibleRatio) * 100}%)`;
+    };
+
+    const move = (direction: number) => {
+      const card = viewport.querySelector<HTMLElement>('.rail-card');
+      viewport.scrollBy({ left: direction * (card?.offsetWidth ?? viewport.clientWidth * 0.8), behavior: 'smooth' });
+    };
+
+    previous.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    viewport.addEventListener('scroll', updateButtons, { passive: true });
+    window.addEventListener('resize', updateButtons);
+    updateButtons();
+  });
+</script>
+
+<style>
+  .episode-snacks.section { border-bottom: 0; }
+
+  .episode-snacks__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 3rem;
+    margin-bottom: clamp(2rem, 4vw, 3.75rem);
+  }
+
+  .episode-snacks__head h2 {
+    margin: 0;
+    font-size: var(--type-section);
+    font-weight: 500;
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+  }
+
+  .episode-snacks__head > div:first-child {
+    width: 50%;
+  }
+
+  .episode-snacks__actions {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    flex: 0 0 auto;
+  }
+
+  .episode-snacks__actions > a {
+    margin-right: 1rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  .episode-snacks__actions button {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: #ededed;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .episode-snacks__actions button:disabled {
+    color: #a5a5a5;
+    background: #f6f6f6;
+    cursor: default;
+  }
+
+  .episode-snacks__actions svg {
+    width: 1.35rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+  }
+
+  .episode-snacks__viewport {
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-inline: contain;
+  }
+
+  .episode-snacks__viewport::-webkit-scrollbar { display: none; }
+
+  .episode-snacks__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (2 * var(--rail-gap))) / 3);
+    gap: var(--rail-gap);
+    --rail-gap: clamp(.65rem, 1vw, 1rem);
+  }
+
+  .rail-card {
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  .rail-card__visual { display: block; border: 0; outline: 0; }
+  .rail-card__visual :global(.story-visual--compact) {
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  .rail-card__body {
+    padding: 1rem .8rem 0 0;
+  }
+
+  .rail-card__topic {
+    display: inline-block;
+    margin-bottom: .75rem;
+    color: var(--text-muted);
+    font-size: .76rem;
+  }
+
+  .rail-card h3 {
+    margin-bottom: .7rem;
+    font-size: var(--type-card);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: var(--tracking-display);
+  }
+
+  .rail-card p {
+    max-width: 40rem;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: .96rem;
+    line-height: 1.45;
+  }
+
+  .episode-snacks__progress {
+    position: relative;
+    height: 2px;
+    margin-top: clamp(2rem, 4vw, 3.5rem);
+    overflow: hidden;
+    background: #dedede;
+  }
+
+  .episode-snacks__progress span {
+    position: absolute;
+    inset: 0 auto 0 0;
+    min-width: 12%;
+    background: var(--ink);
+    transform-origin: left center;
+    transition: width .2s ease;
+  }
+
+  @media (max-width: 900px) {
+    .episode-snacks__track { grid-auto-columns: calc((100% - var(--rail-gap)) / 2); }
+  }
+
+  @media (max-width: 620px) {
+    .episode-snacks__head { align-items: start; }
+    .episode-snacks__head > div:first-child { width: 68%; }
+    .episode-snacks__actions > a { display: none; }
+    .episode-snacks__actions button { width: 2.8rem; height: 2.8rem; }
+    .episode-snacks__track { grid-auto-columns: 84%; }
+    .rail-card__visual :global(.story-visual--compact) { min-height: 0; }
+  }
+</style>
