@@ -1,0 +1,99 @@
+---
+interface Props {
+  id: string;
+  source: string;
+  class?: string;
+  buttonLabel?: string;
+}
+
+const { id, source, class: className = '', buttonLabel = 'Get the weekly edition' } = Astro.props;
+---
+
+<form class:list={['email-signup', className]} data-email-signup data-source={source} novalidate>
+  <div class="email-signup__controls">
+    <label class="visually-hidden" for={id}>Email address</label>
+    <input id={id} name="email" type="email" inputmode="email" autocomplete="email" placeholder="Your email address" required />
+    <input class="email-signup__honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <button type="submit">{buttonLabel} <span aria-hidden="true">↗</span></button>
+  </div>
+  <p class="email-signup__message" data-signup-message aria-live="polite"></p>
+</form>
+
+<script>
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  document.querySelectorAll<HTMLFormElement>('[data-email-signup]').forEach((form) => {
+    if (form.dataset.ready === 'true') return;
+    form.dataset.ready = 'true';
+
+    const input = form.querySelector<HTMLInputElement>('input[name="email"]');
+    const honeypot = form.querySelector<HTMLInputElement>('input[name="website"]');
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const message = form.querySelector<HTMLElement>('[data-signup-message]');
+    if (!input || !honeypot || !button || !message) return;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = input.value.trim();
+      message.className = 'email-signup__message';
+
+      if (!emailPattern.test(email)) {
+        message.textContent = 'Please enter a valid email address.';
+        message.classList.add('is-error');
+        input.focus();
+        return;
+      }
+
+      button.disabled = true;
+      button.textContent = 'Subscribing…';
+      message.textContent = '';
+
+      try {
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, website: honeypot.value, source: form.dataset.source }),
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) throw new Error(result.error || 'Something went wrong. Please try again.');
+
+        input.value = '';
+        input.disabled = true;
+        button.textContent = 'Subscribed';
+        message.textContent = 'Thanks — check your inbox to confirm your subscription.';
+        message.classList.add('is-success');
+      } catch (error) {
+        button.disabled = false;
+        button.innerHTML = 'Get the weekly edition <span aria-hidden="true">↗</span>';
+        message.textContent = error instanceof Error ? error.message : 'Something went wrong. Please try again.';
+        message.classList.add('is-error');
+      }
+    });
+  });
+</script>
+
+<style>
+  .email-signup { width: min(100%, 38rem); }
+  .email-signup__controls { display: flex; gap: .65rem; min-height: 3.25rem; }
+  .email-signup input[type='email'] { width: 100%; min-width: 0; border: 1px solid var(--line); border-radius: var(--radius-small); outline: 0; background: transparent; padding: .85rem 1rem; color: var(--ink); font: inherit; }
+  .email-signup input[type='email']::placeholder { color: var(--muted); }
+  .email-signup input[type='email']:focus-visible { border-color: var(--ink); }
+  .email-signup button { flex: none; border: 0; border-radius: var(--radius-small); background: var(--coral); padding: .85rem 1.15rem; color: var(--ink); font-family: var(--font-display); font-size: .95rem; font-weight: 500; cursor: pointer; white-space: nowrap; transition: background-color .2s ease, color .2s ease; }
+  .email-signup button span { margin-left: .55rem; }
+  .email-signup button:hover:not(:disabled) { background: var(--ink); color: white; }
+  .email-signup--panel button { background: var(--ink); color: white; }
+  .email-signup--panel button:hover:not(:disabled) { background: white; color: var(--ink); }
+  .email-signup button:disabled { cursor: wait; opacity: .55; }
+  .email-signup__message { min-height: 1.4em; margin: .65rem 0 0; font-size: .8125rem; }
+  .email-signup__message:empty { display: none; }
+  .email-signup__message.is-error { color: #9d2410; }
+  .email-signup__message.is-success { color: var(--ink); }
+  .email-signup__honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 520px) {
+    .email-signup__controls { min-height: 3rem; gap: .45rem; }
+    .email-signup button { padding-inline: .8rem; font-size: .85rem; }
+  }
+</style>
