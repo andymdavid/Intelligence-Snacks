@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SnackCard from '@/components/SnackCard.astro';
 import StoryVisual from '@/components/StoryVisual.astro';
+import ContributorRow from '@/components/ContributorRow.astro';
 import { isVisible } from '@/lib/content';
 
 export async function getStaticPaths() {
@@ -12,36 +13,55 @@ export async function getStaticPaths() {
 const { episode } = Astro.props;
 const { Content } = await render(episode);
 const participants = await Promise.all(episode.data.participants.map((participant) => getEntry(participant)));
+const contributors = participants.filter((person): person is NonNullable<typeof person> => Boolean(person));
 const topic = await getEntry(episode.data.primaryTopic);
 const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status) && data.sourceEpisode.id === episode.id);
 const topics = new Map((await getCollection('topics')).map((entry) => [entry.id, entry]));
 ---
 <BaseLayout title={`Episode ${episode.data.number}: ${episode.data.title} — Intelligence Snacks`} description={episode.data.summary} active="episodes">
   <header class="episode-head page-shell">
-    <div class="episode-kicker"><span>Episode {episode.data.number}</span><span>{episode.data.legacyTitle ? 'Formerly The Good Stuff' : 'Intelligence Snacks Podcast'}</span></div>
+    <div class="episode-head__meta"><span>Episode {episode.data.number}</span><span>Intelligence Snacks Podcast</span></div>
     <h1>{episode.data.title}</h1>
-    <p>{episode.data.summary}</p>
-    <div class="episode-byline"><p>With {participants.filter(Boolean).map((person) => person!.data.name).join(', ')}</p><p>{snacks.length} ideas developed from this conversation</p></div>
+    <div class="episode-head__details">
+      <p class="standfirst">{episode.data.summary}</p>
+      <div class="episode-head__source">
+        <div><ContributorRow people={contributors} /><p>With {contributors.map((person) => person.data.name).join(', ')}</p></div>
+        <p>{snacks.length} ideas developed from this conversation</p>
+      </div>
+    </div>
   </header>
   <div class="page-shell episode-media"><StoryVisual label="Full conversation" colour={topic?.data.colour ?? '#9aa7ff'} index={episode.data.number} /><button type="button" disabled aria-label="Media embed coming with source episode">Media source to be connected <span>↗</span></button></div>
   <section class="episode-intro page-shell section"><p class="eyebrow">About this conversation</p><div><Content /></div></section>
   <section class="page-shell section">
-    <div class="section-heading"><h2>Ideas from Episode {episode.data.number}</h2><p>The distinct arguments developed from the source conversation.</p></div>
-    <div class="snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.primaryTopic.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} />; })}</div>
+    <div class="section-heading"><h2>Ideas from Episode {episode.data.number}</h2></div>
+    <div class="episode-snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.primaryTopic.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" />; })}</div>
   </section>
   <section class="transcript page-shell section"><div class="section-heading"><h2>Transcript</h2><p>The complete source conversation will remain available alongside the developed ideas.</p></div><div class="transcript-placeholder"><p class="eyebrow">Episode 64 transcript</p><p>Transcript content will be attached during the first ingestion pipeline run. The page structure is ready for speaker-labelled, timestamped chapters.</p></div></section>
 </BaseLayout>
 <style>
-  .episode-head { padding-block: clamp(4rem, 9vw, 9rem); }
-  .episode-kicker, .episode-byline { display: flex; justify-content: space-between; gap: 2rem; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; }
-  .episode-head h1 { max-width: 1300px; margin: 8vw 0 3rem; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
-  .episode-head > p { max-width: 760px; margin-left: auto; font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.2; }
-  .episode-byline { max-width: 760px; margin: 4rem 0 0 auto; border-top: 1px solid var(--line); padding-top: 1rem; }
-  .episode-media { position: relative; }
-  .episode-media :global(.story-visual) { min-height: clamp(420px, 60vw, 850px); }
-  .episode-media button { position: absolute; bottom: 2rem; right: calc(var(--page-pad) + 2rem); border: 0; background: var(--ink); color: white; padding: 1rem 1.25rem; text-transform: uppercase; letter-spacing: .08em; }
+  .episode-head { padding-block: clamp(4rem, 8vw, 8rem); }
+  .episode-head__meta { display: flex; justify-content: space-between; gap: 2rem; margin-bottom: 7vw; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+  .episode-head h1 { max-width: 1400px; margin-bottom: clamp(2.5rem, 4vw, 4rem); font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
+  .episode-head__details { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(280px, 1fr); align-items: start; gap: clamp(3rem, 8vw, 9rem); padding-top: clamp(1.5rem, 2.5vw, 2.5rem); border-top: 1px solid var(--line); }
+  .standfirst { max-width: 780px; margin: 0; font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.2; letter-spacing: -.02em; }
+  .episode-head__source { display: flex; flex-direction: column; gap: 1.5rem; color: var(--muted); font-size: .78rem; }
+  .episode-head__source > p { margin: 0; }
+  .episode-head__source > div > p { margin: .7rem 0 0; }
+  .episode-media { position: relative; padding-block: var(--page-pad); }
+  .episode-media :global(.story-visual) { height: calc(100svh - 58px - (2 * var(--page-pad))); min-height: 0; }
+  .episode-media button { position: absolute; bottom: calc(var(--page-pad) + 2rem); right: calc(var(--page-pad) + 2rem); border: 0; background: var(--ink); color: white; padding: 1rem 1.25rem; text-transform: uppercase; letter-spacing: .08em; }
   .episode-intro { display: grid; grid-template-columns: 1fr 2fr 1fr; }
   .episode-intro > div { grid-column: 2; font-family: var(--font-body); font-size: var(--type-body-large); line-height: 1.5; }
+  .episode-snack-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(.65rem, 1vw, 1rem); row-gap: clamp(3.5rem, 6vw, 6rem); }
+  .episode-snack-grid :global(.snack-card--archive) { min-width: 0; background: transparent; }
+  .episode-snack-grid :global(.snack-card__visual .story-visual--compact) { height: auto; min-height: 0; aspect-ratio: 3 / 2; }
+  .episode-snack-grid :global(.snack-card__body) { padding: 1rem .8rem 0 0; }
+  .episode-snack-grid :global(.card-meta) { margin-bottom: .8rem; color: var(--text-muted); font-family: var(--font-body); font-size: .76rem; letter-spacing: 0; text-transform: none; }
+  .episode-snack-grid :global(.snack-card h3) { margin-bottom: .7rem; line-height: 1.02; }
+  .episode-snack-grid :global(.snack-card p) { font-size: .96rem; line-height: 1.45; }
+  .episode-snack-grid :global(.text-link) { padding-top: 1.25rem; }
   .transcript-placeholder { max-width: 850px; margin-inline: auto; padding: 4rem; border: 1px solid var(--line); background: var(--paper-raised); }
-  @media (max-width: 800px) { .episode-intro { grid-template-columns: 1fr; } .episode-intro > div { grid-column: 1; } .episode-kicker, .episode-byline { flex-direction: column; } }
+  @media (max-width: 900px) { .episode-snack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 800px) { .episode-head__details, .episode-intro { grid-template-columns: 1fr; } .episode-head__details { gap: 2.5rem; } .episode-intro > div { grid-column: 1; } .episode-head__meta { align-items: flex-start; flex-direction: column; } }
+  @media (max-width: 620px) { .episode-media :global(.story-visual) { height: min(70svh, 34rem); } .episode-snack-grid { grid-template-columns: 1fr; } }
 </style>
