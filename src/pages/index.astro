@@ -85,7 +85,7 @@ const heroSnacks = featured
     <div class="subscribe-form">
       <p class="subscribe-form__label">Email address</p>
       <EmailSignup id="footer-email" source="homepage-footer" class="email-signup--panel" />
-      <p>Three or four developed ideas from the week’s conversation. No daily noise.</p>
+      <p>A handful of snacks from each week’s podcast.</p>
     </div>
   </section>
 </BaseLayout>
@@ -131,5 +131,12 @@ const heroSnacks = featured
   }
   @media (max-width: 900px) {
     .feature, .episode-feature__inner, .subscribe-panel { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .home-intro { min-height: calc(100svh - 58px); display: flex; flex-direction: column; justify-content: center; padding-block: 4rem 8rem; }
+    .home-intro__content { width: 100%; transform: translateY(-2vh); }
+    .hero-testimonial-slot { position: absolute; right: var(--page-pad); bottom: 1.5rem; left: var(--page-pad); margin: 0; }
+    .subscribe-form :global(.email-signup__controls) { flex-direction: column; }
+    .subscribe-form :global(.email-signup button) { width: 100%; }
   }
 </style>

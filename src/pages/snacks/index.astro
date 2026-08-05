@@ -101,6 +101,6 @@ const usedTopics = [...topics.values()]
   .snack-archive-grid :global(.text-link) { padding-top: 1.25rem; }
   .snack-archive__empty { padding-block: 4rem; color: var(--text-secondary); text-align: center; }
   @media (max-width: 900px) { .snack-archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 700px) { .snack-archive__toolbar { align-items: stretch; flex-direction: column; } .snack-filters { width: 100%; } .snack-filters label { flex: 1; } .snack-filters select { width: 100%; min-width: 0; } }
-  @media (max-width: 620px) { .snack-archive-grid { grid-template-columns: 1fr; } .snack-filters { flex-direction: column; align-items: stretch; } .episode-group__head { align-items: flex-start; flex-direction: column; gap: .5rem; } .episode-group__head a { text-align: left; } }
+  @media (max-width: 700px) { .snack-archive__toolbar { align-items: stretch; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; } .snack-archive__toolbar h2 { font-size: clamp(1.65rem, 8vw, 2rem); } .snack-filters { width: 100%; } .snack-filters label { min-width: 0; flex: 1; } .snack-filters select { width: 100%; min-width: 0; } }
+  @media (max-width: 620px) { .snack-archive-grid { grid-template-columns: 1fr; } .filter-control select { height: 3.15rem; padding-top: 1.25rem; padding-right: 2rem; font-size: .8rem; } .filter-control::after { right: .85rem; bottom: 1.05rem; } .episode-group__head { align-items: flex-start; flex-direction: column; gap: .5rem; } .episode-group__head a { text-align: left; } }
 </style>

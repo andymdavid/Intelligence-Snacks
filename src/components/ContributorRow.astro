@@ -14,8 +14,8 @@ const { people, compact = false, avatarsOnly = false, linkedPortraits = true } =
 <div class:list={['contributor-row', { 'contributor-row--compact': compact }]} aria-label={`Contributors: ${people.map(({ data }) => data.name).join(', ')}`}>
   <span class="contributor-row__portraits">
     {people.map((person) => person.data.image && (linkedPortraits
-      ? <a class="contributor-row__portrait" href={`/contributors/${person.id}/`} aria-label={`View ${person.data.name}'s contributor page`} title={person.data.name}><img src={person.data.image} alt="" width="48" height="48" /></a>
-      : <span class="contributor-row__portrait" aria-hidden="true"><img src={person.data.image} alt="" width="48" height="48" /></span>
+      ? <a class="contributor-row__portrait" href={`/contributors/${person.id}/`} aria-label={`View ${person.data.name}'s contributor page`} title={person.data.name}><img src={person.data.image} alt="" width="48" height="48" loading="lazy" decoding="async" /></a>
+      : <span class="contributor-row__portrait" aria-hidden="true"><img src={person.data.image} alt="" width="48" height="48" loading="lazy" decoding="async" /></span>
     ))}
   </span>
   {!avatarsOnly && (

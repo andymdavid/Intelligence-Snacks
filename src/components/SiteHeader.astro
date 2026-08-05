@@ -17,6 +17,8 @@ const links: Array<readonly [string, string]> = [
       alt=""
       width="960"
       height="640"
+      fetchpriority="high"
+      decoding="async"
     />
     <span class="wordmark__text">
       <span>Intelligence</span><span>Snacks</span>
@@ -31,6 +33,13 @@ const links: Array<readonly [string, string]> = [
     <a class="search-link" href="/search/" aria-label="Search Intelligence Snacks">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg>
     </a>
+    <details class="mobile-menu">
+      <summary aria-label="Open navigation"><span></span><span></span></summary>
+      <nav aria-label="Mobile navigation">
+        {links.map(([label, href]) => <a href={href} aria-current={active === label.toLowerCase() ? 'page' : undefined}>{label}</a>)}
+        <button type="button" data-open-signup>Send me snacks <span aria-hidden="true">↗</span></button>
+      </nav>
+    </details>
     <button class="subscribe-button" type="button" data-open-signup>Send me snacks <span aria-hidden="true">↗</span></button>
   </div>
 </header>

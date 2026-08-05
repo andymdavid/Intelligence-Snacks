@@ -6,7 +6,7 @@ import EmailSignup from './EmailSignup.astro';
   <div class="footer-main">
     <div class="footer-brand-column">
       <a class="footer-wordmark" href="/" aria-label="Intelligence Snacks home">
-        <img src="/images/intelligence-snacks-logo.webp" alt="" width="960" height="640" />
+        <img src="/images/intelligence-snacks-logo.webp" alt="" width="960" height="640" loading="lazy" decoding="async" />
         <span><span>Intelligence</span><span>Snacks</span></span>
       </a>
       <p>Long conversations about AI, software and business, developed into useful ideas for people building and running modern businesses.</p>
@@ -36,7 +36,7 @@ import EmailSignup from './EmailSignup.astro';
           <p class="footer-label">Follow</p>
           <div class="founder-profile publication-profile">
             <a class="founder-profile__person" href="/">
-              <img src="/images/intelligence-snacks-logo.webp" alt="" width="40" height="40" />
+              <img src="/images/intelligence-snacks-logo.webp" alt="" width="40" height="40" loading="lazy" decoding="async" />
               <span><strong>Intelligence Snacks</strong><em>Podcast and publication</em></span>
             </a>
             <div class="founder-profile__social" aria-label="Intelligence Snacks social links">
@@ -47,7 +47,7 @@ import EmailSignup from './EmailSignup.astro';
           </div>
           <div class="founder-profile">
             <a class="founder-profile__person" href="/contributors/pete-winn/">
-              <img src="/images/pete-winn-voxel.webp" alt="" width="40" height="40" />
+              <img src="/images/pete-winn-voxel.webp" alt="" width="40" height="40" loading="lazy" decoding="async" />
               <span><strong>Pete Winn</strong><em>Host and co-founder</em></span>
             </a>
             <div class="founder-profile__social" aria-label="Pete Winn social links">
@@ -58,7 +58,7 @@ import EmailSignup from './EmailSignup.astro';
           </div>
           <div class="founder-profile">
             <a class="founder-profile__person" href="/contributors/andy-david/">
-              <img src="/images/andy-david-voxel.webp" alt="" width="40" height="40" />
+              <img src="/images/andy-david-voxel.webp" alt="" width="40" height="40" loading="lazy" decoding="async" />
               <span><strong>Andy David</strong><em>Host and co-founder</em></span>
             </a>
             <div class="founder-profile__social" aria-label="Andy David social links">
@@ -121,5 +121,5 @@ import EmailSignup from './EmailSignup.astro';
   .producer { display: inline-flex; align-items: center; gap: .4rem; color: #f5f4ef; line-height: 1; }
   .producer img { width: 1.05rem; height: 1.05rem; flex: none; border-radius: 0; object-fit: contain; }
   @media (max-width: 900px) { .footer-main { grid-template-columns: 1fr; gap: 4rem; } .footer-navigation { max-width: 38rem; } }
-  @media (max-width: 580px) { .footer-navigation { grid-template-columns: 1fr; } .footer-follow { margin-top: 2.5rem; } .footer-bottom { align-items: flex-start; flex-direction: column; } .footer-signup :global(.email-signup__controls) { flex-direction: column; } .footer-signup :global(button) { width: 100%; } }
+  @media (max-width: 580px) { .footer-navigation { grid-template-columns: 1fr; } .footer-follow { margin-top: 2.5rem; } .footer-bottom { align-items: flex-start; flex-direction: column; gap: 1rem; font-size: clamp(.56rem, 2.6vw, .68rem); } .footer-bottom > p:first-child { width: 100%; gap: .3rem; white-space: nowrap; } .producer { gap: .25rem; } .producer img { width: .9rem; height: .9rem; } .footer-signup :global(.email-signup__controls) { flex-direction: column; } .footer-signup :global(button) { width: 100%; } }
 </style>

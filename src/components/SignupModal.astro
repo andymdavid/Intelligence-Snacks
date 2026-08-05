@@ -4,7 +4,7 @@ import EmailSignup from './EmailSignup.astro';
 
 <dialog class="signup-modal" data-signup-modal aria-labelledby="signup-modal-title">
   <button class="signup-modal__close" type="button" data-signup-close aria-label="Close signup">×</button>
-  <div class="signup-modal__mark"><img src="/images/intelligence-snacks-logo.webp" alt="" width="960" height="640" /></div>
+  <div class="signup-modal__mark"><img src="/images/intelligence-snacks-logo.webp" alt="" width="960" height="640" loading="lazy" decoding="async" /></div>
   <h2 id="signup-modal-title">Get Intelligence Snacks in your inbox.</h2>
   <p class="signup-modal__copy">Quickly digest the big ideas emerging from the world of AI, delivered each week.</p>
   <EmailSignup id="modal-email" source="signup-modal" buttonLabel="Send me snacks" />
