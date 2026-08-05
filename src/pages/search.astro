@@ -1,13 +1,155 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { isVisible } from '@/lib/content';
+
+const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status));
+const episodes = (await getCollection('episodes')).filter(({ data }) => isVisible(data.status));
+const topics = await getCollection('topics');
+const people = await getCollection('people');
+
+const searchIndex = [
+  ...snacks.map((snack) => ({
+    type: 'Snack', title: snack.data.title, description: snack.data.standfirst,
+    href: `/snacks/${snack.id}/`, search: `${snack.data.editorialTitle ?? ''} ${snack.data.attribution} ${snack.body}`,
+  })),
+  ...episodes.map((episode) => ({
+    type: 'Episode', title: `Episode ${episode.data.number}: ${episode.data.title}`, description: episode.data.summary,
+    href: `/episodes/${episode.id}/`, search: `${episode.data.legacyTitle ?? ''} ${episode.body}`,
+  })),
+  ...topics.map((topic) => ({
+    type: 'Topic', title: topic.data.name, description: topic.data.description,
+    href: `/topics/${topic.id}/`, search: topic.body,
+  })),
+  ...people.map((person) => ({
+    type: 'Contributor', title: person.data.name, description: person.data.shortBio,
+    href: `/contributors/${person.id}/`, search: `${person.data.role} ${person.body}`,
+  })),
+];
 ---
+
 <BaseLayout title="Search — Intelligence Snacks" description="Search the Intelligence Snacks archive.">
-  <header class="search-head page-shell"><p class="eyebrow">Search the archive</p><h1>Find an idea.</h1><div><input type="search" placeholder="Search is coming in the next foundation pass" disabled /><span>⌕</span></div></header>
+  <section class="search-page page-shell">
+    <header class="search-head">
+      <p class="eyebrow">Search the archive</p>
+      <h1>Find an idea.</h1>
+      <label class="search-field">
+        <span class="visually-hidden">Search Intelligence Snacks</span>
+        <input type="search" placeholder="Search snacks, episodes, topics and people" autocomplete="off" data-search-input />
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg>
+      </label>
+    </header>
+    <div class="search-results" aria-live="polite">
+      <div class="search-results__head"><h2 data-results-title hidden></h2><p data-results-count>{searchIndex.length} ideas and conversations indexed</p></div>
+      <div class="search-results__list" data-search-results>
+        <p class="search-prompt">Start typing to explore the connected archive.</p>
+      </div>
+    </div>
+  </section>
+  <script is:inline type="application/json" id="search-index" set:html={JSON.stringify(searchIndex).replace(/</g, '\u003c')} />
 </BaseLayout>
+
+<script>
+  interface SearchItem { type: string; title: string; description: string; href: string; search: string; }
+  const input = document.querySelector<HTMLInputElement>('[data-search-input]');
+  const results = document.querySelector<HTMLElement>('[data-search-results]');
+  const title = document.querySelector<HTMLElement>('[data-results-title]');
+  const count = document.querySelector<HTMLElement>('[data-results-count]');
+  const data = document.querySelector<HTMLScriptElement>('#search-index');
+  const index: SearchItem[] = data?.textContent ? JSON.parse(data.textContent) : [];
+  const normalise = (value: string) => value.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+
+  const render = (query: string) => {
+    if (!results || !title || !count) return;
+    const cleanQuery = query.trim();
+    const terms = normalise(cleanQuery).split(/\s+/).filter(Boolean);
+    results.replaceChildren();
+    if (!terms.length) {
+      title.hidden = true;
+      title.textContent = '';
+      count.textContent = `${index.length} ideas and conversations indexed`;
+      const prompt = document.createElement('p');
+      prompt.className = 'search-prompt';
+      prompt.textContent = 'Start typing to explore the connected archive.';
+      results.append(prompt);
+      return;
+    }
+
+    const matches = index.map((item) => {
+      const itemTitle = normalise(item.title);
+      const description = normalise(item.description);
+      const haystack = `${itemTitle} ${description} ${normalise(item.search)}`;
+      if (!terms.every((term) => haystack.includes(term))) return null;
+      const score = terms.reduce((total, term) => total + (itemTitle.startsWith(term) ? 8 : itemTitle.includes(term) ? 5 : description.includes(term) ? 2 : 1), 0);
+      return { item, score };
+    }).filter((match): match is { item: SearchItem; score: number } => Boolean(match)).sort((a, b) => b.score - a.score);
+
+    title.hidden = false;
+    title.textContent = `Results for “${cleanQuery}”`;
+    count.textContent = `${matches.length} ${matches.length === 1 ? 'result' : 'results'}`;
+    if (!matches.length) {
+      const empty = document.createElement('p');
+      empty.className = 'search-prompt';
+      empty.textContent = 'No matching ideas yet. Try a broader term.';
+      results.append(empty);
+      return;
+    }
+
+    matches.forEach(({ item }) => {
+      const link = document.createElement('a');
+      link.className = 'search-result';
+      link.href = item.href;
+      const meta = document.createElement('span');
+      meta.className = 'search-result__type';
+      meta.textContent = item.type;
+      const heading = document.createElement('strong');
+      heading.textContent = item.title;
+      const description = document.createElement('span');
+      description.className = 'search-result__description';
+      description.textContent = item.description;
+      const arrow = document.createElement('span');
+      arrow.className = 'search-result__arrow';
+      arrow.textContent = '↗';
+      link.append(meta, heading, description, arrow);
+      results.append(link);
+    });
+  };
+
+  if (input) {
+    const initialQuery = new URLSearchParams(window.location.search).get('q') ?? '';
+    input.value = initialQuery;
+    render(initialQuery);
+    input.addEventListener('input', () => {
+      const query = input.value;
+      render(query);
+      const url = new URL(window.location.href);
+      query.trim() ? url.searchParams.set('q', query.trim()) : url.searchParams.delete('q');
+      history.replaceState({}, '', url);
+    });
+  }
+</script>
+
 <style>
-  .search-head { min-height: 70vh; padding-block: var(--section-space); }
-  .search-head h1 { font-size: var(--type-page); line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); font-weight: 500; }
-  .search-head div { display: flex; align-items: center; border-bottom: 1px solid var(--ink); }
-  .search-head input { width: 100%; border: 0; background: transparent; font: inherit; font-size: clamp(1.2rem, 3vw, 3rem); padding: 1.5rem 0; }
-  .search-head span { font-size: 2rem; }
+  .search-page { min-height: calc(100vh - 58px); padding-block: clamp(4rem, 8vw, 8rem); }
+  .search-head { display: flex; flex-direction: column; justify-content: center; }
+  .search-head h1 { margin: 0 0 clamp(2rem, 4vw, 3.5rem); font-size: var(--type-page); line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); font-weight: 500; }
+  .search-field { display: flex; align-items: center; border-bottom: 1px solid var(--ink); }
+  .search-field input { width: 100%; padding: 1.15rem 0; border: 0; border-radius: 0; outline: 0; background: transparent; color: var(--ink); font: 500 clamp(1.2rem, 2.5vw, 2.25rem)/1.2 var(--font-display); }
+  .search-field input::placeholder { color: var(--text-muted); }
+  .search-field svg { width: 1.75rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; }
+  .search-results { padding-top: clamp(3rem, 6vw, 6rem); }
+  .search-results__head { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; margin-bottom: clamp(1.5rem, 3vw, 3rem); }
+  .search-results__head:has(h2[hidden]) { justify-content: flex-end; }
+  .search-results__head h2 { margin: 0; font-size: var(--type-section); font-weight: 500; line-height: var(--leading-display); letter-spacing: var(--tracking-display); }
+  .search-results__head p { margin: 0; color: var(--text-muted); }
+  .search-results__list { border-top: 1px solid var(--line); }
+  :global(.search-result) { position: relative; display: grid; grid-template-columns: 8rem minmax(15rem, .9fr) minmax(20rem, 1.1fr) 2rem; align-items: baseline; gap: clamp(1rem, 3vw, 3rem); padding: 1.75rem 0; border-bottom: 1px solid var(--line); transition: color .18s ease, padding-inline .18s ease; }
+  :global(.search-result:hover) { padding-inline: .6rem; color: #7444c4; }
+  :global(.search-result__type) { color: var(--text-muted); font-family: var(--font-mono); font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; }
+  :global(.search-result strong) { font-family: var(--font-display); font-size: var(--type-card); font-weight: 500; line-height: 1.05; letter-spacing: var(--tracking-display); }
+  :global(.search-result__description) { color: var(--text-secondary); line-height: 1.45; }
+  :global(.search-result__arrow) { justify-self: end; }
+  :global(.search-prompt) { padding: 3rem 0; color: var(--text-secondary); }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  @media (max-width: 800px) { .search-results__head { align-items: flex-start; flex-direction: column; } .search-results__head:has(h2[hidden]) { align-items: flex-start; } :global(.search-result) { grid-template-columns: 1fr 2rem; } :global(.search-result__type), :global(.search-result__description) { grid-column: 1; } :global(.search-result__arrow) { grid-column: 2; grid-row: 1 / span 3; } }
 </style>
