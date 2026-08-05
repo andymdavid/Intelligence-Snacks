@@ -9,10 +9,20 @@ const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(da
 ---
 <BaseLayout title={`${topic.data.name} — Intelligence Snacks`} description={topic.data.description} active="topics">
   <header class="topic-head page-shell" style={`--topic:${topic.data.colour}`}><p class="eyebrow">Topic</p><h1>{topic.data.name}</h1><p>{topic.data.description}</p></header>
-  <section class="page-shell section"><div class="section-heading"><h2>Ideas in {topic.data.name}</h2><p>{snacks.length} connected ideas in the current archive.</p></div><div class="snack-grid">{snacks.map((snack, index) => <SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} />)}</div></section>
+  <section class="page-shell section"><div class="section-heading"><h2>Ideas in {topic.data.name}</h2></div><div class="topic-snack-grid">{snacks.map((snack, index) => <SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} variant="archive" />)}</div></section>
 </BaseLayout>
 <style>
-  .topic-head { margin-top: var(--page-pad); padding: clamp(2rem, 5vw, 5rem); min-height: min(680px, 75vh); background: var(--topic); display: flex; flex-direction: column; }
-  .topic-head h1 { margin: auto 0 2rem; font-size: var(--type-hero); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
-  .topic-head > p:last-child { max-width: 38rem; margin-left: auto; font-size: 1.15rem; }
+  .topic-head { min-height: 35vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-block: clamp(3rem, 6vw, 6rem); border-radius: var(--radius-small); background: var(--topic); text-align: center; }
+  .topic-head h1 { margin: 0; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
+  .topic-head > p:last-child { max-width: 30.5rem; margin: 1.5rem auto 0; color: var(--text-primary); }
+  .topic-snack-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(.65rem, 1vw, 1rem); row-gap: clamp(3.5rem, 6vw, 6rem); }
+  .topic-snack-grid :global(.snack-card--archive) { min-width: 0; background: transparent; }
+  .topic-snack-grid :global(.snack-card__visual .story-visual--compact) { min-height: 0; aspect-ratio: 3 / 2; }
+  .topic-snack-grid :global(.snack-card__body) { padding: 1rem .8rem 0 0; }
+  .topic-snack-grid :global(.card-meta) { margin-bottom: .8rem; color: var(--text-muted); font-family: var(--font-body); font-size: .76rem; letter-spacing: 0; text-transform: none; }
+  .topic-snack-grid :global(.snack-card h3) { margin-bottom: .7rem; line-height: 1.02; }
+  .topic-snack-grid :global(.snack-card p) { font-size: .96rem; line-height: 1.45; }
+  .topic-snack-grid :global(.text-link) { padding-top: 1.25rem; }
+  @media (max-width: 900px) { .topic-snack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .topic-head { min-height: 40vh; } .topic-snack-grid { grid-template-columns: 1fr; } }
 </style>
