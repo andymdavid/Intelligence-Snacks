@@ -1,19 +1,125 @@
-<footer class="site-footer">
-  <div class="footer-promise">
-    <p class="eyebrow">Intelligence Snacks</p>
-    <h2>Ideas worth carrying into the work.</h2>
+---
+import EmailSignup from './EmailSignup.astro';
+---
+
+<footer class="site-footer" id="subscribe">
+  <div class="footer-main">
+    <div class="footer-brand-column">
+      <a class="footer-wordmark" href="/" aria-label="Intelligence Snacks home">
+        <img src="/images/intelligence-snacks-logo.webp" alt="" width="960" height="640" />
+        <span><span>Intelligence</span><span>Snacks</span></span>
+      </a>
+      <p>Long conversations about AI, software and business, developed into useful ideas for people building and running modern businesses.</p>
+      <div class="footer-signup">
+        <p class="footer-label">Get weekly Intelligence Snacks in your inbox</p>
+        <EmailSignup id="footer-email" source="site-footer" buttonLabel="Send me snacks" />
+      </div>
+    </div>
+
+    <div class="footer-navigation">
+      <nav class="footer-column" aria-label="Sitemap">
+        <h2>Sitemap</h2>
+        <a href="/">Latest</a>
+        <a href="/snacks/">Snacks</a>
+        <a href="/episodes/">Episodes</a>
+        <a href="/topics/">Topics</a>
+        <a href="/contributors/">Contributors</a>
+      </nav>
+
+      <div class="footer-column footer-context">
+        <h2>Context</h2>
+        <a href="/about/">About</a>
+        <span class="coming-soon">Graph <em>(coming soon)</em></span>
+        <a href="https://otherstuff.ai" rel="external">Other Stuff</a>
+
+        <div class="footer-follow">
+          <p class="footer-label">Follow</p>
+          <div class="founder-profile publication-profile">
+            <a class="founder-profile__person" href="/">
+              <img src="/images/intelligence-snacks-logo.webp" alt="" width="40" height="40" />
+              <span><strong>Intelligence Snacks</strong><em>Podcast and publication</em></span>
+            </a>
+            <div class="founder-profile__social" aria-label="Intelligence Snacks social links">
+              <a href="https://www.youtube.com/@IntelligenceSnacks" rel="me external" aria-label="Intelligence Snacks on YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="founder-profile">
+            <a class="founder-profile__person" href="/contributors/pete-winn/">
+              <img src="/images/pete-winn-voxel.webp" alt="" width="40" height="40" />
+              <span><strong>Pete Winn</strong><em>Host and co-founder</em></span>
+            </a>
+            <div class="founder-profile__social" aria-label="Pete Winn social links">
+              <a href="https://x.com/Pete_Winn" rel="me external" aria-label="Pete Winn on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22H17l-4.86-6.35L6.58 22H3.47l7.22-8.25L3.05 2h6.31l4.39 5.8L18.9 2Zm-1.09 17.84h1.72L8.42 4.05H6.58l11.23 15.79Z"/></svg></a>
+              <a href="https://www.linkedin.com/in/pete-winn-otherstuff/" rel="me external" aria-label="Pete Winn on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM3.56 9h3.56v11.45H3.56V9Z"/></svg></a>
+              <a href="https://primal.net/pw" rel="me external" aria-label="Pete Winn on Nostr"><img src="/images/primal-logo-white.svg" alt="" width="12" height="12" /></a>
+            </div>
+          </div>
+          <div class="founder-profile">
+            <a class="founder-profile__person" href="/contributors/andy-david/">
+              <img src="/images/andy-david-voxel.webp" alt="" width="40" height="40" />
+              <span><strong>Andy David</strong><em>Host and co-founder</em></span>
+            </a>
+            <div class="founder-profile__social" aria-label="Andy David social links">
+              <a href="https://x.com/andymdavid" rel="me external" aria-label="Andy David on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22H17l-4.86-6.35L6.58 22H3.47l7.22-8.25L3.05 2h6.31l4.39 5.8L18.9 2Zm-1.09 17.84h1.72L8.42 4.05H6.58l11.23 15.79Z"/></svg></a>
+              <a href="https://www.linkedin.com/in/andymdavid/" rel="me external" aria-label="Andy David on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM3.56 9h3.56v11.45H3.56V9Z"/></svg></a>
+              <a href="https://primal.net/andydavid" rel="me external" aria-label="Andy David on Nostr"><img src="/images/primal-logo-white.svg" alt="" width="12" height="12" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="footer-meta">
-    <p>Long conversations, developed into useful ideas.</p>
-    <nav aria-label="Footer navigation">
-      <a href="/snacks/">Snacks</a>
-      <a href="/episodes/">Episodes</a>
-      <a href="/topics/">Topics</a>
-      <a href="/about/">About</a>
-    </nav>
-  </div>
+
   <div class="footer-bottom">
-    <p>Produced by <a href="https://otherstuff.ai">Other Stuff</a> in Perth, Western Australia.</p>
+    <p>Produced by <a class="producer" href="https://otherstuff.ai" aria-label="Other Stuff"><img src="/images/other-stuff-mark-white.webp" alt="" width="24" height="24" /><span>Other Stuff</span></a> in Perth, Western Australia.</p>
     <p>© {new Date().getFullYear()} Intelligence Snacks</p>
   </div>
 </footer>
+
+<style>
+  .site-footer { padding: clamp(3rem, 6vw, 6rem) var(--page-pad) 2rem; background: var(--ink); color: #f5f4ef; }
+  .footer-main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(420px, 1fr); gap: clamp(4rem, 10vw, 10rem); padding-bottom: clamp(4rem, 8vw, 8rem); }
+  .footer-brand-column { max-width: 38rem; }
+  .footer-wordmark { width: max-content; display: flex; align-items: center; gap: .8rem; font-family: var(--font-pixel); font-size: 1.8rem; line-height: .72; letter-spacing: -.025em; text-transform: uppercase; }
+  .footer-wordmark > img { width: 5.4rem; height: auto; border-radius: 0; }
+  .footer-wordmark > span { width: min-content; }
+  .footer-wordmark > span span { display: block; }
+  .footer-brand-column > p { max-width: 31rem; margin: 1.5rem 0 2.5rem; color: rgba(245, 244, 239, .65); font-size: .95rem; line-height: 1.55; }
+  .footer-label, .footer-column h2 { margin: 0 0 1rem; font-family: var(--font-mono); font-size: .72rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+  .footer-signup { max-width: 32rem; }
+  .footer-signup :global(.email-signup) { width: 100%; }
+  .footer-signup :global(.email-signup__controls) { min-height: 2.8rem; }
+  .footer-signup :global(input[type='email']) { border-color: rgba(245, 244, 239, .38) !important; background: rgba(245, 244, 239, .08) !important; color: #f5f4ef !important; }
+  .footer-signup :global(input[type='email']::placeholder) { color: rgba(245, 244, 239, .68) !important; }
+  .footer-signup :global(input[type='email']:hover) { border-color: rgba(245, 244, 239, .55) !important; }
+  .footer-signup :global(input[type='email']:focus-visible) { border-color: rgba(245, 244, 239, .8) !important; background: rgba(245, 244, 239, .11) !important; }
+  .footer-signup :global(button) { min-width: 9.5rem; background: var(--coral); color: var(--ink); }
+  .footer-signup :global(.email-signup__message.is-success) { color: #f5f4ef; }
+  .footer-navigation { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(2rem, 5vw, 5rem); }
+  .footer-column { display: flex; flex-direction: column; align-items: flex-start; }
+  .footer-column > a { margin-bottom: .65rem; color: rgba(245, 244, 239, .65); font-size: .88rem; transition: color .2s ease; }
+  .footer-column > a:hover { color: #fff; }
+  .coming-soon { margin-bottom: .65rem; color: rgba(245, 244, 239, .65); font-size: .88rem; }
+  .coming-soon em { color: rgba(245, 244, 239, .4); font-size: .75rem; font-style: normal; }
+  .footer-follow { width: 100%; margin-top: clamp(4rem, 5vw, 6.25rem); padding-top: 1.5rem; border-top: 1px solid rgba(245, 244, 239, .14); }
+  .founder-profile { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: .75rem; margin-bottom: .8rem; }
+  .founder-profile__person { min-width: 0; display: flex; align-items: center; gap: .65rem; }
+  .founder-profile__person > img { width: 2rem; height: 2rem; flex: none; border: 1px solid rgba(245, 244, 239, .16); border-radius: 50%; object-fit: cover; }
+  .publication-profile .founder-profile__person > img { padding: .1rem; background: #f5f4ef; object-fit: contain; }
+  .founder-profile__person span { min-width: 0; }
+  .founder-profile__person strong, .founder-profile__person em { display: block; overflow: hidden; color: #f5f4ef; font-size: .75rem; font-style: normal; font-weight: 400; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+  .founder-profile__person em { color: rgba(245, 244, 239, .5); font-size: .68rem; }
+  .founder-profile__social { display: flex; gap: .35rem; }
+  .founder-profile__social a { width: 1.65rem; height: 1.65rem; display: grid; place-items: center; border: 1px solid rgba(245, 244, 239, .12); border-radius: 3px; background: rgba(245, 244, 239, .05); transition: background-color .2s ease, transform .2s ease; }
+  .founder-profile__social a:hover { background: rgba(245, 244, 239, .12); transform: translateY(-2px); }
+  .founder-profile__social svg, .founder-profile__social img { width: .75rem; height: .75rem; fill: currentColor; border-radius: 0; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 2rem; margin-top: 0; padding-top: 1.5rem; border-top: 1px solid rgba(245, 244, 239, .2); color: rgba(245, 244, 239, .52); font-family: var(--font-mono); font-size: .72rem; }
+  .footer-bottom p { margin: 0; }
+  .footer-bottom > p:first-child { display: flex; align-items: center; gap: .45rem; line-height: 1; }
+  .producer { display: inline-flex; align-items: center; gap: .4rem; color: #f5f4ef; line-height: 1; }
+  .producer img { width: 1.05rem; height: 1.05rem; flex: none; border-radius: 0; object-fit: contain; }
+  @media (max-width: 900px) { .footer-main { grid-template-columns: 1fr; gap: 4rem; } .footer-navigation { max-width: 38rem; } }
+  @media (max-width: 580px) { .footer-navigation { grid-template-columns: 1fr; } .footer-follow { margin-top: 2.5rem; } .footer-bottom { align-items: flex-start; flex-direction: column; } .footer-signup :global(.email-signup__controls) { flex-direction: column; } .footer-signup :global(button) { width: 100%; } }
+</style>
