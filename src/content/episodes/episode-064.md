@@ -2,6 +2,9 @@
 number: 64
 title: Vibe Coding with Power Tools
 legacyTitle: "The Good Stuff 64 — Vibe Coding With Power Tools feat. dpc"
+youtubeUrl: https://www.youtube.com/watch?v=fthLd4hdwCg
+originalPublishedAt: 2026-07-22T23:00:20+00:00
+updatedAt: 2026-08-05T00:00:00Z
 summary: A conversation about coding agents as power tools, the harnesses that shape their behaviour, and why faster generation makes judgement and steering more important.
 status: review
 participants:
