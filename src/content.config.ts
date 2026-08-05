@@ -12,6 +12,11 @@ const people = defineCollection({
     shortBio: z.string(),
     image: z.string().optional(),
     externalUrl: z.url().optional(),
+    socialLinks: z.object({
+      x: z.url().optional(),
+      linkedin: z.url().optional(),
+      nostr: z.url().optional(),
+    }).optional(),
   }),
 });
 

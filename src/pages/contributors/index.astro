@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { isVisible } from '@/lib/content';
+
+const episodes = (await getCollection('episodes')).filter(({ data }) => isVisible(data.status));
+const appearanceCount = new Map<string, number>();
+episodes.forEach(({ data }) => data.participants.forEach(({ id }) => appearanceCount.set(id, (appearanceCount.get(id) ?? 0) + 1)));
+const hostOrder = new Map([['pete-winn', 0], ['andy-david', 1]]);
+const contributors = (await getCollection('people')).sort((a, b) => {
+  const aHost = hostOrder.get(a.id);
+  const bHost = hostOrder.get(b.id);
+  if (aHost !== undefined || bHost !== undefined) return (aHost ?? 99) - (bHost ?? 99);
+  return (appearanceCount.get(b.id) ?? 0) - (appearanceCount.get(a.id) ?? 0) || a.data.name.localeCompare(b.data.name);
+});
+const surfaces = ['#fe7141', '#cdabfe', '#d1ddd3'];
+---
+
+<BaseLayout title="Contributors — Intelligence Snacks" description="Meet the hosts and guests behind the conversations that become Intelligence Snacks." active="contributors">
+  <header class="contributors-head page-shell">
+    <p class="eyebrow">Contributors</p>
+    <h1>Big ideas begin<br />with interesting people.</h1>
+    <p>Meet the hosts and guests whose conversations shape our episodes, snacks and connected ideas.</p>
+  </header>
+
+  <section class="contributors-section page-shell section">
+    <div class="contributor-grid">
+      {contributors.map((person, index) => (
+        <a class="contributor-card" href={`/contributors/${person.id}/`} style={`--surface:${surfaces[index % surfaces.length]}`}>
+          <div class="contributor-card__portrait">
+            {person.data.image
+              ? <img src={person.data.image} alt={person.data.name} width="640" height="640" loading="lazy" />
+              : <span aria-hidden="true">{person.data.name.slice(0, 2)}</span>}
+          </div>
+          <div class="contributor-card__body">
+            <p class="eyebrow">{person.data.role}</p>
+            <h2>{person.data.name}</h2>
+            <p>{person.data.shortBio}</p>
+            <b>View contributor ↗</b>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contributors-head { min-height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-block: clamp(3rem, 6vw, 6rem); border-bottom: 1px solid var(--line); text-align: center; }
+  .contributors-head h1 { margin: 0; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
+  .contributors-head > p:last-child { max-width: 30.5rem; margin: 1.5rem auto 0; color: var(--text-secondary); }
+  .contributors-section { background: var(--paper); }
+  .contributor-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(.65rem, 1vw, 1rem); }
+  .contributor-card { min-width: 0; transition: transform .2s ease; }
+  .contributor-card:hover { transform: translateY(-4px); }
+  .contributor-card__portrait { overflow: hidden; aspect-ratio: 1; display: grid; place-items: center; border-radius: 6px 6px 0 0; background: var(--surface); }
+  .contributor-card__portrait img { width: 100%; height: 100%; object-fit: cover; }
+  .contributor-card__portrait span { font-family: var(--font-display); font-size: var(--type-page); text-transform: uppercase; }
+  .contributor-card__body { display: flex; flex-direction: column; padding: 1.25rem; border-radius: 0 0 6px 6px; background: #fff; }
+  .contributor-card h2 { margin: .6rem 0 .8rem; font-size: var(--type-card); font-weight: 500; line-height: 1.02; letter-spacing: var(--tracking-display); }
+  .contributor-card__body > p:not(.eyebrow) { margin: 0; color: var(--text-secondary); line-height: 1.5; }
+  .contributor-card b { padding-top: 1rem; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+  @media (max-width: 1100px) { .contributor-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 750px) { .contributor-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .contributor-grid { grid-template-columns: 1fr; } }
+</style>

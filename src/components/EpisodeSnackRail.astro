@@ -1,6 +1,7 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { getEntry, type CollectionEntry } from 'astro:content';
 import StoryVisual from './StoryVisual.astro';
+import ContributorRow from './ContributorRow.astro';
 
 interface Props {
   episode: CollectionEntry<'episodes'>;
@@ -10,6 +11,8 @@ interface Props {
 
 const { episode, snacks, topics } = Astro.props;
 const railId = `episode-rail-${episode.id}`;
+const contributors = (await Promise.all(episode.data.participants.map((person) => getEntry(person))))
+  .filter((person): person is CollectionEntry<'people'> => Boolean(person));
 ---
 
 <section class="episode-snacks section" data-snack-rail>
@@ -39,7 +42,10 @@ const railId = `episode-rail-${episode.id}`;
               <StoryVisual label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#c4f256'} index={index + 1} compact />
             </a>
             <div class="rail-card__body">
-              <a class="rail-card__topic" href={`/topics/${topic?.id}/`}>{topic?.data.name}</a>
+              <div class="rail-card__meta">
+                <a class="rail-card__topic" href={`/topics/${topic?.id}/`}>{topic?.data.name}</a>
+                <ContributorRow people={contributors} compact avatarsOnly />
+              </div>
               <h3><a href={`/snacks/${snack.id}/`}>{snack.data.title}</a></h3>
               <p>{snack.data.standfirst}</p>
             </div>
@@ -180,9 +186,17 @@ const railId = `episode-rail-${episode.id}`;
     padding: 1rem .8rem 0 0;
   }
 
+  .rail-card__meta {
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .8rem;
+  }
+
   .rail-card__topic {
     display: inline-block;
-    margin-bottom: .75rem;
     color: var(--text-muted);
     font-size: .76rem;
   }

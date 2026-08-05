@@ -5,19 +5,23 @@ interface Props {
   people: CollectionEntry<'people'>[];
   compact?: boolean;
   avatarsOnly?: boolean;
+  linkedPortraits?: boolean;
 }
 
-const { people, compact = false, avatarsOnly = false } = Astro.props;
+const { people, compact = false, avatarsOnly = false, linkedPortraits = true } = Astro.props;
 ---
 
 <div class:list={['contributor-row', { 'contributor-row--compact': compact }]} aria-label={`Contributors: ${people.map(({ data }) => data.name).join(', ')}`}>
-  <span class="contributor-row__portraits" aria-hidden="true">
-    {people.map(({ data }) => data.image && <img src={data.image} alt="" width="48" height="48" />)}
+  <span class="contributor-row__portraits">
+    {people.map((person) => person.data.image && (linkedPortraits
+      ? <a class="contributor-row__portrait" href={`/contributors/${person.id}/`} aria-label={`View ${person.data.name}'s contributor page`} title={person.data.name}><img src={person.data.image} alt="" width="48" height="48" /></a>
+      : <span class="contributor-row__portrait" aria-hidden="true"><img src={person.data.image} alt="" width="48" height="48" /></span>
+    ))}
   </span>
   {!avatarsOnly && (
     <span class="contributor-row__names">
       {people.map((person, index) => (
-        <span><a href={`/people/${person.id}/`}>{compact ? person.data.name.split(' ')[0] : person.data.name}</a>{index < people.length - 1 && ' + '}</span>
+        <span><a href={`/contributors/${person.id}/`}>{compact ? person.data.name.split(' ')[0] : person.data.name}</a>{index < people.length - 1 && ' + '}</span>
       ))}
     </span>
   )}
@@ -26,11 +30,15 @@ const { people, compact = false, avatarsOnly = false } = Astro.props;
 <style>
   .contributor-row { display: flex; align-items: center; gap: .75rem; min-width: 0; color: var(--ink); }
   .contributor-row__portraits { display: flex; flex: none; padding-left: .55rem; }
-  .contributor-row__portraits img { width: 2.5rem; height: 2.5rem; margin-left: -.55rem; border: 1px solid rgba(0, 0, 0, .28); border-radius: 50%; object-fit: cover; background: var(--paper); }
+  .contributor-row__portrait { position: relative; display: block; margin-left: -.55rem; border-radius: 50%; transition: z-index 0s, transform .18s ease; }
+  a.contributor-row__portrait:hover, a.contributor-row__portrait:focus-visible { z-index: 3; outline: 0; transform: translateY(-2px) scale(1.1); }
+  .contributor-row__portraits img { width: 2.5rem; height: 2.5rem; border: 1px solid rgba(0, 0, 0, .28); border-radius: 50%; object-fit: cover; background: var(--paper); transition: border-color .18s ease, box-shadow .18s ease; }
+  a.contributor-row__portrait:hover img, a.contributor-row__portrait:focus-visible img { border-color: var(--coral); box-shadow: 0 4px 12px rgba(0, 0, 0, .2); }
   .contributor-row__names { font-size: .8rem; font-weight: 600; }
   .contributor-row__names a:hover { text-decoration: underline; text-underline-offset: .2em; }
   .contributor-row--compact { gap: .65rem; }
   .contributor-row--compact .contributor-row__portraits { padding-left: .45rem; }
-  .contributor-row--compact .contributor-row__portraits img { width: 2rem; height: 2rem; margin-left: -.45rem; }
+  .contributor-row--compact .contributor-row__portrait { margin-left: -.45rem; }
+  .contributor-row--compact .contributor-row__portraits img { width: 2rem; height: 2rem; }
   .contributor-row--compact .contributor-row__names { font-family: var(--font-mono); font-size: .7rem; text-transform: uppercase; }
 </style>
