@@ -33,6 +33,9 @@ const subscriptionDevRoute = {
 export default defineConfig({
   site: 'https://intelligencesnacks.com',
   output: 'static',
+  redirects: {
+    '/people/[id]': '/contributors/[id]',
+  },
   server: {
     host: true,
     port: Number(process.env.PORT ?? 4321),
