@@ -29,8 +29,8 @@ const { snacks, topics, contributors, episodeNumber } = Astro.props;
                 <p>{snack.data.standfirst}</p>
               </div>
               <footer class="stack-card__footer">
-                <img class="stack-card__mark" src="/images/intelligence-snacks-cassette-transparent.webp" alt="" width="48" height="32" />
-                <ContributorRow people={contributors} compact avatarsOnly />
+                <img class="stack-card__mark" src="/images/intelligence-snacks-logo.webp" alt="" width="48" height="32" />
+                <ContributorRow people={contributors} compact avatarsOnly linkedPortraits={false} />
               </footer>
             </a>
           </div>
