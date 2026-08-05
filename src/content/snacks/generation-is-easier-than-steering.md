@@ -2,6 +2,8 @@
 title: Generation Is Easier Than Steering
 standfirst: The limiting factor in longer autonomous work is increasingly the quality of the feedback that determines whether generated software remains aligned.
 status: review
+publishedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: agents
 relatedTopics:

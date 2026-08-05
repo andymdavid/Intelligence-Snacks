@@ -3,6 +3,12 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const status = z.enum(['draft', 'review', 'published']);
+const seo = z.object({
+  title: z.string().max(70).optional(),
+  description: z.string().max(170).optional(),
+  image: z.string().optional(),
+  canonicalUrl: z.url().optional(),
+}).optional();
 
 const people = defineCollection({
   loader: glob({ base: './src/content/people', pattern: '**/*.{md,mdx}' }),
@@ -17,6 +23,7 @@ const people = defineCollection({
       linkedin: z.url().optional(),
       nostr: z.url().optional(),
     }).optional(),
+    seo,
   }),
 });
 
@@ -27,6 +34,7 @@ const topics = defineCollection({
     description: z.string(),
     colour: z.string().regex(/^#[0-9a-fA-F]{6}$/),
     featured: z.boolean().default(false),
+    seo,
   }),
 });
 
@@ -39,6 +47,7 @@ const episodes = defineCollection({
     status,
     legacyTitle: z.string().optional(),
     originalPublishedAt: z.coerce.date().optional(),
+    updatedAt: z.coerce.date().optional(),
     participants: z.array(reference('people')).min(1),
     primaryTopic: reference('topics'),
     relatedTopics: z.array(reference('topics')).default([]),
@@ -47,6 +56,7 @@ const episodes = defineCollection({
     transcript: z.string().optional(),
     featured: z.boolean().default(false),
     fixture: z.boolean().default(false),
+    seo,
   }),
 });
 
@@ -68,6 +78,7 @@ const snacks = defineCollection({
     standfirst: z.string(),
     status,
     publishedAt: z.coerce.date().optional(),
+    updatedAt: z.coerce.date().optional(),
     sourceEpisode: reference('episodes'),
     primaryTopic: reference('topics'),
     relatedTopics: z.array(reference('topics')).default([]),
@@ -80,6 +91,7 @@ const snacks = defineCollection({
     })).default([]),
     featured: z.boolean().default(false),
     fixture: z.boolean().default(false),
+    seo,
   }),
 });
 

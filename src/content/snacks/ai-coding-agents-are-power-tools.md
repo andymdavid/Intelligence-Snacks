@@ -3,6 +3,8 @@ title: AI Coding Agents Are Power Tools, Not Replacements
 editorialTitle: Software With Power Tools
 standfirst: Coding agents move software craft away from producing every line and towards shaping architecture, evaluating behaviour and deciding where precision matters.
 status: review
+publishedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: ai-coding
 relatedTopics:

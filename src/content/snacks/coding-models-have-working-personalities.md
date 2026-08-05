@@ -3,6 +3,8 @@ title: Coding Models Have Working Personalities
 editorialTitle: Models Have Working Personalities
 standfirst: Models differ not only in capability but in literalness, initiative, caution and the habits they repeatedly bring to a working relationship.
 status: review
+publishedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: agents
 relatedTopics:

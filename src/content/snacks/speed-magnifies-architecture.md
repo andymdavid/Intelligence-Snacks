@@ -3,6 +3,8 @@ title: AI Speed Makes Architectural Judgement More Important
 editorialTitle: Speed Magnifies Architecture
 standfirst: Agents make implementation and rebuilding cheaper, but they also allow weak structural decisions to spread through a system with extraordinary speed.
 status: review
+publishedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: software-systems
 relatedTopics:

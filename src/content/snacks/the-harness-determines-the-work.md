@@ -3,6 +3,8 @@ title: The Harness Determines What an AI Agent Can Become
 editorialTitle: The Harness Determines the Work
 standfirst: The model supplies reasoning and generation. The surrounding harness determines its context, tools, feedback and practical limits.
 status: review
+publishedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: agents
 relatedTopics:

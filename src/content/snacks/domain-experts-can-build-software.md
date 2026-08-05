@@ -3,6 +3,8 @@ title: Domain Experts Can Now Build Software Around the Work They Know
 editorialTitle: Domain Knowledge Builds Software
 standfirst: Coding agents shorten the translation chain between operational knowledge and working software, allowing systems to grow around real use.
 status: review
+publishedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: software-systems
 relatedTopics:

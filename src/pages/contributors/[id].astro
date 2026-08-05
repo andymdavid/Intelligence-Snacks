@@ -27,9 +27,24 @@ const isHost = person.id === 'pete-winn' || person.id === 'andy-david';
 const visibleEpisodes = isHost ? episodes.slice(0, 3) : episodes;
 const visibleSnacks = isHost ? snacks.slice(0, 3) : snacks;
 const topics = new Map((await getCollection('topics')).map((topic) => [topic.id, topic]));
+const pageUrl = new URL(`/contributors/${person.id}/`, Astro.site).href;
+const pageTitle = person.data.seo?.title ?? `${person.data.name} — Intelligence Snacks`;
+const pageDescription = person.data.seo?.description ?? person.data.shortBio;
+const pageImage = person.data.seo?.image ?? person.data.image ?? '/social-default.webp';
+const sameAs = person.data.socialLinks ? Object.values(person.data.socialLinks).filter(Boolean) : [];
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'ProfilePage', url: pageUrl,
+  mainEntity: { '@type': 'Person', name: person.data.name, description: pageDescription, image: new URL(pageImage, Astro.site).href, url: pageUrl, sameAs },
+}, {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: 'Contributors', item: new URL('/contributors/', Astro.site).href },
+    { '@type': 'ListItem', position: 3, name: person.data.name, item: pageUrl },
+  ],
+}];
 ---
 
-<BaseLayout title={`${person.data.name} — Intelligence Snacks`} description={person.data.shortBio} active="contributors">
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage} canonicalUrl={person.data.seo?.canonicalUrl} type="profile" {jsonLd} active="contributors">
   <header class="contributor-head page-shell">
     <div class="contributor-head__portrait">
       {person.data.image

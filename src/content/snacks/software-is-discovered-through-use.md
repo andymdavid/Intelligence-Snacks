@@ -3,6 +3,8 @@ title: Software Products Are Discovered Through Use
 editorialTitle: Software Is Discovered Through Use
 standfirst: Product requirements remain incomplete until a working system meets real behaviour, exceptions and expectations.
 status: review
+publishedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: software-systems
 relatedTopics:

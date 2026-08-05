@@ -22,8 +22,27 @@ const related = await Promise.all(snack.data.relationships.map(async (relationsh
   const targetTopic = target ? await getEntry(target.data.primaryTopic) : undefined;
   return { relationship, snack: target, topic: targetTopic };
 }));
+const pageUrl = new URL(`/snacks/${snack.id}/`, Astro.site).href;
+const pageTitle = snack.data.seo?.title ?? `${snack.data.title} — Intelligence Snacks`;
+const pageDescription = snack.data.seo?.description ?? snack.data.standfirst;
+const pageImage = snack.data.seo?.image ?? '/social-default.webp';
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'Article', headline: snack.data.title,
+  description: pageDescription, url: pageUrl, mainEntityOfPage: pageUrl,
+  image: new URL(pageImage, Astro.site).href,
+  datePublished: snack.data.publishedAt?.toISOString(), dateModified: snack.data.updatedAt?.toISOString() ?? snack.data.publishedAt?.toISOString(),
+  author: contributors.map((person) => ({ '@type': 'Person', name: person.data.name, url: new URL(`/contributors/${person.id}/`, Astro.site).href })),
+  publisher: { '@type': 'Organization', name: 'Intelligence Snacks', url: new URL('/', Astro.site).href, logo: { '@type': 'ImageObject', url: new URL('/images/intelligence-snacks-logo.webp', Astro.site).href } },
+  about: { '@type': 'Thing', name: topic?.data.name }, isPartOf: episode ? { '@type': 'PodcastEpisode', name: episode.data.title, url: new URL(`/episodes/${episode.id}/`, Astro.site).href } : undefined,
+}, {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: 'Snacks', item: new URL('/snacks/', Astro.site).href },
+    { '@type': 'ListItem', position: 3, name: snack.data.title, item: pageUrl },
+  ],
+}];
 ---
-<BaseLayout title={`${snack.data.title} — Intelligence Snacks`} description={snack.data.standfirst} active="snacks">
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage} canonicalUrl={snack.data.seo?.canonicalUrl} type="article" publishedAt={snack.data.publishedAt} modifiedAt={snack.data.updatedAt} {jsonLd} active="snacks">
   <article>
     <header class="article-head page-shell">
       <div class="article-head__meta"><a href={`/topics/${topic?.id}/`}>{topic?.data.name}</a><span>Intelligence Snack</span></div>
