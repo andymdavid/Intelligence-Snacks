@@ -7,18 +7,19 @@ interface Props {
   topicName: string;
   colour: string;
   index: number;
-  variant?: 'standard' | 'wide' | 'list';
+  variant?: 'standard' | 'wide' | 'list' | 'archive';
+  episodeNumber?: number;
 }
 
-const { snack, topicName, colour, index, variant = 'standard' } = Astro.props;
+const { snack, topicName, colour, index, variant = 'standard', episodeNumber } = Astro.props;
 ---
 
 <article class:list={['snack-card', `snack-card--${variant}`]}>
-  {variant !== 'list' && <a class="snack-card__visual" href={`/snacks/${snack.id}/`} tabindex="-1"><StoryVisual label={snack.data.editorialTitle ?? topicName} {colour} {index} compact={variant === 'standard'} /></a>}
+  {variant !== 'list' && <a class="snack-card__visual" href={`/snacks/${snack.id}/`} tabindex="-1"><StoryVisual label={snack.data.editorialTitle ?? topicName} {colour} {index} compact={variant === 'standard' || variant === 'archive'} /></a>}
   <div class="snack-card__body">
-    <div class="card-meta"><a href={`/topics/${snack.data.primaryTopic.id}/`}>{topicName}</a><span>Snack {String(index).padStart(2, '0')}</span></div>
+    <div class="card-meta"><a href={`/topics/${snack.data.primaryTopic.id}/`}>{topicName}</a><span>{episodeNumber ? `Episode ${episodeNumber}` : `Snack ${String(index).padStart(2, '0')}`}</span></div>
     <h3><a href={`/snacks/${snack.id}/`}>{snack.data.title}</a></h3>
     <p>{snack.data.standfirst}</p>
-    <a class="text-link" href={`/snacks/${snack.id}/`}>Read the idea <span>↗</span></a>
+    <a class="text-link" href={`/snacks/${snack.id}/`}>Read the snack <span>↗</span></a>
   </div>
 </article>

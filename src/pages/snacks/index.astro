@@ -6,13 +6,101 @@ import { isVisible } from '@/lib/content';
 
 const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status));
 const topics = new Map((await getCollection('topics')).map((topic) => [topic.id, topic]));
+const episodes = new Map((await getCollection('episodes')).map((episode) => [episode.id, episode]));
+const episodeGroups = [...episodes.values()]
+  .sort((a, b) => b.data.number - a.data.number)
+  .map((episode) => ({
+    episode,
+    snacks: snacks.filter((snack) => snack.data.sourceEpisode.id === episode.id),
+  }))
+  .filter(({ snacks }) => snacks.length > 0);
+const usedTopics = [...topics.values()]
+  .filter((topic) => snacks.some((snack) => snack.data.primaryTopic.id === topic.id))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
 ---
 <BaseLayout title="All Snacks — Intelligence Snacks" description="Browse developed ideas about AI, software, business and work." active="snacks">
   <header class="archive-head page-shell"><p class="eyebrow">The archive</p><h1>Every idea,<br />given room to work.</h1><p>Each snack is a self-contained argument developed from a long-form conversation.</p></header>
-  <section class="page-shell section"><div class="snack-grid">{snacks.map((snack, index) => { const topic = topics.get(snack.data.primaryTopic.id)!; return <SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} />; })}</div></section>
+  <section class="snack-archive page-shell section" data-snack-archive>
+    <div class="snack-archive__toolbar">
+      <h2>All snacks</h2>
+      <div class="snack-filters" aria-label="Filter snacks">
+        <label class="filter-control"><span>Topic</span><select data-topic-filter aria-label="Filter by topic"><option value="all">All topics</option>{usedTopics.map((topic) => <option value={topic.id}>{topic.data.name}</option>)}</select></label>
+        <label class="filter-control"><span>Sort by</span><select data-sort-filter aria-label="Sort snacks"><option value="recent">Most recent</option><option value="oldest">Oldest first</option></select></label>
+      </div>
+    </div>
+    <div class="snack-archive__groups">
+      {episodeGroups.map(({ episode, snacks: episodeSnacks }) => (
+        <section class="episode-group" data-episode-group={episode.id}>
+          <div class="episode-group__head"><p>Episode {episode.data.number}</p><a href={`/episodes/${episode.id}/`}>{episode.data.title} <span>↗</span></a></div>
+          <div class="snack-archive-grid">
+            {episodeSnacks.map((snack, index) => { const topic = topics.get(snack.data.primaryTopic.id)!; return <div data-snack-card data-topic={topic.id}><SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" /></div>; })}
+          </div>
+        </section>
+      ))}
+    </div>
+    <p class="snack-archive__empty" data-empty-message hidden>No snacks match those filters.</p>
+  </section>
 </BaseLayout>
+
+<script>
+  const archive = document.querySelector<HTMLElement>('[data-snack-archive]');
+  if (archive) {
+    const topicFilter = archive.querySelector<HTMLSelectElement>('[data-topic-filter]');
+    const sortFilter = archive.querySelector<HTMLSelectElement>('[data-sort-filter]');
+    const groupsContainer = archive.querySelector<HTMLElement>('.snack-archive__groups');
+    const groups = [...archive.querySelectorAll<HTMLElement>('[data-episode-group]')];
+    const emptyMessage = archive.querySelector<HTMLElement>('[data-empty-message]');
+
+    const updateArchive = () => {
+      let visibleGroups = 0;
+      groups.forEach((group) => {
+        let visibleCards = 0;
+        group.querySelectorAll<HTMLElement>('[data-snack-card]').forEach((card) => {
+          const topicMatches = topicFilter?.value === 'all' || card.dataset.topic === topicFilter?.value;
+          card.hidden = !topicMatches;
+          if (topicMatches) visibleCards += 1;
+        });
+        group.hidden = visibleCards === 0;
+        if (visibleCards > 0) visibleGroups += 1;
+      });
+      const orderedGroups = sortFilter?.value === 'oldest' ? [...groups].reverse() : groups;
+      orderedGroups.forEach((group) => groupsContainer?.append(group));
+      if (emptyMessage) emptyMessage.hidden = visibleGroups > 0;
+    };
+
+    topicFilter?.addEventListener('change', updateArchive);
+    sortFilter?.addEventListener('change', updateArchive);
+  }
+</script>
 <style>
-  .archive-head { padding-block: clamp(4rem, 10vw, 10rem); border-bottom: 1px solid var(--line); }
-  .archive-head h1 { max-width: 1200px; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); margin-bottom: 3rem; }
-  .archive-head > p:last-child { max-width: 34rem; margin-left: auto; color: var(--text-secondary); font-size: var(--type-body-large); }
+  .archive-head { min-height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-block: clamp(3rem, 6vw, 6rem); border-bottom: 1px solid var(--line); text-align: center; }
+  .archive-head h1 { margin: 0; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
+  .archive-head > p:last-child { max-width: 30.5rem; margin: 1.5rem auto 0; color: var(--text-secondary); }
+  .snack-archive__toolbar { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: clamp(3rem, 5vw, 5rem); }
+  .snack-archive__toolbar h2 { margin: 0; font-size: var(--type-section); font-weight: 500; line-height: var(--leading-display); letter-spacing: var(--tracking-display); }
+  .snack-filters { display: flex; align-items: end; gap: .6rem; }
+  .filter-control { position: relative; display: grid; min-width: 12rem; }
+  .filter-control > span { position: absolute; z-index: 1; top: .55rem; left: .9rem; color: var(--text-muted); font-family: var(--font-mono); font-size: .58rem; font-weight: 600; letter-spacing: .07em; line-height: 1; text-transform: uppercase; pointer-events: none; }
+  .filter-control::after { content: ''; position: absolute; right: 1rem; bottom: 1.15rem; width: .42rem; height: .42rem; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); pointer-events: none; }
+  .filter-control select { width: 100%; height: 3.5rem; padding: 1.35rem 2.6rem .35rem .9rem; appearance: none; border: 1px solid var(--line); border-radius: 3px; outline: 0; background: var(--paper); color: var(--ink); font: 500 .88rem/1 var(--font-display); cursor: pointer; transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease; }
+  .filter-control:hover select { border-color: #aaa; background: var(--paper-raised); }
+  .filter-control select:focus-visible { border-color: var(--ink); box-shadow: 0 0 0 2px var(--coral); }
+  .snack-archive__groups { display: grid; }
+  .episode-group { padding-bottom: clamp(3.5rem, 6vw, 6rem); margin-bottom: clamp(3.5rem, 6vw, 6rem); border-bottom: 1px solid var(--line); }
+  .episode-group:last-child { margin-bottom: 0; }
+  .episode-group__head { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; margin-bottom: 1.5rem; color: var(--text-muted); font-size: .78rem; }
+  .episode-group__head p { margin: 0; font-family: var(--font-mono); font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+  .episode-group__head a { max-width: 38rem; text-align: right; }
+  .snack-archive-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(.65rem, 1vw, 1rem); row-gap: clamp(3.5rem, 6vw, 6rem); }
+  .snack-archive-grid :global(.snack-card--archive) { min-width: 0; background: transparent; }
+  .snack-archive-grid :global(.snack-card__visual .story-visual--compact) { min-height: 0; aspect-ratio: 3 / 2; }
+  .snack-archive-grid :global(.snack-card__body) { padding: 1rem .8rem 0 0; }
+  .snack-archive-grid :global(.card-meta) { margin-bottom: .8rem; color: var(--text-muted); font-family: var(--font-body); font-size: .76rem; letter-spacing: 0; text-transform: none; }
+  .snack-archive-grid :global(.snack-card h3) { margin-bottom: .7rem; line-height: 1.02; }
+  .snack-archive-grid :global(.snack-card p) { font-size: .96rem; line-height: 1.45; }
+  .snack-archive-grid :global(.text-link) { padding-top: 1.25rem; }
+  .snack-archive__empty { padding-block: 4rem; color: var(--text-secondary); text-align: center; }
+  @media (max-width: 900px) { .snack-archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 700px) { .snack-archive__toolbar { align-items: stretch; flex-direction: column; } .snack-filters { width: 100%; } .snack-filters label { flex: 1; } .snack-filters select { width: 100%; min-width: 0; } }
+  @media (max-width: 620px) { .snack-archive-grid { grid-template-columns: 1fr; } .snack-filters { flex-direction: column; align-items: stretch; } .episode-group__head { align-items: flex-start; flex-direction: column; gap: .5rem; } .episode-group__head a { text-align: left; } }
 </style>
