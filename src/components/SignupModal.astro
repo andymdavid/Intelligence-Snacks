@@ -1,0 +1,52 @@
+---
+import EmailSignup from './EmailSignup.astro';
+---
+
+<dialog class="signup-modal" data-signup-modal aria-labelledby="signup-modal-title">
+  <button class="signup-modal__close" type="button" data-signup-close aria-label="Close signup">×</button>
+  <div class="signup-modal__mark"><img src="/images/intelligence-snacks-logo.webp" alt="" width="960" height="640" /></div>
+  <h2 id="signup-modal-title">Get Intelligence Snacks in your inbox.</h2>
+  <p class="signup-modal__copy">Quickly digest the big ideas emerging from the world of AI, delivered each week.</p>
+  <EmailSignup id="modal-email" source="signup-modal" buttonLabel="Send me snacks" />
+</dialog>
+
+<script>
+  const modal = document.querySelector<HTMLDialogElement>('[data-signup-modal]');
+  if (modal) {
+    const openModal = () => {
+      if (!modal.open) modal.showModal();
+      requestAnimationFrame(() => modal.querySelector<HTMLInputElement>('input[type="email"]')?.focus());
+    };
+    const closeModal = () => modal.close();
+
+    document.querySelectorAll<HTMLElement>('[data-open-signup]').forEach((trigger) => trigger.addEventListener('click', openModal));
+    modal.querySelector<HTMLElement>('[data-signup-close]')?.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+      const bounds = modal.getBoundingClientRect();
+      const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
+      if (outside) closeModal();
+    });
+    const exitKey = 'intelligence-snacks-exit-signup-shown';
+    const subscribedKey = 'intelligence-snacks-subscribed';
+    let exitReady = false;
+    window.setTimeout(() => { exitReady = true; }, 5000);
+    document.addEventListener('mouseout', (event) => {
+      if (!exitReady || event.relatedTarget || event.clientY > 0 || window.matchMedia('(pointer: coarse)').matches) return;
+      if (sessionStorage.getItem(exitKey) || localStorage.getItem(subscribedKey)) return;
+      sessionStorage.setItem(exitKey, 'true');
+      openModal();
+    });
+  }
+</script>
+
+<style>
+  .signup-modal { width: min(calc(100% - 2rem), 37rem); margin: auto; padding: clamp(2rem, 5vw, 4rem); border: 0; border-radius: 6px; background: var(--paper); color: var(--ink); box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, .22); }
+  .signup-modal::backdrop { background: rgba(0, 0, 0, .58); backdrop-filter: blur(3px); }
+  .signup-modal__close { position: absolute; top: 1rem; right: 1rem; width: 2.25rem; height: 2.25rem; display: grid; place-items: center; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+  .signup-modal__mark { width: 5.25rem; height: 5.25rem; margin-bottom: 2.5rem; overflow: hidden; border-radius: 50%; background: var(--paper-raised); }
+  .signup-modal__mark img { width: 100%; height: 100%; padding: .2rem; border-radius: 0; object-fit: contain; }
+  .signup-modal h2 { max-width: 30rem; margin-bottom: 1.25rem; font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 500; line-height: .98; letter-spacing: var(--tracking-display); }
+  .signup-modal__copy { max-width: 29rem; margin-bottom: 2rem; color: var(--text-secondary); }
+  .signup-modal :global(.email-signup) { width: 100%; }
+  @media (max-width: 520px) { .signup-modal { padding: 2rem 1.25rem; } .signup-modal :global(.email-signup__controls) { flex-direction: column; } .signup-modal :global(button[type='submit']) { width: 100%; } }
+</style>

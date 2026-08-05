@@ -31,6 +31,7 @@ const { id, source, class: className = '', buttonLabel = 'Get the weekly edition
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
     const message = form.querySelector<HTMLElement>('[data-signup-message]');
     if (!input || !honeypot || !button || !message) return;
+    const buttonMarkup = button.innerHTML;
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -61,11 +62,13 @@ const { id, source, class: className = '', buttonLabel = 'Get the weekly edition
         input.value = '';
         input.disabled = true;
         button.textContent = 'Subscribed';
-        message.textContent = 'Thanks — check your inbox to confirm your subscription.';
+        message.textContent = 'Welcome to Intelligence Snacks.';
         message.classList.add('is-success');
+        localStorage.setItem('intelligence-snacks-subscribed', 'true');
+        window.dispatchEvent(new CustomEvent('intelligence-snacks:subscribed'));
       } catch (error) {
         button.disabled = false;
-        button.innerHTML = 'Get the weekly edition <span aria-hidden="true">↗</span>';
+        button.innerHTML = buttonMarkup;
         message.textContent = error instanceof Error ? error.message : 'Something went wrong. Please try again.';
         message.classList.add('is-error');
       }
@@ -88,7 +91,7 @@ const { id, source, class: className = '', buttonLabel = 'Get the weekly edition
   .email-signup__message { min-height: 1.4em; margin: .65rem 0 0; font-size: .8125rem; }
   .email-signup__message:empty { display: none; }
   .email-signup__message.is-error { color: #9d2410; }
-  .email-signup__message.is-success { color: var(--ink); }
+  .email-signup__message.is-success { color: #8a5fd1; }
   .email-signup__honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
   .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 

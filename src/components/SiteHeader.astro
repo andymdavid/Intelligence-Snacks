@@ -5,6 +5,7 @@ const links: Array<readonly [string, string]> = [
   ['Snacks', '/snacks/'],
   ['Episodes', '/episodes/'],
   ['Topics', '/topics/'],
+  ['Contributors', '/contributors/'],
 ];
 ---
 
@@ -12,10 +13,10 @@ const links: Array<readonly [string, string]> = [
   <a class="wordmark" href="/" aria-label="Intelligence Snacks home">
     <img
       class="wordmark__mark"
-      src="/images/intelligence-snacks-cassette-pixel.webp"
+      src="/images/intelligence-snacks-logo.webp"
       alt=""
-      width="384"
-      height="256"
+      width="960"
+      height="640"
     />
     <span class="wordmark__text">
       <span>Intelligence</span><span>Snacks</span>
@@ -30,6 +31,6 @@ const links: Array<readonly [string, string]> = [
     <a class="search-link" href="/search/" aria-label="Search Intelligence Snacks">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg>
     </a>
-    <a class="subscribe-button" href="#subscribe">Send me snacks <span aria-hidden="true">↗</span></a>
+    <button class="subscribe-button" type="button" data-open-signup>Send me snacks <span aria-hidden="true">↗</span></button>
   </div>
 </header>
