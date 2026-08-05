@@ -17,15 +17,21 @@ const contributors = episode
   ? (await Promise.all(episode.data.participants.map((participant) => getEntry(participant)))).filter((person) => person?.data.image)
   : [];
 const topic = await getEntry(snack.data.primaryTopic);
-const related = await Promise.all(snack.data.relationships.map(async (relationship) => ({ relationship, snack: await getEntry(relationship.target) })));
+const related = await Promise.all(snack.data.relationships.map(async (relationship) => {
+  const target = await getEntry(relationship.target);
+  const targetTopic = target ? await getEntry(target.data.primaryTopic) : undefined;
+  return { relationship, snack: target, topic: targetTopic };
+}));
 ---
 <BaseLayout title={`${snack.data.title} — Intelligence Snacks`} description={snack.data.standfirst} active="snacks">
   <article>
     <header class="article-head page-shell">
       <div class="article-head__meta"><a href={`/topics/${topic?.id}/`}>{topic?.data.name}</a><span>Intelligence Snack</span></div>
       <h1>{snack.data.title}</h1>
-      <p class="standfirst">{snack.data.standfirst}</p>
-      <div class="article-head__source"><div><ContributorRow people={contributors} /><p>{snack.data.attribution}</p></div><p>{episode && <>From <a href={`/episodes/${episode.id}/`}>Episode {episode.data.number}: {episode.data.title}</a></>}</p></div>
+      <div class="article-head__details">
+        <p class="standfirst">{snack.data.standfirst}</p>
+        <div class="article-head__source"><div><ContributorRow people={contributors} /><p>{snack.data.attribution}</p></div><p>{episode && <>From <a href={`/episodes/${episode.id}/`}>Episode {episode.data.number}: {episode.data.title}</a></>}</p></div>
+      </div>
     </header>
     <div class="article-visual page-shell"><StoryVisual label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#c4f256'} index={episode?.data.number ?? 1} /></div>
     <div class="article-layout page-shell">
@@ -33,14 +39,31 @@ const related = await Promise.all(snack.data.relationships.map(async (relationsh
       <div class="prose"><Content /></div>
     </div>
   </article>
-  {related.length > 0 && <section class="related page-shell section"><div class="section-heading"><h2>Follow the thinking</h2><p>Ideas connected across the archive.</p></div><div class="related__grid">{related.map(({ relationship, snack: target }) => target && <article><p class="eyebrow">{relationship.type.replace('-', ' ')}</p><h3><a href={`/snacks/${target.id}/`}>{target.data.title}</a></h3>{relationship.note && <p>{relationship.note}</p>}<a class="text-link" href={`/snacks/${target.id}/`}>Read next <span>↗</span></a></article>)}</div></section>}
+  {related.length > 0 && <section class="related page-shell section">
+    <div class="section-heading"><h2>Follow the thinking</h2><p>Ideas connected across the archive.</p></div>
+    <div class="related__grid">
+      {related.map(({ relationship, snack: target, topic: targetTopic }, index) => target && <article class="related-card">
+        <a class="related-card__visual" href={`/snacks/${target.id}/`} tabindex="-1">
+          <StoryVisual label={target.data.editorialTitle ?? targetTopic?.data.name ?? 'Intelligence Snack'} colour={targetTopic?.data.colour ?? '#c4f256'} index={index + 1} compact />
+        </a>
+        <div class="related-card__body">
+          <div class="related-card__meta"><a href={`/topics/${targetTopic?.id}/`}>{targetTopic?.data.name}</a><span>{relationship.type.replace('-', ' ')}</span></div>
+          <h3><a href={`/snacks/${target.id}/`}>{target.data.title}</a></h3>
+          <p>{relationship.note ?? target.data.standfirst}</p>
+          <a class="text-link" href={`/snacks/${target.id}/`}>Read the snack <span>↗</span></a>
+        </div>
+      </article>)}
+    </div>
+  </section>}
 </BaseLayout>
 <style>
   .article-head { padding-block: clamp(4rem, 8vw, 8rem); }
   .article-head__meta { display: flex; justify-content: space-between; font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 7vw; }
-  .article-head h1 { max-width: 1400px; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); margin-bottom: 4rem; }
-  .standfirst { max-width: 780px; margin-left: auto; font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.2; letter-spacing: -.02em; }
-  .article-head__source { max-width: 780px; margin: 4rem 0 0 auto; display: flex; justify-content: space-between; gap: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+  .article-head h1 { max-width: 1400px; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); margin-bottom: clamp(2.5rem, 4vw, 4rem); }
+  .article-head__details { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(280px, 1fr); align-items: start; gap: clamp(3rem, 8vw, 9rem); padding-top: clamp(1.5rem, 2.5vw, 2.5rem); border-top: 1px solid var(--line); }
+  .standfirst { max-width: 780px; margin: 0; font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.2; letter-spacing: -.02em; }
+  .article-head__source { display: flex; flex-direction: column; gap: 1.5rem; color: var(--muted); font-size: .78rem; }
+  .article-head__source > p { margin: 0; }
   .article-head__source > div > p { margin: .7rem 0 0; }
   .article-head__source a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
   .article-visual :global(.story-visual) { min-height: clamp(380px, 55vw, 800px); }
@@ -49,9 +72,16 @@ const related = await Promise.all(snack.data.relationships.map(async (relationsh
   .prose { grid-column: 2; font-family: var(--font-body); font-size: var(--type-body-large); line-height: 1.5; }
   .prose :global(p:first-child::first-letter) { float: left; font-family: var(--font-display); font-size: 5.6em; line-height: .72; padding: .12em .08em 0 0; font-weight: 500; }
   .prose :global(p) { margin-bottom: 1.6em; }
-  .related__grid { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--line); background: var(--line); gap: 1px; }
-  .related article { background: var(--paper); padding: clamp(1.5rem, 3vw, 3rem); }
-  .related h3 { font-size: var(--type-section); line-height: var(--leading-display); letter-spacing: var(--tracking-display); font-weight: 500; }
-  .related article > p:not(.eyebrow) { max-width: 36rem; color: var(--text-secondary); }
-  @media (max-width: 800px) { .article-layout { grid-template-columns: 1fr; } .article-layout aside, .prose { grid-column: 1; } .article-head__source { flex-direction: column; } .related__grid { grid-template-columns: 1fr; } }
+  .related__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.65rem, 1vw, 1rem); }
+  .related-card { min-width: 0; }
+  .related-card__visual { display: block; border: 0; outline: 0; }
+  .related-card__visual :global(.story-visual--compact) { min-height: 0; aspect-ratio: 3 / 2; }
+  .related-card__body { padding: 1rem .8rem 0 0; }
+  .related-card__meta { min-height: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; color: var(--text-muted); font-size: .76rem; }
+  .related-card__meta span { text-transform: capitalize; }
+  .related-card h3 { margin-bottom: .7rem; font-size: var(--type-card); line-height: 1.02; letter-spacing: var(--tracking-display); font-weight: 500; }
+  .related-card__body > p { max-width: 40rem; margin: 0 0 1.25rem; color: var(--text-secondary); font-size: .96rem; line-height: 1.45; }
+  @media (max-width: 900px) { .related__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 800px) { .article-head__details, .article-layout { grid-template-columns: 1fr; } .article-head__details { gap: 2.5rem; } .article-layout aside, .prose { grid-column: 1; } }
+  @media (max-width: 600px) { .related__grid { grid-template-columns: 1fr; } }
 </style>
