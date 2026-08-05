@@ -1,6 +1,7 @@
 import { extname, join, normalize } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const distDirectory = join(import.meta.dir, '..', 'dist');
+const distDirectory = join(fileURLToPath(new URL('.', import.meta.url)), '..', 'dist');
 const port = Number(process.env.PORT ?? 80);
 const rateLimitWindowMs = 15 * 60 * 1000;
 const rateLimitMax = 10;
@@ -27,7 +28,7 @@ const isRateLimited = (address: string) => {
   return current.count > rateLimitMax;
 };
 
-async function subscribe(request: Request) {
+export async function subscribe(request: Request) {
   if (isRateLimited(getAddress(request))) return json({ error: 'Too many attempts. Please try again shortly.' }, 429);
 
   let payload: { email?: unknown; website?: unknown; source?: unknown };
@@ -114,19 +115,21 @@ async function staticResponse(request: Request) {
   return new Response('Not found', { status: 404 });
 }
 
-Bun.serve({
-  port,
-  hostname: '0.0.0.0',
-  async fetch(request) {
-    const { pathname } = new URL(request.url);
-    if (pathname === '/healthz') return new Response('ok');
-    if (pathname === '/api/subscribe') {
-      if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405);
-      return subscribe(request);
-    }
-    if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405 });
-    return staticResponse(request);
-  },
-});
+if (import.meta.main) {
+  Bun.serve({
+    port,
+    hostname: '0.0.0.0',
+    async fetch(request) {
+      const { pathname } = new URL(request.url);
+      if (pathname === '/healthz') return new Response('ok');
+      if (pathname === '/api/subscribe') {
+        if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405);
+        return subscribe(request);
+      }
+      if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405 });
+      return staticResponse(request);
+    },
+  });
 
-console.log(`Intelligence Snacks listening on port ${port}`);
+  console.log(`Intelligence Snacks listening on port ${port}`);
+}
