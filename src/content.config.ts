@@ -95,17 +95,4 @@ const snacks = defineCollection({
   }),
 });
 
-const newsletters = defineCollection({
-  loader: glob({ base: './src/content/newsletters', pattern: '**/*.{md,mdx}' }),
-  schema: z.object({
-    title: z.string(),
-    editionNumber: z.number().int().positive(),
-    status,
-    publishedAt: z.coerce.date().optional(),
-    sourceEpisode: reference('episodes'),
-    snacks: z.array(reference('snacks')).min(1),
-    fixture: z.boolean().default(false),
-  }),
-});
-
-export const collections = { people, topics, episodes, snacks, newsletters };
+export const collections = { people, topics, episodes, snacks };
