@@ -14,9 +14,11 @@ const contributors = (await getCollection('people')).sort((a, b) => {
   return (appearanceCount.get(b.id) ?? 0) - (appearanceCount.get(a.id) ?? 0) || a.data.name.localeCompare(b.data.name);
 });
 const surfaces = ['#fe7141', '#cdabfe', '#d1ddd3'];
+const pageUrl = new URL('/contributors/', Astro.site).href;
+const jsonLd = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': pageUrl, url: pageUrl, name: 'Contributors', description: 'Meet the hosts and guests behind the conversations that become Intelligence Snacks.', inLanguage: 'en-AU', isPartOf: { '@id': new URL('/#website', Astro.site).href }, mainEntity: { '@type': 'ItemList', itemListElement: contributors.map((person, index) => ({ '@type': 'ListItem', position: index + 1, name: person.data.name, url: new URL(`/contributors/${person.id}/`, Astro.site).href })) } }, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href }, { '@type': 'ListItem', position: 2, name: 'Contributors', item: pageUrl }] }];
 ---
 
-<BaseLayout title="Contributors — Intelligence Snacks" description="Meet the hosts and guests behind the conversations that become Intelligence Snacks." active="contributors">
+<BaseLayout title="Contributors — Intelligence Snacks" description="Meet the hosts and guests behind the conversations that become Intelligence Snacks." {jsonLd} active="contributors">
   <header class="contributors-head page-shell">
     <p class="eyebrow">Contributors</p>
     <h1>Big ideas begin<br />with interesting people.</h1>

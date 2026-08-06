@@ -17,8 +17,13 @@ const episodeGroups = [...episodes.values()]
 const usedTopics = [...topics.values()]
   .filter((topic) => snacks.some((snack) => snack.data.primaryTopic.id === topic.id))
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
+const pageUrl = new URL('/snacks/', Astro.site).href;
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': pageUrl, url: pageUrl, name: 'All Snacks', description: 'Browse developed ideas about AI, software, business and work.', inLanguage: 'en-AU', isPartOf: { '@id': new URL('/#website', Astro.site).href },
+  mainEntity: { '@type': 'ItemList', itemListElement: snacks.map((snack, index) => ({ '@type': 'ListItem', position: index + 1, name: snack.data.title, url: new URL(`/snacks/${snack.id}/`, Astro.site).href })) },
+}, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href }, { '@type': 'ListItem', position: 2, name: 'Snacks', item: pageUrl }] }];
 ---
-<BaseLayout title="All Snacks — Intelligence Snacks" description="Browse developed ideas about AI, software, business and work." active="snacks">
+<BaseLayout title="All Snacks — Intelligence Snacks" description="Browse developed ideas about AI, software, business and work." {jsonLd} active="snacks">
   <header class="archive-head page-shell"><p class="eyebrow">The archive</p><h1>Every idea,<br />given room to work.</h1><p>Each snack is a self-contained argument developed from a long-form conversation.</p></header>
   <section class="snack-archive page-shell section" data-snack-archive>
     <div class="snack-archive__toolbar">

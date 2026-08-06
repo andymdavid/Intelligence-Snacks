@@ -9,6 +9,8 @@ interface Props {
   description?: string;
   active?: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   type?: 'website' | 'article' | 'profile';
   publishedAt?: Date | undefined;
   modifiedAt?: Date | undefined;
@@ -22,6 +24,8 @@ const {
   description = 'Long conversations about AI, software and business, developed into useful ideas.',
   active = '',
   image = '/social-default.webp',
+  imageWidth = 1200,
+  imageHeight = 630,
   type = 'website',
   publishedAt,
   modifiedAt,
@@ -31,6 +35,32 @@ const {
 } = Astro.props;
 const canonical = canonicalUrl ? new URL(canonicalUrl) : new URL(Astro.url.pathname, Astro.site);
 const structuredData = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+const site = Astro.site!;
+const globalGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization', '@id': new URL('/#organization', site).href,
+      name: 'Intelligence Snacks', url: new URL('/', site).href,
+      logo: { '@type': 'ImageObject', '@id': new URL('/#logo', site).href, url: new URL('/images/intelligence-snacks-logo.webp', site).href, width: 480, height: 320 },
+      image: { '@id': new URL('/#logo', site).href },
+      sameAs: ['https://www.youtube.com/@IntelligenceSnacks', 'https://open.spotify.com/show/5mhoDNtKg1A0j0IZIw0fIv'],
+      parentOrganization: { '@type': 'Organization', name: 'Other Stuff', url: 'https://otherstuff.ai/' },
+    },
+    {
+      '@type': 'WebSite', '@id': new URL('/#website', site).href,
+      url: new URL('/', site).href, name: 'Intelligence Snacks', inLanguage: 'en-AU',
+      publisher: { '@id': new URL('/#organization', site).href },
+    },
+    {
+      '@type': 'PodcastSeries', '@id': new URL('/episodes/#podcast', site).href,
+      name: 'Intelligence Snacks', alternateName: 'The Good Stuff',
+      url: new URL('/episodes/', site).href, inLanguage: 'en-AU',
+      publisher: { '@id': new URL('/#organization', site).href },
+      sameAs: ['https://www.youtube.com/@IntelligenceSnacks', 'https://open.spotify.com/show/5mhoDNtKg1A0j0IZIw0fIv'],
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -40,14 +70,23 @@ const structuredData = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en-AU" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title="Intelligence Snacks" href="/rss.xml" />
+    <link rel="alternate" type="text/plain" title="Intelligence Snacks for language models" href="/llms.txt" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:image:width" content={String(imageWidth)} />
+    <meta property="og:image:height" content={String(imageHeight)} />
+    <meta property="og:image:alt" content={`${title} — Intelligence Snacks`} />
     <meta property="og:site_name" content="Intelligence Snacks" />
     <meta property="og:locale" content="en_AU" />
     {publishedAt && <meta property="article:published_time" content={publishedAt.toISOString()} />}
@@ -56,10 +95,12 @@ const structuredData = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:image:alt" content={`${title} — Intelligence Snacks`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@500;600;700&family=Geist:wght@400;500;600;700&family=Jersey+15&display=swap" rel="stylesheet" />
     <title>{title}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(globalGraph).replace(/</g, '\u003c')} />
     {structuredData.map((entry) => <script is:inline type="application/ld+json" set:html={JSON.stringify(entry).replace(/</g, '\u003c')} />)}
   </head>
   <body>

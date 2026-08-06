@@ -24,9 +24,16 @@ const heroSnacks = featured
       snacks.find(({ id, data }) => id !== featured.id && data.primaryTopic.id === 'software-systems'),
     ].filter((snack) => snack !== undefined)
   : [];
+const homeUrl = new URL('/', Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'WebPage', '@id': homeUrl, url: homeUrl,
+  name: 'Intelligence Snacks — Ideas for the age of AI', description: 'Long conversations about AI, software and business, developed into useful ideas.',
+  inLanguage: 'en-AU', isPartOf: { '@id': new URL('/#website', Astro.site).href },
+  mainEntity: { '@type': 'ItemList', itemListElement: snacks.slice(0, 12).map((snack, index) => ({ '@type': 'ListItem', position: index + 1, name: snack.data.title, url: new URL(`/snacks/${snack.id}/`, Astro.site).href })) },
+};
 ---
 
-<BaseLayout active="latest">
+<BaseLayout {jsonLd} active="latest">
   <section class="home-intro page-shell">
     <div class="home-intro__content">
       <p class="eyebrow">AI · Software · Business · Work</p>

@@ -11,11 +11,13 @@ export const GET: APIRoute = async (context) => {
     title: 'Intelligence Snacks',
     description: 'Long conversations about AI, software and business, developed into useful ideas.',
     site: context.site!,
+    customData: '<language>en-AU</language>',
     items: snacks.map((snack) => ({
       title: snack.data.title,
       description: snack.data.standfirst,
       pubDate: snack.data.publishedAt,
       link: `/snacks/${snack.id}/`,
+      categories: [snack.data.primaryTopic.id, ...snack.data.relatedTopics.map(({ id }) => id)],
     })),
   });
 };

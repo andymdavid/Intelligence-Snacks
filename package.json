@@ -9,12 +9,13 @@
     "build": "astro check && astro build",
     "build:prototype": "PUBLIC_INCLUDE_REVIEW=true astro check && PUBLIC_INCLUDE_REVIEW=true astro build",
     "sync:episodes": "node scripts/sync-youtube-episodes.mjs",
+    "indexnow": "node scripts/submit-indexnow.mjs",
+    "social:generate": "node scripts/generate-social-images.mjs",
     "preview": "astro preview --host 0.0.0.0",
     "check": "astro check"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.1.6"
   },
   "devDependencies": {

@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 import { subscribe } from './server/index.ts';
 
 const subscriptionDevRoute = {
@@ -45,7 +44,7 @@ export default defineConfig({
       allowedHosts: ['slim-tea-rose.lara1.runwingman.com'],
     },
   },
-  integrations: [subscriptionDevRoute, sitemap()],
+  integrations: [subscriptionDevRoute],
   build: {
     format: 'directory',
   },

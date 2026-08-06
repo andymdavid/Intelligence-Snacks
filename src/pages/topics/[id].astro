@@ -6,8 +6,10 @@ import { isVisible } from '@/lib/content';
 export async function getStaticPaths() { return (await getCollection('topics')).map((topic) => ({ params: { id: topic.id }, props: { topic } })); }
 const { topic } = Astro.props;
 const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status) && (data.primaryTopic.id === topic.id || data.relatedTopics.some(({ id }) => id === topic.id)));
+const pageUrl = new URL(`/topics/${topic.id}/`, Astro.site).href;
+const jsonLd = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': pageUrl, url: pageUrl, name: topic.data.name, description: topic.data.description, inLanguage: 'en-AU', isPartOf: { '@id': new URL('/#website', Astro.site).href }, about: { '@type': 'DefinedTerm', '@id': `${pageUrl}#topic`, name: topic.data.name, description: topic.data.description, url: pageUrl }, mainEntity: { '@type': 'ItemList', itemListElement: snacks.map((snack, index) => ({ '@type': 'ListItem', position: index + 1, name: snack.data.title, url: new URL(`/snacks/${snack.id}/`, Astro.site).href })) } }, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href }, { '@type': 'ListItem', position: 2, name: 'Topics', item: new URL('/topics/', Astro.site).href }, { '@type': 'ListItem', position: 3, name: topic.data.name, item: pageUrl }] }];
 ---
-<BaseLayout title={`${topic.data.name} — Intelligence Snacks`} description={topic.data.description} active="topics">
+<BaseLayout title={`${topic.data.name} — Intelligence Snacks`} description={topic.data.description} {jsonLd} active="topics">
   <header class="topic-head page-shell" style={`--topic:${topic.data.colour}`}><p class="eyebrow">Topic</p><h1>{topic.data.name}</h1><p>{topic.data.description}</p></header>
   <section class="page-shell section"><div class="section-heading"><h2>Ideas in {topic.data.name}</h2></div><div class="topic-snack-grid">{snacks.map((snack, index) => <SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} variant="archive" />)}</div></section>
 </BaseLayout>

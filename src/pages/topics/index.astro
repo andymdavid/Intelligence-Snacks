@@ -2,8 +2,10 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 const topics = await getCollection('topics');
+const pageUrl = new URL('/topics/', Astro.site).href;
+const jsonLd = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': pageUrl, url: pageUrl, name: 'Topics', description: 'Explore the central territories in the Intelligence Snacks archive.', inLanguage: 'en-AU', isPartOf: { '@id': new URL('/#website', Astro.site).href }, mainEntity: { '@type': 'ItemList', itemListElement: topics.map((topic, index) => ({ '@type': 'ListItem', position: index + 1, name: topic.data.name, url: new URL(`/topics/${topic.id}/`, Astro.site).href })) } }, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href }, { '@type': 'ListItem', position: 2, name: 'Topics', item: pageUrl }] }];
 ---
-<BaseLayout title="Topics — Intelligence Snacks" description="Explore the central territories in the Intelligence Snacks archive." active="topics">
+<BaseLayout title="Topics — Intelligence Snacks" description="Explore the central territories in the Intelligence Snacks archive." {jsonLd} active="topics">
   <header class="topics-head page-shell"><p class="eyebrow">Explore by topic</p><h1>The territories<br />we keep returning to.</h1><p>Follow the recurring ideas connecting conversations about AI, software and modern business.</p></header>
   <section class="topics-section page-shell section"><div class="topic-grid">{topics.map((topic, index) => <a href={`/topics/${topic.id}/`} style={`--topic:${topic.data.colour}`}><span>{String(index + 1).padStart(2, '0')}</span><h2>{topic.data.name}</h2><p>{topic.data.description}</p><b>Explore topic ↗</b></a>)}</div></section>
 </BaseLayout>

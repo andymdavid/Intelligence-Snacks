@@ -4,8 +4,10 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import StoryVisual from '@/components/StoryVisual.astro';
 import { isVisible } from '@/lib/content';
 const episodes = (await getCollection('episodes')).filter(({ data }) => isVisible(data.status));
+const pageUrl = new URL('/episodes/', Astro.site).href;
+const jsonLd = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': pageUrl, url: pageUrl, name: 'Episodes', description: 'Long-form conversations about AI, software, business and work.', inLanguage: 'en-AU', isPartOf: { '@id': new URL('/#website', Astro.site).href }, about: { '@id': new URL('/episodes/#podcast', Astro.site).href }, mainEntity: { '@type': 'ItemList', itemListElement: episodes.map((episode, index) => ({ '@type': 'ListItem', position: index + 1, name: episode.data.title, url: new URL(`/episodes/${episode.id}/`, Astro.site).href })) } }, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href }, { '@type': 'ListItem', position: 2, name: 'Episodes', item: pageUrl }] }];
 ---
-<BaseLayout title="Episodes — Intelligence Snacks" description="Long-form conversations about AI, software, business and work." active="episodes">
+<BaseLayout title="Episodes — Intelligence Snacks" description="Long-form conversations about AI, software, business and work." {jsonLd} active="episodes">
   <header class="episodes-head page-shell"><p class="eyebrow">The podcast</p><h1>Room for ideas<br />to unfold.</h1><p>Long-form conversations are the source environment for Intelligence Snacks.</p></header>
   <section class="page-shell section episode-list">{await Promise.all(episodes.map(async (episode) => { const topic = await getEntry(episode.data.primaryTopic); return <article><a class="episode-art" href={`/episodes/${episode.id}/`}><StoryVisual label={`Episode ${episode.data.number}`} colour={topic?.data.colour ?? '#9aa7ff'} index={episode.data.number} compact /></a><div><p class="eyebrow">Episode {episode.data.number} · {topic?.data.name}</p><h2><a href={`/episodes/${episode.id}/`}>{episode.data.title}</a></h2><p>{episode.data.summary}</p><a class="text-link" href={`/episodes/${episode.id}/`}>Explore the episode <span>↗</span></a></div></article>; }))}</section>
 </BaseLayout>

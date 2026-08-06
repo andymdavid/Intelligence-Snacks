@@ -27,14 +27,17 @@ const isHost = person.id === 'pete-winn' || person.id === 'andy-david';
 const visibleEpisodes = isHost ? episodes.slice(0, 3) : episodes;
 const visibleSnacks = isHost ? snacks.slice(0, 3) : snacks;
 const topics = new Map((await getCollection('topics')).map((topic) => [topic.id, topic]));
+const contributorTopicIds = new Set([...episodes.flatMap((entry) => [entry.data.primaryTopic.id, ...entry.data.relatedTopics.map(({ id }) => id)]), ...snacks.flatMap((entry) => [entry.data.primaryTopic.id, ...entry.data.relatedTopics.map(({ id }) => id)])]);
+const contributorTopics = [...contributorTopicIds].map((id) => topics.get(id)).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 const pageUrl = new URL(`/contributors/${person.id}/`, Astro.site).href;
 const pageTitle = person.data.seo?.title ?? `${person.data.name} — Intelligence Snacks`;
 const pageDescription = person.data.seo?.description ?? person.data.shortBio;
 const pageImage = person.data.seo?.image ?? person.data.image ?? '/social-default.webp';
 const sameAs = person.data.socialLinks ? Object.values(person.data.socialLinks).filter(Boolean) : [];
 const jsonLd = [{
-  '@context': 'https://schema.org', '@type': 'ProfilePage', url: pageUrl,
-  mainEntity: { '@type': 'Person', name: person.data.name, description: pageDescription, image: new URL(pageImage, Astro.site).href, url: pageUrl, sameAs },
+  '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': pageUrl, url: pageUrl, inLanguage: 'en-AU',
+  isPartOf: { '@id': new URL('/#website', Astro.site).href },
+  mainEntity: { '@type': 'Person', '@id': `${pageUrl}#person`, name: person.data.name, description: pageDescription, image: new URL(pageImage, Astro.site).href, url: pageUrl, sameAs, affiliation: isHost ? { '@type': 'Organization', name: 'Other Stuff', url: 'https://otherstuff.ai/' } : undefined, knowsAbout: contributorTopics.map((entry) => entry.data.name), subjectOf: episodes.map((entry) => ({ '@type': 'PodcastEpisode', '@id': new URL(`/episodes/${entry.id}/#episode`, Astro.site).href, name: entry.data.title, url: new URL(`/episodes/${entry.id}/`, Astro.site).href })) },
 }, {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href },
@@ -44,7 +47,7 @@ const jsonLd = [{
 }];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} image={pageImage} canonicalUrl={person.data.seo?.canonicalUrl} type="profile" {jsonLd} active="contributors">
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage} imageWidth={person.data.image ? 640 : 1200} imageHeight={person.data.image ? 640 : 630} canonicalUrl={person.data.seo?.canonicalUrl} type="profile" {jsonLd} active="contributors">
   <header class="contributor-head page-shell">
     <div class="contributor-head__portrait">
       {person.data.image

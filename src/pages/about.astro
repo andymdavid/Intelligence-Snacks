@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+const pageUrl = new URL('/about/', Astro.site).href;
+const jsonLd = [{ '@context': 'https://schema.org', '@type': 'AboutPage', '@id': pageUrl, url: pageUrl, name: 'About Intelligence Snacks', description: 'Long conversations developed into useful ideas.', inLanguage: 'en-AU', isPartOf: { '@id': new URL('/#website', Astro.site).href }, mainEntity: { '@id': new URL('/#organization', Astro.site).href } }, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href }, { '@type': 'ListItem', position: 2, name: 'About', item: pageUrl }] }];
 ---
-<BaseLayout title="About — Intelligence Snacks" description="Long conversations developed into useful ideas.">
+<BaseLayout title="About — Intelligence Snacks" description="Long conversations developed into useful ideas." {jsonLd}>
   <header class="about-head page-shell"><p class="eyebrow">About the publication</p><h1>The podcast creates room for ideas to be explored. Intelligence Snacks serves the strongest ideas that emerge.</h1></header>
   <section class="about-copy page-shell section"><h2>Depth first.<br />Clarity after.</h2><div><p>Intelligence Snacks is a podcast and connected archive about AI, software, business, work and technological change.</p><p>Each long-form conversation produces distinct, self-contained arguments. We develop those arguments into permanent Snack pages, connect them to the wider body of thinking and share a selection through the weekly email.</p><p>Intelligence Snacks is produced by Other Stuff, an AI software company based in Perth.</p></div></section>
 </BaseLayout>
