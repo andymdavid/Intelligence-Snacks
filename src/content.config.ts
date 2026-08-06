@@ -44,6 +44,7 @@ const episodes = defineCollection({
     number: z.number().int().positive(),
     title: z.string(),
     summary: z.string(),
+    thumbnail: z.string().optional(),
     status,
     legacyTitle: z.string().optional(),
     originalPublishedAt: z.coerce.date().optional(),

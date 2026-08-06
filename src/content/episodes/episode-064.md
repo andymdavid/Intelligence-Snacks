@@ -1,6 +1,7 @@
 ---
 number: 64
 title: Vibe Coding with Power Tools
+thumbnail: /images/episodes/episode-064-thumbnail.webp
 legacyTitle: "The Good Stuff 64 — Vibe Coding With Power Tools feat. dpc"
 youtubeUrl: https://www.youtube.com/watch?v=fthLd4hdwCg
 audioUrl: https://open.spotify.com/show/5mhoDNtKg1A0j0IZIw0fIv

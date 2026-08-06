@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import StoryVisual from '@/components/StoryVisual.astro';
 import SnackVisual from '@/components/SnackVisual.astro';
 import EpisodeSnackRail from '@/components/EpisodeSnackRail.astro';
 import EmailSignup from '@/components/EmailSignup.astro';
@@ -77,10 +76,16 @@ const jsonLd = {
     <section class="episode-feature page-shell section">
       <div class="section-heading"><h2>Latest episode</h2><a class="archive-link" href="/episodes/">View all episodes ↗</a></div>
       <div class="episode-feature__inner">
-        <div class="episode-feature__visual"><StoryVisual label={`Episode ${latestEpisode.data.number}`} colour={episodeTopic.data.colour} index={latestEpisode.data.number} /></div>
+        <div class="episode-feature__visual">
+          <a href={`/episodes/${latestEpisode.id}/`}>
+            {latestEpisode.data.thumbnail
+              ? <img src={latestEpisode.data.thumbnail} alt={`Episode ${latestEpisode.data.number}: ${latestEpisode.data.title}`} width="1672" height="941" loading="lazy" />
+              : <div class="episode-feature__fallback" style={`--episode-colour: ${episodeTopic.data.colour}`}>Episode {latestEpisode.data.number}</div>}
+          </a>
+        </div>
         <div class="episode-feature__copy">
           <p class="eyebrow">Episode {latestEpisode.data.number} · {episodeTopic.data.name}</p>
-          <h3>{latestEpisode.data.title}</h3>
+          <h3><a href={`/episodes/${latestEpisode.id}/`}>{latestEpisode.data.title}</a></h3>
           <p>{latestEpisode.data.summary}</p>
           <a class="text-link" href={`/episodes/${latestEpisode.id}/`}>Explore the episode <span>↗</span></a>
         </div>
@@ -115,11 +120,14 @@ const jsonLd = {
   .feature__copy h2 { max-width: 760px; font-size: var(--type-feature); font-weight: 500; line-height: var(--leading-display); letter-spacing: var(--tracking-display); margin-bottom: 2rem; }
   .feature__copy > p:not(.eyebrow) { max-width: 35rem; font-size: var(--type-body-large); color: var(--text-primary); }
   .feature__visual { min-width: 0; }
-  .feature__visual :global(.story-visual),
-  .episode-feature__visual :global(.story-visual) {
+  .feature__visual :global(.story-visual) {
     min-height: 0;
     aspect-ratio: 3 / 2;
   }
+  .episode-feature__visual { position: relative; width: 100%; aspect-ratio: 16 / 9; align-self: center; overflow: hidden; border-radius: var(--radius-small); }
+  .episode-feature__visual > a { position: absolute; inset: 0; display: block; }
+  .episode-feature__visual img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius-small); }
+  .episode-feature__fallback { display: grid; width: 100%; aspect-ratio: 16 / 9; place-items: center; border-radius: var(--radius-small); background: var(--episode-colour); color: var(--ink); font-family: var(--font-display); font-size: var(--type-feature); }
   .episode-rails { border-bottom: 0; }
   .episode-rails :global(.episode-snacks:last-child) { border-bottom: 0; }
   .episode-feature__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 8rem); align-items: center; }

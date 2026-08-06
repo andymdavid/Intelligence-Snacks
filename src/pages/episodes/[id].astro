@@ -35,7 +35,7 @@ const youtubeId = episode.data.youtubeUrl
 const pageUrl = new URL(`/episodes/${episode.id}/`, Astro.site).href;
 const pageTitle = episode.data.seo?.title ?? `Episode ${episode.data.number}: ${episode.data.title} — Intelligence Snacks`;
 const pageDescription = episode.data.seo?.description ?? episode.data.summary;
-const pageImage = episode.data.seo?.image ?? (youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg` : '/social-default.webp');
+const pageImage = episode.data.seo?.image ?? episode.data.thumbnail ?? (youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg` : '/social-default.webp');
 const jsonLd = [{
   '@context': 'https://schema.org', '@type': 'PodcastEpisode', '@id': `${pageUrl}#episode`, name: episode.data.title,
   episodeNumber: episode.data.number, description: pageDescription, url: pageUrl, inLanguage: 'en-AU', duration: isoDuration,
@@ -106,8 +106,8 @@ const jsonLd = [{
   .episode-head__source > p { margin: 0; }
   .episode-head__source > div > p { margin: .7rem 0 0; }
   .episode-media { position: relative; padding-block: var(--page-pad); }
-  .episode-media :global(.story-visual), .episode-media iframe { width: 100%; height: calc(100svh - 58px - (2 * var(--page-pad))); min-height: 0; border: 0; border-radius: var(--radius-small); background: var(--ink); }
-  .audio-link { position: absolute; right: calc(var(--page-pad) + 1.25rem); bottom: calc(var(--page-pad) + 1.25rem); padding: .9rem 1.1rem; border-radius: var(--radius-small); background: #1ed760; color: #080808; font-family: var(--font-display); font-size: .9rem; font-weight: 500; }
+  .episode-media :global(.story-visual), .episode-media iframe { width: 100%; height: calc(100svh - 58px - var(--page-pad)); min-height: 0; border: 0; border-radius: var(--radius-small); background: var(--ink); }
+  .audio-link { display: flex; width: max-content; align-items: center; gap: .7rem; margin: .75rem 0 0 auto; padding: .9rem 1.1rem; border-radius: var(--radius-small); background: var(--coral); color: var(--ink); font-family: var(--font-display); font-size: .9rem; font-weight: 500; }
   .episode-intro { display: grid; grid-template-columns: 1fr 2fr 1fr; }
   .episode-intro > div { grid-column: 2; font-family: var(--font-body); font-size: var(--type-body-large); line-height: 1.5; }
   .episode-snack-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(.65rem, 1vw, 1rem); row-gap: clamp(3.5rem, 6vw, 6rem); }
@@ -132,5 +132,5 @@ const jsonLd = [{
   .transcript-turn p { margin: 0; font-size: 1rem; line-height: 1.6; }
   @media (max-width: 900px) { .episode-snack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 800px) { .episode-head__details, .episode-intro { grid-template-columns: 1fr; } .episode-head__details { gap: 2.5rem; } .episode-intro > div { grid-column: 1; } .episode-head__meta { align-items: flex-start; flex-direction: column; } }
-  @media (max-width: 620px) { .episode-media :global(.story-visual), .episode-media iframe { height: auto; aspect-ratio: 16 / 9; } .audio-link { position: static; width: 100%; display: flex; justify-content: space-between; margin-top: .5rem; } .episode-snack-grid { grid-template-columns: 1fr; } .transcript-reader summary { min-height: 4.5rem; } .transcript-turn { grid-template-columns: 1fr; gap: .75rem; } .transcript-turn > div { justify-content: flex-start; } }
+  @media (max-width: 620px) { .episode-media :global(.story-visual), .episode-media iframe { height: auto; aspect-ratio: 16 / 9; } .audio-link { width: 100%; justify-content: space-between; margin-top: .5rem; } .episode-snack-grid { grid-template-columns: 1fr; } .transcript-reader summary { min-height: 4.5rem; } .transcript-turn { grid-template-columns: 1fr; gap: .75rem; } .transcript-turn > div { justify-content: flex-start; } }
 </style>
