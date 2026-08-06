@@ -1,10 +1,10 @@
 ---
-title: AI Coding Agents Are Power Tools, Not Replacements
+title: AI Coding Agents Work Like Power Tools
 editorialTitle: Software With Power Tools
-standfirst: Coding agents move software craft away from producing every line and towards shaping architecture, evaluating behaviour and deciding where precision matters.
+standfirst: Coding agents shift a developer’s attention from writing every line towards architecture, testing and review.
 status: published
 publishedAt: 2026-08-05T00:00:00Z
-updatedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: ai-coding
 relatedTopics:
@@ -16,13 +16,13 @@ relationships:
     note: Faster implementation makes early structural decisions more consequential.
   - target: generation-is-easier-than-steering
     type: enables
-    note: Power-tool speed creates a larger body of work that must be evaluated and steered.
+    note: Faster code generation creates more implementation for a developer to evaluate and steer.
 featured: true
 fixture: false
 ---
 
-Software development still depends on judgement, taste and standards of finish, though coding agents change how much of the material a developer must shape directly. Writing everything by hand keeps the developer close to each line and local decision. Agentic coding moves more of the work into describing behaviour, reviewing results and deciding where precision matters.
+Software development depends on judgement, taste and standards of finish, and coding agents change how directly a developer shapes the source code. Writing code by hand keeps the developer close to each line and local decision. Agentic coding shifts more of that attention towards specifying expected behaviour, reviewing generated code and deciding where precision matters.
 
-The closest comparison is the difference between a hand plane and an electric plane. A hand plane removes material slowly and gives the craftsperson a detailed feel for the surface. An electric plane can remove far more in a single pass. Software was already moving in this direction through libraries, frameworks and packages that let developers assemble systems from prepared parts. AI adds the ability to generate custom parts at similar speed.
+Hand planes and electric planes give a craftsperson different kinds of leverage. One offers a detailed feel for the surface, and the other removes far more material in a single pass. Libraries, frameworks and packages already bring this kind of leverage to software by letting developers assemble systems from prepared parts. AI extends the same principle to custom code, giving developers parts made for the job at the speed of a power tool.
 
-The developer can now spend less time producing implementation and more time shaping architecture, testing behaviour and correcting direction. That distance creates a new weakness. Large sections of a codebase may exist without having passed through the developer’s hands, leaving gaps in their understanding of local decisions. The craft moves upward into system design and evaluation while detailed familiarity with the code becomes harder to maintain.
+This gives the developer more time to shape architecture, test features and correct the implementation, and it allows large sections of a codebase to emerge without passing through their hands. The resulting gaps in codebase knowledge move more of the craft into system design and evaluation. Detailed familiarity with individual functions and dependencies has to be maintained deliberately.

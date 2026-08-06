@@ -1,10 +1,10 @@
 ---
-title: The Harness Determines What an AI Agent Can Become
-editorialTitle: The Harness Determines the Work
-standfirst: The model supplies reasoning and generation. The surrounding harness determines its context, tools, feedback and practical limits.
+title: An Agent Harness Controls Context, Tools and Feedback
+editorialTitle: Context, Tools and Feedback
+standfirst: A coding harness controls which files an agent can inspect, which commands it can run and which results return to the model.
 status: published
 publishedAt: 2026-08-05T00:00:00Z
-updatedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: agents
 relatedTopics:
@@ -20,8 +20,8 @@ relationships:
 fixture: false
 ---
 
-A coding model becomes useful as an agent when the surrounding system allows it to inspect files, run commands, modify a project and continue working through the results. The model supplies reasoning and generation. The harness decides what context it receives, which tools it can use and how each action becomes part of the next step.
+A coding model becomes useful as an agent when its runtime allows it to inspect files, run commands, modify a project and respond to the output. The model supplies reasoning and generation, and the harness decides which repository files enter the prompt, which tools are available and how each command shapes the next model call.
 
-A minimal harness can treat every tool as a separate process. A shell, virtual machine or remote host communicates through a lightweight protocol and appears to the agent through the same interface. Adding an SSH command prefix can move an extension onto another machine without requiring the model to understand that anything changed. An event log can provide the common record through which tools and extensions observe the work.
+The harness described in Episode 64 treats each tool as a separate process that communicates through a lightweight protocol. A shell, virtual machine or remote host appears to the agent through the same interface, so an SSH command prefix can move an extension onto another machine and preserve the same tool call. An event log gives every tool and extension a shared record of prompts, commands and responses.
 
-This design makes the system easier to inspect and adapt than a large coding product whose prompts and internal workflows change behind the scenes. It also defines the limit of that control. Specifications, context files and design records can steer a model, though its trained habits still shape how it interprets them. The harness can constrain the environment and expose more of the mechanism. It cannot supply the accumulated judgement that the model does not possess.
+This design keeps the harness inspectable and adaptable by exposing its prompts and tool calls. Specifications, repository instructions and design records can steer the model, and its trained habits shape how it interprets them. The harness controls the execution environment and the feedback returned after each command, leaving architectural and product judgement with the developer directing the agent.

@@ -1,9 +1,9 @@
 ---
-title: Generation Is Easier Than Steering
-standfirst: The limiting factor in longer autonomous work is increasingly the quality of the feedback that determines whether generated software remains aligned.
+title: Long Agent Runs Depend on Reliable Feedback
+standfirst: Tests, specifications and human review determine how long a coding agent can keep producing useful software on its own.
 status: published
 publishedAt: 2026-08-05T00:00:00Z
-updatedAt: 2026-08-05T00:00:00Z
+updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
 primaryTopic: agents
 relatedTopics:
@@ -16,12 +16,12 @@ relationships:
     note: Harness design determines which steering signals reach the model.
   - target: software-is-discovered-through-use
     type: overlaps
-    note: Important product behaviour often cannot be reduced to mechanical tests.
+    note: Usability and operational expectations require feedback beyond mechanical tests.
 fixture: false
 ---
 
-Coding agents can produce large amounts of software. Longer autonomous runs require a reliable way to determine whether the work remains aligned with the intended result. The limiting factor often appears in evaluation rather than generation.
+Coding agents can produce large amounts of software, so the useful length of an autonomous run depends on the signals available to keep the generated code aligned with its requirements. As generation becomes faster, the quality of those evaluation signals increasingly sets the limit.
 
-Compilers, tests and stable APIs provide mechanical feedback. They act like a mould around a replacement implementation. The internal code can change while repeated checks confirm that the same external behaviour still fits. This makes a programming language or framework with an extensive test suite easier to rewrite than a business application whose important behaviour lives in buttons, approvals and human workflows.
+Compilers, tests and stable APIs provide mechanical feedback that acts like a mould around a replacement implementation. Repeated checks can confirm that new internal code returns the same API responses and passes the same tests, giving an agent clear boundaries for a rewrite. Business applications are harder to steer because many requirements live in button placement, approval sequences, human workflows and expectations that have never been written down.
 
-A business system can preserve its data and still become harder to use. A button can work while appearing in the wrong place. An approval flow can satisfy its formal rules while violating an unstated operational expectation. The agent has no automatic signal that these results are wrong. Each additional period of autonomous work therefore depends on more of the desired behaviour being expressed through tests, specifications or other machine-readable constraints. Where those boundaries remain incomplete, human review supplies the steering.
+An application can preserve its data and become harder to use because a working button can appear in the wrong place or an approval flow can violate an unstated operational expectation. The agent receives no automatic signal that either mistake has occurred. Longer runs therefore need more requirements expressed through tests, specifications and other machine-readable constraints, with human review covering usability and operational knowledge.
