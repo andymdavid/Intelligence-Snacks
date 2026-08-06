@@ -1,0 +1,716 @@
+Pete Winn (00:01)
+Hello and welcome to The Good Stuff. After a short break, we're back for Episode 64. We've got a special guest today, dpc. Do you want to introduce yourself?
+
+dpc (00:15)
+Hi, I'm David. Everybody knows me by my GitHub handle DPC. I'm happy to be here and thanks for inviting me.
+
+Pete Winn (00:25)
+Cool. We obviously worked together previously at Fedi. I believe you're still there. I remember when Justin finally convinced you to get involved in the Fedimint project. He told me it was great because there was now an adult, serious engineer who knew what he was doing and could make sure everything worked. Looking at Twitter over the last year—
+
+Pete Winn (00:53)
+I feel like you used to be very sceptical of AI. You said you're still sceptical, but you're now more in your “AI psychosis” mode. I was curious to hear how that's gone for you, how you're using it and how you're thinking about it.
+
+dpc (01:09)
+Yeah, I don't know where to start. I think around ChatGPT-3, when people started using AI for coding, Cursor was the first thing people were using—mostly autocomplete. It was interesting from the very beginning, but the quality wasn't there.
+
+dpc (01:36)
+I also had technical limitations because I'm a Linux, Unix and CLI guy. I'm not going to use an IDE or leave my command-line text editor, and there was no integration for it. I didn't think it was worth switching my whole setup just to get a couple of lines completed that might be correct. Soon after, I think Goose—
+
+dpc (02:05)
+Was that the first one? Goose, is that the name?
+
+Pete Winn (02:08)
+Yeah, Goose was
+
+Pete Winn (02:09)
+The first proper agent. It was the first agentic loop. Everybody credits Claude Code, but Goose beat them by a few months.
+
+dpc (02:13)
+Yeah, that's right.
+
+dpc (02:19)
+I was probably an early user, and at that point I thought it was cool. But I was still sceptical about the models' ability to produce good code. Soon after, there was Claude Code—I think in March—and I started using that. I thought it was a very good way to work, though I was still unsure about the code itself.
+
+dpc (02:49)
+You can give it something to do and, especially if it's simple, it saves you time. Later that year—2025—the models got really good. I couldn't deny that they were good enough to produce a lot of code. Then, about three months ago, I decided that I
+
+dpc (03:16)
+might as well jump into it and write my own harness. I played with Pi, which was a gateway to understanding that I could actually control a lot of this stuff. Claude Code is very hands-off: you can start it and it works, with a lot happening under the hood, but I don't really understand what's going on there.
+
+dpc (03:46)
+I want to understand it because, if I want to be effective with these tools, I need to. In those three months I've been in full “AI psychosis.” When I watch podcasts with people who've been in the game longer, I feel like I've replayed their whole journey in three months. I've been coding with AI
+
+dpc (04:14)
+in any free time I have. At work we're trying to be agentic, but it's different because the weight of responsibility is higher, so you want to be more cautious. Working on your own harness is a great opportunity to go all-in on vibe coding: let it happen and see how well you can manage it.
+
+Pete Winn (04:27)
+Mm-hmm.
+
+Pete Winn (04:36)
+Yeah.
+
+Pete Winn (04:40)
+So I know like when you listen to Mario, who is the guy behind the Pi harness, like he had a similar experience with Claude where he would talk about Claude Code and I think he wrote like an interceptor to Claude Code so he could see like what's actually going back to the models and like how are they adjusting the system prompts and stuff and he realised that Claude was constantly changing their system prompt like multiple times a day.
+
+Pete Winn (05:05)
+It would just cycle through new system prompts, it would change all his workflows and he it was why he would see so much variability around like his model and stuff. And so he built Pi to just be like, All right, we'll do the bare minimum and then you can extend it from there. So I it's interesting that would be a so it's so you took something like that as an idea.
+
+dpc (05:23)
+Yeah, I watched the same videos. I watched a lot
+
+dpc (05:26)
+of his interviews and content because they were very informative. I hadn't fully realised some of these problems and learned a lot from him.
+
+Pete Winn (05:41)
+How have you approached building that harness? What have you focused on as the important parts?
+
+dpc (05:46)
+I kind
+
+dpc (05:47)
+of like the idea behind Pi. I like that it's small, minimal and customisable. I live in the different programming culture I mentioned: I'm a 100% Unix, Linux, CLI and low-level developer. The Linux kernel is my
+
+dpc (06:15)
+background, and perhaps even my introduction to software development. When I see a harness that takes 160 megabytes just to start the prompt—when Pi and most coding harnesses are essentially a shell, at least in their UI—I wonder why. I had a lot of ideas
+
+dpc (06:44)
+along the lines of Unix. My whole worldview is infused with Unix, and I think about composability in everything. For me, composability is one of the guiding principles of software development. The way I think about a harness is:
+
+dpc (07:12)
+you have an agent, something that loops and sends prompts to it, and then you give it tools. To me, the shell is an attachment to the harness. So I was thinking: what if I run the shell over SSH? What if it was directly connected to a virtual machine? What if I had two shells?
+
+Pete Winn (07:23)
+Mm-hmm.
+
+dpc (07:37)
+And how would that work? I want this attachment to be Unix-style, so obviously have to talk over standard input and standard output and be a separate process. And then seems like an agent kind of interaction is very event-based. So I was immediately thinking, well, we're gonna have an event log and we're gonna kind of inject everything to the event, and all the extensions and everything will just plug to the harness like an attachment, and you're gonna expose it to the agent and
+
+dpc (08:08)
+More or less that's how it should work, right? And then I'm gonna write it in Rust because I'm big on kind of native languages and Rust specifically. And yeah, how hard can it be? You know, the saying, like we didn't do it because we because it's easy, because we thought it's easy. So yeah, and you know, even if you fail or it sucks, then you're always gonna learn a lot.
+
+dpc (08:36)
+And I think in like a week or two I actually had something going that I was pretty happy with. Like I was like, this is better than Claude Code. Obviously, it wasn't under the hood. Now it's better than Claude Code, obviously. Yeah, but I like you do it for yourself, right? Sorry, yeah.
+
+Pete Winn (08:51)
+Okay, so you have your like core agent and then it executes. Yeah. I was gonna say, so
+
+Pete Winn (08:57)
+Does your core agent run as a separate machine and then all the tool execution and various things are running in their own VMs?
+
+dpc (09:04)
+It so it typically
+
+dpc (09:07)
+It runs on the same machine, but it could. I did try it. I the harness has a config. In the config you define what extensions you want. Every extension is a is just a command, it's just another process. And it talks with the harness over a very kind of lightweight protocol. And I there is a there is a field there.
+
+dpc (09:33)
+Which is, I think, command prefix. And if you add SSH host, I don't know if you need to do dash c, I think you don't, then it will run SSH hostname, connect over SSH, and then start a command on the other system. So if I have like extension runnable there, then I can run extension from there, and the agent doesn't even need to know about it.
+
+dpc (10:03)
+Which is kind of yeah, it's just cool. Yeah.
+
+Pete Winn (10:07)
+So I know when we were chatting on Twitter the other day, like you had an analogy where you talked about sort of vibe coding as being a bit like woodwork. And I think you said something like it would be you could still you know, you could be like a Japanese craftsman where you use only hand tools and you might be big on YouTube and stuff and what you create will be lovely. But most stuff's probably gonna be done with power tools.
+
+Pete Winn (10:33)
+I think we've got into like the idea of maybe the job of a sophisticated engineer is to look at the jigs and the saw stops and the various things to figure out how can you how can you build with this stuff without ripping your arm off. I thought that seemed very astute. So do you want to talk about that a bit?
+
+dpc (10:49)
+I generally it's not even AI. I think the woodworking and software engineering are very similar in in nature. Like the their the woodworking is a good metaphor for software engineering. I think software engineering is more of a craft than engineering, than a science, than like a you know
+
+dpc (11:19)
+Yeah, yeah, it's just kind of a the crafty thing. And as you can approach software engineering with a more craftsman approach, you can approach it into more kind of, you know, we are IKEA and we just crank cheap furniture for mass audience and people use it and they're happy about it. Like that there is this you can spend your whole life kind of tuning little
+
+Pete Winn (11:42)
+Yeah.
+
+dpc (11:47)
+Small box perfectly and polish it or you can just get a hammer and do more of a carpentry job and get stuff done and move on. And I feel like in this metaphor the introduction of AI is very similar to introduction of power tools it's just before AI everything was very handmade.
+
+dpc (12:16)
+Like you have to kind of physically touch the keyboard in a way and craft every detail and you're very hands-on. And there is beauty and there is skill and there is knowledge in it to be able to do it well. But there's no denying that you can do things way faster, stronger, better with power tools. And most of woodworking is happening with assistance of power tools.
+
+dpc (12:44)
+There are people that still pride themselves, have very nice. I am into woodworking. Maybe that's why this metaphor. It's kind of cliche. I think a lot of people in software enjoy woodworking because there is a link there, but it's more of a mat has a material feel in it, right? Like in software, you can spend years working on something and it's just kind of an idea somewhere, even if it's doing something. And in woodworking, you can actually touch it. There is this
+
+Pete Winn (12:50)
+Hmm. Same.
+
+dpc (13:13)
+This part that is missing in software engineering, which I think it's so appealing to a lot of software. It's like they want to decompress and their brain is still into this mode of creating and composing things together and thinking about the design, but they don't have to look at the screen for some time. But anyway, AI is kind of like power very much like power tools because they're dangerous. Like the moment you start doing woodworking.
+
+dpc (13:42)
+At least for me you watch all the videos about like how to operate a router like a woodworking router because it can chop you off your fingers in milliseconds if you're not careful. You think about should I get a SawStop like for people not familiar with woodworking there's this company that designed this kind of invented this what is it called circular saw
+
+dpc (14:12)
+That if you touch the blade it explodes a little explosive in it to block the spinning blade.
+
+Pete Winn (14:21)
+I mean is there like an
+
+Pete Winn (14:22)
+Electric field around the blade, so as you get close to it, you trip the electric field and it just sort of stops instantly?
+
+dpc (14:26)
+Yeah, I think it's something like electrically
+
+dpc (14:29)
+Or like cap capacity. It's able to detect that the something like flesh is touching the blade, which in normal operation it shouldn't, and it can stop the blade in like milliseconds. It the it destroys the blade in the process, but and you know, you to replace the cartridge with an explosive, but it like it saves your finger, right? And so a lot of people think it's worth it. The problem with is like a normal
+
+dpc (14:55)
+A good contractor-grade circular saw might cost $700, while a SawStop is going to be $2,000 or $3,000. But if you have the money, your fingers are worth it. I highly recommend one, even if you have the
+
+Pete Winn (15:08)
+In us in Australia we put a cover. In Australia we put a cover over the saw. It's just called a cover. You don't have them in the US.
+
+Andy (15:18)
+Mm.
+
+dpc (15:25)
+Even if you do have the other one, you probably want to yeah, it's like it's kind of I don't wanna probably not yeah, we don't wanna teach people woodworking now. But with
+
+Andy (15:35)
+Just living
+
+Andy (15:36)
+A little dangerously in the US, so that's
+
+dpc (15:39)
+Yeah.
+
+Pete Winn (15:41)
+I think my I did a woodworking course over here with Perth Wood School sh friend of pod. They were and he bemoaned how all the US YouTubers would remove their all of their safety guards from their router tables and their table saws because it looks cooler somehow to see what's going on. But like just the chance of losing a limb or a finger is just so much higher like that, whereas you can just you don't really need to see the thing, you can just
+
+dpc (16:08)
+I think
+
+dpc (16:09)
+The stats are like the highest for circular saw at least last time I checked, like the most accidents were circular, so there's also kickback and stuff. But anyway, in the metaphor, AI is it can do a lot of stuff for it, but the security is very tricky with it. The moment I started playing with AI, I immediately started thinking how do we isolate the development environments?
+
+Pete Winn (16:13)
+Yeah, I'm not surprised.
+
+dpc (16:36)
+Sandboxes, how do we allow them to communicate? Yeah, because you do see people like, it deleted my whole home directory, or you know prompt injection and stuff like that. Yeah so
+
+Andy (16:51)
+Is that like could
+
+Andy (16:54)
+Could you do you could you take the analogy like a step further and just go, there's like a factory component to this where you've just got a bunch of like, you know, pre-built libraries and they're interchangeable and you know, you're not you're not actually like writing any of that code from scratch. You're just like pulling it in and it's kind of like IKEA for code.
+
+dpc (17:10)
+And I think that was
+
+dpc (17:13)
+It was already kind of there for me. As in you know, you even in woodworking you can take different approaches. You can kind of make everything by yourself, all right, and shape it from raw wood if you want to, but you can also go to a nearest kind of Home Depot or store like that, buy for example, plywood.
+
+dpc (17:36)
+And kind of cut it to pieces and then you're dealing with it completely differently. So you do, or you can even, you know, buy pre-existing components and just add some stuff or shape it or you know, put a couple of nails to glue some your own stuff there. There is this element of like putting things together and you have a choice of getting pre-made ones or existing ones.
+
+dpc (18:03)
+So I think this was already there, and I think people were complaining about it with like dependency bloat, right? That people pull in a lot of dependencies because they don't want to write the code themselves, and that in itself is kind of a problem, and the projects become too heavy, and everything is always just additive, and no one ever tries to remove anything because there's no time. So I think this element of
+
+dpc (18:31)
+Yeah, kind of like taking off the shelf was already there. With the AI, I feel it's very much like the power tool. Now you can just like what used to be what is it called? When you kind of remove little layers of wood planing, thank you. Yeah, like the I have like a hand plane, very fancy, nice. I kind of like using it, it has this
+
+Pete Winn (18:50)
+Planing. Yeah.
+
+dpc (19:01)
+This kind of a feel of I don't know, Japanese woodworking craftsman. And then you can have this electric plane and it just like removes an inch of wood in one pass without sweat. Yeah, and then you know the effects if you do hand planing, then you can get like this nice polish and shine, and you're not gonna get it with an electric plane, but there's no denying that you can do it so much faster with the other one.
+
+dpc (19:30)
+And I feel like here it's kind of the same, you lose this like sense of touching the code and you don't care that much about the details, but you can care about like a bigger picture and have more time for other things. Yeah.
+
+Pete Winn (19:30)
+Yeah.
+
+Pete Winn (19:45)
+So
+
+Pete Winn (19:46)
+It feels like if we extend that analogy, right, you could say, well maybe I'll use my electric plane, instead of taking an inch off, I'll take, you know, five sixths of an inch, and then I'll finish it with the hand plane and therefore I'll get the best of both worlds. Do you think that works in this AI space or do you feel disconnected from the code if you use AI to create it? 'Cause that seems to be a common pattern.
+
+dpc (20:11)
+I feel like it works in concept. In practice it depends a lot on what people do. And I feel in software engineering we often know what is the right thing to do, but in practice we don't always do it. And
+
+Pete Winn (20:30)
+Never a truer statement.
+
+dpc (20:33)
+Yeah,
+
+dpc (20:34)
+Because there is this aspect that there is this like angle of we know what should be done, but there but in aggregate we do know what actually happens in practice. And then different people, different teams, different projects have different quality standards, different approaches. And it's a little bit different discussion about what you could do.
+
+dpc (21:02)
+And different about what's actually probably gonna happen. Yeah.
+
+Pete Winn (21:10)
+So if you had any luck then, like having, say, with your harness, like having the AI build itself for like a couple of weeks and then you come in and you explore the code yourself, like can you understand it correctly? Is it easy enough to intuit, like where you need to make the changes, or do you find that it's difficult to deal with because the AI's written a lot that stuff and you weren't involved in the
+
+dpc (21:34)
+So on my coding harness, Tau, I went very much into vibe coding. Like I let's try how hard we can push it and what's the result. And I started with very strong sense of architecture, and I'm trying to enforce it and be because of this kind of event based event log architecture, everything is relatively simple.
+
+dpc (22:04)
+And it works, the architecture did not have to change too much, but there were plenty of surprises along the way, and they were usually negative surprises. And I cannot like I cannot think like I have an idea about things are but I sometimes am wrong. And then say, actually some agent made a mess here. Oops.
+
+Pete Winn (22:28)
+Hmm.
+
+dpc (22:34)
+And I yeah, I get a lot done without looking too much. Kind of on purpose and a bit because I don't have enough time. I would not be like the project like this I would take four years of almost all my free time to do it. I think I'm like 300,000 lines of code. And I think at Fedimint after four years of multiple people working on it.
+
+Pete Winn (22:34)
+Yeah.
+
+dpc (23:04)
+We're at about 200,000. And it's probably you know you cannot compare one-to-one lines, and probably tau is a little bit less complicated and definitely less load-bearing. And yeah, I don't think it's bloat when I do look at the code, it doesn't look terrible, and definitely there is a lot of tests, a lot of testing infrastructure.
+
+dpc (23:34)
+But I do not have a
+
+dpc (23:37)
+Complete picture of everything there.
+
+Andy (23:40)
+So w
+
+Andy (23:41)
+Where does that leave vibe coders then? Is this just like is this a net positive for vibe coders? Like I kind of think of it like the to like extend the IKEA analogy, it's like if I'm putting together the chair for myself, I'm quite happy to sit on it. Like I know there's probably like an element of risk. But I'm not sure how many people around me in the household are prepared to sit on the chair. You know, they're probably like, Andy's put this together, maybe I'll maybe I'll like sit on the other chair that was a bit more expensive and
+
+Andy (24:10)
+It wasn't it wasn't hacked together by him.
+
+dpc (24:13)
+You know, I think vibe coding is great for your personal use. It almost has no downsides. If you're the user and you're the tester and you kind of know what you prompted, if it has many bugs, but in code paths that you never hit, do they really exist? Like the there they're not a problem. And then you don't blame anyone. Like, why is this not working? You kind of know that.
+
+Andy (24:35)
+Yeah.
+
+Pete Winn (24:36)
+Yeah.
+
+dpc (24:43)
+You skipped a little bit on the quality just to get it faster. And when you're selling something to other people, then the it's more of a more of an issue. And yeah I think it's a distinctive kind of property of vibe coding that it's great for your for your own use. And I think a lot of people will build their own little slop empires.
+
+dpc (25:11)
+Just because they can and they work great for them. Yeah.
+
+Pete Winn (25:16)
+I mean,
+
+Pete Winn (25:16)
+I think it definitely takes out this whole range of like almost business apps that like if you can think of all of the things that are just built on Excel in the world where Excel has been used as the programming but not even just like a language, a platform, the deployment method is to email it around to everybody. And you know, I used to work at Rolls Royce back in the day and it was like everything ran on Excel. And you're just thinking like this is like such a
+
+Pete Winn (25:46)
+Renowned quality institution, like we're just running everything on these sheets where something could be changed and then all of a sudden like, alright, we're off by X order of magnitude over here with all these complex formulas that you can't audit. And I just think it has to be just like a complete net positive for everything in that space. Like everything in the we cooked up our own Access database space or like just paying
+
+Pete Winn (26:13)
+Somebody that's not a particularly good engineer to build something for you that they don't understand, like that whole space as well, like I think is just like I can't see why you wouldn't just build your own little tools.
+
+dpc (26:26)
+It's
+
+dpc (26:26)
+Going to be much harder to sell kind of a little utilities that people can now build themselves. Though I suspect that many people could successfully build a lot of tooling for themselves, but they will not try.
+
+Pete Winn (26:46)
+Yes. Yeah, agreed.
+
+dpc (26:49)
+I think the agency is relatively rare quality. Like we're talking, I don't know, maybe 25% of population wants to do things. Most people are very happy to offload things they don't like to other people. And yeah, so I think there's still probably some market there. It's just maybe the you know, you can do it, anybody else can do it, the prices go to the bottom.
+
+Andy (27:05)
+Yeah, exactly.
+
+Pete Winn (27:16)
+Yeah. Yeah.
+
+Andy (27:19)
+There's also, like—
+
+dpc (27:19)
+I have so many ideas. Like
+
+dpc (27:21)
+I could have a little business selling something kind of on a couple of prompts now, but I'm thinking a lot of people can do it too. What's the point?
+
+Andy (27:30)
+Yeah, I was I was gonna say the same thing. Like this is like choice paralysis to some degree in terms of like what should I build? When you can build everything, you're like, okay, which what do I actually need? And yeah, that's why I'm like quite bullish on like building for yourself to some degree as well. Like it doesn't necessarily pay the bills, but and I'm curious to see how people will get some kind of like actual economic return out of this. I think this is the bit that's missing for me right now, is I'm not seeing too many people turn this stuff into like
+
+dpc (27:38)
+Yeah.
+
+Andy (27:58)
+Really interesting businesses. So I feel like the signal I'm looking for is like what new interesting thing is being built? You know, like we could always spam out the Nth version of something if we had enough capital and we had enough like developers in our stack that we could we could go and pull in. But yeah, it's like what's the what's the new novel thing that is just really interesting that like one person has hacked together, kind of looking for that signal.
+
+dpc (28:26)
+I can sell you a business idea since everybody, including me, are kind of worried if there's still jobs for us. And I have this very memorable experience from one of the last conferences I attended. It was the Bitcoin conference, but there was quite a bit of you know AI-related talks. And I've met this person and he worked. I don't wanna like tell too much detail, I don't know how.
+
+dpc (28:53)
+Important it is but he built a whole vibe-coded infrastructure for his whole business and he was kind of a business person in roughly the logistics space right and he knows he knows the industry right he knows exactly what they're doing and he was able to build this really amazing vibe-coded
+
+Pete Winn (29:14)
+Yeah.
+
+Andy (29:14)
+Mm-hmm.
+
+dpc (29:23)
+Platform specifically for them. And this is like this tying into it was kind of personal software because it was for him, for his company, right? But it's making money. He's making millions of dollars on it. Like in the revenue it generates because he has like partners and etc that he can sell it, other companies that he onboarded on that. And he was actually looking there for people that would review it for him.
+
+dpc (29:54)
+Because he the and that's kind of the business angle, right? You can you can create this even if you're not a software engineer, you know, and it can be working, but at certain point you do start hitting the architectural kind of walls and all the all the slop that piled under the hood starts to leak out as you as you add more features. And there's more users and scalability. And I think that might be actually, you know.
+
+dpc (30:23)
+Some area for software engineers, because looking at myself, I don't really have that many connections outside of software. And in software, everybody else can also do the same stuff. Like, I'm not special. So I think selling software to other software engineers is like another business model, like the first thing that needs to go. But if you're kind of a business owner, more of a business person, and you have a
+
+dpc (30:53)
+Knowledge, domain knowledge, the AI empowers you by a lot. Like this is the areas. And then maybe software people can kind of offer hey, I can review it and at least tell you how bad it is and like give you some prompts so for the AI to kind of improve it for you. And then you could it's probably worth a lot of money for them. Like they can hire you for per hour. You can spend on it you know with your AI analyzing it couple of days.
+
+dpc (31:23)
+Give them prompts, advice or something, and it might be a good kind of contracting, you know, what do you call it, freelancing model for people. I haven't got there, I'm kind of I kept it in my back pocket for bad times, but I'm gonna share it here. I don't know. Maybe it's a good idea, maybe not, we'll see.
+
+Pete Winn (31:43)
+I can see it. We've talked for a couple of years about where we think the value goes with software in this world, and we were pretty sure that it collapses back into the business, as you say. I feel like a lot of the SaaS era of software was very extractive. You had a bunch of middlemen, largely based in San Francisco, running platforms that never really
+
+Pete Winn (32:11)
+What any of the business owners wanted. It did like it did 80% of the generic stuff and the stuff that was really valuable they had to customize and do extra work on anyway. But they were also had to pay this other middleman. And I think that whole thing disappears and you end up with a lot more always call it like locally written software and that could just be like geographically local. Or somebody that's just like mentally local to that industry. And probably both, because you do get
+
+Pete Winn (32:39)
+Like the regulatory differences for different geographies. Where I think a lot of software becomes like highly personalized SaaS is like what we see quite a lot where it's
+
+dpc (32:50)
+Boutique?
+
+dpc (32:50)
+Is that the is that a word?
+
+Andy (32:52)
+One. Yeah.
+
+Pete Winn (32:52)
+Yeah, maybe. They're boutique SaaS
+
+Pete Winn (32:54)
+Sort of thing. It's like Sass for like five businesses or ten businesses or you know, like a particular niche. Yeah.
+
+Andy (32:58)
+Or maybe one.
+
+Andy (33:01)
+You know, like especially if you can run the whole business.
+
+dpc (33:01)
+I like the one.
+
+dpc (33:04)
+Yeah. Like just see your vibe did. Why not?
+
+Andy (33:10)
+Well, they're really close to the problem, right? And they understand the process because they've usually like hacked the process together. And you always had this communication problem, I think, where you'd have to hire humans to do this stuff. It's like, let me try and like describe what the problem is to you. I might have an innate understanding, but then I might lose ten percent of that understanding in communication, and then the developer has to interpret that set of problems.
+
+Andy (33:35)
+And go, okay, I understand 60 or 70% of that. And then I've got to turn that into a product. And again, you might lose 40% of the intent that's remaining. And then you end up with something that does part of the job. And you go back and forth endlessly until maybe it's good enough. But if the CEO, who just innately understands exactly what he needs to do, can just knock something together, I think that's super valuable. But as you say,
+
+Andy (34:03)
+When you then step in to try and like clean up that code base, like you are working with a product that is actually generating a lot of revenue for them, presumably, because it works. So that's also useful too. You're not stepping into an idea, you're not stepping into like something that might pay off in ten years. But it's working right now. All we need to do is just optimize it.
+
+dpc (34:26)
+Yeah.
+
+Pete Winn (34:28)
+I mean
+
+Pete Winn (34:30)
+There does seem to be a lot more success in just refactoring stuff as well recently and like I don't know, if I think about like the bun rewrite from Zig to Rust being this like very I don't know, recent example where I think what did they spend? It like a hundred and seventy grand on tokens in four weeks or something to do it.
+
+dpc (34:51)
+The
+
+dpc (34:52)
+The Zig to Rust Ban Rewrite. Yeah. But I think like with this rev rewrites ban had pretty extensive tests to it and it's kinda easy to test if the programming language or like a framework still works.
+
+Pete Winn (34:54)
+Hmm.
+
+Pete Winn (35:04)
+Mm.
+
+dpc (35:13)
+It's much harder to test if like you know, a business app that has a lot of buttons and workflows, if nothing broke there. So yeah, a lot of like I feel like maybe a little different topic, but everybody that gets into AI looks for this leverage. Like you want this AI to go by itself for as long as you can, and kind of then the North Star I is just full, you just
+
+dpc (35:43)
+Wish it into existence. You don't even prompt, you just point and it appears there after you fill up the tokens. And this turns out to be increasingly difficult. And to be able to do anything like that, you're always looking for some mechanism to automatically steer you to correct the AI. Is it still on course? And unfortunately.
+
+dpc (36:14)
+Almost only software has those guardrails and anything outside of a software tends to be more fuzzy and you know human driven, which you cannot so easily automate. So again, the things that software developers are doing again are like a double whammy, the easiest to replace, the easiest to refactor. Yeah.
+
+Pete Winn (36:40)
+I'm somewhat convinced now that you can't just have the software write itself. You need human attention. I don't even think it's a hard problem; I think it's an impossible problem. If you think you're going to describe something in two lines of text—“go build me an app that does this”—you haven't specified anything.
+
+Pete Winn (37:09)
+And so you will get an app, but it's unlikely to be whatever it is that you've had in your head 'cause you haven't described what's in your head. And I just think the process of describing what's in your head is like a two week iterative process of going, no, not that, like this, this like that 'cause I don't think you can get it out in one go. Like I don't think you could just like the idea of sitting there for like eight hours and dictating a monologue on what an app's gonna be is like, nah, that's not
+
+Pete Winn (37:36)
+Gonna work. I think it has to be iterative and you have to explore yourself and work through and use the thing. Like and again this almost like comes back to woodwork a little bit 'cause I know when I do like usually when I'm doing woodwork I'm building like furniture for the house or I've got a camper van that I built and customized and like I have to build something, live with it and see how I work around it. And then I might just rip it all out and rebuild it.
+
+Pete Winn (38:04)
+To be more appropriate. Like this the desk that I've got on, it's like I've built and rebuilt this desk like six times. Just to get like the feel and the spacing correct and stuff.
+
+dpc (38:15)
+It is like there's so many things you touched there that are kind of even deeper thoughts on software engineering that like one thing I would start with is like when you create software, probably more important than the software itself is the mental model of the problem.
+
+dpc (38:38)
+And that software that developers build in their heads. And that's why kind of things like layoffs and you know attrition is very detrimental. Because as much as the software is being built, the developers learn how to build the thing that is needed, and they explore the space, and it's not something that can be easily even transmitted between people, it's it has more of a
+
+Pete Winn (38:57)
+Yeah.
+
+dpc (39:08)
+Mental model aspect to it. And actually the interfaces between humans are pretty slow. Like when you have to explain to somebody else, I feel like yeah, oftentimes I hang on I would like to share some kind of piece of wisdom that I have in my heaven I apply every day, but it's near impossible even to explain it because it's just like, you know, a couple of weights in my
+
+dpc (39:36)
+In my mental model. It's I started thinking kind of about my own thinking as like an LLM that I did the training and like how do I distill it for someone to train themselves as well. So you like a good project for in software you to do it kind of properly you would have to accept that you're gonna build it, you're gonna learn from what you build and you're gonna try it again and you might need like three, four times. But in
+
+dpc (40:06)
+Actually, in practice, everybody just has to keep banking at the first thing that came up with because it already has users. And that's part of the reason why software looks how it looks, typically. And then the other part is the external like a mold. I'm thinking it about like in maybe not woodworking, but you know, in when you create something from metal, you will prepare a mold and then
+
+dpc (40:35)
+So kind of your testing suite on your software and your specifications and the integrations that other people build around your APIs or software act as a bit like a mold. Like if you were to come to replace it, you would already have something to build against. And then it's much easier. And I feel like both are being built as the product. And the example I can give is, for example, Docker.
+
+Pete Winn (40:53)
+Yeah.
+
+dpc (41:03)
+Probably by now almost anyone used the Docker. But when it was introduced, it wasn't I could tell that it wasn't really clear to people building it and people that are using it, what is it supposed to be. Only after users gave feedback, wrote some software that the Docker developers were able to kind of adjust the what they were building, and eventually everything kind of sits together and everybody has pretty good mental model of
+
+dpc (41:33)
+What is it doing and how it works? Yeah.
+
+Pete Winn (41:39)
+I also think this Okay, I was gonna I was gonna say I also think this is like one of the reasons why like it a lot of stuff does look sloppy when it's there's no attention paid to it. Whereas I think you can almost do a very similar style of vibe coding where you just work in shorter bursts and you're constantly testing products. And if it's a something that you use every day, you really do get a feel for like how the product works.
+
+dpc (41:39)
+Where were we in that tech? Yeah.
+
+Pete Winn (42:09)
+And like where the changes need to be made and then sort of like that intui intuition of the app that would usually come from having touched all the code you can kind of get from just very close testing of the thing. But that testing becomes very important. And so like when I see people that will just like let something run for a couple of days. It's I and now I try this as an experiment every now and again and I come back and I'm like, I don't even know what you've built.
+
+Pete Winn (42:35)
+Like so like where do we even start? But when I pay attention to a project, it just gradually progresses like exactly where I want it to be. I just haven't found a way that you can remove that attention yet. It just doesn't seem to work.
+
+dpc (42:35)
+Yeah.
+
+dpc (42:48)
+I would add to that one kind of more general software engineering kind of principle that I believe in is that the architecture is the most important aspect of the software. And I feel most projects that I've seen kind of failing or struggling were always architectural mistakes.
+
+dpc (43:18)
+As in like the code you can always fix. You can always take something and rewrite it better to a different view. But the architect act architecture tends to be like it sits right at the core and you have to pretty much change everything at once to change it, especially if you have some you know data architecture in their databases, and then the teams I was on would spend like
+
+dpc (43:46)
+Multi-year projects kind of migrating architecture from this to that while the project is working. And I feel like depending on the software you're working on, it might or might not be a problem for you. As in, like most, for example, web applications tend to have a very straightforward architecture. The request comes, look up something on a database, throw some JSON or HTML on the other side, and job done. And the moment like the
+
+dpc (44:15)
+I've seen like a lot of people are very familiar with this model, right? A lot of software working in that, and then problems start when we have some job queue or something. We need to queue something here, and need to have a worker, and we need to notify a couple of things. And that's the moment where everybody, like the developers, tends to get confused, right? So if you're and I feel like if you
+
+Pete Winn (44:37)
+Yeah.
+
+dpc (44:41)
+Start your vibe coding and you kind of have a good sense of what architecture you want to have, and you tell it, like tell the agent, and you write like a spec, couple of things to kind of push it in that direction, then AI might deliver you kind of architecture like you want it, and you're gonna be golden. Like if you start with that. But if you start kind of naively.
+
+dpc (45:06)
+And what you need at the end requires architecture that is nowhere straightforward, then AI might never actually get to the point where it's gonna change your architecture. Because it would be hard even for you know humans with a full expertise at that point to change it. And due to how fast this thing happened can happen, you can box yourself in that spot in a couple of weeks. So I think this is like often overlooked.
+
+dpc (45:36)
+But then to add to your point, I have the same feelings that if you let AI just run for a long time, I even if I let it do a couple of changes, like a couple of I'm already discovering later things that I should have reviewed it because we're gonna be redoing it. And on a project that is personal and I don't care about backward compatibility and stuff, usually I can just tell it.
+
+dpc (46:03)
+Scrub this part and this is how it's supposed to work. So I can take my chances. But if that was like a production and we discover it after a couple of weeks when we have a bunch of integrations and whatever that'd be a big mistake. And at that point it's a problem. So yeah. You gotta judge your consequences of your action and how much risk you're taking. Yeah.
+
+Andy (46:32)
+But do you still think though that like the cost of that architectural mistake is fallen though? Like if you could just like go and rebuild something quite quickly? Like obviously it still has a cost attached to it, but it presumably it'd be a much lower cost than say like, you know, pre AI, where you've then got a bunch of people that need to work through.
+
+dpc (46:50)
+You know that's
+
+dpc (46:53)
+That's a good point. I have not I have not fully kind of thought about it because in the past how it goes is like developers identify that their architecture is bad, like someone there has a enough clue and like we're digging in the wrong direction and that's why everything is always uphill. And then they go to their manager and like we cannot go like this.
+
+dpc (47:16)
+Because it's completely wrong, and no matter what we do, it's always gonna be wrong. And the manager is, I understand you, but the OKRs for the next quarter say something different, and we cannot afford right now for a what are you saying? Nine months of seven people working on it? Not happening. So back to back to the trenches and make it work good enough. So I don't get yelled at out next OKR.
+
+Pete Winn (47:32)
+Mm-hmm.
+
+dpc (47:45)
+Summaries, right? And now that's a very good point that it doesn't need to be nine months and it doesn't have to be seven people. If you already have a working system that you can use as a reference, maybe you can even easily build some kind of a scaffolding to match those, replicate data. It might change the calculation, yeah. I think it might change the game. And I have not been in this situation.
+
+dpc (48:15)
+I suspect it might diametrically change the calculation. I don't know how well it will actually go in practice, but yes.
+
+Pete Winn (48:26)
+I did this recently where we had a we have a product called Flight Deck which started life as an entirely local app that could be synced across multiple different instances. But every it was only ever decrypt any of the data was only ever decrypted to certain groups like inside the browser. Which made it very like hard to debug at times 'cause you ca like you know, all the data just looks like nonsense, so it's irrelevant to you.
+
+Pete Winn (48:54)
+But and I reached a point where I was trying to get it to do stuff and I was like, the architecture's just wrong here. This is good for certain apps, but I can't do anything that's like vaguely real time or like needs these alerts and various different things. And I decided to rewrite the whole thing. And I it was one of these things where I was like, I really like what I did there from a aren't I being all clever and fancy and cypherpunk type of point of view for how I'd built this encrypted record sync. It worked. But then
+
+Pete Winn (49:24)
+You know, if I wanted to co edit a document, it was basically impossible in the UX was terrible. And I was like, I could just use a database. What am I doing? I'm self-hosting the database anyway, so it's still me that's reading it. So maybe I don't need to go that whole hog. And then I rebuilt like a just a self hosted version first where you could plug in your own database and it deployed it all. And you get most of the benefits of the architecture that I wanted anyway, but
+
+Pete Winn (49:51)
+But it's just way cleaner and the whole app just runs like a thousand times smoother now for how I actually want the UX to work. And that was like a big philosophical change. But I remember you I had to like talk to Andy and go, you what, I've fucked up. Like you know, like I'm just I'm just being clever here, which is not clever, is actually idiotic. And I'm gonna have to redo this. And I think I just sort of took two weeks to just
+
+Pete Winn (50:20)
+Rewrite the whole thing and just remove the whole data model in the back end and then reinsert it. And then it was it works. Like you can do it. It's just you have to like I had to be very focused on only that though for a couple of weeks. That was the downside of that. Like it's it would have been hard to do that and also be distracted by ten other projects that I might want to do on the side. But I think it does change that calculation where you can
+
+Pete Winn (50:48)
+Rectify some of these architectural mistakes cheaper than you used to be able to. But I still maintain that it's I agree. Like it's the thing you should get right up front is the architecture because fixing them is still hard because you still need to keep a lot of like mental attention on like how you're doing that transition.
+
+dpc (51:09)
+But architecture is also like one of the most experience requiring part of software. Isn't like to get a good sense of I don't know, even-based architecture, you probably want to drive project like it for four years, maybe. So it's not just something that you can build good experience and sense of what goes well and what goes wrong and all the problems with it.
+
+dpc (51:38)
+Reading from a book. And that is why it's pretty common that it goes wrong. Like even and even people that kind of know and have experience they just make mistakes. Just and requirements change. That's another story that everything can be built, architecture picked perfectly, and then there is a change in business and now we're doing something slightly different and require different architecture and yeah.
+
+Andy (52:08)
+I feel like there's some subjectivity in this as well. Like I know I've had this running a an education technology company, you know, like we'd have someone originally would kind of scope all this stuff out and then you bring someone else into the team and you know that person would leave. And then you get a bunch of questions around like, why is this done this way? And who decided to do this? And before you know it, you kind of forced into like a bunch of architectural changes anyway. And I find that experience like for me
+
+Andy (52:38)
+It was quite similar to working with agents, it's just the feedback was quite quick and like I could decipher it and ask a million questions and not, you know, annoy a bunch of devs in the team. And but the same problem was like I would say the problem was terminal for like a startup. You know, if you're building something new and it's reliant on, you know, third party funding in order to like bring it to life, yeah, that technical debt could be terminal. Whereas I feel like now it's
+
+Andy (53:05)
+Like yeah like the cost of making that mistake is much lower and you can you can you can move the ship around like much quicker. So it feels like you've got some like some space to make these mistakes. But there was still that subjectivity up front in designing a lot of this stuff and it was really like dependent on who was in the team and who was making these decisions and you know, if you're non technical you're still abdicating a lot of that to people, just as you might be now to agents.
+
+dpc (53:36)
+I think software—and this woodworking metaphor—is extremely subjective. You can do the same thing in software in so many ways, and most of them are primarily
+
+dpc (53:57)
+The choices there are primarily driven by subjective choices. Like I like this tech stack, this programming language. I'm more of a visual person, and I'm more of a this person. I like to systematize, I like kind of think a little fuzzy. I think the one of the aspects of like this personalization is you don't have to agree with people as much anymore. Like you can radically shrink your teams and
+
+dpc (54:26)
+Just yeah, he has opinions, so let him write it how he wants it and if someone later doesn't like it, maybe they can just start from scratch and to throw the previous one again. As long as the kind of a maybe database is reusable, you can start again, hopefully.
+
+Andy (54:42)
+Yep.
+
+Pete Winn (54:43)
+I mean, I think there's an interesting thing that Andy touched on there, which is that like for me the process of working with agents felt very natural because I've spent so much more like the majority of my career in software, I was generally doing architecture and like product design and leading stuff. And so it was very much like I'm just working with a bunch of engineers that
+
+Pete Winn (55:08)
+Listen to what I asked them to do and then do it and I was like, fantastic. This is like this is the dream. Like but it felt like a very natural way of working to work with the agents like that. I'm curious, you're obviously like way more technical than I am. Like I'm curious like how did you find that transition of or is it like just working with juniors? Like what's it like for you?
+
+dpc (55:31)
+So somewhat similar, like it feels like you just got like a team under you with almost infinite patience for you and always available. One thing that annoys me is agent's lack of general context and wisdom. And that I was just whole last week was kind of a
+
+dpc (55:56)
+Struggle because the a new model is released. So I switched kind of everything to use that model. And the difference in behavior is just so annoying because the model is much more kind of lawyering up. I'm not sure how to express this. It's just so pushy and hanging to the details of prompts.
+
+dpc (56:25)
+And does it seem to lose all sense of kind of nuance. I don't know, like it's better at writing code, maybe, maybe a little smarter, but it's so much harder to work with. And I this is like and I've been I've been thinking about all this ways you could actually give agents this
+
+Pete Winn (56:37)
+Yeah, okay.
+
+dpc (56:51)
+This context. Like I'm trying this kind of skills, like specs kind of pointing at each other, expressing design decisions and external requirements, just hoping that those agents will like look at it and wisen up a little bit sometimes. Like the one problem particular that I was complaining today is the Sol model loves doing migrations, it will never
+
+dpc (57:20)
+It will never give up on migration. So I had an occurrence when I asked the model to implement something and it was supposed to have created add field there just to keep track of when it was created or updated. And it did it in nanoseconds. So I told it change it to milliseconds because it's like over overkill. And it wrote a migration for it, which was just a feature it just implemented and I asked it to amend.
+
+dpc (57:49)
+And it's like over and over like that. And this is what just drives me. I can tolerate kind of a mistake, honest mistake. And oftentimes it's even my prompt. Like I'm too sloppy, too lazy, too brief. But some of the behaviors that the fact that they repeat and you just write more prompts, like you customize prompt, you write agents MD, you analyze everything. How did it happen? And it still keeps doing the some.
+
+dpc (58:18)
+Some nonsense and you know it's never gonna change. It's like a kind of a I don't know, a kid that never gonna grow up, like an employee that you wanna, you know, senior up and pass some wisdom to, but you know they will never get it. Unless you know you're gonna get a new model and maybe it's gonna be better.
+
+Pete Winn (58:30)
+Mm.
+
+Pete Winn (58:37)
+Yeah. I mean I wonder if that comes down to like they've had feedback that the models don't stick enough to prompts or they miss migrations or something and they just overfit to those things.
+
+dpc (58:48)
+I think yeah, like
+
+dpc (58:49)
+Some kind of a training. It's with agents it is like that, that it's very hard to fight their training. And I even though I'm only now I kind of started paying more attention to it. So it became more visible to me. It's I can sense it at every step. That the model has its kind of character, just like people. And one model is more relaxed, one is more about
+
+dpc (59:18)
+You know higher level, one is super into the details, one follows instructions like a rail, and one is more sloppy. And I don't know, I guess maybe it is like a you know, you will have to match the model character. Just like when you're a manager or team leader, you kind of know the personalities of your employees and you give the things that require diligence to more careful ones and you give someone that is like fast and furious but gets it done fast.
+
+dpc (59:47)
+As something that you need faster but don't care. Yeah, maybe there will be there is some aspect in kind of a team management to agents. Yeah. So it's kind of similar.
+
+Andy (01:00:01)
+Yeah, it's probably the other reason why you don't really want to let these things run for days on end, like what Pete was saying before. It's like you wouldn't do it with humans if you were managing a bunch of humans. You wouldn't just like, Yeah, report back to me in a month and let's see where this is at. Like you'd wanna I mean I guess it depends on what it is, but if it's a new project, yeah, you'd what you'd wanna be
+
+Andy (01:00:22)
+You know, in and around the people doing the work and figuring out who's doing what and planning it and Yeah, it doesn't it just doesn't feel logical to just let these things run for days on end.
+
+dpc (01:00:33)
+Yeah, and I even like I'm learning through as they do it. Like just they did something, I asked them, they did it correctly, I was wrong, the idea was terrible. If I wasn't there to catch it, they would keep building on top of the idea and maybe it would be past the point of no return.
+
+Andy (01:00:37)
+Mm.
+
+Pete Winn (01:00:54)
+I think it's definitely like a co creation like ideal, is that you need to be there, they're there, and it's almost the blessing in the curse is that you can you can like spin up this little team of engineers that you can work with. They'll do what you ask and they'll do it almost instantaneously and so quick that you can then just sit and test. And it as I say, it's like the blessing in the curse 'cause it's amazing, 'cause it's the sort of thing that would have taken like, you know, maybe it's two weeks or
+
+Pete Winn (01:01:21)
+It's a week between asking, refining, asking a question. It takes a day to ask a question. I mean we used to work across time zones, right? It's hard. But then these things are always in your time zone. They're always on. They always get back to you when you need it. But then it's also like it just draws you in so much. It's like really hard to like step away from
+
+dpc (01:01:44)
+That's the AI psychosis part that it's like it's hard that's you said it just all right, like it's hard to step away. As you know that you can always make more progress and everything is kind of waiting for you. And you just need to type a couple more short prompts, and you can be so much farther in just an hour or so. It is kind of exhausting. Yeah.
+
+Andy (01:02:02)
+Mm-hmm.
+
+Pete Winn (01:02:10)
+I think
+
+Pete Winn (01:02:10)
+That's what drives that desire to have like a can I not just say make a good app and then it makes a good app and it fills in all the details from what I probably mean by that, but I just don't think that exists. I'm fairly convinced by now.
+
+dpc (01:02:23)
+Yeah.
+
+dpc (01:02:27)
+Yeah, but it
+
+dpc (01:02:27)
+It was pretty big topic, right? When people started talking about the what is it, AI factories? Like those even the slide of AI factory. I think I yesterday watched a kind of interview with one of the developers that kind of
+
+dpc (01:02:47)
+Invented the term and they built it as a company and he was saying that it was working great at the beginning but they shut it down in I think it was something between four or six months. And yeah my current concern, returning to how we were talking at the beginning how I'm still skeptical is this part like the how far can we scale it like how much we can push this leverage.
+
+dpc (01:03:15)
+Can we go much farther without breaking everything? And right now I'm still skeptical, but I was kind of wrong before, so I'm a little bit more cautious this time.
+
+Pete Winn (01:03:26)
+I think what we've often said is that the like the last job remaining here is to be like the human with the problem. And then your job as the human with the problem is to talk to enough of these agents that they build all the stuff you need, but they can't yet be the human with the problem. I mean maybe at some point they can be an AI with a problem and then you get a bunch of software for AIs, but that's no use to me. I'm a human, so it's gonna look
+
+dpc (01:03:51)
+Yeah, I'm very excited, like looking forward how things are gonna play out. I don't think I've ever been maybe not ever, but I in a way I was kind of getting bored of software engineering and it's in like not I still love doing it and my whole life is like all in software everywhere. But it was becoming kind of I felt like I knew it, you know? Like I got it. I did it all.
+
+Pete Winn (01:04:17)
+Hm.
+
+dpc (01:04:21)
+Maybe I don't know everything, but I'm mostly kind of knowledgeable how things are done. And suddenly just drops this new thing that is nothing like anything before. And it absolutely changes how we do everything. And yeah, it's like in games you do prestige or something. You reset the game with a certain twist that everything from now is done again. And it like rejuvenated this like kind of excitement in
+
+Pete Winn (01:04:40)
+Mm.
+
+dpc (01:04:49)
+In the unknown, that I can tell that I have no idea how to solve a lot of those aspects of it. And smart people around seem to be in the same position when they're like scratching. And can we do it? Can we do it? Factory? How far can we get it done? And that's like one of the most fun parts of AI, of LLMs for me.
+
+Pete Winn (01:05:13)
+Alright. That sounded like such a good sign-off. We'll say that's The Good Stuff.
+
+dpc (01:05:18)
+Yeah, maybe. And we're at an hour.

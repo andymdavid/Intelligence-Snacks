@@ -17,6 +17,18 @@ const contributors = participants.filter((person): person is NonNullable<typeof 
 const topic = await getEntry(episode.data.primaryTopic);
 const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status) && data.sourceEpisode.id === episode.id);
 const topics = new Map((await getCollection('topics')).map((entry) => [entry.id, entry]));
+const relatedEpisodeTopics = episode.data.relatedTopics.map(({ id }) => topics.get(id)).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
+const transcriptFiles = import.meta.glob('../../content/transcripts/*.txt', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+const transcriptSource = episode.data.transcript
+  ? Object.entries(transcriptFiles).find(([path]) => path.endsWith(`/${episode.data.transcript}.txt`))?.[1]
+  : undefined;
+const transcriptTurns = transcriptSource?.trim().split(/\n\s*\n/).flatMap((block) => {
+  const match = block.match(/^(.+?) \((\d{2}:\d{2}(?::\d{2})?)\)\n([\s\S]+)$/);
+  return match ? [{ speaker: match[1]!, timestamp: match[2]!, text: match[3]!.replace(/\s*\n\s*/g, ' ') }] : [];
+}) ?? [];
+const timestampSeconds = (timestamp: string) => timestamp.split(':').reverse().reduce((total, part, index) => total + Number(part) * (60 ** index), 0);
+const durationSeconds = transcriptTurns.length ? timestampSeconds(transcriptTurns.at(-1)!.timestamp) : undefined;
+const isoDuration = durationSeconds ? `PT${Math.floor(durationSeconds / 3600) ? `${Math.floor(durationSeconds / 3600)}H` : ''}${Math.floor((durationSeconds % 3600) / 60)}M${durationSeconds % 60}S` : undefined;
 const youtubeId = episode.data.youtubeUrl
   ? new URL(episode.data.youtubeUrl).searchParams.get('v') ?? episode.data.youtubeUrl.split('/').filter(Boolean).pop()
   : undefined;
@@ -25,13 +37,17 @@ const pageTitle = episode.data.seo?.title ?? `Episode ${episode.data.number}: ${
 const pageDescription = episode.data.seo?.description ?? episode.data.summary;
 const pageImage = episode.data.seo?.image ?? (youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg` : '/social-default.webp');
 const jsonLd = [{
-  '@context': 'https://schema.org', '@type': 'PodcastEpisode', name: episode.data.title,
-  episodeNumber: episode.data.number, description: pageDescription, url: pageUrl,
+  '@context': 'https://schema.org', '@type': 'PodcastEpisode', '@id': `${pageUrl}#episode`, name: episode.data.title,
+  episodeNumber: episode.data.number, description: pageDescription, url: pageUrl, inLanguage: 'en-AU', duration: isoDuration,
   datePublished: episode.data.originalPublishedAt?.toISOString(), dateModified: episode.data.updatedAt?.toISOString(),
   image: new URL(pageImage, Astro.site).href,
-  partOfSeries: { '@type': 'PodcastSeries', name: 'Intelligence Snacks', url: new URL('/episodes/', Astro.site).href },
-  actor: contributors.map((person) => ({ '@type': 'Person', name: person.data.name, url: new URL(`/contributors/${person.id}/`, Astro.site).href })),
-  associatedMedia: episode.data.youtubeUrl ? { '@type': 'VideoObject', name: episode.data.title, contentUrl: episode.data.youtubeUrl, embedUrl: `https://www.youtube-nocookie.com/embed/${youtubeId}`, uploadDate: episode.data.originalPublishedAt?.toISOString(), thumbnailUrl: pageImage } : undefined,
+  partOfSeries: { '@id': new URL('/episodes/#podcast', Astro.site).href },
+  contributor: contributors.map((person) => ({ '@type': 'Person', '@id': new URL(`/contributors/${person.id}/#person`, Astro.site).href, name: person.data.name, url: new URL(`/contributors/${person.id}/`, Astro.site).href })),
+  about: [topic, ...relatedEpisodeTopics].filter((entry): entry is NonNullable<typeof entry> => Boolean(entry)).map((entry) => ({ '@type': 'DefinedTerm', name: entry.data.name, url: new URL(`/topics/${entry.id}/`, Astro.site).href })),
+  keywords: [topic, ...relatedEpisodeTopics].filter((entry): entry is NonNullable<typeof entry> => Boolean(entry)).map((entry) => entry.data.name),
+  associatedMedia: episode.data.youtubeUrl ? { '@type': 'VideoObject', '@id': `${pageUrl}#video`, name: episode.data.title, description: pageDescription, contentUrl: episode.data.youtubeUrl, embedUrl: `https://www.youtube-nocookie.com/embed/${youtubeId}`, uploadDate: episode.data.originalPublishedAt?.toISOString(), thumbnailUrl: pageImage, duration: isoDuration, inLanguage: 'en-AU' } : undefined,
+  potentialAction: episode.data.audioUrl ? { '@type': 'ListenAction', target: episode.data.audioUrl } : undefined,
+  hasPart: snacks.map((snack) => ({ '@type': 'Article', '@id': new URL(`/snacks/${snack.id}/#article`, Astro.site).href, name: snack.data.title, url: new URL(`/snacks/${snack.id}/`, Astro.site).href })),
 }, {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href },
@@ -40,7 +56,7 @@ const jsonLd = [{
   ],
 }];
 ---
-<BaseLayout title={pageTitle} description={pageDescription} image={pageImage} canonicalUrl={episode.data.seo?.canonicalUrl} type="article" publishedAt={episode.data.originalPublishedAt} modifiedAt={episode.data.updatedAt} {jsonLd} active="episodes">
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage} imageWidth={youtubeId ? 1280 : 1200} imageHeight={youtubeId ? 720 : 630} canonicalUrl={episode.data.seo?.canonicalUrl} type="article" publishedAt={episode.data.originalPublishedAt} modifiedAt={episode.data.updatedAt} {jsonLd} active="episodes">
   <header class="episode-head page-shell">
     <div class="episode-head__meta"><span>Episode {episode.data.number}</span><span>Intelligence Snacks Podcast</span></div>
     <h1>{episode.data.title}</h1>
@@ -56,13 +72,29 @@ const jsonLd = [{
     {youtubeId
       ? <iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} title={`Episode ${episode.data.number}: ${episode.data.title}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       : <StoryVisual label="Full conversation" colour={topic?.data.colour ?? '#9aa7ff'} index={episode.data.number} />}
+    {episode.data.audioUrl && <a class="audio-link" href={episode.data.audioUrl} rel="external">Listen on Spotify <span aria-hidden="true">↗</span></a>}
   </div>
   <section class="episode-intro page-shell section"><p class="eyebrow">About this conversation</p><div><Content /></div></section>
   <section class="page-shell section">
     <div class="section-heading"><h2>Ideas from Episode {episode.data.number}</h2></div>
     <div class="episode-snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.primaryTopic.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" />; })}</div>
   </section>
-  <section class="transcript page-shell section"><div class="section-heading"><h2>Transcript</h2><p>The complete source conversation will remain available alongside the developed ideas.</p></div><div class="transcript-placeholder"><p class="eyebrow">Episode 64 transcript</p><p>Transcript content will be attached during the first ingestion pipeline run. The page structure is ready for speaker-labelled, timestamped chapters.</p></div></section>
+  {transcriptTurns.length > 0 && (
+    <section class="transcript page-shell section">
+      <div class="section-heading"><h2>Transcript</h2><p>The complete source conversation, lightly formatted for reading.</p></div>
+      <details class="transcript-reader">
+        <summary><span>Read full transcript</span><span>{transcriptTurns.length} passages <b aria-hidden="true">+</b></span></summary>
+        <div class="transcript-turns">
+          {transcriptTurns.map((turn) => (
+            <article class="transcript-turn">
+              <div><strong>{turn.speaker}</strong>{episode.data.youtubeUrl ? <a href={`${episode.data.youtubeUrl}&t=${timestampSeconds(turn.timestamp)}s`} rel="external" aria-label={`Watch ${turn.speaker} at ${turn.timestamp} on YouTube`}>{turn.timestamp}</a> : <span>{turn.timestamp}</span>}</div>
+              <p>{turn.text}</p>
+            </article>
+          ))}
+        </div>
+      </details>
+    </section>
+  )}
 </BaseLayout>
 <style>
   .episode-head { padding-block: clamp(4rem, 8vw, 8rem); }
@@ -75,6 +107,7 @@ const jsonLd = [{
   .episode-head__source > div > p { margin: .7rem 0 0; }
   .episode-media { position: relative; padding-block: var(--page-pad); }
   .episode-media :global(.story-visual), .episode-media iframe { width: 100%; height: calc(100svh - 58px - (2 * var(--page-pad))); min-height: 0; border: 0; border-radius: var(--radius-small); background: var(--ink); }
+  .audio-link { position: absolute; right: calc(var(--page-pad) + 1.25rem); bottom: calc(var(--page-pad) + 1.25rem); padding: .9rem 1.1rem; border-radius: var(--radius-small); background: #1ed760; color: #080808; font-family: var(--font-display); font-size: .9rem; font-weight: 500; }
   .episode-intro { display: grid; grid-template-columns: 1fr 2fr 1fr; }
   .episode-intro > div { grid-column: 2; font-family: var(--font-body); font-size: var(--type-body-large); line-height: 1.5; }
   .episode-snack-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(.65rem, 1vw, 1rem); row-gap: clamp(3.5rem, 6vw, 6rem); }
@@ -85,8 +118,19 @@ const jsonLd = [{
   .episode-snack-grid :global(.snack-card h3) { margin-bottom: .7rem; line-height: 1.02; }
   .episode-snack-grid :global(.snack-card p) { font-size: .96rem; line-height: 1.45; }
   .episode-snack-grid :global(.text-link) { padding-top: 1.25rem; }
-  .transcript-placeholder { max-width: 850px; margin-inline: auto; padding: 4rem; border: 1px solid var(--line); background: var(--paper-raised); }
+  .transcript-reader { border-top: 1px solid var(--line); }
+  .transcript-reader summary { min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; cursor: pointer; list-style: none; font-family: var(--font-display); font-size: clamp(1.15rem, 2vw, 1.65rem); }
+  .transcript-reader summary::-webkit-details-marker { display: none; }
+  .transcript-reader summary > span:last-child { display: flex; align-items: center; gap: 1.25rem; color: var(--text-muted); font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; }
+  .transcript-reader summary b { color: var(--ink); font-family: var(--font-body); font-size: 1.5rem; font-weight: 400; transition: transform .2s ease; }
+  .transcript-reader[open] summary b { transform: rotate(45deg); }
+  .transcript-turns { max-width: 980px; margin-inline: auto; padding: clamp(2rem, 5vw, 5rem) 0; }
+  .transcript-turn { display: grid; grid-template-columns: minmax(9rem, .6fr) 2fr; gap: clamp(1.5rem, 4vw, 4rem); padding: 1.5rem 0; border-top: 1px solid var(--line); }
+  .transcript-turn > div { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; color: var(--text-muted); font-family: var(--font-mono); font-size: .68rem; }
+  .transcript-turn strong { color: var(--ink); font-weight: 600; }
+  .transcript-turn a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; }
+  .transcript-turn p { margin: 0; font-size: 1rem; line-height: 1.6; }
   @media (max-width: 900px) { .episode-snack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 800px) { .episode-head__details, .episode-intro { grid-template-columns: 1fr; } .episode-head__details { gap: 2.5rem; } .episode-intro > div { grid-column: 1; } .episode-head__meta { align-items: flex-start; flex-direction: column; } }
-  @media (max-width: 620px) { .episode-media :global(.story-visual), .episode-media iframe { height: auto; aspect-ratio: 16 / 9; } .episode-snack-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 620px) { .episode-media :global(.story-visual), .episode-media iframe { height: auto; aspect-ratio: 16 / 9; } .audio-link { position: static; width: 100%; display: flex; justify-content: space-between; margin-top: .5rem; } .episode-snack-grid { grid-template-columns: 1fr; } .transcript-reader summary { min-height: 4.5rem; } .transcript-turn { grid-template-columns: 1fr; gap: .75rem; } .transcript-turn > div { justify-content: flex-start; } }
 </style>
