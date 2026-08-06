@@ -90,6 +90,20 @@ export async function subscribe(request: Request) {
 
 async function staticResponse(request: Request) {
   const url = new URL(request.url);
+  const forwardedProto = request.headers.get('x-forwarded-proto');
+  if (url.hostname === 'www.intelligencesnacks.com' || (url.hostname === 'intelligencesnacks.com' && forwardedProto === 'http')) {
+    url.protocol = 'https:';
+    url.hostname = 'intelligencesnacks.com';
+    return Response.redirect(url, 308);
+  }
+  if (url.pathname.startsWith('/people/')) {
+    url.pathname = url.pathname.replace(/^\/people\//, '/contributors/');
+    return Response.redirect(url, 308);
+  }
+  if (url.pathname !== '/' && !url.pathname.endsWith('/') && !extname(url.pathname)) {
+    url.pathname += '/';
+    return Response.redirect(url, 308);
+  }
   let pathname: string;
   try {
     pathname = decodeURIComponent(url.pathname);
@@ -112,7 +126,8 @@ async function staticResponse(request: Request) {
     }
   }
 
-  return new Response('Not found', { status: 404 });
+  const notFound = Bun.file(join(distDirectory, '404.html'));
+  return new Response(await notFound.exists() ? notFound : 'Not found', { status: 404, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' } });
 }
 
 if (import.meta.main) {

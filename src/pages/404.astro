@@ -1,0 +1,16 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Page not found — Intelligence Snacks" description="The requested page could not be found." noindex>
+  <section class="not-found page-shell">
+    <p class="eyebrow">404</p>
+    <h1>This idea isn’t here.</h1>
+    <p>The page may have moved, or the address may be incorrect.</p>
+    <a class="text-link" href="/">Return to Intelligence Snacks <span>↗</span></a>
+  </section>
+</BaseLayout>
+<style>
+  .not-found { min-height: calc(100svh - 58px); display: grid; align-content: center; justify-items: start; padding-block: var(--section-space); }
+  .not-found h1 { max-width: 900px; margin-bottom: 1.5rem; font-size: var(--type-page); line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
+  .not-found > p:not(.eyebrow) { max-width: 32rem; color: var(--text-secondary); font-size: var(--type-body-large); }
+</style>
