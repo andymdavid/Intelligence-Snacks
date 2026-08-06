@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import StoryVisual from '@/components/StoryVisual.astro';
+import SnackVisual from '@/components/SnackVisual.astro';
 import EpisodeSnackRail from '@/components/EpisodeSnackRail.astro';
 import EmailSignup from '@/components/EmailSignup.astro';
 import HeroSnackStack from '@/components/HeroSnackStack.astro';
@@ -61,7 +62,7 @@ const jsonLd = {
         <p>{featured.data.standfirst}</p>
         <a class="text-link" href={`/snacks/${featured.id}/`}>Read the snack <span>↗</span></a>
       </div>
-      <div class="feature__visual"><a href={`/snacks/${featured.id}/`}><StoryVisual label={featured.data.editorialTitle ?? featuredTopic.data.name} colour={featuredTopic.data.colour} index={64} /></a></div>
+      <div class="feature__visual"><a href={`/snacks/${featured.id}/`}><SnackVisual snack={featured} label={featured.data.editorialTitle ?? featuredTopic.data.name} colour={featuredTopic.data.colour} index={64} /></a></div>
     </section>
   )}
 

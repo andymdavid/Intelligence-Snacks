@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import StoryVisual from './StoryVisual.astro';
+import SnackVisual from './SnackVisual.astro';
 
 interface Props {
   snack: CollectionEntry<'snacks'>;
@@ -15,7 +15,7 @@ const { snack, topicName, colour, index, variant = 'standard', episodeNumber } =
 ---
 
 <article class:list={['snack-card', `snack-card--${variant}`]}>
-  {variant !== 'list' && <a class="snack-card__visual" href={`/snacks/${snack.id}/`} tabindex="-1"><StoryVisual label={snack.data.editorialTitle ?? topicName} {colour} {index} compact={variant === 'standard' || variant === 'archive'} /></a>}
+  {variant !== 'list' && <a class="snack-card__visual" href={`/snacks/${snack.id}/`} tabindex="-1"><SnackVisual {snack} label={snack.data.editorialTitle ?? topicName} {colour} {index} compact={variant === 'standard' || variant === 'archive'} /></a>}
   <div class="snack-card__body">
     <div class="card-meta"><a href={`/topics/${snack.data.primaryTopic.id}/`}>{topicName}</a><span>{episodeNumber ? `Episode ${episodeNumber}` : `Snack ${String(index).padStart(2, '0')}`}</span></div>
     <h3><a href={`/snacks/${snack.id}/`}>{snack.data.title}</a></h3>

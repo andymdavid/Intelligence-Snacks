@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import StoryVisual from './StoryVisual.astro';
+
+interface Props {
+  snack: CollectionEntry<'snacks'>;
+  label: string;
+  colour: string;
+  index: number;
+  compact?: boolean;
+}
+
+const { snack, label, colour, index, compact = false } = Astro.props;
+---
+
+{snack.data.thumbnail
+  ? <img class="snack-thumbnail" src={snack.data.thumbnail} alt="" loading="lazy" width="1536" height="1024" />
+  : <StoryVisual {label} {colour} {index} {compact} />}
+
+<style>
+  .snack-thumbnail { width: 100%; height: auto; min-height: 0; display: block; aspect-ratio: 3 / 2; border-radius: var(--radius-small); object-fit: cover; }
+</style>

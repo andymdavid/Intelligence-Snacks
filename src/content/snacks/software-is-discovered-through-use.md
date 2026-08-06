@@ -1,6 +1,7 @@
 ---
 title: Real Use Reveals Missing Product Requirements
 editorialTitle: Use Reveals Missing Requirements
+thumbnail: /images/snacks/real-use-product-requirements-v2.webp
 standfirst: Working software exposes missing permissions, awkward screens and workflow exceptions that an initial specification rarely captures.
 status: published
 publishedAt: 2026-08-05T00:00:00Z

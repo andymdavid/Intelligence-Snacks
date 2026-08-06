@@ -1,6 +1,7 @@
 ---
 title: AI Coding Agents Work Like Power Tools
 editorialTitle: Software With Power Tools
+thumbnail: /images/snacks/ai-coding-agents-power-tools-v2.webp
 standfirst: Coding agents shift a developer’s attention from writing every line towards architecture, testing and review.
 status: published
 publishedAt: 2026-08-05T00:00:00Z

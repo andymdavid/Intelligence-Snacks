@@ -1,7 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import StoryVisual from '@/components/StoryVisual.astro';
+import SnackVisual from '@/components/SnackVisual.astro';
 import { isVisible } from '@/lib/content';
 
 export async function getStaticPaths() {
@@ -95,7 +95,7 @@ const jsonLd = [{
       {visibleSnacks.map((snack, index) => {
         const topic = topics.get(snack.data.primaryTopic.id);
         return <article>
-          <a href={`/snacks/${snack.id}/`} tabindex="-1"><StoryVisual label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#fe7141'} index={index + 1} compact /></a>
+          <a href={`/snacks/${snack.id}/`} tabindex="-1"><SnackVisual {snack} label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#fe7141'} index={index + 1} compact /></a>
           <p class="eyebrow">{topic?.data.name}</p><h3><a href={`/snacks/${snack.id}/`}>{snack.data.title}</a></h3><p>{snack.data.standfirst}</p>
         </article>;
       })}

@@ -75,6 +75,7 @@ const snacks = defineCollection({
   schema: z.object({
     title: z.string(),
     editorialTitle: z.string().optional(),
+    thumbnail: z.string().optional(),
     standfirst: z.string(),
     status,
     publishedAt: z.coerce.date().optional(),

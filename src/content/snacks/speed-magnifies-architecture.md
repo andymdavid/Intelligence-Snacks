@@ -1,6 +1,7 @@
 ---
 title: AI Speed Makes Architectural Judgement More Important
 editorialTitle: Speed Magnifies Architecture
+thumbnail: /images/snacks/ai-speed-architecture-v2.webp
 standfirst: Rapid implementation lets an early choice about data, queues or background workers spread across a codebase within weeks.
 status: published
 publishedAt: 2026-08-05T00:00:00Z

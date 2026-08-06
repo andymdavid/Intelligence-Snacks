@@ -1,7 +1,7 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import StoryVisual from '@/components/StoryVisual.astro';
+import SnackVisual from '@/components/SnackVisual.astro';
 import ContributorRow from '@/components/ContributorRow.astro';
 import ShareButtons from '@/components/ShareButtons.astro';
 import { formatDate, isVisible } from '@/lib/content';
@@ -60,7 +60,7 @@ const jsonLd = [{
         <div class="article-head__source"><div><ContributorRow people={contributors} /><p>{snack.data.attribution}</p></div><p>{episode && <>From <a href={`/episodes/${episode.id}/`}>Episode {episode.data.number}: {episode.data.title}</a></>}</p></div>
       </div>
     </header>
-    <div class="article-visual page-shell"><StoryVisual label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#c4f256'} index={episode?.data.number ?? 1} /></div>
+    <div class="article-visual page-shell"><SnackVisual {snack} label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#c4f256'} index={episode?.data.number ?? 1} /></div>
     <div class="article-layout page-shell">
       <aside><p class="eyebrow">In this idea</p><p>{topic?.data.description}</p>{snack.data.publishedAt && <p>Published {formatDate(snack.data.publishedAt)}</p>}</aside>
       <div class="prose"><Content /></div>
@@ -71,7 +71,7 @@ const jsonLd = [{
     <div class="related__grid">
       {related.map(({ relationship, snack: target, topic: targetTopic }, index) => target && <article class="related-card">
         <a class="related-card__visual" href={`/snacks/${target.id}/`} tabindex="-1">
-          <StoryVisual label={target.data.editorialTitle ?? targetTopic?.data.name ?? 'Intelligence Snack'} colour={targetTopic?.data.colour ?? '#c4f256'} index={index + 1} compact />
+          <SnackVisual snack={target} label={target.data.editorialTitle ?? targetTopic?.data.name ?? 'Intelligence Snack'} colour={targetTopic?.data.colour ?? '#c4f256'} index={index + 1} compact />
         </a>
         <div class="related-card__body">
           <div class="related-card__meta"><a href={`/topics/${targetTopic?.id}/`}>{targetTopic?.data.name}</a><span>{relationship.type.replace('-', ' ')}</span></div>

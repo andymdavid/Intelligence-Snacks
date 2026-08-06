@@ -1,6 +1,6 @@
 ---
 import { getEntry, type CollectionEntry } from 'astro:content';
-import StoryVisual from './StoryVisual.astro';
+import SnackVisual from './SnackVisual.astro';
 import ContributorRow from './ContributorRow.astro';
 
 interface Props {
@@ -39,7 +39,7 @@ const contributors = (await Promise.all(episode.data.participants.map((person) =
         return (
           <article class="rail-card">
             <a class="rail-card__visual" href={`/snacks/${snack.id}/`} tabindex="-1">
-              <StoryVisual label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#c4f256'} index={index + 1} compact />
+              <SnackVisual {snack} label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#c4f256'} index={index + 1} compact />
             </a>
             <div class="rail-card__body">
               <div class="rail-card__meta">
