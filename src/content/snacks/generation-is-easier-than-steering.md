@@ -1,7 +1,7 @@
 ---
 title: Generation Is Easier Than Steering
 standfirst: The limiting factor in longer autonomous work is increasingly the quality of the feedback that determines whether generated software remains aligned.
-status: review
+status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
@@ -17,7 +17,7 @@ relationships:
   - target: software-is-discovered-through-use
     type: overlaps
     note: Important product behaviour often cannot be reduced to mechanical tests.
-fixture: true
+fixture: false
 ---
 
 Coding agents can produce large amounts of software. Longer autonomous runs require a reliable way to determine whether the work remains aligned with the intended result. The limiting factor often appears in evaluation rather than generation.

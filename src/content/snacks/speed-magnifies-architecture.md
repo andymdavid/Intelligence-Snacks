@@ -2,7 +2,7 @@
 title: AI Speed Makes Architectural Judgement More Important
 editorialTitle: Speed Magnifies Architecture
 standfirst: Agents make implementation and rebuilding cheaper, but they also allow weak structural decisions to spread through a system with extraordinary speed.
-status: review
+status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
@@ -17,7 +17,7 @@ relationships:
   - target: generation-is-easier-than-steering
     type: overlaps
     note: Architecture is one of the high-consequence areas that needs strong steering.
-fixture: true
+fixture: false
 ---
 
 Architecture determines how data, services and processes relate across a system. A poor function can usually be rewritten in isolation. A poor execution model or data structure can shape every feature that follows, making later changes depend on the same weak foundation.

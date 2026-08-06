@@ -2,7 +2,7 @@
 title: Coding Models Have Working Personalities
 editorialTitle: Models Have Working Personalities
 standfirst: Models differ not only in capability but in literalness, initiative, caution and the habits they repeatedly bring to a working relationship.
-status: review
+status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
@@ -14,7 +14,7 @@ relationships:
   - target: the-harness-determines-the-work
     type: overlaps
     note: Project instructions and harness constraints can shape but not erase model tendencies.
-fixture: true
+fixture: false
 ---
 
 Coding models differ in literalness, initiative, caution and attention to detail. A model can produce technically stronger code while creating a more difficult working relationship. Its behaviour depends on how it interprets instructions as much as on whether it can complete the task.

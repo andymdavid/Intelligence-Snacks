@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import StoryVisual from '@/components/StoryVisual.astro';
 import ContributorRow from '@/components/ContributorRow.astro';
+import ShareButtons from '@/components/ShareButtons.astro';
 import { formatDate, isVisible } from '@/lib/content';
 
 export async function getStaticPaths() {
@@ -17,23 +18,30 @@ const contributors = episode
   ? (await Promise.all(episode.data.participants.map((participant) => getEntry(participant)))).filter((person) => person?.data.image)
   : [];
 const topic = await getEntry(snack.data.primaryTopic);
+const relatedTopics = (await Promise.all(snack.data.relatedTopics.map((entry) => getEntry(entry)))).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 const related = await Promise.all(snack.data.relationships.map(async (relationship) => {
   const target = await getEntry(relationship.target);
   const targetTopic = target ? await getEntry(target.data.primaryTopic) : undefined;
   return { relationship, snack: target, topic: targetTopic };
 }));
 const pageUrl = new URL(`/snacks/${snack.id}/`, Astro.site).href;
-const pageTitle = snack.data.seo?.title ?? `${snack.data.title} — Intelligence Snacks`;
+const brandedTitle = `${snack.data.title} — Intelligence Snacks`;
+const pageTitle = snack.data.seo?.title ?? (brandedTitle.length <= 65 ? brandedTitle : snack.data.title);
 const pageDescription = snack.data.seo?.description ?? snack.data.standfirst;
-const pageImage = snack.data.seo?.image ?? '/social-default.webp';
+const pageImage = snack.data.seo?.image ?? `/social/snacks/${snack.id}.webp`;
 const jsonLd = [{
-  '@context': 'https://schema.org', '@type': 'Article', headline: snack.data.title,
-  description: pageDescription, url: pageUrl, mainEntityOfPage: pageUrl,
+  '@context': 'https://schema.org', '@type': 'Article', '@id': `${pageUrl}#article`, headline: snack.data.title,
+  description: pageDescription, url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, inLanguage: 'en-AU',
   image: new URL(pageImage, Astro.site).href,
   datePublished: snack.data.publishedAt?.toISOString(), dateModified: snack.data.updatedAt?.toISOString() ?? snack.data.publishedAt?.toISOString(),
-  author: contributors.map((person) => ({ '@type': 'Person', name: person.data.name, url: new URL(`/contributors/${person.id}/`, Astro.site).href })),
-  publisher: { '@type': 'Organization', name: 'Intelligence Snacks', url: new URL('/', Astro.site).href, logo: { '@type': 'ImageObject', url: new URL('/images/intelligence-snacks-logo.webp', Astro.site).href } },
-  about: { '@type': 'Thing', name: topic?.data.name }, isPartOf: episode ? { '@type': 'PodcastEpisode', name: episode.data.title, url: new URL(`/episodes/${episode.id}/`, Astro.site).href } : undefined,
+  author: { '@id': new URL('/#organization', Astro.site).href },
+  contributor: contributors.map((person) => ({ '@type': 'Person', '@id': new URL(`/contributors/${person.id}/#person`, Astro.site).href, name: person.data.name, url: new URL(`/contributors/${person.id}/`, Astro.site).href })),
+  publisher: { '@id': new URL('/#organization', Astro.site).href },
+  about: [topic, ...relatedTopics].map((entry) => ({ '@type': 'DefinedTerm', name: entry.data.name, url: new URL(`/topics/${entry.id}/`, Astro.site).href })),
+  keywords: [topic, ...relatedTopics].map((entry) => entry.data.name),
+  isPartOf: { '@id': new URL('/#website', Astro.site).href },
+  isBasedOn: episode ? { '@type': 'PodcastEpisode', '@id': new URL(`/episodes/${episode.id}/#episode`, Astro.site).href, name: episode.data.title, url: new URL(`/episodes/${episode.id}/`, Astro.site).href } : undefined,
+  relatedLink: snack.data.relationships.map(({ target }) => new URL(`/snacks/${target.id}/`, Astro.site).href),
 }, {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href },
@@ -42,13 +50,13 @@ const jsonLd = [{
   ],
 }];
 ---
-<BaseLayout title={pageTitle} description={pageDescription} image={pageImage} canonicalUrl={snack.data.seo?.canonicalUrl} type="article" publishedAt={snack.data.publishedAt} modifiedAt={snack.data.updatedAt} {jsonLd} active="snacks">
+<BaseLayout title={pageTitle} description={pageDescription} image={pageImage} imageWidth={1200} imageHeight={630} canonicalUrl={snack.data.seo?.canonicalUrl} type="article" publishedAt={snack.data.publishedAt} modifiedAt={snack.data.updatedAt} {jsonLd} active="snacks">
   <article>
     <header class="article-head page-shell">
       <div class="article-head__meta"><a href={`/topics/${topic?.id}/`}>{topic?.data.name}</a><span>Intelligence Snack</span></div>
       <h1>{snack.data.title}</h1>
       <div class="article-head__details">
-        <p class="standfirst">{snack.data.standfirst}</p>
+        <div class="article-head__standfirst"><p class="standfirst">{snack.data.standfirst}</p><ShareButtons title={snack.data.title} url={pageUrl} /></div>
         <div class="article-head__source"><div><ContributorRow people={contributors} /><p>{snack.data.attribution}</p></div><p>{episode && <>From <a href={`/episodes/${episode.id}/`}>Episode {episode.data.number}: {episode.data.title}</a></>}</p></div>
       </div>
     </header>

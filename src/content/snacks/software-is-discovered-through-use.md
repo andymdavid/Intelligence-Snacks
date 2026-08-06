@@ -2,7 +2,7 @@
 title: Software Products Are Discovered Through Use
 editorialTitle: Software Is Discovered Through Use
 standfirst: Product requirements remain incomplete until a working system meets real behaviour, exceptions and expectations.
-status: review
+status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
@@ -17,7 +17,7 @@ relationships:
   - target: generation-is-easier-than-steering
     type: overlaps
     note: Human review supplies product knowledge that mechanical checks cannot express.
-fixture: true
+fixture: false
 ---
 
 A request for an application rarely contains enough information to determine the finished product. It may describe the purpose while leaving out permissions, edge cases, terminology, data relationships and the sequence that makes the workflow feel correct. Some of those details are unknown until an early version exists.

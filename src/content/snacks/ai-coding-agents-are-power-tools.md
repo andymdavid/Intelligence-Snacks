@@ -2,7 +2,7 @@
 title: AI Coding Agents Are Power Tools, Not Replacements
 editorialTitle: Software With Power Tools
 standfirst: Coding agents move software craft away from producing every line and towards shaping architecture, evaluating behaviour and deciding where precision matters.
-status: review
+status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-05T00:00:00Z
 sourceEpisode: episode-064
@@ -18,7 +18,7 @@ relationships:
     type: enables
     note: Power-tool speed creates a larger body of work that must be evaluated and steered.
 featured: true
-fixture: true
+fixture: false
 ---
 
 Software development still depends on judgement, taste and standards of finish, though coding agents change how much of the material a developer must shape directly. Writing everything by hand keeps the developer close to each line and local decision. Agentic coding moves more of the work into describing behaviour, reviewing results and deciding where precision matters.
