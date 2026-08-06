@@ -99,6 +99,7 @@ const jsonLd = [{
   .prose { grid-column: 2; font-family: var(--font-body); font-size: var(--type-body-large); line-height: 1.5; }
   .prose :global(p:first-child::first-letter) { float: left; font-family: var(--font-display); font-size: 5.6em; line-height: .72; padding: .12em .08em 0 0; font-weight: 500; }
   .prose :global(p) { margin-bottom: 1.6em; }
+  .related { border-bottom: 0; background: var(--paper-raised); box-shadow: 0 0 0 100vmax var(--paper-raised); clip-path: inset(0 -100vmax); }
   .related__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.65rem, 1vw, 1rem); }
   .related-card { min-width: 0; }
   .related-card__visual { display: block; border: 0; outline: 0; }
