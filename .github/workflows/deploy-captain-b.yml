@@ -1,6 +1,7 @@
 name: Deploy to captain.b
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - deployed
