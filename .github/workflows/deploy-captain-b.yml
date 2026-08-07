@@ -1,0 +1,17 @@
+name: Deploy to captain.b
+
+on:
+  push:
+    branches:
+      - deployed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger CapRover build
+        env:
+          CAPROVER_DEPLOY_WEBHOOK: ${{ secrets.CAPROVER_CAPTAIN_B_DEPLOY_WEBHOOK }}
+        run: |
+          test -n "$CAPROVER_DEPLOY_WEBHOOK"
+          curl --fail --show-error --silent --request POST "$CAPROVER_DEPLOY_WEBHOOK"
