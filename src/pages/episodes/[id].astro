@@ -76,7 +76,7 @@ const jsonLd = [{
   <section class="episode-intro page-shell section"><p class="eyebrow">About this conversation</p><div><Content /></div></section>
   <section class="page-shell section">
     <div class="section-heading"><h2>Ideas from Episode {episode.data.number}</h2></div>
-    <div class="episode-snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.visualTheme.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" />; })}</div>
+    <div class="episode-snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.theme.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" />; })}</div>
   </section>
   {transcriptTurns.length > 0 && (
     <section class="transcript page-shell section">

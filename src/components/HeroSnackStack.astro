@@ -15,7 +15,7 @@ const { snacks, topics, contributors, episodeNumber } = Astro.props;
 <div class="snack-stack" aria-label="Featured Intelligence Snacks" data-snack-stack>
   <div class="snack-stack__stage" data-snack-stack-stage>
     {snacks.map((snack, index) => {
-      const topic = topics.get(snack.data.visualTheme.id);
+      const topic = topics.get(snack.data.theme.id);
       return (
         <article class="stack-card" style={`--card-index: ${index}; --card-colour: ${topic?.data.colour ?? 'var(--coral)'}`}>
           <div class="stack-card__tilt">

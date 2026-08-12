@@ -17,7 +17,7 @@ export const GET: APIRoute = async (context) => {
       description: snack.data.standfirst,
       pubDate: snack.data.publishedAt,
       link: `/snacks/${snack.id}/`,
-      categories: snack.data.themes.map(({ id }) => id),
+      categories: [snack.data.theme.id],
     })),
   });
 };

@@ -81,8 +81,7 @@ const snacks = defineCollection({
     publishedAt: z.coerce.date().optional(),
     updatedAt: z.coerce.date().optional(),
     sourceEpisode: reference('episodes'),
-    themes: z.array(reference('topics')).min(1),
-    visualTheme: reference('topics'),
+    theme: reference('topics'),
     attribution: z.string(),
     transcriptStart: z.string().optional(),
     relationships: z.array(z.object({

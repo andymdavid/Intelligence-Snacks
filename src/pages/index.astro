@@ -13,7 +13,7 @@ const episodes = (await getCollection('episodes')).filter(({ data }) => isVisibl
 const featured = snacks.find(({ data }) => data.featured) ?? snacks[0];
 const latestEpisode = episodes.find(({ data }) => data.featured) ?? episodes[0];
 const topics = new Map((await getCollection('topics')).map((topic) => [topic.id, topic]));
-const featuredTopic = featured ? topics.get(featured.data.visualTheme.id) : undefined;
+const featuredTopic = featured ? topics.get(featured.data.theme.id) : undefined;
 const episodeThemes = latestEpisode ? latestEpisode.data.themes.map(({ id }) => topics.get(id)).filter((theme) => theme !== undefined) : [];
 const episodeTopic = episodeThemes[0];
 const people = new Map((await getCollection('people')).map((person) => [person.id, person]));
@@ -21,8 +21,8 @@ const heroContributors = ['pete-winn', 'andy-david'].map((id) => people.get(id))
 const heroSnacks = featured
   ? [
       featured,
-      snacks.find(({ id, data }) => id !== featured.id && data.themes.some((theme) => theme.id === 'agents')),
-      snacks.find(({ id, data }) => id !== featured.id && data.themes.some((theme) => theme.id === 'software-systems')),
+      snacks.find(({ id, data }) => id !== featured.id && data.theme.id === 'agents'),
+      snacks.find(({ id, data }) => id !== featured.id && data.theme.id === 'software-systems'),
     ].filter((snack) => snack !== undefined)
   : [];
 const homeUrl = new URL('/', Astro.site).href;

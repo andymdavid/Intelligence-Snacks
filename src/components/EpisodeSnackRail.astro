@@ -35,7 +35,7 @@ const contributors = (await Promise.all(episode.data.participants.map((person) =
   <div class="episode-snacks__viewport" id={railId} data-rail-viewport tabindex="0" aria-label={`Snacks from Episode ${episode.data.number}`}>
     <div class="episode-snacks__track">
       {snacks.map((snack, index) => {
-        const topic = topics.get(snack.data.visualTheme.id);
+        const topic = topics.get(snack.data.theme.id);
         return (
           <article class="rail-card">
             <a class="rail-card__visual" href={`/snacks/${snack.id}/`} tabindex="-1">
