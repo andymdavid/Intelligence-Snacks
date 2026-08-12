@@ -27,7 +27,7 @@ const isHost = person.id === 'pete-winn' || person.id === 'andy-david';
 const visibleEpisodes = isHost ? episodes.slice(0, 3) : episodes;
 const visibleSnacks = isHost ? snacks.slice(0, 3) : snacks;
 const topics = new Map((await getCollection('topics')).map((topic) => [topic.id, topic]));
-const contributorTopicIds = new Set([...episodes.flatMap((entry) => [entry.data.primaryTopic.id, ...entry.data.relatedTopics.map(({ id }) => id)]), ...snacks.flatMap((entry) => [entry.data.primaryTopic.id, ...entry.data.relatedTopics.map(({ id }) => id)])]);
+const contributorTopicIds = new Set([...episodes.flatMap((entry) => entry.data.themes.map(({ id }) => id)), ...snacks.flatMap((entry) => entry.data.themes.map(({ id }) => id))]);
 const contributorTopics = [...contributorTopicIds].map((id) => topics.get(id)).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 const pageUrl = new URL(`/contributors/${person.id}/`, Astro.site).href;
 const pageTitle = person.data.seo?.title ?? `${person.data.name} — Intelligence Snacks`;
@@ -93,7 +93,7 @@ const jsonLd = [{
     <div class="section-heading"><h2>{isHost ? 'Latest ideas' : 'Ideas from the conversation'}</h2><div class="section-heading__meta">{isHost ? <a href="/snacks/">Browse all snacks ↗</a> : <p>Snacks connected through {person.data.name}'s episodes.</p>}</div></div>
     <div class="idea-grid">
       {visibleSnacks.map((snack, index) => {
-        const topic = topics.get(snack.data.primaryTopic.id);
+        const topic = topics.get(snack.data.visualTheme.id);
         return <article>
           <a href={`/snacks/${snack.id}/`} tabindex="-1"><SnackVisual {snack} label={snack.data.editorialTitle ?? topic?.data.name ?? 'Intelligence Snack'} colour={topic?.data.colour ?? '#fe7141'} index={index + 1} compact /></a>
           <p class="eyebrow">{topic?.data.name}</p><h3><a href={`/snacks/${snack.id}/`}>{snack.data.title}</a></h3><p>{snack.data.standfirst}</p>

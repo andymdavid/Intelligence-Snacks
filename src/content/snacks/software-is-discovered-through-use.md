@@ -7,9 +7,10 @@ status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
-primaryTopic: software-systems
-relatedTopics:
+themes:
+  - software-systems
   - ai-coding
+visualTheme: software-systems
 attribution: Developed from a conversation between Andy David, Pete Winn and dpc
 relationships:
   - target: domain-experts-can-build-software

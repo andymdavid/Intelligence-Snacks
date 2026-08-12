@@ -15,7 +15,7 @@ const episodeGroups = [...episodes.values()]
   }))
   .filter(({ snacks }) => snacks.length > 0);
 const usedTopics = [...topics.values()]
-  .filter((topic) => snacks.some((snack) => snack.data.primaryTopic.id === topic.id))
+  .filter((topic) => snacks.some((snack) => snack.data.themes.some(({ id }) => id === topic.id)))
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 const pageUrl = new URL('/snacks/', Astro.site).href;
 const jsonLd = [{
@@ -38,7 +38,7 @@ const jsonLd = [{
         <section class="episode-group" data-episode-group={episode.id}>
           <div class="episode-group__head"><p>Episode {episode.data.number}</p><a href={`/episodes/${episode.id}/`}>{episode.data.title} <span>↗</span></a></div>
           <div class="snack-archive-grid">
-            {episodeSnacks.map((snack, index) => { const topic = topics.get(snack.data.primaryTopic.id)!; return <div data-snack-card data-topic={topic.id}><SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" /></div>; })}
+            {episodeSnacks.map((snack, index) => { const topic = topics.get(snack.data.visualTheme.id)!; return <div data-snack-card data-topic={snack.data.themes.map(({ id }) => id).join(' ')}><SnackCard {snack} topicName={topic.data.name} colour={topic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" /></div>; })}
           </div>
         </section>
       ))}

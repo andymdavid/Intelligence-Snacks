@@ -7,9 +7,10 @@ status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
-primaryTopic: ai-coding
-relatedTopics:
+themes:
+  - ai-coding
   - software-systems
+visualTheme: ai-coding
 attribution: Developed from a conversation between Andy David, Pete Winn and dpc
 relationships:
   - target: speed-magnifies-architecture

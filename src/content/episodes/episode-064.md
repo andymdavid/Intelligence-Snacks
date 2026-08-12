@@ -13,8 +13,8 @@ participants:
   - andy-david
   - pete-winn
   - dpc
-primaryTopic: ai-coding
-relatedTopics:
+themes:
+  - ai-coding
   - agents
   - software-systems
 transcript: episode-064

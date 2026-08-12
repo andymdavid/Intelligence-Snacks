@@ -17,11 +17,11 @@ const episode = await getEntry(snack.data.sourceEpisode);
 const contributors = episode
   ? (await Promise.all(episode.data.participants.map((participant) => getEntry(participant)))).filter((person) => person?.data.image)
   : [];
-const topic = await getEntry(snack.data.primaryTopic);
-const relatedTopics = (await Promise.all(snack.data.relatedTopics.map((entry) => getEntry(entry)))).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
+const topic = await getEntry(snack.data.visualTheme);
+const snackThemes = (await Promise.all(snack.data.themes.map((entry) => getEntry(entry)))).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 const related = await Promise.all(snack.data.relationships.map(async (relationship) => {
   const target = await getEntry(relationship.target);
-  const targetTopic = target ? await getEntry(target.data.primaryTopic) : undefined;
+  const targetTopic = target ? await getEntry(target.data.visualTheme) : undefined;
   return { relationship, snack: target, topic: targetTopic };
 }));
 const pageUrl = new URL(`/snacks/${snack.id}/`, Astro.site).href;
@@ -37,8 +37,8 @@ const jsonLd = [{
   author: { '@id': new URL('/#organization', Astro.site).href },
   contributor: contributors.map((person) => ({ '@type': 'Person', '@id': new URL(`/contributors/${person.id}/#person`, Astro.site).href, name: person.data.name, url: new URL(`/contributors/${person.id}/`, Astro.site).href })),
   publisher: { '@id': new URL('/#organization', Astro.site).href },
-  about: [topic, ...relatedTopics].map((entry) => ({ '@type': 'DefinedTerm', name: entry.data.name, url: new URL(`/topics/${entry.id}/`, Astro.site).href })),
-  keywords: [topic, ...relatedTopics].map((entry) => entry.data.name),
+  about: snackThemes.map((entry) => ({ '@type': 'DefinedTerm', name: entry.data.name, url: new URL(`/topics/${entry.id}/`, Astro.site).href })),
+  keywords: snackThemes.map((entry) => entry.data.name),
   isPartOf: { '@id': new URL('/#website', Astro.site).href },
   isBasedOn: episode ? { '@type': 'PodcastEpisode', '@id': new URL(`/episodes/${episode.id}/#episode`, Astro.site).href, name: episode.data.title, url: new URL(`/episodes/${episode.id}/`, Astro.site).href } : undefined,
   relatedLink: snack.data.relationships.map(({ target }) => new URL(`/snacks/${target.id}/`, Astro.site).href),
