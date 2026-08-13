@@ -1,6 +1,6 @@
 ---
 number: 67
-title: "Episode 67: Local AI Models"
+title: "Local AI Models"
 summary: "Hosted frontier AI reaches small consumer tasks more easily because local capability begins with a meaningful hardware hurdle. In an unfamiliar category, larger rivals can create an opening for a smaller company by teaching buyers what the category is before it presents a capability they can't match."
 thumbnail: "/images/episodes/episode-067-thumbnail.webp"
 status: published
