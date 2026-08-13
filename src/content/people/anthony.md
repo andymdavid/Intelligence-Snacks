@@ -1,7 +1,7 @@
 ---
 name: "Anthony"
 role: "Episode 67 guest"
-shortBio: "Anthony Milton is an independent researcher who left the corporate world in 2024 to work in Bitcoin full time."
+shortBio: "Anthony is an independent researcher who left the corporate world in 2024 to work in Bitcoin full time."
 image: "/images/anthony-voxel.webp"
 socialLinks:
   x: "https://x.com/ozdeadman"
