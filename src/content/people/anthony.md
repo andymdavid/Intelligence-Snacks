@@ -8,4 +8,4 @@ socialLinks:
   nostr: "https://primal.net/deadmanoz"
 ---
 
-Anthony Milton is an independent researcher who left the corporate world in 2024 to work in Bitcoin full time. He an alumni of Chaincode’s 2025 ₿OSS program and holds a PhD in computer science from the University of South Australia.
+Anthony is an independent researcher who left the corporate world in 2024 to work in Bitcoin full time. He an alumni of Chaincode’s 2025 ₿OSS program and holds a PhD in computer science from the University of South Australia.
