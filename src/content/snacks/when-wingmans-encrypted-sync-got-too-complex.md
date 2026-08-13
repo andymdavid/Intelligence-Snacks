@@ -5,6 +5,7 @@ thumbnail: "/images/snacks/when-wingmans-encrypted-sync-got-too-complex.webp"
 standfirst: "Pete considered dropping Wingman's encrypted record sync after its need for a live key created a difficult design choice inside his self-hosted app."
 status: published
 sourceEpisode: episode-067
+episodePosition: 5
 theme: privacy-security
 attribution: "Developed from a conversation between Pete Winn, Anthony and Andy David"
 relationships: []

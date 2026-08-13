@@ -6,12 +6,16 @@ import EpisodeSnackRail from '@/components/EpisodeSnackRail.astro';
 import EmailSignup from '@/components/EmailSignup.astro';
 import HeroSnackStack from '@/components/HeroSnackStack.astro';
 import HeroTestimonial from '@/components/HeroTestimonial.astro';
-import { isVisible } from '@/lib/content';
+import { episodesNewestFirst, isVisible, snacksInEpisodeOrder } from '@/lib/content';
 
 const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status));
-const episodes = (await getCollection('episodes')).filter(({ data }) => isVisible(data.status));
-const featured = snacks.find(({ data }) => data.featured) ?? snacks[0];
-const latestEpisode = episodes.find(({ data }) => data.featured) ?? episodes[0];
+const episodes = episodesNewestFirst((await getCollection('episodes')).filter(({ data }) => isVisible(data.status)));
+const latestEpisode = episodes[0];
+const latestEpisodeSnacks = latestEpisode
+  ? snacksInEpisodeOrder(snacks.filter(({ data }) => data.sourceEpisode.id === latestEpisode.id))
+  : [];
+const featured = latestEpisodeSnacks[0] ?? snacks.find(({ data }) => data.featured) ?? snacks[0];
+const homepageEpisodes = episodes.slice(0, 3);
 const topics = new Map((await getCollection('topics')).map((topic) => [topic.id, topic]));
 const featuredTopic = featured ? topics.get(featured.data.theme.id) : undefined;
 const episodeThemes = latestEpisode ? latestEpisode.data.themes.map(({ id }) => topics.get(id)).filter((theme) => theme !== undefined) : [];
@@ -67,8 +71,8 @@ const jsonLd = {
   )}
 
   <div class="page-shell episode-rails">
-    {episodes.map((episode) => {
-      const episodeSnacks = snacks.filter(({ data }) => data.sourceEpisode.id === episode.id);
+    {homepageEpisodes.map((episode) => {
+      const episodeSnacks = snacksInEpisodeOrder(snacks.filter(({ data }) => data.sourceEpisode.id === episode.id));
       return episodeSnacks.length > 0 && <EpisodeSnackRail {episode} snacks={episodeSnacks} {topics} />;
     })}
   </div>

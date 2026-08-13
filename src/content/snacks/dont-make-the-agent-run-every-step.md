@@ -5,6 +5,7 @@ thumbnail: "/images/snacks/dont-make-the-agent-run-every-step.webp"
 standfirst: "AI automation works more cleanly when routine operations stay in code and agents enter only where the work calls for judgment."
 status: published
 sourceEpisode: episode-067
+episodePosition: 7
 theme: agents
 attribution: "Developed from a conversation between Pete Winn, Anthony and Andy David"
 transcriptStart: "00:12:59"

@@ -5,6 +5,7 @@ thumbnail: "/images/snacks/when-bigger-competitors-help.webp"
 standfirst: "In an unfamiliar category, larger rivals can create an opening for a smaller company by teaching buyers what the category is before it presents a capability they can't match."
 status: published
 sourceEpisode: episode-067
+episodePosition: 2
 theme: business-markets
 attribution: "Developed from a conversation between Pete Winn, Anthony and Andy David"
 transcriptStart: "00:24:31"

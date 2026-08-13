@@ -19,3 +19,14 @@ export function formatDate(date?: Date) {
 }
 
 export type SnackEntry = CollectionEntry<'snacks'>;
+
+export function episodesNewestFirst<T extends { data: { number: number } }>(episodes: T[]) {
+  return [...episodes].sort((left, right) => right.data.number - left.data.number);
+}
+
+export function snacksInEpisodeOrder(snacks: SnackEntry[]): SnackEntry[] {
+  return [...snacks].sort((left, right) =>
+    (left.data.episodePosition ?? Number.MAX_SAFE_INTEGER) - (right.data.episodePosition ?? Number.MAX_SAFE_INTEGER)
+    || left.id.localeCompare(right.id)
+  );
+}

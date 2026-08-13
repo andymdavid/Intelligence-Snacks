@@ -5,6 +5,7 @@ thumbnail: "/images/snacks/the-bandwidth-limit-on-local-ai.webp"
 standfirst: "A local AI system needs enough memory to hold a model, but its bandwidth helps determine how quickly that model can produce an answer."
 status: published
 sourceEpisode: episode-067
+episodePosition: 3
 theme: ai-models-infrastructure
 attribution: "Developed from a conversation between Pete Winn, Anthony and Andy David"
 transcriptStart: "00:46:16"

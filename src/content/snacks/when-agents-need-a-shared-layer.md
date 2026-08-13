@@ -5,6 +5,7 @@ thumbnail: "/images/snacks/when-agents-need-a-shared-layer.webp"
 standfirst: "A common layer can coordinate several agent sessions through board tasks, hourly catch-up work, defined business scopes and deliberately uneven access."
 status: published
 sourceEpisode: episode-067
+episodePosition: 6
 theme: agents
 attribution: "Developed from a conversation between Pete Winn, Anthony and Andy David"
 relationships: []

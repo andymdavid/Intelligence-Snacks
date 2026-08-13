@@ -5,6 +5,7 @@ thumbnail: "/images/snacks/when-your-news-builds-a-memory.webp"
 standfirst: "A personal news system becomes more useful as it turns individual stories into a connected history that can resurface context without creating another reading queue."
 status: published
 sourceEpisode: episode-067
+episodePosition: 4
 theme: knowledge-memory
 attribution: "Developed from a conversation between Pete Winn, Anthony and Andy David"
 transcriptStart: "00:19:28"

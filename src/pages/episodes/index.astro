@@ -2,8 +2,8 @@
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import StoryVisual from '@/components/StoryVisual.astro';
-import { isVisible } from '@/lib/content';
-const episodes = (await getCollection('episodes')).filter(({ data }) => isVisible(data.status));
+import { episodesNewestFirst, isVisible } from '@/lib/content';
+const episodes = episodesNewestFirst((await getCollection('episodes')).filter(({ data }) => isVisible(data.status)));
 const pageUrl = new URL('/episodes/', Astro.site).href;
 const jsonLd = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': pageUrl, url: pageUrl, name: 'Episodes', description: 'Long-form conversations about AI, software, business and work.', inLanguage: 'en-AU', isPartOf: { '@id': new URL('/#website', Astro.site).href }, about: { '@id': new URL('/episodes/#podcast', Astro.site).href }, mainEntity: { '@type': 'ItemList', itemListElement: episodes.map((episode, index) => ({ '@type': 'ListItem', position: index + 1, name: episode.data.title, url: new URL(`/episodes/${episode.id}/`, Astro.site).href })) } }, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href }, { '@type': 'ListItem', position: 2, name: 'Episodes', item: pageUrl }] }];
 ---
@@ -15,6 +15,7 @@ const jsonLd = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', '
   .episodes-head { min-height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-block: clamp(3rem, 6vw, 6rem); border-bottom: 1px solid var(--line); text-align: center; }
   .episodes-head h1 { margin: 0; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
   .episodes-head > p:last-child { max-width: 30.5rem; margin: 1.5rem auto 0; color: var(--text-secondary); }
+  .episode-list { display: grid; gap: clamp(4rem, 8vw, 8rem); }
   .episode-list article { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5vw; align-items: center; }
   .episode-art { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; align-self: center; overflow: hidden; border-radius: var(--radius-small); }
   .episode-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }

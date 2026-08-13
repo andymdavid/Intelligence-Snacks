@@ -5,6 +5,7 @@ thumbnail: "/images/snacks/hosted-ai-without-the-hardware-hurdle.webp"
 standfirst: "Hosted frontier AI reaches small consumer tasks more easily because local capability begins with a meaningful hardware hurdle."
 status: published
 sourceEpisode: episode-067
+episodePosition: 1
 theme: ai-models-infrastructure
 attribution: "Developed from a conversation between Pete Winn, Anthony and Andy David"
 transcriptStart: "00:06:27"
