@@ -2,7 +2,7 @@
 title: "Don’t Make the Agent Run Every Step"
 editorialTitle: "Redesigning Agent Workflows Around Deterministic Code"
 thumbnail: "/images/snacks/dont-make-the-agent-run-every-step.webp"
-standfirst: "AI automation works more cleanly when routine operations stay in code and agents enter only where the work calls for judgment."
+standfirst: "AI automation becomes more efficient when deterministic operations stay in code and agents appear only where the work requires judgement."
 status: published
 sourceEpisode: episode-067
 episodePosition: 7
@@ -12,10 +12,13 @@ transcriptStart: "00:12:59"
 relationships: []
 featured: false
 fixture: false
+seo:
+  title: "Don’t Make the Agent Run Every Step"
+  description: "AI automation becomes more efficient when deterministic operations stay in code and agents appear only where the work requires judgement."
 ---
 
-Putting an agent into an existing process can leave the shape of the work untouched, even though that shape may be poorly suited to the agent. In one early pipeline, the agent kept running scripts as part of its own work, carrying routine operations through a context window that didn’t need to contain them.
+Andy’s first version of Pliny, his off-social-media newspaper for reading Twitter, ran as a series of agent-driven pipelines. Each run took roughly 15 to 20 minutes. That was manageable while building the tool, but not for something intended to run three, four or five times a day.
 
-In Andy's example of building Pliny, his initial design had a visible cost where pipeline runs took roughly 15 to 20 minutes which came from asking the agent to repeatedly supervise what could otherwise have been a series of deterministic steps, so time and context were being spent on tasks that could already have been executed as ordinary scripts.
+The problem was not simply that the agent was slow. Too much of the pipeline lived inside the agent runtime, including routine script execution that did not require interpretation. Pete saw the same pattern in OpenClaw setups that broke after about a month. Agents repeatedly ran scripts inside their context windows until the accumulated machinery became confused and behaved unpredictably.
 
-A more deliberate design was implemented by separating those predictable steps from the moments that require genuine intervention and guidance from the agent. Those parts could be codified, while the agent appears at the specific decision points where judgment is useful. That division requires changing the workflow rather than simply inserting an agent into every stage, but it also gives each part a clearer job and starts to optimise both for outcome and token efficiency.
+Andy’s answer was to re-engineer Pliny around a sharper division of labour. Fixed, repeatable operations could run as deterministic code, while the agent entered only at the points that genuinely needed intelligence. Adding agents to an existing process is therefore not just a matter of automating each current step. The process itself may need to change, with ordinary scripts carrying the predictable workload and context windows reserved for judgement.

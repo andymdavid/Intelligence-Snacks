@@ -2,7 +2,7 @@
 title: "The bandwidth limit on local AI"
 editorialTitle: "Why local inference needs bandwidth as well as memory capacity"
 thumbnail: "/images/snacks/the-bandwidth-limit-on-local-ai.webp"
-standfirst: "A local AI system needs enough memory to hold a model, but its bandwidth helps determine how quickly that model can produce an answer."
+standfirst: "A model may fit in a local AI machine yet still respond slowly if its memory cannot supply data quickly enough."
 status: published
 sourceEpisode: episode-067
 episodePosition: 3
@@ -12,10 +12,13 @@ transcriptStart: "00:46:16"
 relationships: []
 featured: false
 fixture: false
+seo:
+  title: "The bandwidth limit on local AI"
+  description: "A model may fit in a local AI machine yet still respond slowly if its memory cannot supply data quickly enough."
 ---
 
-Memory capacity is an obvious limit for local AI because a model has to fit before it can run, yet the amount of VRAM doesn't describe the whole machine. Memory bandwidth matters alongside capacity, since it governs how quickly data can move through the system while the model is generating its response.
+VRAM capacity determines whether a model can run, but it does not determine how quickly the model will answer. Memory bandwidth governs how much data can move through the machine, making it a separate constraint on local inference rather than a detail that more capacity automatically solves.
 
-That constraint becomes visible during decode, the stage measured by the number of output tokens produced each second. A compact Spark system was described as having weak memory bandwidth relative to its compute, leaving substantial processing power paired with a slower route to memory and making its response speed unattractive despite the compute available.
+Anthony pointed to Nvidia’s DGX Spark as an example of the imbalance. He described its memory bandwidth as weak relative to its available compute, which limits decode speed. Decode is the stage users experience as the rate at which a model produces its response, usually measured in tokens per second. A machine can therefore have substantial processing power while still generating text too slowly to be attractive.
 
-More memory doesn't remove every boundary either. A card with 96 GB of memory was priced above $20,000, yet that capacity still couldn't accommodate the very largest models under discussion. Local performance therefore rests on two separate hardware questions that have to be considered together, whether the model fits in memory, and how quickly memory can feed the decoding work once it does.
+Higher-capacity hardware does not make the trade-off disappear. Anthony said an RTX 6000 professional card with 96 GB of memory now cost more than $20,000, while even that much VRAM could not hold the largest models under discussion. Choosing hardware for local AI therefore requires two checks. The model must fit in memory, and that memory must be fast enough to feed the model during decode.

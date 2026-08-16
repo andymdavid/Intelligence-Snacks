@@ -2,7 +2,7 @@
 title: "When Agents Need a Shared Layer"
 editorialTitle: "A task board and timed catch-up layer for coordinating agent sessions"
 thumbnail: "/images/snacks/when-agents-need-a-shared-layer.webp"
-standfirst: "A common layer can coordinate several agent sessions through board tasks, hourly catch-up work, defined business scopes and deliberately uneven access."
+standfirst: "Flight Deck brings delegated work into one communications layer where tasks remain visible, missed activity can be recovered and access follows clear boundaries."
 status: published
 sourceEpisode: episode-067
 episodePosition: 6
@@ -11,10 +11,13 @@ attribution: "Developed from a conversation between Pete Winn, Anthony and Andy 
 relationships: []
 featured: false
 fixture: false
+seo:
+  title: "When Agents Need a Shared Layer"
+  description: "Flight Deck brings delegated work into one communications layer where tasks remain visible, missed activity can be recovered and access follows clear boundaries."
 ---
 
-Once work passes among several agent sessions, a common communications and orchestration layer above them becomes useful. Its most concrete feature is a task board. When an agent delegates work in the back end, it creates a task there, so the shared layer has a specific item to coordinate rather than relying only on exchanges between individual agents.
+Working with one agent across several sessions is manageable. Pete found the problem changed once he was running about twelve agents and could no longer easily tell which one he was addressing. Flight Deck emerged as a common communications fabric above those agents, giving their conversations and delegated work one place to live.
 
-The board is paired with an agent that starts every hour and does catch-up work. Alongside that recurring pass, the business defines its core scopes, giving the system an explicit set of working areas. Together, these elements describe a practical rhythm for the orchestration layer. Delegation produces tasks, catch-up happens on a schedule, and scopes are set by the business using the system.
+Each piece of work begins in a chat thread inside a product channel, then delegation creates a task on a shared board. Pete mainly uses the board to review completed work, but it also exposes anything that has stalled. An agent runs every hour to inspect work in progress, identify dropped tasks and report what happened, so a failed handoff does not have to stay invisible.
 
-Communication across this layer doesn't have to be equally open in every direction. A chief-of-staff agent can contact anyone even though other agents can't all ask the person a question, preserving the broad reach of one coordinating role while limiting direct access elsewhere. The intended setting is also deliberately bounded. The stated aim is for it to work for about twenty people, without a requirement to scale much further.
+Flight Deck limits noise as well as collecting activity. Scopes group channels around areas such as marketing or development, letting each person see the parts of the company relevant to them. Permissions can remain asymmetric too. Pete's chief-of-staff agent can contact anyone, while other agents cannot freely interrupt him with questions. The goal is not unlimited organisational scale, but a practical working layer for a team of about twenty people and its agents.

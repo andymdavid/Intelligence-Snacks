@@ -5,7 +5,7 @@ sourceEpisode: episode-067
 snacks:
   - the-bandwidth-limit-on-local-ai
   - when-agents-need-a-shared-layer
-  - when-bigger-competitors-help
+  - why-consumers-reach-for-hosted-ai
 ---
 
 A curated selection from this episode of Intelligence Snacks.

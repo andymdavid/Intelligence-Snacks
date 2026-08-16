@@ -2,7 +2,7 @@
 title: "When Bigger Competitors Help"
 editorialTitle: "Using Larger Competitors to Educate an Unfamiliar Market"
 thumbnail: "/images/snacks/when-bigger-competitors-help.webp"
-standfirst: "In an unfamiliar category, larger rivals can create an opening for a smaller company by teaching buyers what the category is before it presents a capability they can't match."
+standfirst: "For a small company in an unfamiliar category, larger rivals can bear the cost of teaching buyers before differentiation becomes decisive."
 status: published
 sourceEpisode: episode-067
 episodePosition: 2
@@ -12,10 +12,13 @@ transcriptStart: "00:24:31"
 relationships: []
 featured: false
 fixture: false
+seo:
+  title: "When Bigger Competitors Help"
+  description: "For a small company in an unfamiliar category, larger rivals can bear the cost of teaching buyers before differentiation becomes decisive."
 ---
 
-A smaller company entering an unfamiliar category may have an unusual reason to welcome larger competitors. When buyers don't yet understand what a new kind of product does, the first obstacle isn't simply winning a comparison. It's establishing the category itself, which can demand more explanation and attention than a smaller player can readily supply.
+A small company may benefit when larger competitors enter the same emerging category. Before buyers can compare products, they first need to understand what the category does and why it matters. Repeating that explanation across a market takes attention and resources that a smaller business may not have.
 
-Larger companies can absorb that burden because they have the resources to explain the category repeatedly and make it familiar. In the AI security-camera market, one smaller company was happy to see bigger rivals move into the same area because those rivals would spend their own time educating customers. Once buyers knew what sort of product they were considering, the smaller company could enter a conversation that no longer had to begin with basic definitions.
+Anthony saw this dynamic at a small Perth company working on AI that surfaced incidents and interesting events from security-camera footage. The company could not educate the market by itself, so it welcomed bigger competitors moving into the area. Those rivals could spend their own resources making buyers familiar with the product category.
 
-That opening still depended on what happened next. The smaller company needed a distinct offering that the larger players couldn't provide, giving buyers a reason to choose it after the category had become clear. Competitors' education could therefore reduce the cost of creating market understanding, while differentiation turned that shared understanding into an advantage for the smaller entrant.
+Once customers understood the category, the smaller company could enter with a more specific proposition. It had a unique offering that the bigger players could not provide. The competitors had therefore done useful groundwork without removing the need to compete. Their scale created market awareness, while the smaller company's distinct capability gave buyers a reason to choose it.

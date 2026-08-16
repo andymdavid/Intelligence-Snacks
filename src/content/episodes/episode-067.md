@@ -1,7 +1,7 @@
 ---
 number: 67
 title: "Local AI Models"
-summary: "Hosted frontier AI reaches small consumer tasks more easily because local capability begins with a meaningful hardware hurdle. In an unfamiliar category, larger rivals can create an opening for a smaller company by teaching buyers what the category is before it presents a capability they can't match."
+summary: "Local models can handle everyday personal tasks, but hardware costs and limited awareness leave hosted frontier AI as the easier consumer choice. For a small company in an unfamiliar category, larger rivals can bear the cost of teaching buyers before differentiation becomes decisive."
 thumbnail: "/images/episodes/episode-067-thumbnail.webp"
 status: published
 participants:
@@ -21,4 +21,4 @@ featured: false
 fixture: false
 ---
 
-Hosted frontier AI reaches small consumer tasks more easily because local capability begins with a meaningful hardware hurdle. In an unfamiliar category, larger rivals can create an opening for a smaller company by teaching buyers what the category is before it presents a capability they can't match.
+Local models can handle everyday personal tasks, but hardware costs and limited awareness leave hosted frontier AI as the easier consumer choice. For a small company in an unfamiliar category, larger rivals can bear the cost of teaching buyers before differentiation becomes decisive.

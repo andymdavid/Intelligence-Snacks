@@ -2,7 +2,7 @@
 title: "When Your News Builds a Memory"
 editorialTitle: "Accumulated news as a queryable personal graph"
 thumbnail: "/images/snacks/when-your-news-builds-a-memory.webp"
-standfirst: "A personal news system becomes more useful as it turns individual stories into a connected history that can resurface context without creating another reading queue."
+standfirst: "Pete’s personal newspaper turns accumulated coverage into a connected resource that his AI agents can consult for context without burdening him with another unread queue."
 status: published
 sourceEpisode: episode-067
 episodePosition: 4
@@ -12,10 +12,13 @@ transcriptStart: "00:19:28"
 relationships: []
 featured: false
 fixture: false
+seo:
+  title: "When Your News Builds a Memory"
+  description: "Pete’s personal newspaper turns accumulated coverage into a connected resource that his AI agents can consult for context without burdening him with another unread queue."
 ---
 
-A personal news feed can become more than a stream of items when each story adds to a connected record. New coverage can appear when relevant without joining an unread queue that demands attention, so resurfacing an older thread doesn't automatically create another obligation.
+Pete moved his AI-generated newspaper out of a Flight Deck channel after the stream of unread stories began to feel like work waiting to be completed. The newspaper now appears in a separate feed where new items can surface like social posts. He can browse or dismiss them without every story becoming an obligation.
 
-That distinction rests on how the archive is built. The system identifies the nodes and other elements inside each story, then follows those links across earlier coverage. A report involving Donald Trump can lead back to other stories involving him, while reporting on Nvidia's AI development can reconnect with a particular data-center implementation. The archive therefore preserves relationships that a chronological list would leave scattered.
+Behind the newspaper sits a graph database. When Pete’s pipeline finds and writes up a story, it identifies the topics, companies, individuals and other useful elements, then connects them to related nodes. After enough coverage has accumulated, a story about Donald Trump can lead to every other story involving him. Reporting on Nvidia’s AI development can reconnect with coverage of a particular data centre implementation.
 
-Those connections need time to accumulate, which means the useful memory emerges only after the system has been running for a while. Once enough stories have supplied people, companies and developments to follow, earlier coverage becomes a resource for later questions as well as for related-story retrieval. Its value grows from the history it has actually collected, while relevant stories can still surface without being treated as unfinished reading.
+The graph is intended for more than related-story retrieval. Pete’s AI agents can consult it when answering questions, checking what they already know about a subject and which earlier stories have interested him. That history gives later queries personal context drawn from material the agents have already read, while Pete remains free to treat the visible news feed as something to browse rather than a backlog to clear.
