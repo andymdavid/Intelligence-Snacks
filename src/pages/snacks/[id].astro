@@ -2,6 +2,7 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SnackVisual from '@/components/SnackVisual.astro';
+import ContributorRow from '@/components/ContributorRow.astro';
 import ShareButtons from '@/components/ShareButtons.astro';
 import { formatDate, isVisible } from '@/lib/content';
 
@@ -56,11 +57,14 @@ const jsonLd = [{
       <div class="article-head__details">
         <div class="article-head__standfirst"><p class="standfirst">{snack.data.standfirst}</p><ShareButtons title={snack.data.title} url={pageUrl} /></div>
         <div class="article-head__source">
-          <p>
-            Developed from a conversation between {contributors.map((person, index) => (
-              <><a href={`/contributors/${person.id}/`}><strong>{person.data.name}</strong></a>{index < contributors.length - 1 && (index === contributors.length - 2 ? ' and ' : ', ')}</>
-            ))}
-          </p>
+          <div>
+            <ContributorRow people={contributors} avatarsOnly />
+            <p>
+              Developed from a conversation between {contributors.map((person, index) => (
+                <><a href={`/contributors/${person.id}/`}><strong>{person.data.name}</strong></a>{index < contributors.length - 1 && (index === contributors.length - 2 ? ' and ' : ', ')}</>
+              ))}
+            </p>
+          </div>
           <p>{episode && <>From <a href={`/episodes/${episode.id}/`}>Episode {episode.data.number}: {episode.data.title}</a></>}</p>
         </div>
       </div>
@@ -96,6 +100,7 @@ const jsonLd = [{
   .standfirst { max-width: 780px; margin: 0; font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.2; letter-spacing: -.02em; }
   .article-head__source { display: flex; flex-direction: column; gap: 1.5rem; color: var(--muted); font-size: .78rem; }
   .article-head__source > p { margin: 0; }
+  .article-head__source > div > p { margin: .7rem 0 0; }
   .article-head__source a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
   .article-visual :global(.story-visual) { min-height: clamp(380px, 55vw, 800px); }
   .article-layout { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.3fr) 1fr; gap: 4vw; padding-block: var(--section-space); }
