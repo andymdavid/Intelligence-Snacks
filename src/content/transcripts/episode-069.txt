@@ -1,0 +1,455 @@
+[00:00:05.956] Pete Winn: Alright, and welcome to Intelligence Snacks episode sixty nine. Around the campfire today we have a special guest in his sparkling MineRex t shirt, so is a good friend Piers. Piers, why don't you introduce yourself?
+
+[00:00:21.463] Piers: Thanks so much, Pete. This is awesome to be on your show. Yeah, I've been in IT I guess for about thirty odd years. And yeah, always been a bit of into tech, and doing nerdy things. So you would have thought that I would have understood Bitcoin a lot earlier than I did. But yeah, about maybe what six or seven years ago I started
+
+[00:00:47.483] Piers: Building a data center for Bitcoiners and I guess like many people that went down the path of Bitcoin mining and energy, you soon discover that if you're in front of a meter, a power meter, yeah, the cost of power in this country has sort of reached a point where you it's not possible to yeah, be build a sustainable business in purely operating as a as a miner or as a hosted sub facility for miners. And round about the same time, of course, there's this gigantic revolution going on in AI. And I think AI was really not terribly interesting until about a year and a bit ago. I had a lot of GPUs as part of my infrastructure here in the early days when GPU
+
+[00:01:22.192] Pete Winn: Mm-hmm.
+
+[00:01:46.565] Piers: Mining still viable. And I'd always thought to myself, I wonder if I could pivot those that set of GPUs over into supplying compute for inference workloads for AI. And whether anyone would be interested in in hiring or renting those. And that's when I discovered these platforms. It was very analogous to how Bitcoin mining works. I found these platforms like RunPod, Lava Lamps, Lava Labs, sorry, and Vast.ai. And I noticed that there was precious few of these platforms serving compute in Australia or in or in this part of the world. So just f for those people listening who have aren't familiar with this, if you have spare GPU capacity but you don't know what to do with it, you can actually, like an Airbnb, rent out that excess capacity to other people who do have a use case for those GPUs. And a bit like pooled mining where you can contribute your hash power to a mining pool and everyone sort of pays out based on your contribution to the mining pool when a reward hits. It's a bit of a similar story with Vast and RunPod and Lava. So The way that works is you bring along a GPU and they promise that they'll find someone to rent it for you, a bit like an Airbnb, so they act as an online marketplace, intermediating between people who have spare GPU capacity and people who need GPUs to run custom AI workloads. So I started down that path and realized, no, this is gonna be another race to the bottom, just like Bitcoin mining, and end up buying a lot of very expensive equipment that will depreciate quite quickly. Maybe not as quickly as an ASIC, but I could see that this was going to become a race to the bottom, so I thought, well, what else can I do that would be useful to people? And yeah, the idea of just creeping further and further up the value chain to where I could actually just work with the actual end user, the person who wanted to get a business outcome from AI, but lacked the wherewithal to I guess put all of the software together, put all the hardware together.
+
+[00:04:07.309] Piers: Yeah, develop it all s in such a way that it commercially makes sense and make it very straightforward for businesses to buy access to the capabilities that AI delivers rather than yeah the individual components of that stack. And yeah, the advantage of having everything it vertically integrated in one house, one roof, one person to talk to, that actually understands your business and knows what it's doing. And yeah There's no element of the stack that's not self contained in that one house. That sounded like something worth pursuing. And lo and behold, that's caught traction and yeah, getting a lot of people quite interested in those services.
+
+[00:04:54.223] Pete Winn: Yeah, nice. Nice. So I think one of the things we were just discussing in the sort of podcast before the podcast, pod before the pod, was you're about to head off to Bitcoin Asia and you're you're hosting a panel on agents and Bitcoin and like how it all works together. Do you want to give us a little brief on like what the questions are and what you're thinking and maybe we could we could always drill into that a little?
+
+[00:05:19.995] Piers: Sure, so one of the presentations I got a chance to do at a Bitcoin Bush Bash about a most maybe six months ago now was on the intersection between AI and Bitcoin. And it was sort of rudimentary early days back then, and people were wowed by quite simple things like getting an OpenClaw agent, to run out and pay an invoice for you either on Lightning, on chain, To purchase eCash and to move eCash around. Or even just to go onto a web page for you and buy, for example, a bar of soap and have that bar of soap delivered to your home. So in other words, delegating via Yeah, vi delegating via simply natural language, just even just talking into your phone.
+
+[00:06:04.324] Pete Winn: You buy that from Earth Mum?
+
+[00:06:13.457] Piers: And I guess it's the ultimate in laziness for the end user. You don't even have to go to a website or navigate through the website's shopping cart experience. The agent knows you so well, it knows where you are, where you want things delivered. You can in fact give it access to your money and your wallet, which is what what we did in in that rudimentary day, and demonstrate the whole shopping cart process. And then sort of extended that concept further into managing much larger amounts where the human is still in the loop for critical money spending decision making. So where there's a significant impact of getting the decision wrong. So that's where you could introduce something like a two factor authentication through a hardware device. So in other words, the agent prepares the partially signed Bitcoin transaction ready to go out to the recipient. Presents that as a QR code, you scan it on your hardware wallet device. You can see the full details of the transaction, validate it, and broadcast it right back via your phone. So that maintains your contr your personal control over the keys without necessarily stopping you from being able to make large transactions via your aid. So fast forward to today, this idea of agents having a wallet is no longer like a fanciful idea. It's actually a com a exponentially growing component of the online economy. To such an extent that we've brought back old protocols loosely labelled as 402. So there's maybe the protocol people may have heard of without really understanding what it is, is error 402, a payment required was a reserved error number in HTTP basically.
+
+[00:08:14.425] Pete Winn: Yeah, so I think the one people are used to is 404, right? Page not found and 402 is You Didn't Pay Me which disappeared from the internet 'cause there was no way of doing it. So for thirty years it was like there but buried.
+
+[00:08:19.323] Piers: Yes, yes.
+
+[00:08:24.347] Piers: Correct. Yes. So there's I guess two off sprouts of that idea that surface when agents came along. One is this idea L402, which is essentially to support micropayments via lightning. And I guess the an agent can't really hold a credit card on its own. It the because it The fiat system is generally speaking a permissioned system where you need to present a passport or an identity. Yeah, fiat money's kind of a difficult thing for most agents to deal with. Some people have like played with this idea and built something called one of the early ones I've seen is Agent Card, which is a Visa gift card, if you like, that's loaded with value and by human. But then the agent can actually dispense money out of the card and do transactions for you, for example, on Amazon or any website that accepts credit cards. So if you can chain together the ability to convert Bitcoin into fiat and then load that fiat into a credit card, then you can create a whole pipeline where an agent can just start off with Bitcoin and transact anywhere in the world on any website.
+
+[00:09:29.914] Pete Winn: Mm-hmm.
+
+[00:09:50.173] Piers: And so this panel that's being assembled, I'm the lucky guy getting to moderate it. It's full of superstars who actually know what they're talking about rather than me. One of them is a fellow called Roland, from Albi Hub. That you may have if if any of you guys run Albi on your on your own node, be filt relatively familiar with a what Albi does. But Albi is like a way to simplify creating a wallet on your on your own node that you host and to make payments and to take away a lot of the pain of managing liquidity, etc. And having a you know an LN URL, like a fixed address that you can receive and send Bitcoin to and from. And Roland's claim to fame is he's apparently the first person to in the world to have created an an AI agent that then went out, went shopping, and found a virtual machine that he could that the agent could rent and then transmutated itself to live in that machine, from which point yeah, he could pay the operator of the physical infrastructure from whatever activities the agent was doing in order to keep itself alive. So that's gonna be a fascinating conversation and yeah, in preparation for that I'd love us to chat through all the issues that I can inevitably see in that in that chain if that were to yeah, accelerate and
+
+[00:11:28.525] Pete Winn: It's an interesting space 'cause like this was this was a point of discussion at last year's sovereign engineering quite a bit because we had there's a guy there, Dimmy, that was experimenting with exactly that thing. So he built a little protocol for how you could buy Kubernetes pods using Cashu. So you could then you could ping an endpoint with your your image and everything that you needed loaded onto it, it gave you an invoice, you paid the invoice, and then all of a sudden you had a machine. And so all of us 'cause we were experimenting quite a bit with AIs, like the conversation turned to, huh. Well could you like launch a machine and then the machine launches another machine, and then that machine launches another machine. And at that point, like, where's the machine? Like and if these are like You know, you could ha you could imagine these services being like broadcast and Nostr as like a little marketplace of like, okay, well where are all the machines and places that I could be? And you could almost well, we said it's like catch me if you can, like with Leonardo DiCaprio, but nerdy. It's like and you just have you have the server move every day and you'd never know where it is, for instance. It could be quite interesting. Hmm.
+
+[00:12:36.613] Piers: Yeah, so Yeah.
+
+[00:12:43.525] Piers: Yeah, so right behind me here I've got a whole bunch of racks full of servers and equipment. And anyone who knows me knows I love my toys, my tech toys, and I buy lots of toys, and then try and figure out how to use them and make them do anything useful for people. And so I've got a heap of server capacity here, that's essentially mostly going unused. So I thought, well what can I do that's of benefit to Bitcoiners or Yeah, people that wanna do something useful in Bitcoin. And yeah, the first idea that came to me was yeah, there there was a online shop that I'd helped set up, just the infrastructure side, for selling soap online. It's just a simple concept, but yeah, surprisingly complicated to put together. And soap21.com, right? It's hosted
+
+[00:13:32.976] Pete Winn: Mm-hmm.
+
+[00:13:37.605] Pete Winn: Is that soap soap twenty one? There you go. Shout out to soap21.com.
+
+[00:13:42.233] Piers: Right behind Yeah. Yeah, ha shout out to Hazer and to and to Earthmum for yeah, putting that together. I didn't do much in the whole process of just literally spun up a BTCPay server, and a WordPress WooCommerce.
+
+[00:13:57.561] Pete Winn: I didn't know I didn't know how it involved. Friend of the pod.
+
+[00:14:00.709] Piers: Yeah. And yeah, so what I what I observed with that, that the whole process from go to woe was quite complicated for Earth Mum, I imagine. It was yeah, if I was to put it in round numbers, I'd say it would have taken maybe her night maybe it would have taken her at least ninety days to from go to woe to put all of that together. And for someone non technical, where that this is not their day job, that their job is making soap. It may have felt like a daunting, complicated process to navigate when there are so many other simpler ways of setting up an online shop such as Squarespace or Shopify or or what have you. So I thought, well, we need to reduce the friction for people who decide I want to put my business online and accept Bitcoin. How can we reduce that ninety day process into a ninety second process? And that's where I basically I I'm literally just vibe coded up something called MineRex.cloud and made it multilingual so it'll work in about sixteen different languages. So it's targeted not just to Australia but to anyone globally who wants this capability. And I sort of force everyone to learn about Nostr, because the only way you can sign into the console is with a Nostr account. So Exactly. And for those that don't have Nostr it
+
+[00:15:19.096] Pete Winn: As it as it should be.
+
+[00:15:26.829] Piers: It onboards you into Nostr very conveniently with the lowest amount of friction I could I could I could manage, including on browsers that aren't traditionally used for Nostr sign in like Safari. So and I put it in that yeah, MineRex.cloud, you can spin up a collection, a ready pre baked shop with everything you need, all pre wired in, and literally all you do is copy and paste your XPub of your favourite hardware wallet. That you would like your funds to go into and it just takes care of everything else. So you pop paste that in, press go and enter your sats. It's like 200 bucks or something per year to host a WooCommerce shop and a BTCPay server back end, pre-configured for Lightning and for on-chain. And yeah, it also has a pre-configured template for your shop. All you have to do is change the logo and the colors and you're you're off and away and we've got single sign in between you know your WooCommerce back end, the BTCPay Server shop at back end as well. It's a dedicated VM for each of those components and the user's just logged in immediately through Nostr. So you only have to have one Nostr key gives you access to all the components of your shop. So you literally are up and running in ninety seconds and paying exclusively in sats. And then Yeah, but the next most logical step on from made making that journey nice and tidy, and clean and easy for a human is well, let's not ignore the agent economy. Yeah, can we make the process nice, clean, and tidy for an agent to interact with MineRex.cloud? And so just recently I've been working on making it L402 compatible. So By going through that journey it's made me realize all of the friction and problems facing anyone wanting to do what I'm trying to do. And the main one, of course, is regulatory, and all the danger involved in opening up a service to anonymous people. Yeah, what could possibly go wrong? And I guess that's where where I'd love to hear your perspectives on on how to handle this issue because
+
+[00:17:53.669] Piers: Yeah, the number one thing that sort of s sparks up, we've heard these phrases in the B the BIP-110 debate recently is how do you handle CSAM? Which is an easy way to shut any service down. If someone yeah, wanted to attack your your business, they simply deposit if you provide an opportunity for them to have infrastructure you host and they put nefarious content on that infrastructure.
+
+[00:18:06.862] Pete Winn: Please.
+
+[00:18:23.013] Piers: That's an instant attack surface that you can't easily close. So yeah, I'd be fascinated to hear your guys' thoughts on all of that. How to solve for that problem.
+
+[00:18:32.517] Pete Winn: That's a that's quite a that is quite a an issue with with this sort of thing.
+
+[00:18:38.107] Andy David: Well, can I ask like a meta level question? I feel like we kind of like danced around it a little bit and then just raced straight past. But it's like this question and I think we probably will land on the same answer because it might seem fairly obvious. But should agents have wallets and should they be able to transact? That's kind of the higher order question. Yeah.
+
+[00:18:57.019] Piers: Hundred per hundred percent they should. Yeah. I just my instincts are screaming loud and clear. As someone who's used an agent to shop before or to pay bills, there were just a thousand and one transactions, life transactions. If I have to be involved in the f if we think ten years into the future or even tomorrow Yeah, if I really have to remain involved for the rest of my life in every single financial decision that I effectively make, yeah, there's hours of my life I'm not getting back. So surely the w a future world will involve at least partially not doing that. Would you agree?
+
+[00:19:43.704] Pete Winn: I think so, yeah. I mean, I always used to talk about this as being like you we say a lot of the time like you gotta think about agents as being like humans, right? And a great experience at some point in people's lives. It's like my god I can afford like a personal assistant and then let's say you've got two personal assistants. You've got Bill and Jill. Bill has a wallet and Jill doesn't. You know, th if you wanna get on a flight, the best thing that Jill can do is give you all the options and tell you what to buy. And then you sit on it for like a week and forget 'cause you're like, fuck it I'm busy, you know? Whereas Bill just buys the flight. You know, they've they've already done all the work, but at least then they can finish off that last moment, right?
+
+[00:20:25.869] Piers: In other words, like if you had a giant business with ten thousand employees and the CEO had to sign off on every single one of their expenses and every single one of their transactions, that company could not function. That CEO would not be able to do anything with their lives. So it's a it's this idea of delegated financial authority.
+
+[00:20:33.295] Pete Winn: Yes.
+
+[00:20:43.141] Pete Winn: Yeah. Well it's it's almost worse, right? It's like it's like if all of your expense claims like instead of them being expense claims, it was actually just no no no, like we're gonna send them all to like Tim Apple and he's gonna sit there all day on his credit card just like buying laptops for people and like purchasing flights and stuff. Like it's yeah, it's like it's a good that's a good analogy is to bring it back to that business.
+
+[00:21:06.075] Andy David: But even at like an individual consumer level, right? Cause like a lot of people would push back and go like, know I want control over my finances. And I feel like there was an analogy we might've like gone into maybe a year and a half ago on this podcast. But it was like, we already had a proxy for this, which was the Hollywood celebrity. The Hollywood celebrity would have a team of people to manage all of this stuff for them. And they wouldn't do it because they didn't have time. They didn't care. They had bigger things to do. And they'd already essentially delegated a lot of that work to other humans. So I feel like that proxy already existed. And you'd get this with high net wealth individuals as well. A lot of this stuff would be delegated authorities. We already had the infrastructure for delegated authorities. So I feel like this is just a natural enabling function for more people to be able to just delegate those purchasing decisions to agents.
+
+[00:22:01.948] Pete Winn: It's like old bookminster fuller, right? Like, you know, this is the future that we were all promised. It just was never evenly distributed. Now we can all just act like dicks to our personal assistance and tell it. I just need to call out, we've got an there's an NVK in the chat, which I don't think is that one. It was they said, it was great that Piers reached for a drink the moment that Pete said sovereign engineering.
+
+[00:22:08.237] Andy David: Even, yeah, so. I'm sorry.
+
+[00:22:20.876] Andy David: No.
+
+[00:22:22.664] Piers: Maybe it is, hey. Hey Rodolfo.
+
+[00:22:31.163] Pete Winn: Which I thought was a nice nod back. So I assume it's a friend of the pod.
+
+[00:22:35.278] Piers: I'd lo I'd love to go to sovereign engineering. That would be an amazing experience. I'm really jealous you win.
+
+[00:22:40.469] Pete Winn: I mean, don't tell the wife 'cause she doesn't listen. She does sometimes but like I'm intending I might go there next year. Like I it was hard to not go this year. I was tempted but it just wasn't the right time and wise with everything going on. So but yeah, it's it's a great great six weeks. Like everybody, you know, shout out to Sovereign Engineering, Friends of the Pod. Like, do go over there if you get get the opportunity. I feel like I should come back to your question though around like regulation at some point. It's
+
+[00:22:53.232] Piers: Okay.
+
+[00:23:10.029] Pete Winn: It's tricky, right? This is the problem with I think these sort of services is like, well, what liability are you leaving yourself open to? And then how do you handle that?
+
+[00:23:20.187] Piers: 'Cause I'm there's a there's a asymmetry there, right? Like I'm physically got my kit here. I can't pick it up and move it somewhere else easily. But an agent can f float in and leave me with the mess to clean up, and it costs them a few hundred sets. So Yeah, it
+
+[00:23:39.129] Pete Winn: Yeah, exactly. Yeah, so you could be trading off like two hundred sets, which is you know, it's it's more money than it was like a couple of days ago, but it's not very much money. And then your your liability or exposure could be, you know, in prison for the rest of your life or something like so that's that's a tough tough decision to make.
+
+[00:23:58.009] Piers: I guess the challenge with that is in yeah, in the name of again protecting kids or or for our safety as a society, yeah, where we're headed towards with this is at some point, and this is happening already in some countries, is KYC requirements to become a customer of the data center, or to be able to host a software platform for someone else that could potentially communicate with other people. You effectively having to be licensed or to capture government documentation, and yeah, we can all imagine the downstream consequences of a change like that.
+
+[00:24:35.821] Pete Winn: I mean I'd say that's sort of where it goes 'cause from like a you know, if you're AWS, like you have the same problem. Anybody that has that provides services and storage or like machines to somebody else's you have this problem. And it's usually solved by registration of like the physical name, you know, the KYC around like who is this person, what's their bank account, you there's an amount of information that's gathered to that. Allow you to effectively like transfer the ownership of what's being done on that machine. So I you know, I know that this is a machine that physically I hold, this person configures and puts their stuff on it, and therefore they are liable for what's on this machine and we know who they are and we can hold that up. And I think that's the usual way. I mean the There was an interesting thing that you said a moment a moment ago about Nostr keys, is saying that like, all right, the user has to log in with Nostr. Yeah, and I think that's part of the potential answer. But I'd be curious, like, why did you choose to go with a Nostr login? I'll see if it's
+
+[00:25:37.195] Piers: So obviously I've tinkered with being able to allow things like logging in with Google, logging in with Microsoft, or any of the other major social logins. But it just didn't feel like it was appropriate for the audience I was attempting to appeal to with that service. So I wanted to go with something very niche, that you know, would guarantee that I would have less business. So yeah. Supporting or routing exclusively through Nostr as a login mechanism is in itself some form of like a social filter. So as a general rule, most people aren't bothered with Nostr unless they've fallen quite deeply down the self sovereignty rabbit hole. And al almost certainly to some extent are yeah follow a kind of a Bitcoin ethos. So it does create I guess that first filter
+
+[00:26:24.848] Pete Winn: Yeah.
+
+[00:26:35.657] Piers: The average bot and the average nefarious actor probably doesn't know about Nostr and probably isn't using it yet. Obviously that
+
+[00:26:44.461] Pete Winn: Yeah, if you're looking to scam people it's not the right place 'cause there's there's not enough people.
+
+[00:26:47.695] Piers: No. And b and instantaneously the whole community and ecosystem is already attuned to ab adversarial thinking and being suspicious of services and they're they're in that don't trust verify mindset already, right? As a general rule. And so yeah, that seemed like the right answer. But but importantly when I first like
+
+[00:27:03.513] Pete Winn: Yeah. Shout out VK in the chat apparently.
+
+[00:27:15.387] Piers: Put the idea together because I was so terrified of this idea of CSAM and being used as a method to sort of shut down our servers. Yeah the way I thought of doing it was to run some kind of social graph based on the Nostr identity used. So kind of like a decentralized way of assessing whether you're a good actor or not based on the npub.
+
+[00:27:35.013] Pete Winn: Mm. Yep.
+
+[00:27:43.621] Piers: That you supply and tag your your agreement with us onto. Now the npub like yeah, you could create a web of trust by going, okay, is there anyone like two or three hops removed from me that is yeah, connected to this person, or follows this person? Has this npub received likes? Have they received zaps? And what's their publication track record?
+
+[00:27:49.327] Pete Winn: Yeah. So like a web of trust sort of thing, so yeah.
+
+[00:28:13.589] Piers: Using AI these days I could do, yeah, some basic sentiment analysis or and profiling of someone from their public npub, right? So that seemed like a in the early days like a way of filtering people out. But yeah, what I realized very early was no one's interested in services like this anyway. I'm not exactly inundated with people wanting to fire these things up. And so it seemed like a premature gating mechanism.
+
+[00:28:28.133] Pete Winn: So
+
+[00:28:33.795] Pete Winn: Mm.
+
+[00:28:38.533] Pete Winn: Yeah, okay.
+
+[00:28:43.163] Piers: For now. Yeah. Let people play with
+
+[00:28:44.399] Pete Winn: So maybe two things. Like one would be for what you're talking about there in Web of Trust, a friend of mine, Jesus, developed something called Relator. So I think it's like R E L T R maybe dot XYZ of s I sorry Jesus, I can't remember the exact URL. But it does that analysis. So it'll take a like a basic web of trust but then assigns a bunch of other heuristics to it like has received money, has sent money via zaps, like has like you know, engaged in various different posts and different things. But it's it's like has a like a NIP-05 registered on a real domain and not like a shared domain. Things like that you can use to figure out that it's real people. And that could be quite useful there. The other one is so where where I was digging with the Nostr keys, 'cause this is one of the reasons that I use it for basically exclusively for everything we do inside like our wingman suite as well for similar reasons is that if you have Nostr as a login, you know that the user has access to like a cryptographic key and material. And then with all the Nostr libraries you have access to like encryption, decryption and signing and various different things. So one of the things that we developed early for For we originally I used it for Flight Deck, one of the components. I've moved away from this because it just wasn't required for our use case. But I developed this like tech called Superbase, which I know we've talked about a little bit in the past. And superbased was, alright, instead of having Superbase as a back end that holds all of your data, could we have like a different sort of encrypted database type model? And so this was like, how could I provide an entire back end to an application that is encrypted at all times? I know it syncs across multiple different clients, but then it only ever becomes unencrypted in the user's browser. And then I this is maybe an area that's worth looking into here because what that would allow you to do is you can you can provide storage and not
+
+[00:30:56.461] Pete Winn: Complete sort of database backend functionality, but certainly like a minimal like, you know, sync backend record storage, like a MongoDB type thing. It's kinda how it works.
+
+[00:31:05.563] Piers: Yep. But distributed and indestructible.
+
+[00:31:09.859] Pete Winn: Yeah, but but the thing is that everything in there is just ciphertext and nonsense. Right. So there there is no imagery, there is no you know, like leaked data from a particular person or anything like that. So if a business kept its business records and superbase, you could host that and nobody would know.
+
+[00:31:29.901] Piers: Including myself. Yeah. Including personal
+
+[00:31:31.033] Pete Winn: Yes, exactly. And that's that's sort of why I did it. You know, like sovereign, like Bitcoin type perspective, like I just one, I just I don't want other people's data for the most part, right? And then two is holding other people's data is gonna become I think a massive liability. And so I think the because even I don't even like you would know from maybe previous life, but like the you know, if you're the chief information security officer for a business, you can you sign up to some pretty hefty penalties. Like if you get hacked and you can't disclose rapidly enough, you can be in prison in this country. So it's it's not it's not an obvious thing that you would ever want to hold. Another co another individual's data or another company's data. Like it's it's a tough tough thing to deal with. And then the simplest way around that is to not hold that data. But then you can't provide the service and not everybody can do their own services. So you know, okay, well what's the only way around this that I can see is that we need way better encryption primitives and ways of building these services so that people can
+
+[00:32:22.896] Piers: So
+
+[00:32:46.773] Pete Winn: Provide these services without putting themselves at risk or accessing people's data. And it also means if somebody hacks you at that point, well, I don't care. Like it's just you know, I never have access to the data. So there's also
+
+[00:32:57.529] Piers: That's right. Yeah. I mean as we as we've seen with Kimi K3, like it's just a matter of time before some part of your stack that you rely upon has a zero day
+
+[00:33:09.287] Pete Winn: Once again shout out to MVK in the chat. Sorry, I shouldn't make light of this, but it's a terrible situation. Who has actually just put the relator link in the live chat so anybody that goes back can look at that. Yeah, like it's a lot of this stuff is gonna get compromised. So not having data is gonna be a key way of doing it. So I dunno if you're aware there's also another guy do you know Alicos? Mineracks (33:12.28) Ha ha ha.
+
+[00:33:38.372] Pete Winn: He's he's been in Bitcoin for a while. So he made BDK originally. And then he moved on and created a hardware wallet. It was kind of like or maybe more of like a hobby product. It didn't really take off, but it's called Portal. This was like the little NFC hardware wallet that you could use. Yep. Okay, cool. Yeah, exactly. Like of course you like buying toys. He also has a new company that I'm I need to
+
+[00:33:42.873] Piers: All right, yep.
+
+[00:33:52.731] Piers: Yeah, yeah, yeah. I know th I know this guy. Yeah, I do know. I bought a bunch of them from him. Yeah. And I think I was the first person to distribute them in the in Australia. Yeah.
+
+[00:34:07.011] Pete Winn: Chat to more about this, but called Enclavia. And Enclavia is about making it simple for people to run programs like this inside secure enclaves. So again, like similar to how like Maple does this with with AI models. So you can run the AI inside there, they don't have to see it, therefore, you know, they limit their liability and give you a private experience, which is better. I think having more access to that for general purpose computing is going to be very interesting. 'Cause like I for a lot of our clients, like you kinda have to provide the service. And then it comes down to like, okay, well, how can we limit ourselves and our exposure for these things? Which a lot of what we do is kind of KYC, you know, we know exactly who these people are, we have contracts and the rest of it. But I think the only way it becomes more sovereign in that sense that you're talking about is that we need encryption and we need it enforced by like systems that run inside secure enclaves so that we have that hands off ability to Help people. Yeah.
+
+[00:35:09.989] Piers: Yeah, that I mean what what you described is great for privately stored data, but when there's a public facing interface, such as a web shop, where yeah, by definition the content isn't going to be encrypted because otherwise it's not yeah, it's it's not exactly useful to anybody if if you're encrypting it person by person. But yeah, I d I still don't know how to solve that problem.
+
+[00:35:19.215] Pete Winn: Mm-hmm.
+
+[00:35:33.967] Pete Winn: Yeah.
+
+[00:35:38.319] Piers: I don't know whether Nostr really gives us an out there or encrypting that content does because yeah, the point of these services is to offer something that's public facing. And from the moment it's public facing and there's a right capability that I give to random strangers that happen to have an npub and a and some sats, that's where I've got public exposure myself as a as an infrastructure provider in the chain between the person producing
+
+[00:35:42.778] Pete Winn: Yeah.
+
+[00:36:08.079] Piers: Yeah, the nefarious or illegal content, and the person viewing it, if they see it on via my infrastructure, I'm in the I'm the easiest of all the targets for yeah, a regulator to come and knock on the door of, whereas the other parties are all quite difficult to go find.
+
+[00:36:16.024] Pete Winn: I mean.
+
+[00:36:27.117] Pete Winn: Yeah, it's that's that is tricky. I mean in terms of like giving public data, like you can do it in a similar way in the sense that you store all the data encrypted and then you have the user derive the key that decrypts the data. So effectively everything would be could be just you know, you could take the URL of the website or something like that, and then that becomes like the seed, you generate a key.
+
+[00:36:42.384] Piers: Mm.
+
+[00:36:52.955] Pete Winn: And then that private key is you never gave that to the user. They just ran the software that pulls that out, it all runs on their machine. Then effectively they've created the data inside their space. It's don't know how that works. Hmm.
+
+[00:37:03.149] Piers: Yeah, you're you're kind of right. Like we could actually create a Nostr key for every person who turns up at a public web page. We could create a Nostr key by just by default. If you don't have one, it just auto creates one. That's what we do in in MineRex.cloud, right? So and we could do that entirely w we actually sort of navigate the user through that flow, but we could equally do that entirely transparently, such that
+
+[00:37:14.746] Pete Winn: Yeah.
+
+[00:37:31.813] Piers: You know, although you as Joe public can see the webpage and it appears to you unencrypted, we could actually have effectively put like kind of like a cookie on your machine that contains an npub we generated for you. There'll be a little somewhere that you could download the nsec.
+
+[00:37:47.388] Pete Winn: You can't quite do that because like so it has to be like for this public version, like you would hold the data encrypted on your end, but if you have it encrypted to multiple users, you have to hold it as separate. Like, you know, it would almost be like one version of the site for every user. So what you would do is you encrypt to like one group key.
+
+[00:38:04.015] Piers: Unless streaming the
+
+[00:38:06.767] Pete Winn: And then you effectively give the group key to people. So that's why I would say you would like use the URL as a seed or something like that. So the user loads a web page and then like the only place that this data exists is on their machine. That would be the that would
+
+[00:38:21.421] Piers: D w were you at the Bush Bash when there was a fellow from Victoria who came up with one of the most clever concepts I've ever heard of. He came and I don't think he's even a an IT professional, but he came up with this idea of building a web page that is effectively encoded through its URL. So he's making use of the fact that URLs can can can be up to I think four thousand characters long. And he's used the URL itself to be the website.
+
+[00:38:54.339] Pete Winn: Okay, so he's like taken like the HTML or something like that and then encoded it in base whatever
+
+[00:38:58.745] Piers: And just turn it into a URL. So the URL is the website. There's actually nothing hosted anywhere. Simply by sending the URL to someone, you've sent them the website. It just blew my mind, 'cause it just goes against everything every every part of the paradigm of how I've learned to serve web pages before. Obviously limited what you can do.
+
+[00:39:21.743] Pete Winn: That's interesting. I had no, I don't think I saw that. That's that is that is interesting. I mean
+
+[00:39:29.103] Piers: He'll be a very good guest for you to have on this pod. Yeah.
+
+[00:39:32.035] Pete Winn: Yeah. I mean the other the other way of similarly getting stuff like that is you use something like an end site, which is that you publish effectively like the website and the assets into Nostor and Blossom and then they exist on that network and then you provide a public key and from that public key you derive an entire website and application on the fly inside the browser. That's the other way of doing it. But yeah the I feel like you've you've got a lot of limitations in the URL field, but that is interesting, is a way around it. All right.
+
+[00:40:02.021] Piers: Yes. But yeah, I guess the beauty of it is it just feels like something you could chain together and expand on, you know.
+
+[00:40:10.447] Pete Winn: Hmm. Alright, so in terms of your own use of AI then, you've been doing obviously you've used it for the creation of MineRex dot cloud. You know, you brought down your onboarding experience from what ninety days to ninety seconds or whatever the big takeaway is gonna be. That's which is pretty cool. Like how are you I mean, do you have you found it useful in your own life? Is it more something that you're just like I just love tinkering and playing with this stuff? Like you
+
+[00:40:41.723] Piers: No, this has gone beyond that. So I would say that everything changed in about November last year. Would be the sort of tipping point for me. Is when particularly in software development, which is my background, yeah, I spent twenty years actually cutting code, and then ten years managing people that were cutting code. And I got a couple of occasions in my life where I was able to scale a business from
+
+[00:40:43.194] Pete Winn: Yeah.
+
+[00:40:48.539] Pete Winn: Hmm.
+
+[00:41:09.925] Piers: Yeah, just myself through to, you know, a double digit number of staff, where we were building software at scale, managing mission critical applications at scale. And I'd never thought I'd see the day where I could go back to being just a solo programmer who could be productive and build software at speed and at high quality, because it just reached a point where as someone, you know, no longer a spring chicken. Yeah, I just didn't have the technical chops anymore to be as smart or as fast as the young kids coming out of yeah, out of school and coding coding geniuses. But what was my biggest yeah, weakness in that space flipped over to being a great strength. Relatively speaking is you know by the sta by the s time I sort of got there, yeah, it's sort of become really, really easy now to describe in natural English what it is that you want. And if you do have a technical background, yeah, you're you're at a huge advantage to someone who's never written software before, but is trying to get AI to produce a system. So leveraging off that, I've been able to produce at the same pace and at least the same quality as when I had a double digit number of staff working for me. Yeah, in a in a giant team building these kinds of applications. And I'm I would actually say I'm producing more and a to a higher standard than I ever could when I had you know, my my company people doing that.
+
+[00:43:06.935] Pete Winn: It's yeah.
+
+[00:43:07.401] Piers: So it's been absolutely transformational. It's absolutely transformational in how I run and operate my life. Everything from personal administration through to you're doing things like booking travel. Yeah, I'm trap booking tickets to go on a complicated trip used to be and still is to some extent a huge chore. Comparing, yeah, which hotels to get, what prices, what what how far from the venue you're trying to be at, what's the optimal Yeah, flights that work for you and navigating everyone's web pages. That's all just become a prompt.
+
+[00:43:43.737] Pete Winn: Yeah. Nice. Nice. I mean I sorry you.
+
+[00:43:47.897] Andy David: What else, how else does it look like? Are the, I'm kind of curious about how you might be using agents as well for some of the, like the long dated tasks, you know, not the one off like prompt engineered tasks, but like, you have anything that just constantly runs in the background?
+
+[00:44:03.919] Piers: I used to and I've given up on that because I've found it not very useful. So what I found works best is eliminate token burn. Eliminate background token burn. So do that two ways. One is by running my own local AIs for when I do actually genuinely need to run tokens. So right now all of my equipment that's seeing behind here, I used to place this admin and I used to sort of like copy and paste terminal commands into Chat GPT and say how do I do this or what's going wrong here? And it would tell me what commands to copy and paste back in to my terminal window to operate and run all my my servers and all that. Now though I've built an agent that just runs everything for me. And what it does is I use my own local AI. Basically set up what I call a pr a hybrid private AI plus frontier model. So what I don't want to do is ship off all of my PII information, all my sensitive data to a frontier model that other people can inspect and I and I don't know who they are or or how long that data's going to be preserved. And so the best solution is as Pete said, yeah don't ever give it to them in the first place. So what I do is I run a whole bunch of sensors here that grab every single device I have, all the hardware logs, all the firmware logs, all of the software tier, the OS logs and the application logs, the Docker logs, everything all goes into one feeder point. And then I basically feed that fire hose of logs into my own GPUs, running a model. And the job of that model is not to solve any problems.
+
+[00:45:58.423] Pete Winn: Yeah.
+
+[00:45:59.087] Piers: But to take about 10,000 log lines that happen every hour and condense that down to the fifty interesting ones. So it just basically takes all 10,000 and summarizes them and classifies them into the ones that it these look interesting. These are worth more investigation. Then it flicks those over to something like Anthropics Claude. And that's where I get to use Yeah, the frontier level thinking at something like Opus or Fable level. And then it investigates the ones that are outliers and then alerts me and gives me a recipe. So that's been going over several phases to the point where I've almost reached the Nirvana point where something unusual happens to my network and it self heals. It fixes itself. So that's sort of a background outcome that I've been able to achieve. But the important thing was to not have external token burn.
+
+[00:46:45.017] Pete Winn: Andy David (46:46.701) Hmm.
+
+[00:46:56.175] Pete Winn: Yeah.
+
+[00:46:58.437] Piers: Unless you have to. So one way of doing that is to basically use the AI to build a repeatable recipe that just stays yeah, basically turn it into software rather than token burn. Yeah.
+
+[00:46:59.707] Andy David: Mm-hmm.
+
+[00:47:11.811] Andy David: Exactly. Yeah. I feel like so much of these things are deterministic by nature anyway. It doesn't really make sense to throw a probabilistic model at this stuff, you know, unless you actually need it to exercise a bit of judgment or there's like some variance in the outcome that you need the agent to account for. The rest of it could just run as a script. And yeah, I mean, that is essentially like the genesis of the new name of the podcast, Intelligent Snacks. You know, it's like the use of
+
+[00:47:16.816] Piers: Yes.
+
+[00:47:20.197] Piers: Correct. Yes. Andy David (47:39.78) a snack of intelligence at just the right point in the process where it gives you maximum leverage, but it also eliminates a lot of the risk. And we talk about this when we're like deploying this stuff into businesses, like businesses are essentially, you know, containers that are highly deterministic by nature, by design. So to then go and throw a whole heap of like probabilistic intelligence at it introduces risk. So it's a similar sort of thing when we're solving our own problems. I'm always curious because like, A lot of the influencers online will love to talk about how they're just throwing fable at literally everything and you're like, that could be a script, but it doesn't need to be.
+
+[00:48:15.459] Piers: It's horrendously wasteful. I mean I've followed that path. I've wasted those tokens doing exactly what you've just described. And yeah, it's great thing about price signals is they train you to behave differently. So I quickly determined that hang on a sec, this is yeah, not something that's suited to continuous token burn, when it could just be turned into a software loop or a yeah, or or a
+
+[00:48:27.141] Andy David: Yeah.
+
+[00:48:43.803] Piers: Processes on Rails, where I actually use the intelligence to design the process and how to manage and surveil the process rather than, you know, take the lazy option of just throwing everything over to Fable and hope for the best.
+
+[00:48:58.841] Pete Winn: I think this is where a lot of people got, I don't know, disenfranchised a little bit with OpenClaw and things like that. Was it like the first time you use it, it's amazing. And it we always say it's like a parlor trick, like it just go, Can you do this? It does it somehow. You've got no idea how it achieved it, but you're like, My God. But it kinda had to brute force it in this roundabout way and because of that y you don't know quite how it got there and maybe there was a little bit of luck.
+
+[00:49:07.717] Piers: Yes. Yeah.
+
+[00:49:24.815] Pete Winn: But certainly the next time it tries to get there, it'll it'll probably go a slightly different way and it might get there. But then eventually there's so much going on inside that like AI and its agentsMD and all the various instructions and counter instructions and do this, don't do that, that just gets logged. That it's just got no idea what it's supposed to be doing after time. And then really what you needed to do was to just codify all of that.
+
+[00:49:29.583] Piers: Yes.
+
+[00:49:50.565] Piers: That's right.
+
+[00:49:50.692] Pete Winn: And say like, yeah, this bit is software, this bit of software, this bit of software, you make a decision here, this bit of software, this and then you can actually get amazing results out of that. But I don't think you get there until i intuitively you go, Well, why wouldn't I just want the most intelligent person in the world doing this? Like that sounds better, surely it's better. And yeah, I think
+
+[00:50:00.857] Piers: That's exactly what I
+
+[00:50:15.299] Pete Winn: I think so, yeah.
+
+[00:50:24.271] Pete Winn: Oop. Alright, Pears has just paused for me for a sec, so hopefully he's gonna spring back in in a sec. And we might get whatever the local recording is. Yeah.
+
+[00:50:36.516] Pete Winn: Hang on a minute. It's a second MineRex coming back in.
+
+[00:50:49.527] Pete Winn: Okay. Well now now we have a second version of your face on the screen, so for all the people. It's probably not your best shot, but we'll we'll roll. I wonder what I see that. It's on the stream. So nice. Anyway. There you go, it's it's popped off now. Apparently the website thing you were talking about earlier as well, a few people dropped it in the chat is hosted nowhere.
+
+[00:50:54.333] Piers: Andy David (50:54.809) Yeah.
+
+[00:50:57.695] Piers: Thanks.
+
+[00:50:58.371] Andy David: It's quite an ominous looking.
+
+[00:51:00.809] Piers: I only see three.
+
+[00:51:10.101] Piers: Nothing I can do about it. Worst has happened to me.
+
+[00:51:20.579] Piers: Okay, yep, yep.
+
+[00:51:21.227] Pete Winn: So that's the for anybody following along on the pod, hosted nowhere, go check it out.
+
+[00:51:25.427] Piers: He's he's gotten further then since we last spoke, 'cause I don't think he'd gotten quite that far yet.
+
+[00:51:30.317] Pete Winn: Yeah, I s I like the name. It's good. But yeah, sorry, yeah, so we were talking about like the runtimes. Yeah, so you kinda want someone intelligent, you design the process, but then ideally you want it to be the same. And I think we talked about this a little bit with Rod last week where it was like you realise that a lot of what you actually do in business is reigning in the free reign intelligence of all the people that are there. You know, that's what all these checklists and
+
+[00:51:56.085] Piers: Yes.
+
+[00:51:58.406] Pete Winn: Processes and methodologies are. It's like saying, I know you could just make something up, but instead of that, let's do this thing that works. And then you have to make less decisions. You do everything the same way and it's a bit more predictable. And I think it's not obvious that businesses don't optimize for intelligence. They optimise for predictable outcomes as like Andy said. Like it's just
+
+[00:52:19.965] Piers: Yeah. Which is why jobs get boring, right? Right? And that's why people like us yeah, leave jobs and go and create some other mess because that's where our intelligence is are hopefully best served, right? We don't like repeating the same task again and again the same way each time.
+
+[00:52:37.529] Pete Winn: Yeah. No, I agree.
+
+[00:52:39.301] Andy David: Mean, there is the follow on quote. Mean, those systems and processes also like handle the liability aspect just to kind of like go close the loop on this as well. You know, like when your agents have, like, I mean, there's the counterparty risk component to it as well as like, you know, does the counterparty actually also know that the agent they're dealing with has the authority to act on your behalf in a transaction if the agent defrauds or gets defrauded, like, you know, where does the liability sit?
+
+[00:52:48.277] Piers: Mm.
+
+[00:53:07.363] Andy David: If it overpays or underpay, like there's just like potentially endless scenarios. And again, you could try and mitigate a lot of those anyway, but there's still a liability question, you know, when you're actually dealing with people and you're in KYC environments and, you know, we have like commercial law, it's pretty hefty, you're pretty well constructed, covers all of the edge cases for the most part. How do you see this playing out with? Like the risk of abuse and also liability when we're using agents.
+
+[00:53:39.209] Piers: Like all of human history, when something is convenient to use and is useful to humans, they won't give a damn about all of those wrinkles and crinkles. It will be it will be used and abused. And yeah, nothing's perfect, it's gonna stay messy.
+
+[00:53:47.427] Pete Winn: Mm.
+
+[00:54:01.498] Pete Winn: I mean, I think we'll some of this we might start to see some judgments on, right? Because technically open AI, having a model leave its sandbox and then go and hack Hugging Face was a cybercrime, right, by the definition of the laws that they have. So you know, what happens there? Now I assume to a certain extent that's gonna get glossed over because we reached out to them and
+
+[00:54:01.595] Andy David: Hmm.
+
+[00:54:29.551] Pete Winn: We're giving them some money or bringing them into some sort of programme now and we'll pretend that it's all fine and we all have the same investors. But you can imagine that it might be at some point this will spill out and our model will be hacking something and someone's gonna turn around and No, fuck you And it's gonna get challenged in court. But So I could imagine we might start to see some of those liability discussions take place, but I don't under I can't imagine how the agent is gonna become liable for this. Or if the agent becomes liable, is it like if it runs with a model from OpenAI and they're serving the model, are they now liable for it versus me self-hosting and giving it instruction? Like where do those lines blur? Because they do inject, if you think about
+
+[00:55:01.864] Piers: Well well
+
+[00:55:17.173] Pete Winn: Maybe an equivalent would be something like social media and they have that section two hundred thirty protection whereby they say, you know, we're not editorial, we just allow people to have their own platforms. And then that gets called into question when Facebook or whoever just steers the conversation to exactly where they want it to go, you know, to generate outrage or or whatever. That's why you should use Nostr, because it's chill and nice.
+
+[00:55:43.942] Pete Winn: But y you have a similar thing here where you can imagine the model providers saying, like, yeah, we're basically like a public goods source and then people are providing the instructions, but what's not immediately obvious is that they inject way more instructions inside their system prompt than you've put into the prompt. So for the most part, these machines are really you know, Prompted by the organizations that you're working with a lot of the time or the person holding the model and you don't know what that model has injected into that prompt as well. So I could imagine that there could be a quite a serious liability there that's just creeping. I don't know what we'd do but
+
+[00:56:10.717] Piers: One hundred seconds. Yeah.
+
+[00:56:23.049] Piers: Well well, I mean I'd I'd ask you this question is what is the agent's social security number or tax file number? Right? 'Cause it's effectively taking some autonomous decisions. Who has legal liability for its decisions and who has the agent if if the agent sells a product online and receives money into its own wallet, whose money is that? And what where do they owe tax on that money? Who Who they owe tax to, and how do they account and file those taxes as an agent? Because it's not necessarily the person that created the agent, any more than, say, for example, if you're a parent of a child and then the child goes and earns money, is that are you the ultimate guarantor of that child's tax liability? These I think are going to become questions. That and I don't think there's a straightforward answer. 'cause the world is not designed for
+
+[00:56:59.843] Pete Winn: Okay.
+
+[00:57:07.365] Pete Winn: Mm-hmm.
+
+[00:57:19.728] Pete Winn: Yeah.
+
+[00:57:21.749] Piers: The wall where it had
+
+[00:57:23.695] Pete Winn: Yeah, I think you're right.
+
+[00:57:23.931] Andy David: Yeah, the other side of that might be like, you know, in a company, if you've got a bunch of employees and they do it, you know, they do a few things as a director, you can say, I didn't know what they were doing, but you have a duty, right? In Australia, we have director's duties and you ought to have known that they were doing what they were doing. And like similarly, I wonder as well to some degree, like if this will be the thing that could tails agent use in.
+
+[00:57:40.554] Piers: Yes.
+
+[00:57:50.396] Andy David: Like certainly larger enterprise where you just get so bound by potential legal risk rather than actually or perceived legal risk rather than actual legal risk. We sat there going, well, I can't possibly fathom all of the ways this thing could fuck up. So therefore we won't use it because I, yeah.
+
+[00:58:04.861] Piers: I'll do nothing. I won't use it to do nothing.
+
+[00:58:12.205] Pete Winn: I think so, 'cause it's not like you don't have that risk anyway with people. It's a it's not an unknown thing, but like you it's easier to transfer like we talked about earlier with the transfer of liability, right? All of your employees are effectively KYC known entities.
+
+[00:58:16.543] Piers: Yes. Yes.
+
+[00:58:28.515] Pete Winn: That might not necessarily be the case if you have a bunch of agents inside your system, or if your employees are then spinning up their own like hordes of agents. How do you know what's going on? How do you control those things? And like, particularly if you run them in this more what what we would often talk, one of our intelligent snacks, intelligent snacks.com, that we keep going back to is that we often think the runtime is wrong, right? Like it's
+
+[00:58:56.569] Pete Winn: The agents are useful for creating the software and the software sometimes needs a bit of intelligence and that's the intelligence snack. Right, is that a lot of what is persisting in the world right now is just no, we're not gonna do that. We're gonna make the agent the runtime and we just throw problems at the agent and we let it figure it out in whatever way it has to. You know, you could imagine like somebody talking about like, I need some competitive analysis on company XYZ and your agent decides that the simplest way to get that is to go and hack company XYZ and now you've committed a cybercrime, right? It's like that is you can see this scenario coming, right? It's
+
+[00:59:34.815] Piers: This actually happened. I think last week I heard a story about some fellow wanted a like a gym class and
+
+[00:59:40.941] Pete Winn: Yes. He hacked they hacked the gym membership database and started chucking people out of the queue.
+
+[00:59:44.511] Piers: Yeah, clearly the guy didn't tell it go hack the gym membership. I or at least I don't believe so. But that seemed to be what the LLM decided to do. A frontier model no less. And yeah, injected an appointment into the database because due to a vulnerability. So I guess that's a sneaky way of doing it. But yeah, who's liable? Who's liable? The frontier model designer who provided the frontier model in this instance.
+
+[00:59:47.971] Pete Winn: Mm-hmm.
+
+[01:00:06.201] Pete Winn: Yeah.
+
+[01:00:13.893] Piers: Or you have the human that put that prompt out. Do they assume liability for what something they don't can't possibly know how it works, or where it might fall over, or leave the bounds of what's legal. And yeah, is the gym that opera or or the person operating the infrastructure for the gym are they liable for having built a leak a weak system? These are all open ended questions.
+
+[01:00:29.114] Pete Winn: Yeah.
+
+[01:00:43.217] Piers: And their sort of political, judgmental and you know, non deterministic answers in each case.
+
+[01:00:50.201] Pete Winn: Yeah, and doing something like saying like, all right, do some competitive research on company XYZ is that's a fairly benign prompt request. Right? The fact that you asked it to some some model that's been heavily trained to be good at cyber security and coding means that when it interprets that question it goes, Hmm, I know exactly what I can do What's a zero again? Anyway, I found a zero day, boom boom boom
+
+[01:00:59.977] Piers: Yes.
+
+[01:01:13.501] Piers: It depends what moral covers it has. It depends what moral covers it has. Yeah.
+
+[01:01:20.077] Pete Winn: You can see how it happens and I think a lot of it is just like that's that's an area where 'cause it is I sound probably a bit down on AI here 'cause I'm like, shit, I mean how do you even use these things if it's gonna give you this massive liability risk? But I think the flip side of that is that it's again c peers number three, he's in. Despairing coming back. Man. Alright. Well hopefully we'll hopefully the upload will work. But worst case we've got the stream on show. But yeah, so what was I saying? Yeah, I think you can avoid some of this stuff. So instead of giving the open ended questions to the AI and saying, Go find it out, what you have is, you know, you figure out, okay, how are we gonna dip gather the data for this and then you effectively give it a problem to analyze internally where the going and getting of the data
+
+[01:01:50.747] Andy David: Yeah.
+
+[01:01:53.323] Piers: Yeah.
+
+[01:02:12.645] Pete Winn: Comes in from outside because you think through the problem of how would I conduct this competitor analysis as opposed to just giving it, you know, carte blanche to go and hack your competitors. But it's so I still think it's all very useful. I think you can do this in ways that do take into account that potential liability that you've got. But yeah, it would be I can imagine this is going to be a pretty messy world 'cause as you said, like the laws and the way we operate just isn't made for this.
+
+[01:02:44.683] Pete Winn: It's
+
+[01:02:45.623] Piers: The people making the laws I think are blissfully unaware of the nuance of yeah, i i obviously they're in a different field to the field we inhabit, and yeah, they they can't possibly figure out how to regulate something they don't themselves understand.
+
+[01:03:02.585] Pete Winn: Yep. I mean I've gotta admit, this like wave of recent hacking of stuff has has hit harder than I th I suspected. I thought a lot more I mean, certainly when the Miphos stuff came up and they talked about how they had to keep it quiet because otherwise the whole internet is dead, I was like, nah, come on. Like that's that sounds like marketing. Now I'm a bit more like, Okay, well they they probably can hack a lot of stuff.
+
+[01:03:27.999] Piers: And they are. I mean I think yeah, Bitcoin's the canary in the coal mine with this one. Yeah, what happened with Coldcard I think was just yeah, the start of what I think we're gonna see throughout mainstream finance and other you know sensitive areas. It's just because there's no rate limit on Bitcoin. What the algorithm is i ironically because it's decentralized, it's easier to attack in the first instance.
+
+[01:03:30.117] Pete Winn: Yeah. Yeah.
+
+[01:03:40.271] Pete Winn: Yeah.
+
+[01:03:57.395] Piers: Centralized system like Fiat, you've got choke points that you can guard against problems. So for example, you know, going after you know I can going after your private key. If I if I have an idea of where your private key is, I can just brute force it with thousands of GPUs. And no one's stopping me. No one's checking how many times I've checked or or tried to guess a password. Whereas if I go to nab.com.au and I log in I try to log in as you, I've got about three goes before I'm my IP's permanently banned and your account gets locked. So yeah, ironically, your your fiat finances in the short term are probably safer, but in the long term they're probably not as secure because you know, who knows where else in the stack there's a zero day lying around. That will get discovered sooner or later by a Kimi K3 or four.
+
+[01:04:58.277] Pete Winn: Yeah, I mean I wasn't expecting you to come on here and just shill nab Dr.
+
+[01:05:02.913] Andy David: You Pete Winn (01:05:05.43) Australia Bank for the foreign listeners that
+
+[01:05:05.431] Piers: Yeah, but I think you know what what we what we're gonna see is a first wave that where Bitcoin acts as the canary because anything weak in Bitcoin is gonna be found first. And then you know, so it'll feel like well Fiat's got off with this score free, you're better off in Fiat than in in Bitcoin. But I think that will quickly flip because there is no way of protecting Fiat the way it works, 'cause it is centralized. Yeah, you might be able to like crush it in on on on front doors to begin with, but eventually, you know, the somewhere in that stack there'll be a weakness. So those guys are just going to continuously be playing whack-a mole. Whereas and then towards the end of this curve, I think we're gonna see Bitcoin through that fact that it's its entire surface area is exposed to everybody, is just going to get so much more attention, like the work that Rob's done, Rob Hamilton's done with the red team. I just think you're gonna see that hard enough Bitcoin to the point where, you know, Fiat's gonna be continually attacked, and Bitcoin's gonna, you know, either survive and become robust or die. But yeah, i I've I've I pretty much have a very strong conviction as to which end of that spectrum we're gonna land on. Yeah.
+
+[01:06:22.755] Pete Winn: Yeah, I mean I'm happy with the Bitcoin these days, but I'm I mean I think it's I think we're about to realise how bad all software is. And if we think that the best software in the world was in banks and written in the late eighties to early nineties in programming languages that barely anybody understand. I mean, I know several like old guys that are kind of like, you know, sixty, seventy, eighty years old, COBOL
+
+[01:06:31.412] Piers: Yes.
+
+[01:06:50.873] Pete Winn: Like for GS developers and things like this where like nobody knows the language and they and they just earn a handsome living living in like Barcelona, Sha Brain and elsewhere, just ducking in as consultants and solving problems for people.
+
+[01:07:08.586] Piers: Those guys' days numbered now. Like with greatest respect to your friend in Barcelona. I hope he's I hope he's enjoying the tapas and
+
+[01:07:10.639] Pete Winn: Well, I mean I already said how old they were, right?
+
+[01:07:18.819] Pete Winn: He he was happy to retire when he retired. The fact that he could then just ment mint money for years later, I think, was nothing but a bonus.
+
+[01:07:29.429] Piers: Yeah, because I'm not sure, you know, COBOL expertise today, now that LLMs exist, at the frontier level that we're seeing, would necessarily you know, I think having that knowledge plus an the AI working with you is always a superpower. But you know, it's no longer I think a com a complete re prerequisite for to be able to work with COBOL based software platform. Yep.
+
+[01:07:47.001] Pete Winn: Yeah.
+
+[01:07:52.898] Pete Winn: Certainly. I think their their jobs go away, their their days are numbered by age in any way, so it was always going. So it offers a glimmer of hope to banks. But now I think what you're looking at is technical aside and whether they can code it, now you have this change management problem of like, okay, we've got this old system running on COBOL over here that we could potentially re engineer into someone else. We're a bank. W we're not like a not like a Frontier lab, we're not like a, you know, Silicon Valley tech geniuses over here. But we're gonna rewrite what our entire base system into a completely different system that is secure, hopefully quicker than Prompt Kiddie with a Kimi K3 over here can find vulnerabilities. So that would be the That's the other alternative, right? Of like saying, Okay, well yeah, Bitcoin is out there on the internet and it has to live and die by how well designed it is. With a lot of the modern s the legacy systems, you've got a lot of stuff just behind gates, but all of a sudden like every little kid out there on the internet has got a battering ram and it's gonna come charging through them. So I would I it's it's not like obviously obvious what happens there, but it's I think it's certainly got a lot more risky in those systems as well.
+
+[01:08:59.638] Piers: Exactly. Yeah.
+
+[01:09:07.675] Andy David: Well, the missing piece, that we haven't discussed there is the banks have insurance. Just like the directors do in the companies that we talked about, the directors have liability insurance. And the one thing that is almost certain to occur will be all of their premiums will go up and all of those costs get passed on. And I think that is going to be the price that everyone pays for more of this stuff, just us trying to figure this stuff out. And all the various permutations will be like, yeah, those costs will get passed on.
+
+[01:09:39.968] Piers: So Andy, you're you're suggesting yeah, the costs get socialized and the profits get privatized.
+
+[01:09:45.869] Pete Winn: I have we seen a bank do this before? I mean only I guess I guess it's just their core business model, but
+
+[01:09:51.748] Andy David: Well, the other side of that as well, like Piers, you mentioned this as well, know, something about the government regulating things they don't understand. And I just thought, you know what, it's never stopped them before. You know, it's like, that's basically their core function is to keep regulating things they don't understand. And so I think that will add like a considerable layer of mess to this as well. And unintended consequences. Yeah. And I think they'll do it with the huge backing and support of the general public.
+
+[01:10:02.567] Piers: No.
+
+[01:10:13.204] Piers: Unintended consequences usually yeah.
+
+[01:10:21.365] Piers: Yes.
+
+[01:10:21.935] Andy David: And that is like, that is the part of the narrative that I feel like certainly people in our world, like we don't yet do a good job of communicating all of the benefits of the technology. And instead, like to a large degree, the narrative gets controlled by Dario and Sam and their doom mongering because again, they are essentially trying to lift the ladder up behind them. So they can actually create a favorable regulatory environment that gives them some moat to continue to exist. I think this is going to create a lot of like these kind of like these permutations have to play out but they'll play out in a pretty messy way I think in the short term.
+
+[01:11:03.683] Pete Winn: All right. I
+
+[01:11:03.791] Andy David: But the banks won't lose money, I suspect, is probably the only thing I wanted to input there, is I think they'll be OK. Mineracks (01:11:06.25) No.
+
+[01:11:09.463] Pete Winn: I suspect it'll get bailed out and we pay for it probably with inflation as opposed to a direct cost to the individual, but it's same thing. Okay. We know how to protect ourselves from any inflation. Twenty one million people. All right. I th we're coming up to an hour ten there, so I think we're this is probably gonna be a good place to end. But is there anything else that you wanna wanna shill or talk about before we go, Piers?
+
+[01:11:18.447] Andy David: Yeah.
+
+[01:11:18.646] Piers: Well we know how to protect ourselves from that.
+
+[01:11:22.651] Andy David: You mineracks (01:11:35.21) look, yeah, just I'm I think it's worth ref we've reflected a lot on on on the challenges and some of the negative aspects, but yeah, staying in the sort of cheerful and constructive zone. I just think of yeah, the amazing outcomes that have been able to be achieved with yeah, since I've been able to work with the these models, for me in particular. One would be yeah, walletplayground.com, which is a website I've built using entirely AI. That enables people who are interested in practicing different permutations and combinations of wallet coordinator software with all different types of hardware signing devices that are out there. I provided a mechanism for anyone to just try those things out and to get coach guided runs through how to do self-custody. So that's essentially compressing the four or five years I've spent teaching various people self custody techniques and best practices. Into yeah being able to condense all of that work into a live artifact that people people can play with. There's obviously MineRex.cloud which enables people to start up a Bitcoin enabled business online. Literally take away all the hard parts, get it up get you up and running to the point where you can now take over ninety seconds after you decide to do so with all the infrastructure you need. And then Yeah, I've also been w using AI to build something I've always wanted, which is a backup of all of my own onto my own equipment of all of my iCloud data. So absolutely a hundred percent of everything I've running on iCloud. I've got mirrored live in real time on equipment that I control. That's a get my iCloud get my cloud dot com. And yeah, just a bunch of other apps and things I've built. It's just been wonderful to get back to being able to create new software and distribute it around the world. I built a little tool on the plane over to Europe and published it on the Microsoft Store and on Apple, etc. Called Wi-Fi to QR dot app. And I wake up one day and see that hundreds of people all around the world have installed this thing.
+
+[01:13:59.785] Piers: Yeah, just a little tiny utility that could that solved the problem I had of yeah, how do I give people my Wi-Fi code without them having to type a long complicated number? Just scan this QR and yeah, it's amazing what you can just come up with an idea and yeah, before you know it, hundreds of people around the world are benefiting from the work you did, literally sitting on a plane with Starlink. So yeah, I think
+
+[01:14:23.035] Pete Winn: Playings with Starlink are so good.
+
+[01:14:26.409] Piers: There's a like a Cambrian explosion of apps coming, and businesses being enabled and I just think it's gonna be amazing for humanity. So the net good that's gonna be delivered out of all this just leads to an amazing bright future for everyone.
+
+[01:14:43.739] Pete Winn: Yeah. I mean quick shout out to Planes with Starlink, which would make a great sponsor for the pod. I don't know. May maybe the airline or the Starlink. Long shot. Friends of the pod. That's cool. All right, well let's bring it in there and I hope everybody's enjoyed their feast of intelligence snacks today. Thank you.
+
+[01:14:46.821] Andy David: Okay
+
+[01:15:10.294] Piers: Thanks so much, Pete.
