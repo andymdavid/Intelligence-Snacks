@@ -15,6 +15,7 @@ themes:
   - privacy-security
   - software-systems
 originalPublishedAt: "2026-08-27"
+youtubeUrl: "https://youtu.be/qONBOgC-W5c"
 transcript: episode-069
 featured: false
 fixture: false
