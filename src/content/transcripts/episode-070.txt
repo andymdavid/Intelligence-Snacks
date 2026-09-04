@@ -1,0 +1,319 @@
+[00:03] Pete: All right, we are on. All right, and welcome to episode 70, the big episode 70 of Intelligence
+
+[00:14] Andy: Snacks. The big episode. We haven't even dropped that one in a while. Have I not? I know I keep forgetting like which podcast. Yeah. It's confusing. No offense to the last couple of guests we had on.
+
+[00:24] Pete: Those were big episodes. Maybe it's because. Went without saying. Yeah, maybe it's because we were doing it online. Whereas today we're back in the van. Back in the studio. I was just pointing out I've added some acoustic paneling to the van to tidy up some of the trim. It's a work in progress.
+
+[00:41] Andy: And I'm not noticing any gaffer tape. No, that's what I'm trying to do is remove the gaffer tape
+
+[00:46] Pete: because I started to look at it after I said I never see it. So I'll hide all the wires and stuff behind these panels. But then they come off and on easily like this bottom bit's magnetized so I can get to the stuff behind it. Very tidy. And then I'll bring trim around it in black. It's hard to cut the full shape perfectly first time. I was gonna say I
+
+[01:05] Andy: like how well you've cut the hole in the middle for the window. You know I used to
+
+[01:10] Pete: have wood on there. I took the previous like wood that I had and used that as a template. It's a little stencil. Yeah it's good. Yeah it's very clean. So it's yeah it's gonna run I could probably tidy up some of the knife cuts. But then this is This is tough. Yeah. This is like a tough listen for the audience. Talking about this. This is just the visuals of the van.
+
+[01:31] Andy: Continuation of the pod before the pod.
+
+[01:33] Pete: Yeah. Yeah, you probably want to dig out the microphone from the inside there. Oh, we've got it.
+
+[01:39] Andy: We've got an issue. It's alright. We're good.
+
+[01:42] Pete: Alright, so it's episode 70, a big episode 70. We're back at the beach. I thought it was going to be raining. just a beautiful day because that's what happens in Perth. Good old Perth. Just showing us why we do live here in winter. What's been happening? Oh, tidy up. I feel like ever since that cold card hack, which back in episode 66, something like that. Yeah, maybe. I've just been refactoring everything just like way more focused on cleaning things up and performance and then obviously we did the live stream with um a friend of the pod dead man a couple of weeks ago as well that's i keep saying a couple of weeks it's presumably more than that by now possibly that was that led to a cleanup of a lot of the the Wingman repos and stuff so I've been again tidying all of those up in the background so i could reissue everything inside a new organization So those repos are almost all up at the moment. I'm just adding some stuff to tower. So I've added the, what have we got? The Git backend. So now I have a Forgejo backend on there as well. Nice. Which is good.
+
+[02:58] Pete: Which is all gonna be Nostr mediated. So everybody gets a Nostr ID. There's Nostr submission of stuff. We can do, all the agents can create repos, check them in. I can give them permissions inside autopilot. So it'll be embedded into like Autopilot and Flight Deck. It's like a native Git. And then you can log in using your Nostr ID on the web and see all the repos and diffs and jobs and whatnot that'll be in there. So that'll be cool. And then I think I was telling you just before this, I've been experimenting with Phipps this morning where this guy, Jonathan Corgan, friend of the pod. You never know. He's released his 0.5 release the other day and tagged it in a group. I was like, ooh, I should look into this, because I've been considering where I might use it. And one of the things I thought would be cool is if you could set up your autopilot on a machine, like let's say it's on your personal laptop, you don't really want to be exposing that, like buying domain names and have it point into your laptop constantly. It's just not really where you want to be.
+
+[04:02] Pete: So I wonder if there's a better way to do this with Phipps. And so I have, at the moment, Rick is working on this in the background. It's my first proof of concept to have, because we have like a Wingman app as well. I can basically build like a local proxy server in the app that then allows me to access all the other stuff over FIPS. So you wouldn't need to make your autopilot accessible to the internet. You don't need to make it like for the WApps and stuff that run on there. They could just run on that machine and they're all accessible inside this Wingman app. Now, you could also, the second bit that we're adding to that is like a FIPS reverse proxy idea. So then I can just ensure that only approved devices can actually access any of these apps as well. So basically you have my ID would sign that this device here, this device can access all of these apps. And then bang, it comes through. And anybody else, we just throw the traffic away.
+
+[05:00] Pete: So it gives you almost, it's like having like a tail, it's like having all your stuff deployed on Tailscale, but you never have to set up any of the Tailscale stuff is the idea. So I'm pretty, I'm pretty excited about that because I think it'll make the autopilots way simpler to set up because like having to do a bunch of additional DNS work is just not ideal. Like in particular if you had it, like I said, on your desktop or you've got multiple machines, like they all need new endpoints and stuff. It feels like where you're going to end up is like swarms of these things. And that ability to, let's say you're editing an app on your machine or you're editing it on your own autopilot somewhere else in the background. It's useful to be able to share those instances of those development WApps more easily, which you can do currently in autopilot over DNS. but I think also being able to just say, like, oh, here's, if you know that everybody runs FIPS, everybody's inside this Wingman ecosystem, we could actually make it nice inside there and just say, like, oh, you share to this npub,
+
+[06:04] Pete: you know, share to friends, and your friends list comes up, and you just select, oh, I want Andy to review this app for me, and it just sends you a message. It pops up on your flight deck and just goes, like, oh, look, Pete said, here's a web for you to try, or it's in that shared channel in Flight Deck or whatnot. And you can just click through and you just run it from my local dev server, 'cause I just need you to take a look at it, but there's just no fucking around. Yeah. Like that would be nice.
+
+[06:32] Andy: That sounds nice. Sounds clean.
+
+[06:34] Pete: Well, that's where, and because it's all like, it's all like automatable in a way, where I'm not necessarily like, I mean, you could automate a lot of this stuff. Like a lot of this stuff I do automate for myself in Cloudflare in the sense that I just have agents with access to Cloudflare credentials that can do this stuff for me. But you can't assume that anybody else you deploy this to has that. So I'm kind of keen to make Autopilot a nice development experience for anybody that likes Nostr basically. There's a certain niche there where it's also true that if I know, even for normie businesses that we work with right and just deploy this and I know I say oh here's your app that you use to access all the stuff and that's your wingman app and now I know you've got a key and then I can just do all this for you and you'll never see any of it that's pretty that's pretty cool yeah so I'm a I'm a fan reducing complexity yeah I think it really does really just help so big fan friend
+
+[07:41] Andy: friend of the pod potentially potentially no i like it i like it it sounds very good I'm looking forward to seeing that in the flesh yeah so we're doing a lot of these these sort of things while I'm
+
+[07:54] Pete: trying to tidy up that final light tower like likewise you when you deploy a tower you kind of have to make the tower accessible again it would be nice to not have to yeah and then if we're not setting up any dns stuff like it just it eliminates like a whole area of like oh, these API keys don't need to exist. And like we have, the closer we can get to, you just, you have like one Nostr key and then you download this repo and it just spits up this infrastructure. And then everything is just managed from your Nostr key. Like it's, that's nice. That does sound nice. And you just, you don't deal with APIs. This having to go to multiple websites and log into stuff to get API keys to copy and paste them back into things and then rotate them every three months. Yeah, it's a pain in the arms. It's just not cool. It's like we need to get rid of that. It's kind of annoying for GitHub that it's not simpler for me to have my agent. I mean, I do actually have a Wingman account for Wingman, but then because I also do my Git stuff on the same thing, it's basically we run under the same account.
+
+[09:06] Pete: It'd be nicer to separate these things a bit. Yeah, definitely. And just build it in. As I said, I like what Buzz did there, so I'm gonna crib that one from there. Yeah, nice. It's an idea.
+
+[09:16] Andy: Well, that's it, I mean, yeah, it's borrowing. It's borrowing strategically.
+
+[09:23] Pete: Here we go, Rod, friend of the pod, says, "Good morning, Pete. Nice mug you've got there." Actually, this is my camp mug today. Different one. Rod, may have to take a screenshot photo of this and post this, but I would probably sell this
+
+[09:37] Andy: for less than 21 million sats to be honest. I'm assuming that no sale has gone through. Not a number you're prepared to part with.
+
+[09:45] Pete: I don't believe so. Nothing, I've not been made.
+
+[09:47] Andy: Not been made a ridiculous offer for the mug.
+
+[09:50] Pete: Yeah. Rod, feature request. Andy was asking if we could have, when we start a stream in ShowShow, could we have multiple, I guess, owners of the stream or on the stream and stuff like that. So like sometimes in YouTube, you see a stream where it's got two accounts, multiple accounts in there.
+
+[10:08] Andy: Well, I don't know if it's a stream or if it's just a recording. - Yeah, we don't know exactly what it is. - Yeah. Like, it can be released as multiple accounts. So for instance, if you've got the host account and then a guest, and the guest also happens to have like a big YouTube following, they would also be an account that is posting that. I don't know how it works on YouTube. I've actually just not tried doing it.
+
+[10:27] Pete: It's not how a feature request works. We just say, "Rod, we like this." We're just thinking out loud, Rod. All right, just let us know when that's implemented in the chat, Rod. All right.
+
+[10:37] Andy: Just treating Rod a lot like Rick and Lara at this point. Exactly.
+
+[10:43] Pete: This is how you vibe code these days. If you're not vibe coding from a van by the beach. Live on show show. That's like, what's the point? What were we talking about? All right. Why don't you tell us about the new intelligence snacks? We got intelligence snacks.
+
+[10:57] Andy: It comes together nicely. Do you know what the problem is?
+
+[10:58] Pete: I don't know if we talked about it on the pod, and this is like of all the people that might care. This is probably the ones. This is probably it. Yeah.
+
+[11:05] Andy: I think we did, right? Maybe. We've obviously got the new podcast brand, Intelligent Snacks. I think we went into that in a little bit of detail, but the way we put the podcast together now is we've got these little snacks that go out online and in a newsletter every week. And the snack is just basically a distillation of all of the ideas and the themes and whatnot that we cover in a podcast. And so there are a bunch of pipelines running in something called Snack Studio that we have. And those pipelines are generating the snacks themselves. They're generating little episode thumbnails. They're generating snack thumbnails in our traditional voxel style. And it's going through doing a transcript cleanup and things like that as well. So lots of little jobs that are going on via pipelines. And I basically still have to set it off manually. I just drop the episode transcript in there and it runs through. And publishes to the website via GitHub. And then, yeah. Nice. - It's just very tidy. I mean, we were talking yesterday though about actually being able to run the animation.
+
+[12:20] Pete: We have the graph as well.
+
+[12:22] Andy: Well, we've got the graph now, yes. The graph, so you can, well, I mean, it's a little undercooked 'cause there's only like five or six episodes that have been uploaded. to go through and manually upload all of the others that we've done over the last couple of years. But there's a graph. There's a graph. There's a little like knowledge knowledge mix as well which is basically like what are the things we talk about.
+
+[12:42] Pete: Because they're all on YouTube you could probably just have Laura go and do that. We probably could. Because she's actually they're actually pretty good at getting transcripts off YouTube. Although yeah no yes got transcripts. Wouldn't be might not be tagged with the correct speaker
+
+[12:56] Andy: attributions and stuff. Yeah.
+
+[12:58] Pete: OK. This is on it.
+
+[13:00] Andy: Yeah, it's a side note. Yeah, but it works. It works quite well. And I feel like the big problem was always this was just a time suck, right? Like even the newsletter was a massive time suck. I would just sit there and go, OK, what do we-
+
+[13:11] Pete: Can you tell me I can go to intelligencesnacks.com and sign up to a newsletter?
+
+[13:14] Andy: You can.
+
+[13:15] Pete: You can do that. I should do that if I'm listening. Go and get your snacks.
+
+[13:18] Andy: That's the place for it. Yeah.
+
+[13:22] Pete: So the newsletter was a big time suck.
+
+[13:24] Andy: It was, yeah. I mean, it was, it started off as like an essay. I'd go, okay, what do we talk about this week? There were like 16 themes that you could, you choose from. And I'd generally go and pick one and go, okay, I'm going to write like 1500 words on this. Because I don't actually mind doing that. But the problem was I'd set it at like a weekly cadence. And I was like, okay, this is just, this is a bit much. This is a bit much. I've got work to do. I don't really want to be writing an essay every week. And, but I was like thinking, do you know what? We do have like 15 odd themes generally, and some of them are pretty good. Some of them are also good and that's fine. But I feel like we should be sharing all of them. And attention spans are a hard thing to tap into these days. So if you've got like two to three paragraphs snack of the idea, it's basically just, as I said, a distillation of what we've talked about. You can get across it nice and quickly. And then, you know, it's timestamped. You can go and find the bit in the episode
+
+[14:24] Andy: you want to listen to and then in theory it makes it easier to break down an episode and get to the bits that you actually want to listen to. So if no one wants to re-listen to the part where I'm talking about intelligence snacks they can just be like well that's fine I'll ignore that and I'll get to the stuff that I actually want to tune into. So I think that's nice. It's like a nice way to just get across what we're talking about each week without necessarily needing to commit to an hour, hour and a half, whatever it is.
+
+[14:50] Pete: And I think this was part of the whole rebrand activity. Well, which was, I think we said it, and then you texted me back a couple of days ago, I've been really thinking about that. I think that's much better. And I was like, oh, yeah, it is. Yeah, yeah. It was a lot of just, I don't know, it sort of came out of... Well, I was just saying... It felt very natural, right?
+
+[15:11] Andy: Like, I think I was looking at intelligent snacks because we talk about that as an idea a lot. We've talked about it a lot on the podcast. We talk about it in meetings. just comes up and so I sat there and I was like I wonder if intelligencesnacks.com is available and literally typed it into GoDaddy and I was like oh it is do you know what this is going to be the new podcast I think I just texted you and I was like why don't we yes why don't we make the newsletter yes that sounds better I can find that one on the internet yeah why not what was odd because when I would go to type in the good stuff in YouTube despite the fact that I'm an admin on on the actual channel it just would not come up like this is the first mistake isn't it i can't expect anyone else to find this thing if i can't even find it so yeah um yeah it's a much nicer
+
+[15:59] Pete: brand yeah i think now so and i think those snacks were always like the idea was that we we kind of touch on and come back to the same things over and over again yeah which is weird because a lot of this i don't know maybe like part of this podcast is really just trying to figure out how does this all fit together and work in some meaningful way? AI's new. It's not obvious how it works. Everyone's got opinions, but it's pretty much up for grabs at the moment. And so what we're really trying to figure out is like, all right, how might this work? We don't really know, but we're coming across like some ideas just don't persist over time and they come and go. Some of them we've kind of been coming back to and just circling for a year and a half now. And you go, yeah, there's something there. And I think that's kind of like how the discovery process works in a lot of these new technologies just in general. You don't know how it's going to work. You can't really foresee it, but what you can do is just like, you know, keep track of it
+
+[17:02] Andy: and just see what you keep coming back to. And then there's a good chance that that's probably going to
+
+[17:10] Pete: Yeah, it's gonna start tying together.
+
+[17:12] Andy: You start to see stuff that we tend to circle back to a lot, even contradictions. I think that was like an interesting one as well. Maybe not contradictions per se, but where we've changed our mind to some degree, like which things don't work well together. And then guests also sometimes will come on and have different opinions to us on certain things. Sometimes we push back on it and have discussions about it. Sometimes we don't. Yeah. And we just kind of let it slide. But I think it's, yeah.
+
+[17:38] Pete: I mean, we often talk about how you want to impart more knowledge into agents and stuff. And we use graphs. I've talked in the press about I've got my news graph for Rick. He builds me my book of sand newspaper, where I get my newspaper of what's going on every hour. And I can read that in peace. And then that's one angle is feeding me news that's interesting. And the other angle of that is that, like, okay, now you've got a corpus of things that I'm interested in, which gives you an idea about, like, my personality, right? Like, I'm probably never going to sit there and, you know, like, talk to, like, a bot for an hour and a half. Yeah. Like, every week about AI and what's new and my opinions on it sort of thing. But I talk to you. So from that, we can have the bots just listen to these things and figure out, like, okay, there's a graph of information here that tells me a lot more about Pete and a lot more about Andy and a lot more about these guests. That we can start to figure out, okay, well, what are their opinions? Like, how do I think this is evolving?
+
+[18:47] Pete: If I'm making decisions or in, like, a dialogue or an architect-type mode that we're working, then, like, this is a good place to look at and to say, like, okay, how does Pete think about these sort of things? What sort of answers might he want? So I think just, we haven't used it like that yet, but I can see that being a useful input to something like this, where one of the reasons I like the podcast is that it gives us, like, an hour to an hour and a half of just, like, really unfiltered thoughts on a subject. Yeah. Which, you know, might not be useful for anyone else, but it's good for me. It's good raw material. It's, like, good raw entropy for these agents to be working with, I think.
+
+[19:29] Andy: I think when I'd started writing the newsletter, the thing that occurred to me was that we actually cover quite a bit of territory. There's some pretty... Some of them are just tangents and that's fine. And others are reasonably well fleshed out ideas. And I think it was important to try and like, as I say, distill that. The distillation element is why we have, you know, a cassette tape as a logo. The idea there was just purely it's like a mix tape. You want to kind of get a distillation of the ideas into a quick mixtape of tracks that you can work your way through.
+
+[20:05] Pete: Curated. Lovingly curated. There's nothing more lovingly curated than a mixtape.
+
+[20:10] Andy: Than a mixtape, exactly. So yeah, the idea was like, I mean, depending on which podcast you listen to over the last week, there's obviously a lot of debate about AI writing and whether or not that's a good thing or a bad thing. The snacks are-
+
+[20:26] Pete: They were trying to shit on-
+
+[20:29] Andy: Yes.
+
+[20:29] Pete: On Stan.
+
+[20:31] Andy: Old Stan. - On Drunk, yeah. And these snacks are written by AI, but they are, there is like essentially four different steps in that pipeline. And so it has to basically pull directly from the transcript. It cannot abstract anything away. It can't ad lib or commentate. It has to basically have something tethered to the transcript. And then it can basically summarize it.
+
+[21:00] Pete: I mean, Gigi, friend of the pod. Yes. He's had a couple of No Solutions episodes out in the last couple of weeks. I think just because I'm winding up the latest Sovereign Engineering drink. It's having a drink of coffee. And he was expounding on, like, he's been talking about how he's getting, like, more annoyed at, like, AI slop stuff these days. And I think, not to misrepresent him, but I think I could probably talk it through, would be his issue seems to be more that it's the lack of care that's the problem. It's like you don't put anything into the thing and you don't do anything with the output and you just pump it into the world and expect people to care for it. Whereas, and he will often talk about this, because there's this contradiction that he is also just hands-off vibe coding a bunch of apps. I think the way he talks about it is that when I hand off VibeCode all these apps, I'm starting with a 45 minute monologue on exactly how I intend this thing to come into the world. And then the agents can deconstruct that and build it into this app.
+
+[22:07] Pete: I don't just say, build me Boris for Android Wear. And then I'll iterate on it and I will look at the outputs and care about them. And so I think the fact that it's a similar sort of vibe there with the Intelligent Snacks. It's more about what you want to do is it's like having a designer you work with. You say, here's all the raw material that we've got for this. We've sat down and we've covered all this and talked about it. And these are our exact opinions. I just want you to work through and craft me some examples of what that looks like. And then I'll finish it off. So I think it's like a, to me, this is like the honest way of working with AI. You kind of have to be there at the start and the end.
+
+[22:48] Andy: Yeah. Well, the source material is owned by the creator. Yeah. Everything that we say is us saying it, contrary to popular opinion. Is there an opinion on it? There's an opinion. There's a movement. It's developing. Is there? We've got like a handful of people listening to us, maybe.
+
+[23:10] Pete: But somebody thinks that we don't hold these opinions.
+
+[23:13] Andy: Look at us right now. We're a couple of voxel sprites. Oh, okay. Yeah. So there are actually two humans behind this. I'd love there to be like a conspiracy theory.
+
+[23:23] Pete: There's some fucking... It's not real humans. We're actually AI. We're just setting the agenda, guys. They're really moving the needle. This is why we live stream on Nostr. So for maximum impact.
+
+[23:39] Andy: Well, we've been putting our faces out on YouTube the last couple of weeks.
+
+[23:43] Pete: Exactly. People have seen it. Not this week because we're not doing it in the van. I think that's fine. It's a bit difficult. Well, that's like maybe mail a webcam there.
+
+[23:51] Andy: We could. Surprised that wasn't part of the-
+
+[23:54] Pete: don't show this. Maybe here, and then it could see the sea in the background. Anyway, that's-
+
+[24:00] Andy: What were we talking about? can't remember.
+
+[24:03] Pete: The conspiracy theory that we're just two AI sent to move the agenda.
+
+[24:08] Andy: Well, no, I was saying, ultimately, the thinking and the content is ours. We're just using AI to distill it. But I actually don't have a big problem with people using AI to write. Like in some cases, I'd kind of hope they'd do it more. Because I mean, communication was always like such a difficult thing to master for a lot of people. And it's not even like, you know, a case of English not being a first language. Communication is actually just a difficult platform. So if you can communicate something to me clearer because you've taken an idea in raw form and popped it into a language model and it's helped you. structure that. Great. I'm all for that. As long as I now don't need to read 3,000 words that could
+
+[24:51] Pete: have been a tweet. Yeah. I mean, I think the piece is like, there is definitely a difference between that plus just a little bit of topping and tailing. When it comes out and you're like, oh, this is like, because you can often see, this would be where I would think some things can be a sloppy is you're just like oh that's that's not that's that's not the point like you're just you've just completely gone off on one you're making a completely different point in paragraph three to where you started with no link this just looks like something else has just spat this out yeah
+
+[25:25] Andy: and you haven't read stream of consciousness yeah i think that can be a bit offensive when you're
+
+[25:29] Pete: like come on yeah like we should at least if you should also read it if you're going to publish it I've always been a big fan of getting AI to do some work and then I will just go for and rewrite everything. But I'm also aware that I never, for my writing style, I just, the hardest, it's always been my writing style, even in like uni writing reports was I could be like 10 weeks out from a deadline and I'd have a version of what I needed because I knew I needed to just rewrite it like 10 times. It's just how my brain processes this stuff. I couldn't just sit there and bang it out in one go. So I think being able to go through those loops quickly with AI and then just refine it. I find that quite helpful.
+
+[26:16] Andy: Yeah. Yeah, I mean, sometimes it's just useful to help you get your own thoughts and ideas out, to be fair. But equally, to take the other side of this, if you are just spamming content because you're trying to spam content, then yeah, maybe that's not the best use.
+
+[26:34] Pete: Yeah, I mean it works. It works. Yeah, look like I think this is true of Pre AI of like just human I mean LinkedIn is human slop like it's so funny that they will try and flag stuff as AI and you're like As opposed to what? Try to defend here. I want only pure organic grass fed. Yeah people saying that Fucking managers don't shout at you or whatever the latest thing will be
+
+[27:03] Andy: I think the latest thing is bagging out AI writing. Is it?
+
+[27:07] Pete: I think so. I'm sure it is, as they just deliver complete nonsense.
+
+[27:11] Andy: Yeah. I mean, I do think there is, and we've talked about this a few times in this pod, but I do think there is an undercurrent that is, let's say, hostile toward AI, openly hostile toward AI. And I think it's getting more and more obvious.
+
+[27:25] Pete: Yeah.
+
+[27:25] Andy: And you can see it in comment sections on certain videos that do the rounds. You can see it online, particularly in places like LinkedIn. I don't see it where I tend to spend most of my time, which is usually X, but that's because I do operate inside of a well-curated bubble.
+
+[27:41] Pete: Yeah, a lot of people on X are... That's where all the AI lovers are.
+
+[27:43] Andy: It's the opposite. Yeah, it's the opposite. And that's why it's so visceral for me when I see it, because I'm like, oh, shit. Now I'm out of the bubble. So there was an episode that I saw pop up on your favourite podcast, Diary of a CEO, with Ed Citron this week. I haven't watched it. I'd be curious to just to get like a different I don't know who that guy is but I'd be curious to listen to it just to get a different kind of take on it but I did see a couple of clips and I looked at the comments just because as I say like sometimes you can you can kind of put your finger on the pulse by glancing through the comments and it was like 99 percent uh in support of whatever this guy was saying and I don't know what he was saying but it was all kind of like overtly negative toward AI and I was like, interesting. And that was also my experience when I go on LinkedIn and stuff like that as well. I kind of get it. Yeah. Like people are a bit scared. Yeah. Yeah. Yeah. It's interesting. Interesting to see that. So
+
+[28:46] Andy: I don't know where that leaves us on the, on the slop dimension, but, but anyway, we have,
+
+[28:50] Pete: well, let's wind that up because we had another on the pod before the pod. We did. We had an interesting comment which you know you gotta you gotta zap over 21,000 sats to be invited on the pod before the pod livestream. We talked about like different working patterns and like one of the obs... we're talking about like how we're working with different like across like flight deck autopilot like other things like Herder that are getting popular at the moment and one of the things to point out that we think drives a lot of this was oh and rod has accepted your feature request by the excellent so that's good tag tag tag koso yeah i kind of feel like you want the
+
+[29:33] Andy: well you want it to ideally we would have like an intelligence snacks account on nostal yeah and
+
+[29:38] Pete: that would be that would be the thing we could just do that yeah it's just we want it to be seen by no one would listen to it yeah but yeah all right okay so feature requests just get in touch Rod, let's chat about that in the background. Where's it going? Yeah, so I think one of the things that drives a lot of this different behavior and things like that and why Flight Deck came about was just jobs don't finish straight away anymore. Invariably, I'll end up in a situation where I might have four or five agents running and none of them are going to finish for the next 10 minutes. This just was not the case. even six months ago, I don't think. This is like a new problem from the newest round of models where we seem to be getting pushed towards this idea of like, all right, long-running jobs are good. Let's just burn more tokens on this over a longer period of time because we get a better outcome. Now, I still feel like I'm working iteratively on these things, but it's definitely a different thing because like nine months ago,
+
+[30:45] Pete: 12 months ago. I was working with these in the same style and agents 12 months ago. It's probably about the start of it. But it was, you would expect the job to come back within like a minute. Yeah. Like an agent job used to take one to two minutes and it was notably slower than working directly with just like a chat model. But at the same time, it was fast enough that you were just always on the hop with it and then it seems like the last few months particularly these jobs have just stretched out like having an agent run for an hour like it was it was almost like it was a difficult technical feat like three months ago to get them to carry on you have to have all sorts of like little rappers in there to just keep it pushing and keep it going on a goal or momentum and stuff and that i mean previously then goals came in it's like okay you can just run it overnight now with a goal and then seemingly more so they just keep going by default so i don't know how how are you finding this with like your your work style and like is it changing anything
+
+[31:55] Pete: because you mentioned like it'd be nice to have a better view of like what's done yeah yeah yeah i
+
+[32:02] Andy: think i was saying like i wouldn't mind like because it really depends on what I'm doing there are some things which I will just pay close attention to in autopilot and sometimes I feel like the stuff that I have less of a clear idea around I will bounce around and experiment with and try to build off in a different direction and then you know scale that back and go off in another direction and I feel like that's fine you know the cost of experimenting is is pretty cheap. So it's worth it. But if there's like a really well-defined bit of work. So something that I've started doing is building out Seneca. And Seneca is like a, it's essentially a chief marketing officer WAP. So there's a bunch of like predefined functions in there that Lara can go in and work on. So the one I've been building out is SEO. So SEO for intelligence snacks for instance because we've just we've just launched that um going through and pulling all of the data from search console and then um doing reviews against the actual code base
+
+[33:11] Andy: as well and just writing up tickets and going yep i need to fix this need to fix this need to fix this and then there's another agent pipeline that goes and looks at the tickets on the board and goes yep i need to go and implement that and implement this and implement that and then Lara goes and does a review like the following day and the following week and sees if that improvement is actually kicking into gear. So actually building that was quite iterative and I'd spent a lot of time in autopilot back and forth testing things, you know, breaking pipeline, recreating a new pipeline, but actually just going, okay, I'm also just going to get a agent in autopilot to review the code base and just do up like a full SEO review of the same site because I just wanted something to compare against. Because that's like an open-ended, open running session. Yeah. So that's the kind of thing where I just be like, okay, I'll let you go on this when you've come up with your review, ping me, and then I'll have a quick read of it. And then basically I'll let them go and implement that.
+
+[34:14] Andy: And there might be like a hundred things in there. So that's not like a multi-hour bit of work, but it might be 25 minutes, half an hour or something like that.
+
+[34:22] Pete: Yeah, I do have a quick workaround for this. Do you? Yeah. So if you drop an open router key for a speech model in Autopilot, you can, in any particular session, if you go into session details, you can say auto-generate a voice response and auto-play voice response. Oh, that's nice. So what you can do is it'll be, if you go Autopilot up, then in the background, one of the tabs comes to the end, it'll literally just start talking to you and reading it. Oh, that's cool. That is nice. I did for a while, I was reading this, and I was like, oh, this is sweet. And I've kind of stopped a little bit, but you could, like, on that longer running task, you could just go, all right, yeah, read it to me when you're done. And, like, what it will do is it just takes, like, the transcripts of, like, what it's worked through and then summarizes the transcripts that give you an overview of everything.
+
+[35:12] Andy: Yeah. Yeah, that's nice. I like that.
+
+[35:15] Pete: I like that. I could probably also have a version that just goes, bing. Yeah. Yeah, it really depends on the...
+
+[35:22] Andy: It really depends on what you're doing and where you are. And you know, like that's the...
+
+[35:26] Pete: That's another feature request, God.
+
+[35:28] Andy: That's the bit. So yeah, I think it's a very much a, very much a, I don't know, it's subjective based on what I'm doing. Yeah. I don't know, like,
+
+[35:42] Pete: Another one for me was flight deck where I would have, like my phone would just be charging, like I'm charging landscape mode and iPhone, it just pulls up a clock. I might be listening to something, and then every now and again, I would just have autopilot just send me a message in Flight Deck. So even if I was using autopilot, it would do it, or if I'd done a Flight Deck message, it would do it. And what would happen is it would just ping up going, this particular message has come through, and here's the Japanese. Oh, sweet, that's done now. And then I would, sometimes I'd click through on the phone, sometimes I would just do it on the laptop, but I would use almost my phone and the push notifications as kind of that signal to say it's done. But it's, you know, at times, like, I've also had to like now, inside my flight deck, like on a particular project, I might have like, usually I'll have like also a dialogue box. And the dialogue, like the custom prompt for the dialogue channel explicitly says, look, I want this to be interactive. Do not take time over these answers.
+
+[36:45] Pete: You know, like if you really need to research something, and give me an answer, tell me you're going to research, and then I know not to carry on for a minute. But I want you to come back to me quick and progress this forwards, and let's develop this idea iteratively. And that's been useful to then just force the agent session, that when it comes up, it'll just take my answer, and I need to get it back within 30 seconds to a minute or two. And then, because again, in my channels bar, I'll have, that's the dialogue one, that's for quick chats. Here's the features one. I'm not expecting you to come back. And that's got a completely different set of system prompts. But I kind of like that. That was one of the reasons I did that in Flight Deck was to say, all right, okay, I basically have different frames of mind that I want to operate in. And so when I build the channels in Flight Deck, I build them with those frames of mind in my head of like, all right, this one, I just want quick responses. This one, I want you to work on bugs in this particular area and I'll ask them here.
+
+[37:45] Pete: this one is a different bit of the area. Or like this one, I want you to consider the whole scope of the application. So I can then very quickly just drop what I want to happen into the right channel. And then the nice thing is that it all gets... Again, my autopilot becomes messy. Like when I jump in there to do something directly, I'll have... There might be 20 to 30 sessions running at any one particular time. It's hard to deal with those visually. because I don't just have the feedback surface up into Flight Deck for me. I don't care so much. I mean, you can actually hit a little toggle that turns off all the automatic sessions, so you just see your own in there and that works. But I mean, it's interesting because of all this, like Flight Deck is most customized to be a Pete Wynn operating tool more than anything else. I still use autopilot. I was saying I was doing the FIP stuff this morning as a bit of an investigation to see how that worked. I did all of that directly through autopilot because I just
+
+[38:54] Andy: wanted to be a little bit closer to it. It's interesting. I think there is something that I find myself trying to do as well. Every time I get into a new project, I'm always like, okay, let's just push the level of ambition. And I can't do that if I set off a task. You know what I mean? Seneca started off as I need to improve the SEO of what was a different website that we'd put out. But I'm using Intelligent Snacks as the example here. But then I was like, hang on a minute. Like, I don't want to keep doing this work. And wouldn't it be good if I had like an always-on SEO tool? And then wouldn't it be good if it could just like have a work log and I could just have a look at the work log so I could see what was going on whenever I wanted to, which isn't going to be often because that's why I want Lara to do it. I was like, well, then actually, wouldn't it be good if that could also then feed into, like, you know, marketing content? And like, yeah. And then all of a sudden, you've got like a full suite chief marketing officer with a bunch of hands.
+
+[39:58] Andy: And I was like, yeah, I would not have gotten there if I was just dropping a task into Flight Deck. There's like a level of ambition you can just ratchet up in your own thinking by just experimenting and just, you're doing reps to a degree, but you're constantly pushing the envelope. Like even with intelligent snacks, as we were talking earlier, you know, I'd sent you the graph and then we were like, oh, wouldn't it be good if we could just like, you know, generate custom voxels pre-episode in there and then actually like run the beach scene out of there as well. And it just, you constantly keep pushing the envelope what you want.
+
+[40:32] Pete: What would be nice eventually is if almost a user could go to the website, and the website had the live podcast on it.
+
+[40:40] Andy: Yeah.
+
+[40:40] Pete: And it was streaming, Rod, feature request. Yeah. Like it was streaming your show show to the website, but also it showed the graph, and the graph was being developed in real time as the agents were adding stuff to it. Users could ask questions, maybe the questions go on the graph so we get the questions from show show chat. Yeah. Like, come on, Rod.
+
+[41:00] Andy: There's a lot there. That's what I mean. Yeah, just constantly keep leveling up your ideas. Users could join in their avatars,
+
+[41:08] Pete: go in, we could have like a little ring of seats around the beach. That would be sweet. That would be awesome. Live scene. Join the live scene and then it will get streamed out
+
+[41:19] Andy: over Nostr. Yeah, that'd be cool. But you know what I mean? I just feel like if you are dropping tasks into Flight Deck, it feels like there's a container whenever I'm doing it. It's like there's a research task or, as I said, the SEO task. I set those off from Flight Deck because that just made sense to. And I didn't need to be there to hold the agent's hand. Whereas other things, yeah, I just, I don't know, I tend to just operate in the chat environment because it's easier.
+
+[41:47] Pete: I mean, I think that's what you can use. The answer to that is probably the chat in Flight Deck, if that's why you want to use it. But again, I think these things are all personal. Like you just use what works for you. I mean, I use the chat in Flight Deck as- I do backwards and forwards iterative development in that way. What I quite like about it is that if I've got multiple- because I find that I have- I'll start off in a session. Let's say if I'm using autopilot- when we say autopilot, you should think about it like a code code session, I guess, or a codex session, for anybody that's listening, if you're not using it. But I'll often find that I start with this in mind, of like A. And then at some point I go, oh, I should also do B. And trying to like contain that context. It's often like they're not that related. And if I start another session, things get a bit more. Now I'm like actively managing these two, but also sometimes I want to keep all the previous session. So you can in autopilot branch, like a codex session.
+
+[42:50] Pete: So I can go like, oh, I'm thinking about all this. Oh, I want to carry on like this, but I also want to ask this question and I don't want it to, you know, poison this session, right? Branch it into another one. And then you can carry on with two sessions. But one of the things I do like in doing it via Flight Deck is it gives me that auto management, effectively, of that context because it will manage all the sessions. It will start new sessions as required and get rid of old sessions and just maintain that history. And I don't have to keep clicking buttons to do it. I just send a message and it comes out. So I think it's probably, I think we can make that smoother as well. But yeah, totally.
+
+[43:33] Andy: I mean, there is just so much.
+
+[43:34] Pete: But also I also use autopilot, so I get it. Yeah.
+
+[43:37] Andy: There is, I mean, I'm using both.
+
+[43:39] Pete: Yeah.
+
+[43:39] Andy: I definitely over index on autopilot, but that's just a personal preference. And I was gonna say, I just feel like there's so much subjectivity baked into this because everyone works a little bit differently. They get into their own little rhythms, their own tools.
+
+[43:53] Pete: I think the other thing that you're calling out there as well is that a lot of the UI then becomes the web.
+
+[43:59] Andy: Yeah.
+
+[43:59] Pete: Is that I think it's like there was this notion early on that- and I felt this as well. This is probably an area where I've changed my mind a little bit, which was that UI is kind of dead because you're just going to want to talk to an agent. The best UI and the best UX is just telling somebody else to do the job and they figure it out. Yeah. And I see why I had that opinion because I think it's ideally if the other person can understand you perfectly, it sort of makes sense that that's the end goal. But I just more and more I'm like, maybe it's just impossible for the other person to understand you perfectly and therefore that's why it won't work in that way. And actually the answer is just, yeah, we're going to use apps, but an app is just like It's just the visual representation for the human. And it's going to get so easy to create those that you'll just have your own versions of these apps for anything that you need. That kind of makes sense to me.
+
+[45:06] Andy: I think it's nice to have a visual environment that is essentially a container for a particular piece of work or a particular task or something. just nice like um a nice way to like manage the mental load as well it's like i go i use this app for xyz and that makes sense a bit of real estate for a particular job and i feel like that makes a
+
+[45:26] Pete: lot of sense it looks a lot of people different as well like it's not that useful if you do every job let's ignore flight day for a minute let's just say we're in slack and you've got a slack bot and it's amazing because it can do anything but it's also just not that like everything looks the same it doesn't quite make sense like it's just like i guess an intelligence snack that we've observed a lot in these podcasts is that the problem seems to be a lot more around like how the hell does a person remain sane working in this environment it's the um i think it's interesting that our personal response to this is like oh you need lots of tools it's not one there's not one single chat box that does any of this stuff. You've got your 30,000 foot chat box, you've got your two foot chat box where you're micromanaging the thing. You've got specific whole other domains and apps that exist over here that visualize for you the thing. And then I guess there's this notion of you would build those on demand and it's partly true in the sense is that if it's always different, that's too confusing.
+
+[46:39] Pete: But you do want it to be personal. So it's like you build it quickly once, and you update it when it doesn't do what you want. But in reality, you want it to look like a certain shape, because that's how the job looks to you. Yeah.
+
+[46:53] Andy: Yeah, I think that's right. I think it's also malleable, which I think is important. Like the interface can change over time, which I think is useful. For instance, again, Snack Studio. Initially, and it still kind of is like this, but initially the idea was because there's like essentially multiple pipelines that are being stitched together, I wanted to manually step through each one so that I could work out where the break points were. 'Cause there were gonna be some that just weren't working effectively initially. And so I wanted to essentially just quarantine each one so that I couldn't then go and figure out where the problem was without breaking the whole thing. So there's the transcription pipeline that breaks down snack ideas, then the snack writer, and anyway, there's probably like eight or nine of these things. And so the interface is very much built along the same thinking, which is each pipeline is essentially like a button interface. So it has its own screen, there's a bunch of information, and then I have to hit a button to actually run that pipeline.
+
+[48:06] Andy: And I knew I was designing that because I was essentially trying to step through each part of the process, and I wanted to basically test it and make sure that it worked and develop a little bit of trust in the outcome as well. So, you know, me running through the actual snack development pipeline doesn't then go and also generate all the thumbnails for each of the snacks. So I need to go and step through like seven of them individually, right? Which is very irritating. And so that app just works, but equally I can now collapse it back into one screen. Yeah. And basically just have everything set off from a transcript and then I can have the elements broken down in the library and go, right, I can go back and edit those if I want to, or I can regenerate a component of it if I want to. But for the most part, it's a much more simple interface. So I think that is also like quite useful. Whereas in the past, I think you'd build something and you'd go, shit, now I'm stuck with this. No, up front.
+
+[48:59] Pete: Yeah.
+
+[49:00] Andy: Yeah, exactly.
+
+[49:01] Pete: I mean, I think these days, I treat a lot of that stuff as, all right, I'm going to keep all that there anyway. And then maybe I just toggle it off and toggle it on. Because I can imagine me using that, I might prefer the more detailed one. I think there's a lot of parallels here. We don't necessarily need to remove that stuff. But we also now need to figure out, OK, what does this do? We need to get a good designer on again. Like, maybe a Jared. Or I would love to- I need to reach out to Skyler. Yeah. I think he would be good to- he must have thought about this. But yeah, let's- yeah, like there's- you kind of want all the options, but not all of the options to be in your face all the time. And you need to be able to configure it. It's like how DHH keeps talking about Omarchy at the moment. Yeah. Or Omarchy. Sorry. Which is that it's a malleable computer all of a sudden. And Mario Zegni used to talk about Pi in the same way. like yeah it's a program that you download and it adjusts itself to whatever you need which is kind of amazing like it's we've got sand to talk to us and
+
+[50:08] Pete: itself like yeah well done crazy well done humans like good work like not everything we do is just completely stupid and retarded just a decent proportion of it But yeah, it's really cool when you think about it. And then, yeah, I think that's where we're going, is these are just completely malleable systems. But not-- I think there is an element there. We said there is this notion of our UI should just appear on demand. I think the problem with that is that you kind of have to just rework your UI every time. Yeah. And it's like, no, I wanna know what it is. Like, it's something I care about, I'm doing it a bunch.
+
+[51:00] Andy: Mm-hmm. Yeah. Yeah, I'm bullish on the interface. I think the interface is like, as I say, it's real estate for a particular type of job, and it's sometimes just really helpful mentally to manage your own cognitive load by going, I'm gonna work in this environment now to do X, Y, Z jobs. And ideally they're all kind of like, I mean, it's the agent inside the environment that's using it with you. So I think that's the bit. The bit I'm kind of less certain about, which I think I might've been more certain about previously, which is that because everyone can build it, they will. I just don't think they will.
+
+[51:43] Pete: No, I think more people build stuff than did. And those, as we've said many a time, right? The classic intelligent snack reused example is the person that builds your software becomes closer and better known to you. Yeah. Which is probably a win.
+
+[51:59] Andy: I think so, yeah. It does then just come back to what you're actually doing with it, which is the value creating part of a business. Which is, I mean, we talked before the pod. You know, one of the things I feel almost a little bit guilty about because we have an AI podcast, but I'm not testing all of the latest tools that come out. And I still haven't tried like GrokBot and things like this. I just don't care because I feel like we've got the tooling that we need that works for us. Yeah. That works very effectively. And the Animus for me is like turning this into some kind of commercial engine. That's more important to me than just going and trialing the latest tool and just like splurging tokens at something for the sake of it. Another subscription for another tool. Yeah. Like I just don't feel any desire to do that. And I'm also not sure what uplift people are getting from these tools. And maybe the pushback is, well, if you tried them, you would know.
+
+[52:58] Pete: I think a lot of people are going from I've used ChatGPT to now I've used a GrokBot. Yeah. And I can imagine that you've got all the same wow moments that we've probably personally just given ourselves in the last year. So because we're incrementally improving everything we have anyway, nothing looks impressive. I felt the same. I sound like a twat, but I felt the same about OpenClaw when it came out. I was like, oh. I remember thinking, oh, I like what he did with the soul and the way he's managed the heartbeats is kind of cool for the persistence. That's interesting. And then he's got all these useful CLIs, like, yeah, yeah, okay, I can see what's useful. But then it became a, I should give, though, I can just add those to my setup. I don't really need to do much at that point to take advantage of it, which I thought was nice. And with the GrokBot, I'm like, it feels like what they've done is probably honed in a little bit on that. how to do like the computer use stuff in a very user-friendly way. I think they've got slightly better secrets management,
+
+[54:08] Pete: which I've not really seen anywhere else from a few of the videos. I haven't tried it, so I can't comment too far. But just from what I see online, I was like, okay, I can see. I can see that this would be a nice experience. I imagine it's really just been built by the cursor guys and they've just nicked it and rebranded it and given it some oomph. But I think it's probably directionally correct. This is kind of a reason why so much stuff looks like, like with Buzz as well, right? Same sort of thing of just, yeah, you need chat interfaces shouldn't be just like a single, like it shouldn't be a chat GPT style. It probably needs to be more like a Slack Discord-y style where I need some organization to the chats. It's definitely a thing that I think people are figuring out. and the agents should do more stuff.
+
+[54:58] Andy: Yeah.
+
+[55:00] Pete: But I've lived that life for a year, so as I say, it's not.
+
+[55:04] Andy: I think my attention is just turning to this notion that there is like a generational opportunity here. Yeah.
+
+[55:11] Pete: And you could just play with the tools.
+
+[55:12] Andy: Most of us are just squandering it by worrying about like what the latest shiny object is. And I think like all of the real value is being generated completely out of this space. But if you can jump into those spaces with the tooling, all of a sudden you've got this incredible opportunity. And yeah, my desire has been like, how do we find ourselves embedded in more of those spaces, which is obviously something that we discussed out of the pod.
+
+[55:40] Pete: But- I think we've talked about this before, but it's almost like it's definitely more of like a capital good than a good. Like the AI thing isn't the consumer good, even though it kind of feels like it is because of how it gets presented. But I think its real power is in just accelerating the people.
+
+[55:57] Andy: Yeah.
+
+[55:57] Pete: So if you already had a good idea and a good business, you're laughing.
+
+[56:01] Andy: Yeah. Exactly.
+
+[56:03] Pete: So I mean, that's the goal, is to be the person that uses the AI more than the AI itself.
+
+[56:12] Andy: Yeah, I think so. I think so. But that's been occupying a lot more of my headspace than worrying about what the latest tool is. But I sometimes wonder, it's like, yeah, am I doing people a disservice by not actually getting across these tools? But I suspect I would just be wasting my time and ending up a little bit disappointed. Because I do obviously check what other people are saying about the tools. And I'm like, I'm not seeing anything that I can't already do and haven't been able to do for six months or more.
+
+[56:40] Pete: Yeah, I mean, if we wanted to...
+
+[56:43] Andy: Not patting ourselves on the back. I'm just saying, like, that's... I mean, if anything, we're probably doing a disservice to the podcast.
+
+[56:49] Pete: It would be like way better views and feedback and stuff if we were tagging. It's like if you want a boost at the moment, you talk about how great Omarchy is on X, and then DHH will give you a shout out and a repost sort of thing. All the posts look kind of the same. I kind of like it. It's a nice OS. I've been trialing it for a while now on one of my other machines. But it's, yeah, I don't feel like I'm adding anything if I just say, oh, GrokBot's nice. It's cool. It's like, great.
+
+[57:22] Andy: It's a bit token hungry, isn't it, guys? Yeah.
+
+[57:24] Pete: Yeah, it's all usual. It's all kind of the same thing. Yeah. It's what I used to say. Like, if you're, if you say something, I just, again, I feel like I can't talk about saying I'm like a dick sometimes. But like, you know, like, if you say stuff and I feel like I could have got that entire, I could have taken like that entire conversation you've just contributed to. I could have got it from the TV. Yeah. Like I don't, it's like I almost don't consider you a real person. I'm like, oh, I don't think I want to talk to you 'cause that was pointless. Yeah. Like I could have just, I could have just read that from like a cereal box or something like that. Yes. What was the point in that comment that you're making here or this conversation? Can we not think about stuff before we say it? Yeah. That's a set
+
+[58:21] Andy: It's not even a fine line My concern is a lot of this stuff It's just highly commoditizable And kind of just I think it's human slop as well, right? It could be But to some degree I suspect there's also another element of subjectivity That is being productized And then pushed out to people And it's like, well hang on a minute like how do you know everyone wants to use a tool like this you want to use a tool like this i mean we have this discussion about wingman as well right this is like this is how like we approach this problem it's like just because we think this is like a really powerful uh value creator for a business doesn't mean that they want to pay for it and pop it in the business because they don't necessarily fully understand it or appreciate it the way we do and so i do get this sense with a lot of these tools they are built by people who have an appreciation for what they're building but not necessarily are not necessarily being appreciated by by anyone else other than people
+
+[59:21] Andy: who are similar to them which is also fine there's a lot of those people but yeah ultimately I just feel like how and then obviously like new product comes out it gains like mass appeal you start to build out the infrastructure to go and push that product out to the masses and all of a sudden like no one's interested anymore because the new things come along. You know, and that's... So, yeah. It's a strange paradigm to see play out. Because there'll be a new tool in like a week. It's interesting, right?
+
+[59:49] Pete: What, like, six months ago, OpenClaw was the hottest thing in the world. And they just released their V2 upgrade. Twitter appears to not give a shit.
+
+[59:59] Andy: Yeah.
+
+[01:00:01] Pete: So...
+
+[01:00:01] Andy: Essentially, yeah. Yeah, yeah. So, I don't know. I think this is ultimately going to come down to who are the guys that are actually building really interesting companies. And I doubt any of them are actually necessarily AI front and center. I'm sure they're all using AI. Everyone is using AI. But is the company another harness? Probably not.
+
+[01:00:29] Pete: And I think the classic- oh, sorry. There you go. That's me not having to do my usual things that I have to do on a Tuesday, which is good. I think the- oh, shit, what was I going to say? I don't know. Goddamn alarm. There you go. It's probably- I think I was going to say the classic intelligence snack there. It's probably, again, that's probably why we should go and do-- maybe we should go and do the first 10 episodes for the graph, because that would be interesting. Yeah, it would be good to see that. But the value doesn't accrue necessarily into the model, into the app, into the access point. It's this notion that if you do commoditize intelligence, it's kind of weird that it would all go to that one person. And what's likely to happen is it kind of spreads out, and it needs to be applied to something that creates value. Because intelligence itself doesn't necessarily- I mean, it kind of does help create the value. But if everyone's got access to the same intelligence, then all the needs are different in different places.
+
+[01:01:37] Pete: Like, I think we just end up with closer to the point of pain solutions. Yeah. Niche, standby, geography, and need. And you've got to deliver some of those, and you just use these tools to do it. but it's not the tool itself isn't the product. The product. Yeah, the product is something else. I like it. All right. On that note. On that note, there's your feast of intelligent snacks.
