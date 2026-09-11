@@ -13,6 +13,8 @@ themes:
   - ai-models-infrastructure
   - business-markets
   - software-systems
+originalPublishedAt: "2026-09-09"
+youtubeUrl: "https://youtu.be/_gOov2DCztk?si=INjfery1OJv7CjXZ"
 transcript: episode-071
 featured: false
 fixture: false
