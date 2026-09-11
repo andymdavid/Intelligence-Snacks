@@ -1,0 +1,907 @@
+[00:00:05.474] Pete Winn:
+Alright, welcome to Intelligence Snacks episode seventy-one. We've got a guest around the campfire today is Paul Itoi from Stakwork. Do you wanna give yourself a quick intro, Paul? Let us know who you are.
+
+[00:00:18.755] Paul:
+Hi everybody, I'm Paul. Good to be back with Pete and Andy after probably what a year since chatting.
+
+So excited to be here. Founder, co-founder, and running Stakwork. We do AI orchestration, cloud cognition, micro tasks, you name it, communications over lightning. So yeah, happy to get into it and chat about all things AI and lightning and Bitcoin.
+
+[00:00:47.16] Pete Winn:
+So I mean what's kind of interesting is maybe some of the friends of the pod will realise that there's this guy Paul that gets brought up like every few episodes where we'll go like, God, he was kind of ahead of the game there. I think he was correct in a lot a lot of these things. Where we'll be discussing something, maybe it's about like why graphs seem more important, or maybe it's about
+
+[00:00:54.425] Paul:
+Yeah.
+
+[00:01:08.705] Pete Winn:
+Just like where you see the value accruing inside AI. We often like call back and say, Yeah, like this credit to Paul. Like I think he ahead of the game on this one and we're kind of arriving back at where you were a year ago. So I mean, what what's your current like state of the market right now on AI? Like what how are you feeling about it?
+
+[00:01:28.425] Paul:
+Yeah. I would say that we're kind of in the fourth epoch of AI psychosis.
+
+So you know I and I and I and I'm I'm firmly in that epoch as well. I'm not saying I'm not in there. But yeah, I would say we're kind of at this pivotal moment and I just think the entire industry's wrong. So I'll start there.
+
+[00:01:36.968] Andy:
+Yeah.
+
+[00:01:39.404] Pete Winn:
+How many rings of hell is that?
+
+[00:01:58.884] Paul:
+So I don't mind I don't mind saying it.
+
+So I just think that it's that Upton Sinclair quote the where when your paycheck depends on not understanding something, it's very hard to understand it.
+
+So I believe that everyone it's so hard for people to separate the propaganda from the reality and
+
+[00:02:01.288] Andy:
+Strong.
+
+[00:02:27.809] Paul:
+As you know, we all we all use this stuff we all use this stuff every day.
+
+So let's just take the Astra launch as an example. Aren't we all familiar with the difference between work that a model can output that you could literally turn into a court of law?
+
+So let's say that Astra prints you a memo. Are you as an attorney going to take that memo? By the way, you uploaded private data to a third party with alleged no data retention.
+
+[00:02:28.908] Pete Winn:
+Yeah, yeah.
+
+[00:02:56.439] Paul:
+And then you get this memo back and then you turn it into the court of law. Just search for in the United States, at least, fines for hallucinated citations and legal work. It's reached the federal level. Judges, like clerks of judges are doing it. I mean it's so tempting because i it this is what I mean by psychosis. Because something can be right is such a far cry from it's always right. And if you're doing blender demos at home.
+
+[00:03:22.007] Pete Winn:
+Yeah.
+
+[00:03:26.615] Paul:
+It doesn't matter if it's right or wrong. And I can program I can program Doom again and I can do the Three.js thing again. I can do all these things that have been RL'd into these models.
+
+And then I think it's doing people a disservice to believe that is this close to being that perfect thing where the models are gonna do everything for you. And so I you know, the world that, you know, the three of us that live in is work that you can actually use.
+
+[00:03:28.408] Pete Winn:
+Yes, yeah.
+
+[00:03:56.876] Paul:
+Not work that happened to be correct.
+
+And so I think that's a big difference.
+
+And so the benchmarks that we think about internally are can you turn that memo into the court where you get disbarred if it's wrong, right? If I'm a car dealership, do I refund the cost of the car based on what the I AI said?
+
+So that's like not I sometimes right, but it has to be right.
+
+And so I think businesses are not seeing ROI from AI because of this gap between what the models can sometimes do versus what businesses have to have them do.
+
+So I'll pause there. Let me know if you guys how vehemently you disagree.
+
+[00:04:39.606] Pete Winn:
+Mm.
+
+[00:04:41.64] Andy:
+Hmm.
+
+[00:04:43.298] Pete Winn:
+I mean I think there's a lot of it sort of explains as well why code has been such a big impact here, 'cause again, like there's not necessarily a correct way of doing code.
+
+[00:04:49.956] Paul:
+Yes.
+
+[00:04:53.634] Pete Winn:
+But it is also something that you can evaluate a little bit better using like tests and types and various different systems that we already put in place to capture like why humans have done the thing wrong. We just do all the same things to catch catch this. But I mean, is that where you would say that the whole industry is wrong then? Do you think the framing is wrong because we're expecting the model to be smart and know things as opposed to do things like we've got to pull on that thread of why everybody's wrong. Like
+
+[00:04:56.398] Paul:
+Yeah.
+
+[00:05:16.552] Andy:
+It.
+
+[00:05:19.599] Paul:
+I think the Yeah, I it's it's I would say it's the model main character syndrome.
+
+So everyone is so fixated on the exciting shiny new thing, the LLM, that you can't see that other things are important as well. So as you know, we have whatever we talked about this stuff in the very beginning, the model is in the corner on the bottom right in our diagram. And in the middle are the actors
+
+[00:05:37.672] Andy:
+Hmm.
+
+[00:05:49.4] Paul:
+And memory and workflows actually are the are the main character in our view.
+
+So I think that weighting and that balance matters. When I said we're in the fourth epoch, I was literally saying I think that we went through LLM psychosis where, my god, ChatGPT-3 can write a poem, which is pretty incredible. And I'm not minimizing what it can do, it is amazing.
+
+But if your goal is to use AI and the enterprise, then That poem is not really getting you very far.
+
+And so the beginning was was the LLM, then it was rag. My god, if we do RAG it solves all problems. And GraphRAG was coming out from Microsoft, I think around two thousand twenty four. And then so then we go, okay, we just RAG everything, vectorize everything, RAG it, stick it into the window, and you'll get it. And then the next piece is
+
+[00:06:20.2] Andy:
+Yeah.
+
+[00:06:47.299] Paul:
+Then it became agent psychosis, right?
+
+So everything is the agent's just gonna do it all. So open claw, you know, just let loop engineering. Remember the what's it gas town? Was it Ralph Looping? Remember Ralph? So Ralph Wiggum looping?
+
+[00:07:00.86] Andy:
+Yeah.
+
+[00:07:05.211] Andy:
+Ralph Wiggum, yeah.
+
+[00:07:06.114] Pete Winn:
+Yeah. I mean, if there's one person you don't want to hire in your enterprise, it's probably Ralph Wiggum, like I would say.
+
+[00:07:09.677] Paul:
+No. No. The Ralph thing was really one I think where the model employees might have been like, Okay, we need to get people to burn a lot of tokens like right now. What if we did this thing called a loop and we nicknamed it Ralph? Don't you think you're just getting trolled at that point where you're just going, Who who are you getting this from? You know?
+
+So if if b if Boris from Anthropic is like
+
+[00:07:11.292] Andy:
+Yeah.
+
+[00:07:21.288] Andy:
+Hmm.
+
+[00:07:38.192] Paul:
+Telling you to do something where you're just turn off your brain, just let the tokens flow. Aren't you just a little bit like, okay, maybe. Or this is putting money in your pocket. And how who's doing that now? No one. And so the next one is harness, of course. Now it's harness and workflows. Kind of now we're all into the all right, agents aren't going to solve our problems.
+
+So the way I put it is agents are great at discovery. Workflows are great
+
+[00:08:05.56] Pete Winn:
+Yeah.
+
+[00:08:07.797] Paul:
+At repetition.
+
+So think of it like cron jobs or cron jobs is selling it a little short because you still have agents in those workflows.
+
+But you don't want to let agents just run amok.
+
+So you have workflows that kind of say, look, I want you to play, but I want you to play with this step. First do this thing, then check in with me, then do this next step, then check in with me. And that's really I would say
+
+[00:08:11.48] Pete Winn:
+Yeah.
+
+[00:08:35.203] Paul:
+Probably the biggest difference with the model companies and our approach.
+
+So when I say everyone's wrong, I would say that most of what you hear out on X, which is our our lens into reality, I I'll fully admit, is that the models will just keep getting us there.
+
+If you doubt that I will scream bitter lesson at you, you idiot. And compute is gonna solve the day. And you just have to listen to the people saying that and say maybe they're right. I mean you can never be deterministic in this statement.
+
+But directionally they're incorrect. I mean, it doesn't really solve these problems. And so anyway, I'm rambling, but I would say there's one punchline I would say we were talking about at work today, all the guys that you know at our team, is that if your answer is not reliable, think about that lawyer, then the answer has what value to me?
+
+[00:09:29.711] Paul:
+So I have a memo, it's 30 pages. It might be right, or it might get me disbarred. I have a 30-page memo. Is that a positive outcome? What do I do right now? It's 11 a.m. It's due at noon. Do I start reading it? Do I ask ask the model to self-reflect and guarantee it's right? Like, no, it doesn't work.
+
+[00:09:47.532] Pete Winn:
+Yeah. Do the work again, like
+
+[00:09:54.828] Paul:
+So until models are at that level where you will send it in, bitter lesson, bitter lesson, you'll get there, right? Like, okay, sure, maybe. But until then, what is the value that you can get from these models is the chain of reasoning and artifacts along the way.
+
+So our systems will sacrifice efficiency and impressive answers at the end. For the actual work product that got you there.
+
+So every cell of every spreadsheet, as you know, right, when we went all through all this forensic accounting stuff, yeah, I don't want the answer at the end. I don't need 1.1 million is the damage, and trust me, bro. It's okay, I have 14 spreadsheets with the inflation schedule for how what's the net present value of a wheelchair that's purchased 20 years from now. You have to be able to explain all of that in a court of law if you were to present.
+
+[00:10:52.153] Paul:
+This outcome.
+
+And so we've directed all of our efforts around visibility. And really if you can't see it, you can't correct it, right? The measurement thing.
+
+And so the models are actually way beyond the capability of doing those micro steps.
+
+So we haven't really needed new models in a long time. They're just a convenience where okay, wow, it required 40% less tokens to get the same answer out for this micro step.
+
+So this gets to factored cognition, this gets to all the topics that I think are underpinning this more realistic view of enterprise AI.
+
+So if you separate the hype and the levels of psychosis, then you actually get down to, it's kind of less sexy, but it's actually where the savings come from. Is human beings are terrible at following thousand step. There's a 99% chance that work that you're doing is wasted this time. But one time, it saves you everything.
+
+So how do you get a human being to just, you know, rigidly follow that process? They won't, which is why custom why companies have this variance in outcomes and they don't do well.
+
+And so if a model and if a workflow can go through those processes and follow that every single time, they never get tired, they never skip a detail. They always fill in the spreadsheet, they always do that task. You don't need a brilliant model to do each one of those steps. And in fact, the real lift that we're taking off of humanity is turning humans into computers, which was kind of cruel and unusual punishment in the first place, you know?
+
+So that's that's my positive outcome is the industry is wrong and Doomerism is wrong, but the benefits are real and they're here right now. We don't need
+
+[00:12:38.97] Andy:
+Ahem.
+
+[00:12:44.658] Paul:
+A hard fork or some miraculous AGI to get us there. So anyway.
+
+[00:12:49.293] Pete Winn:
+Yeah. I mean one way that we've described this quite a bit on the podcast in the last few months has been that we think the industry has the runtime wrong, which is that they like particularly Anthropic are probably a little bit more aggressive in this sense where they kind of assume that the runtime is the agent. And it's like the agent gets the task and then decides what it needs to do. And that's why skills are interesting, because now it's how you tell the agent to follow a process when really what you would do is you have a process that lives outside the agent. And the agent should only do the bit that you need the agent to do.
+
+[00:13:11.193] Paul:
+Mm-hmm.
+
+[00:13:24.783] Pete Winn:
+Like it kind of reminds me of a lot of our early conversations where we say, like like computers are amazing, right? And they've always been amazing. And they've always been cleverer than than you at like most stuff. Like computers have been better at maps than me for a long time.
+
+So it doesn't matter if they can't count strawberries. They can count strawberries. They just can't count the R's in a strawberry for in an LLM. It's not what it's used for.
+
+So but we can just use a string and a count for that. That's fine. Like we know how to do it. And we should use the computers to do the work that the computers do.
+
+And then we should like bring this is why we ended up renaming this podcast intelligence snacks was you bring the intelligence in for like a quick snack when you need it. And that snack might be like, all right, like we've got all of this input information and we need to fill out this spreadsheet. And if you fill out that spreadsheet or that structured schema in this way Or then I can now do a whole bunch of stuff just in computer world, which is effectively free compared to trying to run it in an LLM, and it can then be deterministic.
+
+And then you can just check at those boundaries. Which I think is very similar to like the way you guys approach this stuff with the workflow as well.
+
+[00:14:29.407] Paul:
+Yeah. It's funny because I feel like you know the famous SpaceX rocket engine as it becomes from all the pipes. Every everything is getting standardized down. And we're about to publish our approach that you know we've been working on for years now. And what's the delay in getting this out? 'Cause I want to make sure we actually post our stuff up there before
+
+[00:14:38.927] Pete Winn:
+Mm.
+
+[00:14:39.73] Andy:
+Mm-hmm.
+
+[00:14:59.869] Pete Winn:
+It usually go out tomorrow. Yeah.
+
+[00:15:01.599] Paul:
+Okay. Well maybe I won't be able to talk about it too much, but follow for for the paper we're gonna post.
+
+But we've greatly simplified everything and we think it's a pretty unique approach to the problems that we're talking about now.
+
+So the two biggest asks I think for people to get value out of AI are continual learning and an infinite context window, the biggest things.
+
+And then that really leads to recursive improvement of the whole system.
+
+And so we'll post on how we do it, but the test that we tested ourselves against is the Harvey Lab bench. I don't know if you've heard of that, but it's Harvey, the legal company, released a 1700 task benchmark and they just released a recursive language model approach to it this morning.
+
+[00:15:41.593] Pete Winn:
+Mm-hmm.
+
+[00:15:54.608] Paul:
+And beat their previous scores. I don't remember the exact percentage of it. It might be 30% or something like that.
+
+But models do very poorly on it because it's a very large context task.
+
+And so we applied the system that you're familiar with from that we've been working on for a year now, but we didn't want to release anything until we got to recursion.
+
+So until the system can actually improve itself, it's it's not that helpful to the world. So
+
+[00:16:21.187] Paul:
+We're gonna open source the whole thing and it includes you know, our approach to agents, memory, code automation, everything.
+
+So the big delay that we've had is there's a balance between what you want agents to go and figure out. The way I look at it is look, let's say you have a robotaxi Uber that needs to figure out how to get from your office to your house, and it doesn't have a map.
+
+So it just drives around until it figures out how to get to your house.
+
+The next day what most people are doing in this industry is sending an agent to figure out how to get to your house again. You know, so it's just like, what are you doing? You're just burning tokens, driving cars around trying to figure out to when you know how to do it.
+
+So then everyone's now figured out, we actually do need to make a workflow. Those are the turns to get to the house. The agent is great at finding the house, but once I know how to get there, why not create a workflow?
+
+And then if I have many robotaxis discovering many things about my city, I want them all to know that so each one of them doesn't have to learn.
+
+So that's the shared agent memory that's critical to these systems.
+
+And so how do you have shared agent memory, MCP tool-calling, where you can get tool overload, too many tools, right?
+
+And then so how do you get that? Plus, let's say the Harvey lab might be
+
+[00:17:20.217] Pete Winn:
+Mm.
+
+[00:17:40.2] Paul:
+A hundred million tokens worth of context just to solve one case. So, how do you deal with all that context? So, do you have to make workflows for every single thing? That's the state we were in a year ago.
+
+So now we have dynamically created workflows, workflows that make workflows, identify the need for them and make them. We have greatly simplified agents that can use the graph for most of the tasks we're describing.
+
+[00:17:52.495] Pete Winn:
+Mm-hmm.
+
+[00:17:59.769] Pete Winn:
+Mm-hmm.
+
+[00:18:06.347] Paul:
+And then essentially you remove the big limitations from the LLM by moving them to be a player in the process and not the central role. If you start with, what can my LLM do? You'll never get there. You know? And then if you start with, well, what can my agent do? You'll never get there.
+
+So it's one of those things where just like working on a Tesla for the first time, if you have a battery, great.
+
+[00:18:15.513] Pete Winn:
+Hm.
+
+[00:18:35.971] Paul:
+That doesn't get you there. If you have an electric motor, great, it doesn't get you there. Like you the car does not run until you actually have all the parts.
+
+And so I think that the industry has a similar challenge right now, where all the parts have to be in one place and legible to the agents in order for the system to self improve. And unless you have a self-improving system, you have a one off.
+
+And so getting to think about it, a graph can really act like
+
+[00:19:05.099] Paul:
+A programmatic context window.
+
+So this is like where recursive language models are having a moment right now. The paper came out in January. We've been doing that for a long time in our cloud agents right now. So to see it named, I'm like, that's a great name, actually. It's kind of a misnomer because it's actually not a language model, but it's it's a recursive way of prompting a language model. Think of this as like the, you know, I think DSPi was around when we were working together. So DSPI is kind of
+
+[00:19:30.607] Pete Winn:
+Hmm.
+
+[00:19:34.445] Paul:
+The first hint at this approach and then RLM takes it further. And if you just expand RLM to the nth degree, that's kind of where we've ended up, where everything is dynamic. And so you want an agent, a strategy for context, no compaction. And you want all of that to be dynamically generated on a per test basis.
+
+So that starts to feel like efficient intelligence and certainly not perfect yet, but this is the pathway that we see that works and we're excited to have other people you know, try it out, kick the tires. We're open sourcing the whole thing. So if this works, I think a lot of startups vertical AI startups would be uncomfortable with the existence of what we've dealt. So just as an example, Many of these RV lab benchmark tests require you to understand the sequence of redlining legal documents over time.
+
+So you have to have a very unified timeline.
+
+So an email message discovering discussing a document that the clause is three red lines back in one of the fifty word documents that's part of the case, you have to know that the date of this statement affected this red line back in history.
+
+So if your document ingestion is PDF generated and doesn't include redlines and doesn't understand the timeline, then you're gonna fail that task every time.
+
+So the only way to get around that is to actually have your system build, you know, with a thing we call Hive. Hive realizes that you need to propose this red line editor. A human being, we're still in the loop, will say, yeah, make this red line editor. Now the tool has this capability of red line editing. It's built into the workflow, then every task that you fail that had to do with red line editing has this new capability.
+
+So that's why you have to have tool generation to do things, right?
+
+So then when you build that timeline, you actually need to store it somewhere. I could store it in a text file, markdown file, but why not put it in a Google Sheet where human beings can also audit it?
+
+So when you see the system running, you actually see
+
+[00:21:59.076] Paul:
+The Google Sheet cells being populated by the agents.
+
+And then making up formulas to then check the numbers back and forth. That is pulling from a red line. I mean, this is crazy stuff, right?
+
+But we built code automation first, we built workflows and workflow automation, the generation of those workflows, and then the workflows make the code. Then if you attach an intelligent graph memory system.
+
+[00:22:08.995] Pete Winn:
+Mm.
+
+[00:22:09.522] Andy:
+Mm-hmm.
+
+[00:22:28.611] Paul:
+That all everything is writing to, you end up with this recursive system.
+
+So this has been years of you know toil.
+
+[00:22:40.345] Pete Winn:
+So how far out are you from releasing that? That does sound interesting.
+
+[00:22:44.153] Paul:
+I mean the code all works. We just have been writing up the paper.
+
+And so working with some of the guys who work with graph graph neural networks right now and yeah, there's a lot of gratuitous math that it seems like academics stick on to these papers for no real reason. You know, you could just say nearest neighbor and ninety nine percent of the people will get you, but they they have to turn it into a formula to make it look more scientific. So yeah.
+
+[00:22:54.755] Pete Winn:
+Mm.
+
+[00:23:06.188] Pete Winn:
+Mm.
+
+[00:23:12.475] Paul:
+So that's so that's why when you mentioned a podcast I went, Yeah, we finally have something to send out to the world and we're super excited about it.
+
+So how do you guys see the world these days? That's where we are. We believe that you have to have all these pieces, you have to have legibility. We've we've loved graphs for legibility since I've been working with graph databases since two thousand eleven.
+
+So this is kind of going back to home base for for me. And it's just painfully obvious that language models are very good at strings of words. They're not very good at structuring the logic around the words.
+
+So if I think of LLMs as being token one-dimensional a line of text coming out. The graph is really good at then taking that line of text and creating structure like a protein fold around it. And the ideas and the understanding actually comes from the combination of the shape and the words. If you just have the words, it's the same thing of like a picture of a thousand words. A 3D model is even better.
+
+So the graph provides that 3D structure around the words.
+
+[00:24:32.488] Andy:
+Before we answer your question there, I'd like to drill into this question around the size of the task that I have. I think we're kind of all aligned on, we probably just need more deterministic codifying of processes. Think this is something that we've talked about a lot on the pod. There's probably the mutual territory and... But I'm kind of curious, like, even when we talk about intelligence snacks, it's like, what is the optimal size of the snack? And like that, what is that? Like, how do you work out what the unit of decomposition should be for the actual workflow for the actual task? And I'm kind of curious. Feel like you'd have a good sense of this just because of what Stakwork was before the language models. You know, you were essentially like decomposing a lot of these tasks and routing them to humans. If I understood that correctly. And then kind of like.
+
+[00:25:25.014] Paul:
+Yeah.
+
+[00:25:26.098] Andy:
+You know, bringing them back. And I'm kind of curious, cause I think this is maybe where some, some of the like attempts to make this more deterministic fall over, you know, cause you could have a workflow, but it's still trying to do too much.
+
+And so that's why when you're talking about workflows, creating workflows, I was like quite curious about this like level of decomposition.
+
+[00:25:45.06] Paul:
+Yeah, I mean it's it gets very fractal, right? I mean, so there's a research group called Ought, O-U-G-H-T, that should get credit for this term because we were doing it so just the history of Stakwork days. The example I always use is the nutrition label.
+
+So human beings were terrible at typing in the data from a nutrition label because if you look at protein four grams, fat two grams. The amount of data that you have to type in for one person per label is pretty extensive.
+
+So we actually figured out that slicing it into each row and giving each row to one human being, your accuracy went through the roof. Instead of one person typing in 30, you just were hitting them with one thing at a time.
+
+So you factored the word factored cognition from Ought. Instead of factoring numbers into their smallest unit, you're factoring Cognition into its smallest unit.
+
+So we were born and raised in this idea of I can take PhD level thinking, divide it up into tiny steps if I could X-ray their brain.
+
+And then actually your average person can follow those tiny little steps.
+
+And then the outcome is actually more consistent than the expert doing it over and over again who will get bored.
+
+So we worked on a project for aqua culture, so salmon farming. And one of their biggest issues is discovering these tiny little mites using video of the fish going by on the side of the body.
+
+But there were three or four different types of mites. And if you medicated against the wrong one, then you're just wasting medication and affecting the fish.
+
+So they were training these you know graduate students in ichthyology on how to actually identify these mites. And they were just like it's it's the they these You know, master students are the ones that have to do it. We have these 14 people, they're staring at video screens. We're just like, this is insane. How much are you paying them and what's going on?
+
+So we said we interviewed them, we said, Well, what are you actually doing? And it's, well, is there six legs or eight legs? Then that's like fork. Okay, eight legs. Is there a dark spot on the admin? Yes or no?
+
+So there there were four or five of these identifiable steps.
+
+[00:28:07.139] Paul:
+That when you broke down what this you know graduate level person was doing all day, you could actually recreate their process, and then half of those steps could be done by vision model.
+
+So this is how we got started.
+
+And then you apply that all the way up to coding to legal documents to everything.
+
+So factoring human cognition, what Andre Karpathi calls logical traces.
+
+So if you could x-ray human being and see the logic that they're doing. And if you have a billion of those traces, you have general intelligence.
+
+And so what we've been doing is automating the process of recording those traces, creating workflows from those traces, creating the tools to do that step if needed, and then falling back to a human if you can't do the tool. What can you not do with that combination? We haven't found anything yet that you can't do.
+
+[00:29:07.117] Pete Winn:
+Interesting. And do you find that the tools can go through that process of factoring the cognition for you?
+
+So like or is that still like a human step to do?
+
+[00:29:19.363] Paul:
+Yeah, I mean if if we perfected it, we, you know, I don't know what where we would be, like it would be running away from us.
+
+So we still sit in there because there's a cost of there's a cost to everything.
+
+So it LLMs are amazing at coming up with plans. An example I always use is let's say that you arrive at an airport and you're trying to decide whether this person standing in front of you should be led into the country. You know?
+
+[00:29:26.703] Pete Winn:
+Hm.
+
+[00:29:47.844] Pete Winn:
+Yeah.
+
+[00:29:48.836] Paul:
+So the first thing they might do is look at your passport and see if it's expired.
+
+So if you were to say to a workflow engine, determine if the passport's expired.
+
+If you actually break that up into all of its little pieces, you would have to know today's date. You'd have to know the issue date. You'd have to OCR, you'd have to know international date formats. You'd be so surprised by how many variables there are handling any passport, right? And because we do this, we're very realistic about all of the details to get every case correct. And it's it's it's it's very broad but not very deep, right?
+
+But then once you get that right, you've factored that cognition, then you still not letting it into the country. That's one workflow in a bunch of other workflows.
+
+So that process of nesting workflows has been a challenge for us, but we've had recent breakthroughs where we ported software that we had written before into a new platform. And just sometimes just taking a fresh look and all the lessons learned. The plumbing works way better than it did before. So yeah, so far we will let it recursively improve to the goal. So we just say, here's your starting point, image of a passport, here's the goal, is it expired or not? Here's one test case where we show you the passport and we show you the answer. It should fill in and hill climb that workflow in the middle.
+
+And so we we've been able to do that now. And Andy, maybe that's your question is for us, it's desirable to break it up into pieces where we have a checkpoint like expiration date much earlier than you have this answer of you let a terrorist into your country because the model said good to go. And you have no idea why it did that. You're like, I don't know. Next next person come in, maybe you'll be right this time. Doesn't do you any good, right?
+
+So you have to be able to so the answer is actually reverse. What level of reality checks does the human want in this process? Okay. That tells you what leeway you're willing to give the agent.
+
+[00:31:52.968] Andy:
+Hmm.
+
+[00:32:00.389] Andy:
+In those examples that you're using, that mean that the agent use over time would actually fall because it would be essentially building these, more of the work would go into these deterministic workflows. And so it would actually, yeah.
+
+[00:32:14.125] Paul:
+Hundred percent. Hundred percent. Hundred percent. Code generation will probably be a thing we don't even remember. Like it'll be so rare. Wait, you're coding an interface to Google Sheets? We did that five years ago. There's nothing new there, you know. OCR, we you know, you'll make little improvements, but I think raw code generation will be one of those things that seems like a bit of an anachronism, you know. So
+
+[00:32:37.16] Andy:
+Cause that alone feels like, like if we, we'd led with that alone, I think that would be like the most contrarian thing we could possibly have said. Cause it just feels like everyone's like, yeah, you're just going to keep churning like agent use like over and over and over again. You're to, you're going to a hundred X your agent use and.
+
+[00:32:49.933] Paul:
+Yeah. Well. That was the third epoch. Agent psychosis was the third epoch.
+
+So agents will do everything. Like that's like two months ago.
+
+So now it's dynamic harnesses that make agents psychosis. Like we're all in there. That's where we are right now.
+
+So what it's important to break down what an agent is. So you know, my definition is, and I think this is just the reality, it's a while loop. An agent is a while loop.
+
+So you have some sort of task, you have a system prompt.
+
+[00:32:57.201] Andy:
+Yeah, okay. Yeah. Yeah.
+
+[00:33:23.757] Paul:
+You have one or more tools and then you have some sort of outer control thing that doesn't let it run amok but says, you know, do this and spawn sub while loops.
+
+So if you just substitute the word while loop, you'll have a I think a much less anthropomorphized version of agents out there. Yeah. So
+
+[00:33:45.55] Pete Winn:
+I mean, we often talked about that replacing agents with code. Sort model I think very early on, I think again a lot of it was probably driven from work and discussions we'd had in the past where you just sort of realise that like obviously it's good for Anthropic and OpenAI if you're just burning as many tokens as you can by throwing large sounding goals into these things. And it there's something very compelling to the average person of just saying like, you know, build GTA six. It's like, I can build GTA six. Great, now I've got a billion dollar game on my hands, but it's just not the reality. Of how anything gets done, but clearly, like, you know, if you've got a process and you can deliver that process with an agent, and it used to cost a human $10,000, it costs the agents $1,000 of tokens. Well, great, you've saved $9,000. Clearly you're going to win.
+
+But then somebody else comes along, turns it into software, and now it costs them $50. You're like, alright, well now you're out of business because you sat on your laurels and sat there with an agent.
+
+So for a long time it's felt like the It's sort of like where we're at was that the job of the agents is almost to discover what the software should be and then consecrate that into software.
+
+And then that's your end state of a business is that I think 'cause we're like talking with a lot of like small businesses around here and like how we then get them onto onto AI and what it means and I really do think the end state is almost every small business becomes you can almost imagine it like its own SAS system or its own little software system where everything that can be run in software is running software.
+
+[00:35:19.789] Pete Winn:
+Anything that needs a human involved has a very simple interface of going and getting that information from the human when it's required. And anything where there's these like fuzzy logic or decisions that need to be made based on context that can be done by an agent gets done by an agent.
+
+But the agent just does those pieces. They don't run everything. It's not just an agent sat there in a loop burning tokens asking itself what to do. And that always to me felt like the parlor trick of like open claw was like, yeah, it's it's pretty amazing, like with the self-driving car example, right? It's pretty amazing if you can just throw a car into a city and say, Find my house, and then it finds your house, and it does it in 20 minutes.
+
+And then it's less impressive when you ask it to do it like a thousand times, and every time it just does something completely insane, and then eventually it just drives into a river. You're like, huh, okay, it never really worked. And I feel like that's the progression you see people go through with open claw or something, where they go, my god, I asked it to do this. It did it. It's amazing. Everything's changed. Two weeks later, it's it sent an email to my wife breaking up with her. My god. Like where where are we at? Like it's just it's just off the reservation. It's almost too much control.
+
+[00:36:26.287] Paul:
+Yeah. Yeah.
+
+[00:36:33.145] Paul:
+I some I think the model companies know that people are enchanted and they also know it's not real. So, you know, as is it's just not usable.
+
+So if it were If the answers were right a hundred percent of the time, people use this analogy all the time. When calculators came out, people double check calculators. So they go, This is just in a phase where w we're double checking the calculator.
+
+The difference is is even in nineteen seventy two, the calculator wasn't just making up answers one out of ten times. You didn't have a calculator that's just like, Shit, I got it wrong. It was deterministic, you know what I mean? So, that is the difference here.
+
+[00:37:16.868] Pete Winn:
+Yeah.
+
+[00:37:19.597] Paul:
+Like, I don't care how long you're gonna check this, there will be smaller and smaller percentages of times it's wrong, but people will just challenge it with more and more out of the distribution questions. This is humans don't sit still and just go, thank you for answering all of my questions yesterday. As soon as you answer it, you'll ask the next harder question.
+
+So I mean that's what I tell everyone on the team is that your work, unfortunately, is all gonna be difficult and unpleasant. It's all the hard stuff.
+
+[00:37:29.581] Pete Winn:
+Hmm.
+
+[00:37:36.985] Pete Winn:
+Yeah.
+
+[00:37:48.6] Paul:
+The agents are doing the easy stuff, the workflows and the agents are so if you do coding now, you're not writing boilerplate and doing all the stuff that you used to be able to just chill out, drink coffee. It's not that hard. You're just banging out code.
+
+And then you get to that part of the system that was particularly difficult. Now you have to lean forward, you have to focus, you have to make real decisions, there are consequences. You're kind of stressed. Like that moment is when you are called to be in their your flow state. And is cognitively much more difficult.
+
+So all of that easy stuff in between is now gone.
+
+So if you think about removing it, what survives? All the hard stuff the model can't do. So your job now as a human, if you have competent systems, every single interaction with your system will be the stuff it can't do.
+
+So your day is just very difficult.
+
+And so one thing I've been working on is how do you Readjust your life to save cognitive load. Make the interaction with the decisions being made as easy as possible to understand. Make me a podcast, write a video, create diagrams. Don't make me read the wall of text.
+
+But also just experiments I've been doing is literally like taking a Starlink mini into the backcountry and a tablet. And maybe backpacking and fishing is the perfect complement to working with agents. I don't have to be staring at the screen. A little ding happens, I got a response. Let me look at it and answer. If I'm in this great frame of mind, exercising and in sunshine, you know, cooking a raw fish over a fire, like it could be great.
+
+[00:39:34.157] Pete Winn:
+Yeah. It's a little plane going across the background there, which you probably can't read, but it on the back of it says solvator ambulando which was the Latin phrase for solved by walking, effectively. And so that became the
+
+[00:39:47.695] Paul:
+Perfect, perfect. Yes.
+
+[00:39:52.1] Pete Winn:
+The tagline of the wingman suite that we developed internally, which is so when you said like where are we focused? Like that was like one of the key problems that we focused on quite early was like, my God, these things are just horrible. Like in a way. Like this is just it takes, as you said, it takes all the like simple bits of work that go away and then it loads you up throughout the day with like, here's all the hardest problems that you could have and you just need to be making constant hard decisions in order to
+
+[00:39:56.227] Paul:
+I love it.
+
+[00:40:21.239] Pete Winn:
+To deal with this.
+
+And so like one area where we've been working a lot was say, okay, what would it look like to actually be able to deal with the output of all of these agents and remain sane in some way? And an early part of that was like, right, well I need to not be sat at this desk constantly. Like it can't be that this machine only works if I plug myself into it for eight hours and answer questions.
+
+And then as soon as I plug myself out and go somewhere else, then it stops. And so
+
+[00:40:50.649] Paul:
+How did you guys solve it?
+
+[00:40:53.763] Pete Winn:
+I solve is a big word, isn't it? I don't know about solve, but I've I've certainly progressed like I think for our own like sanity. Like so a lot of it was so y have you used Buzz at all after that came out from Block? So Yeah.
+
+[00:40:56.665] Paul:
+Yeah, yeah.
+
+[00:41:10.691] Paul:
+No. I've heard Nick sings. I was so excited for it but then I've heard Mick sings. Have you guys had a good experience with it?
+
+[00:41:16.471] Pete Winn:
+I don't I don't use it because I built something very similar to that about six months prior, which we call Flight Deck. And our Flight Deck is a kind of agent and human working environment.
+
+So it's you know it would look similar to anything that's like a Slack or a Discord type stuff.
+
+So you have threaded chats. Particularly the threaded chats are built into scopes.
+
+[00:41:28.622] Paul:
+Yeah.
+
+[00:41:39.566] Pete Winn:
+So you have this concept of like a workspace and your workspace is like, okay, this is the business, this is the mindset I'm in today. It's like I'm doing other stuff work and other stuff has these projects and these projects are the scopes. And they carry like a set of context associated with them for any work that we're discussing in there.
+
+So the agents can get up to speed. Inside there, you've got channels, and the channels again drill down into like a structure of what I'm talking about right now.
+
+And then any channel could have threaded messages. And the threaded messages are almost like the agent sessions.
+
+But then the actual work that's done in the background is I would tag the agent. It goes off, runs its own session, goes and gets all the data. It can store stuff in graphs. It can look stuff up from graphs for what it needs, depending on the particular project that we're doing.
+
+And then I only ever see the higher level interactions that come back from that.
+
+So I don't get bogged down in the sort of day-to-day of like actually sitting in the coding agent session and seeing what's going on. I just get like the reports. And then around that, so what Buzz I think is really focused on the very much the chat aspect of it. So we have the chat, but Clearly, like I don't want everything to be a chat.
+
+So then we have like a document version of this as well. So there's a docs section, which is effectively like Google Docs with comments.
+
+So a collaborative document editor, all in Markdown, so it's easily readable by the agents, but also I can comment on anything that I don't like, leave 10 comments, and then have that assessed by the agent.
+
+And so and what it kind of came back to was like I looked through all the best remote working examples that I'd had and said
+
+[00:43:09.071] Paul:
+Mm-hmm.
+
+[00:43:17.153] Pete Winn:
+What are kind of all the tools that I that actually helped me do remote work? And it was things like collaborative document editors with comments, it was taskboards and Kanbans, and it was maybe file sharing and the ability to easily give somebody access to a file and then git.
+
+[00:43:28.175] Paul:
+Mm.
+
+[00:43:38.646] Pete Winn:
+Coding obviously so we basically package all of that into this suite and so for like from your one ID and then inside this workspace you then provision the git the document sharing and everything else that goes along with it
+
+[00:43:50.713] Paul:
+Hm.
+
+[00:43:52.056] Pete Winn:
+And so it was very much and then everything is just mobile native from day one. So again, like one of the early goals was just I do not want to be sat at my desk doing this. Ideally I should be walking along the beach and then when the moment comes I can get the context that I need inside Flight Deck. And then what
+
+[00:44:11.061] Paul:
+So you're calling it Flight Deck or What's that? Wingman. Okay.
+
+[00:44:14.383] Pete Winn:
+Alright, so Wingman is the full suite, Flight Deck is the is the bit that is like the control center. Autopilots are kind of like a this is if I was gonna put it in like kind of Stakwork terms, right? It would almost be like Flight Deck is a bit like Sphinx. And maybe a bit like Sphinx and Hive combined, and then you would have like the Stakwork project, like the workflow engine, kind of lives inside Autopilot. So any autopilot would be, it could be a session.
+
+[00:44:19.32] Paul:
+Action.
+
+[00:44:41.097] Pete Winn:
+So it can just be like a straight coding session.
+
+So if I just want to deal with Claude Code and do questions I can do it in there on the web or on my phone from wherever I am. If I want to then create a workflow, we have those call them pipelines inside Autopilot.
+
+So I it's a declarative structure for those workflows.
+
+So effectively kind of like a JSON object, which would describe run this code, take the output of that code, put it into this agent session. The agent session returns this schema, take that schema, put it into this code, and so on. You can imagine like how that would work. That does the repeat work for us. We have obviously triggers, you can trigger across Nostr, webhooks, on schedules.
+
+[00:45:11.225] Paul:
+Yeah. Yep.
+
+[00:45:18.897] Pete Winn:
+And various different points.
+
+And then we also have applications as well that can be hosted.
+
+So you could also at any point in time you can ask for an application to be created. It handles all of your DNS routing for you.
+
+And then provides that backup to Flight Deck.
+
+So now a new application pops up in Flight Deck and that application could be like one part of a process that just does this is the form for adding, I don't know, time management or something like that. And this is the form for sending out orders because we need an interface for that.
+
+So it then allows you to then just it's almost like a malleable interface for those sort of things when they're required. Like one of a sorry.
+
+[00:45:54.234] Paul:
+So you're you're kind of building kind of the ramp have you solid ramp and spec that's similar to what block is doing with their I think they call it is it glass or what do they call no they call it what's their internal G two system or something like that?
+
+So but you're building you're building like the company intelligence to your clients, is that essentially what the role the product plays?
+
+[00:46:10.945] Pete Winn:
+I don't know if I know the details of that one.
+
+[00:46:18.627] Pete Winn:
+Yeah. Yeah. It it's kinda like this is the control center. And like so and the way it would deploy is you get like all of the backend services are packaged into what we call our the wingman tower, which like so this is your yeah, control center that you deploy. The autopilots are the workers, the flight deck is the thing that you use to control it. And so
+
+[00:46:31.331] Paul:
+Yeah, yeah. Yeah.
+
+[00:46:36.503] Paul:
+And does Flight Deck—how much voice do you guys do with Flight Deck? Is that a big part of it or is that something
+
+[00:46:41.313] Pete Winn:
+It's in there. In general, like when I do voice I tend to do it more like a like I voice into a text box. Like I really don't like voice back. Like I again you can do it and I just I don't want to hear back your thoughts. Like if you're an agent, like no offense, if you are an agent and you're listening.
+
+But like I like voice for getting out like high bandwidth nonsense out of my head. Like I sometimes feel like I can't type fast enough for all the stuff that I want to say. And I think it's really good when I get that out in voice. I don't like voice back. I like it might just be because I'm quite visual in the way I like to lay stuff. So I do have, for instance, a thing.
+
+So my core agent is like a little pixelated Rick Rubin type guy called Rick and he's he's got a an app called Rick's Artifacts and he can send me back like HTML artifacts and whiteboards, like it's got Excalidraw there, and he'll often like lay out, you know, these are all the components of the system, this is how it fits together, and I'll work with him there, because I like a visual interface for a lot of that stuff. But
+
+[00:47:46.032] Paul:
+Yeah, I don't use voice yet. I mean, we were talking about integrating a lot more voice, but yeah, you raise a good point. You probably don't want a bunch of slop, but what I would love to be notified is if I've started a task, I would love to hear the update on the task while I'm driving or walking or whatever.
+
+And so I would love this little hey, that thing you ask is ready, do you want to hear it now? Yeah. Or no, draw a picture and text it to me, you know, or or whatever.
+
+[00:47:49.069] Pete Winn:
+Yeah.
+
+[00:48:03.055] Pete Winn:
+Mm.
+
+[00:48:14.126] Pete Winn:
+Yeah.
+
+[00:48:15.787] Paul:
+Record a video of a feature and send it to my phone. But yeah, untethered I think would be I think this could really change how we move through society. You know, if you're just saving cognitive energy for that ten minutes an hour where you have to be fully focused, being inundated with hard decisions, then you uncheck, recharge, go play
+
+[00:48:26.18] Pete Winn:
+Mm.
+
+[00:48:43.843] Paul:
+Tennis, whatever, your deals. Talk to friends.
+
+And then you lock back in for ten minutes. I it's almost like high intensity training. Maybe we've all been doing speed walking for our careers and this is now time to do high intensity stuff.
+
+But I feel like the cadence of work has really changed and in our in our we haven't really figured out how to deal with it.
+
+[00:49:09.335] Pete Winn:
+I do worry that what we end up doing is just high intensity for eight hours a day until everybody just does but I try not to.
+
+[00:49:16.845] Paul:
+I yeah, I don't think it's possible. I just don't think it's possible. I think you end up wrecking a lot of cars that way, you know what I mean?
+
+So but I don't know. I don't think anyone's really figured this out. I mean I feel like this is probably the big question that everyone's trying to work on. So I mean, OpenAI has their device. I think there's a quote I think from Jack at Block where he says the roadmap is the company.
+
+[00:49:26.573] Pete Winn:
+Yeah.
+
+[00:49:44.266] Paul:
+And that is something that we kind of have been doing literally, where we used to be in a text interface dealing with coding agents, and now we're more moving towards Excalidraw you guys use. We have our own internal system, but it's an infinite zoom, big box for my initiative, smaller boxes for tasks, down to lines of code at the very bottom. So you can zoom like, what do we want to do? We want to make workflows completely automated from just user text. Okay, that's your initiative.
+
+And then that is a enabler for some further initiative.
+
+And then if you zoom into that box, then you go, well, we have to port from Ruby to TypeScript. We have to do the following.
+
+So then there are all these more and more, again, factoring the work down to smaller and smaller pieces.
+
+And then at some point it becomes a coding project. And at that point Ideally we used to look through the whole thing. We just go make it, you know?
+
+And so we have an auto-reply.
+
+And so the parent agent we call a Jamie actually communicates with all the child agents in whatever workspace they're in.
+
+And so that seems to work really well. And yeah, you can do pretty much whatever coding we want to do with that type of mechanism. Now will it do seventeen steps in a row? No. Like you have to like Andy, your question is, what is the unit of work? We kind of instinctively know what that unit of work is.
+
+And so when we when you right size it, the system really will graph walk all the context, look at best practices. You know, it's it's pretty good at it. Should I use, you know, pusher or WebSockets, like, you know, WebSockets is being you know, deprecated for something else. Like that kind of thing is really hard to get out of a code base.
+
+And so that's where the thing I was describing before, all the you know, RLM stuff and everything really makes that possible. So yeah.
+
+[00:51:56.856] Pete Winn:
+Yeah. Mean I feel like a big part of the like a big question and I know we talked about this like a couple of years ago at least was like where does the value go in this in this world of AI and like what does it actually look like? Is it all gonna go to Anthropic and Claude? Is it somewhere else? And I feel like we've always been reasonably aligned that I've I think the project of AI is not necessarily to be the AI thing or the AI is the product. At the end of it. It feels like it's the translation of we're going to turn all of the businesses and the things that need to do stuff into society into code. And it's like we couldn't do that previously because we were locked on AI. Like we didn't have enough intelligence, sorry. Now if we have that intelligence, that's just where we end up, is that things start getting reusable and repeatable and done quickly and at minimal cost. And that would be the software.
+
+So when you describe like the zoom out pieces, I want to do something, and then eventually you zoom in enough that it's like and now it's done repeatably and at minimal cost.
+
+And then so now I zoom back out and I say, What's the next thing I want to do? Like it feels like this is the
+
+[00:53:11.053] Pete Winn:
+This is what the transition looks like to me in the next sort of five years. I definitely feel like I'm off on dates. I used to think this was like a two year thing, but it's not it's not happened yet, but
+
+[00:53:19.652] Paul:
+Yeah. Don't talk to me about dates. The worst. But yeah, to your question of where does the value accrue, I mean the answer to me is marketplaces.
+
+So we're not building harnesses to sell harnesses, you know. I think models models, I think it's far more likely that we you're employing a thousand narrowly trained, nightly, fine tuned personal models or company models that do exactly what you want to do. Think about it this way.
+
+[00:53:24.408] Pete Winn:
+Yeah.
+
+[00:53:52.41] Paul:
+When you send a prompt to Fable or whatever, I literally might be just pulling a clause out of a PDF document and trying to and you know, get the legal reasoning behind a paragraph. I'm asking a system that also can translate Polish into Turkish, it can generate Blender. Like what are what are we doing? You know, like enter you don't need all of that electricity and that GPU to then try to like narrow down the latent space to the w the weights just that I'm referring to. It's absurd that you exercise this massive model. And if you actually looked at what's being used, I would I would strongly believe that it's very tiny slices of these generalist models.
+
+So if you look at the trend out there, companies like Base Ten and all these other guys, they're helping enterprises fine-tune very small open weight models to do just the tasks that they're doing. And so number one, I don't think the models will hold the value forever. I think having a great model will get you business for sure. But enterprises, they're inertia based. If I have a model that reliably does handwriting recognition in my region of the world, I really don't care about Astra. Like I'm a bank and I'm not trying to solve Navier-Stokes. I'm just trying to like get my checks OCR'd, you know?
+
+So that will be a huge part of the market is systems that just train models and harnesses that are dynamic. And we won't be talking about harnesses in a couple years. So it'll be, you know, micro improvements to a system that works. So in the end, what is it going to be? It's going to be marketplaces.
+
+So you should get these tools as fast as possible. You should learn how to build marketplaces and then you should become the default marketplace for the thing you care about.
+
+[00:55:51.761] Andy:
+Interesting. Would that also include like the, essentially the outputs of an agent's intelligence as well? Like when you were talking earlier about like the legal example, for instance, these agents wandering off the reservation or maybe having gaps in their own knowledge graph, being able to go and like purchase the right kind of packet of information and pull that into the graph.
+
+[00:55:51.971] Paul:
+That will always have value. That will always have value.
+
+[00:56:02.031] Paul:
+Hundred percent.
+
+[00:56:12.623] Paul:
+Yeah.
+
+[00:56:16.551] Paul:
+L let's break up Harvey as a company, right? I don't know them and you know I think they're doing a great job as a startup.
+
+But let's decompose what it is. And decompose what a installation in a law firm actually is.
+
+So you have all of the templates that are the ways that this law firm actually does their work, right? That would be the proprietary data inside the firm. Then Harvey is a product.
+
+[00:56:36.345] Pete Winn:
+Yeah.
+
+[00:56:44.855] Paul:
+Has features. They have a red line editor. They have you know a process of ingesting documents and creating a tabular review of a thousand emails, right?
+
+And so they'll have I sounds like to me handwritten pipelines or workflows that do this.
+
+So this is how we do due diligence documents and a technology company deal and you get this tabular view of our documents. You can ask it questions. It can do case law research for the case of litigation, it can do regulatory research, all those things, right?
+
+So you have data that's public, you have data that's private, and you have software functionality in j in broad strokes, right? Those are the pieces. So what you could do, the vision of the world that we see is that software stuff is just table stakes. You will not sell a better Google Sheet integrator than the next person. That's just exists. And the company's data is their data, right?
+
+And then the research sources are their sources.
+
+So what's in the middle is this kind of practice and this legal reasoning that's outside of your firm, but a general ability to say, I have this tax law that's interacting with this local regulation, and my HOA has this rule, or you know, you have all these Venn diagrams of things that influence your decision. So that will be, I believe, in a publicly maintained graph because no one law firm can effectively beat all lawyers sharing the information.
+
+So as soon as it gets created, it beats your proprietary version of it. You can't monopolize legal reasoning, for example, or coding best practices in a single software startup. It just doesn't work. So the value, I believe, accrues to The very senior partner in that firm becomes extremely valuable because they're working on 50 cases at once and have the taste and the ability to network with human beings. They're incredibly valuable and they'll make a ton of money.
+
+And then you'll have a public graph of legal reasoning where lawyers can contribute and then ideally be paid for their contribution as a shared public resource. And that's the marketplace for legal reasoning.
+
+[00:59:02.483] Paul:
+I will if my reasoning gets used by people paying to use this common good, then I earn like a perpetual income off of the contribution that I've made.
+
+So it's just like having a reputation and a social graph early. The earlier you put your contribution in, the more likely it gets used, the more likely you get paid for your contribution in the future.
+
+So our whole goal as a company has been to build the tools. That turns your ability to generate these marketplaces that you can compete with basically quant trader level speed marketplaces. You'll have attacks of fraud, you'll have griefing, you'll have trolling, you'll have all these things, and they'll all be using their little open claw or Hermes army to attack your marketplace.
+
+So you have to somehow have a defense system that can make your marketplace usable and the best. And you have to beat every other marketplace out there.
+
+So without the workflow automation, the code generation, all that stuff that we're describing, you have no ability to actually operate your marketplace in a competitive level. And as soon as you lose for two weeks, the agents move on. This is why it's so important for your customers are not human beings that care about brand. And inconvenience, your customers are agents that don't care about any of that stuff.
+
+So They'll switch to a different provider for 5% savings today. They're just continually optimizing for quality, cost, and time.
+
+And so the example would be: let's say there's a transcript of this podcast and someone is having their Claude Max plan transcribe the podcast. If the agent is intelligent and says, look, don't burn X number of tokens doing that, Andy already has it, so pay him five sats. For something that would cost me 30.
+
+That will snowball into a marketplace where no human would bother doing that. You know, the Nick Szabo idea for micropayments is true. No human would do that. I don't care. That's maybe two cents. I'm not gonna spend a minute and a half figuring that out, you know.
+
+But the agents have all day and will figure it out like that.
+
+So can you build the Jane Street of information marketplaces?
+
+[01:01:28.269] Paul:
+And can you stay ahead of every other person doing it?
+
+So don't even start it until you can beat true professionals 'cause you'll get wiped out.
+
+[01:01:44.633] Pete Winn:
+What a what a nice note.
+
+[01:01:47.265] Paul:
+It's true.
+
+[01:01:48.987] Andy:
+I mean, like how, how do you, I mean, at the risk of turning this last part into like a personal coaching session, but like, how do you, how do you convince people? Like, I feel like we're like, we're all of the same mind here about a lot of this stuff, but like, how do you go out into the world and convince people? Like when you're talking to partners at law firms, presumably there's some level of abstraction from their world to this world. Like how do you cross that chasm?
+
+[01:01:49.343] Pete Winn:
+
+
+[01:02:16.166] Andy:
+And convince them that this is the right thing for them to be doing.
+
+[01:02:20.655] Paul:
+I mean, I don't you know, it's not worth it. It's not worth it. It's not worth it. Every minute of your day is important. You don't have time.
+
+[01:02:25.81] Andy:
+Okay.
+
+[01:02:35.159] Paul:
+It's like you just don't have time. So yeah, for family and friends, of course, you try to spend whatever time you can.
+
+But trying to convince someone who's comfortable and, you know, going along fine, you can spend the rest of your life trying to convince fifteen of those companies to do something that's good for them. And if they don't want to, they don't want to, you know.
+
+And so That's where when we talked about owning businesses in the AI roll-up space, I do think that's the one way to bridge value between the old world and the new world is to own the companies that are gonna be the have the most profitability impact. That's still to this day the only strategy for I think for deploying capital into traditional businesses in time.
+
+But all this FDE stuff and you know, you're gonna have forward-deployed engineers, they're gonna take, you know. My Palantir knockoff and go in and try to like solve the problems. I don't think that's a sophisticated approach, but I don't think you have to be that sophisticated having seen some of these deals play out. Just the multiples go up, the bigger you are and you know, whatever. But I that's not a game that, you know, I wanted to play.
+
+So it's better to have the tool, better to put it out there, better to get your marketplace going, become the default in your thing. And hopefully it's something you're passionate about too.
+
+So that if you're in it all day and that moment comes and you have to lock in, you know, for ten minutes an hour, you're not dreading the topic. You love the topic, you feel like you're contributing to the world. And by the way, the more you do that, the more unique you are. You are outside of the distribution, you are outside of the weights. The models can't do what they're asking you to do.
+
+So those ten minutes validate your surfing the edge of this intelligence and still ahead, you know.
+
+And so that to me is very gratifying because then you get to work on the thing that you want to work on, whatever that may be at the time.
+
+But you're building an asset that can last into the future. Trying to build software right now, I is such a I mean, really, how do you predict what will be useful software in two and a half to three years? I have no idea. And I've been in enterprise SaaS since the late nineties. So I'd I you know, I was there for the
+
+[01:04:58.605] Paul:
+Beginning of cloud software.
+
+And so I'm biased to believe that there's value there. I just yeah, I don't I don't see how you can bank on it being relevant for too much longer, you know. So but yeah, I hopefully that helps. I hate to run on a doomer note, but I think the positive thing is we have tons of jobs, tons of work.
+
+[01:05:26.329] Paul:
+But it'll be for what you're interested in and it'll be you will you will get value and I think fulfillment from being in your personal flow state.
+
+So you we all have a unique combination of experiences that we offer and so how do you bring the how do you get basically paid for your unique signature?
+
+Number one, don't give your weights—don't give your intelligence to these companies. That would be number one. And then number two, figure out how to stay in that flow state and build a marketplace that agents want.
+
+[01:06:04.591] Pete Winn:
+Hm. All right.
+
+[01:06:06.285] Paul:
+And there are there's tons of those. Like pick a subreddit, turn it into a marketplace, and you got it. Like that's a whole business strategy right there. And it might take a year or two before it becomes meaningful.
+
+But you know those people who are like, they got into Bitcoin early. They were Reddit, day one, or they're Twitter user fifty. Like this is your moment to go, Okay, it's very little investment, sounds reasonable, I should just build one.
+
+[01:06:10.888] Andy:
+Yeah.
+
+[01:06:30.787] Pete Winn:
+Yeah.
+
+[01:06:32.055] Paul:
+And then these agent marketplaces pop up. This is very good for Bitcoin, by the way, right? You're not gonna use credit cards for these things 'cause the chargebacks is gonna be a nightmare. And so that's what I would do.
+
+[01:06:46.0] Pete Winn:
+Alright, on that note then where we all just do our work which is stay in our own personal flow states and get paid. That doesn't sound too bad. I don't think that's too doomer. While fishing. Or you know, or walking, running, whatever. Alright. Thank you, Paul.
+
+[01:06:52.634] Paul:
+Yes. While fishing. While fishing. Yeah. Whatever you think. Yep. Okay guys. See ya. Bye guys.
