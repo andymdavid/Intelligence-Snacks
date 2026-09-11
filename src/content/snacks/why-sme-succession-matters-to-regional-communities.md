@@ -1,5 +1,5 @@
 ---
-title: "Why SME Succession Matters to Regional Communities"
+title: "Why SME succession matters to regional communities"
 editorialTitle: "Concentrated owner wealth makes SME succession a regional continuity risk"
 thumbnail: "/images/snacks/why-sme-succession-matters-to-regional-communities.webp"
 standfirst: "When most of an owner’s wealth sits inside a regional business, an absent succession plan puts both a family’s future and a community asset at risk."

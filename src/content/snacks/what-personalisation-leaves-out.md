@@ -1,5 +1,5 @@
 ---
-title: "What Personalisation Leaves Out"
+title: "What personalisation leaves out"
 editorialTitle: "How Personalisation Narrows Serendipitous Discovery"
 thumbnail: "/images/snacks/what-personalisation-leaves-out.webp"
 standfirst: "A briefing shaped around known interests can deepen understanding while making unrelated but valuable ideas less likely to appear."

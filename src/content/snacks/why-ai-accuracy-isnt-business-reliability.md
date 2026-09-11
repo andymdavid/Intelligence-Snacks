@@ -1,5 +1,5 @@
 ---
-title: "Why AI Accuracy Isn’t Business Reliability"
+title: "Why AI accuracy isn’t business reliability"
 editorialTitle: "Why Occasional AI Accuracy Fails the Business Reliability Test"
 thumbnail: "/images/snacks/why-ai-accuracy-isnt-business-reliability.webp"
 standfirst: "A polished AI answer can create more risk than value when a business needs work it can safely rely on."

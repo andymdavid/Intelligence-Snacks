@@ -1,5 +1,5 @@
 ---
-title: "The Founder’s Portfolio"
+title: "The founder’s portfolio"
 editorialTitle: "AI gives founders a portfolio approach to finding traction"
 thumbnail: "/images/snacks/the-founders-portfolio.webp"
 standfirst: "Cheap AI experimentation lets a solo founder spread entrepreneurial risk across several business ideas instead of staking everything on one company."

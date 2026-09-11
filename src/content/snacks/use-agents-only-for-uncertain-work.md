@@ -1,5 +1,5 @@
 ---
-title: "Use Agents Only for Uncertain Work"
+title: "Use agents only for uncertain work"
 editorialTitle: "Keeping the Process Outside the Agent"
 thumbnail: "/images/snacks/use-agents-only-for-uncertain-work.webp"
 standfirst: "Reliable AI workflows keep known operations in ordinary code and call an agent only when flexible judgement is genuinely useful."

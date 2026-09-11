@@ -1,5 +1,5 @@
 ---
-title: "Who Gets to Command the Agent?"
+title: "Who gets to command the agent?"
 editorialTitle: "Signed public keys as the command boundary for agents in shared chat"
 thumbnail: "/images/snacks/who-gets-to-command-the-agent.webp"
 standfirst: "Signed messages give agents a verifiable way to distinguish an authorised operator from everyone else in a shared chat."

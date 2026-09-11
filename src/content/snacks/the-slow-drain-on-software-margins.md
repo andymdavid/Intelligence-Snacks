@@ -1,5 +1,5 @@
 ---
-title: "The Slow Drain on Software Margins"
+title: "The slow drain on software margins"
 editorialTitle: "AI Fast Followers and the Slow Drain on Software Margins"
 thumbnail: "/images/snacks/the-slow-drain-on-software-margins.webp"
 standfirst: "Cheap AI replication gives lean entrants an opening against high-margin software incumbents, but slow customer switching could stretch the contest over years."

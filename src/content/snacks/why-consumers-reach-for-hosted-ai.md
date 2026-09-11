@@ -1,5 +1,5 @@
 ---
-title: "Why Consumers Reach for Hosted AI"
+title: "Why consumers reach for hosted AI"
 editorialTitle: "Why hosted frontier AI wins the consumer access gap"
 thumbnail: "/images/snacks/why-consumers-reach-for-hosted-ai.webp"
 standfirst: "Local models can handle everyday personal tasks, but hardware costs and limited awareness leave hosted frontier AI as the easier consumer choice."
@@ -13,7 +13,7 @@ relationships: []
 featured: false
 fixture: false
 seo:
-  title: "Why Consumers Reach for Hosted AI"
+  title: "Why consumers reach for hosted AI"
   description: "Local models can handle everyday personal tasks, but hardware costs and limited awareness leave hosted frontier AI as the easier consumer choice."
 ---
 

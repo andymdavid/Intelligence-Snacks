@@ -1,5 +1,5 @@
 ---
-title: "AI Gives Financial Advisers More Client Time"
+title: "AI gives financial advisers more client time"
 editorialTitle: "AI creates back-office capacity for human service in a regional SME"
 thumbnail: "/images/snacks/ai-gives-financial-advisers-more-client-time.webp"
 standfirst: "Regional Prosperity uses AI to increase back-office throughput so its people can devote more attention to the relationships that make its financial advice valuable."

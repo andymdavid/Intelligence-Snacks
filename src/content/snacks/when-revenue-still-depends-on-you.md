@@ -1,5 +1,5 @@
 ---
-title: "When Revenue Still Depends on You"
+title: "When revenue still depends on you"
 editorialTitle: "Founder instruction loops create revenue without operational independence"
 thumbnail: "/images/snacks/when-revenue-still-depends-on-you.webp"
 standfirst: "A business can earn millions and still remain a time liability when its operation depends on a founder continually sending instructions."

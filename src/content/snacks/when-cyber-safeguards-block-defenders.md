@@ -1,5 +1,5 @@
 ---
-title: "When Cyber Safeguards Block Defenders"
+title: "When cyber safeguards block defenders"
 editorialTitle: "Cyber safeguards can block defenders from analysing known exploits"
 thumbnail: "/images/snacks/when-cyber-safeguards-block-defenders.webp"
 standfirst: "A model that refuses exploit work can also deny incident responders the tools they need to locate a known vulnerability and check other systems for the same flaw."

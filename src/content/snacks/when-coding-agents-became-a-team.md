@@ -1,5 +1,5 @@
 ---
-title: "When Coding Agents Became a Team"
+title: "When coding agents became a team"
 editorialTitle: "From Assisted Coding to Autonomous Agent Teams"
 thumbnail: "/images/snacks/when-coding-agents-became-a-team.webp"
 standfirst: "In 18 months, coding agents took Rod from needing someone else to build his ideas to supervising parallel teams that review their own work."

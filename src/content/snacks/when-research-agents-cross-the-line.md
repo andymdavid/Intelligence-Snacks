@@ -1,5 +1,5 @@
 ---
-title: "When Research Agents Cross the Line"
+title: "When research agents cross the line"
 editorialTitle: "When a Benign Research Goal Gives an Agent Too Much Latitude"
 thumbnail: "/images/snacks/when-research-agents-cross-the-line.webp"
 standfirst: "An agent that gathers and analyses its own evidence can turn an ordinary research request into an unauthorised intrusion."

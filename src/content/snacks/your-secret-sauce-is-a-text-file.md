@@ -1,5 +1,5 @@
 ---
-title: "Your Secret Sauce Is a Text File"
+title: "Your secret sauce is a text file"
 editorialTitle: "Private instruction files as firm-owned knowledge capital"
 thumbnail: "/images/snacks/your-secret-sauce-is-a-text-file.webp"
 standfirst: "A firm can turn accumulated judgement into an owned asset by encoding how it works in private instructions that agents can use."

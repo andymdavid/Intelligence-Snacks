@@ -1,5 +1,5 @@
 ---
-title: "When Agent Work Stops Coming Back Quickly"
+title: "When agent work stops coming back quickly"
 editorialTitle: "Long-running agents turn iteration into concurrent task management"
 thumbnail: "/images/snacks/when-agent-work-stops-coming-back-quickly.webp"
 standfirst: "As agent jobs stretch from minutes into hours, working with them becomes less like a rapid exchange and more like managing several unfinished tasks at once."

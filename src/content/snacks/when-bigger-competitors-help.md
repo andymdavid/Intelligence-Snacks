@@ -1,5 +1,5 @@
 ---
-title: "When Bigger Competitors Help"
+title: "When bigger competitors help"
 editorialTitle: "Using Larger Competitors to Educate an Unfamiliar Market"
 thumbnail: "/images/snacks/when-bigger-competitors-help.webp"
 standfirst: "For a small company in an unfamiliar category, larger rivals can bear the cost of teaching buyers before differentiation becomes decisive."
@@ -13,7 +13,7 @@ relationships: []
 featured: false
 fixture: false
 seo:
-  title: "When Bigger Competitors Help"
+  title: "When bigger competitors help"
   description: "For a small company in an unfamiliar category, larger rivals can bear the cost of teaching buyers before differentiation becomes decisive."
 ---
 

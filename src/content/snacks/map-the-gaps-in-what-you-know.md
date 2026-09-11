@@ -1,5 +1,5 @@
 ---
-title: "Map the Gaps in What You Know"
+title: "Map the gaps in what you know"
 editorialTitle: "Using Nearby Knowledge Gaps to Direct Personal Learning"
 thumbnail: "/images/snacks/map-the-gaps-in-what-you-know.webp"
 standfirst: "An agent can extend a personal knowledge map just far enough to reveal the next useful ideas, sources and connections."

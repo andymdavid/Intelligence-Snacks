@@ -1,5 +1,5 @@
 ---
-title: "Technology Gaps Complicate Regional Business Succession"
+title: "Technology gaps complicate regional business succession"
 editorialTitle: "Regional SMEs can operate at substantial scale with radically different levels of technology maturity"
 thumbnail: "/images/snacks/technology-gaps-complicate-regional-business-succession.webp"
 standfirst: "Regional businesses of considerable scale can sit at opposite ends of the technology spectrum, creating very different challenges when their systems pass to a new owner."

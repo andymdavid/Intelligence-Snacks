@@ -1,5 +1,5 @@
 ---
-title: "The Agent Leaves but the Server Stays"
+title: "The agent leaves but the server stays"
 editorialTitle: "Fixed infrastructure bears the risk of mobile anonymous agents"
 thumbnail: "/images/snacks/the-agent-leaves-but-the-server-stays.webp"
 standfirst: "Cheap machine payments create a dangerous asymmetry when an anonymous agent can use infrastructure whose operator remains identifiable and accountable."

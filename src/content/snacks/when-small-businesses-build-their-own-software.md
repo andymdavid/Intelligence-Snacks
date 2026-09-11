@@ -1,5 +1,5 @@
 ---
-title: "When Small Businesses Build Their Own Software"
+title: "When small businesses build their own software"
 editorialTitle: "How Bespoke Software Returns SaaS Margin to Small Businesses"
 thumbnail: "/images/snacks/when-small-businesses-build-their-own-software.webp"
 standfirst: "AI-built internal tools could let small businesses keep efficiency gains that once flowed to software vendors."

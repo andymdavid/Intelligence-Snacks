@@ -1,5 +1,5 @@
 ---
-title: Coding Models Have Working Personalities
+title: "Coding models have working personalities"
 editorialTitle: Models Have Working Personalities
 thumbnail: /images/snacks/coding-models-working-personalities-v2.webp
 standfirst: Every coding model brings its own mix of literalness, initiative, caution and recurring habits to a coding session.

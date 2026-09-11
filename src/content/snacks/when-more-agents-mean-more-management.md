@@ -1,5 +1,5 @@
 ---
-title: "When More Agents Mean More Management"
+title: "When more agents mean more management"
 editorialTitle: "Agent scale recreates a management layer"
 thumbnail: "/images/snacks/when-more-agents-mean-more-management.webp"
 standfirst: "An agent workforce can automate a great deal of activity while still losing its cost advantage to software that delivers the same outcome with less supervision."

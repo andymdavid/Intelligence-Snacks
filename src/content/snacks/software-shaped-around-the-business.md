@@ -1,5 +1,5 @@
 ---
-title: "Software Shaped Around the Business"
+title: "Software shaped around the business"
 editorialTitle: "Building tailored software on a shared business foundation"
 thumbnail: "/images/snacks/software-shaped-around-the-business.webp"
 standfirst: "A shared technical foundation makes it practical to replace generic tools with applications that encode how one company actually operates."

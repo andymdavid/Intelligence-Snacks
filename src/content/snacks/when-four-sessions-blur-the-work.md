@@ -1,5 +1,5 @@
 ---
-title: "When Four Sessions Blur the Work"
+title: "When four sessions blur the work"
 editorialTitle: "Four Concurrent Agent Sessions Obscure Progress and Drain the Pleasure of Building"
 thumbnail: "/images/snacks/when-four-sessions-blur-the-work.webp"
 standfirst: "Spreading attention across four agent sessions and three projects can turn building into a hard-to-follow cycle of prompts."

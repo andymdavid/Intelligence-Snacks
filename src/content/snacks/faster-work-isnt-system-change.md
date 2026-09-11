@@ -1,5 +1,5 @@
 ---
-title: "Faster Work Isn’t System Change"
+title: "Faster work isn’t system change"
 editorialTitle: "Individual AI Speed Does Not Redesign the Business System"
 thumbnail: "/images/snacks/faster-work-isnt-system-change.webp"
 standfirst: "AI can accelerate each employee’s workload while leaving the business’s repeated processes and handoffs untouched."

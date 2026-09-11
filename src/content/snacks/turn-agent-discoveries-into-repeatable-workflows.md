@@ -1,5 +1,5 @@
 ---
-title: "Turn Agent Discoveries Into Repeatable Workflows"
+title: "Turn agent discoveries into repeatable workflows"
 editorialTitle: "Turn discovered agent routes into repeatable workflows"
 thumbnail: "/images/snacks/turn-agent-discoveries-into-repeatable-workflows.webp"
 standfirst: "Agents are useful for finding a path through unfamiliar work, but repeatable execution belongs in a bounded workflow."

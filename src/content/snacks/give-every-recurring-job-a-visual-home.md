@@ -1,5 +1,5 @@
 ---
-title: "Give Every Recurring Job a Visual Home"
+title: "Give every recurring job a visual home"
 editorialTitle: "Stable personal interfaces for recurring agent work"
 thumbnail: "/images/snacks/give-every-recurring-job-a-visual-home.webp"
 standfirst: "As software becomes cheaper to create, recurring agent work can move beyond a universal chat into personal interfaces shaped around the job."

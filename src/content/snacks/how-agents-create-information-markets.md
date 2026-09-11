@@ -1,5 +1,5 @@
 ---
-title: "How Agents Create Information Markets"
+title: "How agents create information markets"
 editorialTitle: "Agents Make Tiny Information Purchases Economically Rational"
 thumbnail: "/images/snacks/how-agents-create-information-markets.webp"
 standfirst: "Machine customers can turn reusable information into a market by comparing the price of an existing artifact with the cost of creating it again."

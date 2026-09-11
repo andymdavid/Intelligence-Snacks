@@ -1,5 +1,5 @@
 ---
-title: "Automation Leaves Humans the Hard Decisions"
+title: "Automation leaves humans the hard decisions"
 editorialTitle: "Competent systems concentrate human attention on unresolved decisions"
 thumbnail: "/images/snacks/automation-leaves-humans-the-hard-decisions.webp"
 standfirst: "As AI absorbs routine work, people inherit a smaller stream of unresolved decisions that demands sharper attention and clearer presentation."

@@ -1,5 +1,5 @@
 ---
-title: "Turn Agent Workflows Into Cheaper Software"
+title: "Turn agent workflows into cheaper software"
 editorialTitle: "Turning Agent Discovery Into Low-Cost Deterministic Software"
 thumbnail: "/images/snacks/turn-agent-workflows-into-cheaper-software.webp"
 standfirst: "Agents create lasting value when the processes they discover are captured as reusable software that runs reliably at a fraction of the original cost."

@@ -1,5 +1,5 @@
 ---
-title: "When Your News Builds a Memory"
+title: "When your news builds a memory"
 editorialTitle: "Accumulated news as a queryable personal graph"
 thumbnail: "/images/snacks/when-your-news-builds-a-memory.webp"
 standfirst: "Pete’s personal newspaper turns accumulated coverage into a connected resource that his AI agents can consult for context without burdening him with another unread queue."
@@ -13,7 +13,7 @@ relationships: []
 featured: false
 fixture: false
 seo:
-  title: "When Your News Builds a Memory"
+  title: "When your news builds a memory"
   description: "Pete’s personal newspaper turns accumulated coverage into a connected resource that his AI agents can consult for context without burdening him with another unread queue."
 ---
 

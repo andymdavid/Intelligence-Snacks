@@ -1,5 +1,5 @@
 ---
-title: "Put Intelligence Where Judgement Matters"
+title: "Put intelligence where judgement matters"
 editorialTitle: "Concentrating probabilistic intelligence at operational judgement points"
 thumbnail: "/images/snacks/put-intelligence-where-judgement-matters.webp"
 standfirst: "A hybrid monitoring workflow keeps sensitive data local, reserves frontier models for anomalies and turns repeatable answers into dependable software."

@@ -1,5 +1,5 @@
 ---
-title: "Private Access Without Public Endpoints"
+title: "Private access without public endpoints"
 editorialTitle: "A signed-device proxy for private access to local Autopilot WApps"
 thumbnail: "/images/snacks/private-access-without-public-endpoints.webp"
 standfirst: "Signed device access could make locally hosted Autopilot WApps available through Wingman without turning every installation into a public internet service."

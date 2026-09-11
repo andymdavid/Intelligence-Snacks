@@ -1,5 +1,5 @@
 ---
-title: "Build SME Software Around Existing Workflows"
+title: "Build SME software around existing workflows"
 editorialTitle: "How accessible software building lets SMEs shape tools around their workflows"
 thumbnail: "/images/snacks/build-sme-software-around-existing-workflows.webp"
 standfirst: "AI-assisted software building gives SMEs a practical alternative to reshaping their work around generic systems that only partly fit."

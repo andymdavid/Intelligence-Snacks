@@ -1,5 +1,5 @@
 ---
-title: "Breaking Expert Work Into Repeatable Steps"
+title: "Breaking expert work into repeatable steps"
 editorialTitle: "Factoring expert cognition into executable workflow steps"
 thumbnail: "/images/snacks/breaking-expert-work-into-repeatable-steps.webp"
 standfirst: "Complex expertise becomes easier to execute consistently when it is divided into small decisions that people, models and tools can handle separately."

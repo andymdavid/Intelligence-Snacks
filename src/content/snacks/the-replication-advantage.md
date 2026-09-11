@@ -1,5 +1,5 @@
 ---
-title: "The Replication Advantage"
+title: "The replication advantage"
 editorialTitle: "How Lean AI Entrants Can Undercut Niche Software Incumbents"
 thumbnail: "/images/snacks/the-replication-advantage.webp"
 standfirst: "AI lets small software entrants reproduce established products at far lower cost, creating a temporary opening to attack margins once protected by expensive technology."

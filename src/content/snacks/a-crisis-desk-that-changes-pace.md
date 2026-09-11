@@ -1,5 +1,5 @@
 ---
-title: "A Crisis Desk That Changes Pace"
+title: "A crisis desk that changes pace"
 editorialTitle: "Adaptive agent workflow for live incident reporting"
 thumbnail: "/images/snacks/a-crisis-desk-that-changes-pace.webp"
 standfirst: "An agent can filter a fast-moving crisis into technically verified updates, then ease its reporting cadence as the urgency recedes."

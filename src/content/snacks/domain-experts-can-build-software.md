@@ -1,5 +1,5 @@
 ---
-title: Domain Experts Can Build Software From Operational Knowledge
+title: "Domain experts can build software from operational knowledge"
 editorialTitle: Domain Knowledge Builds Software
 thumbnail: /images/snacks/domain-experts-operational-software-v2.webp
 standfirst: Coding agents let operators turn their knowledge of workflows, exceptions and commercial pressures into working software.

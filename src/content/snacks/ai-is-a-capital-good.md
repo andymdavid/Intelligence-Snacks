@@ -1,5 +1,5 @@
 ---
-title: "AI Is a Capital Good"
+title: "AI is a capital good"
 editorialTitle: "AI as productive capital applied to specific needs"
 thumbnail: "/images/snacks/ai-is-a-capital-good.webp"
 standfirst: "The value of widely available intelligence emerges when people apply it to a real business, idea or point of pain."

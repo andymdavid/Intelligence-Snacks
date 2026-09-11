@@ -1,5 +1,5 @@
 ---
-title: "Smarter Systems Beat Smarter Models"
+title: "Smarter systems beat smarter models"
 editorialTitle: "Business automation improves when capable models are constrained by well-designed systems"
 thumbnail: "/images/snacks/smarter-systems-beat-smarter-models.webp"
 standfirst: "The next leap in business automation will come from turning capable models into reliable parts of an operating system."

@@ -1,5 +1,5 @@
 ---
-title: "Keep Agent Work Small Enough to Steer"
+title: "Keep agent work small enough to steer"
 editorialTitle: "Steering consequential agent work through visible session-scoped units"
 thumbnail: "/images/snacks/keep-agent-work-small-enough-to-steer.webp"
 standfirst: "Agent work is easier to supervise when each job has a visible boundary and the human can intervene before too many decisions accumulate."

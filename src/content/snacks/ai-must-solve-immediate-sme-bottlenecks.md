@@ -1,5 +1,5 @@
 ---
-title: "AI Must Solve Immediate SME Bottlenecks"
+title: "AI must solve immediate SME bottlenecks"
 editorialTitle: "Immediate constraints give SMEs a practical test for AI"
 thumbnail: "/images/snacks/ai-must-solve-immediate-sme-bottlenecks.webp"
 standfirst: "For a small business under delivery pressure, AI becomes useful when it clears a bottleneck quickly enough to create value today."

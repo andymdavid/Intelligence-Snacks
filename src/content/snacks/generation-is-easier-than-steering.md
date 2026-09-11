@@ -1,5 +1,5 @@
 ---
-title: Long Agent Runs Depend on Reliable Feedback
+title: "Long agent runs depend on reliable feedback"
 thumbnail: /images/snacks/long-agent-runs-feedback-v2.webp
 standfirst: Tests, specifications and human review determine how long a coding agent can keep producing useful software on its own.
 status: published

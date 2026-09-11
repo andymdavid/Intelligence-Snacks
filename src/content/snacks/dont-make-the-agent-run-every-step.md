@@ -1,5 +1,5 @@
 ---
-title: "Don’t Make the Agent Run Every Step"
+title: "Don’t make the agent run every step"
 editorialTitle: "Redesigning Agent Workflows Around Deterministic Code"
 thumbnail: "/images/snacks/dont-make-the-agent-run-every-step.webp"
 standfirst: "AI automation becomes more efficient when deterministic operations stay in code and agents appear only where the work requires judgement."
@@ -13,7 +13,7 @@ relationships: []
 featured: false
 fixture: false
 seo:
-  title: "Don’t Make the Agent Run Every Step"
+  title: "Don’t make the agent run every step"
   description: "AI automation becomes more efficient when deterministic operations stay in code and agents appear only where the work requires judgement."
 ---
 

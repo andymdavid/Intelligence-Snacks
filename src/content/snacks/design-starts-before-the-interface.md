@@ -1,5 +1,5 @@
 ---
-title: "Design Starts Before the Interface"
+title: "Design starts before the interface"
 editorialTitle: "Requirements Hardening Is the First Design Surface"
 thumbnail: "/images/snacks/design-starts-before-the-interface.webp"
 standfirst: "Agents can compress weeks of product review by exposing gaps in a loose brief before anyone commits to a polished interface."

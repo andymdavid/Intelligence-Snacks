@@ -1,5 +1,5 @@
 ---
-title: "AI Can’t Scale an Adviser’s Attention"
+title: "AI can’t scale an adviser’s attention"
 editorialTitle: "Human Judgment as the Binding Constraint in AI-Enabled Advice"
 thumbnail: "/images/snacks/ai-cant-scale-an-advisers-attention.webp"
 standfirst: "Faster processing can expand a service business, but growth still runs through the scarce human capacity to pay attention and make sound judgments."

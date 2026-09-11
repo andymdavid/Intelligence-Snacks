@@ -1,5 +1,5 @@
 ---
-title: "Pliny Builds Knowledge Beyond the News Feed"
+title: "Pliny builds knowledge beyond the news feed"
 editorialTitle: "Pliny turns news triggers into cumulative educational briefings"
 thumbnail: "/images/snacks/pliny-builds-knowledge-beyond-the-news-feed.webp"
 standfirst: "Andy designed Pliny to turn relevant updates into researched briefings that deepen as its record of his interests grows."

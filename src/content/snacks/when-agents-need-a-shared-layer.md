@@ -1,5 +1,5 @@
 ---
-title: "When Agents Need a Shared Layer"
+title: "When agents need a shared layer"
 editorialTitle: "A task board and timed catch-up layer for coordinating agent sessions"
 thumbnail: "/images/snacks/when-agents-need-a-shared-layer.webp"
 standfirst: "Flight Deck brings delegated work into one communications layer where tasks remain visible, missed activity can be recovered and access follows clear boundaries."
@@ -12,7 +12,7 @@ relationships: []
 featured: false
 fixture: false
 seo:
-  title: "When Agents Need a Shared Layer"
+  title: "When agents need a shared layer"
   description: "Flight Deck brings delegated work into one communications layer where tasks remain visible, missed activity can be recovered and access follows clear boundaries."
 ---
 

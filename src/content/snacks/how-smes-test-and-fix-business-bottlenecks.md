@@ -1,5 +1,5 @@
 ---
-title: "How SMEs Test and Fix Business Bottlenecks"
+title: "How SMEs test and fix business bottlenecks"
 editorialTitle: "Constraint-Led Experimentation as the Source of SME Speed"
 thumbnail: "/images/snacks/how-smes-test-and-fix-business-bottlenecks.webp"
 standfirst: "Small firms gain speed by testing ideas cheaply and directing investment towards the constraint that is holding back the business now."

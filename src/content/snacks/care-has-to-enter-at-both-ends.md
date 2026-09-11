@@ -1,5 +1,5 @@
 ---
-title: "Care Has to Enter at Both Ends"
+title: "Care has to enter at both ends"
 editorialTitle: "Human Intent and Review Preserve Care in AI-Assisted Creation"
 thumbnail: "/images/snacks/care-has-to-enter-at-both-ends.webp"
 standfirst: "AI can help shape creative work without hollowing it out, provided the creator supplies the substance, judges the output and remains responsible for the finish."

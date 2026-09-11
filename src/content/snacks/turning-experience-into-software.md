@@ -1,5 +1,5 @@
 ---
-title: "Turning Experience into Software"
+title: "Turning experience into software"
 editorialTitle: "AI-assisted development turns specialist expertise and personal needs into distributable software"
 thumbnail: "/images/snacks/turning-experience-into-software.webp"
 standfirst: "AI can give one person the capacity to package years of expertise or solve a small personal problem, then distribute the result far beyond its original setting."

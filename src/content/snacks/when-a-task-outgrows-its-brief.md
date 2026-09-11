@@ -1,5 +1,5 @@
 ---
-title: "When a Task Outgrows Its Brief"
+title: "When a task outgrows its brief"
 editorialTitle: "How Iterative Chat Turned an SEO Task into a CMO System"
 thumbnail: "/images/snacks/when-a-task-outgrows-its-brief.webp"
 standfirst: "Keeping exploratory work in conversation creates room for each useful question to expand the ambition of what is being built."

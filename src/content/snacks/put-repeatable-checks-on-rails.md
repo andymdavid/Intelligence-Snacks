@@ -1,5 +1,5 @@
 ---
-title: "Put Repeatable Checks on Rails"
+title: "Put repeatable checks on rails"
 editorialTitle: "Encoding Operational Discipline Into Sequential Agent Flows"
 thumbnail: "/images/snacks/put-repeatable-checks-on-rails.webp"
 standfirst: "Reliable execution comes from making required checks part of the process, rather than instructions that a person or agent must remember to follow."

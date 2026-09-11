@@ -1,5 +1,5 @@
 ---
-title: "Put the Workflow in Code"
+title: "Put the workflow in code"
 editorialTitle: "Code-first pipelines make recurring agent work predictable"
 thumbnail: "/images/snacks/put-the-workflow-in-code.webp"
 standfirst: "A pipeline can contain agent judgement without surrendering control of the wider process to an open-ended agent loop."

@@ -1,5 +1,5 @@
 ---
-title: "The Economics of an Attack Swarm"
+title: "The economics of an attack swarm"
 editorialTitle: "AI attack swarms shift cyber defence towards workload detection and access costs"
 thumbnail: "/images/snacks/the-economics-of-an-attack-swarm.webp"
 standfirst: "AI makes repeated cyberattacks cheaper, while giving defenders ways to detect their computing footprint and raise the price of access."

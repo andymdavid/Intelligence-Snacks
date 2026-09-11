@@ -1,5 +1,5 @@
 ---
-title: "When Software Becomes the Business"
+title: "When software becomes the business"
 editorialTitle: "Owning the software that carries the operation"
 thumbnail: "/images/snacks/when-software-becomes-the-business.webp"
 standfirst: "As agents absorb more operating work, a firm's ability to own and move its encoded processes becomes a condition of business control."

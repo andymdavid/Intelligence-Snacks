@@ -1,5 +1,5 @@
 ---
-title: An Agent Harness Controls Context, Tools and Feedback
+title: "An agent harness controls context, tools and feedback"
 editorialTitle: Context, Tools and Feedback
 thumbnail: /images/snacks/agent-harness-context-tools-feedback-v2.webp
 standfirst: A coding harness controls which files an agent can inspect, which commands it can run and which results return to the model.
