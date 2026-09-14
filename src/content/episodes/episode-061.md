@@ -13,6 +13,8 @@ themes:
   - business-markets
   - knowledge-memory
   - software-systems
+originalPublishedAt: "2026-06-11"
+youtubeUrl: "https://www.youtube.com/watch?v=2Es21QIvqL4&t=4s"
 transcript: episode-061
 featured: false
 fixture: false

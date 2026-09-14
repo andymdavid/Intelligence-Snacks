@@ -14,6 +14,8 @@ themes:
   - knowledge-memory
   - privacy-security
   - software-systems
+originalPublishedAt: "2026-09-03"
+youtubeUrl: "https://www.youtube.com/watch?v=KVwnWUrZYMY&t=1s"
 transcript: episode-070
 featured: false
 fixture: false

@@ -11,6 +11,8 @@ participants:
 themes:
   - ai-coding
   - business-markets
+originalPublishedAt: "2026-08-20"
+youtubeUrl: "https://www.youtube.com/watch?v=yMdhMryTYFc&t=8s"
 transcript: episode-068
 featured: false
 fixture: false
