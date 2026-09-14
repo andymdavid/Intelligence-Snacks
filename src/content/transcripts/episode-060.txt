@@ -1,0 +1,337 @@
+[00:01] Pete: All right, hello and welcome to the good stuff. This is the big episode 6-0-60. Damn, is it? None of us, I don't think, are turning 60 right now, so that's good.
+
+[00:14] Anthony: 40 is bad enough. It happens this month. I'm sorry. I'm still a 3. Oh, you're still a 3 though, right? For now, yeah. You're still a 3? You're ranking him on the show.
+
+[00:23] Pete: I mean, at a 10, we'll give you a 3. So am I. I'm still a 3 as well. No way. Yeah. No. I almost thought you were a five. All right, God, am I the oldest one here?
+
+[00:38] Andy: You can introduce our guest. It's not part of the introduction.
+
+[00:40] Pete: Oh, yeah, so we've got a guest. So returning to the show is Deadman Oz or AM. Yep. Yep. Is this episode number four? By popular request by... The fourth one. The two of us. This guy AM came to us and he was like... We're going to talk AI. I think we were discussing it at the recent AI roundtable. Yeah, it was a good event. Yeah, we should do another podcast. So I think we were arguing about whether AIs are more model or harness. And I was offering the correct point of view. Just to get us off to a start here. But I think it's more harness than model.
+
+[01:22] Anthony: You were suggesting it seems to be more model? No, I think at the moment, like the last few months, six months or so, Probably with all the point releases of the big model families, they certainly have been Harness. They're not model related so much, but I think that there's some probably big model improvements coming, like new training runs, new step change capabilities. Yeah. And they'll come out sometime this year, right? So yeah, the recent changes are all to do with Harness, largely. Maybe some tweaks to post-training and a bit more reinforcement learning. We'll make this on the apology episode. Just talk about how I'm right about it. Sorry, but I don't think the improvements in models are dead by any means. I think that we're going to still see huge changes. And I think there'll be some soon.
+
+[02:18] Pete: I think the thing that got me on, I think Harness is more important, is just that I saw myself do stuff with these models. like months ago that you could then people start saying oh this almost works now with this new model well it worked with the old model but you needed to think about how you actually work true so I I was quite interested I haven't tried this because it's a Claude Code like buried feature but they've just done their um the workflow the workflow piece yep I played a little bit so I feel like that's the right direction so that's that's where I ended up in wingman was to have I call them pipelines, but they're like declarative workflows. We have a selection of functions, and then you have steps and data that you can pass between them. And you can pretty much at runtime just say, oh, I'm going to create a pipeline that looks like this, and then run it, and you're up to just run. But it just constrains the agents to work in a particular way, which forces better outputs. I always thought the agent swarm idea of, oh, it is a manager, it's kind of a worker,
+
+[03:21] Pete: and they're going to talk to each other and pass stuff backwards and forwards. It sounds like it should really work, but they just got way too confused in my mind. So I'd be curious to see, what was the code implementation like? What did you get out of it?
+
+[03:36] Anthony: So what was I doing? Some breadth first, then depth research. I've been working in Bitcoin monitoring for the last few months, focusing on that. Congratulations. I got a grant from Spiral, so it's been good to have some income coming in. but, well, like I'll talk about this later, but, you know, when you get given these tools, I think you fall into, I found myself fall into the trap a few times where I just think I'm more capable than I am of achieving a lot. So I'm like trying to have lots of pots on the stove and I'm just in the kitchen at the moment and I've just spilled hot liquid everywhere. My hands are burnt. Like I've cut my hands up and stuff. Like I'm just struggling to rein it in and bring some order to the chaos.
+
+[04:22] Pete: Is that an overwhelmed sort of thing?
+
+[04:25] Anthony: Is it you're trying to do too much at the same time?
+
+[04:27] Pete: Or something that's too complicated?
+
+[04:28] Anthony: I think it's a bit of like...
+
+[04:29] Pete: Is it breadth or depth, I guess?
+
+[04:30] Anthony: It's a bit of like the token maxing kind of... Sometimes you want to be efficient with your token use, especially if you're paying like $100 a month. And so you've got multiple things on the go and you're just bouncing between them. But then at some point you stop really paying attention to... close enough attention to any of them. and then you go down like a bit too far, and you're like, "Oh shit, where am I again?" I get really disoriented, so I've kind of got myself into a bit of a funk. But back to the workflows. So I've been looking at a whole bunch of shitcoins, basically chains, to try and get some data for Bitcoin. There's some niche data associated with Bitcoin, stale blocks, that are sometimes tied up with these shitcoins. So yeah, so like this, I've been looking at like 20 odd, like the blockchains of 20 like shit coins to try and find stale blocks on Bitcoin. And it was really good to sort of set like a uniform direction for like looking for evidence and just setting it off. And it was just capable of sort of like doing that breadth of research.
+
+[05:43] Anthony: And then the workflows would like, the agents would dive into the depth, let go hard on each one of them.
+
+[05:50] Pete: So, I mean, this is something that we've been talking about on a different piece of work that we're looking at at the moment, but like, there's almost like these situations where you want to say something like, just find me like 20 things like this, or something like that. And the way people will describe it on Twitter or on the internet, or like if Rogan talks about it, he'll be like, yeah, you know, you get the AI and it just magically does it. And they're like, it doesn't. At best, it might just lie. see how it might be. But what you actually need is to go through this process of going like, alright, well, I can see how I might work this out if I was me. And I would go and find some stuff over here and then I'll apply these sorts of filters and I'll see what drops out and then maybe I'll take some of that stuff and I'll do this. There's this whole process for how you do it. And then any step in that process, there might be like a thousand strategies you can try. So like refining stuff, try this, try that, try this, try that. And you kind of want to invent them on the fly,
+
+[06:48] Pete: try them out, see what you get back, go into that stuff. Are you having to work like that? No,
+
+[06:54] Anthony: I mean, I think the power of a lot of these tools is a lot of the complexities sort of being black boxed. And I guess for people that like control, that's not ideal. But for the masses, the general populace to use these things, they want to have that level of power I suppose to be able to achieve a lot in parallel and go quite deep or far and sort of have these agents tenaciously like try and work towards something without really having to specify all the scaffolding and sort of all of the checkpoints. So the workflows that Claude or Anthropic have implemented seem quite good at sort of setting those internal checkpoints or objectives and knowing when to spin it off into a new agent or a new context window. So, we've done a lot of context window management for the last year and a half, you're always thinking about how much context I've got left, so how can I make sure the next session is imbued with the correct information to keep momentum. And I guess the tools are getting a lot better at linking that so you don't have to deal with that per se. Like it's all carried through.
+
+[08:11] Anthony: It's all linked together like without you need to worry about it.
+
+[08:16] Pete: Do you know at all like how the workflows run in Claude Code? What makes them different to the agent swarms and the sub-agents that they were using previously?
+
+[08:28] Anthony: Not exactly. I think it ties into the goal. You could set those explicit goals and then have it like sort of work towards that. I guess it's tying that into, there's a bit more explicit, you can see all of the workflows or the agents working, so you can go in and check on any of them, see what their status is. Whereas with the goal, I think it was just like, it's a bit more opaque. You can see what's going on and you can sort of steer them if you want to, but there does seem to be a lot of internal state that's managed by an orchestrator. And then that is very... The context window is kept very clean in that, I suppose, and then all of the complexities built out into the agents that are called. Yeah, look, it's early days. I think it's been like a week since it dropped, So it was kind of useful, but I've tried to use it in situations where it's not relevant. So it's like, oh, use a workflow to do this work. And it's like, actually, like, this work needs to be done sequentially. We're looking at it. It's like analyzes sort of,
+
+[09:42] Anthony: logically analyzes the steps you need to do to achieve something. And it says, like, actually, we don't need a workflow for this. You need to do this, then this, then this, then this. It's very much a dependency chain there. So there's no benefit to the workflow, which is more about like doing a few things in parallel, tying them together. Okay. So it's about that parallelism or the concurrency that.
+
+[10:03] Pete: Yeah. Okay. I think maybe I interpreted it a bit differently because I thought it was probably more about the sequential work. Because I use like sequential work like quite a lot.
+
+[10:13] Anthony: Maybe because I've got my own skill, which is like I'm sort of carrying things to completion. So spec something out and it'll carry through review, implementation review, like PR, whatever. So I have noticed it says, like, actually, don't use the workflow. You've already got a skill for this that will do that sequential work. So we're going to use this instead. So I don't know whether it's preferentially picking up on my skills capabilities or it's not capable of doing that. Yes, I'm not too sure on that, actually.
+
+[10:44] Pete: I think this is the area where I always get a little bit worried with a lot of the anthropic stuff. I can never quite tell what it's doing. It's often not doing what I think it's doing. And it's like, when I observe the results, I'm like, huh. You've kind of got somewhere, but you've kind of gone this weird way to get here that doesn't quite make sense to me at the end of it. And I think a lot of that comes down to, I feel like they run with the wrong substrate. for the control. I feel like there's a real bias in Anthropic that the agent is the thing that drives everything. So everything is being called actively by an agent as opposed to having an agent make a decision and then have code call the next sort of thing that would happen. So everything's kind of called at runtime in an agent loop. And I think when you do that, you introduce just that way more randomness than you might want into a lot of those sort of discussions. and there's a lot of like hoping agents remember to do something because I'm a big fan of having
+
+[11:49] Pete: agents do small pieces of work and then just throwing them away and then starting with a new one and like carrying through the context of the thing but like not not trying to like cloud out instructions so I think that's where I would worry about that workflow stuff but it might be better
+
+[12:06] Andy: that's like a byproduct of them trying to build this like broadly agnostic product that is meant to work for everybody to do everything. Maybe. I think it's a lock-in thing,
+
+[12:15] Pete: really. I think there's also just some philosophical world views of theirs, right? They're very much quite out and proud about we're trying to build super god or whatever. You're like, all right, well, good for you, GFY.
+
+[12:32] Andy: Takes a special sort to want to recreate gods.
+
+[12:35] Pete: Yeah, but so I don't think... I think a lot of it is that. They think that the agent is the computer these days, whereas I kind of think the computer is the computer and it can talk. Yeah. And I come at it from a different way personally. Yeah. And I've tried both. I feel like I never get the results I want out of agents. Whereas if I'm way more, like you were saying about attention, right? Half the problem you've got at the moment is I start all this stuff and then I'm like, this is all fucking meaningless. why have I done this? It's like, what am I doing? Like, why did I even start? And like, if I'm paying attention, I mean, as I say this, I've got like an agent at home, just chunking through like a massive bill that's been run in for like three hours there. But there's a lot of structure in how it's being controlled. So we'll, so that's a bit of an experiment. Yeah. But usually I find, and I'm happy to throw it away from you, but like, usually I find that like, I really do need to be involved in paying attention. otherwise, it just like drifts. And I was trying to like,
+
+[13:46] Pete: find a way to like talk about it with people. It's like, you can say like, go over there. But like to get, I don't know, it doesn't translate as well in Australia because road directions are kind of just like, you know, you go south and you turn left. You keep every five episodes. Yeah, I think it's like, okay. Do I? Yeah.
+
+[14:04] Andy: I don't think it's that frequent.
+
+[14:05] Anthony: Wow. Nah, I've heard it maybe three times.
+
+[14:08] Pete: Yeah, I think like the road sign sort of stuff. I mean, maybe you should give me a comment. I can't remember the Tony's saying. You'd say, get down there, and you start off by just going south. I guess you're roughly in the right direction, and then you zoom in on it as you get closer. There's something about the agents. When you let them drive themselves, they'll be, say, on the motorway going south, and then they go, oh, I could go left here. They're just not on the motorway now, and they just don't think to go back on it. If you were there, UK, you'd be like, Guys, why are we on this weird little B road? Yes, you're still going south, but you're not doing it the correct way. And you have to steer them back on. But the longer I let them run uninterrupted, there's just these little bits of randomness that creep in that just push them out somewhere else. And I think you have to really pay attention to keep them on track.
+
+[14:59] Anthony: I think that that's maybe one reason the current hotness seems to be reasoning, like, and really ramping up reasoning capabilities of these, like, model ecosystems. So, I mean, Mythos, I think, is probably, like, a thing that differentiates it from, like, Opus 4.8 and its predecessors. Is it that it's made up? I think it's the reasoning. They're really, like, post-trained. How do you know? You haven't seen it. No, I'm just guessing that it's all about the reason. So, like, same thing with OpenAI. So, they had, like, a scientific breakthrough somewhat with the Erdős, one of the Erdős problems. And this was, like, one of the most famous outstanding Erdős problems. So, one of these, like, problems that this mathematician, Paul Erdős... So, what's an Erdős problem, you know, for the audience? Paul Erdős was, like, a super prolific mathematician operating in, like, the 30s and 40s and the like. He was just like famously like a massive chain smoker. Like us. You know, just like maybe he was on anamphetamines as well at the time, but he was like super prolific,
+
+[16:12] Anthony: like had a whole bunch of grad students that went on to do like great work in maths. He had, he thought about a lot of disciplines in maths and came up with these like, he tried to formalise like what was still outstanding knowledge that needed to be sort of resolved. and he had a whole bunch of problems he came up with and there's um over the years women we're very sure about that look how does that work not exactly um yeah mathematicians they're they're things they're they're like um they're not like the grand challenges of maths so to speak like those are sort of already being well articulated by people prior but they're still hard problems that we would like to solve and know there's the solutions to. So anyway, there's like this website that lists all these problems and every now and again some of these get picked off by institutions and recently the LLMs have been sort of like having a go at them. OpenAI last year said that they had, this is October I think, they were like, "Oh, we've solved 10 of these problems like chat GPT, whatever it was, 5.3 or something, solved
+
+[17:29] Anthony: these problems. And then like within 24 hours, they retracted it because all it had actually done was like a sophisticated literature review to find that people had actually solved these problems somewhere in maths, but they hadn't sort of been formally recognised as solutions to those problems. So they were like, they kind of backtracked. It had done something useful it had actually like done a really good literature review yeah on the internet and on scientific papers but it actually wasn't novel in any way right so that's where things were in october but the last few weeks they have actually come out and solved one of the most famous of these outstanding problems and it has been recognized by the math community as being a legit novel solution and so what they attribute it to is that OpenAI have been building a general purpose reasoning model and they didn't use anything that was specific for math at least that's what they had claimed. So they're saying we have got this general purpose reasoning model that was able to derive this new mathematical insight,
+
+[18:32] Anthony: novel insight that humans have been trying to do for about 60, 70 years and now the AI's done it. So there's been like Fields medalists you know that's the Nobel Prize of sort of maths they've come out and back this result they said like yeah this is legit. Appeal to authority. Appeal to authority but you know that's the way science kind of works a little bit.
+
+[18:49] Pete: Well yeah I mean it doesn't it works by falsifiability and everybody will be able to replicate the answer.
+
+[18:56] Anthony: In the realm of like large Hadron colliders and the like I mean I
+
+[19:00] Pete: can't do particle. It's still how science works it's not falsifiable it's not science. Yeah.
+
+[19:06] Anthony: Okay, so it has got sort of support from the math community that this is like... That's interesting. It is a new discovery. And where have I gone with this whole arc? It's the general purpose reasoning model that OpenAI have been working on. And I think that's the same as what Mythos is, the capabilities are there. There's like better reasoning models. They spend a lot more of the compute to reason.
+
+[19:33] Andy: Is it also just building itself a whole bunch of tools and scripts as it's going? Because it feels like a language model. Sounds like a harness,
+
+[19:40] Pete: doesn't it?
+
+[19:40] Andy: Yeah, a little bit, yeah. Because you know what I mean? Is it purely reasoning or is it going, I'm reasoning and then in order for me to solve this part of this problem, I need to build this script or this tool over here. Because it feels like a math problem for a language model is like, you know, it's the wrong problem for a hammer to solve without a tool.
+
+[20:01] Anthony: So what these current generations seem to be good at is linking very different or disparate fields together. So one of the insights from what I understand, the foundation of this breakthrough is that they applied one particular branch of mathematics, some insights from that onto this combinatorial problem that would be solved. And so that link was kind of like the novelty, I suppose, like tying that thing over here to over here. And that's what people like Terence Tao who again is like...
+
+[20:37] Pete: This is kind of how stuff happens though, right? When you get this cross-functional mix of people coming together and exposing ideas that you suddenly get breakthroughs and you're not... That makes a lot of sense.
+
+[20:48] Anthony: That capability is also like... That sounds more real. Bringing links together that sort of were not foreseen and then also reasoning about like... on steroids about the unnecessary layers of logic you need to apply to like say yeah this is a sound argument right where do we get to this oh yeah so I think that what we're going to see is when you talk about like going off track and you know setting direction to south and then it sort of drives off I think reasoning will help these models stay on track and continue.
+
+[21:23] Pete: Sorry to bother you, man. You guys got a lot of wine, any chance?
+
+[21:26] Anthony: I don't mean I do. Sorry. All good. Cheers. So, I think that they're going to live. That's why we do it.
+
+[21:39] Andy: Future of kind of pot, probably.
+
+[21:41] Anthony: Sorry, mate. We'll just give you a business card. I think they're going to get better at checking along the way. Like, reasoning. Am I going in the right direction? Am I going in the right direction? So bringing themselves back, back to where they should be going.
+
+[21:55] Pete: I wonder if they, like, it's going to be hard. I wonder if this is a hard problem or, like, an impossible problem. Like, in the way that, like, I think it goes off track because it doesn't know. And a lot of it is that you can't, like, the thing that it's supposed to be is the complete thing. It's like, say, in Bitcoin, right? Like, you know, the consensus is the code. And you can't describe the consensus seemingly. And that's been a problem. Yeah, people. yeah exactly but then so for me to do all the work to adequately describe to this thing where it needs to go I've kind of done the thing and so if it doesn't have like an innate idea of where I'm going it can't reason with itself to go because it doesn't know and even I don't know and even if I try to express it I'd spend so long expressing it that I really haven't saved any time and therefore like so I almost feel like you unless it has its own desires of where it wants to go I don't know how it steers itself yeah I think it's going to I think you have to steer it
+
+[22:58] Anthony: I think you still have to steer some of the time I think it's going to be increasingly you just won't steer as much it'll get better at reasoning about is this like a reasonable direction to go I think that's where things are going off course it's not sort of like along the way saying is this like the right direction the state of goal was this and I'm now doing this like oh this seems like tangential maybe I need to course correct
+
+[23:22] Pete: right well that makes a lot I mean again like these are experiments we're playing with at the moment and saying like look here's a plan like we're gonna do just this bit and then you you die and then somebody else comes along and says did they stick in the right direction and you can get it to course correct yeah it's yeah it's it's like I guess I'm becoming way more bullish that you still need way more humans paying attention to this than I think you did. If you'd have asked me a year ago, I would have been like I don't know why you need the humans. And then I think my experience in the last year is like it just does nothing useful without it solving a problem in the world. You kind of need the person to be the translator of that problem. It's always about the problems, right?
+
+[24:08] Andy: Which is part of my question about Anthropic. Like, are they just a victim of not actually having a specific problem to solve.
+
+[24:15] Anthony: I think they've got... I disagree. I think that maybe... I'm surprised that like... Originally I thought that OpenAI were like the product company, you know, but I think OpenAI are kind of quite fragmented and their like attention is scattered. They've got like their... they had Sora, they had video, they had image, they've got the image stuff. Yeah,
+
+[24:39] Pete: they look like an academic.
+
+[24:41] Anthony: Oh no, they've just got everything. They've got everything. There's no product thinking about it. Why have I done this? They've got product thinking but they've just not focused. They've spread themselves too thin. They've exhausted so many resources. They're more like demos of the tool.
+
+[24:56] Pete: It's like when you first got a PlayStation back in the day and you'd get the demo disc and it was like five minutes of lots of different things that you could do on this but no good game. That's kind of what they've done. they produce the demo disk.
+
+[25:09] Anthony: Whereas Anthropic Focus, they're like, all right, well, we're not doing image, we're not doing video, we're just doing like chat and then like the coding stuff and then they're pushing hard into the enterprise world as well. I think they've been very focused in their product execution and I mean, I see them, they're the ones that generally have the features that are copied by others, right? So they seem to be better at product thinking. And I think the whole, like, I don't know if they're a victim of their own success or if they're not thinking about this critically. I think they're trying to lock into it.
+
+[25:45] Pete: I feel like they're a bit like Google in that sense. Like, Google had a hit, which was, like, maps and Gmail and search, right? And then there's, like, a list of, like, Google failed projects that are out there in the world that were just meaningless and got abandoned straight away. I feel Anthropic are a little bit like this, where they've got Claude Code, and that was a brilliant insight and really worked. And then they just chuck a lot of shit at the wall, and it comes out with tons of hype, and then it all disappears. There seems to be very little that persists. And I don't use... I have access to, obviously, all of them, and I can move between them quite seamlessly. I never use Claude Code. I always have a worse experience on Claude Code than I do on the code.
+
+[26:29] Anthony: But I think that's like, that's the right, that's kind of like the right way to build products, to build features and just to throw them out there and see what sticks. So Google do this on like, Google's floor is that they keep products out there in the market for years. And then people, then they get sort of a niche use and then they're like, oh, we're going to kill it now. And then you get like all these like hardcore people, like, you know, they really love this product. and it gets killed and then pisses people off. Whereas Anthropic things like early, quickly. And I think that that's the way you build products. You try to feature, see what sticks and then... It's more that they've got a good product approach. Yeah, their mentality is like very much like product first. They ship like crazy and they experiment.
+
+[27:14] Pete: And I think that's okay. I thought you were almost saying that like, everything they do is a hit. No, no, I'm not far from that. I feel like almost nothing they do is a hit. It always comes out as though it's already a hit. And then you experience it and you go, oh, this is horrible. I don't know if any of the Twitter people used it. They just talked about it based on the press release. But like, Claude Code was a legit hit. That was a difference.
+
+[27:40] Andy: That is also just like influencer marketing, right? People get paid to push this stuff.
+
+[27:45] Pete: Like, say, Claude Design. The Twitter stuff. Oh, yeah.
+
+[27:48] Andy: That is just a marketing phenomenon that exists. That's a thing. It's annoying because it's hard to like...
+
+[27:54] Pete: It's frustrating.
+
+[27:55] Andy: Yeah, it's easier to see on Instagram, right? It's like, this person has no connection to this product, but they're shilling it. But then someone on Twitter is a tech person, and they're shilling this thing, and so the line is blurred. You might go, this person has good takes usually.
+
+[28:09] Anthony: I mean, they still should be declaring it as an ad. I think so. If it is an ad, if they're paid, it's actually some legal one, like the US and Australia. So anyway. Give me their names. Yep. It's interesting as well with Anthropic, right?
+
+[28:23] Andy: because they seem to be the loudest on the doomer takes as well. I think to some degree this is self-serving from two different perspectives. One is it helps them go after an enterprise crowd, because the enterprise crowd is where they're like, "Okay, we can go and put forward deployed engineers in the business and get them all completely locked in." And once these guys are locked in, they've got the capital and capacity to roll with us as we increase prices. But on the other side of the coin, they can lift the ladder up from anyone else that might want to compete with them. And so it kind of feels like, yeah, you've got a great product, but now let's go and do what big companies do and just go and use that market power and go and lobby government.
+
+[29:08] Anthony: I mean, can you bemoan them, right? Because that's what everyone does. Of course. It's just the way business is done. I mean, I can't bemoan.
+
+[29:15] Andy: To some degree. That's why I'm not successful. To some degree I think it's more about the way you go and do it. You know, like when you're just spruiking fear. Like they would probably, a lot of people would probably be like, do you know what, they would come to the same conclusion we do and go, actually, this is going to be a net positive for more humans. We need more humans around these tools. But then they're going around saying, well, this is going to wipe everyone's job and that is beneficial for them purely from a regulatory perspective, not from a product perspective. You see what I mean? Like those things are not in alignment.
+
+[29:47] Pete: It's like they're not even that nice about it. It's like, it's going to take your job, but also, it's going to kick you in the fucking nuts. And you're like, come on. Do we need that bit? Can it not just steal my job?
+
+[29:57] Andy: I feel like maybe, like, Sam and Darren have tried to walk us back a lot.
+
+[30:01] Anthony: Or they really want people to pay attention to, like, the... Because there's, you know, this is hugely impactful. So they just, like, wake up, guys. Maybe they're doing anything to make people pay attention, but they don't actually... We're giving them way more credit than that. But it's marketing,
+
+[30:17] Andy: right? I mean like what how do you get people in enterprise who are traditionally like very slow to move on anything like yeah try and move fast on something that's like you make it existential and they're like shit all right bring your forward deployed engineers and guys we'll open up the shop for you kind of feels like that's one reason and then the other one is like how do you cut through government turn it into an existential crisis and government's like oh shit we should regulate help us write the regs and then they're going to be like oh yeah well let's carve out this exemption over here for Anthropic and OpenAI. I mean, that's it.
+
+[30:49] Pete: How about that one over there? We've seen it played out enough times now, and we've seen that it tends to lead to shitter results for real people. Like, it's not a game I particularly want to play and be too involved in or give them too much credit for. I mean, this is why I find it hard to get excited about. What you're saying about the way they've solved that master problem, it's like, yeah, I'd like to see the model before I give them too much credit, because they lie consistently. Like, we constantly see lies about how great stuff is, and then you get your hands on it. It's not. And so, like, you can't lie constantly in there. Just get credit time after time.
+
+[31:27] Anthony: Yeah. I think they got, well, because they got called, they retracted back in October, like, OpenAI so quickly. Within 24 hours, they, like, backtracked their claim because they got called out.
+
+[31:39] Pete: It's weird. I feel like OpenAI is the nicer one these days. Like, it felt like...
+
+[31:44] Anthony: I do feel like they were the baddie and people were kind of the young upstart gooddie I'm of the same opinion
+
+[31:53] Andy: They're both not just bad
+
+[31:54] Anthony: I was like,
+
+[31:55] Pete: yeah, no, I think they probably are both baddies Good point
+
+[31:58] Anthony: I was like, I'm not going to touch that code base with OpenAI Because I don't want like
+
+[32:02] Pete: It's like Vader versus Darth Maul Although, you know, Vader was, you know, he came good in the end But he did kill a lot of children, so It's one hell of an art
+
+[32:11] Andy: To turn back to the good side
+
+[32:14] Anthony: Look, there's been heaps of great work happening in the local LLM space. Like, that's gone gangbusters.
+
+[32:24] Pete: Oh, thank God the Chinese are all about free markets. I know.
+
+[32:28] Anthony: Who would have thought? Who would have thought?
+
+[32:31] Pete: Yeah, not me, but here we are.
+
+[32:35] Anthony: The Chinese with all of their Kimi and DeepSeek and all that, GLM. And then Americans, obviously, with... Well, we've got Gemma 4 coming out of Google, which is probably pretty shit and woke, but... We've got the Europeans, Mistral, who aren't chasing the frontier anymore. They're just sort of taking a step back and making more bespoke, as I understand, more bespoke products for particular niches. So they're going after European organisations and enterprises. Not the frontier capabilities, but stuff that really integrates with organisations, like Airbus or whatever. they're like getting their tooling inside those organizations. So more of a like, hey, we've got the latest hotness, here you go. Handball it. Like more of an integration piece. So understanding like what the business needs and building the product suite in that way. But yeah, like the Chinese, like, I think we should all be grateful for the local models that are coming out of China.
+
+[33:38] Pete: So this was a bit of a discussion. session at the round table you know third first day of the month 6pm in Perth we might have to move it because they fiddled me on the room which was a bit frustrating
+
+[33:56] Andy: a little unreliable
+
+[33:59] Pete: anyway one of the things that came up was like our Chinese models just complete trash and I mean they don't seem to be I don't necessarily think they're as good as the best one but Even being like six months behind, with my general view that I don't rely too much on the model being super intelligent, but more around like building workflows that it can work with. I think you can get most of the stuff that I want to do, I can do with them.
+
+[34:29] Andy: I'm kind of curious about how that ties into the business models of your Anthropics and OpenAI. because they need to keep pushing for the frontier because I don't know what the half-life on a new model would be in terms of at what point does it start rapidly commoditizing. Whereas if you take any other capital-intensive business, that amount of R&D usually translates into value over a much longer period of time. Maybe it's just a year, right? And then maybe it's less, I don't even know. And then you've got to keep pushing for the new frontier model and the new use case. and I'm like how sustainable is that maybe it's like super sustainable I just keep pushing this forever I don't actually know the answer on that it feels like that is quite challenging because at least for most capital intensive businesses you get that longer runway on something you've produced like a fab like fabs are still pretty valuable like five years later but model seems to be like six months
+
+[35:29] Pete: yeah I mean there's I don't know do you know Dax Raad He's the guy behind OpenCode. I know of OpenCode, but I don't know. Okay, so he's the guy that built OpenCode. He also is one of the partners in Terminal.shop, where you can buy coffee over SSH. But not in Australia, unfortunately. It's quite funny. You SSH to the website, and it just gives you a whole full TUI for ordering your coffee and setting up repeat orders and stuff.
+
+[35:56] Andy: It's like, this is sweet.
+
+[35:57] Pete: Yeah, it's like quite funny. But anyway, aside. Yeah, he was recently talking a lot about how inference is a great business model. In the sense that you get these GPUs, you can run these models on them. And they are, if you don't have to do any of the upfront training, the margins on the inference is insane and they can make tons of money from it. And so they have their OpenCode Zen stuff where they'll source a bunch of local models and they'll just stick a big thing in it. So he's got some insight into it. But then the flip side of that was that's okay if you don't do any of the capital investment inside the model. but to continually so the thing that eats up all the models and why they're you know seen as being like loss leaders when you're doing the inference on these things and you're only paying $200 a month it's not necessarily that you're it's not the inference necessarily that you're losing the money on it's just the overall cost of rolling in like the capital of wanting to create that money so I guess a little bit of me that looks at it as well once the models created
+
+[36:58] Pete: running it is quite cheap so even if we just stopped now you could just drive down prices and run more of them and they already operate faster than humans do it would be fine
+
+[37:12] Andy: this is the Germans thing though right?
+
+[37:14] Pete: I don't think we will, I think we'll continually try to
+
+[37:16] Andy: it's like what, add to the math problem as well, it's like what does the new frontier model enable you to do that we just could envisage before and you've got to have an answer to that in order for it to be valuable I think because if you're just doing like screening of resumes faster with a better Frontier model which you could have done with like four models previously then there's no point because now you're just burning a lot of capital to do the same job
+
+[37:42] Pete: I probably don't need Mithos to continually say what's the git command for
+
+[37:48] Andy: but I will keep asking for it I'm never going to write that
+
+[37:54] Anthony: Andrej Karpathy had that auto research thing that got a lot of airtime a few months ago and that was about training a model and having training like an LLM or sort of some machine learning model and having like an agent or a model sort of manage that process so it's a closed system the human sort of sets specifies what they want to achieve and then the model then trains the model and does like all of the things that normally humans would set up all the like hyperparameter of sweeps like all the augmentations on data like blah blah blah blah so all of that was done by a model and the idea is that you can get a self-improving system by getting a model to improve it kind of itself it wasn't doing it in the in the order of research it was some one capability like training another capability and getting that in the closed system but Andre has been hired by um anthropic and I believe he's going to be working on the pre-training team so that's like the internet scale data um getting that into like a usable form for putting into a model like
+
+[39:05] Anthony: training the first stage of these like frontier models but doing that in a way that building a system to get that pre-training automated so it's just an it's self-improving a model that trains itself I guess to feed into the next stage and the idea is that eventually we'll have escape velocity these models are capable of self-improve themselves and they just keep on getting better and better and better autonomously like we don't have to intervene in any way that's one of the goals of these labs like that's that's what that's that will unlock this or the the country of geniuses in a data center or whatever the quote is right like That's what they're angling for.
+
+[39:47] Pete: Do you ever wonder if, like, you're going to end up with too much intelligence that it just doesn't make any sense and it can't do anything useful? Because there's an assumption that we want a task to be done. We're moving this step in this process. We may as well get the most intelligent person to do it. But I wonder if, like, with humans, you sometimes find that somebody really intelligent is not that useful in a lot of situations.
+
+[40:11] Anthony: Yeah, then it has street smarts or something.
+
+[40:13] Pete: Yeah, I don't know. I wonder if that's like a factor of intelligence or something else. I wonder if we'll find out that like all of a sudden we go to Mythos 10 and it's just, it can't, it just can't write a tweet. It just bemoans itself and sits in a library as well.
+
+[40:35] Anthony: Yeah. I mean, robotics are coming right as well. So there's going to be like, at the moment it's all digital like it's all a digital self-improvement but eventually there'll be the manufacturing capacity that's hooked into this as well so then it's like then you get the nanobots like self-replicating at some point
+
+[40:55] Andy: yeah
+
+[40:56] Anthony: what a wonderful apocalypse it'll be
+
+[40:58] Andy: the robotic stuff to me seems less obvious purely because you have like so much government interference like the classic example would be like look at any of our ports in Australia right why are they not like China's we've got the robotics now and they just won't. Because we have union power, right? And it doesn't really matter which side of government is in power. That can't change. It just doesn't.
+
+[41:21] Pete: It feels like we want the port to just work and instead we're going to have robot dogs doing surveillance. Exactly.
+
+[41:28] Andy: It'll be exactly the worst part.
+
+[41:31] Pete: Isn't it weird how the regulations seem to work in that way?
+
+[41:34] Andy: Because the one big group that wants this the most seems to be all the defense contractors in the military and yeah they're prepared to pay the money for it it's pretty dystopian because that's the problem you could have like really efficient
+
+[41:48] Anthony: like port infrastructure that just works sure I mean you have like maybe remit of government is not just um to make an efficient society like that's a mob to be a mob but yeah like you know there's like huge job losses I don't know how many people work in ports there's probably heaps right and so None of them. They have a union, so none of them work. Yeah, unions and... That's one matter. Maybe two of them at most. But there's a protectionist aspect there. Oh yeah, a lot of them are paid. Sure they want it, but they're worried about what the repercussions are. I remember in South Australia, when Mitsubishi used to make cars there and the government was just like pumping in, and, you know, Holden was there pumping in so much money just to like keep the manufacturing there and it just became like so expensive to do it. Like, all right, well, let's just, we've got to let this go. But it was a big political football and, you know, actually the numbers of people that lost their jobs weren't large, but there was massive pressure to like keep a few thousand people employed.
+
+[43:01] Anthony: Like, it was crazy, right? So, I mean, you guys talk about in previous pods the mining industry, like, can you imagine what would happen if even a small number of job losses in the mining industry in Perth? I think the whole city goes to shit. The ripple effect would be crazy, so there's like a... And I think it's coming. It's happening anyway, right, to some degree.
+
+[43:23] Andy: They are automating. I think it gets slowed down.
+
+[43:26] Anthony: Yeah, it's like slowed down, right? Like,
+
+[43:29] Pete: artificially slowed down. But it just means you'll then lose out because, you know, the mines in Africa come on. and we just do all the stuff there instead. You'll lose the jobs naturally through competition if not through automating yourself. At least you kept it here and you own the production and you own the capital assets. Alas.
+
+[43:52] Andy: I mean, my view on this is that if you keep driving up the cost of things then the price of the goods you pay will go up conventionally. So you see this yesterday we had an increase in the minimum wage. That's a whole different debate but you should expect a commensurate increase in the goods and services that you're going to be paying for.
+
+[44:08] Anthony: Yeah, of course.
+
+[44:09] Andy: That is just going to happen. So similarly, it's like, yeah, okay, government's remit is not necessarily to make for an efficient society, but it might be to keep costs under control.
+
+[44:18] Pete: I mean, it's to criminalize the working for $15 or whatever. It's like, no, that's illegal now. You can't have that job. So we have to automate it. So they'll moan about automation, but then at the same time, you're literally not allowed to work.
+
+[44:34] Andy: I think there are pockets as well. I mean, the answer is probably not in a cafe or a bar or restaurant, which are like, those are human endeavors to some degree. I'm sure there are aspects of those jobs that could be improved for sure. And maybe people who work those jobs don't particularly like them, so maybe that's not a good example. I use a port because it is a piece of essential infrastructure that's meant to serve the entire country, or at least the state that it operates in. And so that feels like a useful proxy for something like automation. because everyone benefits except maybe the people who get paid a shitload of money to work in those ports. Yeah. I'd argue... You said work. Let's go on. Let's not use load of tests. Working like, you know, inverted, like quotation marks that no one can see.
+
+[45:17] Anthony: You can't sit here and criticise them. You don't know. Come on.
+
+[45:20] Andy: I've got no idea.
+
+[45:21] Anthony: That's true.
+
+[45:21] Andy: I've got no idea. I really don't. But when you look... Council workers are in it. When you look at port infrastructure in China, it's like, oh, it's quite impressive that. Yeah. The way that system works. So that should... That should... should get an efficiency dividend from something like that right and I think that's where the opportunity is for automation like I'm still not really all that bullish on like robots in your house like I I kind of see this from like a few different companies that like figure has like a robot like an Elon's guy who's like Tesla bot as well I can't think of too many things that I'd want like a humanoid robot running around in my house doing okay I don't need it to do my dishes that feels like it's a lot of capital invested in an area you know you
+
+[46:08] Anthony: already have like vacuum cleaners that will go around because even so I've got a dishwasher still have to do dishes like almost every day because there's all and there's all this shit that doesn't fit in the dishwasher. Or putting clothes out, like, you know, these things just eat into your, like...
+
+[46:36] Andy: Don't you think this is, like, the easy thing to do if you work?
+
+[46:40] Anthony: Oh, wow. It takes, like, 40 minutes, you know, you've got three loads of washing, four loads of washing. It's like we do the consumer robot. Thank God there's a leaf blower. Yeah.
+
+[46:50] Pete: That's going to be used to blow sand.
+
+[46:53] Anthony: I think you have a lot of that. He's called a fan. He's got a leaf blower. Sport sticks, yeah.
+
+[47:03] Andy: I was going to ask, do you think the consumer robot is the easier thing to do than to go and automate port because you just can't fight government on this?
+
+[47:12] Anthony: Oh, in terms of regulatory? Probably.
+
+[47:16] Andy: That's my point, right? The efficiency dividend, that feels like a lot of capex to go and solve problems that are not...
+
+[47:25] Anthony: Product-like?
+
+[47:27] Andy: I don't know how much you really gain from that to have a humanoid robot in the house. I couldn't tell you enough.
+
+[47:32] Pete: I feel like it's my Luddite line that we're crossing there. I do no one.
+
+[47:38] Andy: Something like this, physical,
+
+[47:39] Pete: that's controlled.
+
+[47:40] Andy: It's not even that. It's also maybe just a form factor thing. It's like, do I need one... This again comes back to whether a product is too agnostic or whether it should just solve a particular problem. It's like, I have a dishwasher. Maybe there's an element of like me not wanting to put pots in the dishwasher that you know I could circumvent that and that might be handy but I'm already not really doing all of the vacuum well I do the vacuuming because I don't have the little like robotic vacuum cleaner but I've looked at some and they look quite cool and I'd quite like to get one and I'm like okay like what else what's the next thing like at what point am I just going to be sat on my couch just watching the robots
+
+[48:19] Anthony: what are you going to do well then yeah like I mean it's more about like what could you do with that extra time you've got That's the way I see it.
+
+[48:25] Andy: I just feel like that's such a huge investment in CapEx for a very limited efficiency benefit that doesn't really pay itself out.
+
+[48:36] Anthony: You might get an extra hour a day or something. I don't know. Depends on your circumstances. An hour of housework you might not be doing. You could watch TV for another hour of TV. Great. Good on you. I don't think it's worth it. If you're like, you've got fucking 40 agents running and you're just like, I mean, then it's worth it, right? an extra hour now you're talking about it I might have some
+
+[48:55] Pete: weekends or something where like the wife and kids would go away and I'll just be at home alone and like the first thing I do is I spend like an hour just put all the crap away that's not mine and then for the rest of the weekend like the whole the whole house is just amazing like it just feels like everything's dialed in it's nice and clean like everything just gets dealt with straight away and there is this like so I think to your point like just a family in a room is just fucking messy and there's so much stuff to keep on top of. There's chaos there. But like I don't know like it's as you say like I still think that the payback on that is at the most extreme and you probably still only talking a little bit of time and there is something about like being involved in the cleanup of the house and stuff that I don't know I just would not want to delegate that off to a a robot for the sake of an extra half air.
+
+[49:47] Anthony: Although I've been telling my kids that taxes, fuck that. They won't be doing chores when they're older. So I've been selling them a dream.
+
+[49:54] Pete: Hopefully it pans out. So are you going with the Chinese open source like death machine in the house? Or are you going with the American remote controlled which death machine do you want in the house? That's the real question. Is it T-2000 or 3000? Which one are you going with?
+
+[50:17] Anthony: I'm not sure about that You haven't watched enough 80s movies I understand the dilemma I like the idea of having something to do my bidding in my house What is it wanted? A slave? That's not a human I'm not delegating tasks to someone else to waste their time I want to free up their time I want to free everyone else's time You can just get a Fleshlight You don't need the rest of the robot
+
+[50:43] Pete: Come on It's pretty clear where this is going and what you're going to do with this extra hour a day that you've saved.
+
+[50:52] Andy: Next he's going to say, I don't want to hold the Fleshlight. I need a robot.
+
+[50:58] Pete: I need some sort of harness to put it in. Oh dear.
+
+[51:05] Andy: That's the kind of comedy that people come to the good stuff for, clearly. Well,
+
+[51:08] Pete: there you go. That's like hour... Minute 51. That's where the good stuff is. Mark it. alright well we know what to call it sorry how do we even get into this you want a robot in the house we're talking about robotics I am still on the train it makes more sense to me to have specific robots that actually do something and I kind of get the argument that I know the world is human shaped so if you have a human robot then it fits and it can do anything. But I feel like in almost any product design and stuff, if you can do anything, it's kind of pointless and hard to justify. Whereas if you can... If we get so good at this sort of stuff, it's not obvious to me that the cost of manufacturing doesn't just drop and you have a lot more local manufacturing, at which point, well, why not just manufacture the thing that you need for the thing? Why not just have a swarm of agents that are just like little... It's like having a lot of hands for your local agent. And at least if you control that intelligence and there's all these little tools that can come and go, maybe that's better.
+
+[52:19] Anthony: Well, ultimately, I think that an open robot, like something that you can tinker with and control, would be desirable. Obviously highly desirable. But, you know, like, I mean, there is stuff like comma.ai for self-driving, and some people use that so they can rig up their cars to use a more open ecosystem for self-driving and retrofit to their cars. Or you can get a BYD or a Tesla or whatever, and then that's that closed ecosystem. You lose that control.
+
+[52:55] Pete: Yeah, I mean, I certainly don't think that the open ecosystem version of this is going to be more popular than the closed, unfortunately. What a rubbish place to be. Let's go more positive. What's the positive outcome of this apocalypse?
+
+[53:13] Anthony: Positive. You don't have to do the dishes. I think pursuit of intelligence in these models, to go back to kind of where we started, is... It's like you're doing fundamental science in some way. You don't know what could come of a new discovery, right? So, I don't know, thinking back to before the nuclear bomb, like, discovering that we could somehow, like, I don't know what the analogy is, but there's some sort of fundamental science that was seen to not have any, like, application, practical application, and then, hey, we got the bomb, like, you know, 20 years later or something, right? So to say that pursuit of intelligence in these models, super intelligence or whatever, is like, is goal. You're not doing great things for the, like, intelligence is a weapon type argument. No, it's probably a bad analogy. But I think that you can't foresee what can come of it. And I'm sure there'll be lots of bad things that come of this technology. but that's true of anything, right? We got nuclear power, we got nuclear weapons.
+
+[54:39] Pete: I mean, that's the weird thing. We kind of didn't get nuclear power. We started it and then went, nah. I think we will get it. It's going to happen now. It has to. It's kind of quite frustrating to get rolled out a long time ago. But alas.
+
+[54:55] Anthony: So, this is just the beginning of us being like a star-faring sort of civilization, right?
+
+[55:05] Pete: Yeah, I mean, I've always had that view that things will be better in the future. More intelligence, I think, is good. I could buy that.
+
+[55:16] Anthony: I think you need general purpose robots in space as well. So we can get them in the household first. I don't mind them so much.
+
+[55:24] Pete: I don't mind launching robots into space in a way that it might bother me in my house. It's weird, that, isn't it? Space robot seems fine By all means Go to space
+
+[55:37] Andy: Seems like the natural place Yeah,
+
+[55:39] Pete: we've been doing that for years But yeah, it's the house robot I mean, obviously I don't have All the same desires as yourself Yeah, I think it's going to be better There we go That's a good positive to why not Yeah. All right. Shall I say that's the good stuff? Yeah.
