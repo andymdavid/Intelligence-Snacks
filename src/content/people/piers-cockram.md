@@ -1,7 +1,7 @@
 ---
 name: "Piers Cockram"
 role: "Episode 69 guest"
-shortBio: "Piers Cockram is the founder and director of mineracks, an Australian company based in Brisbane that focuses on Bitcoin infrastructure, self-custody tools, and sovereign technology like self-hosted cloud storage and private AI"
+shortBio: "Piers Cockram is the founder and director of mineracks, focused on Bitcoin infrastructure, self-custody tools, and sovereign technology like self-hosted cloud storage and private AI"
 image: "/images/piers-cockram-voxel.webp"
 externalUrl: "https://www.mineracks.com/"
 socialLinks:
