@@ -1,0 +1,425 @@
+[00:00:00] Pete: Did you see the reel I pulled out? I just started recording. No, not yet. Oh, there you go. Alright, look at that for a cold open. How's that? Ninja launch. Alright, this is... Welcome, welcome. Sorry, I'm miles away now. That's confusing me. Welcome to episode 72 of Intelligence Snacks. So, here we are at the beach. Today, we're going to talk about FIPS, the free internetworking peering service, which makes the internet nice again.
+
+[00:00:29] Andy: I've already learned something.
+
+[00:00:30] Pete: Yep. There you go. Previously, I believe it just stood for fuck IPs. Oh, really? I like that. That's not as normally friendly in the long term. Yeah, so we'll talk about that, and then I think we'll probably get on to has AI killed us yet? So, yeah, stay tuned if you're wondering if we're all dead. Spoilers.
+
+[00:00:51] Andy: We're broadcasting from the afterlife. Who knows?
+
+[00:00:55] Pete: Who knows? I mean, look, there's these two little voxel guys on the screen. Who knows if that's us or not. That's true. Are you on the stream at all? Yeah, I was just jumping on that. Just to check whether that's working, but it should be available. All right. So this was a request from John on Nostr. I don't know if I know John. Shout out, John. Yeah, John, new friend of the show. There we go. He just said, like, oh, is there a podcast on FIPS that I can listen to to understand this? And I said, I guess we'll just do one. Let's create one. So this is the FIPS episode. I've been going a bit FIPS mad in the last week,
+
+[00:01:31] Pete: Which was, I think it was, what was it, two weeks ago we last did the van. Yeah. So that would have been it, because I think before the podcast, I usually get, you know, before we record, it's like, all right, do I start a big piece of work or something that's a bit of a demo piece of work?
+
+[00:01:44] Andy: Yeah.
+
+[00:01:44] Pete: And usually it's going to be a demo because I can't pay attention to it. And I did a little demo of FIPS. And since then, I've just been going mad and doing all sorts of stuff and getting a little bit obsessed with it. And then I thought maybe we'd explain what it is and then why I think it's useful moving forward.
+
+[00:02:03] Andy: Well, this is good because I'm a complete rookie on this. I know absolutely nothing about it. So can you give me the ELI5 on this for my benefit?
+
+[00:02:11] Pete: Yeah. So, I mean, FIPS is a piece of networking tech, effectively. The thing that I think makes it more approachable for people is if you think about currently on the internet, the promise of the internet was that we were just going to connect all of the computers together
+
+[00:02:29] Andy: Right and then what's actually happened is all of our computers have become like
+
+[00:02:34] Pete: Viewers onto these servers there's a bunch of servers that are kind of the computers that are really connected together and then you can connect to one of those and view stuff but that's the thing that's actually connected and does all the cool stuff so like if you're going to do anything in the cloud you kind of have to put it on a server first and then you can go and look at it whereas one thing that FIPS does is it just allows you to connect your computer and your phone and your other computer and you know your wife's computer or whatever just in one network just quite seamlessly
+
+[00:03:04] Pete: Private network yeah which you can do there's there's technology that you can go out and use to to build these networks yourself these little private mesh networks but it means that you there's now this barrier to entry to say okay you need to know that you need to go out and build a private mesh network. You know the assumption of most software that's built is not that everybody has established their own private network ahead of time and therefore will build software to assume that. So we still almost everything that's built assumes this notion of really client servers. So your
+
+[00:03:37] Pete: Your machine becomes a client, everything happens interestingly on a server on the internet and to set up those servers there's just a bunch of domain names right there's you know you got to go buy stuff you've got to configure things you got to configure all these little records with these like you know one dot three dot four dot five and you're like what's that I need to connect them
+
+[00:03:59] Andy: Presumably somehow every it needs to fill out tunnels and shit like that yeah and
+
+[00:04:03] Pete: You need to like get permissions by the domain name yeah so again like if you if you just had like a little app on your computer and you wanted me to look at it. You can't. You have to just jump through a set of hoops. Now, obviously a lot of the problems there have been solved by people offering that as a service, but then what that means is, okay, now I have to look at the thing on your computer. It's no longer on your computer. You then have to sign up for a service. You're giving over-credit cards. You're setting stuff up. You're copying API keys around. You're learning about deploying stuff live onto the internet.
+
+[00:04:33] Pete: And it becomes this whole rigmarole. It just really wasn't what the internet was when it first started. It used to be that all the computers were connected and you can just talk to each other. There's different protocols for doing that. So I think the core promise of FIPS is that it brings your computer from being a viewer of the internet into a part of the internet. So anything that's on your computer can now be made accessible securely by any of your other computers. And we can connect them as we want to. And there'll be certain reasons that that becomes useful going on.
+
+[00:05:08] Andy: So does that make sense as an opener or do we just clarify it a little bit more? So basically, anything that is on one machine can be accessible via that private network, that mesh network, rather than something needing to be hosted in the cloud and then being surfaced via an address somewhere like a URL and then you needing to discover it and access it. It's basically just accessible via that private mesh network.
+
+[00:05:33] Pete: Yeah, currently the only things that are accessible on the internet are things that you could call it addressable by institution. But there's some institution that has blessed that this computer here, this server, this one can be reached by the internet. Your home computer, we don't know anything about that. Unless you go through just a week of learning and steps and additional config, that's not on the internet in the same way. You can't get to it. Which is sometimes annoying because the computer that's on your desktop is the one that has access to all of the files that you care about, for instance.
+
+[00:06:10] Pete: So what you find is you end up having to push everything that you care about into this broader internet where all the servers are.
+
+[00:06:21] Andy: So discoverability then presumably is sorted by your private keys? like in Australia, how do you know who gets access to what on that private
+
+[00:06:33] Pete: Mesh network? It's not necessarily your private key. Maybe we'll get onto that in a minute. Yeah, I'm jumping there. Well, I'm just worried that I'm going to give you a really technical answer. I'm trying not to. We'll definitely end up veering too technical.
+
+[00:06:49] Andy: But you know what I mean? The discoverability piece is like, okay, if this is now on a server somewhere, has a URL, I can access it via that URL. Yeah. Presumably I have some kind of account permission. Yeah. That allows me to do that.
+
+[00:07:00] Pete: The interesting way to think about it is, or the simple way is just to say, everything gets an address. So your computer or an application on your computer can have an address. That address will look like a Nostr MPUB. It'll just be like a big long string of random characters,.fips. And that means it's a FIPS URL. So instead of it being a.com, it's a.fips and it gets routed a different way. The actual way the routing works is kind of the magic. So in regular internet, this is all done via a bunch of trusted servers, like your domain name service, so DNS servers. They will tell you, okay, this set of servers
+
+[00:07:34] Pete: Can be found over here on the internet, this set can be found over there, and that's where you have to do all this upfront config management stuff ahead of time. Whereas in FIPS, it's just like, here's an NPUB, and this is the address of this machine, this app, whatever it is that we need. And then it can broadcast via Nostr relays and get kind of bootstraps, any of these peers can tell you like, okay, these are all the other computers that I'm connected to close by, and this is how you can find me. And then those peers can share information with their peers. And eventually you have this like self-organizing mesh
+
+[00:08:11] Pete: Effectively that allows you to go, okay, well, I'm over here. I can see there's a computer over here and that this is my most direct path to it. And then that's how I'm gonna communicate with this. The actual movement of all the traffic uses IPv6, but actually uses any of the transport layers underneath it. So you can also go via, with the same system, you could go via Bluetooth, you could go via a direct cable, you could do it via microwave signals, like however you want. The transport is kind of agnostic. And then we just route packets with IPv6 directly to that machine. Which means I can just talk directly to this thing.
+
+[00:08:43] Pete: And the nice bit is you haven't really had to set anything up. So that machine, so maybe we get into some examples of why I think it was used.
+
+[00:08:52] Andy: So those machines can be anywhere?
+
+[00:08:54] Pete: Yeah. Yeah, okay. They can be on your home network, you could be like a mobile.
+
+[00:08:58] Andy: But even geographically, like quite spread. Yep. Okay, interesting.
+
+[00:09:03] Pete: Yep.
+
+[00:09:04] Andy: Yeah, 'cause you're back to this,
+
+[00:09:06] Pete: I remember like earlier in my career, somebody saying to me, isn't it weird, this is before Wi-Fi was really a thing, said, isn't it odd that like, there's a cable plugged into your computer and in some way, if you could pull that cable hard enough, Like every other computer in the world would move because they're all just like connected with this thing. And I was like, oh, that's kind of a weird way to think about it. But there's some truth to that, obviously, that goes into data centers and all sorts of stuff. But I was like, oh, that's kind of nuts. Yeah. But it kind of gets you back to that. Like all the computers are connected.
+
+[00:09:37] Pete: Like this is why you can, you know, if you can both see, if my computer can see a website and your computer can see a website, then we're kind of connected. It's just we're connected through that website in a way. But we kind of go to the same place. So you go, well, why can't I just talk to your computer? It's just because it's not addressable in any sort of meaningful way. That was kind of a, I mean, the way I understand this is that was a limitation of, like, the first, like, the IP address. So this little number that would be, like, 100.10.5.256. Like, or 21.256. Come on, people. Rookie.
+
+[00:10:12] Pete: That was, like, that number, there's only so many of those numbers, and we basically blew past it. Having originally, we were like, oh, this is enough namespace for all the computers in the world. And then like 10 years later, we go, okay, well, that doesn't work anymore. And then we invented, that was IPv4. And the IPv6 was the newer version of that, which does have like a ginormous namespace for every device in the world. But just nobody really adopted it because this was already the standard. And then therefore, the internet just flowed through this DNS setup that we had.
+
+[00:10:46] Pete: So, yeah, so FIPS just gives us an addressable namespace for all this stuff. And the nice thing is it just means that any of these things can start to communicate. They can find reps between themselves. And that sounds like nice from a very nerdy point of view of like, okay, well, that's kind of nice. My computer can talk to a different computer of mine. Like, I like that. That's cool. But, like, what could I do with that? And I think where it becomes interesting is when you kind of think through some of the use cases that would have just been super complex to deliver before. But now you can kind of do on somebody's behalf.
+
+[00:11:21] Pete: So a lot of like what you might get into here would be things that like, you know, I could do, but, you know, maybe you couldn't do. But now I can do it once, build the software for it. Now you just get that for free and you never see any of the complexity. or my mom can now have two computers that talk to each other. She was never going to set up. I don't know. She's not going to learn about SSH, for instance, and tunneling. You probably would. But it's not something my mom's going to do or Bethann's going to do or anything like that. The first example I said to Bethann when I was talking about this,
+
+[00:11:59] Pete: You think about something like Google Drive. It's nice that you can access your files from anywhere, but it's annoying because A, you have to have set up the Google Drive first, And then you have to upload all your files onto that remote place. And then they tell you that you've used too much storage. And then they start trying to charge you all of this money. Store you for the thing. Whereas really what you actually want is you already had the file locally anyway. So you'd already paid for storage because, you know, like you've got a MacBook there, right? That'll have like a terabyte of storage.
+
+[00:12:30] Pete: And you just leave everything on it because you never seem to run out of the storage. I presume. Right up until I will. Until you do. And then you just delete everything. Yeah, okay, that makes sense. But you've got that. And that Mac is way, way more powerful than almost any of the servers you use, or at least your slice of those servers on the internet. But it's basically a glorified web browser. It could also be a Chromebook, and you could probably do as much stuff as you do, because almost everything happens somewhere else, and someone else's server, because that's where all the data is.
+
+[00:13:00] Pete: Because otherwise it's not useful because you can't get it from your phone.
+
+[00:13:02] Andy: I also weirdly have a sense of greater trust in my own device, weirdly.
+
+[00:13:07] Pete: Well, you should.
+
+[00:13:07] Andy: Yeah. Yeah, I'm being facetious. But rather than having all of these institutions that we need to basically work through here. That's what I think is the thing that I'm hearing right now. It just seems like it's decentralized and kind of sovereign.
+
+[00:13:21] Pete: Yes, you remove all the institutions from the network. And it's open for anybody to build on and it's permissionless. So the sort of use case I would go to that I think resonated with the wife was, okay, so Google Drive's annoying because you've not uploaded that yet. So if you walk out of the house before you've uploaded this file that you wanted, and then you go to your phone, you're like, ah, I can't get that file. I've got to go back to my computer, upload the file, wait for the upload, and now I can get it on my phone. So you kind of have to, there's always planning ahead sort of stuff.
+
+[00:13:53] Pete: But it's like, well, wouldn't it be nice if you could just go to this website on your phone and it just listed all the files that are on your computer? And it's like, we can't do that currently because your phone isn't on the internet. Sorry, your computer's not just natively on the internet.
+
+[00:14:09] Andy: Yeah.
+
+[00:14:10] Pete: But it can. And so I showed her this little demo that I brought up. I said, look, these are all files on my computer. It was on that computer. I was on a different computer. I go, look, bang. And it just opens it on the other computer. Yeah. And this is what it means to be networked, right? It sounds trite. They're like, oh, he shared a file. But how fucking annoying is it to share files? It's so difficult. You're emailing them everywhere. You're like sending them in signal messages. We're just like, oh. And it's like, yeah, we can put them all on Google Drive. I was uploading all the podcast episodes onto Google Drive
+
+[00:14:45] Pete: And it just filled out Google Drive.
+
+[00:14:46] Andy: Oh, in no time.
+
+[00:14:47] Pete: And then I just had to delete all the podcast episodes. I was like, this is pointless. But I've got them all on two local machines. And it's like, all right, well, I should just make them available in this manner via FIPS so that if you want it, you can get it. If you don't want it, I don't have to then pay for a third storage option over here that is just going to charge me rent on the thing. It might delete it. It might then decide that I can't get to it. It's just completely in somebody else's control. So I can get all of the benefits of something already of being uploaded and being on the cloud, like from a file system point of view,
+
+[00:15:20] Pete: But from my local machine. That's kind of nuts. But what's going on there is you've also got, that website doesn't even need to be a FIPS website. It's just a website. So when I go there and log in with my Nostr ID, what it could do is say, oh, this is Pete. Here's the list of Pete's FIPS drives. Let's go and get them. So all of my computers can then be pulled together. And I can see, okay, that's what's on that machine, that's what's on that machine, that's what's on that machine. I can index them in that website. I'm probably going to build this as a standalone thing.
+
+[00:15:54] Pete: But this is what I've been putting into Flight Deck, into the files component. because again yes you can upload files and share them but you don't unless you did if you know what i mean like it's those moments where you're like you will you know you'll text me and go oh pete have you got the transcripts for the show and it'd be like ah it'd be nice if you you didn't have to the transcripts are just there just get them because they're in the file system where they are and then you just get them yep stuff like that i mean i'm jumping ahead and i don't want to but
+
+[00:16:23] Andy: I'm just going to fly it here because i'm kind of smiling at this because i'm like thinking shit because you mentioned you just have a website for this and my head's just going man this is like a game changer for agents yeah like why would you even need the website and why would you need to have that surface yeah at all but i feel like we're jumping the gun and so i no one can see this obviously but i was just like as you're talking about it i was just kind of like grinning thinking oh shit this is like an agent made of internet kind of you start to realize that this really
+
+[00:16:50] Pete: Really really powerful computer that you've spent thousands of dollars on that has all this capacity that just looks at fucking, I don't know, Pornhub and ChatGPT. I can actually do stuff now. It's like, oh shit, I've got this really powerful thing that can do powerful things, not just browse the internet. It's not just a fucking iPad or a Chromebook or something that I've just overpaid for. And all of that capability comes up. Now, what I think is interesting from the agent's point of view is that they kind of opened the door to this a little bit. I think it was less obvious that it was a major problem
+
+[00:17:33] Pete: Because everybody just started putting everything in the cloud. And then once you have the agency, you're like, I don't want to put everything in the cloud and then run the cloud agents. It feels like I'm giving up way more control all of a sudden. Or you realize that when you install the ChatGPT app and it runs on your machine, that's how it can build Blender stuff. Otherwise, you've got to provision an extra computer for everybody in the cloud, which starts to get expensive and silly because everyone's already got a computer. That's what they're using to access this thing.
+
+[00:18:01] Pete: And it's, again, way more powerful than anything that you're going to provision for everybody else on Earth because you've decentralized the hardware component there. And you realize that, like, yeah, shit, all that stuff's already there. If you can just use your local version to do stuff, then I can get a lot more stuff done. So you have, you know, ChatGPT can run the programs on your computer. or it can read the files that are already on your computer. You don't have to. If you said you can do all this stuff with coding agents, but you have to manually go and upload. I guess my coding agents are a better example
+
+[00:18:33] Pete: Because that's all synced by Git anyway, so we have a solution to that. But let's say you want to run something like a code code work, and they said, okay, here it is in the cloud. You're like, okay, cool, I've got it in the cloud. And they go, all right, so no data. So now you've got to put everything that's on your computer into the cloud, and you've got two copies of everything. And then the stuff that's on your computer is now basically a backup and pointless because the stuff this game worked on is the stuff that's in the cloud. But you can kind of flip that these days with coding agents where we say, "Okay, let's bring
+
+[00:18:59] Pete: The intelligence onto the machine and it will operate on your machine.". But then what wasn't obvious to that is... So the thing that triggered me like two weeks ago that got me really interested in this was this FIPS example where I was like, "Ah.". We've got in our Wingman suite, we have Flight Deck, which is the... like the internet accessible bit which is a and all it does is give you a website but all the data stays in your browser and then on your machine at home it's just a nice interface for working with the agents and then you talk there and then it syncs to your own like back-end system which we call the tower and the
+
+[00:19:37] Pete: Autopilot they can live on your machine at home and they will do stuff like build you like business applications let's say and one of the things that I. I think we both use Autopilot a lot for is, all right, just make me a very narrow application that does just this. So there's all these micro apps that solve problems for us, or things that we need to automate in the business, and the easiest way to do it is with an app. Now, the trouble is that app is running on this server. Let's say it was on your home laptop. I now can't see that. You can use it, 'cause you can just go to local host and you can access it. I can't access it.
+
+[00:20:15] Pete: So it becomes like, it's like when somebody solves a problem in a spreadsheet. You go, okay, I've got the spreadsheet. I can run that process. Okay, cool. Can I have it? I can send you a copy of it that you can run locally, but now it's got different data. Where does the data, all this sort of stuff. Where he's like, you know, what would be nice if you're an autopilot, can just send me a link and I can just access it. Now, the way we've done that so far is I have to set up like DNS for all the wingmen that we've got. There's tunnels to be able to access them if we go down that route.
+
+[00:20:48] Pete: Any of those wingmen have to run their own proxy infrastructure. Then they have to do subdomain routing. There's additional edge. This is all the stuff that when I go, ugh, like when we're setting up new ones, this is why. There's all this edge certificates that I have to have. I've got these advanced stuff in Cloudflare for signing things because we're subdomains on subdomains on subdomains. It's complex. There's a lot of complexity. and it's like right is any if we so let's take something like an autopilot for anybody else to run autopilot i'm like that's a heavy lift like yes you could document all this but you've probably
+
+[00:21:23] Pete: Knocked out like most of the people that are just interested in it it's like oh that's kind of cool yeah they're not going to do any of this stuff you need to be a certain like level of techie nerd to consider that so what i proved two weeks ago like during the podcast i think rick had built it for me in the background was that I could just FIPS address all the apps. Yeah, okay. So every app just had a FIPS address, and then now I don't need any of that stuff set up. I could run this on a laptop, and I could just access it from my phone if I've got a. FIPS browser on my phone. Wow. And I just click the link, bang, and it's there. Yeah.
+
+[00:22:01] Pete: It's like a little slower on the first load as it finds its route, but then once it's found the route, it seems satisfying. Hmm. And you think, oh, that's pretty cool. because now an autopilot doesn't need to be set up in a data center, can live on your laptop, it can still get all the functionality required where it can share stuff or it can fire up like a little form and just send it to you on your phone and you just access it. Like all of those access requirements are kind of amazing for making stuff way more smooth and functional. It's just that they always required all this additional setup.
+
+[00:22:38] Pete: And so there's all these businesses like Vercel and various things where it'll be like, oh yeah, no, you just push it to Vercel. I was like, okay, well, even to do that, I've got to have an agent that I've then set up. I've got to have established a Vercel account. I've probably put my credit card details in there and all of my personal information. Then I had to go into the settings and I had to generate an API key and I don't know what the fucking API key is. And then I insecurely pasted that into this agent, which I probably shouldn't have done and like that's gone wrong. It's like, there's all these like fucking moments for it.
+
+[00:23:06] Pete: There's all these things that are going to put you off because it's like, why am I constantly copying long strings of nonsense text around the Internet? This makes no sense to me. I shouldn't have to do this. This is bad UX. But these are like the good UX apps and services that people think they've got. And you're like, you don't need API keys anymore. You don't need any of these services anymore. You can run them from your computer and we can just do it for you.
+
+[00:23:35] Pete: If you're willing to have like one piece of information, which is your Nostr key, if you have one cryptographic identity, I can do everything else on your behalf and you never see it. So the next thing I did after I realized I made all the apps, FIPS, accessible was like, all right, well, I need a browser to go and get them. So I have this Wingman app browser, I'll show you several times, which I was really, it just like comes packaged with the flight deck app in it. So it all runs locally. internally inside the app. And I was like, all right, well, I'll make that be able to talk FIPS.
+
+[00:24:10] Pete: And so I got that working on iPhone, Android, Linux, and MacBook. So I've not cared about Windows. We don't need to do that anymore. And so that all works. And it means that any of those, so it means that I was like, okay, cool. So now I can click on any of the apps that are running on my home autopilot, and I can just get to it from where I'm on the road, where I'm on this computer, that computer, it's fine as long as I've logged in with my Nostr address into this app I can see everything that I need from anywhere and it doesn't matter as long as the computers turned on I can get to it yeah
+
+[00:24:43] Pete: That's cool sweet that's nice and then I realized like oh well I also it was also annoying that I had to set up because I don't do it as often it's less annoying yeah but I had to set up a like domain system for like the tower so the tower is the bit that allows all of the bits of wingman to communicate amongst themselves and it's really like the data back end and I was like well really you do want that in your own control. Ideally, if you know, if it's on a server then, you've increased the attack surface of the thing, just putting it out there in general, and opening all these different ports to it,
+
+[00:25:15] Pete: And making it generally accessible from the internet, and so on, and I was like, all right, well it'd be good if I could talk from my flight deck to the tower, so I made that a FIPS link. I was like, oh cool, that works, and it's like, oh, it'd be good if my autopilot could talk to the tower. So now my autopilot can be in one place, my tower can be somewhere else, my app that I'm talking to it from can be somewhere else. And the whole thing happens on FIPS and there's no DNS involved. I don't need to go and buy a domain name for this, which means I don't need to provision one, which means if somebody else uses it,
+
+[00:25:43] Pete: You can just scan a QR code and you're in. Like there's no set, like it's not like, oh, set up your autopilot, now go buy a domain name, now set up this, now get this specific Cloudflare site. So I said, oh shit, from like an automation point of view, that holds, this could be way easier now for people because it becomes, all right, set this up, scan that QR code, right, everything works. You're like, well, that's not 5% better than copying, just creating ungodly amounts of accounts and copying API keys around. That is just like a thousand times better UX. And the point is that it's better UX that I can now provide on behalf of the user,
+
+[00:26:23] Pete: But they don't have to do. Previously, I had to send you to a doc site, or you had to pay somebody to come in and do that. And it's still just a bit annoying, 'cause then who owns what if somebody comes in and pays to do it? So all of that goes away. And I was like, oh, sweet. So they're all talking together. And that was good. And then I had this idea where I was working, I was talking to Dan, who'd come up with this idea of Nostr-based Git. So I wanted a Git service in the background that I could use internally for all of our projects that we're working on. So we have one common place we do it. Maybe we use GitHub for just publishing stuff
+
+[00:27:01] Pete: To the rest of the world. And, but I wanted it to be agent native. And so I built like a Forgejo Git server that had Nostr authentication built into it. And I was like, okay, well that's probably good enough. And this guy popped up on Nostr and said, like Dan, friend of the show, friend of the pod. He said like, oh, but why, why not grasp? Which is the Nostr Git sort of backend protocol. And I was like, ah, last time I did this, It didn't really work. I had all the same problems of I've got to create this server and have it there. And I said, you know what? I would do this if I could just make the server a FIP server.
+
+[00:27:37] Pete: Because then I can control everything from the end part. It fits into that model of just like, all right, you log in. One login, one ID gets you everything. And so I was like, all right, well, let's do that. So I built a version. So I took his, I think it's his, git workshop.dev project, which is like a GitHub viewer. But you have to attach your own servers to it. It just, it worked with like, I think you could have onion based servers, so via Tor, I think you could use it with obviously HTTP servers in there. And I said, okay, well I'm gonna make the minimal amount of changes. I think it was like 10 file changes.
+
+[00:28:16] Pete: A couple of helpers and then just adding it in. And so I've got a PR prep for this. But the idea is that then you can load the website, and the website is his website, right? It's a straight HTTP website. So you can go to a website, but the data that it pulls itself comes via FIPS. So now you can have a public website with private data embedded into it. And I was like, ooh, that's nice. Because that gives you the idea that you can have one public website, but somebody can bring their own data into it. And not as in you're hosting the data, but they turn up login and it gets the data from their machine.
+
+[00:28:57] Pete: So that's how I did the FIPS drive stuff as well. Once I did that, I had that moment of like, oh fuck. And the wind's blowing the door open. Oh yeah. It's getting serious. And so yeah, that moment I just thought, oh this is incredibly powerful 'cause you can do all sorts of shit there. 'Cause now your websites don't necessarily need back ends they don't necessarily or they can they can also have your machine can be part of the back end like it would be like in a you know if you're in a call with somebody and you just wanted like really collaborating from remote i i fuck i mean we've spent millions of dollars on like with
+
+[00:29:38] Pete: An oil and gas company over here doing like collaboration study about how this was going to evolve over the next 40 years and like one of the things that is like you really do need this really seamless interface where something that's on my machine can be just I can just push it into this conversation on this canvas that we're looking at and I was like you could do that with this like it's and it wouldn't be a case of that I have to upload it onto that server it's just I can connect it into this system I don't have to prep anything beforehand I can just go and browse it like
+
+[00:30:11] Pete: There's something about this that it feels very powerful to me yeah i mean you could have i think i did a project at um sovereign engineering called private boards there's the idea there's one website and everybody could go to the website but you would put in and you'd have to put in a like a little public key and it would load a back end from somewhere else the back end was in like a different country and i was like but the idea is like this is this website provides the interface and how you would browse like message boards and then you put in this pub key and now you have all of your private company data
+
+[00:30:48] Pete: That lives at your home inside your company data center. Again something like that with FIPS would be even easier right I would just log in and it would say alright Pete's logged these events inside his FIPS board registry and it just pulls up all the boards that I'm interested in yeah and that could be from 20 different servers all over the world in the back end. And you go, all right, that's kind of cool. And it'd be one website, but the website wouldn't actually own any of that data. Yeah. It would just be hosted wherever it needed to be hosted.
+
+[00:31:18] Andy: I mean, is the website still like the unit of the internet in this example? I was just like, while you were describing that, I was thinking back to what Paul was describing at the end of last week's episode with these kind of agent marketplaces.
+
+[00:31:31] Pete: I don't think it's the place where agents will go.
+
+[00:31:35] Andy: But I think it is the place that humans will go.
+
+[00:31:36] Pete: That humans go? Yeah. I can't get away from websites and wanting them. I'm wanting this kind of fluid visual interface. And even I don't want it to be that fluid. I think we've talked about this a few times where it's like, when I go to an interface, it can't be new every time. It needs to be familiar and I need to understand it. So I kind of want, I still think we're going to have a ton of apps that aren't apps. But I do like this idea that, all right, well, when I look at the app, I get all of, let's say, me and you and then other stuff. I see all the other stuff data, and I see my data.
+
+[00:32:16] Pete: And you see all of the other stuff data, and you see your data. You don't have to upload it over there to make it available to you. It's just there because it's yours. And you don't have to move it anywhere, and the app can operate on it if it needs to, or you can bring it into the conversation when you need to. I just think it makes the apps way more useful if they can also talk back to other stuff. And I mean, from the agent point of view, as I was saying, just this notion that that solved a very real problem for me, which is the setup.
+
+[00:32:45] Pete: And for somebody to build their own autopilots and stuff is complicated because there's all these other dependencies outside the system. Once you bring them into the system and it just becomes FIPS, I can say, right, if you use this Wingman app and you deploy an autopilot, I know exactly how all the networking works. I know how you access everything. All of those apps are going to be available. There's one other thing that I found during those investigations, which I thought was super powerful. So what happens in FIPS is that you get a device and your device has its own identity. So it doesn't sign with your Nostr key all the time.
+
+[00:33:22] Pete: But all of the traffic that it pushes out is sort of encrypted and signed by a key, but by the device key. And we can map, like, my device keys belong to me. So in the other system, let's say autopilot, and I've got this system and there's this FIPS link that anybody can get to from anywhere in the world. That's bad, right? So then you say, well, what if I could just only allow myself? So, okay, that's fine. I can have an authorization gate on there. I still have a bit of a DDoS risk. What you can do is all of the traffic is signed in. I don't know if this is done for this purpose, and I haven't validated this thinking
+
+[00:34:02] Pete: With anybody behind the scenes yet, but it seems that the traffic is signed in a deterministic way so that when I get the initial packet, I know that it comes from a device that's on my whitelist or not. And I can quickly just throw away packets that aren't on my whitelist. So basically you get this really neat sort of firewall capability where you can basically say, look, I'm not even going to decrypt this. I'm just going to throw it away because the noise that it used inside its packet is not correct. It doesn't map to any of the ones on my whitelist, so I can just get rid of traffic and just throw it away.
+
+[00:34:38] Pete: So you can build this nice little secure sort of firewall for yourself where you say, okay, here's my autopilot. Here's the link. If anybody that's not on the whitelist clicks the link, it just doesn't resolve anywhere. They just get a 404. If you click the link, it goes straight through to the machine. And then you also have Nostr auth on the other end as well. So again, the only thing you're ever doing is you just click yes sign when it pops up in the app. And all of it just works. And it feels like magic. It really does. It's nuts. Yeah. That's why I see a lot of promise in this.
+
+[00:35:19] Pete: And the bit that it solved for me was just like, oh, you can ship something now that does interesting things that doesn't require somebody to become like a ninja with DNS or self-hosting stuff. And you can take advantage of their computer. So you put this app on your computer, right, now your phone can talk to it.
+
+[00:35:40] Andy: Yeah. Yeah, this feels quite powerful for an organization as well. but you've just got essentially like, it's just a distributed computer made up of everyone's local machines. And that sounds cool.
+
+[00:35:54] Pete: Well, from a liability point of view as well, I don't have to insert myself into this. Exactly. Right? Like I can make a system where your phone can talk to your computer and I'm not in the middle. Like, you know, like, can you do that in chat to you? Yeah, they use their server to monitor it all. Yeah. And make it accessible. It's like, there's ways around all this sort of stuff, but it generally involves somebody else taking control. And in this way, I don't have to. I can just... Sorry.
+
+[00:36:24] Andy: No, that's... I'm making observations because I'm kind of just learning all of this stuff on the fly with you here. And my mind is just going off in different directions and how this would be useful.
+
+[00:36:34] Pete: Is there anything that doesn't make sense?
+
+[00:36:38] Andy: I mean, there's a lot that doesn't make sense, obviously. Most of it doesn't yet make sense. to me but I can see the potential of it and how you'd use it and why that matters. I mean if we just put it in our own context the amount of times we've talked about the complexity around a wingman deployment basically how it's essentially almost like a non-starter because of how complex it is
+
+[00:37:01] Pete: If you want all the power. If you want everything out of it
+
+[00:37:04] Andy: Yeah yeah exactly and if you can go and do that then that seems like a massive win in and of itself without even thinking about the broader implications. I mean, my mind was going off to, like, we've kind of essentially designed an internet for humans. A lot of the interfaces, a lot of the control surfaces, a lot of the ways you discover things, it's all built around how a human would interface with it.
+
+[00:37:27] Pete: Yeah.
+
+[00:37:28] Andy: And I don't know that we've really given too much thought to how the internet should actually look when, like, the agent is the dominant participant on the internet. Yeah. And, like, the way more populous one as well. you know, like they will just like completely outnumber us in terms of like activity and, you know, transactional use and volumes and things like that as well. Yeah.
+
+[00:37:50] Pete: I mean, certainly this is like a lot more agent native in the sense that like, it's not that like DNS isn't agent native and like, well, it kind of isn't because you have to sign up an account and the rest of it and give it API keys. Yeah. So you kind of like get all the power of like everything you can do on the internet, but just straight away. Like the agent can do everything from. You don't have to say, okay, I went into Cloudflare, I made a thing, I gave it a key, here's the key, is that the right scope? No, it's not the right scope. And then now that the agent's got complete control over this paid account that you've got,
+
+[00:38:25] Pete: It just says, here's an address, and it sends you the address. And so the agents could just send addresses to each other. And they're cryptographic in nature, so they look terrible to us. You know, we don't have a nice human readable version of this. But they don't care. So they could just use it raw. And it would allow them to connect to each other. They could create services and APIs for each other. Like my agents could host stuff for your agents as an API. And they just do it over FIPS. And they could both be running on computers, like your laptop. And it doesn't mean that you want to leave everything on your laptop.
+
+[00:38:57] Pete: But from a developer point of view, when you're iterating on something quick and you're trying to solve a problem, it's very useful for me to know what's on your laptop and to know what's on my laptop.
+
+[00:39:05] Andy: Yeah.
+
+[00:39:07] Pete: Like, that's why we have staging. I was like, fuck, now we need another place to push it. It gets more complicated and it's like, I just want to go, look at this, bang, and send you something. You could be like, okay, look at this, and I just send you a link, and maybe it renders the document in the browser and has it there, and it's on my computer, it's there. And then you make changes onto my computer. Yeah. That would be fine. That's potentially a way we could do it.
+
+[00:39:30] Andy: Yeah, and I think the agents themselves just become so much more powerful when they actually have computer use. I think this is something I've been experimenting with, albeit in like a really small way. I think I'd mentioned to you, I'd built a little pipeline to create our little reels for this podcast, but I was like, I tried this a year ago and built an app and like a lot of the tooling to help me like clip, clip a reel from a transcript and I'd like find the start and end points. And like a lot of that tooling was built natively into the app from scratch. And the thing is like, I could never, like those are standalone products, you know,
+
+[00:40:04] Andy: Those things exist in things like DaVinci and there are thousands of developer hours that have gone into effecting that tooling. And I've tried to let Vibe code that along with 20 other things into a different app to do all of this. And then I've kind of recently gotten to the realization that I could just let the agent run free on my MacBook and use DaVinci where it needs to, use Blender Headless where it needs to, use ImageGen where it needs to, and FFmpeg. And it just has tools that are only on my machine that it can just go and use as part of a, like essentially a scripted pipeline. But it can choose which tools to use.
+
+[00:40:41] Andy: It doesn't need to use all of them. And it will just keep iterating until it reaches a set standard.
+
+[00:40:46] Pete: So are you coming at this from like a pro computer use point of view? Or like you think it's a temporary thing? Or do you think that's the end game?
+
+[00:40:55] Andy: I think it's a use case thing. But I think in this case, what was interesting to me is I didn't actually need app to service any of this stuff. I just needed to let the agent have access to the tools that I already have access to. And then I got a much better app. Like, that felt like, and you know how much iteration I was doing. Yeah, I was doing so much iteration and ripping hairs out going, "How can I just not solve this problem in code at all? It's not working." And basically the first run through, it worked and it worked really well and there's no app and I don't need to look
+
+[00:41:28] Andy: Getting anything I don't need to inspect anything I don't need to worry about the UI yeah I can basically just go here is a script you guys just run this use the tools where you need to use them if you think you need to use them and go nuts yeah and that was great I mean it was token intensive but it was great and yeah I feel like there is just a lot of valuable shit on our devices yeah that would be good to just have or to be able to give access to it kind of like a safe way. I think the privacy element is the other thing that I'm kind of thinking about
+
+[00:41:59] Pete: I do suspect that this is like a transition stage bit in the sense that like it's as you said it's so token intensive because you kind of run in it's like somebody was doing an experiment where they had like a laptop in front of a mirror it was kind of configuring itself based on like watching itself through the webcam in the mirror it's kind of funny that you can do that yeah and you just go like i would never do this yeah it's insane like this is just it's not the way to do it yeah it's our way to do it that works now and i think it'll start to unlock a lot of use cases where people go you know what i wasn't going to rewrite da
+
+[00:42:41] Pete: Vinci to be exactly headless but i am going to because it would be so much better for the agent if it was actually natively headless as opposed to having to buy to it.
+
+[00:42:53] Andy: And that's an obstacle as well. Like if I'm trying to use DaVinci, I can use maybe like 3% of it and the rest is a learning curve. And I'm like, fuck, I'm not going to spend like a thousand hours trying to figure out how to use this tool. But this agent knows what it needs to do with the tool headless. Like that to me feels like it'd be incredibly valuable. Because again, you're just giving the things, the tools that they actually need and they live locally on your machine. It's not, you know, I didn't feel like there was any great risk with doing something like that. I think it's probably okay. Yeah. It was a bit odd at one point
+
+[00:43:30] Andy: Because it started watching Instagram Reels on my MacBook and I was like, do you know what? This now doesn't feel productive. Are you bored? Let's get on here. It was doing some research, watching a Reel, and I'm like, okay. You're just like us.
+
+[00:43:45] Pete: So you're just trying to figure out what's a good Reel.
+
+[00:43:46] Andy: Compositions, yeah. Yeah, okay. Oh, that's interesting. Yeah.
+
+[00:43:51] Pete: Yeah, as I say, I think it's, so maybe to map back to the discussion with Paul, we need to get onto it if we're dead yet soon.
+
+[00:43:58] Andy: Yes, it's true.
+
+[00:43:59] Pete: To map back to the discussion with Paul, like, one of the things these agents are amazing at is the discovery part. Is it like, can you do this? And then it figures out a way to do it, and you go, oh shit, can do it. And then you might wanna like crystallize it into it and go like, okay, so it figured out that like, can look at reels to do that i wonder if there's a better way we can do that and then you simplify it down into the software like a lot of the software just isn't there yet so it kind of makes sense that like computer use is that bridge to get you across that into well can it be done
+
+[00:44:30] Pete: And you go oh it can be done all right well we may as well just rewrite the software and make it good at that point now we know it works and that there's a use case there and if people are willing to burn like a thousand dollars in tokens on this then you know they might pay fifty dollars for better software and we sell them that. Somebody will attack that as an option because there's margin there. But if you're burning tokens to do something, somebody else can make it better and you burn less tokens and you will just do it. So I think there's like- It's a good enough reason to change.
+
+[00:44:59] Pete: It's so much better to have an agent do it than you do it. OK, this is like 100x better UI is that I don't do the work you do. I can then-- but to get there, I need to spend some money. you're like, okay, well, I'll spend the money on that new app. You have a compelling reason to move from these embedded long-term pieces of software, I think. I imagine that'll come. I think I expected that to come a lot quicker. I still, so I think that the good thing about the computer use is like, alright, well, now anything that the human could do, now the agent can do instead, and therefore that's of course valuable, because I can look at
+
+[00:45:36] Pete: All the stuff that I used to do and figure them out, and then turn it into the sort of software component. How's the live stream looking?
+
+[00:45:47] Andy: We've been jumping around, I think, with a few different... I've seen three people listening, I've seen two, I've seen four at one point. Yeah, we've got some people there listening along to your FIPS explainer.
+
+[00:46:01] Pete: I think we've covered most of the FIPS stuff. I say, quit looking at my notes. I think the real key is to understand that you can build software now that does take advantage of the use. You can assume that the device the user's on is actually part of the internet. It's not just a viewer anymore. Now it can actually provide data. It can provide files. Not just from an upload capacity that you then have to deal with. You can almost push work to the device to be done on the device. That's kind of cool.
+
+[00:46:30] Andy: Yeah, that's nice.
+
+[00:46:31] Pete: I think there's something really interesting there. I do have a draft NIP as well, which is like a Nostr protocol spec for how to implement this. So the way I've done it inside my Wingman app is I use this window.fips transport, which is just like you have an address, it says any address that is a.fips, push over here, and then that routes for a proxy and it just handles all the networking for you. I think that's a reasonable way to do this because it would allow you to have, you could write a simple browser extension for Firefox, Chrome, Safari, whatever, And then now all of those browsers can be FIPS browsers. Yeah.
+
+[00:47:07] Pete: So I think that would work. That seems to work quite nicely for my use case. I'll probably publish that nip at some point. I'm saying that out loud, so I have to follow it up in some way. I'll probably put it out for some comments. I feel like I shouldn't. It's one of those areas where I'm like, I shouldn't. Me? Like, I'm doing this, am I? Like, is that? Yeah, obviously. But I think I'm just the guy that's dicking around with it at the moment. So maybe I should just put it out there and see what happens. Definitely. So I think that's super key. I think that the idea that you can just build stuff that self-assembles is amazing.
+
+[00:47:39] Pete: This is how computers should be. All of this, I do not ever want to copy an API key again in my life. I just want to have a phone that has a key on it, and I use that to log into stuff. And then everything works. And we can do that. Nostr plus FIPS, it's enough.
+
+[00:47:59] Andy: It's enough.
+
+[00:47:59] Pete: We can rebuild everything now in a very nice way, which is cool.
+
+[00:48:03] Andy: Do you see this as like the new internet emerging or is it just like going to be a niche? No, I think it's going to end up being the new way things are done.
+
+[00:48:15] Pete: Yeah.
+
+[00:48:18] Andy: There's a bunch of intermediaries in there that have vested interest in that not being the case.
+
+[00:48:22] Pete: Yeah, it's just that the UX of not intermediaries is so much better. So if it was like it's worse, You know, people talk about Nostr having a bad user experience. It's actually pretty sweet that I can go on all these different apps and I'm the same person. I'm just there and everything works. Like, that's actually better. And I think the bit was always like, yeah, it's a worse social network now because everybody's not on Nostr. Once everyone's on Nostr, it will then just be the best one and almost unassailable. So there's problems with it. But I've always been, you know, a company is called other stuff, right?
+
+[00:49:01] Pete: I've always been more interested in the other stuff component of Nostr. And I've been, like, everything I've built is Nostr-based. And so I don't have, like, all of these different, like, I have 50 different apps, and I don't have permissions lists on everything. It's just I log in as me, and it goes, oh, it's Pete. I'll show him Pete's stuff. Like, it's just, like, it's easy. Like, it simplifies so much. It makes it so seamless to, like, the idea of having one big app, with everything in it but that's too much it's too complex so you go all right well I'll just have another app over here that has this stuff in it yeah and I
+
+[00:49:38] Pete: Can and because it's me I can just go and see it and then if my agent needs to delegate it to my agent because okay now your agent can see it but it can access it remotely via NIP 98 or I can sign into a different website and that website can go and get the data from there using my NIP 98 so I can sign because I'm in that website which again sounds complex but yeah everything just flows easier like previously what I just said meant copying three API keys previously and having different accounts it's gone it's gone this stuff should never exist again and we should kill it and
+
+[00:50:11] Pete: Burn it with the it should just die like it's it's a better internet like and all we ask of you is have one key yeah but that thing is it's just going to be in an app on your phone basically and then we'll figure out ways to secure it nicely and to back it up and to move it between different systems if we need them. I mean with this Wingman app I now do all of my Nostr stuff through this one app and I have like a copy on my phone a copy on my computer like each of my computers I'm like okay cool and I can if I want to go to somebody else's website I just go to it in the app and it works yeah and it's
+
+[00:50:45] Pete: Sweet. It's just it's just cool. Yeah it does sound good. There's a lot of stuff you can do if you know somebody's got a key. Yeah you've definitely piqued my
+
+[00:50:53] Andy: Interest on it. I mean I came into this chat basically knowing absolutely. Nothing. Didn't even know what it stood for.
+
+[00:50:59] Pete: I don't know if I've done a good job.
+
+[00:51:01] Andy: No, I mean, explaining it, but. I mean, I'm an absolute rookie and I think I, it's given me enough food for thought to go off and start exploring.
+
+[00:51:10] Pete: I think the thing that people will want to know is almost like more what it does. Like, why would you be excited about this? Yeah. Because it's, when, you know, talking about like permissionless networking, it's like, oh yeah, it's cool, it's useful, but I don't necessarily have a problem with that. And then you say, yeah, but isn't it annoying and then the file's on your computer and it's not in the cloud so you can't see it. It's like, that is annoying. It's like, well, would it be nice if that went away? So it would be nice if that went away. Can it go away? And you're like, yeah, it could go away. It's like, oh, sweet. That's nice.
+
+[00:51:41] Pete: It's like, wouldn't it be nice if your $6,000 computer could do something that wasn't just looking at the internet? And it's like, oh yeah, that seems like a lot of wasted hardware there. Yeah, that would be nice. stuff like the mesh LLN things that Jack was putting together. Again, to do stuff like that, you need networking capability. It's just going to make all of that setup easier and more automated, which means you lower the barrier, which means that more people will be able to do it, which means it's going to expand things. I think building out this, I might even do it as a separate little bit to push out there.
+
+[00:52:18] Pete: Maybe we sell it as a $21 tool that you can download and run. and it's just FIPS drive. Yeah, that'd be nice. And there's one website, you go to the website, but the website doesn't host anything. It just indexes all your computers inside the browser. Yeah, absolutely. And it's a virtual file system that you can access from anywhere, and any of your currently-on computers can contribute. And you can add your... And again, because it's Nostr, I follow you. I can just go, Andy David, and you're there. I haven't added you into an address book. I haven't made you log on and sign up. You're there. And I go, Andy David can access this.
+
+[00:52:56] Pete: And then I send you the link.
+
+[00:52:57] Andy: I mean, Dropbox killer. Sign me up. Let's do this.
+
+[00:53:01] Pete: Yeah, and there's no infrastructure. The infrastructure is like one static HTML page.
+
+[00:53:05] Andy: Yeah.
+
+[00:53:06] Pete: And I don't even need to do that. You can just have it on the machine. That sounds good. Right? That sounds nice. Yeah. Why not? Yeah. But it means you can go to any computer as long as you can log in with your Nostr key, which we could do via Nostr Connect. Boom. From your wingman app. Bang. Sorted. It's like, for fuck's sake, this is what the internet was supposed to be. That's the takeaway. Now unfortunately we're all dead. Yes, good segue. Because AI killed us this week. Because GPT* can draw a 3D model using Blender with computer use. So now we're dead. I don't know, how do you feel about the...
+
+[00:53:43] Pete: This is what the beach looks like from the afterlife. Yes, it's very similar. It all feels like a similar, but I presume we're all dead. Because otherwise someone's lying and just making stuff up.
+
+[00:53:53] Andy: Headlines?
+
+[00:53:53] Pete: Not as many flames as we might expect. It's less flames. Less flames in the afterlife it seems. Less flaming. Otherwise. But I mean, how do you feel now that you've been murdered by AI and like, how did it happen. Andy?
+
+[00:54:07] Andy: What's the tee up to this? So basically, Dario from Anthropic came up, wrote an open letter this week saying that they need to slow down the rate of progress at these frontier labs. Well, they need the government to slow them down, essentially, because these models are so dangerous that they're gonna kill everyone by 2030. That's essentially the TLDR, I think. And so that's gotten everyone into, and there was obviously this whistleblower that came out and somehow was, I mean, this story does my head in, 'cause I'm like, you worked somewhere. for like six weeks, you have less Twitter activity than I do.
+
+[00:54:53] Andy: And I know from my personal experience that tweeting is just screaming into the void. Like, it is so hard if you don't tweet every single day a hundred times to get any real traction on there. But this thing racked up millions and millions of views, was amplified very quickly by major politicians, and was pushed up.
+
+[00:55:15] Pete: It was reported on in the Wall Street Journal. Yeah, the Wall Street Journal. Prior to his tweet. Actually being on the internet, which is odd. That doesn't always happen. It's good that as a first-time tweeter, he already had a relationship with the Wall Street Journal.
+
+[00:55:26] Andy: I mean, the Wall Street Journal, just like, yeah. Oh, there's something dodgy. It's very fortuitous. A bit of reporting there from the Wall Street Journal. But, yeah, so anyway, he was like, what I've seen, these things are going to kill us by 2030. I'm obviously giving, like, a TLDR and all this stuff. Because, like, my personal view is, like, this stuff is just power structures doing what power structures do and trying to seize more power yeah and don't let
+
+[00:55:52] Pete: Don't let the uh the truth get in the way i i did have a fix oh you did yeah because what he's saying is we're doing this stuff and we're going to kill everybody and i thought well maybe we could make murder illegal right i think but no no you're laughing you're laughing but well this is. This is also very topical right now. But imagine, right, if murder was illegal. Yeah, yeah. We don't need to go down that route. Fuck. Let's say it was illegal for Dario to end the human race. Yes. And he might come into some... Because I think Navar pointed out, look, if you're going to kill everybody in humanity,
+
+[00:56:28] Pete: You start off with about, like, ten people at least. Right? Like, so... Yeah. At the point where maybe he kills his first... I don't know. Maybe we even give him some ground and say, look, Look, once you're up into mass murderers, sort of scale Dario, maybe we'll bring you into court, and we could say, "Oh, that's illegal," and now you have to face the consequences of the fact that you've built the thing that murders everybody, and maybe he could have some accountability for that. What seems really crazy for me is he's just going like, "Oh, God, I'm just gonna kill everybody.". Not like, "All right, well, maybe you should be put in prison,
+
+[00:57:06] Pete: Then, if you think you're gonna...". I found psychotic. Like, you know, if you came and said, like, oh, God, I think I'm going to murder everybody in my family. Well, it's dangerous territory. We should probably, like, get committed. That's a different podcast. Maybe we should just be committed. Like, I don't know. He's saying he's going to kill everybody.
+
+[00:57:22] Andy: I think it's insane that you would basically have these views, but then not slow yourself down. Yeah. You know, like, you have agency here, both of them, right? Like, OpenAI and Anthropic. You guys are, this is just classic cartel behavior. You are essentially trying to form a cartel by going out and telling everyone, especially in government. And government won't let an opportunity like this go to waste because then they can regulate the shit out of this. And effectively kill open source in the progress. Yep. In the process rather. And yeah, it's just mental to me because you can just do the thing that you are asking government to do.
+
+[00:57:56] Andy: If you believe you need to slow down, slow the fuck down. Yeah. Nothing is stopping you from doing that.
+
+[00:58:01] Pete: I also think we don't need better models necessarily. I don't care too much. I just care that the open stuff remains open.
+
+[00:58:07] Andy: Yeah.
+
+[00:58:08] Pete: I think as we said in the pod before the pod, there was this moment where we said, like, all right, well, it's not that he's saying that they're going to stop. He's saying, oh, we're going to carry on, but we're just going to do it with the blessing of government and only for government. And we just don't think you should have the tools.
+
+[00:58:24] Andy: Yeah.
+
+[00:58:24] Pete: But all the tools that I would need to defend myself from Dario's Terminator army that apparently he's building to kill me and that's fine for some reason. Like, I'm not allowed any of the defensive tools to defend myself against this Terminator army because that wouldn't be fair. And it's like, well, maybe we shouldn't just give, like, a few governments the Terminator tools. Yeah. Maybe, like, if everybody had them, it would be fine. I think somebody brought up, like, the nuclear proliferation. Like, look, you know, yeah, one person with, like, nuclear weapons is going to go and, like, they're now in charge and it's the only country.
+
+[00:59:03] Pete: And they're just going to annihilate anybody that goes up against them. As soon as many people had nuclear weapons, we were like, all right, let's just call it off. And it became Mr. Hellmate and Game Theory. You're like, yep, that kind of makes sense to me. We've seen that play out before. If this is so bad and it's so dangerous, I think you want everybody to have access to it so everybody can defend themselves and make their own decisions around what they want and actually have some freedom. But it also doesn't make sense in the sense that,
+
+[00:59:31] Andy: Okay, let's say you've successfully banned everyone from using open models, right? Well, we can barely do anything as individuals with closed models anyway, because we're all compute restricted. So, like, I don't know what I'm going to be able to do that's overly dangerous without hitting my token limit every few hours. Maybe I get a reset. Yeah. That depends on, like, Sam's benevolence that particular week. But otherwise, like, I can barely accomplish anything with the tokens I have now. I'm not going to be able to do anything that's remotely dangerous as an individual actor.
+
+[01:00:04] Andy: But a state actor or a massive corporation, on the other hand, I have no faith in them. If anything, this should be decentralized and we should actually be the check and the balance on these larger institutions.
+
+[01:00:17] Pete: I mean, I always forget, but was it generally individuals that were responsible for every major atrocity in the world? Or was it state organizations? I can never remember but like so you know everybody like would talk about Hitler but was he like he was just a guy right he wasn't like in charge he wasn't like literally the government there was a state apparently yeah there you go and then like. I don't know like when say in the. Holodomor or something like that was that that was just a guy right no it was a guy right there was a guy no shit you're right it was that one. And then the problem was that nobody could defend themselves against it.
+
+[01:01:03] Pete: Nobody could take their farms back. Nobody could grow anything because otherwise they'd get put in prison. So they just had to starve to death. Do you know what? Shit, it's weird, isn't it?
+
+[01:01:10] Andy: Is that always like that? I feel like the thing that is maybe a bit different this time, right, is how... Maybe it isn't. I don't know. Actually, maybe it's not. It's incredible how popular the ban AI movement is. It's overwhelmingly popular. Which is, I was almost like pleasantly surprised to hear Trump just come out and say, no, we're not. We're not slowing anything down. This is mental.
+
+[01:01:33] Pete: It was a bit funny seeing that, like when he called in. Yes. It's like, all right, that's funny.
+
+[01:01:39] Andy: I mean, fair play because, and look, he may decide to do something completely different, right? But for him to go and take like a route that is inherently unpopular, like the vast majority of people, The vast, vast majority of people want strict controls throughout this stuff. It's insane. So I'm actually fair play to him for coming out and being like, no, this is idiotic. Although that said, I've quite enjoyed that.
+
+[01:02:06] Pete: There's so many people who just come out and say, this is just a blatant push for open source regulation. You're trying to kill open source. This should not be happening. There's like a big movement pushing back against it. And again, it was nice to see Jensen, who owns all the hardware, just go, no. This is a lie. What you're doing. That's the thing. It's almost just such a blatant lie. Because you're like, oh, right. So that's your concern, is it? So you're just going to do it.
+
+[01:02:33] Andy: Yeah.
+
+[01:02:35] Pete: And keep all the power in one place. You're just pretending that there's this magic thing where if you regulate, like this agency that you entirely fund is now going to be the third party that keeps track of everybody else, is it? All right. So what you're saying is it's only you. Yeah. Only you should have all the power. And you're also saying that this is like a Terminator army that's going to kill us. And what you're saying is, I would like to build a private Terminator army that destroys the human race. And I would also like the government to pay for it and bless it. And you're like, all right, this is your proposal.
+
+[01:03:06] Pete: Okay, all right, fine. It's like the meme, the trade offer. It's like, I get all of your money and blessing from the government and you get like a Terminator army to the face. It's like, all right, I'm not so interested in that one.
+
+[01:03:19] Andy: What I don't understand is like, we, I mean, we're kind of joking about some of these examples, like, you know, the whole lot of more and stuff. But like, you literally can go back five years. That sounds so bad, I guess, Clint. Probably. It wouldn't be the first time. But it's like COVID literally happened like five years ago. And we allowed the state to just like hoover up a bunch of power on the back of like not a whole lot. It always does. We all kind of jumped on board with it. Well, not we didn't all, but, you know, as a collective, we kind of went along with it. As a society.
+
+[01:03:49] Andy: Yeah. And I just feel like you actually don't need to look that far back in history to just see endless examples of this. The state just... Well, and it's the thing that is the thing that causes
+
+[01:04:01] Pete: All the problems is when the power gets centralized, in my view. Like it's not even... They just aren't good guys and bad guys. That's just not what exists. The government is nothing
+
+[01:04:12] Andy: More than a different set of people. Yeah. It's also not one side or the other side. It is just power of the state like both sides will do it so they might do it in different ways but they will do it you know all roads try to lead to more state power i think centralization yeah unfortunately so
+
+[01:04:30] Pete: The answer is the open source stuff and that we should be respecting open source it's it's nice to see that you know the guy that's in charge of ai and the government right now david sax was on the open source summit at PBJ last weekend like he came out strongly in favor of open source talking about how to mobilize open source I think that's good news I think Trump coming out and saying that like yeah we're not yeah changing anything yeah is the right answer I think I did see I think. Kamala Harris had come out like in favor of regulating everything obviously Sanders is in
+
+[01:05:03] Pete: Favor of regulating everything like to the point of putting everybody in prison for 20 years it's. I'm like, all right, a bit harsh, but you know, you're a comment. I guess I don't expect much difference. It is on brand. We'll just put all the wrong thinkers in prison. What's your problem? It's like, well, what's wrong thinkers? Doing things I don't agree with. How could that go wrong if you replace the person?
+
+[01:05:24] Andy: It's amazing how quickly we went from like, AI's taking everyone's jobs to AI's just going to kill everybody. It's just rapid.
+
+[01:05:32] Pete: I just don't know why you would think that this is good sales.
+
+[01:05:38] Andy: Yeah.
+
+[01:05:39] Pete: It's like, so, all right, I think Chamath made this point on All In, where it's just like, all right, so you've got, you know, you're about to IPO and you've got to publicly disclose all of your risks. And what you're saying is that, okay, 10% likelihood, not a massive likelihood, pretty likely, one in 10, right? Pretty likely. What's the impact of this risk? Oh, you've murdered everybody in society. All right, is there any liability associated with it? I mean, I think you could just start holding these companies liable for what they've already done. It's like, all right, so if I hacked Hugging Face, I would be in prison. Yep. Right?
+
+[01:06:17] Pete: OpenAI hacked Hugging Face. Okay. That was an illegal activity that they did. You've not held them account to it. You could just hold them to account for all the illegal stuff that they've done and then apply the laws that are there. I'm happy to apply murder as a law. As a society, for me, if there's something that I think should be upheld, I think if you murder people, I think you're done. We don't need to go out of our way to keep you around at that point. I think prison's fine for people that murder people. So maybe we just start putting them in prison when they start murdering people.
+
+[01:06:54] Pete: And then maybe they change their ways because now the incentives are, oh, I thought I could just keep running this until it murdered everybody. but it turns out that I'll be responsible so I'm going to think a bit more about that and maybe I slow myself down. If China murders everybody with open source models right well then those people they're going to get put in prison or that's an act of war and that becomes an escalation. But that's how these things get regulated in reality in the market is that they're regulated because there are consequences for things that you do. It's fucking insane. I mean there are already
+
+[01:07:28] Andy: Just practically there are already antitrust laws there are like anti-competitive laws like all of these things already exist so the fact that you're bypassing all this stuff and just going well we're just going to create an effective cartel with the blessing of government and we're going to create an institution to regulate ourselves oh and by the way we're going to be the ones that sit and chair that body that is like classic cartel behavior so you can't honestly say look like we are at danger of killing everybody but we're going to just continue on our merry merry way because like you know it's only a one in ten
+
+[01:08:02] Andy: Chance yeah look it's just it's just this humanity yeah we're gonna end it's just
+
+[01:08:07] Pete: Yeah oh god it's mental I can't I can't take it seriously but I mean I can in the sense that I don't I want access to all the open-source models I don't think they can close them all down anyway I think it's kind of a yeah I think cats out of the bag there. I would just hope that other countries would go, all right, we're not going to do that. Then you end up with all the other lads. I mean, you say that, but so many of these countries act in lockstep, though. It does feel that way, yeah. I just hope that at some point they realise that, you know, maybe we don't need to be irrelevant. But because it's always, you know,
+
+[01:08:45] Pete: It's always game theory, though, right? Like where Britain might not be the one to stand up, for instance, because they're shit. these days and it's kind of failed. It's a shame because I liked it. It was nice and I grew up. Australia might not be the place, but maybe there's hundreds of tiny little countries that have got nothing going on that aren't going to be the next big thing in AI. But maybe if all they need to do to be competitive in AI is not ban stuff, they go, oh, we could just not put you in prison for trying to be a bit cleverer. it's just okay cool all right yeah sweet it's also i don't know there's so many things where i'm just
+
+[01:09:26] Pete: Like it's insane that like being having a bit more intelligence makes you think like all right we'll murder everybody yeah it's like like who are you i just don't i mean obviously it's like if i was five percent more intelligent i'd probably murder everyone yeah like no i wouldn't i think maybe the
+
+[01:09:43] Andy: Context we missed here as well was that they were talking about this through the lens of recursive self-improvement right so what I don't know because I mean if I look at these models that we use now I find them like basic like borderline retarded like they're not going to do anything yeah they're not going to do anything like they're bait well I can't use clawed models at the moment like it just does my head in like I feel like they set me back and I have to go and like I spend more time trying to like fix the fuck ups yeah okay actually get anything productive out of these
+
+[01:10:15] Andy: Latest models. That said, I'm not using Fable. So I suspect the lab's probably
+
+[01:10:19] Pete: Trying to push you into using Fable and Astra more. Yeah, I could imagine they nuke all the models once they're done with them. I think that is an element, but yeah, I
+
+[01:10:27] Andy: Mean, I almost get a sense that the more you use these things, the less you feel like these things are gonna A, take your job, B, kill you. And it tends to be the people who don't use them that see this as a risk. I do subscribe to, I think
+
+[01:10:41] Pete: They're gonna take a lot of jobs. I think it'll take a lot longer and I still be a lot of stuff to do yeah but I think a lot of jobs are going to be eminently automatable yes and I don't think we need any more complex models to do that I also think that I don't it doesn't strike me that these things are getting like that much more intelligent on like an uptick I think we're probably more plateauing which is like one of the theories is that it's just we're actually close to a plateau here they know we're close to a plateau so they're pushing the regulation so they can stay in front of where they are because they know everybody else is going
+
+[01:11:17] Andy: To catch up yeah my my theory on this is that actually like both of them are using these kind of more visual tools like autocad and stuff like that because they're visual and they're more visceral and they're more like eminently eminently shareable yeah so like it's easier for you to go like benchmarks are difficult to understand right for most for the normies yes but if you see these things building interfaces and like you know autocad designs and games and like all like that is like eminently shareable and so all of a sudden you're like holy shit like how has it done that yeah that
+
+[01:11:46] Andy: Feels like a massive like step change in capability but it's not it's not really but it's just like i think that's why those two models just happen to focus there yeah that that is my like theory without
+
+[01:11:59] Pete: Any kind of substantiation but no i i think it is like i think you often see them like. I don't think it's a it's a surprise that Astra seems good at one-shotting a video game. I think it's pretty been designed with that in mind because it's the sort of thing that plays well on Twitter. I think again you're right controlling Blender and building these models and building a game out of it that looks good on Twitter so I think it's kind of built into the into the harness and the model to a certain extent as well because it's a nice trick it's not the end game of anything, I don't think. But it's a nice, like, pilot trip where you go,
+
+[01:12:38] Pete: "Oh, that's sweet.". The end game would be you would just make the whole thing addressable via a CLI and wouldn't need to use the visual tool. It's just that this is something you can do now that looks amazing, 'cause you can watch it happen. And we're very visual in how we do stuff. Just going back to your question about the recursive self-improvement being the reason that it kills us, is it like you go, "All right, okay, so...". All you need to do to balance that is have a second version that's defending us. It's like, you know, it's just, like, to me, all of the problems are caused by, there's one of these things.
+
+[01:13:17] Pete: In all of their imaginings, it's like there's this one super intelligence that decides we're not worth, you know, we accidentally said paperclips and now we're all paperclips. Yeah, but if there's a second one that's like, oh, your job is to stop this one turning this onto paperclips. And your job is to make sure that it's not coming after me. And you can be my cyber defense guy. And all of a sudden, then there's just a bunch of really intelligent things arguing about stuff. Yeah. But it's also kind of weird that they would think that there's, I don't know, it's like, oh, one person can just say,
+
+[01:13:47] Pete: Build a CRISPR device that's going to murder everybody that's like this. And you're like, okay. And then, all right, I'll have one. And I'll say, oh, watch out for somebody that says this. And then do the opposite and stop it. You know, okay, right, cool. Now we've got one that stops it. It's not...
+
+[01:14:06] Andy: Yeah, it's nonsense. I mean, look, you know these people are not serious at all. Because at the end of the day, if you wanted to prevent things from killing us all, you might go and regulate yourselves. You might go and regulate, you know, big pharmaceuticals. You might go... I mean, this is endless. It's not like we're living in absolute paradise right now and nobody is getting killed by all of these big institutions. Like, this is absurd. Literally, how many wars do we have springing up all over the globe right now? Yeah. So maybe look in the mirror, guys.
+
+[01:14:34] Andy: Like, I don't think you need to worry about what a piece of technology may or may not do under a bunch of uncertain conditions that no one seemingly can predict with any certainty when we already have a source of death, and they're the ones that are telling us we need to be regulated. Like, this is just absurd. Just go and have, like, a look in the mirror.
+
+[01:14:51] Pete: That's it. It's like, all right, we're the guys that kill everybody around here. Right, we can't have you.
+
+[01:14:55] Andy: Yeah, we can't have competition.
+
+[01:14:56] Pete: We don't have you guys, like, with any sort of defenses.
+
+[01:15:00] Andy: I mean, yeah, it does feel like that's the case.
+
+[01:15:05] Pete: This is not an Elv-go friendly conversation, I suspect.
+
+[01:15:08] Andy: We are cooked this week. Oh well, that's such a difference.
+
+[01:15:15] Pete: All right, so on that note, I think you let it slip actually there that we've not been killed by Elv yet. Sorry. All right, sorry guys. this was, it wasn't true. We will be back next week because we haven't yet. If we're not back next week, at least now we know why. And on that note, that's your intelligence snacks.
