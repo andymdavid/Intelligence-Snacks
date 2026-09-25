@@ -1,0 +1,730 @@
+Pete Winn [00:06.352]
+Hello and welcome to episode seventy three of Intelligence Snacks. Trying something new this time so we can get our faces. We've been told that you're supposed to have faces on YouTube, so here they are. Enjoy for what it's worth. How you doing, Andy?
+
+Andy David [00:25.888]
+I'm good mate. We're obviously not at the beach. I think that's the giveaway now. We can't fool anyone with the beach scene because clearly they can see us sat in rooms. So it's a little bit different.
+
+Pete Winn [00:39.822]
+I'm pretty sure we're at the beach. Like, have you not seen the little graphic? I realized that I think I vibe coded in a version where I was wearing the shirt, but it turns out that I can select it by double clicking my little avatar before we start. So I'm wearing my Hawaiian shirt today, which is good. Yeah. All right, so
+
+Andy David [00:57.206]
+Nice. Nice. We need to get the voxel scene updated into this Electron app. That's on the to-do list.
+
+Pete Winn [01:07.610]
+Yeah. It just never seems like the most important to do, I guess.
+
+Andy David [01:11.902]
+No, it really isn't. It's literally every time we hit record, I'm like, I should get that voxel scene done and then I forget about it. So, note to self.
+
+Pete Winn [01:20.452]
+That's the problem. All right, I'm just going to pull the stream up on my other monitor and see if it's working. And video not available. All right, I'll not worry about that. I'll assume that this is live streaming, but we'll just go from there. All right, so big week in model world, it seems, this week. We're just saying that like you know, like we just had Anthropic have just dropped their
+
+Opus five point five, which led to ten minutes later or something, like OpenAI came out with their six soul and six lunar versions that are the step down from Astra. So I don't know I can't remember what the other one was they had in a Terra, I think maybe. There's no Terror at six. Yeah, so we'll see. Hang on, that's not a terror lunar's not a good set of words for non scams. Like why is everyone
+
+Andy David [02:06.956]
+Yeah. Terror and Luna, yeah.
+
+Andy David [02:14.774]
+Yeah.
+
+Pete Winn [02:18.364]
+Why is everybody naming their models after scam we got a mythos and fable and terror like come on this is too on the nose guys this sounds too scammy. This is not what
+
+Andy David [02:28.738]
+I feel like we did we did dive into this in a previous episode. It does feel like you've got to tell people, you know, that it's subtly coded, but you have to tell people what the game is.
+
+Pete Winn [02:38.576]
+Yeah, this is all a scam guys. Like don't worry about it. We're just taking we're just lying to you and taking your money. Yeah, yeah, that's it's a weird one. But yeah, apparently they also dropped their dropped their API pricing by fifty percent for opening.
+
+Andy David [02:53.719]
+Nice.
+
+Pete Winn [02:54.054]
+They came out. So apparently they're good at prompt caching now, is what they said. But we shall see.
+
+Andy David [02:58.720]
+Well, proof remains to be seen and I would love to see it in a month from now or in two months from now. Because this just seem like my first response on Twitter, like I haven't used them yet, obviously. It came out today or recording today. And I'm I my first response was like, Are these actually you know, model breakthroughs? Are these actually new or do we just have collective amnesia?
+
+Pete Winn [03:22.757]
+New
+
+Andy David [03:27.566]
+And these models are just being nerfed. And it's really just, you know, the last generation's model in the first month. And then month two and month three and month four just gets progressively worse. But friend of the show, Jared Grigg, put me in my place and said, no, actually legitimately good. I think he was talking about Opus 5. 5. So yeah, it remains to be seen. I'm going to give it a go and I'll keep an open mind. But I can't I can't get past the fact that I just know these things are going to be nerfed again in like three weeks, four weeks.
+
+Whatever it ends up being. Enjoy it while it lasts.
+
+Pete Winn [03:57.767]
+Yeah. I think there is some reality that like a lot of the five point N models are really the same base training run with then maybe some different reinforcement learning afterwards or something like that. Like they're not entirely new models every time. I think certainly the way they come out and they're maybe they've just got different quantizations or other stuff. Like it's not clear exactly what they're doing, but it's it can't be like a new
+
+Multibillion dollar training run every time they do it. So clearly there's like a base that they're training for these different things. But yeah, I mean I as I said, I just feel like they become idiots like after a week. So let's see.
+
+Andy David [04:32.396]
+Hmm. I do
+
+Andy David [04:40.896]
+I do think there's maybe like an element of truth to both things though, right? Because we get conditioned after a while where we just get this incredible like new model exuberance. Like I feel it, you know, you do get it and you're like, yeah, damn, this is so good. But it's juxtaposed against the experience we literally just had five minutes pre-release, which was usually terrible because these things have just degraded like to the point where they're
+
+Pete Winn [04:45.372]
+Hmm.
+
+Andy David [05:08.704]
+Like not—I wouldn't say borderline unusable, but your expectations just completely change over a given period of time. So I yeah, I do think there's an element there's an element of that being true and also there probably is some improvement under the hood, but I don't know how big the jump is. So I'd be I'd be curious to put it to the test.
+
+Pete Winn [05:29.734]
+I mean I had I'd certainly after trying Astra for maybe a few days, I just wound back to GPT five point five. So I was like this thing just it spends money like it's going out of fashion, but it's not it's not really doing anything that I need it to do. I don't need it to do that. Like this is just too much I just want like a r a reasonably clever model.
+
+And then I want it to be consistent and then I would I would be absolutely for it just getting faster and faster and cheaper and cheaper. But like I don't feel like the thing I need is more quote unquote intelligence. Like it's just there's enough there. If you could just run it faster and then I'll deal with how intelligent it is and how I describe work in a way that it can follow it, but it just needs to be
+
+Andy David [06:06.294]
+Yeah.
+
+Pete Winn [06:26.150]
+Quicker. No. There was obviously one model dropped this last week which was a little bit more interesting 'because it just took a different approach to everything else, which was which was Jev. So I managed to get a little bit of like just YOLOing some ideas into it while I was away in the bush over the weekend. But what did what did you find about it? Like have you had a had much of a go or looked into it?
+
+Andy David [06:52.842]
+Yeah, I have I mean I've been I've been using it via OpenRouter. So like I'm assuming there's no like additional latency running it through OpenRouter. I don't know. I can't imagine. I imagine it's all pretty negligible anyway, but it's been interesting. I my first approach with this was to go, right, I'm just going to turn this at the existing repos that I've got and
+
+Try to look for opportunities where this can improve the decision making or the prioritization of the model that is sitting somewhere in a workflow. And I think originally I texted you and said, yeah, look, I've thrown it into like the real generator that I created to try and like score different candidates. And I was like, that's fine, that's good, you know, but I don't really feel like there's enough like volume here to make this work worthwhile. And I don't necessarily think that the agent was doing such a bad job.
+
+Of the candidate scoring that it warranted having like this additional, I don't know, bloat in what is otherwise like a pretty lean app. So I kind of dispensed with that pretty quickly. It's still there, but in shadow mode and it's useful to run some tests against every so often. But I applied it to an SEO tool that I've been building, which I think is actually a much more interesting use case for something like JEV where I can start to prioritize and rank
+
+Pete Winn [07:47.270]
+Mm.
+
+Andy David [08:16.758]
+Different SEO signals and turn those into like a prioritized list of things that the agent can then go and do a deep dive on. Whereas previously, I think a lot of that was left. There was confidence scoring that was done by the agent. And I think if I'm being honest about it, that confidence scoring was probably bullshit. Like it was probably just fabricating a lot of this stuff. And I've noticed a big shift in terms of like just prioritization of what the agent's work is.
+
+Pete Winn [08:35.035]
+Yeah.
+
+Andy David [08:45.590]
+And so if I extrapolate that out to like a business use case, I think this is going to be super valuable because it just all of a sudden at the kind of cost and the speed that this thing could make decisions around, you're just like, there's a whole heap of decision points that sit inside really complex workflows in companies that would just not have been worth the time or the effort to go and even build like, you know, custom what like if statements basically around them. So
+
+Pete Winn [09:09.786]
+Hmm. Hmm.
+
+Andy David [09:14.708]
+I think that is going to open up like a world of opportunity. But yeah, again, I haven't tried to purpose build anything from scratch around what this can do. I've literally just thrown it at existing workflows, which I think makes sense because you've got the existing workflow mapped out already. So yeah, I mean, how are you finding it?
+
+Pete Winn [09:37.718]
+I mean I did a similar thing where it was so maybe for the sake of the audience we just sort of talk about what it is. As like so Jev is the audience, like both of them. For the other guy. For John, new friend of the show, John that was really pleased to get a whole show name produced for himself last week. Yeah, it was
+
+Andy David [10:01.962]
+Excellent.
+
+Pete Winn [10:06.776]
+So you had most models I just listened to the guy that was behind it on a few podcasts. I gotta admit I do find him a tad annoying to listen to, so I kind of gritted my teeth through a few of them. But I thought he had some interesting ways of putting it where he'd say, like, look, most LLMs that you've got have been kind of optimized to they're not really designed to give you like the correct answer to a question so much as they're designed to like talk to you in a way that you appreciate.
+
+This is just like a kind of fundamental part of RLHF, which is reinforcement learning from human feedback. So given some words, what are the next words? And then the way we assess whether those words are good or not is
+
+The way we assess whether those vi words are good or not is there like does the human react to this well? So they go through this reinforcement learning piece where they say, Okay, was that a good reaction we got from the human or not? Yes, no. And then we slowly build towards something that works, and that's how we fine-tune the model. And then he's invented this thing called reinforcement learning via calibrated decisions or l R L C D.
+
+And the purpose of that is that you already kind of like know the answers to a bunch of questions and you're effectively training the model not to give you just random text back, but to give you decisions and confidence levels based on whatever you put into it. And then they have a suite of effectively like synthetic test data, so they already know what the answer are is in all of these different test cases with all of these different confidence levels.
+
+And then they can build like a general purpose classifier, I think is the is the idea here. Where if you give this thing like a question, like and say, okay, like classify this, like what's the right output of this? It'll give you like a stacked list of like okay, these are the relevant outcomes, and this is the confidence I would have that this one's correct, or this one's correct, or this one's correct. So it's like a great like picker of what to do and decision maker.
+
+Pete Winn [12:27.249]
+And I thought where it'd be interesting for us is like I looked at it and just thought, all right, well that is like straight, you know, intelligent snacks sort of sort of area there because we're all you're doing is sorry, I'm just closing down a few windows in the background 'because my computer keeps telling me that it's struggling for some reason. And I feel like it shouldn't, but alas, it's probably doing something.
+
+Yeah, so i it's we've talked about quite a few times, is the idea is that it's
+
+What you don't want is tons and tons of intelligence at every moment in time because it's too easy to go off the reservation. Like often what you need is almost everything is code, but I need to make a decision here and that's why I had a person involved or you know, I need to move from this place to this place, or I need to like readjust something or rephrase something. And like LLMs are very good at kind of translating between one interface and another interface. I think one of the things that we also use them a lot for was just given set of information.
+
+Give me an output and a decision and then reasoning behind your decision. And you can get them to do that, but it does take a little bit of time and it does burn some burn some credits. And like they're not always that great at just accurately giving you back JSON that you can then use like in the next part of the program. So you've got like a whole bunch of error correction around that. And the things that Jeb seems to do really good is okay here's our
+
+We do JSON output for everything. So you know like what the shape of the object is going to be and you can just pick it up and use it. And then you get the decision made in, you know, like milliseconds as opposed to could be like a minute or two to run an agent to make these decisions previously. Can get quicker with different like inference models and things. And it just seems to be highly accurate and they claim
+
+Pete Winn [14:29.199]
+No hallucinations. And again, I think it's because of this training method that they've got where they're actually training it not to just say text, they're training it to give you decisions with confidence levels. So based on the test data they've got available, this is the most it's the factually correct interpretation of that confidence. It's not just like a vibes-based confidence, which is what you get from like an LLM.
+
+So you suddenly get like very quick, very snappy, much more reliable decision making that you can apply across aspects of the program. And again, I looked at that and just thought, this is great. Like this is just like a it's a slightly different thing. You know, you don't replace like your text models, you might not replace like your translation pieces, but certainly for anywhere where you just need a quick decision.
+
+Or classification of something. Like this is pretty good. And so there's a Yeah. And there's a lot of those situations where you could solve it with multiple like chained agents. So you make this request, you make this response, then you do this one, then you this one. But it just felt too clunky because it was so slow. Where all of a sudden you're like, I can just
+
+Andy David [15:24.170]
+Yeah, sorting and routing.
+
+Pete Winn [15:46.358]
+Make all of those decisions in milliseconds and then just feed the agent what it needs at the end of it. So doing stuff around like I've been exploring it for like GraphRAG and you know, I'll do, you know, you take a question, you search for all the relevant information from the company Graph, you pull that back in, and then you have Jev classify with confidence level, you know, what should be included in this prompt. And you can get all of this done in, you know, maybe a second or two.
+
+And then the agent kicks off. It was taking the agent almost like long enough just to start up anyway. All right, this is I can I can now do all that stuff. Whereas when I've done that previously with multiple agents, it might be like thirty seconds to two minutes before you get to the agent that's actually got the context to answer the questions. So that's like that's a huge, huge win for just performance. I mean, I've
+
+Andy David [16:36.770]
+Mm-hmm.
+
+Andy David [16:40.662]
+Yeah. I mean the other thing I'd say is the reliability aspect. So the bit I like about the confidence scoring is just what that enables you to do, what you can pass on to a model once you have the confidence scoring. So 'because the chat effectively keeps the human like trapped in a loop there with the agent to some degree when like the risk is significantly high around whatever output.
+
+You're trying to work through. So for instance, if you put it in a business context, let's say you've got transactions and you're trying to look for, I don't know, like refunds, like whether transactions should automatically you know, apply a refund policy or let's say like flagging potential fraud on you know, there's a bun there's a bunch of different like potential business use cases where you'd want a degree of confidence around
+
+What is actually happening. And I think the model, as I said earlier, I think the models have a tendency to just kind of like confidently fabricate that stuff. And so you could still have like the base intelligence coming from the model, but all of a sudden it's acting with like a packet of intelligence that says, yes, this decision has 95% confidence. So you are free to then like route this a certain way. Like you can apply a refund and send a message back to the customer saying, yep, we're going to refund.
+
+This particular transaction or you know, this looks like a fraudulent transaction with like 95% confidence. And if it's below that, maybe we get a human to review it, something like that. And I just think there are enough of these small, seemingly small but high volume decisions that need to be made inside of a business where all of a sudden just confidence scoring alone just kind of changes, changes the game.
+
+Pete Winn [18:14.001]
+Yeah.
+
+Pete Winn [18:28.987]
+Yeah, and it gives you like a an escalation point to hang that off as well, right? So if it's below ninety-five percent or w whatever you tune to when you actually run the process for it, then at that point you punch out to a human and you get it you get it resolved. But I'm yeah, I found it quite interesting. Like I also think you could improve that on the fly by again, if you keep all of these trace like all the, you know, workflow traces in a graph or something, then you just
+
+You can always pull that in as a like in the same way you would do few-shot examples to an agent, right? The thing this thing's got a huge context window. You could dump in like all the requirements, like you know, what's the full story of what you're trying to assess, and then you apply like here's the latest confidence ones that have been given back, and then here's what was accepted as good or bad, and then this is what went to humans for escalation and whatnot. And you can almost have it like self-improving in that way.
+
+By just running that back into the context window. In the same way that agents sort of work a bit like that. As I say, like just the raw speed thing is and just the fact that it's so much cheaper. Like it's
+
+Andy David [19:24.215]
+Yeah.
+
+Andy David [19:33.218]
+Cheap, yeah, the economics of it are completely mind-blowing. Yeah. Because as I said, like people are probably like where they do have these decision points or these routing points, you probably are still using these like frontier models. You know, like you are throwing frontier models at like these kind of simple sorting and routing or checking tasks that A, they're not necessarily, you know, well built for anyway to handle. And B, they're stupidly expensive.
+
+Pete Winn [19:37.011]
+Yeah, it actually got me sorry, you go.
+
+Pete Winn [19:47.891]
+Sorry.
+
+Andy David [20:03.399]
+And C unpredictable. Like you're not necessarily going to get A, the same degree of reasoning every time and the same, like necessarily the same output every time. And I guess D, if you want to throw that in, is, you know, these kind of confident hallucinations as well. So like that makes a lot of sense to me. And then if you also throw in like set near-real-time speed as well, like all of a sudden like that just unlocks a whole heap of possibilities.
+
+Whereas like I think some of this stuff, like if I if I were to try and be like somewhat critical, I'd say like some of the use cases that I've seen are like
+
+I would say people are LARPing to a degree. Like there's just like some of them are a bit nonsense. But yeah, I think this will just be like a massive unlock for a lot of businesses, especially. Like in particular, I mean, I tend to like gravitate back to like what it means for businesses a lot of the time because that tends to be like, you know, the lens through which I see a lot of this stuff. But yeah, like some of these like in the past you might have just had like some if statements and maybe they're a bit too brittle to be able to handle this stuff at the right kind of like speed and velocity that you'd need it to function at. And yeah, I just think this is going to be like really powerful. To what degree I don't yet know. I just think this is going to evolve, like keep evolving. Like this is like the first salvo of this kind of like so called System 1 model. Seeing what it becomes in like, you know, a month from now is six months from now.
+
+It's kind of like it's kind of amazing. It kind of does feel like the early models the early model releases in some ways. It's like you know, it's like tingling all of the spidey sensors and like the kind of the nerve endings, where you can go, Yeah, shit, this is actually like a cool a cool breakthrough.
+
+Pete Winn [21:57.799]
+Well this the nice thing is this is built for automation specifically, like whereas you know, a lot about the chat models are based more around it is more about like chat and human interface and that's the bit that they're really good at. And you could also you could bend them to your will to give you this output that you could then use better in.
+
+Andy David [22:01.858]
+Mm.
+
+Pete Winn [22:17.625]
+In automation, but it was always that slightly slower. And it's interesting that this is like, all right, well if we just like look at the problem from over here, we can now do it like ten thousand times cheaper and get a better outcome. And you're like, sweet. So what was interesting in one of the interviews I was listening to the guy was he said we've actually got like several of these sort of things in the pipeline. So like this RLC RL C D approach is one
+
+Andy David [22:32.567]
+Yeah.
+
+Pete Winn [22:46.664]
+Difference to how we think you can like reinforcement learn the model differently each time. But we actually think there's several he didn't go into any details of what the others are, but he implied that there's like several more sort of tricks up their sleeve where they think they can get really interesting responses for different use cases and different primitives that can then just be applied on the internet for these sort of things. And it's like, okay, that's that'll be that'll be interesting. It's becomes more
+
+I don't know, it just becomes way more interesting than where we've been sat with like, all right, now it's five point seven point seven one and that one is like super fast and super better and the benchmarks are way better, trust me bro. And you're like, god, just stop it. Like just make it really cheap and fast. But something that's just like super cheap. I mean, certainly the like the browser use sort of demos that you see where it's like, yeah, that's where
+
+Andy David [23:31.018]
+Yeah.
+
+Andy David [23:42.465]
+Yeah.
+
+Pete Winn [23:45.233]
+I mean trying to watch an AI like navigate in the browser is just so hideous. That you just like yeah, every time you look at the screenshot to move the mouse takes you multiple like tens of seconds and you just like There's gotta be a better way than that. Like that's not cool.
+
+Andy David [23:50.273]
+Yeah.
+
+Andy David [24:03.445]
+Yeah, and your weekly usage is just fried in the process, so
+
+Pete Winn [24:08.913]
+Yeah, exactly. So I reckon stuff like that I think would be pretty interesting, like the classifier stuff, the automation stuff. It actually got me really fired up about beacon.
+
+Remember that old project 'because Beacon was like a lot of what had to happen in Beacon was to take mult 'because you had like it's it was just like one text box and no context. So you had to like build all your context on the fly based on the question and previous questions you might have had and how
+
+Andy David [24:22.097]
+Yeah.
+
+Pete Winn [24:40.872]
+They were categorized into different conversations and goals and things. And it was just I had to use I was using like lower llama models on the Grok inference platform because it was super quick to try and get it quick enough to actually make it, you know, feel good as a person using it. But this I mean this would just blow that out of the water. Because they were quick inference turnarounds. They might be in the like ten seconds versus
+
+Forty seconds which when you've got like five or six of these decisions chained together just adds up. But like being able to do up the whole string in milliseconds, I was like, hang on a minute, that's that kind of brings that back as some somewhat interesting. Plus it's basically free. You know like a
+
+Andy David [25:20.450]
+Mm.
+
+Pete Winn [25:29.391]
+And running these things. These this is just is not showing up on the OpenRouter stats when we look at everything. It's just it's basically invisible. And you're like, all right, that's good. I like this cheap and free thing. So
+
+Andy David [25:44.673]
+It is amazing how much of this is tied into like the intelligence snacks, like ethos. It feels like yeah, we've kind of been circling this point for a while. But the model the tech the technology was racing off in a different direction. I kind of wonder if we'll just see now the big labs just kind of focusing on this and releasing similar kinds of models. And like I saw someone had like r like released an open source version of JEV as well, like pretty quickly.
+
+And yeah, I it almost feels like we're off to the races here with this kind of model.
+
+Pete Winn [26:19.419]
+I think in some ways there were already I believe this to be the case. I haven't verified any of this, but there was another model, maybe called Glimmer or Glinner or something like that, that was that I think was out prior to this, but effectively does the same sort of thing. Like it was trained to just produce these general purpose classifiers. So I don't think it's entirely novel so much as like they did it at scale and with a big enough release that it got 'because I didn't know about any of these other models. I mean there's
+
+Andy David [26:28.298]
+Yeah, that'd say not, yeah.
+
+Pete Winn [26:49.880]
+Billions seemingly of different models with different things that are all on Hugging Face that it's just impossible to keep up with. But yeah, this is one that like hit out the blue and you're like, okay, this is a this is an interesting moment. Like that's there's something new for the first time in a couple of years here.
+
+Andy David [26:51.798]
+Yeah.
+
+Andy David [26:57.824]
+Yeah.
+
+Pete Winn [27:07.399]
+As to what we've got. It's not just a slightly bigger, more expensive version of the same thing. It's also interesting to see that change, because I know this was like one of Justin Moon's old sayings, which is like AI is just going to get more expensive, it's not going to get cheaper. And you it's like, yeah, I don't know anybody that started like with a twenty dollar subscription that is still on a twenty dollar subscription that isn't paying like hundreds to thousands of dollars for these things. Sorry.
+
+Andy David [27:31.660]
+Mm-hmm.
+
+Andy David [27:35.553]
+Yeah. Yeah. No, I was going to say the I think the typefast launch was quite well coordinated as well. Like you can see they planned that ahead of time and it was well orchestrated and well planned and well executed. So yeah, fair play fair play to them there. The other thing I'm really curious about is the kind of more IRL use cases for this as well, particularly in like the built environment, because when you think about it.
+
+Like a lot of real-world systems would really benefit from this kind of intelligence, but you couldn't have just gone and thrown a frontier model at it purely because of latency, right? Say you've got a traffic light network. You can't just go, yeah, let me throw Astra at this and try and like optimize a traffic light network because it's going to completely balls up the network because this stuff is like just there's way too much latency in there and no consistency and no reliability. So you're like, okay.
+
+And to be honest, like I you know, full disclosure, I don't know enough about how like routing works in traffic light systems. So it seems to me like it would be the kind of system where it would benefit from something like this. Energy systems have been at like waste collection, traffic routing, there's so much like public transit routing, stuff like that. There's so many potential like IRL use cases where I just think, okay, from a speed and like cost perspective.
+
+All of a sudden you can get like a really effective routing and decisioning tool that can be thrown into what are otherwise like really like generally well designed systems or like they're not brittle, they've been like, you know, structurally developed over time. So I kind of wonder if we'll start to see like for the first time these kinds of System 1 models like pushing into that space as well. And again, we'll never see it necessarily in
+
+Pete Winn [29:21.181]
+Yeah.
+
+Andy David [29:33.532]
+In practice, it might just be like very small very small improvements that, you know, in the aggregate improve a system by a few percentage points that we go like, okay, we're not noticing this in our day to day, but the entire system benefits from. I'd be I'd be curious to see how that plays out as well.
+
+Pete Winn [29:56.347]
+Hm. I wonder how it would 'because a lot of those systems you might have stuff that's quite I'm trying to think like what is it about this that makes it good in that sense. 'Cause a lot a lot of it you might have like for something like traffic flows, you would probably any flow stuff, there's probably is like an algorithm that's just code for like how you want it to behave. But then there's always going to be
+
+You know, hundreds of thousands of like tiny edge cases and things that are just stuff. I wonder if it's like in that space where it would like, okay, here's all the stuff that like you know, if I'm a because if I'm a person monitoring something like that, you apply the person to like look at the thing and the thing kind of does run itself. I haven't done traffic, I've done like train line optimization and stuff like that.
+
+Andy David [30:25.420]
+Yeah.
+
+Andy David [30:44.162]
+Mm.
+
+Pete Winn [30:47.004]
+Various projects in the past, but yeah, the person is really there. They kind of just watch it happen. And then they see something goes wrong. And then based on that alert, there's a set of like reactions that take place to then get us back to that sort of steady state, optimized state. So maybe it's in that sort of area where you've got like maybe like the algorithm does like a bunch of the work and then this is like your
+
+Sort of an exception management type thing. So okay, something's gone wrong. What do we need to do? Like quick resolution to this decision tree that you would go down as a human, which is kind of how a lot of these guys would be trained to think this through and they're like, what's the decision? How do we plan all those? Okay, now maybe then code comes back in and then you generate the five different ways that you could resolve that.
+
+So again, thinking of like the train guys, they would see a problem, start sketching out how they're going to fix it, like literally on paper on a massive on the desk. And then it would come back, then they'd choose like, okay, that'll work, so I'll apply that. But maybe if you had something like this, it could be that it starts to figure out it analyzes that escalation point, generates like five different ideas of confidence levels of like where you might go next.
+
+Andy David [31:45.292]
+Mm-hmm.
+
+Pete Winn [32:04.305]
+And then you generate all of them and then you use it to judge the output of those. Maybe there's a recursive thing going in there where a lot of the work is really still code. But on these moments where you would have like presented it to a human, you can just present it to the AI and then iterate on it towards a towards a goal. Hmm.
+
+Andy David [32:04.963]
+Hm.
+
+Andy David [32:22.784]
+Yeah, even potentially like running rapid simulations in order to like work out like which branch do you go down? Can you simulate out the impact ahead of time? Yeah, it's interesting. Like okay, so here's a question for you. Like what do you think something like this does to like small language models? 'Cause I feel like some of this stuff might have been where we were thinking we would throw
+
+Pete Winn [32:27.784]
+Yeah.
+
+Pete Winn [32:34.907]
+Hmm.
+
+Andy David [32:51.648]
+Small language models, you know, some of these like cheaper judgment based kind of tasks like classifying tickets and tagging data and you know, like reviewing outputs from other agent work. Like what I imagine it's not going to disappear, but yeah, how do you think that like shifts the thinking around the small language model?
+
+Pete Winn [33:06.963]
+Mm.
+
+Pete Winn [33:13.915]
+I mean it would sort of make sense to me that let's if we called this like a decision model, for instance. I don't know what the language is that forms around this, but then in the same way that like say this is going to be better at decision making than the small language model is. And maybe we would have used a small language model 'because we can tune it to only know enough for like that situation that we're applying in.
+
+But I would then think that there's probably like a small decision model, which is again even better and even quicker than this at making those decisions and can be tuned in the same way and it just doesn't need as much data. So maybe you end up with like small decision models as well. And then I'd probably look for like I think decisions might be one area where you would use small language models, but I think almost anything where you have
+
+Unless you have like a truly open ended process, which if you've got a process you're doing it more than once. Like, you know, like if it like if you've if you've categorized something into the workflow and you're running it multiple times, even though you can run it on like a large language model, like a smaller language model that's optimized to just the step that it's needed in, it's pretty much always going to be better and more cost efficient.
+
+So I don't I don't think this necessarily impacts it. I think maybe it changes some of the use cases, but in the same way that it would change the use cases for the large language models. Like I think the small language model thing is probably more a case of y if you're repeating the same thing over and over again, you may as well
+
+Train and optimize and shrink your language model to only require what you need it to require. Like it doesn't need to know about all of the subreddits in order to, you know, process the Sphinc. Over here. Like so I mean one of the things that we talked about earlier
+
+Pete Winn [35:12.711]
+That I could say like it I'm trying to like think through like are there like what are the primitives of these intelligence snacks, right? So classification is probably like one of the bigger ones, like classification, prioritization, you know, turn this, like all of this data into a decision. Like that's a classic sort of intelligence snack. Another one might be just translate between these two interfaces. So like
+
+Something like that. I've got machine A and machine B. They don't talk.
+
+I want to translate something, maybe I throw a language model through that because what's coming out of machine A needs to go into machine B is not always strictly correct and encoding it is too difficult. Or maybe like because it comes back with some like real world or human data or something like that. Or I'm just crawling stuff off the internet or something like that. So I could see like small language models being appropriate there where you're doing these translation exercises. I could see.
+
+Andy David [35:57.906]
+Yeah.
+
+Pete Winn [36:12.397]
+Classification. I think like research type work. Again, I feel like that would be more of a language model piece. It's like here's a question and a goal, and I want you to just loop on this and go after it. Like language models do really well in that space, that pathfinding sort of space. I think what will be interesting is to like almost once you've done the pathfinding work.
+
+With an agent to say like, okay, I want you to do all this research on all these different things. I want you to find out like how you find this data even on the internet and then go and get it. But once you've done it, then that probably boils down to next time you shouldn't go through the same process. You should just figure out where are all the sources, that should be code, all the stuff should come in, and then you should classify it using something like this. And
+
+I can see it eating a lot of that as well. Yeah, and just I think it's it just makes you rethink a lot of it, I think, to be honest, because it used to I guess it was that you had code and you had agents and anything that wasn't that couldn't just be enumerated entirely, we just threw it an agent. And what's become interesting is like there's two different types of agent. We still have this like really
+
+Useful gen really general purpose thing. And then we have another one which is like a really good but much faster and cheaper. It's like a specialized general purpose thing. It sounds so it sounds kind of wrong, but you can see like there's now a sub subset of stuff that it's actually cheaper to throw at this JEV model than it is going to be to throw or equivalent open source models of course. We're big fans of open source here. That's cheaper to throw it at that than it is to throw at an agent.
+
+Andy David [37:46.770]
+Hmm. I don't even mean.
+
+Pete Winn [38:03.045]
+And I so I think they will I think they'll cannibalize just general language model stuff, but it's probably more in the repetitive space. And I'm as I said, I'm quite curious to see like well what else is he going to apply this stuff to where instead—I mean what you're saying is you've got this model now where you can apply like probabilities to a to a problem.
+
+In your code instead of rules. You know, you used to have to enumerate every rule. Now we can I mean this is true of just machine learning and models in general, I guess. Like so it's not entirely new. But yeah, it there's going to be a different set of building blocks.
+
+Andy David [38:42.044]
+Mm. Yeah.
+
+Andy David [38:50.900]
+Yeah, it's appropriately named Jev in this respect, right? It's obviously playing off of Jevin's paradox and it just like it does make sense that you would just like make this bet on like near-free judgment just being like sprinkled everywhere. And that does force you to like rethink a lot of this stuff and like certainly away from like this notion that like what you need is just a bigger and bigger model.
+
+Pete Winn [39:08.071]
+Yeah.
+
+Andy David [39:19.540]
+And having it do more and more, which I think that's that kind of perspective has been like you know set back pretty considerably now. But yeah, I kind of also wonder if like another way of looking at it isn't necessarily just through the lens of intelligence, but also through the lens of like latency. Like I think speed maybe hasn't been explored as much because we've just kept looking at like the increase in capability from these models. But I do think the speed at which you can actually get a decision will just like the compound effect of that is massive. So I almost kind of think that is going to be the big unlock is just the ability to like okay you're sprinkling intelligence all over the place, but you can do it at like lightning speed.
+
+And then like all of a sudden, like all of the subsequent links in the chain become faster as well. And then you extrapolate that over like an entire system and then multiple systems and you know, multiple use cases and different industries and different companies. Like it I just think that is like the flow-on effect from that is just really hard to quantify. But I think that is the bit I would look out for over the next kind of six to twelve months. Is now that you've gone and essentially made this thing lightning fast.
+
+As a decisioning tool, sort of route a confidence meter, you know, like what are all the things you can now do?
+
+Pete Winn [40:53.458]
+Yeah. I mean, what I think is interesting here is it might snap some of the bigger language lab like the language model labs like just out of this just obsessive the only thing that matters is being more intelligent, which I d I just don't even know if it's really paying off in the same way. Right? Like I mean the leap from NOF into ChatGPT was bigger than the leap from
+
+Andy David [41:08.374]
+Yeah.
+
+Pete Winn [41:17.575]
+GPT 3. 5 to now, right? Like it's we needed an amount of intelligence and it feels like we've passed what is usable intelligence. I think it's really interesting to just consider like what happens when you make it super fast. Now I was trying to figure out if I don't know if I've got the show note number anywhere, but definitely in the Christmas predictions episode. I which hasn't this one hadn't paid off yet. So I think one of them was
+
+Andy David [41:19.809]
+Yeah.
+
+Pete Winn [41:47.653]
+I think people are going to start realizing that fast is good. And what you actually want out of these things is very, very quick inference. So we I guess we saw it a little bit, because all the models in invoked like a fast mode that you could pay ten times more to access. I never really played with it because it's like, well, well that just seems it's not I don't know if I want to pay ten times more for the sake of this. But something here where it's suddenly like super cheap and fast.
+
+Andy David [42:07.202]
+Mm.
+
+Yeah. Completely.
+
+Pete Winn [42:15.643]
+It's going to get used an awful lot. And it's going to get used in places where you just couldn't have used these models previously to this. And it's going to get built into apps. Like there's always there's this real problem around building AI into your apps that you then sell that you're like, I've just got this like open-ended cost that I don't know how much it's going to cost me to run this. This is kind of insane. So the ability to actually have
+
+Some of this stuff run at like at a negligible cost means that even just general purpose stuff is going to get more like general purpose it's the wrong term for the space for in here. Some of the general apps are just going to get like way smarter because you can actually do this stuff for free and quickly and just not really care about the cost of it.
+
+Andy David [42:51.990]
+Yeah.
+
+Andy David [43:05.280]
+Yeah. As I say, this is partly why I've been just throwing it at existing repos, because Yeah. And eve even then, I don't know if this is a segue, but I was like trying to play around with this idea during the week around like how do I make the repo more intelligible for me to get across at speed. So I feel like this is probably an emerging problem, like especially if you have larger teams where
+
+So much of the code has been committed by agents now that you literally just can't keep across like what is in the repo and who added what and when it was added. And so I was trying to turn this into like a partly it's a schematic, which an a number of people have been doing online, and it's a great idea. Partly a schematic of the code base so you can visualize it a little bit more cleanly, but partly also a and
+
+Learning tool because this is now I'm just doing this for myself because I was like, okay, I actually don't want to just be like the meat between like two pieces of intelligence where I'm just like slamming the enter key on my on my MacBook. And I actually want to not disassociate myself from the process, but make sure that I'm also not just adding a whole heap of latency to the process as well by unnecessarily slowing down parts that don't need to be slowed down.
+
+So I was like, we talked about this maybe, I don't know, a couple of years ago probably, where we're like, you could have like a learning graph that is essentially being built around the work that you're doing, identifying the key concepts and ideas and then raising them back to you in like more of a like one-on-one tuition kind of kind of format that then gives you a sense of like, are you actually getting across these concepts, the decision making around the architecture? Do you understand what's being done? Can you explain it back? You know, it's like basically built in like a set of a set of criteria around like, do I understand it or do I am I just familiar with this idea or this concept that's being raised? And then also having this kind of like this ability to
+
+Andy David [45:22.956]
+To discuss the repo with the agent as well and go, okay, like was this necessarily the best architectural decision, or was it just done for the sake of like speed? Like oftentimes there'll be like a an MVP decision made, but it's not necessarily the best one. And then you've got to go through and refactor. And so I just wanted to try and like identify this stuff sooner in my own mind, but also it's self-serving to just be just be a bit smarter. But yeah, to link to link this back to the Jev stuff, it was purely like, okay, how much of this.
+
+Like graph building, could I potentially be doing with JEV? And like how many of these assessments around my own understanding and ability can be essentially JEV confidence, confidence scores that then feed back into the graph and allow the agent to go, do you know what? We should spend a little bit more time on this particular this particular substance. But yeah, I haven't even begun to explore, you know.
+
+All of the potential novel use cases for a model like JEV, it's purely just me throwing it at stuff that already exists that's reasonably well defined.
+
+Pete Winn [46:30.076]
+Yep. I mean, I d I think certainly you can see it for classifiers just make tons of sense. Like the computer use tool use selections make a lot of sense. Like I wonder how well it'll start to get integrated into sort of agent harnesses and loops. Like so you could imagine you know, like Claude Code having
+
+Like maybe Anthropic go and copy a version of this, they have their own decision making model and then they offload a lot of the decisions that previously would have gone to you know, Fable or whatever now go to
+
+Whatever they call this made up thing. Whatever the name means. I've just made something up that doesn't exist. Version of this that they've got. And then you could see a lot of those harnesses getting better and cheaper to run, which means again we end up using way more of them because that was certainly a
+
+Andy David [47:12.802]
+Mm.
+
+Pete Winn [47:29.934]
+A use case that you did see pop up on Twitter in the last few days was people going like, All right, I what I do is I use this to do all my tool calling instead of letting
+
+You know, a astrophable whatever decide where to call tools. Like a lot of you know, when you observe what's been interesting is like, you know, an autopilot now will it will call out like these are the thinking messages, these are the tool calls, these are the these are the output messages that you're going to get like from the agent. And it's kind of interesting that you see most of what is happening is just like constant tool calling and then iterating on the results of the tool calls. And you're like
+
+Andy David [48:08.875]
+Yeah.
+
+Pete Winn [48:09.018]
+That's expensive. And it carries like every one of those tool calls will get yeah, I guess there's some prompt caching stuff going on here as well, but like it kind of you take like it's all like a completion round in the background. So you're taking like your full thread of everything you've said. You've got this enormous like anthropic system prompt or something and like it all gets fed into this like
+
+Uber model that could have like 40 bucks in its context window every particular time, and then you say, run the tool, the file is called bill. It's like, all right, now open bill. And like it that just didn't need to cost like 20 cents. You know, like that could cost nothing. Like, and so you could see that like there is just this part of the process of
+
+Like again, we've almost done like the pathfinding piece with coding agents to go shit, if you attach this really smart thing to the fact that it can look a screen and look at the output of like what files you have, we can do and it can edit those files and then have a look at what it edited and check it. Like All right, we it turns out that's almost magic. That's a lot of what we need. And then
+
+And it could do that, but then you go, yeah, but all of what it actually does like ninety-nine percent of the time is just saying, What was the name of that file? All right, open the file. Like what was the name of the file again? You got any other files? Right, list all the other files? All right, open that file. Like that's like a lot of what it's doing in the background and you just like Yeah, that foreman like just deciding like which file to open. Like it's not coding at this point. This is just
+
+Andy David [49:34.870]
+Yeah.
+
+Pete Winn [49:54.394]
+Like navigating its way around the code base even is just that could be made so much simpler. I mean that's like obviously where Paul and the Star Wars guys that we had on a couple of weeks ago had gone a long way with their coding graphs work that they'd done, which was y you can
+
+Andy David [50:03.201]
+Mm. Completely.
+
+Andy David [50:11.799]
+Yeah.
+
+Pete Winn [50:13.456]
+Compile all the code into a graph system so you can see without having to read the code base you can just like start with a you know user function from the front end and you can trace back like its entire impact. All of a sudden you can give the agent just the code that it needs that's relevant to the situation, then it can design the change around that. That's pretty cool. But you again you just see that like this sort of model is going to be useful where
+
+We take a bunch of the questions that happen under the hood. Like for every questi like this maybe is something that's lost on a lot of people that use AIs, it's that the question you ask is not the question that keeps getting thrown at the model. Like it's it will it figures out its own plan, its own questions, how to ask itself questions. That's as soon as we got into agent loops, like, you know, this idea of prompt engineering kind of went away to a certain extent because the prompts that are getting run are not the prompts that you've asked necessarily.
+
+Like I barely even bother to, you know, correct my spellings these days. Like I just quick go into it. It'll figure it out. Who knows? But and you just you just let it sort of run and figure this stuff out. But a lot of the time it's running, it just doesn't need to be as intelligent as it is.
+
+Andy David [51:14.327]
+Yeah.
+
+Pete Winn [51:31.091]
+And so I guess people had looked at this as kind of like as you said, you had I mean OpenRouter's got a like a model router, so every request you sent it can decide, do you need you know, do you need an Astra model or do you need a Terra or Lunar or whatever the cheaper model is that ChatGPT. Yeah, that'll save you a bit of money. This is just going to be significantly quicker to do it in this way. So
+
+Andy David [51:59.435]
+It was funny using OpenRouter with Jav because like initially I had no idea how much this stuff would cost, right? So like I'd put like some cost caps in and that was ridiculous. Like I didn't get anywhere near them. But I d it was it was absurd. I it was it was mind blowing. I was like, wait, what? Zero point zero three like that can't be
+
+Pete Winn [52:05.947]
+Hmm.
+
+Pete Winn [52:14.930]
+Yeah.
+
+Pete Winn [52:22.001]
+Yeah, there's like an order of magnitude of zeros, like several of them there before you even hit a penny and you're like All right, this is alright. This is we can deal with this. This is probably as cheap as just I wonder if it's as cheap as just running a server for most requests that you're doing.
+
+Andy David [52:38.988]
+Yeah.
+
+Pete Winn [52:40.123]
+Surprised. It's yeah, it's almost one of those where it feels like you're not going to n necessarily save money by having it local and always-on. But you might do that just for the sake of control of stuff, but
+
+Andy David [52:48.191]
+Yeah.
+
+Andy David [52:52.588]
+I mean, yeah. So in other news, seeing as we're talking about like model releases and whatnot, is it worth us going into like meta releasing Muse and like I usually wouldn't care too much about these kind of like personal agents. Like people have been talking about is it instinct as well is another one that came out recently that people are raving about and but I think Grokbot, yeah.
+
+Pete Winn [52:56.263]
+Mm.
+
+Pete Winn [53:14.577]
+Hm. I guess it's that and Grokbot video Yeah.
+
+Andy David [53:20.630]
+But it feels like this feels like the most like I don't know, it's kind of like the agent has gone mainstream, maybe, because it's meta, it's inside the meta ecosystem, it's WhatsApp, and it's a lot of normies that are already kind of in the ecosystem, especially inside of like Instagram. And yeah, I kind of wonder if this is like the mainstream moment for these kind of personal assistant agents and where that goes.
+
+Pete Winn [53:27.079]
+Hmm.
+
+Pete Winn [53:46.962]
+Yeah.
+
+Yeah, that's interesting. Yeah, I think we should touch on this, so let's do it. I
+
+Andy David [53:54.164]
+Yeah, I mean I as I say, like I have no real desire to test this stuff, but yeah.
+
+Pete Winn [54:00.113]
+I mean I signed up to Meta's wait list for it because I was like, I'd like to try it and see what it does. It's like the Grok part I was I seemed less fussed about 'because I just I don't need another subscription. Like the meta stuff seems to be free, so I was like, all right, well I'll try free. That's fine. I think the model is kind of correct of just yeah, you have a computer. So I think for both
+
+Grokbot and Meta. Meta's is more like you seems like you almost get like a dedicated machine, which seems a lot. But you know, like I've had dedicated machines from Oracle that I've run for like five years and never paid anything for, and it's like twenty-four CPUs and thirty gigs of RAM or something. So I'm like, alright, that's you can get stuff. There. It's just not that much storage. That sounds expensive right now. Look at the cost of everything. But I think that's probably correct. I think having like the interface, there's so many different interfaces and ways to get involved with it that I think it seems kind of clear that you'll have some sort of like group chat like experience with these things. That's there. But I you know, I'd like I'd I would like to try them. The thing that I feel like to again it's all second hand 'because I can't try it 'because we're in Australia, right? But
+
+The thing that seems to have got people really excited about MetaSpark stuff is that they're just being Facebook. They've plowed a bunch of, I don't know, money, IP addresses, better like web crawling stuff into actually being able to go and buy stuff and interface with shops and real world things.
+
+Like booking flights and stuff. I mean I gotta admit, booking a flight is one of those things that I don't mind booking a flight as long as you've just gone and tested all of the you know, like what's the price stuff. I kind of want to know what the best price is, but then I don't mind almost putting in my own details because if they're wrong then I'm not allowed on the plane. So I kind of want to be clear on stuff like that. But yeah, I think that ability to actually do stuff on the internet
+
+Andy David [56:13.186]
+I think there is an interesting
+
+Ye yeah. I think in particular, I mean, my understanding of this stuff is like this agent can write your emails for you and can operate just broadly within the kind of meta ecosystem anyway and send messages and all that kind of usual stuff, right? But there's like a whole economy that's built around like consumer inertia. Like if you think about like a bunch of subscriptions that you never do anything with, you just kind of like, it's too difficult for me to
+
+Go and swap them out or they just become part of your existence. Like insurance is a big one. Like I know I've gone through this personally as well, where I'm like, do you know what? I should shop around my insurance a little bit and like see if there's a better deal. You just don't do it because it's like, you know, time intensive. I kind of wonder what everyone having personal agent kind of does to these industries where all of a sudden you've got agents just like constantly repricing all of this stuff.
+
+And renegotiating and getting you like the best possible price on your insurance or your home loan or your you know, or trimming your subscriptions where you don't need them. And I feel like as I say, these are big industries that are kind of inherently built on the consumer doing nothing. So I think that is like an interesting byproduct of more people getting agents. But then at the same time, I might be wrong on I might be a bit fuzzy on the detail, but I
+
+Pete Winn [57:29.948]
+Mm.
+
+Andy David [57:42.903]
+Think I read something about Amazon like pushing back on this as well and like blocking the like Muse assistant from being able to shop directly on Amazon and stuff like that. So yeah, I kind of wonder if that will you know, it's like some people play offense, some play defense, and i eventually it's just like who gets to control the user experience at the end of the day, but yeah.
+
+I felt like this was the moment anyway for these like personal agents to go kind of mainstream and start to get downloads from people who have otherwise not really paid much attention to anything AI related other than say a ChatGPT subscription.
+
+Pete Winn [58:25.713]
+Yeah, I think that's true. Like I think it could be. Like whether it will be now, but it feels like within the next six months this is going to be a lot more mainstream. Like it's there's a lot of people I don't think understand like how powerful it was to just have
+
+These agents like sat on a computer and able to just control stuff. You're like, shit, this it's this is pretty insane. And then now everybody's going to find that out. It's just they'll all do it through Meta, which I don't know. I reckon within a couple of weeks we'll have a bunch of people saying, Meta's won AI and they're now on a saleable and they own all the consumer stuff and then in two months time they'll be dead something 'because somebody else has done something else like I
+
+Andy David [58:47.179]
+Yeah.
+
+Andy David [59:08.801]
+Yeah.
+
+Pete Winn [59:11.674]
+I don't know, I s I can't more and more I appreciate just having control of my own environment for this where anything that's good 'because if they get good at like computer use, like with the JEV stuff, I'm like, cool, they solve computer use. Well I can use that and I'll just plug it in. And if I can use a computer, I can already do anything that everybody else can do anyway. I don't really need to get a new subscription for this. I can just
+
+Andy David [59:20.182]
+Completely. There I mean there is a
+
+Andy David [59:40.096]
+Yeah. I just I feel like there's a lot of
+
+Pete Winn [59:40.632]
+Fold it in and just say, Can you now do that? And it's like, Yeah, I can do that.
+
+Andy David [59:46.819]
+There's a lot of like relativity baked into this as well. Like I think one of the questions around Muse that I would have is like, does just sheer network effects and distribution beat capability? Like, is it more important to have the network effect than it is to have like frontier capability? And I would say I would argue potentially, yeah. You know, because for the vast majority of use cases that people have, they're they don't need like the latest capability, but they just need this thing to be doing enough.
+
+Pete Winn [01:00:06.830]
+I would say yes.
+
+Andy David [01:00:17.186]
+For them.
+
+Sorry, did you say you disagree or agree with that? Yeah. Yeah
+
+Pete Winn [01:00:21.028]
+No, I said I agree. I agree. I think it's probably a distribution play. But
+
+Andy David [01:00:27.040]
+Yeah. I think it's interesting though, like 'because you would you would expect the capability to keep improving, but I do wonder if there's just like at some point like a diminishing marginal returns for someone like Meta to be like, okay, like this does like we know how people are using the model. Is it worth us going and like, you know, having an order of magnitude improvement here? Like probably not. Like it there's probably like a natural cap here for the vast majority of our users and
+
+The power user component probably isn't going to use the Muse Agent anyway. They're probably going to have that and ten other things.
+
+Pete Winn [01:01:03.570]
+Yeah, I think it almost like becomes like I think something like that will work for a lot of people, it would make sense, right? But I it's hard to know like what the pushback against it would be 'because you know, Facebook's not the most like universally liked set of people. Like Zuck does come across as like literally a lizard person. So like, you know, or a robot, you have those you do have those issues where
+
+Andy David [01:01:16.257]
+Yeah.
+
+Pete Winn [01:01:32.613]
+At some point you might it's like, you know, if somebody if you're at work and somebody only wants to talk to you over WhatsApp and you're like, No, email is for work. I don't want to talk to you on WhatsApp, WhatsApp is for family or like signal is for my friends. You know, like there's like you have these compartmentalizations in your life for real reasons.
+
+You kind of wonder, like, will everybody just go, Yeah, I'll give that one to Zuckerberg, he can have that or give it all to Elon. Like I it's not obvious to me there's going to be one version of these things or like even like Facebook's distribution. I guess there's all the I always forget about Instagram and WhatsApp when I think about Facebook. I think about Facebook as being the I guess meta or whatever it's fucking called these days. Like that's got a really bad rap and brand, but then
+
+Andy David [01:02:02.976]
+Yeah.
+
+Pete Winn [01:02:26.097]
+Most of the distribution is probably Instagram and WhatsApp. WhatsApp is probably the big carrier for most of that. So yeah, who knows? Yeah.
+
+Andy David [01:02:30.892]
+Yeah.
+
+I know my personal reservation, like most meta things, is like ultimately this is an ad business, right? Like harvesting up a heap of data and then using that in like in ways I'm not particularly comfortable with, let's put it that way. So I would have some reservation about then also going, right, let me throw an agent at this now and giving it more of my data to hoover up. So that would be my personal reservation on that particular
+
+Pete Winn [01:02:59.186]
+Mm.
+
+Andy David [01:03:01.546]
+Model or that particular agent. But I c yeah, I can understand the appeal for a lot of people to just get their hands dirty with an agent.
+
+Pete Winn [01:03:08.091]
+And you've got to assume that is the model, right? Because they're
+
+It's free, it's just there, it's what they do, it's how they do it. And even places they you know, you look at someone like Netflix, which I believe is now starting to flirt with the idea of putting in ads on subscription channels and stuff, and you're like, hang on a minute, I've already paid and now you want me to have ads on the channel that I've paid for and like several other streaming services were looking at this and you're like, Yeah, y
+
+You kind of sort of like you know, you basically like killed piracy with Netflix and then you revived it by creating like nine other segmented versions of this and then you're basically just going to put it back on top by like then showing people that's going to be like, All right, it's fine, I'll just I'll just go and do all this myself. Like there's always this kickback, like it's
+
+Andy David [01:03:58.583]
+Yeah.
+
+Pete Winn [01:04:09.999]
+It just they boil the frogs so they just have so much money, right? That they can just ball this is the whole VC thing. I mean we've argued about so many times not argued, we agreed about so many times on this show of just
+
+Andy David [01:04:22.422]
+Yeah, violently agreed, yeah.
+
+Pete Winn [01:04:25.061]
+Like it just allows you to just draw people into this fake trap of like, nah, it's free. It's free. Anyway, now I'm just going to rape you for ads for ten years. Like, god, what happened to free? It's like why was it good until the moment we went live and IPO'd?
+
+Andy David [01:04:35.040]
+Yeah, exactly.
+
+Andy David [01:04:38.923]
+I mean
+
+Andy David [01:04:43.594]
+Yeah, this was always the this was always my argument for torrenting. Was like, well, it's not that people want to steal, it's that you your distribution sucks and your business model is extractive. So if you solve the distribution, like if I need to go and have like ten different platforms to watch ten different things and I've gotta pay them all a heap of money, like that is a distribution problem. Like
+
+Pete Winn [01:04:48.827]
+Mm.
+
+Andy David [01:05:10.006]
+That is suboptimal for a user and that encourages torrenting. Just does. Like peer-to-peer will just win there. If it's convenient. And then your business model is inherently extractive. Like you're going to charge me, and then I'm still going to have to like watch a bunch of ads that are not relevant necessarily for me anyway. That's the worst kind of the worst of the bargain is at least like sometimes like where there's a clear algorithm, it's like great, okay.
+
+Pete Winn [01:05:32.317]
+Yeah.
+
+Andy David [01:05:39.414]
+This ad might actually be relevant. I still don't want to pay and get ads. That's absurd. But there should be some relevance. But yeah, I just think these are just failures of incentives ultimately. So
+
+Yep. Similarly I have my reservations about Muse, but I do think this will be a big deal. I think it also goes back to a question that we've had s like a few times on this pod, is like what to build. You know, like so like it 'because instinct, right, was the one that everyone was talking about on Twitter. Like that felt like everyone was going on about like how good the user experience is and what you can do with it. And a lot of it's been kind of behind a shadow behind a curtain because I've not been able to find out anything much about it. But
+
+It's amazing like how quickly this stuff just evolves and then all of a sudden, yeah, someone comes along with a network effect and like, do you still have a business? Like maybe. I don't know.
+
+Pete Winn [01:06:38.215]
+Who knows? I don't know. Like I They seem to be ten a penny, like they're going to get copied. As I said, it's not even obvious to me that
+
+I don't know, like it's kind of tied together into like an experience, right? So if you f if you look at Spark you've got
+
+You basically get in a computer, a an always-on computer, plus like a chat interface, plus an agent that's going to do all the stuff. And then the trade-off of that is that somebody that has got a history of a manipulating behaviour in voting, manipulating behaviour in but just politics in general, like and just and will just sell all of your data to anybody for as much money as they possibly can to be used in whatever way. They get all of your data. Like, that's one trade-off. But there's a lot of stuff that's baked into there. And you kind of wonder, like you know, everybody already has computers, so it's always weird to me that it's like, right, well, kind of makes sense to do the computing on the computers that are already there. There's definitely like more net computing power per person on desks than there is in a even a metadata center necessarily, right? Like it's just
+
+Like a computer is quite powerful. If you have a computer and you have a phone, you've got a lot of compute power. So it kind of makes sense for certain things that would be better off private to go there. I kind of I mean, this is what I like about Wingman and like flight deck and like autopilot and everything is like look, it's I want there to be options here where you don't have to go down this route. And anything they can do is so easily copyable and with no moat that
+
+Pete Winn [01:08:27.067]
+Why not just own it yourself? Like obviously there's always going to be people that don't want to own it themselves, but there's I think an increasing amount of people that do care. Not maybe as much as they will do, but I think if particularly like if the if the screws tighten a little bit there's always more people. Like the you know, the tighter you squeeze the bag, more water flows out of it.
+
+Maybe it's like a goont bag of wine. Just yeah. Do we have non Australians? If you're non-Australians, please comment in the chat. You know, like and subscribe, comment. Comments, comments. Comments do help. Like when people comment on these things, we get more views. So it would be nice to get more views 'because then it feels like something's happening.
+
+Andy David [01:08:57.890]
+Mm-hmm.
+
+That is a niche reference for Australian audience.
+
+Andy David [01:09:18.582]
+Yeah, they really do. And we've got to build up our Australian base.
+
+Pete Winn [01:09:26.212]
+Yeah, like it's hard to know. I mean my guess is that you just build more of the stuff that we've always wanted. Like there's always going to be a new problem to solve. I think a lot of AI agent stuff is a little a little performative. It looks great when you don't have to have like if everybody has a personal assistant, but I also imagine that's going to because like a whole bunch of problems. So you could build stuff that solves those problems. Like I don't
+
+Quite know what they are yet, but you know, even like the idea of like having an agent that answers all my emails, I'm like, yeah, I kind of get it, but also then that's its email, it's not mine. So I'm going to change if that's the thing that we've got. I'll want something else. Like it's not it's not really a problem. It's not really a solution to that problem, right? If I've got too many emails, the problem is I've probably given too many people my email address.
+
+And I'd like to get rid of it, so maybe I should just have a new email address and then I don't have too many emails. Like if you just go and get an email address and you don't tell anybody it you don't get that many emails. It's like it's way better.
+
+Andy David [01:10:26.071]
+Yeah.
+
+Pete Winn [01:10:38.706]
+And then keep that secret.
+
+Andy David [01:10:39.370]
+Yeah, it's like routing would be interesting for an inbox, but I kind of still want to respond to people. Weirdly, I want the human contact. I don't necessarily want like all of it. Some of it is like just people selling to me and stuff like that and I don't want it. So great. Like if you can just sort that off into like a different folder. Like you could do this already. You know, like I don't necessarily know you need to throw an agent at it, but yeah, I must admit, like messing around with my inbox has not actually been like front of mind for me, which is interesting because it feels like it's definitely front of mind for a lot of people. But I do think that's probably because, you know, we have like our own business and we're not working inside of a of a big enterprise environment where it's just thousands, like all comms are just like scattered across your email inbox and across Slack and like text and god knows where else.
+
+Pete Winn [01:11:27.891]
+Hmm.
+
+Andy David [01:11:34.450]
+And like trying to sort through that mess is like, you know, that is a challenge in and of itself and that creates a kind of a degree of inertia that can be challenging to break through, which mercifully we don't we don't have the requisite bureaucracy to have to worry about, which is kind of good.
+
+Pete Winn [01:11:52.733]
+Well, I think there's I don't know if you ever read the book The Elephant in the Brain. It's like a Robin Hanson book from that's maybe about ten years old or something. But it was about like the core thesis was kind of like a lot of problems aren't about what you think they're about. It's also a great George Gammon talks about this a lot, he says like the best quote he ever had from a boss was It's not about what it's about. Like it's some it's about something else. The thing that you're seeing and the problem is not really about that.
+
+Andy David [01:12:02.199]
+Yeah.
+
+Pete Winn [01:12:21.241]
+And you kind of feel like a lot of like something like the problem with email is like if you look at email as like, this is supposed to be like a an efficient communications medium, you're like, it's not. That's not the point of email in an enterprise. The point of email in an enterprise is you want to have passive-aggressive arguments with people with an audit trail that you can then pull up at some point in the future. That's what that's what email is used for. So I think it I think agents don't
+
+Doesn't do anything like you know or agents are going to passively aggressively argue with each other. No, you want it to be in an email that you're writing because you're trying to hold somebody else accountable that doesn't want to do their job. Like that's what's going on there. So it's not that much useful. I don't know. Well
+
+Andy David [01:13:04.940]
+Yeah. Also, I mean, this is a style of a substance matter, but I feel like the best emails that I've ever written and the best emails I've ever received are basically one-liners. Like they're basically like text messages anyway. So having an agent do that is kind of like
+
+Yeah, as I say, like maybe that's just suboptimal because I can do that and then I can actually get a sense of what is going on with this like other human, you know? Like I don't necessarily want the agent interfering in that, but yeah. There was this meme a long time, like probably a couple of years ago now, where it's like the agent drafts like the really long email and then the agent on the other side on the recipient is like turning that into a bunch of bullet points. And it's just like, yeah, this feels like email.
+
+Pete Winn [01:13:50.587]
+Exactly. I so I think the answer of what to build will just be like if we have a bunch of additional things, they will create a bunch of additional problems and we'll just have to solve all of those problems. But there will very likely never be a lack of problems. I mean, compared to most medieval peasants, we have no problems in our world, but yet we don't appear to be content yet. So it seems like there's probably a lot to do.
+
+Andy David [01:14:20.011]
+On that note.
+
+Pete Winn [01:14:20.741]
+On that note, that's your Intelligence Snacks.
