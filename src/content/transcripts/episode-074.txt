@@ -1,0 +1,751 @@
+Pete Winn [00:06.297]
+Hello and welcome to episode seventy-four of Intelligence Snacks. Normie Mode is the title that was sneaked in. I actually titled this one before we started, which is that's the literal first. Like a year and a half in. But Andy, tell us tell us about Normie Mode. What's this?
+
+Andy David [00:13.944]
+No, you witness.
+
+Andy David [00:19.861]
+It never happens that, yeah.
+
+Andy David [00:27.917]
+Normie Mode. Yeah. Well, you know, I got to a point where I mean we recently had this flurry of new model releases. And I just thought, do you know what? It'so difficult for guys like us to keep on top of all of this stuff. And we are actually paying attention to it, we try to. And it occurred to me that a lot of these benchmarks and there are a whole heap of compara benchmark comparison sites as well to work out like which model is the best. Like they're all quite technical.
+
+And like even I was spending a lot of time just trying to like sift through the information on there and work out like, okay, what does this actually matter to most people? And it kind of struck me that it doesn't really. So I was like, it wouldn't it be good if we just had like benchmarks for normies? You know, because everyone wants to like consider what's the best model that I need for the job that I'm actually doing.
+
+Pete Winn [01:19.727]
+Okay.
+
+Andy David [01:25.345]
+And obviously you're probably going to have a bunch of different jobs inside of your business, inside of the work that you do on a daily basis. But I really just wanted to get a sense of like, okay, which model should I choose for any given task? And so I wanted to, it's a pretty small sample space at the moment, but I wanted to collate a bunch of the comparison data that exists online for a lot of these models, pull them into one place, and then essentially distill that into a series of everyday
+
+Task benchmarks. So things like which model is good for analyzing spreadsheets, analyzing financial data in spreadsheets, and which one is good at AutoCAD, and which one can help me with my homework? And which one can help me learn a language? You know, like kind of everyday use cases. And I pulled all of those from like essentially Google's autocomplete data. So when you start typing in into a Google console, like
+
+Pete Winn [02:05.732]
+Yeah.
+
+Andy David [02:24.65]
+What is the best AI model for? It will start autocompleting with a bunch of suggestions. And so I essentially pull those suggestions in as like starter benchmarks. And then yeah, we distill that comparison data into a benchmark that anyone can use and it's cost compared as well. So sometimes you'll get like a really capable model that's very good, but it's stupidly expensive for the task at hand. And so you need to weight that against cost because sometimes your
+
+Pete Winn [02:27.045]
+Mm.
+
+Andy David [02:52.684]
+you'll there'll be a much cheaper model that is like, you know, maybe a little bit less has a little bit less firepower, horsepower that you can you can throw at your job, but it'so much cheaper that you may as well go with that. So trying to balance a number of different things into a single benchmark can be can be challenging. But yeah, it's just to give people an idea of how to how to choose, how to select the right model. So right now, yeah, pretty small sample space of tasks. I think there's only about fifty or so. But that's going to keep growing.
+
+And yeah, we're also running our own kind of independent tests on these as well, which I think will be quite good to build out over time. So it's an ideal. It's just something to ship and we'll see if it actually like resonates with with the normies. But that's gone live.
+
+Pete Winn [03:40.536]
+I feel like as we I mean I f was this like episode seven or something like that where we said like we need to I need to ship more in general like we had the whole struggle session on your balcony against uptown bar. I think it's always good to ship something new. Like it's I think it's a it's a muscle. Like I'm I'm probably going through that process of the moment with Wingman of being like ha and just
+
+Andy David [03:51.426]
+Yeah.
+
+Yeah. Therapy session.
+
+Pete Winn [04:08.719]
+continually trying to make it slightly simpler for somebody else to set up. So one of the things I did this week in the background has been like just chewing away at like a setup skill. So how can you give like just if you've got Claude Code on your machine, like here's everything it needs to know to set up this whole environment and advice on how to interview you to figure out what the best setup would be and then
+
+Andy David [04:20.536]
+Mm.
+
+Pete Winn [04:33.731]
+what needs to go into what file so that then you can just hit a button and spin it all up. So stuff like that, I think it's going to make it make it somewhat easier. But yeah, it's this that's cool. so the benchmarks that you're looking at then, how are you how are you approaching that then? For what's what does a normie benchmark look like? 'Cause I agree that most benchmarks I'm just like fuck this is just doesn't mean anything. Like and by all accounts anything can do everything, so
+
+Andy David [04:38.785]
+Yeah.
+
+Andy David [04:58.378]
+Yeah. Well if
+
+Well, exactly. And they also change quite quite frequently as well. So there probably is a like a dovetail discussion to be had here about frontier intelligence versus like open weight open source models, but let's let's park that for a moment. The the benchmarking itself is essentially so there's four or five different comparison sites that have
+
+Pete Winn [05:03.097]
+Where are we at?
+
+Andy David [05:28.652]
+data that you can you can grab via API. There's a couple more that are paid, so I don't use them. I figured between the four or five that are actually free you can pull together enough of a spread of data to actually make a meaningful determination. They're not going to be like scientific necessarily like scientifically accurate benchmarks that you can bank on, but there's enough information to give you like a gut check for like what the best ta what the best model is for any particular task.
+
+And so it will take into account things like it will take into account things like capability and certain tasks. So for instance, basically everything came through as Fable five point one because at the time of a lot of those comparison sites being updated, Fable five point one had like basically shot the lights out across like, you know, every major benchmark that you could possibly think of.
+
+And so that is definitely a bias that's in the data that I'm that I'm trying to play with at the moment because there's not a whole lot of data, for instance, on Opus 5.5, which is currently shooting the lights out on everything. So there's like this catch-up period as well, which I've got to try and account for a bit. I basically wanted to distill capability across like all of these different tasks versus cost and not try and overcomplicate it too much. So
+
+The independent tests that we can run is it's basically there's a pipeline, and the pipeline will basically go and use a kind of subsection of different models. It doesn't use all of them, because I feel like sometimes that's overkill. via open router. And so it'll just put it to a set task and that will just run in the background for like half an hour, an hour or something like that, and then it will give me a set of results. But yeah, I definitely recommend people checking out normimode.com.
+
+And send feedback because you know, right now that is the most useful thing for me to try and work out if it's actually useful. 'Cause I don't know, right? I'm trying I'm trying to create something that I hope is useful to people, but ultimately I don't I don't know. And so I ran it past Jared Grig, friend of the pod, as well. And he mentioned do you know what you could probably like you probably want to make this available to people's agents and just like have an MCP server that you know the agents can chat to and that would be quite
+
+Andy David [07:50.115]
+quite useful as well because then that would give give people a sense of like what their agents are are actually doing relative. Well they the agent would be doing a task and then you'd be able to like cross-reference that against these kind of benchmarks, which I thought was interesting. So I need to play around with that as well. So any ideas, fire them over and we'll we'll see what we can we can integrate.
+
+Pete Winn [07:59.237]
+Hm.
+
+Pete Winn [08:10.937]
+What's the what's the best way? Like on Twitter or
+
+Andy David [08:15.416]
+Twitter's good. Twitter Twitter is probably the easiest spot to see it. So yeah. So share it around. Let us know. Hope as I say, the aim was just to like get an idea out into the wild quickly and find out if it's valuable. I mean that's a UI thing as well, you know, like I don't even know because it is quite chart heavy still. And I was like, it looks nice, but is it useful? So that's kind of the next thing I want to
+
+Pete Winn [08:33.859]
+Hmm.
+
+Andy David [08:44.94]
+I want to test.
+
+Pete Winn [08:45.261]
+I mean do you take bribes like can we can we pay? Can anthropic pay to be number one? Like w how to monetization.
+
+Andy David [08:48.887]
+Ha ha.
+
+Andy David [08:52.568]
+Well look. I yeah, there is no obvious commercial model to this just yet. So you might notice that there are a couple of intelligent snacks banners just like you know, very very carefully placed. So if you if you discover if you in it's not bad from what I'm told. It's not bad. So if you discover us via normie mode, then all about
+
+Pete Winn [09:09.733]
+Yes, I like those guys. Good podcast.
+
+Pete Winn [09:19.479]
+add a comment on whatever platform you're on so we can see 'cause that would be nice to see. After you like and subscribe, of course, which is also a thing we're going to say. I know, that's that's kind of crazy. Kind of crazy.
+
+Andy David [09:26.06]
+Definitely.
+
+Hey, we got it in inside the first ten minutes today. That's that's that's some kind of record.
+
+Pete Winn [09:36.365]
+Nice. Nice. Is there anything else you want to talk about on on normal?
+
+Andy David [09:40.14]
+I just think there is this like this area around like how do you how do you cross the chasm from where AI is going and what you can do with these models and how people are using them to what everyday folks are able to actually kind of grok with this stuff. 'Cause I do feel like this is a gap and I feel like the gap is growing rather than getting smaller. I feel like we talked about this as a gap, as you say, like maybe it was episode
+
+Pete Winn [09:47.589]
+Mm.
+
+Andy David [10:09.067]
+six or seven or something like that. And in my mind it feels like it's it's hard even for me to keep up with some of this stuff. You know, like if we go back three or four weeks ago, I think I was saying like I was deliberately trying not to keep up with with some of it because it felt like it spell like it's it felt like needless needlessly spent energy sometimes where it's not actually productive. It's just
+
+Pete Winn [10:10.149]
+Mm-hmm.
+
+Pete Winn [10:29.999]
+Hm. Well you kind of know that whatever the new thing is, it's not the new thing in a week's time, so You know, like you kind of want it to stick around, right? So I mean Grokbot was all the rage but nobody's it doesn't appear to be around too much at the moment. Buzz was all the rage but disappeared quite quickly. Dots was announced today slash yesterday and people are already dismissing it.
+
+Andy David [10:37.195]
+Yeah. What's the point? Hm.
+
+Pete Winn [10:59.585]
+Straight away, seemingly. Although I'm I'm sure it'll be fine if you know it's there's a definite like convergence there of capabilities that I don't know, everybody's building their own flight deck, seemingly, so I don't know how I should feel about that.
+
+Andy David [10:59.811]
+Yeah.
+
+Andy David [11:07.662]
+Mm.
+
+Andy David [11:14.551]
+Yeah. It does it does feel like the harness is the it's like the modern experiment for a lot of people.
+
+Pete Winn [11:25.605]
+Mm.
+
+Andy David [11:27.285]
+So that's I mean, it's been interesting. I know I mentioned last week I've kind of been using out of necessity the codecs web app, not web app, desktop app, I guess. and it's fine. Like people love this thing. It it's fine. It's just like I've kind of been spoilt for a year or so now using Wingman. And so there's there's just always this thing that I want it to go and do and it's not able to do it. And so there is some benefit, I think, to just having
+
+Pete Winn [11:48.047]
+Mm.
+
+Andy David [11:55.47]
+having a harness that is tailor made to the way you want to work rather than having to force force your work through a different system, but yeah.
+
+Pete Winn [12:04.366]
+Yeah. I mean obviously the big takeaway for Grokbot not birds really. Gro it would be Grokbot for Muse, Meta's Muse, and then dots seems to be alright, we give it its own computer and it can run that. like this I you know, I think that
+
+That was that might have been like I don't know, episode four or something like this. So it's not I'm going to go buy a computer and give it to give it to this thing. It feels like it needs its own space where it can do whatever, but it seems to be the correct I don't know, deployment shape for this sort of thing. It's like these assistants to do anything need computers. What I what I kind of hope is we end up with much better computer use tools because the
+
+Andy David [12:29.431]
+Mm. Yeah.
+
+Andy David [12:55.801]
+Mm.
+
+Pete Winn [12:57.675]
+It it feels like there'so much that like can happen that like yeah, interesting. Yeah, I assumed that was the stream. So it Yeah. So I reckon there's this it's obviously the right way to do it, but it'so painful to try and like do the computer use stuff on here. Did you turn up the background
+
+Andy David [13:43.052]
+Yep. But yeah, I mean I do I do think like these I mean I said this last week with Muse. I kind of wonder if this is like the mainstream moment for these agents. But it's not without some peril. I mean, there was a story that came out this week about like a guy whose Muse bot had basically been well, I think he'd wanted to sell something maybe on like marketplace and then like the agent the agent had been like
+
+Pete Winn [14:02.777]
+Yeah.
+
+Andy David [14:07.149]
+basically agreeing to like, you know, low ball prices and like arranging meeting times with people to come by the house and you didn't realise that the agent even had the address and there was all sorts of stuff, you know, that had kind of come out about this and
+
+Pete Winn [14:18.679]
+Yeah, it shared his home address with somebody. It like accepted a lowball offer, sent the guy's address, and then like even replied to him when he was said, like, Are you there? And the guy's trying to hide 'cause he's like, Who the fuck's outside my house? And the bot is going, like, Yeah, he's in, he's in, he's in like What the hell? Like, it's y I mean it sounds kind of funny, but like You can see that there's almost like
+
+Andy David [14:23.565]
+Nuts.
+
+Andy David [14:35.166]
+That
+
+Andy David [14:45.283]
+Yeah.
+
+Pete Winn [14:46.839]
+You're so close to something that's like truly terrifying where you're like, All right, this is like getting your home addresses leaked and stuff like that is is not cool. As we see in France with like the spate of just abductions and kidnappings and various things that are going on for people's like say Bitcoin wallets and stuff, you're like, This is not it's not it's not cool. We should care about privacy on stuff like this. This is
+
+Andy David [14:57.355]
+Mm. Yeah.
+
+Pete Winn [15:15.009]
+A weird weird space to be in.
+
+Andy David [15:17.473]
+I must admit, I find this an odd use case for an agent. Like what I would like the agent to do is go and like handle the listing for me. Right. Then get out of the way. Like, I actually don't think you save a whole lot time with an agent negotiating on your behalf, unless you can absolutely trust the agent to negotiate correctly and in good faith on your behalf. And I just don't know that you can.
+
+I don't I don't know if you necessarily want to either. Like maybe for these kind of small items, that's fine. And we probably should say there is always some peril putting things on marketplace and having to give out your home address to someone. That that kind of comes with the territory. But but yeah, I maybe a better example is like people often talk about how they'll just get their agent to, you know, schedule meeting times with other people's agents and like, you know. I find all of this stuff like just
+
+Pete Winn [15:55.109]
+Mm-hmm.
+
+Andy David [16:14.059]
+Optimizing where you don't need to optimize for the most part. Maybe it's just me, but I kind of want that human interaction. Like I'll message someone because I want to reach out to them. You know, I don't want to spot in their calendar. I want to say hi, see how they're doing. And if we like arrange to catch up, great, let's catch up. It's been a while. Like I think we can kind of rob ourselves of our humanity here by like trying to overindex on stuff that just does not move the needle at all.
+
+Pete Winn [16:16.453]
+Hm.
+
+Pete Winn [16:40.257]
+I suspect it's maybe a an even simpler thing of just that most people that are really adopters of technology are really adopters of technology because they like the idea of the tech or then they have like a particular need for it. And so so you can see in a lot of these use cases it's like Ooh, I've made it so that my agent can talk to your agent about a meeting and it's like it's not it's not necessarily solving anybody's problem.
+
+Andy David [16:53.593]
+Mm.
+
+Pete Winn [17:10.561]
+Or something that you had such a problem with that you would have invested in this sort of thing or paid money for it. But you're just kind of trying to find a place for it to do something. It's like I kind of feel like somewhat similar with like flight bookings and stuff seems to be a common thing. And it's like I feel like if you're if you're flying that often, you probably already have a human that does this for you, because it's probably worth it.
+
+Andy David [17:13.966]
+Mm.
+
+Andy David [17:37.273]
+Mm-hmm.
+
+Pete Winn [17:38.83]
+If you're not flying that often, like the chance that the thing is going to get it right is going to be so bad. Like 'cause you kind of need accounts and stuff set up for all this stuff if you're doing it all the time. But it just feels like such an odd use case to specify as like that I'm going to go I'm going to say family on holiday like once twice a year and I don't want to be involved in it. It's like no, I sh I'm just going to check that it's working, so it doesn't need yeah.
+
+Andy David [17:43.086]
+Yeah.
+
+Andy David [18:02.382]
+Yeah. Flights are already so well optimized if you think about it. Like you can literally do a Google search now and get like a list of flights and they are already filtered by like time and like layover and like airlines and like I how many seconds are you actually saving here versus like the cost of compute you're throwing at it? Like that just seems misaligned to me. But again, as you say, like yeah, if you are flying that often you
+
+Pete Winn [18:12.249]
+Yeah.
+
+Andy David [18:30.391]
+you probably already have a team doing this stuff for you and maybe there's a commercial sense to running something like that in a business, especially if you're managing hundreds of people that are flying all over the place. You know, that makes sense. But as an individual that doesn't really make sense to me.
+
+Pete Winn [18:44.471]
+Yeah. And so but I think there these like it's also annoying to book your flights 'cause it's not made in any way easy. So I can kind of see that like it appeals in some way, but it's it's just not like i if you said to me like, all right, this thing's going to book your flights twice a year, can are you going to pay a thousand dollars for it, I'd be like, No, no. I don't think I will. That that's not quite right. But if you said this thing's going to build all the software you can dream of,
+
+Andy David [18:52.119]
+Yeah. Totally.
+
+Pete Winn [19:13.709]
+Are you having to pay like five grand for it over the course of a year? I'd be like, Yeah. No, yeah, I'll I'll I'll do that. I'll I'll use that and then I'll use the outputs of those things and that feels very real. So I don't know. I mean it makes sense. People have assistance, people like assistance. So I can see that it would appeal.
+
+Andy David [19:29.859]
+Yeah, of course. Yeah, yeah. There are there are ancillary parts of these processes where I think the agent makes a lot of sense. This is not like me saying it's like either or. Like, for instance, with flights, right? I quite like the idea of searching for the flight and looking through the options and then selecting something. But then at that point, once I've selected it, it'd be great if the agent just went ahead and booked it for me and took over the rest of the process, so I don't actually need to sit and sift through all of that stuff. Similarly, if I'm like
+
+reaching out to you and going, hey, let's grab a coffee. Sometime it's been a while. Let's like meet up. You know, once we've had that like exchange back and forth, I've got no problems with like our respective agents then going, okay, let's find a s a spot in the calendar. Because that part of it is actually quite administrative and quite painful sometimes where you're just going back and forth. So there is a place for it.
+
+I don't know that it's at the start of the process, is kind of my thinking. It's like a lot of this stuff where you initiate the thing to do, you probably initiate it out of some need or some desire. And that need is either to book a flight because you're going somewhere or you want to reach out to someone that you've you've not chatted to for a while. I as I say, I think you can over-optimize by just like delegating everything to an agent and just going, all right, run this end-to-end for me. And I think sometimes it's just a case of like,
+
+Well, what we need is better scaffolding for some of the processes that we already have. So let's let's work out where where the agent can improve this stuff. And then some of it is also just like, well, we should just be like improving the UX of some of these things like at like rapid velocity now, because we can. You know, like some of these booking platforms are just like
+
+horrible, horrible experiences and they just do not need to be horrible experiences. And your cost of compute has fallen to the point where guys, maybe you could fix this.
+
+Pete Winn [21:24.005]
+And this was a an interesting takeaway from the recent haulage I had in Japan where it was like I grew up in the nineties assuming Japan was the future. And then I think if we've talked about it, you get there and you're like, no, this was like the future in the nineties and then they stopped. So like all the like all the internet and all the booking stuff is just so it'so horrendous. It's like early two thousands booking websites to
+
+book on the like Shinkansen trains and stuff and you're like, How is this so bad? Like this is such a good like rail system and everything works so well in a kind of physical worldview, but then your software is just dog shit. It's like you built it once and you went, Yep We will never revisit that again and I think it pretty much has happened in in that way. But yeah, you would think that these things would be
+
+Andy David [22:08.355]
+Yeah.
+
+Andy David [22:16.632]
+Mm.
+
+Pete Winn [22:21.507]
+just rapidly, as you said, much much better and I don't know, maybe maybe it's just not maybe there's something else going on that we don't understand, but I hmm
+
+Andy David [22:31.351]
+And it can be done if you have the will to do it. I don't know if you saw the I think it's the America.gov release that so I think it was Joe Gebbia who led this, like one of the Airbnb Airbnb founders with the US government. And it seems great, like it's a portal that you can just go to and you can chat to agents to get the information that you need. I mean, if you think about it, this is like I don't know, a shitload of jobs that exist inside the public service to facilitate.
+
+like the movement of information between people and a portal like that, which is basically just like go and chat to the agent, get the information that you need, just removes the need for a lot of this stuff. And I was like, okay, well that's interesting. I don't know how effective it is 'cause obviously I've no desire to use it. But I imagine d trying to pull that off inside any big bureaucracy would be like nigh on impossible. And yet here we go. You guys have been able to do it in one of the biggest bureaucracies on the planet. So well played.
+
+I couldn't imagine that happening here, but I mean if you are a big company, big enterprise, like yeah, there's kind of no excuse anymore. You you kind of can't just hide behind the bureaucracy. Your cost of compute is cheap enough to go and at the very least experiment. at least on front end, like I kind of understand not wanting to mess with systems of record for sure, but yeah, front end experiences booking user experiences, things like that.
+
+Yeah, go and improve this stuff. It seems mental.
+
+Pete Winn [24:04.228]
+I mean I'm that af a after saying all that, like I do want an assistant that I can adequately just say, Go book me this thing. You know, or find out what the options are. Give me five options, I'll choose one and then tell you to go book it. But you can do a l there's a lot of like prep work you can do ahead of time. Which I think should be good. I've I've always found it just so painful with most of these things. And maybe this is the real breakthrough that they're they're getting at is there's
+
+Andy David [24:11.161]
+Yeah.
+
+Pete Winn [24:34.485]
+know, something about meta doing the computer used tasks that they swallow a lot of the cost and they, you know, can run it quicker in a way, or from different IP addresses that get round various different things, or they can they've hacked various people's websites to get to get better results out of them than I than I would have expected. But I don't know. I it's I look forward to AI's doing a lot more of that work for me, if it makes sense.
+
+Like I as I said, it's not it's not clear to me that it's a home run yet. But I think the operating model of just the thing is somehow persistent and has its own computer and its own access to various things. It's interesting to see that come out across the board. It's been a common thing. The other thing I thought was interesting today was probably the in the OpenAI dev day, alongside so the dots was their little
+
+Andy David [25:09.145]
+Mm.
+
+Pete Winn [25:33.285]
+Grokbot Muse style agent. They also they had another one which is like way down the page, but they had like a pages type announcement. So they had they'd moved to doing slides and documents as kind of first class artifacts that you could create with with these models. Now this has been something we've been doing for quite a long time and I kind of expecting this to become
+
+Andy David [25:33.463]
+Mm.
+
+Andy David [25:47.924]
+Mm.
+
+Pete Winn [26:01.242]
+more mainstream at some point. So it'd be interesting to see like again in in the you know, in the idea of normie mode, like I wonder if this is the sort of thing that will help with a lot of people. Like 'cause even going back to like I remember this is what is it? Anthropic first did it, I guess, with artifacts, where you would suddenly have like the document pops up on the right hand side and the chat continues on the left. And then you talk about the thing. And then
+
+Andy David [26:10.765]
+Mm-hmm.
+
+Pete Winn [26:28.023]
+I know like the implementations I had in Wingman, like one of the big ideas was to just go like I don't want to describe in text, in a chat, next to a document, how to change the document. If I want a specific change, I just want to say I just want to retype it and then that's a ch track change sort of thing. So being able to do that and then have comments and various different things where you could say, Okay, like I want to comment but I want to I want to be very specific, like this sentence is the thing that I'm commenting.
+
+Andy David [26:39.737]
+Mm.
+
+Pete Winn [26:57.925]
+I don't want to like describe the sentence as position inside a chat. Stuff like that. So So I think those sort of services coming to the fore are interesting because they're they're such like normal human interfaces. And it's almost slightly crazy that it's taken like three years, I guess, since like Chat GPT to go, well, if we're if people are writing documents with this, should we just let them
+
+work on the document. I mean maybe it got there 'cause of like the C P stuff and people were just connecting it to Google and just doing it that way. I don't know. But it seems
+
+Andy David [27:34.743]
+Yeah. It does make sense. I mean, you kind of need records keeping, right? I feel like at the very least we're not going to stop writing stuff down. Even if you're delegating stuff to agents, the agents should probably be writing stuff down and keeping records because if you're running a business certainly you're you're going to need some records management. This feels like a this feels like an important place to
+
+to spend some time and focus on. I think they're they're all kind of also thinking about like going like moving further up the stack, right? As well. So they'll need to go in like they're they're already talking about like essentially going into legal practice as well. And, you know, I'm sure they'll go into hedge funds and they'll go into insurance and like, you know, they'll they'll go all over the place. So I feel like some of these things are just like they're kind of bedrock steps to enable that to happen to some degree.
+
+But yeah, it is interesting how like long it's taken to come to that come to that conclusion that this stuff is important.
+
+Pete Winn [28:40.867]
+Yeah, I mean there was definitely like a couple of years where it felt like the general view was that the entire user interface is now a chat. And it's like it's and I guess in some ways, like if you could adequately just say like, here's something to do and then this magic happens and it's known exactly what you meant, even though you didn't say
+
+any of the words that you needed to say, you know, like maybe you should have spent twenty minutes telling somebody you had to do something, but you spent two seconds and you just kind of hope that they imply a lot of that stuff from somewhere. It's just Yeah, like it's just not like chat is kind of doomed in a way. Like well it's it's not. Like it's w we're always going to chat, we're always going to text, we're always going to write stuff down. It's just not always the best place for that information to be. It's like
+
+Andy David [29:12.066]
+Yeah.
+
+Andy David [29:33.71]
+Yeah.
+
+Pete Winn [29:35.021]
+There's a reason why like to do lists and task boards and stuff have always been important. I think there's a reason why documents have always been important. I always wonder about the spreadsheet, 'cause I in my head I think a lot of like what makes the spreadsheet so popular, like just
+
+Andy David [29:43.692]
+Yeah.
+
+Pete Winn [29:55.726]
+I mean popular, that's kind of a funny way of putting it, but like you know, it's been it's been like the it's almost like the most popular computing language for twenty years was actually Excel. It's just we didn't think about it like that. But but just having like a grid and the ability to add stuff up sideways and vertically was such a good primitive that people all over the place could build these like elaborate little mini computer programs in Excel.
+
+Andy David [30:05.348]
+Mm-hmm.
+
+Andy David [30:20.856]
+Mm.
+
+Pete Winn [30:21.347]
+that just tracked lists or created little financial models or did some analysis on something or charted something and then but really could probably just be a computer program. Like I kind of I wonder if we'll still have spreadsheets.
+
+Andy David [30:33.111]
+Yeah.
+
+Andy David [30:38.679]
+Yeah, that's this is also a callback to our like greatest hits from like episode two or something, right? Where we talked about spreadsheets being a good proxy for actually a spreadsheet is a great proxy even for like normy mode to some degree. And like because if you think about it, everyone to some degree uses spreadsheets, right? You can use it in a really technically complex way and you can have systems with a lot of macros and things like that, or you could literally just have like a really basic spreadsheet that does some
+
+really simple calculations for you and off you go. And people get enough out of a spreadsheet for what they need, I think. But there's always more capability. Like I remember one day I had like a I don't think it's in the office, but I had like a manual for Excel and the book was like it was like an old an old phone book, which maybe younger listeners of the pod wouldn't wouldn't know what that is. But you know like it Yeah.
+
+Pete Winn [31:35.011]
+It's a book about a phone. It's a story about it's life and
+
+Andy David [31:38.526]
+It it's insane though. Like it there was so much there was so much in there that I mean, and I obvious I worked in banking, like we use spreadsheets a lot. And I would I would you would know who the power users are even inside bank because they would just ha be like absolute wizards with this stuff. And like go I remember going into a bank thinking like, yeah, I'm I'm pretty good with spreadsheets. I have like probably an above average sense of how to use this stuff, and then I'd I'd see what people were doing with it, and I was like, Nope.
+
+I'm just scratching the surface. And I feel like AI to some degree is probably quite similar to people. Like there is like, you know, like a depth of capability that they could access but don't. And I think some of it is the scaffolding and the tool and some of it is just lost in chat because chat isn't necessarily the best proxy for some of this stuff. But then I also know guys who are, you know, like they're they're kind of old school business guys and they run like multi-million dollar companies out of their WhatsApp.
+
+It's just it's just all day just delegating to different people via chat. And so I kind of wonder if there's there's there's something to that for for similar kinds of users where they're just like, yeah, I just need to delegate enough to my agents and I'll be able to run like a really sophisticated business. But I'm sure there's a lot of mess that also exists in there that it's you know, the outside looking in, it's just chaos. But for the guy running the business, it all makes sense.
+
+Pete Winn [33:05.551]
+Hmm. Yeah, I think it's the capacity to keep an awful lot of stuff in your head at that point where you have everything in there and then you're just spitting out the next task that needs to be done. But I mean look some things are just not as complicated as that as well, right? Like once you've got people in place and they know what they're doing, then often it is a case of just telling them which point chat is a great way of doing it.
+
+Andy David [33:31.981]
+Yeah.
+
+Pete Winn [33:32.963]
+Yeah, I mean I'm always curious like which of these surfaces kind of remain, as I said, like I have a gut feel that spreadsheets are less important than we think. I don't know why like 'cause if you look at the big ones from Microsoft, right? You've got Word, PowerPoint, Excel. And then there's all sorts of things that they've added to that. But really it's Word, PowerPoint, and Excel. The free. And I feel like
+
+Excel was like your weird like little programming language for doing stuff where you di it wasn't really a spreadsheet that you needed, but you wanted to track something or you wanted to show something or do something v like kind of computational. And I feel like you would do that in Excel. And then PowerPoint was your like I don't want to write a document. I just want to have some pictures that I throw up on the board and some diagrams and then flick through them. And I feel like all of those could just be websites.
+
+Andy David [34:14.659]
+Mm.
+
+Andy David [34:28.227]
+Yep.
+
+Pete Winn [34:28.865]
+Websites are more easily understandable almost by a machine than that. And I feel like Excel feels that if you're going to do anything programmatic, it may again it may as well just be a program. In which case then it's much more obvious to the computer you're working with like what that is. So I almost I kind of expect them to go away in some ways or have proxies that are just basically computer programs, but they're more specific to what they do.
+
+Andy David [34:41.017]
+Code. Yep.
+
+Andy David [34:52.035]
+Mm.
+
+Andy David [34:58.849]
+Yeah, if you can build if you can write your own custom program like pretty effectively with an agent and then give everyone in your team access to it and you don't have the version control issues, you know, like that's the big issue with spreadsheets if you're running it essentially in multiplayer is how do you keep track of version control? It's always a nightmare, right? Someone will add something in and forget to update like a little last updated box in the top corner somewhere and yeah, it's a it's a it's a nightmare.
+
+So yeah, this doesn't make sense. I think you're right. Because I mean, I certainly would have spent a lot of time in spreadsheets in the past. And I can't tell you the last time I've opened up a spreadsheet. Like it's just not not necessary. It's usually just a case of okay, let's just write a script, write a little program, and figure it out there. I don't really need to have the detailed interface. So and then in terms of like the analysis component, because I mean I think this is where like some people would argue.
+
+it's but it's beneficial to have the spreadsheet 'cause you still want to be able to, you know, conduct some diligence of the numbers in the spreadsheet is the kind of the equivalent of like show you're working in a maths problem. I don't know, like would you could just throw throw agents at this stuff like needlessly and cross r have them cross reference each other's work and things like that. So
+
+Pete Winn [36:18.915]
+Yeah, I mean you just you can still show the working. Like you just I mean you c maybe create like a Python Jupyter notebook or something like that. You know, that's you got all your charts, you got all your working, you got all your formulas. I mean the problem with Excel was all like the version control was a massive one and the other one was just like errors in a formula. That's just like hidden or that like somebody control downed it. You know? And it's like bang, okay, everything's everything's now incorrect.
+
+Andy David [36:22.712]
+Yeah.
+
+Andy David [36:39.865]
+Yeah.
+
+Pete Winn [36:48.921]
+But it's subtly incorrect and off by like two cells in a way that you're not expecting 'cause somebody's inserted a couple of rows and you didn't protect the sheet enough. It's just like it's hard to parity check all these things. And I think I think having compiled code that you can review and have a second agent review is probably a better way of doing it. Like built in checks and tests and stuff like that.
+
+Andy David [36:49.154]
+Nightmare.
+
+Andy David [37:09.581]
+Completely.
+
+Andy David [37:15.897]
+I think I think this is all really useful. And then like I think on the other side of this equation, it's the companies that are like I mean, I said this last week about inertia, right? I think if everyone has their personal agents running around, so many especially in tech, so many subscription companies, their business model relies on like a degree of inertia, right? Like me going, do I actually need this subscription anymore? And then act actively deciding to go and like unsubscribe.
+
+Because there is just like some latency and some friction in that process. And so like if you all of a sudden have personal agents and you're just unsubscribing to things you're just not using after a few days, like I don't know, I feel like the business models of a lot of companies are going to be like called into question at that point.
+
+Pete Winn [37:49.357]
+Mm.
+
+Andy David [38:06.989]
+I mean, I used the big examples last week of like insurance and things like that. I mean and those are kind of the big legacy examples, but I mean, even if you're running like a like a brand new I don't know, you just l let's say you've just launched like a new software as a service platform and you're like, okay, cool, we've gotten five grand a month, ten grand a month, whatever it is. Like, cool, we're off and running. Well it's how do you how do you know like the churn rate could be like
+
+such a big determinant now, like whereas in the past I think there was always like a degree of inertia baked into churn where you're like, you know, churn's predictable because we know only X percent of people actively go through and like churn right the way through.
+
+Pete Winn [38:46.607]
+Hmm. Well, and part of that is by design, right? The you know, you get this like really slick onboarding process in one click and then you get an offboarding process that is multiple emails and chasing people up and presenting stuff and it's like making sure you're sure. It's like I've several times I've like gone, you know what? I will add Amazon Prime to this and I'll cancel it. And then I cancel it
+
+Andy David [38:51.704]
+Yeah.
+
+Andy David [39:00.792]
+Yeah.
+
+Pete Winn [39:15.255]
+And then after six months I have to go back to them and say, I fucking cancelled this and I have like the screenshot of me cancelling it. And you've just continued to charge me, you evil I am here for AI agents that just are ruthless of those people. Just take it away. But yeah. And just navigate that bureaucracy and check stuff for me. That's but yeah, stuff like that is so terrible.
+
+Andy David [39:15.341]
+Yeah.
+
+Andy David [39:21.187]
+Yeah.
+
+Andy David [39:31.683]
+Yeah.
+
+Andy David [39:36.247]
+Yeah, yeah, totally. I
+
+Andy David [39:44.036]
+Well it even opens up more like more paper use type stuff, right? Like could you let's say you've got like a subscrip like a I don't know, like a Netflix type subscription. I actually don't know how this works anymore, 'cause it's been a long time since I've had had Netflix. but g what if you only watch Netflix on the weekend? And you just like got your agent to cancel every Monday morning and then like re-subscribe every Friday night and like
+
+You know what mean? Like is that even I don't even know if that's doable, but I'm sure there's like some policy. Yeah, you know, as so there's that. That would that would obviously we'll do it every month then. Let's say I'm not going to watch Netflix this month, 'cause I'm going to be away. Just cancel my Netflix subscription and then when I come back from my holiday that my agent has also booked, then like re subscribe to which actually makes sense, you know, like people go away for like, you know, four, six weeks over summer.
+
+Pete Winn [40:14.189]
+I think you pay I think you pay per month. Yeah. So maybe it would continue free trials.
+
+Pete Winn [40:38.421]
+Hmm. I mean people do this with like breakdown like recovery and stuff. you know, you do get like RAC breakdown insurance type thing. Like a that is mo worked doesn't work for a while with RAC and like in WA and like a lot of it is ordered like at the point of breakdown. Like they will sell they will sell it to you. It's slightly more expensive to buy at the point of breakdown than it is to just have it in the back back of your mind. But
+
+Andy David [40:39.415]
+All of my all of my subscriptions I don't need.
+
+Pete Winn [41:06.679]
+like it's mostly sold to people where they've broken down and they ring the number and they say, Do you have breakdown insurance? They go, No. And they go, Would you like to buy it for a year? And they go, Yes, I would really like breakdown insurance right now. And it's it's almost like at that point it's it's a complete no brainer. 'Cause like, yeah, I'm about to use it. It'd be like if you know, subscribe to your
+
+Netflix, the moment you're about to watch the first programme that you know you're going to watch. So, yeah, I'm I'm aware it's going to run for a month and I'll probably forget about it and I won't unsubscribe in the rest of it, but yeah, I really want it now. So maybe maybe it's a new sort of buying model we'll see where that friction becomes so much less that people do opt in and opt out of stuff on this like weirdly repetitive basis. So I could see that. I
+
+Andy David [41:58.264]
+Yeah. Or the platforms themselves go, You can't you can't use an agent to unsubscribe. Find ways to block this stuff, I don't know.
+
+Pete Winn [42:09.009]
+I think we're already at the point where there'so little difference between an agent just manipulating a browser and you manipulating a browser that then they're not going to have like a good way of detecting these things.
+
+Andy David [42:21.315]
+That's true. Yeah.
+
+Andy David [42:28.087]
+Yep. No, I think that's true.
+
+Pete Winn [42:29.059]
+I mean think a agents have been pretty good at CAPTCHAs for quite a while now. Probably like GPT three point five sorta days. And so like it which bothers me that I still have to complete these things and pretend that I'm not a robot for all these fucking robots that are out there.
+
+Andy David [42:50.051]
+Yeah, completely.
+
+Pete Winn [42:50.469]
+It's like you're website, you're literally a robot. Like, stop it, stop it. Who cares? Like, it's just. It's just.
+
+Andy David [42:54.926]
+Yeah.
+
+Andy David [42:58.435]
+There yeah. I think there's like going to be a degree of evolution that is hard to necessarily try and predict from this point out, because we just need to see enough of this stuff happen at the right kind of scale and velocity and then people just like or companies tend to just evolve with it. But I mean there is like for instance, I was thinking about this last night. The I put out a normie mode like product video this morning that I'd
+
+kind of put together, I mean it's mostly mostly one shot with Opus 5.5 to be fair. I had done some editing to it after the fact, but not a whole lot. And I was thinking about this because I was like, not that long ago we'd have an agency that would charge like five to ten K for these kind of product videos. And let's say it's like a minute long or something like that. And
+
+Pete Winn [43:45.037]
+Hmm.
+
+Andy David [43:51.118]
+I mean, I've seen a lot of people doing this because Opus five point five seems to be quite good at producing this stuff. And so a lot of people are are saying, like, okay, yeah, it's killing like the motion designer and you're just going to have like the ability to push this stuff out anytime you want. I'm like, that is probably all true. But at the same time, I'm like, I just think the medium now is not a particularly good one because the base expectation will change and people will just go, well, that's just AI now. Every time I see something, even if it's not.
+
+That's motion designed, you're going to go, that's AI, and therefore like the legitimacy and the effectiveness of that as a medium just basically goes to zero. So in some respects you might see none of them, because why would you it's not effective, so you just wouldn't do it. So I don't know. I there's like a Jevons response to this, which is like, it's cheap now, so everyone will do it. And then there's like maybe a more like
+
+Pete Winn [44:32.613]
+Mm.
+
+Andy David [44:46.571]
+psychology but human psychology based, like consumer behaviour based approach, which is like, well, everyone can do it, therefore there's no value attached to this stuff and therefore no one will do it. And yeah, I kind of wonder if that also plays out in business model as well. The types of businesses that we actually build and the types of businesses we actually want to own. It feels like there's some compounding there that needs to play out, but yeah, I do I do kind of wonder.
+
+Pete Winn [45:14.647]
+I suspect I suspect that's correct. Like it's the bit that it feels is not obvious is like Is it that there's like so I is it so many of these things or is it that they just again, th nobody bothers anymore 'cause it's like nah, it's it's too obviously AI. But yeah, I think with anything, like when when everybody can do everything and there's just tons of it
+
+You certainly do get like a really cheap free version that it's just hard to value. It's like YouTube shorts sort of things, right? They're they're quick and they're easy and there's tons of them and like for the most part they're valueless. But then I don't know, it also then
+
+Andy David [45:49.751]
+Hm. Yeah.
+
+Pete Winn [46:03.044]
+Maybe it just opens up something else. Like I've of I've often thought with podcasts, right? Like we got to that point where anybody could sort of say anything on the internet and then people got really into, you know, like a hundred hour overview of the Roman Empire delivered by podcasts sort of thing. It's like So the amount of time somebody will like you nobody's got any attention, like everyone's, you know, attention I can't I can't even remember the words at the point.
+
+Andy David [46:28.205]
+Yeah. Deficit, yeah.
+
+Pete Winn [46:30.989]
+It's it's not the attention deficit, it's the like the attention span. That's the word. So I'm literally making a span with my hands, you'd think that it's not like no one's got an attention span anymore. And you're like Yeah, but also people will sit down and listen to hundreds of hours about the Roman Empire. Listen to like comedians yap on, like it's just
+
+Andy David [46:34.807]
+Yes, there we go.
+
+Ha ha ha
+
+Pete Winn [46:51.341]
+I don't it's it's true, and maybe it is because there'so much short form content, all of a sudden you rebel and you want the long form content. Whereas if everything back from the days where, you know, all music was consumed in albums, you kind of just wanted singles and stuff, if you know what I mean. That's it almost felt like that's what Apple did quite nicely, is they allowed you to buy like the one good song off an album from bed without going anywhere.
+
+Andy David [47:07.225]
+Mm.
+
+Andy David [47:15.341]
+Yeah. Yeah. Yeah.
+
+Pete Winn [47:19.095]
+And you were just like that's that's what killed, you know, streaming was like, I just want this one good song easily on my phone now and then I can listen to it and it's like, All right, done. So
+
+Andy David [47:31.745]
+Yeah. It's that distillation, right? I feel like the like a lot of companies need a lot of business models potentially need to have that like hundred songs in your pocket moment where it's just like, Okay, there's a new way of doing things now and I feel like this will happen. Like we will just keep evolving and innovating. People will just think about this stuff outside the box and I also think we're seeing this disintermediation in terms of like who is becoming
+
+really effective entrepreneurs as well. Like the be because some of this stuff is so easily creatable, like the motion video stuff, I kind of almost think that the people that are like really well placed to like build businesses in the next like few years are going to be like the Instagram influencers that have like just built up years and years and years of trust.
+
+Of putting their face out there in video and talking to people really authentically and all the stuff I used to cringe at and I'm like, but weirdly I
+
+Pete Winn [48:28.461]
+Yeah. I mean that would be like the worst funniest outcome, so maybe like I can imagine.
+
+Andy David [48:34.883]
+Don't you think? It'd be weird, right? I mean, I've always found that to be like quite cringeworthy, but
+
+Pete Winn [48:37.505]
+No, I think there's a lot of truth to what you're saying, unfortunately.
+
+I almost feel like I don't know, born slightly I feel like me maybe we were born slightly too late to not find that super cringe. Like I can imagine being ten years younger and just being like, yeah, this is just normal.
+
+Andy David [48:43.789]
+And it's like how do you trust and verify this stuff?
+
+Andy David [48:59.959]
+Yeah. I mean I'm also quite happy that I didn't like my high school childhood wasn't like dominated by like camera cameras everywhere. Like it'd just be like that'd be its own its own kind of challenge. But yeah, I almost feel like that generation is like really well placed. Well but maybe not that generation, maybe that's like too broad, but like certainly the people who are building audiences like especially on those kinds of platforms, but particularly where they've got a particular niche, there's some interest
+
+But they're they're building that like trust and repetition. And it's, you know, i it's their their real self. Now, the counter to this is like, okay, what about these video models, like new Kling and C dance models that are like hyper-realistic and 4K and producing these kind of you know, incredible reels, and it's really hard to determine if these are real or they're fake, and like I'm I'm sure that will be a thing also. But I think the existing like
+
+equity some of these influencers have in their own personal brands now will put them in good stead to go and go and capitalise on this if they so choose to.
+
+Pete Winn [50:09.999]
+Hm. I mean, we've been leaning on, you know, hyper realistic vision and animated characters for quite some time.
+
+Andy David [50:22.201]
+Yeah, I think my my voxel should be more famous than I am, more recognizable than I am, hopefully. That's that's kind of the ambition here. But yeah, there was there was a potential segue that I think we kind of talked about exploring as well, because there was a post about these like, you know, going and buying businesses. I think it was Greg Eisenberg put a post out during the week that kind of had some virality to it.
+
+Pete Winn [50:41.049]
+Yeah.
+
+Pete Winn [50:50.201]
+The four hundred trillion dollar opportunity or something like that. It was Yeah. So it was I think his his p and there's a lot of I think I agree with a lot of the stuff in the base post and with the critique that I sent on to you afterwards where I like, this is kind of interesting. But the opportunity that he's putting out there is to say, like, look, the big opportunity here is
+
+Andy David [50:54.623]
+Something like this, yeah. Do you want to do you want to tee it up?
+
+Pete Winn [51:17.303]
+You buy a business that is old school and runs on humans and you figure out what the workflows and the processes are and you automate it using agents and then you drop the cost and you fire the people and you bank the margin. And presto, you've just like you make four hundred trillion dollars after the cost of like all the industry and there's just like
+
+hundreds of thousands of businesses that need to move from like the old way of operating to the new way of operating and this is how you do it and you just go and buy it and if you understand AI you can just walk into this business and flip a few switches and bish bash bosh job done. And and I think at like say this level like a really this really high level, I think I think that is correct. There's an opportunity there.
+
+where the business that will operate in the future and the business that exists now look very different in the amount of people in size that they are. I think then there was a critique is one of the things I think I sent over to you was like, it's kind of interesting the way this guy puts it, where he says like this is a guy that's done this in a kind of private equity space for a little while. He has used AI to do it recently. And he kind of talks about like part of the problem here is just this you don't have any of this like industry knowledge.
+
+of like where you're going into and your assumption is that it's it's kind of like the old management consulting fallacy, right? I mean I've been management consultant for years at various points. But you kind of assume that you could just go and get a business of whatever and you could just run it. And you don't really realise that most of the challenges are actually like really native to that industry. Like a construction industry and a I don't know, like a fast-moving consumer goods industry are very different.
+
+the oil and gas industry is different. Like and just because like say there's a lot of money in oil and gas doesn't mean you're somehow more sophisticated than somebody that's working in construction. And it's hard to as you have this like base assumption that like no no no I'm just super clever and I'll walk over there and I will figure it all out. but it's not necessarily true and experience does count for a lot. And like inbuilt knowledge and you know like momentum and inertia of some of these processes and then
+
+Pete Winn [53:36.908]
+all of that being inside someone's head and that person potentially just walking out the door if you try and play out this strategy. These are all problems with this with this approach that I think are just kind of glossed over in the sort of glossy Twitter version of Greg's argument where I just say, Yeah, yeah, yeah, yeah, obviously makes sense. And it appeals 'cause it does make logical sense. Right? There's too many people doing manual work. If you remove those people, you save money.
+
+True. And then in the detail of that implementation is like all the nuance and the change management and the horrible grey area where it all goes wrong and those margins are just compressed to almost zero at that point.
+
+Andy David [54:23.085]
+Hmm. Yeah.
+
+Pete Winn [54:26.278]
+L live on the pod. Friend of the pod. First time.
+
+Andy David [54:27.971]
+Friend friend of the pods.
+
+Yeah, I think that's I had a pretty similar reading. So that critique was from a guy named John Matzner, who, yeah, as you say, I think has quite a bit of experience on this stuff. But I think it's probably worth pointing out that guys like Greg, I mean, I think he's got some good takes. I think hi that's his business model is to have good takes, you know. Yeah.
+
+Pete Winn [54:54.283]
+not necessarily good, just takes. Yeah.
+
+Andy David [54:57.517]
+We'll just have takes. Yeah. It's it's reps, right? You just want to have enough reps and then hopefully enough of them will be will be good. and there's al always like oversimplification of a lot of this stuff. Like I feel like Cody Sanchez is another who whose business is like really kind of more around the content than it is around the laundromat. So she I think became famous off of the buying laundromats and flipping this kind of stuff. And look, I think there's there's definitely
+
+There's definitely value in an opportunity here, and I think that's worth pointing out. I think the critique is also fair. But I think like so, for instance, the idea is it kind of reminded me of like AI is just this like hammer and it's just looking for nails everywhere. And so my my first job out of college was essentially in you know, smaller private equity, family office type.
+
+environment. I'd done three transactions with that company in in with that firm in pretty short order. And what was really interesting is the way the partners decided to actually buy a company and how much time they allowed themselves that deal to materialize post post-transaction. So I would say in the time that I was there
+
+The companies that they had acquired, they'd almost done like basically nothing to them. They bought them because they were good businesses in their minds. And then it was more just around like, okay, how do we make sure that we can financially engineer this business in a way that, you know, we understand, because that's an advantage that we can bring to the table, because we're finance guys, that the owners of these more traditional businesses wouldn't necessarily have understood or necessarily had comfort with.
+
+Messing with debt to equity in a business, like unless you're very comfortable with that stuff, like you know, most of these like owner-led small businesses just won't touch it. And so I would say that was kind of the extent of the tinkering in the business, I would say, is this like, how do we improve access to capital? And how do we ensure that there's like a smooth transition, we don't lose key people in the business, but we can also try and attract.
+
+Andy David [57:14.509]
+really good people in the business. Now obviously all of this stuff emerged before AI, but we did have a heap of technology at our disposal and we still didn't like rush to implement anything necessarily. And so I think sometimes this stuff gets lost in that you obviously still want to go and own like really good businesses. So I think like there's an opportunity there for sure.
+
+Equally I don't think the idea is to just like walk straight into a company and like start making changes willy nilly because you're like, Okay, we can do this with AI. Like so therefore we should I do feel like sometimes that's just the hammer looking for the nail.
+
+Pete Winn [57:54.682]
+Yeah. It feels like a Chesterton's fence sort of moment where you're like, Yeah, just get rid of this fence. You know, don't need it, but like it's it's always hard to know exactly why things are done in the peculiarly odd way that they are, even if it doesn't seem like it's efficient. Like there's there's always so much like unsaid, unwritten down knowledge. I mean what I do think is effective is a person that owns a business using AI
+
+Andy David [58:01.422]
+Yeah.
+
+Pete Winn [58:23.747]
+to just resolve their own pain points or even like just a person using AI to resolve their own pain points. Like that I mean this is it's like communism versus capitalism all over again, right? Like it's just that sort of bottom up, like person that just feels the pain dealing with pain seems to work.
+
+Andy David [58:42.841]
+Hmm.
+
+Pete Winn [58:45.529]
+You know, like when you get all the power concentrated at the top, it's Dario saying he's going to open a wet lab and just watch out for Terminators and you're like, for fuck's sake, like that's this is not helping. This is not what anybody wants to do with this stuff. But and I think you have that same sort of problem of just when you walk into somebody else's business, you you don't know it.
+
+Andy David [58:54.638]
+Yeah.
+
+Pete Winn [59:09.549]
+And often like the things that they might think to tell you are the pain points aren't the pain points. Like it can be it can be hard. It you kind of needs to you need to find somebody that really understands, you know, like what the process is going to be and like that they get that it's in it's that iterative process you go along with. You're going to learn a bit. They have to take responsibility for it. It's not something you can just offload to somebody else and fix.
+
+sort of thing. Because they they're not your business. Like it just doesn't it doesn't work.
+
+Andy David [59:43.97]
+Yeah. Yeah, I mean, equally I'd say the critique can go too far. For instance, like would I necessarily buy a company where it's got such an obvious demonstrable key person risk that like that person is likely to leave the moment the transaction is finalized? Like, no, I'm I'm probably going to steer clear of that business. Like that to me, if I've done my diligence, I'm I'm probably not going to buy that company. So
+
+You you can take this stuff to extremes and try and like, you know, point out every every flaw in the in the idea and put that out there because it is a good retort and that equally will work on social media and people will like divide up into their camps and go, No, it's too hard, therefore I should never do it, and everyone else going, No, it'so easy, everyone should do it and ironically they never do.
+
+But yeah, so I think that was kind of my my sense of that whole debate was like you're both right and you're both wrong. I kind of felt like you're both kind of taking this to an extreme. It doesn't need to be. And the great examples of this stuff is like your General Catalysts of the world, you know, shifting more into private equity. Private equity themselves, you know, I don't necessarily think there's been a slowdown in deal flow. you know, if anything, maybe they go smaller and you know, try to
+
+Do more mergers of smaller businesses to get scale that way. I don't know. But I don't think there's no opportunity there for people. I think there is probably quite a lot of it. But you've got to be disciplined and you've got to be patient and you've got to be prepared to listen to the operators in these companies. Cause yeah, they've been they've been running these things for a long time. You know, it's like when we started this company, other stuff, you know, we used to talk about this to people as well. Like there is a degree of arrogance that comes with
+
+Pete Winn [01:01:13.178]
+Mm.
+
+Andy David [01:01:31.415]
+the territory, especially management consultants, where you walk into a company and tell someone who's successfully been running their business potentially for decades, which I think is success in and of itself, that no, you need to be doing this and this and this and this and we know we know best. It's like, well I don't know. I feel like there's a degree of arrogance that you that you kind of almost need to have to be able to say that to someone who's successfully running a business and you're not. So yeah, that was that was kind of my
+
+Pete Winn [01:01:54.437]
+Hmm.
+
+Andy David [01:02:01.12]
+reading of it, but it was quite interesting to see how it how it played out and the kind of dividing lines that formed. So I guess much like most issues online these days, you kind of divide up into camps.
+
+Pete Winn [01:02:15.853]
+Yeah, I agree with that. Like I as you say, some right, some wrong. It's there's probably an opportunity there. If you're new to an industry, there's probably a lot you're going to miss and it's going to cause you all sorts of problems down the line. Like like you can buy better companies that don't have the key man risk, but they're also going to be way more expensive and there's less money to be made, so you're not going to hit the numbers that you originally thought of or
+
+Andy David [01:02:30.393]
+Mm.
+
+Pete Winn [01:02:43.001]
+You know, maybe it's it almost sounds like the sort of thing that you can just like flip over and over again and it's like, no, doing like one or two of these could be like a five year journey. Like don't underestimate the amount of time it takes to change almost anything that's in flight. Like change is hard for everybody in the world. Like humans are quite highly resistant to change and businesses are kind of built in a way that
+
+Andy David [01:02:47.48]
+Yeah.
+
+Andy David [01:03:00.471]
+Yeah, completely.
+
+Pete Winn [01:03:09.027]
+they're not supposed to change that easily 'cause they already do a thing and everybody gets paid to make sure the thing that we're doing is the thing that happens. So it's not the simplest thing to change. No.
+
+Andy David [01:03:21.043]
+Yeah, I mean even your sophisticated like private equity firms that have been like do this for a living, right? This is their bread and butter, they will tell you this is hard and they will have a strike rate as well and they will accept some some some transactions don't work out and because there are like this is like the just the vicissitudes of life, you they kick in, they're stuff that you can't for necessarily foresee and your transaction goes goes belly up. So yeah, it's difficult, you know, and that's the thing, like
+
+In that complexity and in that difficulty lies the opportunity and there's like potentially outsized return on the other side of it, but it's not simple. And so I that was kind of my my issue with the characterization of this as just being like, this is such a no-brainer, this is going to be easy. And yeah, I feel like we've had the buy-versus-build discussion on here like so many times over the last like 18 months. And yeah, it's not obvious to me.
+
+It's not obvious to me which is the which is the correct path 'cause I just feel like it's hard either way. I wouldn't expect it to just become simple all of a sudden because we have AI, is kind of my thinking.
+
+Pete Winn [01:04:30.893]
+Yeah. It's more like if you can only buy just the perfect companies.
+
+And makes sense. Right, but and I don't know. I mean my my gut feel is to like push more towards build than buy. Like I think there is the thing that I think is correct is that like in ten years
+
+the com the state of a company that's delivering a service that is delivered now is completely different. I think it's way smaller. I think way more of it gets done by AIs. I think the customer relationships change. I think the makeup of the company changes and it's but how in what way and how you
+
+tread that path. Like that's the bit where I think it's probably a little bit arrogant saying we know what that would be. And we've tried opining on this like so many times and I think we've kind of resolved ourselves to like, hmm, it's tricky. Like it's like you've got to you need to be changing and thinking a lot and probably trying a lot of stuff out. But the things I do think work is like somebody that has control over the thing, getting interested in it.
+
+Andy David [01:05:19.737]
+Mm.
+
+Pete Winn [01:05:41.879]
+and backing themselves to start making small changes. That that seems to work to a certain extent, so I think that's that's possible. I think outsiders dictating stuff I think is just difficult.
+
+Andy David [01:05:56.332]
+Yeah.
+
+Andy David [01:06:03.617]
+Yeah. As always I think it just rewards agency.
+
+Andy David [01:06:09.985]
+On that note.
+
+Pete Winn [01:06:10.211]
+Well upon that note Let's call it there. That's been your intelligent snack.
