@@ -13,6 +13,8 @@ themes:
   - knowledge-memory
   - privacy-security
   - software-systems
+originalPublishedAt: "2026-10-07"
+youtubeUrl: "https://youtu.be/9LKYRB849O4"
 transcript: episode-075
 featured: false
 fixture: false
