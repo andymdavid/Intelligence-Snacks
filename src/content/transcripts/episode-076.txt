@@ -1,0 +1,952 @@
+[00:00:05.654] PW21:
+Alright, hello, and welcome to Intelligence Snacks 76. Today we've got a special guest joining us, Skylar. Well known in various communities around being just a great designer and all around good guy. So do you wanna say hello, Skylar?
+
+[00:00:21.58] Skyler:
+Yeah, what's up guys? Thank you for having me. I you know, I a lot of people know me as a designer, but I think recently I've been kind of undergoing like a shift and a change. And I've I've been more I don't know, I've shifted into more like we're building I'm building a new company. So it's not as much design, it's more of like company creation. And yeah, I could talk about that. Now or later, but I think in short, like Finite Design Supply was like a design company and now Finite Computer is an AI company. And so yeah, it's I've never actually really discussed it publicly, so this might be the first time.
+
+[00:01:02.882] PW21:
+Okay.
+
+[00:01:10.21] PW21:
+Alright. Alright, well let's let's do that. That's like I don't think we can say that and then do like twenty minutes of something else that doesn't feel
+
+[00:01:12.989] Andy David:
+Let's do it. Groundbreaking on intelligence snacks.
+
+[00:01:13.537] Skyler:
+Yeah. Well that's there's some breaking news. Yeah. Well unless we want to like get people to like watch longer. No, but so finite computer is in short, it's a company and we're building agents for people. And we are building them in a direction of sovereignty. So like we're we're you know, right now we have a hosted agent solution, but all of it can be self-hosted.
+
+And so we're we have like our unique kind of taste and opinions about how agents should run. And we're building them for freedom organizations. So like HRF, the Reynolds Foundation, you know, people in that orbit. And part of it is like, yeah, we give these agents, a lot of people are building agents, but the second part is like we do really hands-on in-person AI activations.
+
+And so We call them agent camps where five to ten people come and we teach them all how to use agents.
+
+And so it's really been like a lot of non-technical activist freedom fighter types, which has been really fun to see because you know, like on Twitter, you're hanging around developers all the time or like sort of like builders and they're kind of obsessed with the tech.
+
+[00:02:41.486] PW21:
+Mm-hmm.
+
+[00:02:47.55] Skyler:
+And they're they're kind of like bored with AI. Or not bored, but like maybe they're like still like they have AI psychosis, but they're just they've seen agents like they're past that, you know, they feel like they're past that.
+
+But non technical people is like you give them an agent and their whole world just like lights up and it just expands. And it's so it's very, very fulfilling to like roll these out to people. And yes, we've done like I don't know. We started in February and Alex Gladstein was the first agent camp. He's the runs I think he's chief strategy officer at HRF. He's like leads their their Freedom Tech and their their whole like kind of innovation like wing of HRF, Human Rights Foundation. Anyways, he's our first like patient.
+
+[00:03:29.816] PW21:
+Yeah, that's right.
+
+[00:03:44.865] Skyler:
+And we gave him an open claw on a computer back in February. And it was awesome. Like we just saw his like world the change. He saw his world change, and he was just like, this is the most insane thing ever. And then eventually, you know, we ended up doing like, I don't know, 10. We've I think we've done 10 agent camps since then, all with like different groups, organizations, different people. And we've been rolling out agents.
+
+So I've been doing it with Paul Miller. Paul Miller and I were like beginning, yeah. And he he came from Mutiny and Maple and then he was kind of wandering looking for something, and so was I too. I mean I was doing design, but I was also like we him and I had just been in contact for a long time we're like, what? We should try to do something.
+
+[00:04:19.19] PW21:
+Okay. Yep.
+
+[00:04:41.362] Skyler:
+We tried to do a construction app, like for construction tech, didn't work. And then we're just like, you know, I don't know, we took a break and then we came back and we're like, you know, I was doing these training, I did a couple trainings with Justin Moon. And then second training, you know, I had we had Paul come and then we were like, wait, we need to turn this into something real. And ever since February, we've just been like building this. And so over time we realized like, We need to kind of productize the software that we're teaching them to use because signing them up for Claude and ChatGPT to like teach them AI is just ridiculous. And like I hate those labs anyways. So like, you know, that like I love and I hate but it's like they're there's they're not like the right solution. So we're like, we should just build our own. Yeah, anyway, sorry, this is a long intro, but this is just what I've been working on over the last six months. Eight, maybe six months? Yeah.
+
+[00:05:40.12] PW21:
+All right. I mean, how is that shift then going from like generally being the I know you very much as like a design and obviously design comes so much with product these days and I guess with AI as well, like it just allows you to expand that skill set and work in so many different areas.
+
+But like how have you found the shift and like what's happened in the last couple of years to get you there?
+
+[00:05:43.549] Andy David:
+No.
+
+[00:06:04.281] Skyler:
+I mean, it's pretty disorienting in the sense of like everything I used to do like for example, making a website, it's like completely commodified. I've never seen anything like it. Like just under my feet, like, this thing used to cost so much money to build and make, and now it's like, dude, ten seconds later, this thing is created. Obviously, majority Of websites that AI makes are total slop and garbage, but just even that is better than a lot of what a lot of designers make. And so, anyways, like watching that, just early on in the beginning of the year, I was like, I have to shift how I'm thinking about things because the models are so good that I'm like, I need to figure out how to do this.
+
+And so over time I basically slowly like just whittle down my client list to like Two clients and I was like, okay, the rest of my time I'm just gonna like practice vibe coding. And so yeah, I got AI psychosis like in the beginning of the year and just built like hundreds of stupid little projects that are dead and like didn't go anywhere.
+
+But I learned a lot of like how to talk to an agent. How I mean how to talk to LLMs. Agents came a little bit later, but like I I basically just was like, I have to change or I'm dead. That's like my the feeling. I don't know if that's it correct, but like I think I I'm happy I did it because I think building like we talked about like everyone's talking about how software's dead and design is kind of dead. You know, every model comes out, someone dies, some group of people dies.
+
+[00:07:49.038] PW21:
+And accounting's dead and legal's dead.
+
+[00:07:58.081] Skyler:
+I just was like, I have to figure this out because this is gonna change like everything I was doing.
+
+And so what I've realized is design it like taste and is very important. People kind of say this all the time. People are starting to say that agent or like LLMs are getting very good at taste, like the models are getting good at taste.
+
+But I think like no one really defines what taste is, and to me it's like Taste is literally just defining what is good and what is not good. Like it's our and knowing w the difference.
+
+And so it's like articulating good and bad things. And there can be a debate on whether or not that's like objectively good or bad, or like subjectively good or bad, but either way, it's still a standard and it's articulatable. Like you can write it down. And most people don't think you can write it down, but you literally can. Like this is good because of X, Y, and Z. Write that down, remember that skill or whatever.
+
+So it's like if something can be articulated, agents can read it. And if agents can read it, they can build on it. So I was like, well, I do have taste, I think. A lot of people have said I have taste.
+
+So like there's like something there.
+
+So I think that is still valuable in in in like directing, you know, AI to or SI to build, you know, sort of like forgive me, Trump.
+
+But the like taste is still important and it I th I still think it's important to cultivate taste outside of AI. And like you do that in the real world and you do that like with other people, and you do that by looking at real art and you do that by like practicing.
+
+[00:09:39.81] PW21:
+Yeah.
+
+[00:09:57.738] Skyler:
+You know, craft.
+
+But that to me is like the same the thing that just like transfers over into this new world is like you still have to know how to direct this intelligence and you have to have s wisdom too, like to know what to even do.
+
+Because the L LMs like tell you to do stuff all the time. They like encourage you to just build aimlessly. And you need to know Yeah like
+
+[00:10:24.258] PW21:
+So why not burn some tokens, guys? Come on, come on. Let's let's write some unit tests. Let's go.
+
+[00:10:25.959] Andy David:
+Mm-hmm.
+
+[00:10:27.421] Skyler:
+Yeah, that's a great idea. Build that. It's like, no. Yeah, that's a horrible idea. Don't build that. Like it's not wise. You know that.
+
+So I am still very bullish on taste. Like, even if LMs become like ten times smarter, I still think humans should have taste and practice defining like what they think is good and bad and like having reasons behind that. But yeah, I'll stop there.
+
+[00:10:55.966] PW21:
+I mean it's interesting on the taste thing that like 'cause you we talk about it as good or bad, but I imagine like you think about I don't know, like artistic paintings, right? And it felt like for hundreds of years it was all about getting more and more real to the point where we then invented a camera and then all of a sudden it was about like Cubism and like just everything just went mental. And you're like
+
+[00:11:16.158] Skyler:
+Yeah.
+
+[00:11:21.654] PW21:
+I do think there's something I think this came up on Twitter we were talking the other day and I said like y you know, to be remarkable you have to be you know, remarkable. There has to be something different about that thing that makes it interesting. And if LMs do nothing else, even if it's it could be what was defined as perfect taste like ten years ago, if everybody can do it, well then there's no differentiation.
+
+So you can't be seen anywhere.
+
+So it would imply that you kinda have to do something else.
+
+[00:11:32.478] Skyler:
+Mm.
+
+[00:11:50.434] PW21:
+So maybe you have to look shit. Like, I don't know.
+
+[00:11:52.678] Skyler:
+Yeah, yeah. I mean, like well, novelty like you're bringing up a c this idea of novelty, which is like something that looks new or interesting, but I think I think that's different. Like taste, I think another way to think about taste too is like knowing what to do in the at the right time is another way to say it. Like, you know, you don't you don't w go to a wedding like in a speedo. Like that's bad taste, right? That's bad taste.
+
+Because you're it's not the right time. Like you know, like if everyone's at the beach, like obviously that makes sense. Not in America, but like maybe where you guys live, but like I don't know.
+
+But like the I think like there is a time to do a new thing and an innovative thing, but like oftentimes it's better taste to just like fit in sometimes. Like knowing like what the context is is like appro appropriate too. So
+
+[00:12:40.798] PW21:
+Ha ha.
+
+[00:13:03.98] Skyler:
+Yeah, I just think it's like if you know how to read the room, you know how to like how far to push things, how far to like pull them back, that's that's all that like wisdom and taste thing that I'm kind of describing, which is like it depends on the situation. Maybe there's a time for something new, maybe not, but like knowing when to do that is still I think in the domain of humanity and it probably it might w it might be for a long time. I just don't know.
+
+[00:13:17.784] PW21:
+Mm-hmm.
+
+[00:13:33.166] PW21:
+Mm-hmm.
+
+[00:13:33.459] Andy David:
+But it's interesting because we're talking about taste in the main to some degree.
+
+But if we were to like anchor it to a discussion about software, right? Which is a big discussion this week. Software like I would argue, especially if you look at like enterprise software or B2B software just generally, like that has like the unit economics of software has basically necessitated this move towards standardization.
+
+And so like you could argue that like for a long time there's been no taste in software.
+
+[00:13:55.811] Skyler:
+Yeah.
+
+[00:14:01.213] Andy David:
+With the exception of like a lot of like personal consumer-based products, which like push the edges, push push the envelope a bit.
+
+But if you take like conventional B2B SaaS, its basic core economic driver has been standardization because you want to basically amortize really expensive development cost across like a broad base of customers. And so like yeah, to s to this is what I find interesting about the like the taste like discussion.
+
+[00:14:01.252] Skyler:
+Yeah.
+
+[00:14:08.078] Skyler:
+Yeah.
+
+[00:14:30.589] Andy David:
+Just in general. It's like if you if you anchor it to software, you could just say, Well, we haven't had it for a long time anyway. So where's it coming from?
+
+[00:14:31.929] Skyler:
+Yeah.
+
+[00:14:39.235] Skyler:
+Well, okay, that's interesting because I I'm like pulling up my my dictionary right here just to rem remind myself of like what it's okay. The ability to discern what is of good quality or of a high aesthetic standard. Another one is like conformity or failure to conform with generally held views concerning what is offensive or acceptable, like speedoes at a wedding, you know. So
+
+[00:15:05.037] PW21:
+Yep, there we go.
+
+[00:15:09.75] Skyler:
+Yeah, that's kind of interesting. I mean t we haven't had taste. We haven't had the ability to discern what is of good quality or of a high aesthetic standard. Yeah, I think that's like probably true, but at yeah.
+
+[00:15:22.025] Andy David:
+But you know what?
+
+If if I were to let like if I were to try and like play devil's advocate, I would go, standardization is actually the thing those companies want. And so therefore, you know, to insert your like subjective taste into the mix is actually to make your product worse, arguably.
+
+[00:15:30.411] Skyler:
+Exactly.
+
+[00:15:37.848] Skyler:
+That was literally I was gonna say the same thing. It's like, dude, these companies, they don't want a novel experience. They want the most standard s like easy thing. I mean, unfortunately a lot of enterprise software's like has been garbage.
+
+But a lot of a lot of designers talk about this problem of like everything looks the same. Every logo looks the same, every website looks the same. Everything's black and white. Like, yeah, it it's true that everything is like that. And the internet and every coffee shop looks the same. Like there's like all this, like the internet has brought this like homogeneity to everything. And it's like really bleak. But at the same time, like think about book layout design. Every single book looks the same inside, pretty much. Like it's not about the design of the book.
+
+[00:16:09.144] PW21:
+Good.
+
+[00:16:27.758] PW21:
+Hm.
+
+[00:16:31.583] Skyler:
+It's about the content inside the book.
+
+And so I always go back to this where I'm like, no one's crying about the fact that every book has like the same column width, like generally similar font size. Like there's little variation in that. And it's okay because the purpose of the book is more utilitarian and it's like, you know, occasionally you'll see a magazine or whatever, or a zine that's like very illustrated and whatever, but
+
+[00:16:42.462] PW21:
+Yeah.
+
+[00:17:01.79] Skyler:
+I think the standardization of the internet or like yeah, I guess that's the right way to put it, it's okay to me, especially because agents are here and they're like completely changing this like human interaction with the computer. But yeah, I'll say more on that in a little bit, but like I'm curious what you think about that.
+
+[00:17:21.582] PW21:
+Yeah, I mean I think what you're you're pointing towards is that maybe it's point two from the taste definition is more It's just fitting what what's expected of the moment.
+
+So nobody expects the enterprise software to be crazy. You just expect it to be simple to follow.
+
+And so like there's just been this big fetish about how everything has to have this smooth UX with like nowhere to trip you up. And then it like we've often said that like enterprise software was always about trying to make a human into a robot.
+
+[00:17:46.005] Skyler:
+Yeah.
+
+[00:17:53.11] PW21:
+And it's like, look, we've got we've got this robotic task, which ideally would j the software would just do this and you wouldn't have a job.
+
+But we need to make like f forty-two decisions over the course of the week and we need to have like twenty-one points where you check in, and therefore we need to put a person in a chair, but we don't want you to fuck up. So the UX is you can't get it wrong, but it has to be a human. And I think there is an in instance now where we go, like decisions, classifications, like various other things. They don't need humans necessarily anymore.
+
+So it is gonna impact the software in that way where you go, All right, well what does it look like if you if you add agents now? Like I don't know if it's necessarily as simple as just being like, All right, everything's an MCP, 'cause that almost you're almost kind of implying that all right, we'll treat the agents like we treat the humans, but the agent isn't one person in a chair, there's not one of them, there's hundreds of them, they all have different context, they're you know, they haven't just had a big issue in their life last week. There's all sorts that changes.
+
+[00:18:55.687] Skyler:
+Well, Anne, like what is the how do you then like are we just assuming that we're all just gonna look at a chat all day? Like, is that the main interface? And I'm like, honestly, that would be better than most things I encounter on the internet all the time. Like I hate going through my email because every single email is a new interface. It's a new like potential for distraction because it's designed to get my attention to do some some stupid action. And an agent can be like this protective barrier between me and like the disaster that is my inbox. So I think like a chat would be nice, just a straight up chat delivering what I want would be much better than my my Gmail or whatever. And maybe enterprise software, that a lot of that can be that too.
+
+But I think this is why designers are still kind of needed because like Determining what people see, it still requires like some creativity. And it's like someone needs to think through that.
+
+Maybe the LLMs just keep getting better and they keep figuring that out, and then maybe there's like this emergent pattern for certain things, and then those get shown, which could be even more standardization.
+
+But like it's more on demand and less permanent, I think, is like really possibly the future, but I don't know. What do guys think about that idea of like everything like s to me, it just feels like software, the permanence of so or the you know, assumed permanence or like stability of software is like dissolving, in my opinion. And it's all becoming this sort of like malleable, impermanent, ethereal thing. And I'm like, it kind of makes me nauseous every time I think about it because I'm like.
+
+[00:20:50.944] PW21:
+Yeah.
+
+[00:20:52.539] Skyler:
+My whole whole world, our whole life has been built on this idea that software is like a real thing. Now it's like not a real thing. It's like this thing that happens and it's not always there and it's like changing. I'm curious what you guys think about that.
+
+If you feel that and if you think we're going that way, or like what your take is on that.
+
+[00:20:59.81] PW21:
+Yeah.
+
+[00:21:10.67] PW21:
+So I mean most of my product development personally in the last like year has been how do I use agents and be sane? And like trying to like cross that. And then this is the
+
+So I I've got this product which has just been rebranded for for friends with Pod that are expecting me to talk about flight decks. Now called Ambulando.
+
+[00:21:20.368] Skyler:
+And be saying, yeah, yeah.
+
+[00:21:32.616] PW21:
+Which is all about like right, you know, we want the agent to solve problems while you go out walking. Right, that's the that's the pitch.
+
+So it's but then you need to manage those agents.
+
+So how do you do it? And I think where I've arrived has been like I need simple like structure.
+
+So I need just enough structure that the place that I look is always the same.
+
+[00:21:39.768] Skyler:
+That's great.
+
+[00:21:56.534] PW21:
+Like it needs to feel somewhat comfortable.
+
+So I don't buy into the every interface is new on demand because I just don't think that's useful.
+
+So I that generally revolves around I have like scopes of like things that I'm working on and then any one of those has channels and then those channels have chat threads so very classic sort of approach to that.
+
+[00:22:04.729] Skyler:
+Yeah.
+
+[00:22:19.682] PW21:
+But then in any one of those sort of scopes, I can have task boards and documents in a kind of like wiki style format. And that covers most of the communication I need, which is like, all right, I want there to be a board where I can look at it and see what's happened. I want there to be a chat where I can direct stuff. And then sometimes I want you to just write out a detailed document and I want to go through it sort of asynchronously over like could be
+
+[00:22:27.885] Skyler:
+Just.
+
+[00:22:37.391] Skyler:
+Yeah.
+
+[00:22:48.888] PW21:
+Days, hours, whatever, commenting everything up. And then I want you to deal with the output, which is just different to chat. Chat force is real time. It's like it's like being living in Slack on steroids the last two years, which is like fucking too much. Right. And then the final piece that I had is then sometimes I just want an app for that. And then sometimes it can be simple and sometimes it can be you know like I sometimes you just want a form.
+
+[00:23:00.177] Skyler:
+Yeah, that's a good point. Yeah. Yeah.
+
+[00:23:10.434] Skyler:
+Yeah. Like what?
+
+[00:23:18.898] PW21:
+Or a report or a graph or something like that and they're nice and easy.
+
+And so I have this like little artifacts website thing that I plug in. It's one app that gets hosted, but it can do r whatever in HTML. And it has like document editing stuff, slide editing, it has like little logic flow diagrams so you can diagram stuff out. You can do whiteboards in it. You can just create websites instantly. And I use that a lot to then express ideas back visually because Otherwise I wasn't getting the visual feedback that I wanted from a lot of these things.
+
+[00:23:50.273] Skyler:
+Yeah. Yeah. That's cool. Wa you said when you just want an app for something, like what are examples of that?
+
+[00:23:54.702] PW21:
+Do you wanna
+
+[00:24:03.318] PW21:
+What I do a lot is I mean when you're developing some software, like I often find this wasn't like this feels like a six month old problem where they just got really aggressive at like making changes. Like it didn't used to be like that. And then I think in the recent training from I don't know, maybe like a four point eight opus type thing, it suddenly got like I know we're just gonna do stuff, we're just gonna go, we're just gonna get after it. And I feel like all of a sudden The agents were disappearing into these long sessions and they could run for, you know, like even like just even like half an hour. It's not too long. It's not like this massive loops people are doing.
+
+But then it comes something comes back and it's like, God, you've done like so much. And like, why have you put that there? And why have you put that there? And you end up making small changes on things where you it's like, all right, I don't wanna like talk through these changes. I wanna like visually deal with it. And so
+
+[00:24:59.977] Skyler:
+Yeah. Yeah, yeah.
+
+[00:25:01.902] PW21:
+So I start to move some of that loop into like, okay, take the hate, you know, take the visuals from the current app, paint it into this artifacts app. So we've got a canvas, right? Okay, now make the changes and then give me like a click-through scenario where I can go like one steps one, two, three. How does this work? And I can see how it evolves with none of the business logic changes or data model changes. I can just play it through. And just, you know, it's crazy, right? Because it's like, how we used to. Like it just.
+
+[00:25:08.617] Andy David:
+Mm-hmm.
+
+[00:25:30.538] Skyler:
+Yeah, we gotta go back.
+
+[00:25:30.732] PW21:
+Seems to be a common theme is like, I know how I used to solve this with people, I'll do the same. And then Yeah.
+
+[00:25:36.084] Skyler:
+Yeah. Like let's recreate Figma, it's to you know, design it. Yeah.
+
+[00:25:42.68] PW21:
+But I it's basically just Figma, but it's just a live website every time. And then I have like some harness in there where I can do anywhere on the page I can just right click and leave a comment on the HTML elements and it just tracks all that and it's all available to the bot.
+
+So that's like stuff like that would be one, yeah.
+
+[00:25:46.74] Skyler:
+Yeah that's
+
+[00:25:57.866] Skyler:
+That's all.
+
+[00:26:00.113] Andy David:
+If if I were to try and answer your question, Skylar, I would say that like it's entirely subjective because it really depends who you're asking, right? And I think it's entirely subjective precisely because the unit economics of software have completely fallen apart. Right? So for instance, like the example I like to give is if you know like old school entrepreneurs who are like running like an IRL business and These guys are some of the wealthiest people I know, right? And they will run their entire business off their phone, off their WhatsApp. And they're just delegating off to different people. And so in other words, they are running their business in chat. Their interface is chat. It's just the person on the other end of the chat is a human. And that comes natively to them. And I think it really depends on the individual, you know, like I think there's a time and place for a lot of structure. Like lately I've been like really blown away by computer use.
+
+[00:26:40.254] Skyler:
+Yeah.
+
+[00:27:00.019] Andy David:
+Just watching these agents take over my machine, use software that exists locally on my device to a standard like I could never have gotten across, you know, like using Descript or like even Figma, like there's there's no way like I would have the time to develop the technical competence to use these tools to their maximum potential. And maybe as a like a as an expert in one of these tools, you would be able to produce like a really great output.
+
+[00:27:26.406] Skyler:
+Yeah.
+
+[00:27:29.489] Andy David:
+Like ideally you'd be able to stitch two or three of them together. And now all of a sudden I'm just watching the agent just like, you know, move the mouse around on my computer and like create stuff. And I'm like, cool. I'm gonna I'm gonna leave it to you. I you know better than I do right now. So, you know, like and so my my take on the software piece is w we actually did an episode, I can't remember if you recall this Pete, but it was like we called it the malleable computer. I don't remember if it was like
+
+[00:27:42.183] Skyler:
+Yeah.
+
+[00:27:59.227] Andy David:
+Episode 60 or something like that. We'll we'll check it out. It was right. Yeah. Go check it out.
+
+[00:28:00.918] PW21:
+It w it was reasonably recent, but you know, everybody go like and subscribe and just look just watch the whole back catalogue take you about a hundred hours, you'll be fine.
+
+[00:28:07.453] Andy David:
+Yeah. Do it, do it. I but it was funny because I think that episode preempted some of this like debate around like software this week. 'Cause I think maybe Pieter Levels kind of kicked this off on on X and was like, I think software's gonna become like, you know, more ephemeral.
+
+Maybe d like the agent just kind of stands it up and it has a particular use and it disappears. And I think I think this was like one of the threads we'd pulled on in that episode, which was like, use the agent to explore and then You crystallize the repeatable part in code, basically. And I still think there's like place for that. And I that's what I tend to do is I'll stand up software based around the repeatable bit of work that I know I need.
+
+Once I've like played around and experimented and explored, and then I'm like, okay, like do I need to just throw tokens at a lot of this stuff? Probably not. It could just be deterministic code. Could the agent still run it end-to-end? Sure. But then do I need to see any of it?
+
+[00:28:54.31] Skyler:
+Mm.
+
+[00:29:06.151] Andy David:
+Like no.
+
+And so the useful part of the interface design for me has become, okay, what I need to do now is check your homework. That's it. I don't need anything else. Like everything else is noise.
+
+So but I think but I think there is subjectivity there. It depends very much on the task. It develop depends on the business potentially and depends on the person.
+
+[00:29:27.725] Skyler:
+Yeah. No, like I think that's right. So then okay, did you see Carpathy's post about you know the like sort of funnel of the whole world doesn't have, you know, access to LLMs and then like it goes deeper and deeper to this point of like there's like five thousand people who have access to the frontier. It's a great it's a great analog or not analogy, it's like his napkin math of like who has access to what. And anyways, my point in that is like, okay, we are we're not in the five thousand, we're we're in the one above it, which I think is people using LLMs to do like coding and logic and math, like hard problems. And I think he said there's two hundred or two million people there or something. No, maybe more, I can't remember. I need I need to refresh on this. But anyways, like the point is it's a tiny, tiny fraction of people that are doing what we're doing. Like if you walk around in Normand, they're just like you try to describe to them and they're like, You are a madman, you should be institutionalized. Like they're like very much like, What are you talking about? What is wrong with you? That sounds horrible. Like, why would I ever want to do that? You know? You're like, No, you can make a website. And they're like, No, I don't care. I don't want to make a website. Never wanted to make a website.
+
+[00:30:38.141] Andy David:
+Mm-hmm.
+
+[00:30:52.429] PW21:
+Yeah.
+
+[00:30:54.509] Skyler:
+But like, anyways, like I feel like there might be a bubble that's like kind of like most people just don't ever want to touch stuff like this ever. And it seems so obvious that they would want it, but like maybe they just won't.
+
+So what do you guys think about that? Where it's like there's a potential that like maybe software is only malleable to like ten percent of the population, maybe five percent, maybe even less. And the rest of the people are just like, Give me my TikTok. I don't care what you do with anything else. Like, I don't know. I'm kind of starting to think that Yeah.
+
+[00:31:30.668] PW21:
+It's like the WALL-E split sort of thing. I th that's been kind of a thesis of this podcast. I think pretty much from the start was just it's not that software dies. I think you get the sort of Jevons paradox of just way, way more software. I think what changes is the centralization of the software.
+
+So I mean this might be like my bias peeking out because it's kind of what I want, right?
+
+But I it doesn't make sense to me that I would go and spend money with
+
+[00:31:39.038] Andy David:
+Mm.
+
+[00:31:50.241] Skyler:
+Yeah.
+
+[00:32:00.032] PW21:
+Somebody in Silicon Valley who I will never see, they I can't get a phone number for them, I can't get an email, I can't look them in the face, I can't give them feedback on the product. I just get what I get.
+
+When I could get it from somewhere closer to me that is that understands my needs slightly better and the software probably matches better. Even if it like so you could be like five percent better SaaS software and you could build it and deploy it right now just for people locally to use.
+
+So my my general view has been software industry just
+
+[00:32:10.187] Skyler:
+Yeah. Yeah. Yeah.
+
+[00:32:30.434] PW21:
+Decentralizes and spreads out and everybody can do it. And so you just buy locally, 'cause why would you buy the big one? It's also like way better for security. Like if if we stop putting everybody's financials in like two or three big companies, maybe we'll stop getting hacked for everything.
+
+[00:32:47.36] Skyler:
+We should just put it all in OpenAI so they can just you know help our finances. Yeah. I mean y d I that's it I love that you went there because that's like we've been thinking about that a lot inside finite, where it's like we what do we offer? What can we offer here? Like what is our differentiator? And like a lot people have been talking about moats and stuff. And
+
+[00:32:49.805] PW21:
+Ha ha ha.
+
+[00:33:16.549] Skyler:
+If if software is just like click, like copy paste all the time, which it's not really like that.
+
+If you've ever tried to build a software company, it's still like really hard to make good software, I think. It's easier, but it's still like things happen in the physical world. Like servers get too hot and like your people suffer because like they're using the servers and they're too hot. Like you can't like vibe coding doesn't stop that. But Like you said with the local thing, it's like we should just be better people that run this software that answer the phone. It's like almost like Boomermax thing where it's like it will answer the phone. And it's like you You're never gonna get that from Claude or ChatGPT. May actually I don't wanna say never because maybe they could fake some experience where you do kind of get like this like fake human in the loop, but like They're not going in that direction of like, yeah, we want a human connection still, like with the software. It's like, no, like we're just giving you like kind of slop, like a lot of vibe coded slop. Like Claude is doing that. And it's like, it's good, but there's still no human there. And so I think with finite, our thing is like, we're just gonna lean into the human experiences, like in-person training. Like we do dinner, we have barbecue, we like talk about agents, we help you. Like over your shoulder, help you prompt, like in person. And that sort of has been a really cool combination because you have like really high tech where you're talking to robots, but you can also turn to someone next to you and be like, let's talk about an idea. And it pretty interesting ideas have come out of that. Like I was I was working I was talking with Alex Gladstein because they recently built a brain
+
+[00:34:47.981] PW21:
+Yeah.
+
+[00:35:11.31] Skyler:
+With all their agents that we've been giving them and like their Freedom Tech team is all talking to this brain and like filling it with a bunch of interesting stuff. And they recently ran like Alex has been generating like tons of cool stuff out of this brain because he has all this content now that's like very up to date. It's very current and like finding it all and writing it all before was like it would have taken a long time. He'd have to talk to a bunch of different people.
+
+And so He's been making like board presentations and what else? Like annual reports and like things like that are just like very, very good, like almost one-shotting. And he showed me a PDF and it was like amazing. It was beautiful. It looked like HRF branding. Very, very good. And then he's like, Yeah, I'm gonna show this to the C suite team like next week or whatever. And I was like, well. What if you I'm like, give your agent this prompt?
+
+And so I just wrote this prompt for him and sent it to him. And it was like, turn this PDF into a canvas view where we can leave comments and then the agent can just like fix things when other people leave the comments on it. It's like obviously this exists, but like it doesn't actually exist in his hands. He would have to go into Claude or like Claude Design or Figma. And Figma, your agent wouldn't even be able to fix it. It just, you know. So like 30 minutes later, he has this like bespoke software where the PDF has been like rebuilt in HTML, or it might have been in HTML, and it just is displaying it in this like large canvas view. And he sent it to me and I was able to leave a comment and the agent like fixed my comment. Like he didn't even have to like do anything. The agent just starts fixing it. So it's like,
+
+[00:36:48.814] PW21:
+Mm-hmm.
+
+[00:37:04.792] Skyler:
+And it's all just pulling in from his finite agents like inference.
+
+So I think that to me is just like that is an area where it's like I could see these sort of tools or templates rather becoming kind of standardized and like deployed to enterprises where it's like, hey, this tool's gonna be useful to like five teams. We're gonna vibe code it real quick, but it's kind of gonna be a sticky template and like
+
+If people need to do some sort of PDF collaboration work, or dude, he started doing it with videos too. He would put a video in there and like be like, this icon needs help, this icon needs help, this icon needs help. And like I was able to just leave comments and it just went and fixed it.
+
+So it's like that is pretty amazing and saved him like literally probably two weeks of editing time. And he just vibe coded it.
+
+So I think that. Is where like there's a human there's a con like a com combination of things. It's like him and I discussing the idea, which is like a very human thing. And then there's agents allowing more humans to collaborate better. And it's like reinforcing all of these things and like sort of getting rid of the bad parts of working together and like leaning into the good parts. So
+
+[00:38:07.886] PW21:
+Mm.
+
+[00:38:26.786] Skyler:
+That's where I like want to lean into as much as possible is like human connection, helping humans work together better. And then maybe everything gets replaced, but like we're still gonna answer the phone and help people think through ideas. And maybe that's all our job is, is just like ideas and like helping them do like tell the agents stuff. Like and I'd be okay with that, honestly. That'd be fun, you know? So it's kinda weird.
+
+[00:38:47.256] PW21:
+Phone.
+
+[00:38:54.451] Andy David:
+Yeah.
+
+But this is this is this is also why I'm like quite a bit more bullish than like maybe guys like Pieter Levels are on this stuff, because like it is really easy to just like fall into the X bubble where you're quite technical and you're solving problems that you see other people on X, you know, having. And then there's this whole like I don't know, there's this whole population of people who are just living their lives like completely adjacent to anything that's happening remotely on X.
+
+[00:38:56.424] Skyler:
+Ha ha.
+
+[00:39:20.127] Skyler:
+The rest of the
+
+[00:39:23.683] Andy David:
+And they're all having their own running into their own little roadblocks and their own little problems. And you know, like I think last week I was saying to Pete, like, man, I think the Instagram is a gonna win. Like mainly because they've got this big, like, trusted audience and distribution, but also they're just kind of living their lives and they're running into like unique problems. And then now those people can solve the problems that they run into, which I think is like quite novel. I think that is gonna be super interesting. It's like
+
+[00:39:45.825] Skyler:
+Yeah. Yeah.
+
+[00:39:52.103] Andy David:
+We can't conceive of like we think everything is solved because in our world it kind of is.
+
+But there's this whole other world that is way bigger than ours that is like just going on around us and those people can now solve those problems without coming to us necessarily.
+
+[00:40:00.81] Skyler:
+Yeah.
+
+[00:40:07.55] Skyler:
+That's interesting. That's a good point. I mean, it kind of reminds me of some of the stuff we used to talk about at FedE Pete, where it's like the community is like much more important now. Like your tribe and the people you're around is actually becoming really more like a lot more relevant. And I think that's digital in some ways, but it's also the physical world too. It's like, man, like as these systems start to like potentially crack. Like I don't want to get too doomer, but like I don't think like super intelligence is the biggest threat. The closest threats to me are like drone swarms and like you know, people hacking like the electrical grid and like water. Th that to me is like way more likely. Or like all the traffic lights. I don't even know what these systems run on, but like
+
+[00:41:01.101] PW21:
+Yeah.
+
+[00:41:02.078] Skyler:
+The models are gonna figure out how to like mess with those systems like one hundred percent. And like it just takes a couple bad actors to deal with like cause some chaos.
+
+So even still like your physical domain, like who you're around, like the human connection is like more important than ever.
+
+So I think we should just like figure out how to lean into that as much as possible. You know
+
+[00:41:27.522] PW21:
+Yeah, we talked about this last week where we started off talking a bit about like dead internet theory and the idea that there's just so much stuff is AI that you do kind of switch off to it a little bit and like even in the last like let's say five, ten years, you've seen more stuff move to group chats where it's you and a bunch of people that you've known that you've physically met and you meet I mean this weekend I'm going down to the Bitcoin Bush Bash. Shout out Bitcoin Bushbash here Busselton in WA.
+
+[00:41:44.626] Skyler:
+Yeah.
+
+[00:41:55.774] PW21:
+And we'll be doing stuff.
+
+But that I mean that whole like movement is about getting people together in person because you need it. I mean I think one of the things that we've touched on a lot was like this last job of the human feels like it's to just experience things and figure out what the problem is. Because the AI, you know, if you if you install Claude on your computer and open it up, it doesn't do anything.
+
+Because it has no experience. It doesn't know that anything's wrong. It can start changing shit, but it doesn't know which direction it's traveling in. It needs somebody to kind of at least point it in the right direction. And I think even with humans, right, you like you can have a you have an idea.
+
+If it's something that you're doing a lot yourself, you kind of have a view on it.
+
+But there is something about when you can design in that group exper in that group environment and that experience, then you come out with solutions and have ideas that you just never would have had and really they're just really good descriptions of problems that you can then clank on. Like, you know, that's that's good. Let's get we've got the problem. Let's get rid of it.
+
+But there's always a new problem and a new solution and a new direction, seemingly. Like it's never ending.
+
+[00:42:58.865] Skyler:
+Yeah.
+
+[00:43:09.787] Skyler:
+Yeah, there's like endless things to work on. I mean, that that's funny that you bring that up too, 'cause like in the agent camps we do like the first day is like get to know your agent, start talking to your agent.
+
+The second day is like kind of just basic design thinking and like how do you actually figure out what the true problem is?
+
+Because no one actually knows really how to do that. It's like really hard. I mean no, people know how to do it, but Very few people actually take the time to figure out the like root prop problem or anything just below the surface, really.
+
+And so we like we go through the five whys and talk about like Toyota and like why screws, you know, the why the screws are getting messed up on the delivery, you know, and like you ask why five times and you figure out like, it's like totally different than I thought it was.
+
+So that that's been interesting too because That like gets the organizations to think about wait, I am still needed because like when I try to do the five whys with my agent, the agent just has no clue and it just the answers are so bad. But like me thinking about things, then using the agent to start work on working on solutions is like a really great combination. And it reinforces this human computer distinction that I think is valuable, where it's like, no, you still need to think. You should think and you should practice thinking and don't let your brain atrophy, you know, use your judgment, you know. So it's been good.
+
+[00:44:43.629] PW21:
+Yeah.
+
+[00:44:48.822] PW21:
+I mean I think it's been interesting in that space. Like when you look at these like recent MAFs breakthroughs that have come out and it's 'cause it's Maths and you know, we've been bred for like hundreds of years to go, Maths, that's clever, that's high intelligence, that's a thing. Like, clearly this thing is now if it can do that, then it can do everything. And you kind of but then when you look under the covers and you just go like, Well what have they done? And it's like, it you're kind of just brute forcing approaches to a particular problem set that can be easily tested and looped on over a period of time. And then you throw like hundreds of thousands of dollars at it. And it's like, it's kind of cool that we can solve stuff that way these days.
+
+But that isn't like I mean even like building some simple software, that's kind of not how that works. And particularly if you have to test it in like a human speed. Like you can't, I can't test
+
+[00:45:30.649] Skyler:
+Sure.
+
+[00:45:44.81] PW21:
+700,000 versions of the same page. Like, you know, I like that I can generate like four or five options, narrow it down, tweak it a bit quickly, and then go with one, but you do kind of need somebody to make that decision and understand why that's the way you go. Whereas with a maths problem, you don't. You can just you can afford to just let them all play out and then see if you're closer or not.
+
+And so I think it will redefine some of these things that we
+
+[00:45:48.079] Skyler:
+Mm.
+
+[00:46:12.002] PW21:
+Think of as being just, that's intelligent because it was hard to keep that much data in your head for humans. Therefore only certain people could do it. Well that's not that's not the thing anymore. We just throw that to computers. I mean they've been better at maths than me for a long time. Like they can do better multiplication than I can do. So I'll give them
+
+[00:46:31.722] Skyler:
+I know. I mean the idea too that like I've been thinking I need to think about this more, but I have some sort of theory or a thing that I'm working on, which is like, you know the I think therefore I am, like René Descartes? Everyone has thought this is the best thing ever. Brilliant, whatever. Like everyone just goo-goo gaga with this like this statement. And since then. Like people just thought, like, I know I exist because I'm I'm intelligent. I think something. And it's like clearly that's not real or true. That like intelligence is the most important thing. It's not. Like we just have seen the complete democratization of intelligence. And I think when you build your society and everything around this idea that it's like, yeah. Intelligence is like the most important thing. And then you like flood the world with intelligence. It like totally destabilizes what everyone thought was important.
+
+But that's good because I think that makes us realize like wait, before Descartes, we realized like human beings are much more than just like brains on sticks, like thinking machines. It's like, no, we're not thinking machines. We're like, well I don't know what you guys think about this, but like before then, everyone was like, no, you're a you're an embodied soul and you believe or in and you can love and you can appreciate beauty, goodness, and truth. That's not just like a thinking thing. That's like a physical embodied being that like has to experience the world only through their physical body. Like you can't do it any other way.
+
+[00:48:11.598] PW21:
+Mm-hmm.
+
+[00:48:27.322] Skyler:
+And so I think we actually can now come full circle and return back to that like r sacred world where where things are much more I think sacralized and more like I think the right word is like religious. Like we we've we've desacralized everything for so long and just been like, intelligence, that's all there is. And now we're like, no, we have to come back and rediscover that like kind of weird mystical world again.
+
+[00:48:56.461] PW21:
+Hmm.
+
+[00:48:56.936] Skyler:
+Weird take, but I think I think I'm right.
+
+[00:49:00.364] PW21:
+No, I think I broadly agree, but again, I don't know if it's my bias shining through 'cause I want that to be the case. Like I've always had that side to me that wants that. But I think it is, 'cause it it's I don't know. I guess it you look at like Renee Descartes and you say, Okay, well, what do you mean by think and what do you mean by am? Probably like a couple of questions like I don't know what it means, but I know like when I have problems to solve in my own
+
+[00:49:08.927] Skyler:
+Yeah.
+
+[00:49:12.605] Skyler:
+Yeah.
+
+[00:49:30.242] PW21:
+You know, messed up head. Like I don't do it by thinking, I do it by intuition and trying to get the thinking out of the way. And it y you get that connection where you feel like, yeah, there's something else. There's some other like motive force, like embodiment, soul, whatever, that it's su there's something that I don't know about. And it feels like it could be way more important than we give it credit for in society, 'cause we just spent like
+
+[00:49:54.812] Skyler:
+Yes.
+
+[00:49:57.086] PW21:
+Hundreds of years of industrial revolution trying to make people into machines. And maybe there's quite a natural pushback, right? Like it's just
+
+[00:50:01.51] Skyler:
+Yeah. No. Yeah.
+
+[00:50:06.696] Skyler:
+I think that's right. Like the there's something more. Like and I think once you once you gut like I think the idea the meta-narrative that we are just like material objects, nothing more than that. Like, yes, there's intelligence, but it's like all this like mechanistic evolutionary, like evolved thinking. It's like everything has been like sort of
+
+[00:50:11.891] Andy David:
+Yeah.
+
+[00:50:35.344] Skyler:
+Like you're you the whole med that whole meta narrative and story is like dead to me. It's like this idea that we're like total accidents, that this totally mechanistic and like impersonal process has like produced all these like genetic mutations to lead to your accidental existence, like all of this stupid story is just totally to me dissolved. And now it's like, wait, like maybe that's not all true.
+
+Maybe we have to like rediscover what people used to think about things, because that just isn't enough. Like, it's not enough. But
+
+[00:51:11.945] Andy David:
+It's interesting as well because your incentives completely shift. Like if you think about that more like spiritual alignment. Like I often think about like the building of the great cathedrals, right? It's like they were often built by guys that, you know, they weren't necessarily intellectuals. They weren't driven by money. They were literally trying to build something for the glory of God. And
+
+[00:51:11.958] PW21:
+It you do wonder.
+
+[00:51:41.583] Andy David:
+It yeah, I don't know. I don't know how you can intellectualize a way to building cathedrals like that.
+
+Because I think when we intellectualize the way to construct things, we tend to make them like we make them now, which is like highly enshittified and standardized and like everything looks the same because we don't actually tap into the essence of our our like our higher order being and our soul and you know what is the what is the like the long term point of our existence beyond ourselves. You know, like we don't tap into those questions so much when we're like on a treadmill thinking about like the economic in imperative of putting bread on the table and the like the hunger games that exist around that as well. And so yeah, it's I would love it if we like went back to being able to to kind of like build for like the glory of something that's bigger and more important than ourselves and not have to hyperintellectualize this stuff.
+
+[00:52:39.95] Skyler:
+Well, I mean one one I read this book interesting it was an interesting book called which one was it? I think it's called Desiring the Kingdom. I don't know, I can't remember the name of it, but it's this guy named James K. A. Smith and his argument is that everything everyone does is religious, whether they know it or not. It's just the difference is is it's serving a different deity or god. And there's really high quality ones and there's really low quality ones too. And like there's just like the spectrum of quality or it's not quality, but like s each one is different.
+
+And so like when you talk about the types of things we build today, we do build cathedrals. They're just like two these horrific demons, right? Like it's like and they they
+
+[00:53:35.705] Andy David:
+Yeah.
+
+[00:53:38.679] Skyler:
+They demand certain aesthetic things from us, which is like the international style, which is this like spreadsheet grid. And it's like that maybe it's mammon, maybe the god is mammon, and it's like our s we are serving mammon as we build this like very utilitarian s humanity cr soul crushing monstrosity, you know.
+
+[00:54:08.061] Andy David:
+Yeah.
+
+[00:54:08.139] Skyler:
+And like everything is sort of like a ritual towards some sort of god or kingdom. And it's orienting your desire. Like everything we practice and everything we do is like a form of sacrifice and worship to something. And you know, the a Christian would say, You're worshiping idols by by worship like practicing and sacrificing to these false gods. And That's why the world looks the way it looks, because you're worshiping the wrong gods, you know?
+
+So I think there's something to that like it once you realize that like everything we do is sort of a form of worship or sacrifice to something, it's kind of easy to just shift it over to something better. Well it's not easy, but it is like it's more it's more like understandable to say, if I just change the way I worship these things into worshiping this thing. It could be better, you know.
+
+[00:55:08.329] Andy David:
+Yeah. We
+
+[00:55:08.344] PW21:
+That is interesting 'cause I you know, you hear a similar thing where people talk about like communism and they say, you know, they get rid of religion but then the state becomes the religion. Like it's this all powerful being that you have to do
+
+[00:55:17.909] Skyler:
+Yeah, exactly.
+
+[00:55:22.018] PW21:
+I've never really thought about it on like that personal level, I guess. It's like, huh. I wonder what I'm I wonder what I'm worshipping here.
+
+[00:55:26.785] Skyler:
+Try it. Like I mean, think about the things you liturgically do. Like, like I was just I mean, a good example is like you like I scroll. I'm scrolling. It is like a devotion to this thing. Like, and what is this ritual? What is this practice? What am I doing? And it's like it's shaping my desires to desire a particular kingdom or someone's kingdom. Like it's like what yeah, so I it's a really interesting experience. I it's been a while since I read the book, but like this conversation made me think of it.
+
+But like it really like changed a lot of the way I thought about the world because I'm like, man, I don't want to worship the wrong things because you kind of become what you worship in a way. Like you become like that thing. And I think like if you only think that you're a thinking thing.
+
+[00:55:57.422] PW21:
+Yeah.
+
+[00:56:04.002] PW21:
+Yeah.
+
+[00:56:26.717] Skyler:
+Then you won't think that you're potentially worshiping something. You'll think, I'm just thinking about something. It's like, no. We're if we're religious, like human like you said, they ended up worshiping the state. Humans have always they're just religious. Like that is what I think that is what distinguishes us from everything else. Is like we worship things. Like a higher it's a higher level of activity. That the animals just simp it does not appear that they worship things in the same way. Or at all. It doesn't appear like they worship things at all.
+
+So I think that that's our differentiator.
+
+[00:56:59.368] Andy David:
+Yeah.
+
+[00:57:05.526] PW21:
+Okay.
+
+[00:57:06.001] Andy David:
+It's also about why you do it though. Cause like the answer with communists would be, well, the state nourishes the body, right? And then the well that would be their argument. Obviously in practice never works out that way. The cathedral builder would be the act of building the cathedral nourishes the soul. And that I think is like the broad reason for why you'd do it. It's not driven out of like I mean, look, I'm sure there was some.
+
+[00:57:15.534] PW21:
+Yeah. Yeah, okay.
+
+[00:57:26.803] Skyler:
+Yeah.
+
+[00:57:35.581] Andy David:
+That were driven out of like, you know, personal like projections of power and things like that existed.
+
+[00:57:38.974] Skyler:
+Well like a Mason or a Mason's like I gotta feed my family and that's the only job in town and like whatever. But yeah, there is something more yeah.
+
+[00:57:42.856] Andy David:
+Yeah.
+
+[00:57:48.285] Andy David:
+But there's subjectivity. There's subjectivity based it baked into the design. I mean, like not every cathedral is La Sagrada Família. You know, like some are smaller and like and to like link this back to AI and design and like one one of the things I really hope to like also tag on what Pete was saying about like less centralization is like I kinda hope we see the return of the old high street. You know, like when you'd walk through a town and like each town would be kind of unique and you'd have little shops. And the little shops, all the stores, all the offices would be run by individuals. And like the brand was based around the individual and who they were and who they knew and how they helped people. And there is and that was all community building, right? And there was something really lovely about that we lost with a lot of the technology as we kind of just like hoovered all of this stuff back into big tech. And we that we lost our like indiv we lost our soul in a lot of that stuff, I think. And the reason for doing this stuff. Like the work didn't nourish the soul anymore. We just ba b basically became these like mechanist well, we became robots for big tech, basically.
+
+[00:58:48.902] Skyler:
+Yeah. Dude. Yeah.
+
+[00:58:50.754] PW21:
+I mean I think I remember back to like talking to, you know, like yourself, Justin, like almost everybody that joined Feddy and like we would say, what is it that drew to this particular project? And it was always that community angle of like I just think that's I don't know why, but I just think it's like the most important thing that we've just killed in the last twenty years and we need to get back somehow. And there was like that yearning back to it.
+
+But I think it's true that like We've gone down a path that we didn't need to go down necessarily, but we've gone down it and then maybe we've just hit that point of things swing back. 'Cause I weirdly I look at this technology that takes jobs and does stuff for you and, you know, is scaring the shit out everybody, causes everybody to go insane and like psychotic when they're using it. And it makes me think that like, this is actually gonna bring people back together. It doesn't feel like it's the
+
+[00:59:27.226] Skyler:
+Mm-hmm.
+
+[00:59:46.362] Skyler:
+Yeah.
+
+[00:59:48.012] PW21:
+The obvious through line of all of those things. But I think it does. Yeah.
+
+[00:59:50.532] Skyler:
+Yeah. I mean that's my hope is that we like AI can liberate us from the computer. Like I like what you said about you know, you can walk and manage agents. Like that to me is like if we can achieve that truly, or like at least take the digital drudgery out of our work and allow us to do like more human like human max. And like human maxing, like
+
+[01:00:20.536] PW21:
+Human maxing. Nice. I think we've got a show title.
+
+[01:00:25.01] Andy David:
+Yeah.
+
+[01:00:25.658] Skyler:
+Like that's what we need to do. And lean into your unique abilities as a human and let the computer do the computer work. Like that to me is the dream. And anything that can accelerate that I think is great because it like so much of what we do is just really struggling with computers, I think. Like especially I look at all these interfaces, I'm like, this is death. Like the amount of garbage we human beings have to see and the amount of ugliness we have to see is like unacceptable. It's so stupid. And we should be looking at beautiful things, not horrible interfaces all day. And I think agents can help us with that a lot. By sort of like I like I said with the inner the email thing is like agents can be the barrier and the defender of your soul in some ways.
+
+But one point I wanted to make too is like have you seen Charleston AI? It's this I tweeted about a couple days ago. It's this boomer in Charleston. I don't know which state in the US there's a couple Charlestons.
+
+But he ha it just literally says Charleston AI on a and he's like come on in and he's like showing people this like horribly ugly office but he's like
+
+[01:01:35.301] PW21:
+Yes, yes. Now I have the Yeah. Yeah.
+
+[01:01:52.108] Skyler:
+We are gonna sit with you and we're gonna talk about what you need and how we're gonna help your business with AI. And I'm like, yeah. Yeah. Yeah. It is hilarious. I mean, it's horribly I mean it's nostalgic in many ways. Like I love it. I love the feeling of it, but and I think it's directionally right. Like, yeah, we should do local stuff again, like for your city, for your town, whatever. And like,
+
+[01:01:58.782] PW21:
+There's just like a Del Optiplex on a table sort of thing. And it just looks so nineteen nineties. Yeah.
+
+[01:02:01.833] Andy David:
+Mm-hmm.
+
+[01:02:21.898] Skyler:
+Or or you know, obviously it doesn't have to be like local local, but like with humans, trying Yeah, like networks and like your community. We just need to do that. And that is like I think the only thing that can really help us stay sane as the i entire digital world like becomes like completely revolutionized. In a the just an unpredictable way.
+
+[01:02:26.296] PW21:
+We've like aligned people, I think is what.
+
+[01:02:50.71] Skyler:
+It's like completely unpredictable. So Yeah.
+
+[01:02:52.94] PW21:
+Yeah. I think it's interesting like where you kicked off with Finite Computer, 'cause it it's pretty similar to where we ended up as well with other stuff, which was just like it's agents are huge. People need help with agents.
+
+So we started doing training and we started doing like deployments for people and like building workflows and apps and stuff. And then you realize that like you know, it's I I don't know, like it's just the bit the
+
+[01:03:08.917] Skyler:
+Yeah.
+
+[01:03:20.556] PW21:
+That really matters is just you're gonna put your whole life into this. Or what we'll often say is like, you're gonna take your so you're gonna take your business as it runs right now and you're gonna turn it into a business that largely is just software and some agents around the sides of it. And it's gonna really matter who owns that software, 'cause if you don't own it and you don't own those agents, you no longer own your business. And y you might have had this thing for in the family for fifty years. And you wanted to give it to your kids and instead you gave it to some guy called Sam or some guy called Dario and they get on the news and they say to you, I'm going to steal your business and put you out of work. That's why you should give me two trillion dollars or whatever. It's like they're just so like Yeah.
+
+[01:04:01.567] Skyler:
+They did it. They do that. Like clawed design is like a ripoff of Figma. I mean, in many ways it's better, but like that they're s just stealing pe stealing everything. Like it's like insane that everyone's okay with this.
+
+But the models are so good that people are just like, Whatever, like give me the bread and circus. I don't care. Like, but yeah, I think you're right. Like I there
+
+[01:04:24.854] PW21:
+I think the only way to push back is to just like have offerings that don't it's like I can't do I can't think of anything better. Like it's hard to beat them on price. It's like even when we deploy these things it's like, Well, you're probably better off putting a like a Codex subscription into it 'cause you're just gonna save so much money over the course of a month as opposed to running it direct but
+
+[01:04:37.103] Skyler:
+No, yeah.
+
+[01:04:44.771] Skyler:
+Yeah. I mean, like we've been doing we've been using tinfoil to host open weight models and like they're pretty capable of running these agents, you know. I mean you're you're not gonna get like these really flashy animation videos, but like most of your life can be managed by like GLM five point three flash. Like most things that you need like can
+
+[01:04:58.115] PW21:
+Yeah.
+
+[01:05:10.761] Andy David:
+Mm.
+
+[01:05:13.721] Skyler:
+It can do a pretty good job at.
+
+So I feel like if you i the more we can get people on stuff like that where it's like TE, you know, i mean maybe lo maybe local someday when people have like better machines or whatever, but like if if we can get like eighty percent of people's work like running through that and then like occasionally they need to jump over to like Opus five point five or or whatever frontier models are good, like that's cool. I think that's like moving in the right direction. That's what we try to like guide people toward. But yeah, it I mean the local stuff is pretty interesting, but I just think the frontiers are are so just recently like 5.5 and Astra, like these are amazing models. So like it's so hard to say, I gotta stop using that. Like that is like they're so good.
+
+[01:05:42.007] PW21:
+Yeah.
+
+[01:06:11.771] Skyler:
+They're so amazing.
+
+So what do you guys think about that? Like there's just temptation for this. It's like they're
+
+[01:06:15.325] Andy David:
+But I think I think you it it's super interesting because I think like you're right, you could just run like the vast majority of the things that you do with an open weights model. Like you just can.
+
+But then it's like knowing which like when to use the frontier.
+
+But it's so easy to use the frontier that you just throw it at everything, right? So that is I was gonna say as well, like 'cause I think you kind of like you brought this up earlier, but we didn't go into it. Like I my like My like controversial opinion is I think Trump's right about renaming AI. Like I actually think superintelligence is a better name because strictly because I think like another way to think about all of this is to just like level up your ambition and like level up the like the com the like the importance of the problems to go and solve. Like this is like the opportunity to go and build La Sagrada Família, you know, like just level up. Like you're not being ambitious and like just ambition max the hell out of it and use the frontier models.
+
+[01:07:18.19] Skyler:
+Yeah. I
+
+[01:07:19.197] Andy David:
+That's why I love the name. Like I just think, cool, let's do it 'cause like AI is also like artificial is kind of like more associated with like slop now as well, which I think is really sad.
+
+[01:07:24.848] Skyler:
+Money.
+
+[01:07:28.185] Skyler:
+Yes. Yes. Dude, that is such a good point. Like, yeah, I like I think super intelligence is genius because it's aspirational, like you said. Like it forces you to think better about like it or demand more of SI products. It's like, wait, is this super intelligence or is this kind of like lame? You know? And so I I'm kind of always like, man, the open way models like
+
+[01:07:47.72] Andy David:
+Hm.
+
+[01:07:57.59] Skyler:
+Not super yet. Like they're getting super, but it's like I love it because it's such it just drives you up and it drives you to do better.
+
+So I think that's such a good point. I think and like Trump, you know, for all his flaws, he's so good at that. Like just identifying like what needs to be rebranded and renamed and just leaning in it. Like I just see this stuff from Zuckerberg, like his recent like model, the
+
+[01:08:19.36] Andy David:
+Ha ha
+
+[01:08:26.392] Skyler:
+What is it, wonderful or whatever his model is? It just says super intelligence all over the document. I'm like, these these CEOs are all just like bending the knee to this new turn. It's like amazing.
+
+[01:08:36.313] Andy David:
+Ha ha.
+
+[01:08:38.702] Skyler:
+Just funny. But yeah, I think it's the right term. I think it's the right term.
+
+[01:08:44.13] PW21:
+Yeah. I guess we just have to step up our game now and super-max or
+
+[01:08:51.244] Skyler:
+I think human maxing and like human maxing can make up for the like sort of inadequacy or the step down in UX that like the sovereign AI stack will feel like.
+
+Because it like typically sovereign stuff feels worse than corporate, like from a UX and design perspective, usually always. Like that's why I did my design. Agents Bitcoin companies 'cause like there's no design not no good there did there wasn't good design taste in Bitcoin. There's a lot more design taste in AI, but AI is just or SI is just like totally changing totally changing the world and like I think combining those things is like important. So
+
+[01:09:48.798] PW21:
+I do have like one one other product that we've been.
+
+[01:09:52.628] Skyler:
+Yeah.
+
+[01:09:53.966] PW21:
+Started out as we used to call it super based which was like it was like superbass but nostril and the idea was like I am I was just like I am building so many frickin' apps constantly to solve like every one of my problems. They're all in different places. I've got like hundreds of these like terabyte like all of a sudden I've got like gigabyte and a SQLite over here and I don't know what the what the hell it is and the rest of it. And I was like you know what I want one like little stack.
+
+[01:10:01.534] Skyler:
+Okay, okay.
+
+[01:10:22.232] PW21:
+So I recently rebranded it this week into Nostr Stack. And what it is is you can just run a Docker and all of a sudden you have one like Nostr interface and you say, all right, I'm Pete, I'm the admin of this. I want set up a workspace. You create a workspace. And then in that you can host like app specific databases in like a managed Postgres environment. You can put all your storage goes in there, all your data goes in there. You can do encrypted backups of your relays and things from Nosta. You've got blossom storage, you've got Git.
+
+[01:10:26.187] Skyler:
+Okay.
+
+[01:10:43.276] Skyler:
+Nice.
+
+[01:10:52.436] PW21:
+Inbuilt into it and everything and everything is managed by npubs. And then all of our like agent infrastructure is all npubs. So all the users are npubs, all the people are npubs in that ambulando app. Every chat is signed messages and Nostrified. And then it sounds like that would be bad for UX because Nostr, it's terrible.
+
+But you give if I've got like one public key and I know you have a key, I can just I can automate across every system that you have from then on. And it's like all I ask of you is to have one key. And the way you do that is you download this one little Nostr browser and then it has a key in it. Bang, done. And it's just it's so nice. There's not a single API key. And you can have multiple backends, you put them all over the place. It's just it's so smooth.
+
+[01:11:25.663] Skyler:
+Yes.
+
+[01:11:36.531] Skyler:
+I agree.
+
+[01:11:42.962] Skyler:
+I do agree with that. Like I have learned that or we've we've learned that like by like I mentioned earlier before we were signing people up for Claude and Anthropic and all this crap. And it's like that's actually a really like auth is a horrible UX that everyone kind of deals with. Even in the like the frontier, every frontier product has like a horrible auth experience. And even like Google login is like you know, supposedly the best, but I still constantly and like always having to log in. And like on my phone for some reason it just like I can't select my path like it's like har it's difficult. Like but I do agree that like Freedom Tech has a really good answer to this.
+
+But key management sucks as we've seen like in Bitcoin and like we're seeing like ledger this ledger
+
+[01:12:13.385] Andy David:
+Yeah.
+
+[01:12:43.132] Skyler:
+Recent ledger supply chain attack is like key management is a bad UX like no matter what.
+
+So like I that I agree that if if everything was kind of nsec/npub, that's cool. But again, it's like if you lose your key, you lose your life and or you lose your digital life and it's I don't know. I agree in some ways, but I'm also like we still kinda get back to the problem of like who stores the key.
+
+[01:13:19.938] PW21:
+I mean I think you can get a lot of that down with just multiple encrypted backups. Like one of the nice things about using this for like a business app would be like I can I can just store this like fifty times. I I can store it on multiple passwords or whatever. I can shard it and give it to a couple of people that can help you recover. It's not that bad versus this is somebody's entire life savings and could have like a billion dollars on it. Like they're just diff I think they're different problems.
+
+[01:13:45.361] Skyler:
+Yeah. That's true.
+
+[01:13:49.969] Skyler:
+That's true.
+
+[01:13:50.198] PW21:
+At that level. And I mean I do f I kinda want if I could have one change in Nostr, it would just be I want some manner in which we can recognise like child keys and so it's like look, this is me, I'm gonna sign that this key is okay and then I'm gonna use this key. And then that goes away. And then if I burn this one, it's okay. I can generate a new one. Like it's not it's not my like root identity, but I
+
+[01:14:15.355] Skyler:
+Mm-hmm. Yeah. Yeah, that is that's a that's a problem. But
+
+[01:14:19.54] PW21:
+I don't know. We'll see. I think it just is what it is. I think it's just hard. I think if you want the keys you have this problem.
+
+So just have multiple identities. Job done. It's not the end of the one.
+
+[01:14:33.337] Skyler:
+Yeah. And maybe that's okay. I mean I think that's okay, but it does it is like there is something nice about having the same identity for everything. But yeah, i it it's this is this is why I think like software's not dead because a lot of these problems still are not solved and I just don't know how they will get solved. There's a There's no like easy solution to them because it's the human computer interaction.
+
+And so there's endless amount of work to do, I think, in that regard. But yeah. Humans, human maxing, I it's that's just what I'm gonna be doing. That's my job now, human maxing.
+
+[01:15:22.562] PW21:
+I like that framing. I like that framing. I think that's the I I think that's the title.
+
+[01:15:24.645] Skyler:
+Yeah. Yeah, that'll be great.
+
+[01:15:31.037] Andy David:
+Where can where can people find out more about finite computer and you and how do they follow you and do some shilling? I'm doing it now, we're starting today. Episode seventy-six.
+
+[01:15:37.743] Skyler:
+Yeah. So
+
+[01:15:38.76] PW21:
+I don't think we've ever said that on the podcast. That's good.
+
+[01:15:44.045] Skyler:
+There we go. That's a perfect episode to do it. Actually, I think I don't know if it's reversed on the hat, but finite.computer. Finite.computer is our very simple website that doesn't say much intentionally, but you know, that's and then Skylar underscore FS is my Twitter. Paul Miller is future Paul. You guys should follow Paul.
+
+[01:15:49.55] PW21:
+There you go. There you go.
+
+[01:15:52.388] Andy David:
+Nice.
+
+[01:16:14.028] Skyler:
+Future Paul on Twitter. And yeah, I think like the we're gonna start being more public about what we're building. We just haven't done it yet because we just have p we have customers, we're working with them, it's like we don't really need to promote, but we're starting to think that it's like what we're making's pretty cool. Like this the next version of our product is like really awesome. It's I don't know if I should share about it.
+
+Maybe I should.
+
+Maybe I shouldn't.
+
+But I'll just say something. Like we're making these multiplayer apps that are just freaking awesome. And it's like You just like multiple people collaborating on the same app inside an organization. And it's like it's basically taking that idea of annotating the PDF and like kind of just making it so that every organization can vibe code these things like very easily. It just we've been doing it internally and we're just like it's giving us AI psychosis because it's like such a i if you If you put all these things together, like posting the stateful web app, if you allow it to bring in the AI that you're using in your chat, like and if you allow other people in your organization to use this thing, it just becomes like, wait, this is like we can build anything. We can build any type of software we were using or paying for, and like we just make it here and we all have it.
+
+[01:17:54.388] Skyler:
+So it really feels like a next version of a computer because it's like you could kind of do a lot of your life in that little finite box.
+
+And so it's super exciting. Like I've never really worked on something that excites me this much. So that's why I'm like, okay, I we I think we should start being more public about this because it's like it's pretty, pretty exciting. So yeah.
+
+[01:18:02.99] PW21:
+Hmm.
+
+[01:18:24.136] Skyler:
+Reach out if you're interested in agent camps or agents for your organization. But yeah, otherwise let's just let's just hang out, you know? Let's you and Mac.
+
+[01:18:35.8] PW21:
+Sounds good. Human maxi. On that note. Let's get out of there.
+
+[01:18:43.808] Skyler:
+Amazing. PW21 (01:18:47.414)
