@@ -1,0 +1,1140 @@
+[00:00:01.463] Pete Winn:
+Alright, and welcome to Intelligence Snacks 77. Day late. We'll we'll see how quickly it gets published after this. Apologies, my boiler blew up and that needed to be sorted. Yeah, ho hot water is thing. Like it'very useful, so it'worth worth getting that sorted first. Yeah.
+
+[00:00:14.818] Andy David:
+Domestic problems.
+
+[00:00:21.358] Andy David:
+An essential repair, that one, yeah. Well, it might not be that late. It might only be couple hours. Let'see how we do.
+
+[00:00:26.927] Pete Winn:
+Hmm. Yeah. I mean it goes to show like how lean it usually is between recording and then publishing, but even just day'delay.
+
+[00:00:35.98] Andy David:
+Yeah. Well it'interesting 'cause this week I'kind of figured out that we needed cold open. Built that with Opus five point five. That'looking nice. We've got nice little like publishing pipeline now. So I'not gonna do it today, so don'expect cold open today 'cause we're we're on the clock. But next week.
+
+[00:00:42.809] Pete Winn:
+Hmm.
+
+[00:00:57.635] Pete Winn:
+We could do it like it. I don'know. It'fun.
+
+[00:01:00.47] Andy David:
+I guess we could. All right. Let'change changing plans on the fly. Let'see. It might be surprise. Yeah.
+
+[00:01:03.673] Pete Winn:
+We'll see, we'll see. It's surprise. If you just watched cold open, we did cold open. If you didn'see cold open, then you know, you've got something to look forward to next week. Like and subscribe. You know, tell your friends all about the pod.
+
+[00:01:09.846] Andy David:
+We did it, yeah. Next week. There you go. This is the best AI podcast in the world that no one has ever heard of. So potentially.
+
+[00:01:24.311] Pete Winn:
+Yes, yes we should say that. This is the in the universe. Maybe the multiverse, depending on your your physics and interpretations.
+
+[00:01:32.652] Andy David:
+It'true. It'true.
+
+So the only way to solve that is to go and tell everyone about it.
+
+So like and subscribe. There we go. What'been happening?
+
+[00:01:40.378] Pete Winn:
+Alright. Okay. Alright, what about some what about some thinking? I don'well we were just talking, right? I was describing noodling on visual interfaces for for working with AI.
+
+Like I d I feel like the whole theme of everything that'been happening for year has just been like this. We've sat on the pod few times. It'like how do you work with these things and stay sane? And how do you kinda like
+
+[00:01:48.504] Andy David:
+Pod before the pod.
+
+[00:02:10.295] Pete Winn:
+Keep track of everything that'going on or work in way that feels more appropriate to you or human Max as we discussed last week with Skylar. Please go back and review the episode. It'great. Great conversation. I really enjoyed that as well. Really?
+
+[00:02:18.83] Andy David:
+Mm.
+
+[00:02:25.176] Andy David:
+That was maybe my favourite pod that we've done. I think so. I was thinking about that after, so shout out Skylar, thank you. I quite enjoyed it. And
+
+I think it'probably because we riffed on so many diverse things. It'pretty broad, pretty eclectic that one. So go check it out.
+
+[00:02:31.758] Pete Winn:
+Hmm.
+
+[00:02:42.379] Pete Winn:
+Yeah,
+
+I think what'interesting with Skylar is he tends to he tends to have fought lot like in the in the background sort of thing. So yeah. Nah, he'he'good lad. That was that was yeah, good conversation. Go back and listen. But also listen to this one, 'cause this one'gonna be good as well. And then just go through the back catalogue. My god, like what value it still holds up to this day. Anyway Where where are we?
+
+[00:02:48.078] Andy David:
+Mm.
+
+[00:02:59.884] Andy David:
+Yeah, wait until the end of this one and then go and listen to Sky.
+
+[00:03:11.054] Andy David:
+So solid three minute of shilling to start the episode.
+
+[00:03:13.229] Pete Winn:
+Yeah. We're the worst. We saved it all up for episode seventy seven. That'when you hit people.
+
+Like you gotta do you gotta get seventy six episodes down and then you finally like shill and ask for something. Right, where was I? So visuals. So Yeah, I've been working it'been this progression, right? Of I mean it started with with Wingman where
+
+[00:03:29.24] Andy David:
+Visual interfaces, yeah.
+
+[00:03:41.25] Pete Winn:
+Initially at one point I was just using it to connect remotely in browser to Claude Code sessions and kind of just run stuff in the terminal. Just let'see what you've done, next thing, next thing, pushing it along like bit by bit. And then I was like, I just don'wanna see terminal ever.
+
+So it and autopilot kind of grew up into this system where it was just nicer. It'nicer to work in an environment that has buttons and nice rendering and stuff like that. And that was like Autopilot'first pass.
+
+And then it became like about the triggers and the pipelines and the workflows and hosting of apps and various things and like automation around that whole, you know, agent to app. Life cycle.
+
+And then like I hit that next problem of just being like, God, this is this is like too much.
+
+Like that there'so many sessions and I'kind of going like, I do I start new session? Do I create well what'this session called again? How do I go and find what was I working on?
+
+Like how do I find the thing? And I can never there'just too many plates spinning and too many sessions that you just couldn'track. That was like okay I to make sessions like disappear.
+
+Like I can'deal with that.
+
+And so that was kind of the birth of what was originally called co-work and then became co-worker because then Claude instantly released co-worker about like about two weeks after I'come up with that you and then iterated on the names there. That was then Flight Deck and then now it'been sort of renamed ambulando for solvitur ambulando. Solved by walking so we will go out and we will dictate stuff to our robots and they will solve things for us and then tell us what they've done. And that'been pretty that'been pretty pretty good.
+
+But I've got to the point now where I don'like I will I will only ever go into autopilot, more or less to debug session if I want to see what'going on.
+
+But I almost do not use it at all. It just runs in the background.
+
+[00:05:45.38] Pete Winn:
+There'often there'like twenty or thirty sessions running at once in there. And I don'really when I go in I'like I don'know which one is which. And it kind of runs as like sometimes it'pipeline, sometimes it'sessions that manage sessions. There's lot of like inter session communication stuff they can do in there.
+
+So like recently I've been having 'cause like ChatGPT feels bit bit retarded at the moment.
+
+So I've been getting
+
+Like still using my ChatGPT for my base conversations and getting backwards and forwards and then just saying, Look, just implement this one with Claude.
+
+Like I don'want you looking at this. I'I've I'burnt. And I dare say that'll switch back at some point in the next couple of weeks as they as they nerf open. So soon as they've had that IPO, I expect that just nerf everything. Yeah.
+
+[00:06:29.686] Andy David:
+Eminently. Yeah.
+
+[00:06:35.38] Andy David:
+I think it'already been nerfed.
+
+Like I noticed my usage limits just basically halved yesterday, so
+
+[00:06:42.573] Pete Winn:
+Yeah.
+
+So so there'that. And that that'been going pretty good. And the only thing that bothers me is that it'not It'not supernatural for how I work. It does the job of solving like when I get back all these responses and I've got all these different plates spinning, then they all fit into this nice like, okay, here'your channel here'your scopes of work and then here'your channels and every thread goes back into there and it kind of fits and I know where to find the documents and I know where to find the tasks and I can review stuff after the fact.
+
+But it does it never really scratched the planning itch for me. And
+
+Like almost my my entire life. I remember like back when I used to work in London, like as project manager, I used I just remember I went and got whiteboard, like I don'know, maybe like four foot whiteboard. I took it off like wall and just stuck it on my desk. Almost like you know how like architects would have like the big folding desk. It was like that. I had it propped up so it'kinda hung off like slanted on the desk. And I could just draw stuff directly onto it and like magnets and bloody post-it notes everywhere and it was just how I like fought about stuff.
+
+Like everything has always been super spatial. And I really felt like I kinda missed that little bit.
+
+Like I didn'have way of scratching that itch. Inside the current setup and I wasn'quite sure how to do it.
+
+So I've been experimenting little bit with Rick'Artifacts, which is kind of like just HTML viewer that could build that could do like, you know, whiteboards and logic flow diagrams and all sorts of stuff for me. And then Yeah, so I've been playing with that. And then recently I was like, you know what?
+
+[00:08:30.507] Pete Winn:
+I kinda want canvas and so I was doing the Bush Bash last weekend and I tried this experiment which didn'go too well in the room.
+
+Like the actu the actual like in the room experience didn'work.
+
+But it allowed me to test something out like prior to that, in like new environment and just go, Alright, just scope this up and let'see how it works. Which was just to make not make the it'kind of I I'trying to think about the paradigm.
+
+I think the correct paradigm is thinking of it like you know how like when we started with computers, well, with GUIs, they went, Alright, this is your desktop. And it kinda everyone was like yeah. Back in the days when we had desktop and briefcase and my documents and all this sort of stuff. This is my computer. This is the internet. This is sort of thing. And it was
+
+[00:09:07.0] Andy David:
+Whoops.
+
+[00:09:13.198] Andy David:
+Yeah.
+
+[00:09:21.229] Pete Winn:
+That as paradigm kind of really made sense to people because they went, yeah, because I might do I might be doing like three or four things on my desktop.
+
+So I'll kind of like push them around.
+
+And then the way you
+
+I think this is also why I I'not fan fully of like the Amachi like tiling window manager. I'I'm I could probably get to like it and I do often do one there, one there.
+
+Like that'my general approach for managing Windows.
+
+But I don'want to like have one there one that tiny thing zooming zoom out. I don'like it. It'it doesn'feel correct. I like the flexible layout of canvas and then popping in and out of stuff. And so I said, right, well, what if I had that? Particularly the experiment I was doing with
+
+[00:09:57.216] Andy David:
+Yeah.
+
+[00:10:15.001] Pete Winn:
+For the weekend for the bushbash was all about making naplets.
+
+So it was one big canvas and everybody could make their own naplet and like fire it into this canvas.
+
+So that we had like all these little apps and websites as part of one big unified website. And I was like, this works quite nicely because you've got this like defined boundary for each of the each of the apps.
+
+Like or each like here's website with bunch of stuff on it. And I was like, well this would be great to solve some of my problems with like visual thinking and planning for this. Cause like sometimes I want whiteboard.
+
+But I don'want just whiteboard. I kinda want bunch of data.
+
+But then bringing data like into Excalidraw is just super kinda weird, like doesn'quite work correctly. And then
+
+[00:10:46.51] Andy David:
+Mm.
+
+[00:10:53.208] Andy David:
+Yeah.
+
+[00:11:06.157] Pete Winn:
+It and it just the concepts don'integrate, if that makes sense.
+
+Like some stuff should be structured and some stuff isn'structured.
+
+And then they don'integrate fully because they're just different.
+
+But they do federate.
+
+So I don'know if you like in the past like we used to talk about this lot with I don'know, search. Enterprise search back in the day where enterprise search is kind of like you put everything into one big index and we index that thing.
+
+Whereas the simpler thing to do is to just go like all the things we're trying to index, it'kinda hard to build good index of everything.
+
+But it'easy to send the same request to like ten places and get the results back.
+
+And so that would be the federated approach. Or another one would be I don'know, you see control systems in you know, like yeah, you know the big control center out the airport for Rio sort of thing. There'be you know, he'got big screens fucking everywhere and you're controlling all the trains and moving shit around and digging stuff out and seeing it across the across the boards and when you look at it looks integrated, right? 'Cause everyone you're looking at all these screens, but the reality of it is it'federated. Or another term I often use is kind of swivel chair integrated. Which is like, I'll do it over here and then I'll do it over here. And like that'enough integration. And we integrate through the human sort of thing. And I think that what I kinda wanted was like, you know what, I don'need to integrate these things. What I want to do is kind of visually and spatially associate whiteboard with task list. If you know what I mean.
+
+[00:12:19.79] Andy David:
+Mm.
+
+[00:12:43.053] Pete Winn:
+And so can I have this like broad canvas where I can play out like, okay, here'me dicking around with ideas inside the whiteboard and that'constrained inside its box.
+
+But then next to it is the task list.
+
+So I can look at what I've done on the whiteboard and see my task list and then start like knocking out okay, that'how I want to do it, and this is the plan, and this is the plan.
+
+And then it gives me this space that'like super natural for me to go and plan in, 'cause this is what I've done all always. It'like sometimes it was just me drawing stuff and sketching it up.
+
+And then it would might be maybe I then turned that into diagram and just magnetise it in the corner because it'fixed.
+
+And so now I've got this I built into Ambulanda like as the first like version that I was kinda happy with screenshot of yesterday was just like ooh, ooh this is good. Was like canvas where I've got
+
+[00:13:30.409] Andy David:
+Mm. Yeah.
+
+[00:13:37.996] Pete Winn:
+Several things going on.
+
+So if I've got document in Flight Deck and it'scratch that.
+
+Like if only we edited I could be consistent with my brand name.
+
+So pin renaming. I felt like trying to make everything wingman brand was just it felt so clumsy all the time.
+
+So everything'kinda got its own name now. So in Ambulando now, if I've got document, I can just put the document on the canvas and it just displays the document and it just pulls it straight out of out of the tower, or Nstack as it'now called. The Nostr Stack. And it'kind of it'kind of cute, right?
+
+Because you've got this just front-end app that'running on your machine. There'there'no additional back-end or server going on. It just loads this canvas and the canvas says I'll go get that document. And because you're logged in with your with your NSEC. And because everything'based on Noster, like the applet the Naple itself can just make the request on your behalf to the N stack and go and get the document and then just render it for you. And I was like, that'sweet, because now I've got the document there. Cause I used to find that I don'want to go backwards and forwards between documents and stuff. I can I just want I want only what I want right now here.
+
+Like everything else can just go away.
+
+And so that was like super compelling just to have the document. And then I like, yeah, I'll make an applet for task lists and just pull up all the open tasks on this particular project and scope and stuff. And you can just click through and filter that.
+
+But it'all the live data.
+
+And so then if you and again because it'like whilst ambulando''cause it'kind of it does sit in Ambulando, but it'almost like different interface to exactly the same data. Because you have this like NSTAC concept.
+
+[00:15:15.618] Andy David:
+Yeah.
+
+[00:15:29.497] Pete Winn:
+Like an another thing I was doing was doing like audio only. Maybe maybe that'the point of this, is like this episode is about these different interface styles. We figured it out. Fuck, we figured it out on the way. Yeah, that lot earlier than usual. That'not bad. 15 minutes. That'maybe we need to do that three minutes of just shilling first to get juices following. But yeah, like I it'kinda
+
+[00:15:42.84] Andy David:
+Figured it out early as well. It'not bad. Mm-hmm.
+
+[00:15:57.198] Pete Winn:
+It'kind of neat because I instead of like just pulling out like the tasks, I can just integrate directly with it inside this single little knaplet view. And then now I can edit the tasks, I can create new tasks, I can I can deal with the data and then when I go back to the sort of ambulando view at the canvas. It'all there. It'just structured in all the right ways. It follows all the right conventions. The agents can see everything.
+
+Like all the security'already handled by the NSTAC. And I was like, yeah, this maybe this is what I was building to all along. And it'it kind of came from just solving that last bit of the problem of just, alright, this is okay for dispatch now. And it'okay for managing and seeing and reviewing. I mean even the reviewing I probably do more on.
+
+But like this like spatial dimension I just did not have.
+
+So that'been super like interesting playing with that.
+
+[00:17:01.164] Andy David:
+Yeah. It'interesting, isn'it? 'Cause it'been theme I feel for maybe year trying to work out like what'the right interface to be working with the agents. 'Cause
+
+I think we said pretty early on it wasn'chat.
+
+Like chat was just basically dysfunction with lot of like verbosity. It's very hard to manage.
+
+[00:17:21.284] Pete Winn:
+Mm.
+
+[00:17:23.486] Andy David:
+Any kind of project in in chat, especially when you start then stacking project on project on project, or you just get enough complexity, it just doesn'really work. And I know
+
+I think we spoke about it maybe last December because one of my Christmas projects, if you remember last year, was basically cloning Miro. And the intent at the time was like, yeah, I need version of Miro, but I need, you know, the agents to be able to use this interface.
+
+[00:17:40.964] Pete Winn:
+Yeah.
+
+[00:17:50.468] Pete Winn:
+Yeah.
+
+[00:17:50.519] Andy David:
+And start working with me visually, planning stuff out ahead of time and make it basically inspectable. Like I want to be able to get a, you know, a 50,000 foot view of something.
+
+I think for me that'become like obviously didn'pursue that because it was just too, too cumbersome, but it was useful experiment.
+
+But the other thing I've I've been doing lot more of is just turning code bases into like visual schematics of, you know, basically like breaking things down and Turning them into like mini circuit boards to figure out like this part of the code base interacts with this one and it does that. And that'been quite useful for me to get an understanding of what'happening. And that thought came again, probably earlier this year.
+
+I think it was more of an issue when some of these agents had like much more constrained context windows. And part of my thinking there was, well, like if another agent can basically just look at the schematic, they probably can infer lot more than just basically having Part of the code base in the context window, and then you don'know which part. You know, there was always that challenge around how do you manage what the agent can see and what it'looking at. And I just thought, yeah, visual, visual environment might actually be like nice way to overcome that and get these agents on the on the same page. But yeah, it'fascinating to see this stuff come about. And I still use it for. Interface design, so UX, website work, all that kind of stuff. I think it'quite useful to just basically have, you know, most of the front end mapped in in canvas. I mean, there'so many tools for that now, so I don'really feel the need to push any of that stuff, but it'just useful tool to have inside of Ambulando.
+
+So I was curious when you like sent me that screenshot yesterday, I like, ooh, yeah, I reckon I could start doing lot more like UX on that. On that canvas that would be that'be really handy.
+
+[00:19:48.44] Pete Winn:
+It feels good, right?
+
+Because you could do like what'kinda nice is like you have like the dep you just pull up an Excalidraw over here and you dot out what you want and then you just tag the agent and say I would like put next to this like HTML rendering of this with like I want like switcher on the top and I want five versions of this layout done and it just And it pops up next to it on the canvas and you can just click through and get that one. Four is best, right. Up version this with number four. And it'just and then
+
+[00:20:25.248] Andy David:
+Yeah. I mean dil the other way I'approach that, that specific issue was just pull out every element in onto canvas and then make it inspectable and then like there's set of editors. And that was really like quite fascinating to just see these things like laid out and I'like, okay, cool, I can see all the classes, I can see like where I'want to tweak, and it there'no other noise, it'just the this kind of like array of elements.
+
+[00:20:38.563] Pete Winn:
+Yeah, you could just
+
+[00:20:43.513] Pete Winn:
+Yeah.
+
+[00:20:53.346] Andy David:
+And then like some like basic visual some some basic editing tools. It'basically like streamlined Figma where I can just go through and like make quick tweaks myself rather than passing that back to an agent.
+
+And then it just like is set in the style sheet and we're good to go.
+
+[00:21:08.877] Pete Winn:
+So the way the what'in Ambulando the way it'gonna work is that you've got like the canvas itself is gonna be reasonably dumb. It'just kind of the spatial area to then have the naplets be these little containers for that.
+
+So it might be interesting to look at that as kind of like, well, one naplet is just rendering HTML, another one is rendering date various forms of data from like the back end.
+
+But maybe another one would be like UI naplet. Which like in its job is to is it like it I don'know, it just has like some interaction and modelling in there to show you like, alright, these are all the HTML elements and they split out like this.
+
+And then I can go in there and just tweak them and they do live previews and stuff and like actually build that as like little 'cause you could just prompt it into like you can put anything you want in these naplets as nice thing. And then once you've got once you've got it done, you say, Okay, save that as template so that next time I ask for this, that'how you do it.
+
+[00:21:55.565] Andy David:
+Yeah.
+
+[00:22:01.548] Andy David:
+Yeah, that'it.
+
+[00:22:10.177] Pete Winn:
+And then you could just have yeah, that would be 'cause but the nice thing about it is because they're in this like little constrained window, this is the bit that
+
+I think has been the bigger breakthrough for me was like, it'not that the whole canvas is that. It'just that bit is that.
+
+And then I can like minimize it and it drops to bar and it goes away for minute. So I can think I can
+
+[00:22:16.904] Andy David:
+Hmm. Yeah.
+
+[00:22:31.053] Pete Winn:
+Put it away and think about something new or I can pop it out or when I want to work on it I can fiddle with it inside the context of everything else visually.
+
+But then also if I'just working on that I hit button and it goes full screen. And that'like there's I was like, okay, I can see me getting really into this. It'like better planning system than what I've got at the moment where I just go trying to plan into docs is not
+
+[00:22:39.277] Andy David:
+Yeah.
+
+[00:22:59.96] Andy David:
+Yeah.
+
+[00:23:00.319] Pete Winn:
+It'not quite it'just not right. It'mainly because the You know what it is, is the we talk about this all the time, right? Is the timelines are all off. It'like it'just it'almost unfair that it can write you know, forty documents and I would I'll still be reading like the first five paragraphs of the first one, so it'the docs aren'concise enough like the Yeah, it's I won'read them.
+
+[00:23:02.382] Andy David:
+Mm-hmm.
+
+[00:23:25.986] Andy David:
+Well, I don'want them. Yeah. Well,
+
+I think we talked about this couple of weeks ago. It'like just give me like records management.
+
+So what decisions have we made? What open questions exist? What things do I need to go and inspect?
+
+Like what needs to be saved for posterity? You know, like these are just artifacts. I don'need fifty page report. Like I feel like that was, you know, like the old way of like humans working, which was like we need to document everything so that someone could come along.
+
+[00:23:51.182] Pete Winn:
+Yeah.
+
+[00:23:54.989] Andy David:
+And they've just got like very detailed paperwork, very detailed paper trails, so we know exactly what'gone on, who made what decision, why they made it. And I'just like, most of this stuff doesn'matter for what we're doing. Just give me an inspectable records and something another agent can pick up and work with. That'basically like the bare minimum. That works. Like, I and I don'need to see any of that for the most part. I think that'the most important thing. It'like, can I ask the agent to retrieve
+
+Like if there'an open question and I like can ask an agent what are the open questions around this particular bit of work, it knows there's record. Let me go and check that. Let me pull those out and let'discuss them. And if we get answers to them, great, update the record. I think beyond that,
+
+I think docs are more like self serving for humans. And I've been trying to like move away from some of this stuff because I just don'find it useful.
+
+[00:24:34.232] Pete Winn:
+Yeah.
+
+[00:24:47.255] Pete Winn:
+Yeah, that
+
+I think in the sense that you don'necessarily want any everything written in document.
+
+But like there's I kind of think about it as again bit like the I'trying to manage big company. Is if you were managing big company you'feel little bit on edge if nobody was producing and reviewing documentation.
+
+If you know what I mean.
+
+But you don'want to read all the documentation because you can't. It's similar problem of just
+
+Like you need to be comfortable in the structure of how the work is done more than you need to do the work. That'that'what that feels like kind of the analogy with these things. Is it like so you know, like as long as the records are being created and you understand like how we're capturing these details wherever it is, then that'good. And I think sometimes that you know, th I still like document every now and again. And I think particularly like for me, like expressing certain key stuff like I don'know, like Jeff Bezos always used to do the thing where he would you know, at the start of the project you had to write the press release that you were gonna go live with to give you that sort of vision of where you're going.
+
+Like stuff like that
+
+I think works nicely in documents. It'the bit that I can'do is like I don'need to see like ten page document for this particular redesign. It'easier for you to just get it done and me to inspect it.
+
+Like the like so there's lot of documents I don'think need to exist anymore because they don'have that time.
+
+Like they used to make sense because it was quicker to write the document and get that right than it was to build the thing.
+
+But that'not the case anymore for those bits. So that it destroys that sort of stuff.
+
+[00:26:14.862] Andy David:
+Yeah, yeah.
+
+[00:26:22.147] Andy David:
+Yeah.
+
+[00:26:32.268] Andy David:
+Yeah, exactly.
+
+[00:26:36.962] Andy David:
+Yeah, I was gonna say this was like an exercise in stakeholder management for the most part. It'like you've got to bring all of the collaborators together, everyone'gotta, you know, share their ideas, and then you water it you water it down to some like acceptable version for the like you know that gets consensus. And you need to have like pretty rigid documentation around this stuff.
+
+And then another layer on top of that is if you're working in in any kind of regulated environment, then yeah, you're gonna need docs that sit around that.
+
+But I just think if if you're like Just starting new project, you may as well just build, you know, because this stuff will just evolve so much faster. You can'possibly think through all of the permutations right at the start. I mean, there will be so many that just emerge as you're working.
+
+So
+
+I think the document in my in my estimation is secondary rather than starting point. I think there'still like space for clo I mean,
+
+I think we talked about this couple of weeks ago. It'like it'be cool to have This kind of environment where you're collaborating with people, but your agents are listening, they're taking the notes, they're, you know, working out which which bits of tasks they can go in action, you know, which bits just need to be like kind of codified and where that needs to be stored.
+
+I think that would be quite useful. Where you can then like still have groups of people collaborating. I know we've talked about this couple of times.
+
+Like sometimes challenge where you've got code base, how do you actually get, you know, two or three people actually collaborating on this stuff when it'just as easy to go, okay, agent one, agent two, agent three, just go, go build. So I can see there being place for this stuff.
+
+[00:28:13.719] Pete Winn:
+I think this is the thing, right? Is it'like it'all 'cause you saw that like the real time collaboration as well, it'come up few times with some like it'it the problem seems to be that like everything'the wrong time scale. Everything.
+
+Like it'it almost doesn'seem to matter what it is that we're doing.
+
+Like some stuff the time hasn'changed.
+
+Like may
+
+I think maybe this is the problem with documents. And I mean I guess when I say again, like I feel like vision documents are fine because they
+
+[00:28:20.237] Andy David:
+Yeah.
+
+[00:28:27.203] Andy David:
+Yeah.
+
+[00:28:43.843] Pete Winn:
+They last. It'th it'like this design document piece of like, you know, let'let'clarify this all into this document and then I'll look at it.
+
+Like that doesn'seem like it fits. And
+
+I think maybe it'because document review hasn'got any quicker.
+
+Like I can I review document quicker with AI? I kinda can, but it'kinda pointless unless I really understand the document.
+
+So I still need to read the document.
+
+So that barrier is not has not moved.
+
+Like it'still like if I get document I've still gotta spend like good hour like reading through it and chewing on it to figure out what was in there.
+
+So so maybe that doesn'really survive for lot of stuff, whereas the build cycle got collapsed. So you go, okay, well doesn'make as much sense as it used to do. Yeah, even like even Agile it was the same compression really.
+
+Like back in like punch card days and waterfall stuff, you might spent you know, you might have spent three three months planning something in documents and getting them entirely right and it was correct because you get better results. And then we went like, we can kinda just build it in two week bits.
+
+[00:29:32.558] Andy David:
+Mm-hmm. Yeah.
+
+[00:29:55.072] Pete Winn:
+And see how we go. And we had mixed results. Sometimes it was good, sometimes it was bad.
+
+And then we added bit more structure back into it. And I think now it'kind of like, yeah, like that the bit, the reason for the document has kind of collapsed little bit there because it doesn'pay off correctly anymore.
+
+Because we can move so quick here.
+
+But then there'still. It makes you wonder like what'the what are the documents that really matter now? Or like you know, like architects I always think about working in like oil and gas, like when I got to Perth, there was they were working on some of these like big capital projects and they would produce these like massive like posters that go on the wall and it'like, okay, here'your offshore facilities that come together and they map by these pipelines to here and then that'that'where we do the processing and then we onshore it here and that'where we do the packaging and stuff and then that'how goes to the port and that'and you could see like the whole thing in one place. And like any one of those things that I mentioned cost like two billion dollars.
+
+But there was like one post that shows everything. And I used to even I was doing like IT stuff that hung off it, I was always like
+
+[00:31:05.624] Andy David:
+Mm.
+
+[00:31:11.991] Pete Winn:
+Referencing that and like understanding those I don'know, those interface points and like how it all needs to flow and who'gonna be involved because that's that'like whole organization that runs that thing and builds it and hands it over and stuff. And you're like it'there'something about it where like that poster, that'useful even if AI are there, you know.
+
+But then like the minutiae bits maybe less so. So
+
+[00:31:13.164] Andy David:
+Yeah.
+
+[00:31:22.338] Andy David:
+Yeah.
+
+[00:31:32.206] Andy David:
+Hmm. Yeah, yeah, yeah. That yeah. That was that was great example of what I meant by like having kind of detailed schematic. It should just be something that you could see on your on your screen. That'the totality of it. I actually shouldn'have to, you know, endlessly scroll around this thing. It'probably too complicated. Yeah, that is exactly what I was what I was aiming for with with project schematic. It doesn'necessarily just need to be code base. It could also just be like, okay, what'the kind of
+
+[00:31:54.957] Pete Winn:
+Yeah.
+
+[00:32:06.926] Andy David:
+Product architecture here? What are we actually trying to build? What'the business? Like, you know, is there commercial model that like kind of like works with these like various product product strands? I find that to be really, really useful for me to think through things. And then equally, you know, while you were talking about this stuff, I was like, you know, I'started my career as lawyer. I couldn'think of anything more document heavy than that.
+
+Like we used to literally like push trolleys around full of binders and
+
+[00:32:34.723] Pete Winn:
+Hmm. And genatomics.
+
+[00:32:37.534] Andy David:
+Yeah. That would that would come later. The yeah, I it'insane how much documentation there would be for even like something that was relatively relatively small. So yeah, look I mean we tend to think about this stuff through the lens of products and also maybe just small business. But yeah, there's whole there's whole heap of disciplines, especially enterprise that are gonna need Very good tidy documents, records management. Yeah, they'll have their binders with like everywhere maintained somewhere because mostly you check it when something goes wrong. So that probably doesn'go away. I mean, you probably do want them to be like relatively easy to inspect from agents anyway, but yeah, as I say, because there are legislative requirements around lot of this stuff, they probably will persist.
+
+[00:33:16.174] Pete Winn:
+Hm.
+
+[00:33:33.98] Pete Winn:
+I think there'two things that I find interesting there. Like one is the like the like there'the old quote, right, of like picture paints thousand words.
+
+And so maybe one of the reasons that really good diagram in picture works still is because it'so much quicker to absorb. Like in you know, ten minutes you can just be like, I get how this all works and I can see things that don'make sense to me.
+
+[00:33:53.859] Andy David:
+Mm.
+
+[00:34:02.735] Pete Winn:
+And so when you like force the thing to visualize for you, you can say, okay, I would have missed that in the words because it'too much. Whereas and I think the words and like, you know, you said talk about like legislation and records and stuff, like the point of words is kind of I want to be quite specific about what I mean here. And so, you know, there'certain things where you have to write down and you'll be held accountable for those words and each one of those words and has meaning associated with it and then links back to hundreds of years of like legal system and stuff that like it feels like maybe that'the point is like when when you need to be super specific you use like document and words and we clarify and we just really care about that sort of thing. It'just that the space of like where we use these different interfaces maybe changes because words are still slow.
+
+So it has to pay off. It has to be meaningful.
+
+So you'll probably it'not that you won'write any documents. It'that you will write documents that like carry lot of weight and then they will be referenced and used in different places. It'just not like throwaway thing that you're gonna be kicking out all the time because you've got nothing else. You know, like as product manager previously you feel often like you're just documenting bunch of stuff that then you throw away because like it'now we've got the thing at the end.
+
+[00:35:03.886] Andy David:
+Mm-hmm.
+
+[00:35:30.561] Pete Winn:
+And you're just it'just quicker for you to document all the stuff while the other part, the machine, is building all the stuff. And then that'how it worked. But yeah, like I can still see the requirement for documents in like these big not to sound like an AI, but load bearing like parts of whatever it is that you're doing. And then but certainly like I as I say, I've I feel like I've just missed the visual. Like I I've always ended up outside
+
+[00:35:47.64] Andy David:
+No.
+
+[00:35:56.398] Andy David:
+Yeah, yeah.
+
+[00:36:00.592] Pete Winn:
+So I'I'looking forward to experimenting with this. I mean another sorry, you go.
+
+[00:36:03.81] Andy David:
+I mean, even with the legal example, right? I mean, if you take these many binders, they tend to get simplified down into like one canonical document that someone'gonna read. And then there'like, you know, this massive index.
+
+So we're just referencing all of these thousands of other documents, you know, court cases, legislation, like there'all sorts, right? And all of this is being referenced. And if you took
+
+[00:36:14.743] Pete Winn:
+Hmm.
+
+[00:36:31.938] Andy David:
+And then you have to condense it down into like one doc. And if you if you took that, that would make great schematic because all of sudden you'go, okay, this is kind of the center of you know this matter, and then we're going off in all of these different directions, and we're pulling this piece of information over here, and it'very specific. It'like one one paragraph from like one case from 25 years ago, and then we're gonna do something over here. And so like being able to manage.
+
+[00:36:34.575] Pete Winn:
+Hmm.
+
+[00:36:50.116] Pete Winn:
+Yeah.
+
+[00:37:01.364] Andy David:
+All of that complex information and condense it down into like readable format that doesn'lose that what'the word I'looking for? The resolution, I think. You kind of need to maintain the resolution, which is complex, which I often find is problem with the agents, because you can spend lot of time talking about something and then all of all of sudden you'll go off and you'll branch off in the in different direction. And then some of that kind of resolution is lost.
+
+[00:37:06.735] Pete Winn:
+Mm-hmm.
+
+[00:37:27.183] Pete Winn:
+Mm.
+
+[00:37:30.316] Andy David:
+But I think your other point about timescale,
+
+I think this is like really this is really interesting point because I think even agents have no concept of timescale, right? I mean like even the simple analogy of like when you are like agents will start planning, you know, bits of bits of build and they'll say, this will take like three weeks, and like this will this bit over here will take like one week, and I'like No, we'll this will be done in the next twenty minutes. What are you talking about?
+
+So it is interesting that even they don'really have this notion of timescale. And it'also speeding up everything that we're doing. I mean, I don'know, I feel like I've got half dozen different things going at one any one time. Put this down to ADHD, but this is just because you can do so much more.
+
+So like none of that is
+
+I think potential like particularly useful to work in that way.
+
+[00:38:10.702] Pete Winn:
+Yeah.
+
+[00:38:27.174] Andy David:
+For me because I just find I'context switching too much. But then again, I'I'be curious if I could just have like canvas to be able to spread these projects around on there and see them at like fifty thousand foot view, whether that would actually whether that would make the problem worse or better, I'not sure, because I might try to do more.
+
+[00:38:43.617] Pete Winn:
+Yeah, that'that'an interesting point. 'Cause like one of the things I was looking at was like, okay, how do you like how do I scope these things? It'like I don'like for me, like that'why I quite liked the desktop analysis.
+
+Like each one of these is its own desktop. And that desktop like this breaks the sort of scope scope and channel model that I apply elsewhere inside. Ambulando. Which is that like I kinda want everything to fall into that. But spatially doesn'make sense to just go like, all right, this is an ambulando canvas 'cause I'gonna pull in bunch of stuff from N stack. Like it it'just the way it is, or I'll just have bunch of like random ideas and things.
+
+So like the canvas is like are just completely different view that then pulls in the stuff. And they're almost little bit they're not like permanent, they're just workspaces that you can come into and drop things in. And it'like, alright, I don'know how that'gonna play out and I don'know like how confusing and how much of head fuck this is gonna turn into.
+
+Like and it'gonna be in that like experimenting with this place that we understand like this is where the power is and this is like why I will flip back to the other way of looking at it.
+
+Like one thing that came up today for me was like need to think about 'cause I've got comments, like threaded comment systems in there. And you could comment anywhere. And you can comment on the canvas. Or you can comment and associate it with particular particular naplet. Or potentially you can go into the naplet and then you can comment inside that thing itself, which again feels like slightly different thing. And then what I was thinking is like, you know what? This should probably be like 'cause I thought ideally I I'll be able to at the bot and it'll just start doing stuff.
+
+[00:40:44.281] Pete Winn:
+And I was looking at that and I go, but then the way I do that is chat. And so it'like, you know, I like and so I found myself earlier I'made something on the canvas and then I went, it'be good to have link here. And I could click the link and then go to the chat. And I thought, but ideally I wouldn'go to the chat. I could just chat. So I should make and I said, but then what'the difference between that and comments? And I was like, no, comments are chats. Comments are just chats that I've added to the canvas. If you know what I mean. And you just go, boom, here'my thread and it''cause it'just thread. And if it'just thread, then because I was wondering how to add chats to the canvas. I feel like I should have chats over here, but I don'know why.
+
+But obviously there'context in these things. So how do I associate them? And then I was like, I just make comments chats. And then I looked at everything else I'done, I was like, Should all the comments just be chats? I wonder. Like, hmm, interesting. Scratch the chin. Think about it. But
+
+[00:41:24.451] Andy David:
+Yeah.
+
+[00:41:37.89] Andy David:
+Mm-hmm. Yeah.
+
+[00:41:44.546] Pete Winn:
+You're saying yeah, because then as soon as it's chat, then that is dispatchable to the agent anyway, and there'nothing else to do. It'just that I happen to do it from different place in the system. I was like, that'that'kinda neat, but I can see that working kinda nicely. Because then I can chat with the agent, I can chat with like whoever else is in that scope.
+
+[00:41:55.427] Andy David:
+Yeah.
+
+[00:42:09.271] Pete Winn:
+And stuff and we just pull people in. We're having chats on canvas, but also if you're just on your mobile, you don'have to go into this weird canvas view to do it. 'Cause like it'as much as like it does work on mobile, it'weird, like comparatively. It'not as easy. But you would just get like notification, yeah, I can jump in. Yeah, that kinda makes sense. Like maybe you can click in, view the thing and then click back out and do what you need to do. But it'yeah, it'kinda it'interesting. Like I
+
+[00:42:22.882] Andy David:
+Yeah, I can imagine, yeah. Yeah.
+
+[00:42:38.198] Andy David:
+Yeah, yeah, yeah. I almost feel like this would be way better interface even like as Flight Deck. You know, like just re Yeah, 'cause you could still have those like widgets and they would just exist potentially like not all the time. They may not need to persist, right?
+
+But you could just open them up as widgets when you need them, rather than have this like fixed state in Flight Deck.
+
+[00:42:45.166] Pete Winn:
+Maybe.
+
+[00:42:53.398] Pete Winn:
+I
+
+[00:42:59.215] Pete Winn:
+My guess is it has two problems.
+
+Like one is it just gets way too busy.
+
+Like my my like Ambulando just has fa as some I've got something like 30,000 records in there. It'huge. Right? It'just like so much. It'like it trying to I it would become job to maintain the canvases for that, if you know what I mean. Whereas
+
+[00:43:06.061] Andy David:
+Yeah, yeah.
+
+[00:43:24.814] Andy David:
+Yeah.
+
+[00:43:26.967] Pete Winn:
+So I feel like it's diff it's slightly different thing.
+
+I think also like just again like mobile work doesn'quite work. I mean one thing I've been experimenting with mobile it'from so from similar view of just like, all right, well, this data is in the Nostr stack. Ambulando's view on the data for humans, right?
+
+And then Canvas is part of that. It'like just slightly diff view from different angle.
+
+[00:43:33.986] Andy David:
+That'true. Yeah, yeah.
+
+[00:43:51.576] Pete Winn:
+And then you've got the autopilot looks at it from its way and it has its own interface into that Nostr stack. And it'like, well I c I could have like any number of different interfaces that are more constrained than Ambulando.
+
+Because sometimes like I what I found myself do is I was driving and I like, I don'really want to be fucking around in like on my computer to send message to the thing. And
+
+I think it was like last week I'then gone and made this like little
+
+[00:44:15.5] Andy David:
+Hmm. Yeah.
+
+[00:44:21.293] Pete Winn:
+Voice recorder called in dialogue, which was I could just do voice recording, hit record, hit stop, bang, and it manages transcriptions and uploads, sends it into my DM channel with the bot that I've mentioned, and then gets the response and sends it back to me. And I was like, sweet, that was good. And
+
+I think originally it was just pushing the responses and then I was driving the other day and was like I just to I told it like update this.
+
+Like I want to get the response back. And when I get the response, I want you to just talk it to me. Just use like the iPhone text to speech and just read it out to me as soon as it comes in. And then I had that and I was like, this is like way better for driving, because I can just hit the button, like blah blah blah blah blah bang.
+
+And then it just starts speaking back to me. I was like, but you know, that'that'kinda good enough.
+
+But like I wouldn'In fact I did use it sat on my desk the other day 'cause I was working on something and I wanted to do something else. So I just hit the
+
+[00:45:09.581] Andy David:
+Yeah.
+
+[00:45:19.789] Pete Winn:
+The send button on my phone, talked it out loud while I was typing something else and then just hit it let it go off and it just started talking to me back when it was done. I was like, that'kinda I didn'expect to use that like that. But it but it'interesting that it'like it'still
+
+[00:45:28.077] Andy David:
+Mm-hmm. Yeah.
+
+[00:45:35.566] Pete Winn:
+You know, it'still chat threads, it'still backwards and forwards. Everything goes into the same thread. I can move between conversations if I need to. It'all there if I go into ambulando, I see everything in structured way when I want to, but it'just completely different interface to the same data.
+
+Like it'very like Nostr in this way where you have like one thing but many different clients that can can look at it and read the data.
+
+[00:45:52.28] Andy David:
+Yeah, yeah.
+
+[00:46:00.035] Andy David:
+Hmm. Yeah, I should say as well, like when I was talking about chat earlier, I wasn'denigrating chat.
+
+Like I just think chat'impossible if you have one long chat, and then you have to find something in that one long chat, and then that'that one long chat sits next to like thousand other long chats. And
+
+I think in that that'basically like codecs or Claude Code. You know, those harnesses.
+
+[00:46:26.679] Pete Winn:
+And it becomes hard to know when to start and stop the chat and you worry about losing context and yeah.
+
+[00:46:30.349] Andy David:
+Exactly, yeah. Like even if you can branch into new chat, it'knowing that this is the right moment to do it ahead of time, which almost never happens. It'always like you've deviated, like you've you've gone past the fork in the road, you're now ten miles down the road, and then you realize, shit, I should have like branched this into new into new chat. And it yeah, so chat is amazing.
+
+I think that'the like the paradigm shift to being able to talk to your computer was incredible. That is such massive breakthrough.
+
+But When you're trying to do something long lived, like it'very hard to maintain sanity inside one chat. And so yeah, I like this idea of being able to basically turn these little like comments into longer threads that are bounded, I guess. Like the fact they're bounded, I think, is nice. It gives it purpose. There'intent there.
+
+[00:47:21.505] Pete Winn:
+Yeah.
+
+Like
+
+I think in many way it'just
+
+I think this could be like five year exploration of just we've we just sort of fucked everything up by introducing different thing that does the work. It is different. We don'know how to I mean I it'already been like two year exploration of AI.
+
+[00:47:31.362] Andy David:
+Yeah.
+
+[00:47:39.8] Andy David:
+Yeah.
+
+[00:47:46.82] Pete Winn:
+People are just trying to figure out how the fuck do I work well with this? Like, and
+
+I think we're all working better and we're finding different ways, but then it like with hum you know, we always said that like the last job is to be the human noticer. It'like, this isn'correct. And like as much as I was like, okay, I kind of like what how ambulando works, it'like it'missing this other thing, and you just get and it'not that it'like
+
+[00:47:50.167] Andy David:
+Yeah, yeah.
+
+[00:47:57.743] Andy David:
+Mm. Yeah, yeah.
+
+[00:48:14.573] Pete Winn:
+Like in the same way that I d I don't I don'really throw away autopilot when I went moved most of my interaction to Ambulando. I don'think I'll throw away like ambulando the the structure component of it as I move certain bits into less structured. And I quite like this idea of just like I right now I'focused on this and I can hit button and go to that space and it'just visually that stuff. And then when I'done, like and then in two weeks' time, I might not give fuck about that and I just delete it or archive it.
+
+But all the data still is there. It could have been recreated if I wanted to. I mean it'just record that says how we lay stuff out. But it'yeah, it'kinda
+
+I think there'something there that will that will work. And
+
+[00:49:02.808] Andy David:
+Hmm. Yeah, there there's I feel like the canvas as well gives you enough customization to kind of support someone'subjective way of working. To to point. I mean, if you just prefer you know, chat or you prefer I don'know, voice, some people like dictation, like yeah, this is you kind of want to be able to support lot of different ways of working, which is was kind of my take about the old flat deck approach as well, because it is still quite rigid UI.
+
+So you've got all of the like elements people expect to see in something like that, but not necessarily the fluidity that you'that you might want, say in in canvas. I think that gives you much more like customization, which is quite nice.
+
+And then it'just finding how to support certain people in the way they want to work. You know, whenever whenever I feel there'massive divergence between like people like us and the way we want to work
+
+And then enterprise. And enterprise is basically you've got bunch of people that are you you're trying to get working in kind of systematized way, but the individual cogs still have like degree of variability. And
+
+I think the intent is always to try and like shave off as much of that variability so that you can at least consistently work out what each piece in the system does.
+
+Because otherwise there'like too much flux or too much risk that gets baked into system.
+
+But
+
+I think once you then introduce things like ChatGPT and Claude, and now everyone is like, okay, I've still got the same subsets of work to do, but now I'gonna give it to ChatGPT and I'gonna give it to Claude.
+
+And then all of sudden people are approaching the same work that they've traditionally done in like vastly different ways inside of the same system that hasn'been updated for AI. And I feel like that'where maybe some of this breaks.
+
+But also the individual cogs inside that system feel empowered because now all of sudden they're like, well, I can do so much more, even if I'getting 20, 30, 40% uplift on my on my output.
+
+So I feel like there'like still this like working out, and maybe you're right, maybe it is like five year experiment, but there is still this working out of what'the best way to work with these things. And maybe the answer is it'subjective.
+
+[00:51:30.67] Andy David:
+And I'll give you an example.
+
+So on the weekend I was talking to friend of mine and we're just talking about work and she was saying, I'll probably spend like I don'know, five hours week editing photos.
+
+So she works for interior design studio.
+
+And so I might spend five hours week editing photos inside of Lightroom. And I was like, okay, could maybe build an app. But then I was like, you've you've already told me you use Claude for like other things. Why don't I just build you like quick plugin that basically runs so it'll it'll install and drive the Lightroom open source clone called Lightcraft, which which was like kind of the news couple of weeks ago. And you can basically just chat, so it'll work out your camera settings, it'll work out your preferences, it'll save them, and then you can watch. Clauds basically edit your photos and you can still manually tweak sliders as you need to as it'going. And I was like, Yeah, okay, like use the tools that you want to use, use the tools that you already use. I'not going to force way of like working on you here that'just more complex because you're not going to do it. Where I could build you little app that will probably make this infinitely easier, but you're not going to do it.
+
+So here's plug-in. It will make maybe it'now like 20 minutes instead of like five hours week, but.
+
+[00:52:38.927] Pete Winn:
+Mm.
+
+[00:52:51.202] Andy David:
+You still will do that work because you kinda need to inside of your your job structure. I just thought that was interesting because it was just me listening to problem. Well wasn'even phrased as problem. I perceived it as problem because I was like, Wow, that's long time every week in in Lightroom.
+
+Like feels like there could be more productive things to do. But yeah.
+
+[00:53:15.747] Pete Winn:
+I mean, I know if 'cause it'of there'gonna be so much variability between jobs, right? And like some some jobs are quite prescriptive of like do this and do that. And
+
+I think there'll be that'the sort of area where
+
+I think you just get there wasn't lot of flexibility anyway. If it can be scripted at that level,
+
+I think lot of that stuff just moves to be software.
+
+But then you also have like because
+
+I think about like you know when I was talking like the example of me like mounting whiteboard to my desk and running like these projects in specific way was like that was in enterprise, right?
+
+Like it'like and so obviously different people do different kind of odd things for how they will manage the thing. Even if like inside the methodology in which I was working in that organization, we still had key things that we need to hit off.
+
+[00:53:53.527] Andy David:
+Yeah, yeah.
+
+[00:54:10.327] Pete Winn:
+It was just sort of my way of kind of managing my workload and all the different people that I was bringing in to do stuff was like that.
+
+And so I could I could still see lot of these things.
+
+Like I don'like
+
+I think there'still quite bit of space there even inside like enterprise where
+
+Like pe it'there doesn'tend to be that descriptive about exactly how to do the work unless it is those descriptive jobs that certainly exist.
+
+But lot of stuff is just like now we need like it'almost like when you can'get to that level of definition of the job, you just go, I'just gonna hire person and tell you the output and then how you get there is fine. And like lot of that is just it'just take it'just harder almost to
+
+[00:54:49.795] Andy David:
+Mm. Yeah, yeah.
+
+[00:54:58.659] Pete Winn:
+Like particularly I mean the point of project management is like when you look at the definitions of if you do like an APM course or something like Prince 2, it would like, you know, you it'not project unless the thing that you produce at the end of it is utterly unique.
+
+Like lot of like it'like otherwise it'just operations. You've done this before, you know how to do it. You just do the thing you're supposed to do.
+
+Like the point of project is supposed to be there's level of uncertainty here that you don'know how to do that thing yet.
+
+And so we follow this way of doing stuff because it's structured way to control how to get to an endpoint that will be hopefully what we're after within terms of like risk, budget, cost, quality, all the rest of the stuff. And you think like, yeah, that'like for those sort of for that work.
+
+[00:55:43.576] Andy David:
+Yeah.
+
+[00:55:49.304] Pete Winn:
+It'so much easier to then have somebody that kinda knows how to think about it and then just throw them at it and say, like, I don'almost care how you get there as long as you hit these beats along the way. And maybe there'that'where the flexibility is and the different working styles.
+
+Like I mean another one would be I remember reading the Getting Things Done book for like Actions Management and like early in consulting when I was over here and I like, That'pretty good. And I implemented this whole like actions management system just for myself. And like nobody else, like in any of the projects knows that I'doing that, but that was how I was hitting all these like actions and milestones and keeping on top of stuff. And you almost think that like is there is there benefit to having like a I don'know, almost like an Amazon way of doing that or whatever Google way of doing that and that being like forced on people.
+
+But my my sort of gut feeling is that it'probably not. Like at the level of like personal productivity, you have system that works for you. And maybe you can learn and experiment with different things, but it'about you getting stuff out. And
+
+I think lot of those interfaces are gonna look Th there could just be lots of different ways.
+
+Like
+
+I think some people it'like I imagine some people fucking love Slack. You know, and they're just happy to just be like I wire in I've already got everything in my head. They just have everything sat there, like, ready to go and they just boom boom boom boom boom boom boom boom boom boom and it'just like it'like playing Space Invaders and just like shooting things out of the air sort of thing. And they just then they get out of there and then they just walk off and it'fine.
+
+Like
+
+Whereas I find being constantly in Slack just it'like too much 'cause
+
+[00:57:14.231] Andy David:
+Yeah.
+
+[00:57:18.062] Andy David:
+Yeah.
+
+[00:57:36.27] Andy David:
+Yeah.
+
+[00:57:41.954] Pete Winn:
+It'no there is no I want it for dispatch. I don'want it for planning. The different things in my head. Like the you know, it reminds me of the old the Hemingway stuff we used to talk about at the start, right? It'Yeah, maybe the canvas is drunk and Ambulando is sober, sort of thing, right? It'like you need these different spaces and mindsets to do different things because otherwise you I find I can get
+
+[00:57:54.147] Andy David:
+Yeah.
+
+[00:57:58.349] Andy David:
+Yeah. Yeah, sure.
+
+[00:58:10.691] Pete Winn:
+When I'in the dispatch center, I get pulled into dispatching and just being like, Yeah, do that, do that, do that, do that, do that, do that, do that, and then it'like, shit, there'twenty things going on. I'like, Alright, I'gonna dispatch you to tell me what'going on in the twenty things and stuff. And it'like and everything'like on the fly and quick and it it'it has that like air of like panic about it.
+
+Whereas there'something about big whiteboard that has always been like, right, okay. Where are we going with this? Like I'just gonna sort of explore, I'gonna make sense of all this chaos, like it just it's it's completely different thing.
+
+And so I wonder what other modalities there are as well.
+
+Like I mean we covered like there'structured dispatch and comms. There'whiteboards and canvas and infinite space and visual planning. There'just discussion, like dialogue backwards and forwards. There'got there'gonna be more.
+
+But the I mean these feel like even like militarily, right, you would think. Comms and dispatch and taking orders is like absolutely thing in the military. As is strategic planning and like blue sky and like thinking through different examples and testing stuff and prototyping and running war games sort of things. Like that'that'there. As is just
+
+[00:59:23.726] Andy David:
+Mm.
+
+[00:59:36.941] Pete Winn:
+Discussion and going discussing problem with somebody. I wonder if there'like I it'not obvious to me what another one is, but I'sure once we get comfortable with the ones we've got we'll like, you know what'missing? It'being in the pub. How do I be in the pub with my agents? Or like there'or what'like serendipity. How do we do serendipity with agents?
+
+[00:59:51.544] Andy David:
+Yeah, yeah.
+
+[00:59:55.382] Andy David:
+I mim The really obvious one is just shooting from the hip. It'just the bayonet charge, right? It'like there is no planning. Let'just go, let'YOLO it today. And let'see what you produce. And then the ideas flow from there. It'almost like, you know, first first iteration is the plan. And then you throw it out and you're like, All right, now I've got good idea of what we're gonna build. It'not gonna be that, but it'I'gonna take parts of it and I'gonna build something else over here. And I mean I find I've done that.
+
+[01:00:01.231] Pete Winn:
+Hmm.
+
+[01:00:04.951] Pete Winn:
+Hmm.
+
+[01:00:27.862] Andy David:
+Lot this year. Like I'll have nugget of an idea, but instead of like obsessing over the idea, I'll just give it to the agent. Just go just go build this. Let'see what happens. And then from there the idea grows.
+
+[01:00:40.237] Pete Winn:
+So I could imagine doing stuff like that inside that like when I'in that planning space I'gonna be like let'let'fire off plan. And I can almost visualize that as being here's a here's chat thread and then here'the thing that'being created next to the chat thread. Whilst over here I've got another one going on.
+
+And then I go I like and then I write in the middle like another I'like okay, I like this drag, like this drag. That all needs to come together like merge them. Okay, and I and you can like I can see stuff like that happening in that planning mindset of being.
+
+I think and
+
+I think that'the bit that'missing is like I feel like the discourse in the in working with agents has always been that like it'kind of planning to do the thing. Right, it would be we're writing new feature, like Matt Pocock'got his grill me skill that everybody loves, which is like you do grill me about this feature and I'll answer questions until we're done and then we go build the feature.
+
+But it'that kind of like transactional piece of like it'planning for the thing to be done. It'like part of the operational cycle of just like instead of building we're gonna plan then build.
+
+Whereas there is this more Strategic planning. Well he's I know he'similarly he has this wayfinder thing where he like tries to figure out where are we going and how are we gonna get there and what are different approaches.
+
+Like that that'like one of the few things I've seen that is kind of in this same vein of like, well how do you do strategy with AI? And like where does it sit? Is it just chat? Is it chat and marketing strategy document sort of thing? Is that how we do strategy? 'Cause I
+
+[01:02:22.702] Andy David:
+Yeah.
+
+[01:02:33.188] Pete Winn:
+I don'know if that'how
+
+I think when I'in that mindset. There'there'definitely gonna be few of these mindsets, I think, that and then there'the like how do I do it like how do you do one person like and then it'collaboratively, how do we all do this? So, you know, it'one thing to all be able to look at the same board, but like how does it work in practice?
+
+Like how do you actually get five people all contributing towards this same goal and vision and then separating off different bits. Like it'as as I said, like I just think that there'so
+
+I think we've just taken like core component of like the work and like how it gets done and the speed that it could get done and then changed it So it'like, all right, these things don'change. These things get really short. These things didn'change that much. Or they maybe they take little bit longer and you're like, well, now we need to re now we just need to like reshuffle everything. So they're kinda not new. Like talking isn'new, planning isn'new, doing isn'new.
+
+But we kinda have to react to it across this like massive space of that we never really inquire on too often.
+
+Like it'not like we have it'not like everybody walks around the world having this like fully mapped out view of how they do work. You just sort of do work, like and you don'you don'always think about it. And I think it'like kinda like yeah, we come in and like hit it and you go, Alright, what'changed? And it'like, ooh, I dunno And like the immediate things next to where you hit it have changed like quickly.
+
+[01:04:12.866] Andy David:
+Yeah, yeah.
+
+[01:04:26.701] Pete Winn:
+And then you realise that all the other stuff around it is like, yeah, all that needs to that needs to go. We shouldn'do that anymore, 'cause I can just do it ten times over here and then then pick it, sort of thing. So it'just it'it's
+
+[01:04:42.254] Andy David:
+I mean,
+
+I think all of this plays into like really early thesis of ours, which was that the cent the organizing unit of the business just gets smaller. So you just have way way more, much smaller companies. And not small in terms of like its ability to print money, it'small in terms of headcount. Cause you can just outperform with like small collective of people who are able to collaborate intellectually and then
+
+[01:04:46.948] Pete Winn:
+Mm.
+
+[01:05:12.438] Andy David:
+Essentially especially if you can find some consistency with the way people like to like to work. Yeah, I think this plays into into that trend.
+
+[01:05:25.207] Pete Winn:
+Yeah, it'really not obvious to me yet that it suits multiplayer.
+
+If you know what I mean.
+
+Like it certainly suits like and it just could be that we haven'cracked that nut yet, but like it'it suits like me and an agent and it suits me and five agents running at the same time.
+
+[01:05:38.371] Andy David:
+Mm.
+
+[01:05:44.344] Andy David:
+Yeah.
+
+[01:05:46.84] Pete Winn:
+And I can kind of see everybody doing that. And obviously like people do have worked together and still are, so that must work somehow.
+
+But it'kinda it'not obvious to me that we know how to then apply even if we crack all the one person stuff, you go, it'two And you go, fuck. That'that'harder. And then you have like, okay, what but what does it look like for five and ten? And like, is there a
+
+[01:06:04.972] Andy David:
+Yeah, yeah.
+
+[01:06:15.373] Pete Winn:
+Like is there point where there'like natural level that you would gravitate to? Like, this is like you're gonna absolutely go gangbusters at like level of five person teams and like that is that fuck me. Like and you need these sort of focuses, like
+
+[01:06:32.236] Andy David:
+Yeah, exactly. Because you still have domains, right? I just think you can like streamline the domains. You know, you've got one builder, you've got one one seller, you've got one, I don'know, content person, you've got yeah, you know, like you will find the right kind of mix that works for your for your business. And
+
+I think then you work with your agents in your domain that all kind of feed the collective. I can see that working. It's
+
+[01:06:53.198] Pete Winn:
+Yeah.
+
+[01:06:59.106] Andy David:
+You know, not dissimilar to an org chart, right? It'just you've got like lot of the layers removed or streamlined down into agents rather than having layers and layers of people.
+
+[01:07:10.637] Pete Winn:
+Yeah. Yeah, I kind of expect that it be it'all very similar but just like looks bit weird, like we're in parallel universe type thing of just like it wouldn'necessarily obviously but are your marketing and your product.
+
+Like maybe they're you're just building and it's I can imagine the domains coming down to like focus in the sense that like
+
+[01:07:20.792] Andy David:
+Yeah.
+
+[01:07:37.526] Pete Winn:
+What is an attention. So you're better at paying you know, we talked about it in the van, right, where we said like you're you know, you're better at paying attention to visuals and polish and design and stuff than me, 'cause you'll notice that I've just covered the van in gaffer tape and I've been yeah, but it'white and the wall was white anyway, so like, who notices? Like it'just you know, why would you why would you even pick up on that? That'that'ridiculous. But like, you know, so
+
+I think maybe maybe that'where it is.
+
+Like there'just the jobs the jobs are gone. They just got munged into one thing and then we end up with these new jobs that kinda sound pretty similar to what they are, but the job is different. It'just the thing is that you were good at maybe you were good at that job before because you had this like just knack of like paying attention to this thing and
+
+Like there'something innate about it that like hit you.
+
+[01:08:34.306] Andy David:
+Yeah. Well the domains also evolve, right?
+
+Like this is why I said seller instead of like market because seller could mean like bunch of different things as well. It could be you just go out and you have coffees with people and you spend all your time literally IRL. Great, if that works, do it. Or it could mean traditional digital marketing. It'just that like agents are necessitating change in all of these spaces. If, for instance, you can turn all of your marketing production into pipelines and you're just churning all of this stuff out.
+
+[01:08:43.055] Pete Winn:
+Hmm.
+
+[01:09:04.514] Andy David:
+But no one pays attention to it because you and like everyone else does exactly the same thing. Well, that'not your job anymore. Your job is to break through with your customer. And like, how do you do that? You've got to actually be original.
+
+So
+
+I think that'the role. Your your your your intent is still the same. You're still trying to sell your product.
+
+But you have to find new ways of finding your your customer.
+
+[01:09:18.477] Pete Winn:
+Yeah.
+
+[01:09:32.466] Andy David:
+And if you can if everything can just be turned into pipelines, then everyone will just do that. And I just don'think it'll have any meaningful benefit.
+
+[01:09:37.966] Pete Winn:
+Yeah.
+
+[01:09:42.828] Pete Winn:
+I expect that to be correct. I don'think well if we
+
+I think the stuff that can be automated loses its value.
+
+And so we look for something else to make those decisions. I mean what would be Yeah. But there would be an analogy here, right?
+
+Like where maybe something like an advert in newspaper used to be really valuable. And you'hit people, but then
+
+[01:09:55.18] Andy David:
+Yeah. There'probably some arbitrage, but yeah, I think and the long tail is
+
+[01:10:09.943] Pete Winn:
+Like once you got the internet, there was so many there'so much space to put those adverts. That like they kinda like you almost resent the adverts all of sudden. Like before you were kinda hard to reach, and if like somebody planned and got the right magazine and you're in that magazine, you're like, I that'actually legitimately interesting to me. Despite the fact that it'become easier to target people, you resent the adverts more and they seem more invasive and less useful in way. I d I don'know, something like this, but I wonder but then you go like, but now I really like personal recommendations from podcast hosts because I've built up thing over here. And it it'basically the same sort of thing of saying like, you're bit like this. You might like this.
+
+But the delivery mechanism of just like ping in piece of like an image in front of you became too overwhelming that you've looked for different way of
+
+[01:10:38.126] Andy David:
+Mm.
+
+[01:10:45.837] Andy David:
+Yeah.
+
+[01:11:03.811] Pete Winn:
+Getting that information or different way of sourcing that hit. I don'know. This
+
+[01:11:08.76] Andy David:
+Yeah. Yeah,
+
+I think
+
+I think that'true.
+
+But also you can'necessarily discount how like full page ad in in the New York Times is perceived, right?
+
+Like that it that is still perceived as this now is trustworthy, at least to maybe to your customer, maybe maybe not to us, but maybe to your customer.
+
+And so you might there might still be some like implied value that exists.
+
+[01:11:20.356] Pete Winn:
+Yeah.
+
+[01:11:28.548] Pete Winn:
+Mm.
+
+[01:11:32.831] Pete Winn:
+I think if anything, that'probably more valuable than it might have been otherwise. It was the it'the So, you know, if you think about like putting something out on the internet that'is has been valuable and the worry is that once we can automate all of that and it becomes slop, that the whole thing goes.
+
+But maybe it'not. Maybe it'just the slop is like the
+
+[01:11:35.937] Andy David:
+Exactly.
+
+[01:11:57.634] Pete Winn:
+Internet banner ads, which don'exist really much anymore. Yeah. Well actually that'not true. I every now and again I'll I'll accidentally look at like nine news websites and I'like, my god, like this is just so many fucking pop-up adverts. Who does this? And then that those people Yeah, exactly. And then you go, like, all right, so that'that'kind of pointless, but then
+
+[01:12:08.024] Andy David:
+Yeah.
+
+[01:12:13.528] Andy David:
+Basically like the local newspaper as well.
+
+[01:12:21.187] Pete Winn:
+Like if you put authentic stuff out on the internet, maybe it does resonate, and that'the point, is that the stuff that was valuable can maybe even become more valuable because nobody does it anymore because the slop version is available. Like, does does like good blog become more valuable or less valuable if there'like hundred million slop blogs? Maybe it'maybe it'actually better. Because it'you still you wanted that
+
+[01:12:32.652] Andy David:
+Yeah, exactly.
+
+[01:12:47.021] Pete Winn:
+Before anyway, you still wanted that connection, that thing to read, that entertainment, whatever it is you got out of it. It'just that it'so much harder to find because of all the shit that it becomes valuable. I mean I you know, I guess when we talked about this, we've always said like this podcast we could be way more aggressive and sloppy with AI, but we kinda want it to be just authentic because we think that matters more. Like it doesn't.
+
+[01:13:01.87] Andy David:
+Well yeah.
+
+[01:13:08.29] Andy David:
+We don't. Yeah.
+
+[01:13:15.287] Pete Winn:
+Like in terms of numbers. But
+
+[01:13:15.832] Andy David:
+Well, it'all it'also no yeah. It'also it'also the quality, right? It'like you're this is Kevin Kelly'one thousand true fans. It'like not not one thousand true fans in the sense that you need that in order to get to hundred thousand. It'just that you need the one thousand. And that is genuinely good.
+
+Like that'enough. You can do lot with one thousand true fans. So yeah, we already have proxy for this, I think, which is kind of X if you think about it the way it works. Like
+
+[01:13:21.539] Pete Winn:
+Yeah.
+
+[01:13:44.036] Pete Winn:
+Yeah.
+
+[01:13:46.092] Andy David:
+Like I could post something on X and I don'know, Pieter Levels could post the exact same thing, word perfect, and it'be perceived differently, right? And that'because he has shown up online for, I don'know, decade more, I don'know. And he'done the reps and he'built the trust and he'got the proof out in the world.
+
+[01:13:58.031] Pete Winn:
+Mm-hmm.
+
+[01:14:03.641] Pete Winn:
+Yeah.
+
+[01:14:12.214] Andy David:
+All of that stuff matters. It it is essentially like the ad in the New York Times. So yeah, suffice to say that
+
+I think it'll be like more difficult to go and like build that audience when everyone is pushing slop.
+
+And so maybe you need to find some more unique ways of doing it. And there'probably you know, maybe you need to go and search out in the world of atoms as well and talk to people and build relationships the way we used to over over coffee or beer and yeah, maybe that maybe that is the angle and maybe that becomes the job description. Who knows?
+
+Like
+
+I think it'entirely dependent on what you're trying to build and what you're trying to do. And but I think but I think there is like a I don'know, maybe minimum viable size team. I think that'probably one, but I think the optimal size is probably, yeah, four or five. And your your like disparate domains just tend to like cluster around the things that actually work for your business and everything else is noise.
+
+[01:15:17.719] Pete Winn:
+Alright, and on that note
+
+I think that'fantastic. Inside our Fast and True Fans for subscribers. So please do spread the word, like and subscribe and you know check out the back catalog and get in touch. All right, on that note. That'your Intelligence Snacks.
+
+[01:15:28.003] Andy David:
+Yes.
