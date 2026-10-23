@@ -1,5 +1,5 @@
 ---
-title: Real Use Reveals Missing Product Requirements
+title: "Real use reveals missing product requirements"
 editorialTitle: Use Reveals Missing Requirements
 thumbnail: /images/snacks/real-use-product-requirements-v2.webp
 standfirst: Working software exposes missing permissions, awkward screens and workflow exceptions that an initial specification rarely captures.
@@ -7,9 +7,7 @@ status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
-primaryTopic: software-systems
-relatedTopics:
-  - ai-coding
+theme: software-systems
 attribution: Developed from a conversation between Andy David, Pete Winn and dpc
 relationships:
   - target: domain-experts-can-build-software

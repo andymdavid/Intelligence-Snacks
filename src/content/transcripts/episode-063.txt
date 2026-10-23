@@ -1,0 +1,854 @@
+Pete Winn [00:00:01]
+Alright, hello and welcome to The Good Stuff. This is the big episode 63. So with us round the campfire today we've got Kane from Regional Prosperity. Do you wanna say hello, Kane?
+
+Kane [00:00:12]
+Hey, Andy, how are you?
+
+Pete Winn [00:00:15]
+Very good. Very good. Do you want to tell us a little bit about yourself?
+
+Andy [00:00:15]
+Good mate. Welcome on board.
+
+Kane [00:00:19]
+Yeah, so thanks for having me, boys. Always lots of fun to I guess discuss the ways of the world. I work in a business called Regional Prosperity. I live in regional Victoria, actually, hence the inspiration. Place called Colac. Yeah, and the business has gradually grown over the years, the headcount and I guess the scale. So we living regionally, we've always had a big focus on efficiency with technology and being able to yeah provide great human service over you know wide geographical expanses. So it's forced us into yeah that problem solving mode. And yeah when you're an SME, he has some wonderful yeah advantages I think in that space around speed to execution, yeah, decision rights, the ability to make yeah, back yourself in effectively. So here we are.
+
+Pete Winn [00:01:16]
+So we were talking with Gabe and you recently on a on a YouTube podcast, I guess, for Adapt, looking at like, you know, why AI is good for good for SMEs. And so I think we did about half an hour on it and it felt like there was just a lot more to cover. So we said, Alright, well let's let's let's just come back and
+
+Kane [00:01:25]
+Yeah. Yeah.
+
+Kane [00:01:38]
+To unpack. Yeah. Yep.
+
+Andy [00:01:39]
+Mm-hmm.
+
+Pete Winn [00:01:41]
+And do something a little bit more long form. So yeah, the got the goal for today then will be just to go through like well is is AI good for SMEs or not? And then if so, why, I guess. So I mean we I think we all think it is. So maybe maybe it's a short one. Yeah.
+
+Kane [00:01:56]
+Yeah, we all hope it is. Yeah.
+
+Andy [00:01:56]
+Well we hope it is, yeah. I've got I've got a specific question for you, Kane, just be based on your introduction, like obviously like you're focused on regional SMEs. I remember like I remember reading something a few weeks back saying there was like a gap in AI adoption between like metro SMEs and regional SMEs. Like when Pete and I tend to talk about this, we kinda just lump them all into one one basket. They're all SMEs and it's a it's a net positive for all SMEs evenly and like
+
+Kane [00:02:08]
+Yeah.
+
+Kane [00:02:16]
+Yeah. Yeah.
+
+Kane [00:02:21]
+No, no. Yeah. Yep. Yep.
+
+Andy [00:02:25]
+What are the kind of w like what do you think the reasons for that gap might be and like what the challenges that are unique to the regional SMEs that maybe we don't see so much in in metro areas?
+
+Kane [00:02:33]
+Yeah. Yeah. Yeah. No, it's a great question and it's a it's a serious dilemma. You know, and I travel into the city, you know, intermittently and so you get exposure to I guess the mentality and the culture. And I think what the real differentiator is the competitiveness between I guess SMEs and corporates in in a metro area. Because you know, people are exposed to each other, ideas spread quickly and there's a real need to be that early adopter to you know to tackle market share, generate opportunities, right? In regional Australia, there the competition's different. I think the competition's more internal. It's more about how do you attract and retain talent, how do you inspire talent, how do you know, deal with the challenges of regional Australia, which are very different. And it's not many Like if you're service type business in regional Australia, finding work's not the issue. Yeah, the challenge is how do you engage the right people and then also how do you yeah, things like being spread, our offices are hours apart in the car. So we need to be able to work across multiple locations. How do you know, if you have somebody who's really good in a place like Hamilton and we need that skill in Geelong, how do we access it? So they're the challenges that we've worked through. And I think yeah, yeah, it's a broad stereo.
+
+Pete Winn [00:04:03]
+So what's the distance there between Hamilton and Geelong? I don't have a good intuition for regional victories.
+
+Kane [00:04:08]
+Yeah, so it's yeah, so it'd be sort of like well, you guys are where you yeah, it's like Bunbury to it's like Eagle Bay to Perth, right? So you can't just Yeah, yeah, yeah. So there's a that challenge. But I think then also you got the broader yeah, that stereotype of there's probably lower education standards, there's lower need as well. Like the utility of living regional, I think people's
+
+Pete Winn [00:04:17]
+Alright, I guess like a three hour drive sort of thing. Yeah.
+
+Kane [00:04:36]
+Focus is more human and it's more, you know, that social contract that we have. You see people regularly that you know, you have that natural accountability, word of mouth, you know, trust, all those old school principles are still the foundation of, you know, regional relationships. And I think that's a little bit different too. And AI sort of represents the unknown. And I you know the reality is there's no real engagement from a government perspective or a corporate perspective in leveling up regional Australia because for them they've really built that sort of value extraction approach. Yeah, and I think 28% of Australia's GDP comes from regional. But you know, you look at the amount of funding that comes back the other way, substantially less. So yeah, it's an interesting thing. I've always felt like, you know, living regionally is a superpower around, you know, my kids can walk to school in the morning, I can walk to the office.
+
+Andy [00:05:16]
+Yeah.
+
+Kane [00:05:35]
+Yeah, you can really design a life that you know, you don't waste time in the car or, you know, stuck in traffic or getting angry or, you know, fighting and trying to undercut other people. People just come to you because they know that's what you do. They're not worried about what the cost is. They know that you'll look after each other. Different sort of environment. But it's something that I'm concerned about broadly for regional Australia is the lack of understanding. And I describe it a little bit to people, it's a bit like and it's you know it's a brutal example, but it's a bit like when the tidal wave goes out, you know, and everyone's walking on the beach going, look at the seashells, look at the seashells. Yeah. And I feel like that's what the tide's going out at the moment. And then when the AI front, yeah. And the tsunamis kind of roll through and catch lots of people off guard. And that's so I'm I'm an advocate for trying to just help you know instigate the thought that's required.
+
+Pete Winn [00:06:19]
+Yeah, just before the tsunami.
+
+Kane [00:06:33]
+In this space. I'm definitely not an expert. Well we ran an AI workshop there a month or two ago. There's 50 odd business owners in the room. So they want to understand. But I guess there are no the vehicles and the educational opportunities are really well muddled is how I describe it. Yeah people don't know you know you can't just jump on Google now and you know whack something in and have full faith in it right and if you don't have Lots of curiosity and a growth mindset. Who do you go to? Who do you trust? Yeah. Yeah, it's a it's a real challenge.
+
+Andy [00:07:08]
+Hm. I imagine there's also like some disintermediation even within like regional business communities, right? Like when I think of regional, my mind always goes to like farming and agriculture. And then if you take farming and agriculture in isolation, you're like, do you know what? They're actually pretty like technologically savvy. They're usually at the cutting edge because they're so like resource constrained and it's hard to find people to constantly work. And so they're always like getting new equipment and new robotics and AI kind of they're they're kind of on the
+
+Kane [00:07:21]
+Yeah.
+
+Kane [00:07:27]
+But yeah, yeah, yeah.
+
+Kane [00:07:36]
+But yeah, yeah, yeah.
+
+Andy [00:07:37]
+On the on the front line there. Whereas like smaller businesses probably the complete opposite. Like small service businesses might be the opposite. So like even in like regional business communities, I imagine there's just like this broad spectrum of like experience and understanding and like where people are looking and what they're looking for. And yeah, must be super challenging like
+
+Kane [00:07:43]
+Yeah. Yeah.
+
+Kane [00:07:57]
+Yeah. Yeah. No, that's a yeah, well on the it's a fascinating space, but friends of mine, you know, that are are growing farms and they're intergenerational farmers and they've got large balance sheets and they need to grow to survive and really, you know, find that level of economy of scale to make profit. You know, for those guys, they're absolute rocket scientists, mate. They blow me away. Like they are they're They've got that financial pillar requirement, massive cash flow, debt obligations, you know, managing all those, you know, because if you go and buy land at $15,000 an acre, you know, I have friends that are paying $10, $15, $20 million for dirt, right? And then you've got to get the commercial rate of return off that to, you know, service it. So that financial pillar is really, really amazing. Then you think of technology and, you know, they run their farms off iPads now. And stocking rates, ratios, you look at Holter now, virtual fencing, drone spraying mechanics, like it's unbelievable where they've got to with really, you know, limited resources. But yeah, and I think you've nailed it though, that I then also on the other hand, know of SME businesses turning over a hundred th million dollars a year, still using carbon copy receipts, right? And so it's this incredible gap that's coming for some businesses and No, the reality is that's the tidal wave will eventually hit though, because you know, whether it's succession and that's really where my connection with adapt come from is this huge challenge that I've seen is that you sit down with a client in your you know, from a traditional retail financial advice perspective and we start chatting about, you know, planning for the future and the typical conversations around superannuation assurance, estate planning, and then you realise, well, but 95 percent of your wealth is tied up in this SME. What's the plan? And they literally just go, no no idea, mate. We're not even no point even talking about it. It's too hard. So I've really probably built a career and a business off trying to tackle those hard, complex challenges because you know I find it interesting. But also the social fabric of our communities need succession thinking. And not just need, it's actually it's existential need.
+
+Kane [00:10:19]
+For them because, you the complexity of what you're handing over now and the systems that you're handing over now aren't what they were in the past. You know, and I have some amazing examples. I went to see my grandfather last weekend and you know, we're cutting wood for the fire and he's in his mid eighties and we're talking about, you know, 65 years ago our our office here, We bought it off a local real estate agent or and a stock agent and he told me the stock agent told me that, you know, 65 years ago he goes to see my grandfather, you know, and they're living off kangaroo and rabbits and they're digging fence-post holes by hand and they'll do you know, so it was very easy back then to go, Here's your shovel, mate. There's the boundary, make some money, right? Whereas now, think about what you're handing over. It's and so that technology gap is is really complex and you know I still come back to this sense of optimism around I think the benefits do significantly outweigh in advantage of the SME compared to the corporate traditional corporate structure, which we can yeah, unpack that as we go.
+
+Pete Winn [00:11:35]
+So one of the areas where we kind of like I we see it a little bit as a little bit of a hypothesis we want to test, I guess, is that you know, SMEs are gonna benefit from this because they're so resource constrained. Which I guess would be even more so in in your situation as well, right? Because you know, you could be resource constrained as a small business in the middle of Sydney, but at least there are people there you can go and fight for if the business model works. Whereas I guess you're in a situation where there's an even like much smaller, limited pool of people that are available locally to actually run the business. So being able to then give those people those skills or, you know, these tools that help them to, you know, work in places where they couldn't previously would be a big impact. Does that make sense? Yeah.
+
+Kane [00:12:08]
+Hmm. Yeah.
+
+Kane [00:12:19]
+Yeah. It's huge. And yeah, so yeah, it's funny, but like so some of my clients are like my prep teacher, grade one teacher, you know, who've known me since I was five years old. Some of our employees I've known since they were children, you know. So yeah, it's incredible. But, you know, for me I'm always on the hunt for curiosity and yeah, and acumen really. If I can find curious problem solvers, I think you know, for us we've then been able to teach in the technical background. And especially if people, you know, can develop a level of empathy in conjunction with that curiosity, then in our world the impact they have is amazing. And so I like I love the game that we're playing i from a business perspective and you know and I think regional prosperity is the case in point. So we benchmark against a substantial network Australia wide. And I would argue that we're in that top top one or two businesses, right? And because of the constraints that we've had to deal with and no one else is going to solve those problems for us, we've then gone headlong into things like AI innovation technology. And we've really bootstrapped it. And what we've built puts the corporates to shame, right? And so that's where I've had that firsthand exposure to Yeah, I have this well, it's really first principles thinking if you strip it back, you know, and people if they think the challenge is technology. I think the challenge is human. And so for us with open minded, curious people, it's very easy to adopt technology. But if you have large bureaucratic power hierarchies that typically attract narcissists, your problem's very human and you can have the best technological solution in your life. In your life, but if the human won't adopt it, what can you do with it? Even worse, if they'll resist it or undermine it, how do you manage that? You know, and how do you work through potentially if you had a business model that needed a hundred people, it only needs ten people now, much more complex challenge than what we have. We've gone from one person to eighteen people and we'll keep growing, but we'll keep growing with AI enabled humans, right?
+
+Pete Winn [00:14:39]
+Yeah, nice. So what does that look like then in your business? Like how are you adopting it?
+
+Andy [00:14:39]
+Yeah. It's
+
+Kane [00:14:43]
+Well, you guys freaking me out last week because I'm very exposed to Microsoft, which I was always aware of, but I didn't know of any alternative solution. And it's funny, the main man I work with actually listened to that podcast and he texts me, he said, Bro, those d those guys are dialed right in. That was cool. So and so we
+
+Andy [00:15:04]
+Mm-hmm.
+
+Kane [00:15:08]
+Yeah, yeah. No, so well, that's a side note. He wants to connect into you, but it's a different conversation. But yeah, so for us, the you all you look at technology and financial advice space, it's an amazing case study. So we're dominated by a business called Iress, with a program called Xplan. And last I heard they of $200 million in fintech revenue in Australia, Xplan controlled about $110 million of that revenue. So that's how dominant they've been. They've built huge moats, high barriers to entry, lock-in and a premium cost, right? So like one login can cost you up to $12,000 per year. So you apply that across 17 people, right? Adds up very quickly. And they've traditionally resisted any form of integration wherever they could and been super hard to deal with. And now it's gonna be yeah, I'm curious to see how they handle this AI front that's rolling through. Yeah, so in that technology space, though, for us, we I doubled down on Microsoft early and really based on that stat, because to me it's like, well, if one company represents sixty to seventy percent of the total revenue pool, well then there's obviously there's the limits around the viability of competitors, right? And so
+
+Pete Winn [00:16:07]
+Yeah.
+
+Pete Winn [00:16:30]
+Yeah.
+
+Kane [00:16:31]
+If you s look up a layer, I'm never probably going to be too concerned about the viability of Microsoft. And so we then went and doubled down. I initially I thought like a Dynamics 365 because we were using SharePoint for document you know security that come with Microsoft you know is is critical for us with sensitive data. But in that situation we then end up building a power platform CRM and then off that CRM we've then integrated you know, all our different like Power BI type data points and then also obviously then Claude got plugged into that into that environment and that's been a real game changer obviously through that cowork functionality. And because we've always stored you know huge amounts of data in that Microsoft ecosystem, now with the AI we can synthesize it rapidly and we've got, you know, ten years, fifteen years of data.
+
+Pete Winn [00:17:05]
+Okay.
+
+Kane [00:17:29]
+On clients. So each client then really is become this mini data lake. And that data lake, yeah, we're now really trying to then pivot and collect as much unstructured data as we can to sort of efficiently process it with with AI support, if that makes sense.
+
+Pete Winn [00:17:51]
+Yeah, yeah, that I mean that tracks. Like do you have any concerns around sort of Claude and you know, like particularly, like, I imagine like if everything's running on the Microsoft platform that you've got there, then there's certain like security rules and access things that are published into it. But then once you plug something like Cowork into that, like how are you thinking through the challenges of keeping the data private and everything else?
+
+Kane [00:18:16]
+Well, that's right. And this is the unknown with everything, right? Like in this world today what really is private, very hard. We're gonna get back to the only way I can think about being private anymore is really to turn off all forms of communication from a technology. Even think about this today. Obviously we're choosing to broadcast this, but you get pretty skeptical when I was only talking about
+
+Pete Winn [00:18:21]
+Yeah.
+
+Kane [00:18:43]
+Well, I was actually explaining to my wife about these halters that have come through, these sort of AI enabled halters for cows. Next thing my you know, my Google feed's feeding me articles on halters, right? So I'm I'm the cynic. I think, yeah, we all want to, you know, I guess, tell our size selves we live a private life these days. But even for example, I was talking to a local police officer lately.
+
+Pete Winn [00:18:52]
+Mm.
+
+Kane [00:19:11]
+And there's a funny little joke people like to play in Colac and teenagers always love to put some bubble bath in the local fountain, right? And obviously everyone has a big laugh when this big, you know, bubble is spewing all through the Memorial Square. And he said, it's all cool, we don't get too stressed because we just watch the cameras from the office now, instead of doing patrols. And I was thinking about that. Well, you think through the implications of that. You know, I never signed a waiver to say it's okay to record me in yeah, in the main street of Colac, right? So that's a huge issue. I and this is a side conversation with you guys, but you know, I think the challenge is for most people is we don't we're not aware of any alternative ways to potentially enhance data security. For me until I met you a week ago, I would have said, Well, we've done everything we possibly can to really be, you know lockdown in this Microsoft ecosystem, but potentially there's vulnerabilities to that you know, we're just gonna have to think about as we move forward.
+
+Pete Winn [00:20:16]
+Yeah. I mean, I guess I kind of come from like one of my previous jobs, I was working with the Anti-Corruption Foundation, which is like the opposition party to Vladimir Putin around how they can do like private banking and stuff. So I tend to come at this with quite a like I don't know, a sledgehammer to crack the nuts sometimes. But th there's definitely things that we can do around like encryption and private inference and different things and you know, we're we're keen to make some of those tools easier for people 'cause I don't like
+
+Andy [00:20:17]
+Yeah.
+
+Kane [00:20:29]
+Ha ha ha.
+
+Kane [00:20:36]
+Well, that's right.
+
+Kane [00:20:42]
+Yeah, yeah.
+
+Pete Winn [00:20:46]
+The direction that it's going. You know, as you said, you're not really signing all these waivers. The data's being taken, whether it's by, you know, local governments, it could be large corporations, like they've made a habit of stealing your data. That's
+
+Kane [00:20:48]
+Yes.
+
+Kane [00:20:54]
+Wow. Yeah. Yeah. Yeah. Yeah, and this is a well, I look at even our own industry. For example, we had somebody recently position a technology solution for our business, right? And ultimately it was to utilize their software to manage client data. And I said, Well, it's a different perspective, but what would what are you going to pay us to use your software? Because traditionally they've sat on the fence and played both sides. You give us your data And we'll charge you money to give us the data, then we've got this data that we can anonymize and on-sell and you know, there was this beautiful business model. But now, you know, as you guys would I'm I'm sure would be aligned, there's not many things in your business that are more valuable than your data now. And if you were to sell your business to exit, which I've worked through with a range of different regional businesses, the first point of reference for private equity or for
+
+Pete Winn [00:21:34]
+Yes.
+
+Kane [00:21:57]
+You know, any form of savvy buyer is the data. Where's the data stored? How is you know, how's it protected? How's it encrypted? What's the value of us then potentially how do we monetize that data, right? Is really all they're thinking about. So yeah, that's a big difference in the way that people are really gonna have to think on it moving forward because you know, ideally Microsoft would pay me to use them.
+
+Andy [00:22:24]
+Do you think like these like small business owners like prioritize this enough? Like my gut sense on this, like Pete and I obviously like really care about this. Like we speak about it near near enough every pod, yeah. Every day probably, yeah. But I my feeling is that people don't care enough because their their actions tend to like indicate the opposite. You know, they tend to gravitate toward convenience.
+
+Kane [00:22:36]
+Every day.
+
+Kane [00:22:45]
+Yeah.
+
+Andy [00:22:50]
+I'll I'll give you an example. It's it's actually really topical. Like the example you gave was really topical because over here in the West, you know, the police have just started rolling out facial recognition cameras. So that's been like the bit in the news over the weekend and they're sort of like trialing this in like various points. And what was interesting was that like most people they interviewed. Now of course like you have to like factor in that this is the media here, like they're probably gonna massage this a certain way, but like I think there was like one dissenting voice in ten that was opposed to facial recognition technology. Mostly people are like, well, it's fine, I'm not doing the wrong thing, therefore, let's do it. All all power to the police to go and catch the bad guys. Whereas like I think we would probably all be aligned in our view that this is like a net negative. And we should have less less like big brother.
+
+Kane [00:23:21]
+Yeah.
+
+Kane [00:23:27]
+Yeah. Yeah. Yeah.
+
+Kane [00:23:36]
+It's insanity. Yeah.
+
+Andy [00:23:39]
+Intervention. But again, like I think like to some degree this comes down to like incentives and where the incentives are. And people gravitate toward Microsoft because it's something they know. They use it. You know, like most of their technology and like privacy is like a
+
+Kane [00:23:46]
+Yeah.
+
+Kane [00:23:51]
+Yeah. Yes. Yep.
+
+Andy [00:23:55]
+It kind of like is weighed downstream of all this stuff. And even like when you think about it from a sale perspective, it's like most people are are like so far removed from like potentially selling their business that this just doesn't factor in the here and now. So I'm like kind of curious like how like are people prioritizing this stuff or
+
+Kane [00:24:08]
+Yeah. Yeah. Look it's like you know, the example I'd use is like do either of you two have a veggie patch.
+
+Pete Winn [00:24:21]
+No, I've tried a few times and it kept dying. So
+
+Kane [00:24:25]
+Yeah, yeah. So and so I'd use that as the example, right? Like I go out and visit people's houses. Some people have incredible veggie patches, right? And it blows me away the focus, the care, and the intention, right? And then they could say, Well, it's beautiful, it's organic, it's I've seen, I've grown it from the ground up, you're rah rah rah. Then what do you do? You go straight into Coles and Safeway and buy something straight off the shelf, right? And so we can look through the lens of data, or we can look through the lens of health, or we can look through all like convenience is ultimately exactly where we're landing with all of this stuff. And where we're going down these like this monopolistic nature and this sort of broader convention of what we think is safe for society, you know, it's all perceptions our reality, right? And I love to read why one thing I've always done throughout my life was read fantasy novels. And I love reading you know, science fiction and you know, everything we're doing is a terrible track. And so for me though, it's like if you're an SME business owner, you can't ignore the reality that we're dealing with either. You know, and you have you have to land at this point where you need to accept the game for what it is. And so then for us, for me personally, completely interested and open minded to If we can do things more efficiently, more secure, and it's sustainable from a cost perspective, we're all in. Yeah. And if the sus you know, security can be enhanced, we can do all these things, like what a wonderful outcome. But yeah, from broader societal perspective, like regional practices here with with their data, that no idea. But the thing is you don't know what you don't know, right? And so at what point
+
+Pete Winn [00:26:00]
+Mm.
+
+Kane [00:26:19]
+You know, how do we teach these people and who takes responsibility for that? Right. And I went on a business tour to sorry, one last thing to over to Harvard University there and went to Boston. We had this incredible professor, Boris Gruwski. And anyway, he had a couple of different other professors come through and one one that really, really hit home was this beautiful his name was Rowie.
+
+Pete Winn [00:26:23]
+Okay.
+
+Pete Winn [00:26:28]
+Yeah, you now keep going. Finish.
+
+Kane [00:26:48]
+And anyway, Professor Rari, I kind of anyway, incredible guy. He he turned up and he was just immaculately presented fifteen minute intro, walked through the room and the you know, the there's twenty five us sitting down and like his the eloquence and the language and just the performance was impeccable. And he and he built up to this point where he said, Well, and he's he was an expert in social relationships and international relationships. And he had this, he said, He said, guys, my lifelong study has culminated in this moment. And I've landed on this incredible question that if I can answer, that I feel like if I can answer this question, potentially there's hope for humankind. And obviously it's a big build up and a big question to answer. And he said, what do you think the question is? Obviously, quiet. And then it was one of the great moments of my life, he said, Why in the fuck would a Hispanic vote for Donald Trump? Right. And when you think through the logic of that, you think what Donald Trump represents and all these things. And so really, obviously there's lots of laughter and you start to unpack that question, right? And this is a challenge coming for Australia. And we're going way down a rabbit hole here. And this is a huge issue in regional Australia that I see coming. And why would somebody in regional Australia, you know, potentially vote for a female version of Donald Trump. Because we need to see a level of social equality. And this is what people are getting locked in. And if you break it down in an academic sense for them, they're exploring this idea of if you cannot earn more money than what your parents did, what impact does that have on your perspective and which way would you vote, left or right? And so what really people are trying to vote for when they vote for Donald Trump Or potentially Pauline Hanson, or whoever it is. And this was sort of I guess his hypothesis he was exploring. They're really voting for anarchy because the traditional structure and this perverse form of sort of corporate capitalism is creating too many winners and losers. And then obviously you look at a political system that isn't delivering the you know, or fixing the gap. So that's the challenge for us in regional Australia and you come back to around
+
+Kane [00:29:11]
+Privacy, that's only one small issue in what we're dealing with, because if there's no career opportunities or if people don't have to outsource at all, and you look at this huge push to outsource overseas as a counter argument, what if we outsource regionally? We've got lower cost of living, lower, you know, we've got a same language, we've got all these functions that can assimilate far more efficiently, but we've pushed it, you know, to lower socioeconomic, you know, international countries. And so These broader issues like you know of privacy and we've segued into this, but opportunity is the big one as well to think about. And I don't think as business owners or just as people in general, we're thinking about what you know, I come back to a great way for me to frame AI as an example, artificial intelligence is like what can we do on one hand, or what ought we do? On the other hand, right. And I for me, what ought we do as a business owner, we should be creating opportunities to employ local people to have a positive impact via human connection.
+
+Pete Winn [00:30:10]
+Mm.
+
+Kane [00:30:25]
+Yeah. Yeah. Yeah, sorry. Yeah, yeah, that's right. But do you see the complexity here? Like come back to we've got to apply the same lens to privacy and to humanity. Like what is it that we want humans to do moving forward?
+
+Pete Winn [00:30:43]
+I mean I can see a lot of this as 'cause I think a lot of what you're explaining there and talking about is downstream of this. There's this like massive corporate government system that's entirely corrupt and just steals from you for itself. Right? Like and then like I always say like the problem is not—.
+
+Kane [00:30:58]
+Yeah, that's right.
+
+Kane [00:31:13]
+And either.
+
+Pete Winn [00:31:18]
+Ha ha.
+
+Pete Winn [00:31:22]
+Yeah, it's it's an interesting one. 'Cause I mean I don't I think that's like what we're talking about there is almost the symptom of the problem more than the problem itself. If you know what I mean, like is there's there isn't enough social mobility, there isn't enough work and then you have somebody like Dario standing up on the stage saying, I'm just gonna steal all your jobs and it's
+
+Andy [00:31:35]
+Yeah.
+
+Pete Winn [00:32:27]
+Yeah.
+
+Andy [00:32:37]
+Yeah.
+
+Pete Winn [00:32:52]
+Well, I think you I mean I think they're the same. Like this is 'cause I think you're either you're told to kind of hate one or the other, right? Is that you're either supposed to hate government or you're supposed to hate business. And I think that's the trick, is that they're trying to tell you to hate them. I think the if you were gonna hate anything, like I hate focusing on the hate here. I'm saying hate too often, it's gonna be bad for my soul. It's the is that it's the problem is the really big more than the really small.
+
+Kane [00:33:15]
+Ha ha ha.
+
+Pete Winn [00:33:21]
+You know what mean? Like it's if you if they're if you know, if you had like a really tiny government that had no effect on your life, you really wouldn't care who was in charge of it. The same way that like you like it really doesn't bother you if there was a really corrupt, like weird, like small business over here that was trying to capture everyone's data, you just wouldn't use it. You just go somewhere else. And so the answer to most of these things is the small more than the big, which is again it's like for us like a personal thing.
+
+Kane [00:33:39]
+Yeah. Yeah.
+
+Pete Winn [00:33:47]
+Why we want to see a very robust small business ecosystem in Australia is that we think Australia will be better for that. But so I so I always think that like it's that's the sort of framing that we often have is like, yeah, these like large organizations that just want to steal everything from you are bad. And I was just saying to Andy, like it's when you look at AI, it's hard not to see AI and just see OpenAI and Anthropic as these two giants like battling it out. And both of them are there.
+
+Kane [00:33:51]
+Yeah. Yeah. Yeah. Yeah.
+
+Kane [00:34:15]
+Yes.
+
+Pete Winn [00:34:16]
+Just being like egregious fuckwits telling you that they're gonna steal all of your data and all of your jobs once you give them your data. And you're just like, for fuck's sake so like to make this argument that we try and make of like AI's good for small business and they're like, Yeah, but the guys that are AI are on the telly and they're telling me that they're just gonna steal all of my steal all of my jobs and put me out of work and I don't see how the future's gonna work. And you're like, Yeah, that's it's not really helping.
+
+Kane [00:34:23]
+Yeah. Yeah.
+
+Kane [00:34:39]
+Yes.
+
+Kane [00:34:44]
+Yeah, well you look at that whole OpenAI look at the whole OpenAI journey, not for profit, this and that. And then since they realized no, we'll pivot here 'cause we want to be, you know, trillionaires. And I don't think that was really the purpose of it all to start with. There's a interesting
+
+Pete Winn [00:34:46]
+Yeah. Yeah.
+
+Pete Winn [00:34:56]
+Yeah. So one of the framings that we often like to use sorry, I just want to like tag on to something that you were talking about before, which was around exit, right? So you were talking about like you had worked with a lot of regional companies around like, you know, how do you exit and like where's the data? And like these are now very important things in selling a business. And I think one one point we try and make to people is it's it's hard to get people to care about privacy because it's just such a lost thing in the world right now.
+
+Kane [00:35:05]
+Yeah. Go.
+
+Kane [00:35:18]
+Yes. Yeah.
+
+Kane [00:35:25]
+Yeah. Yeah.
+
+Pete Winn [00:35:26]
+But like some something about a control and pride in what you've built is that like, you know, SME owners are people that have created a company and something that's valuable from nothing. And that's that's like magic, you know, that's a really impressive thing to have done. And justifiably they're generally quite proud of that. And so like one way we will try to lean on this to say, right, okay, you've got you've got two options with this thing, which is you need to figure out like what is what is your business and what is the thing that you've built. And often that is a
+
+Kane [00:35:38]
+Yep. Yeah.
+
+Kane [00:35:45]
+Yes.
+
+Pete Winn [00:35:56]
+You know, a collection of people, a collection of data, a collection of processes, like ideas and things that are encoded in this weird non existent thing called a company that we put together. That like that's kinda hard to define, but like that's that's what your company is. And there's various elements of that you can outsource. Like, you know, if you give all the work to a different country, like, you know, you outsource like physically all the jobs and then you outsource all of the processes and then you
+
+Kane [00:36:07]
+Yeah, that's right.
+
+Kane [00:36:21]
+Yeah.
+
+Pete Winn [00:36:24]
+Give all your data to somebody else. Like there comes a point in time where you start to wonder, you know, what is the bit of the company that you actually control? And I think this is where maybe there is a difference with AI is that's well, particularly in service businesses now, is that so much more of the work gets done at a sort of, you know, process definition and then run the process sort of level. And then
+
+Kane [00:36:33]
+Yeah.
+
+Kane [00:36:45]
+Yeah, yeah, yeah, for sure.
+
+Pete Winn [00:36:48]
+You because you don't control the people in that process, they're not sat in your office necessarily. They could be robots just in a data center. If you outsource that, I think you really do risk losing, you know, like the core value chain of the business. We're not talking about outsourcing like the side processes that are the same for everybody. It's this is like your core value generating part of your business now sits in Anthropics data center and the guy that runs that it is telling you that he will take your job.
+
+Kane [00:36:54]
+Yeah. Yeah.
+
+Kane [00:37:06]
+Yeah, yeah.
+
+Pete Winn [00:37:17]
+And that he is using that data to train models to take your job. And I'm like, Well, we could just not use his stuff to do that. Like that's a it's an option. Yeah.
+
+Kane [00:37:26]
+Yeah, sure. Well, and that's I think your challenge is is communicating to the world, there is an alternative. And yeah, I think back to exactly what you said there through our business and my mental model really is we have these three pillars. One's a technology pillar, one's a brand pillar, one's human connection pillar. And ultimately from a technology perspective, we can really compress the process functionality in the back end for efficiency's sakes. We need to build this big lightning rod of brand slash attention, obviously to drive the throughput through our business. But then ultimately then all those decisions need to come together to support human connection. And so little things for us, for example, we're doing some work, let's say, on our website at the moment or our broader branding, but we've actually giving people that option to select a home visit. Very old school, right? But it's coming through. Do you want to do it online? Do you want to meet us at the office? Or do you want to actually choose a home visit? You know, and I had a great moment last last Thursday. I come to the office at quarter past nine. There's five people here in the Colac base, and no one had opened up yet. And the beautiful thing about that was that four of them were out in the road seeing people. And I received that feedback now consistently from people who say, it was just wonderful that you could come and sit down, have a coffee at the kitchen table and chat live. And so
+
+Pete Winn [00:38:37]
+Hmm.
+
+Kane [00:38:47]
+This is that enhancement of human connection. In a service business, I'll be saying that's essential, that focus. And so even now for us, we don't want to put any obstacles in between us and that human connection. We're not going to send you a fact find to fill in. We're not going to send you, you know, complex technology to do our work for us. We want to come and see you. We want to build trust, rapport, and understand who you are as a human and where you're trying to go. Collect all that unstructured data, we can go to your accountant or your solicitor or your banker for all that. Because the reality is that's the source of truth anyway. And most people don't even know what's going on in their own life when it comes to who's your superfund, what money's in there, you know, what's your loan repayments, interest rates, dah dah. They don't know. So let's not bore with that. They don't want to know. And I think of it, you know, around sort of like buying a flat pack. I don't want to buy a flat pack. You know, for me, I've got enough things to do, right? So for me, I want someone to come and install the kitchen. So that's our lane that we're in. It's more that high-touch human connection. And ultimately with technology though, you can really solve for a lot of the we've had this continual bottleneck around operational efficiency. And the reality is for us now, AI work versus human work, I'd say there's a lot more mistakes with the human work than what there is from an AI perspective. But for us, Yeah, I it's so beautiful to see sixty year old grandmothers vibe coding, solving, you know, doing detailed audit and analysis in our little ecosystem telling you that they've never been more inspired than they ever have been, because they really do like we've been conditioned to say, there's this value in clicking around and moving pixels around, but was it really value? Maybe We should be artists, maybe we should be creating music, maybe we should be going exploring and being present with our children and walking through the rainforest and being much more human with our time. But then ultimately, yeah, it's gonna get to this point where and you come back to my example in in the US, what they found with that data set was a universal basic income didn't solve the problem because the challenge is not cash, it's purpose and it's hope.
+
+Kane [00:41:00]
+And so how do we substitute purpose and hope into this system that we're building? I don't have the answers, but I think that we need to have more and more conversations about that. Because people coming through, if they don't believe that they can do better, it's not a very good headspace to be in as a human.
+
+Pete Winn [00:41:16]
+Yeah. And it's it's kind of interesting that y you kinda hit on like one of the last remaining pieces, right, which is that even if you had the AIs doing all of the work in the back office, it's still gonna be more like if there's two versions of this, like one the AI does all the work and you get a website and the other one the AI does all the work and then you go and talk to the sixty year old lady about her finances, right? You kinda know, we all know which one's gonna win at that point, and you would probably pay more for the one with the extra the extra detail. Like the world's not really about being super efficient. It's about providing a more valuable service. So I think even if we make a lot of the things that can be automated, automated and efficient, it just opens up more time and space for us to differentiate based on service. Yeah.
+
+Kane [00:41:54]
+Yeah. Yeah.
+
+Kane [00:42:05]
+Hundred percent. And that's why when you come back to the guy the reason the guys weren't in the office is because of that differentiation, because the AI is enabling the throughput that's required to create the bandwidth and the time to go foster human connection. And I think that's the big challenge for us all now. It's like and I like obviously there's this co you know, lots of fear and massive job displacement. But all I've seen in our business is we need more humans that can use AI. And I think that like fundamentally, like, you know, we looked back in the day and you know, come back to my grandfather's example when they talked, you know, in shearing, for example, he was telling me they went from a narrow comb on the hand piece to shear the sheep to a wide comb and there was riots over the fact that it was going to destroy the industry and there wouldn't be enough sheep to shear and they were burning down shearing sheds and they were doing all sorts of crazy things, right?
+
+Pete Winn [00:42:57]
+Yeah.
+
+Kane [00:43:04]
+But then all it realised was, no, and now we can shear more sheep. So then the farmer said, we'll grow more sheep. Right. And I think that our productivity as it keeps enhancing, we're just gonna go, Well, these things we actually used to value, that's quite embarrassing that we thought they were valuable, but now we can do all of these things really well. And I and what those things are yet, I think we're still trying to identify as we go.
+
+Pete Winn [00:43:27]
+Yeah, I always found it quite interesting in like the software space that there's there's this like really high value placed on somebody learning how to talk like a computer, which is like what software language is. And like it's it really wasn't the like the thing. Like the thing that differ always differentiated a good developer from a like a great developer was just are they focusing on like syntax and how to
+
+Kane [00:43:38]
+Yeah.
+
+Pete Winn [00:43:52]
+Program something like in a particular language and like how to talk the language or are they understanding and solving problems? And then the great one would be like, are they understanding and solving the correct problem? Which is the real trick for most of these things. It's 'cause there's so many you go.
+
+Kane [00:44:00]
+Yeah.
+
+Kane [00:44:06]
+Yeah. I've got a funny qu yeah. I love that question. What is the problem you're actually trying to solve, right? And a lot of the time people throw technology or they throw humans at this challenge, but it's not actually a the problem that needs to be solved. And you come back to even the example of, you know, that not delineating government from corporate. I agree. And I there's a an amazing professor, Richard Werner, is his name, his German professor.
+
+Pete Winn [00:44:34]
+Yeah I
+
+Kane [00:44:35]
+And he has some amazing content around this idea and research on the fact that basically systems like to work with systems of a similar scale. And the challenge that we have, especially in regional Australia, is there used to be this really clear decentralization of leadership because there was no connectivity, right? So if you were in Kalak and it was a horseback ride to Melbourne, well you weren't worried about anyone in Melbourne. Telling you what to do, you took responsibility in Colac to say this is where we need to take our community. Now we're in this space, and I come back to SME. We need, you know, I'm always thinking about how do we decentralize leadership within our own business so that we can, you know, spread that with strength across, you know, a larger, larger sort of space. And this is the, you know,, this complexity, I think, whether it's with the bank, for example, you go to the bank and say, you know, I need a business loan. And I need to, I've got this idea, it's one individual with this huge system. They don't want to deal with you anymore. It's not it's annoying. Why would they want to muck around with me and loan me $500,000 if they can go and do $100 million loan? Right? So then, but who does the hundred million dollar loans? The other very big systems, right? And so now everything's just getting, you know, scaled up into these huge systems. And unfortunately, people at this point now, it's a lot easier to go and work for WorkSafe and get 200 grand a year and pad your time out than it is to have entrepreneurial spirit and go and take a risk. And you know, Andy and Pete, you know, I don't know if you guys are two years into your journey. I've been doing this for ten. And people look at you like you got rocks in your head when you say, I'm gonna go start a business. Don't they? Yeah, you think about how many people slam you along the journey, create doubt
+
+Pete Winn [00:46:00]
+Mm.
+
+Pete Winn [00:46:20]
+Yeah.
+
+Kane [00:46:24]
+You know, and then then like there's this whole sort of sliding, you know, am I being am I having am I believing in myself or am I being dogmatic? Yeah. Is it ego? Is it all these thoughts that go through that journey when people decide, you know, it's much easier to submit and step back into the system. Right. And
+
+Pete Winn [00:46:41]
+Yeah, this is unfortunately not a country that rewards somebody taking a risk on a small business. It's a real shame.
+
+Andy [00:46:42]
+Yeah.
+
+Kane [00:46:47]
+That's right. And you've seen it's so topical lately, but for us as a society, like we need to decentralize that leadership. You know, and Werner's example is he uses community banking in Germany versus corporate banking. And then there's a really clear correlation between entrepreneurial risk taking and small banks, because small banks connect at that, you know, that smaller level, human to human. And if there's a community bank in Colac that's known me since I was five years old, they've seen a thirty year trajectory of my behavior, my delivery, my capacity to build human teams and execute. Well then they're not going to get in the minutiae around the cash flow analysis that doesn't meet the auto checker in the back end, right? So and that's the dilemma is access to capital really is what regional Australia will need. You know, and you think about even, you know, in all forms of
+
+Pete Winn [00:47:37]
+Yeah. And I think a lot of that is just the centralisation, right? Because it's also true that like the local bank in Colac now just it isn't. It's just a branch of something else from Melbourne, right? And so it's not that like previously the local bank would have been like, Okay, we can invest in Colac. Where's the best place to invest in Colac and the surrounds? Whereas now it's just like, all right, we're just plumbing stuff into financial markets. It's ridiculous. Yeah.
+
+Kane [00:47:51]
+W man I love the Yeah. Yeah. Yeah. Yeah. They can't. Well, there's no decision rights. All they're doing is collecting data and pushing up the line for somebody to eventually make a decision and push it back down. And this is the big challenge. It's like if we c and you come back to you guys as the example fighting this fight against Anthropic or Microsoft, like The reality is from a privacy perspective, the best thing that we could do is have completely decentralized AI infrastructure. And all these little small operations that keep each other accountable with their integrity, right? Because they're doing a really good job. So if you don't do a really good job, I'm gonna go to those guys. The reality is the classic sort of that's you know, power hierarchy that we're seeing now is is just destroy all opposition. So even if we suck. We can still get the business. And you use Qantas or Telstra as the example. You ask any Australian, you gotta ring one of those two companies, what do they do? They start headbutting the table because the customer service is so terrible that it makes you want to put it your head through the wall. But then the reality is in your small business, imagine if, like, you know, local Otway Shire, he has a 90-day response time. Imagine if I said to my clients, Thank you, an automated response. Well, I've received your contact. I will contact you in the next ninety business days. We're not gonna last very long, right? So this is where you have this hyper competitiveness in our world in private SME, but then yeah, it's h contrast quite concerning.
+
+Andy [00:49:34]
+You know those those like corporations that like kind of make up the system as we're describing it here? Like th they are inherently reliant on the SME infrastructure in this country as well. Like they just would not survive without it. You know, like a long time ago I worked at some National Australia Bank in in commercial and that they're like a huge percentage of their loan book was not only just SMEs, but actually like home loans within SMEs. Like there's just so much like hyperdependency amongst our like ASX two hundred I if you strip out the mining companies, obviously, but like, yeah, for a lot of these big institutions, they are like ultimately very tethered to the strength and performance of our SME community. So, you know, the system kind of wants those SMEs to continue to function to a degree so that they continue to be extractive. It like enables the system to be extractive. But like
+
+Kane [00:50:13]
+Yeah.
+
+Kane [00:50:24]
+Yeah.
+
+Andy [00:50:28]
+It's like a weird perverted set of incentives that exist. It's it's really it's really quite strange. But like I think the incentive is kind of the bit that we've been circling this whole conversation. We probably like haven't landed all that clearly. But like the reason SMEs benefit I think the most from this is because unlike big corporates and even less so like government, they're actually getting shit done. You know, like their d their like survival is dependent on like what you get shipped this week. You know, like
+
+Kane [00:50:39]
+Mm.
+
+Kane [00:50:57]
+Yeah. Yeah.
+
+Andy [00:50:57]
+If you are spinning the wheels, having conversations and playing like internal politics, like the business doesn't survive. Like it just you know, you won't be here at accounting time. So like that is, I think, the big question for
+
+Kane [00:51:10]
+Well can't even waste times having meetings, mate. Do you know what I mean? It's like it's like just do, you know, and I think I couldn't agree with you. I think you've absolutely nailed it, Andy. And you know, it's funny we had, you know, a larger corporate partner, you know, huge amount of resources, all these things come see us a week or two ago to show us that they're going to solve a problem in two years time with AI. And I said I said,
+
+Andy [00:51:13]
+It's it's hard, yeah. It's it's hard.
+
+Pete Winn [00:51:38]
+I'm not supposed.
+
+Kane [00:51:40]
+I said I'm so proud of you guys for having, you know, the initiative to go down this track. The reality is we've already sold that. We can't wait two years because we're bottlenecking, you know, and this is also like the big gap that nobody talks about for us. So we're helping people. People need help, like in a very simple sense. And we got people dying with cancer, we've got people getting dementia diagnosis, getting divorces, or trying to buy their first home. Or trying to sell their business. Or you know, and in that little micro world of theirs, that e the intensity of that challenge is real. And they need support through that process. And here we are, you know, we're bottlenecked to provide support because of bureaucracy. So we've got to play that game, we've got accept that game for what it is. But if we can solve that, which we're we're on the way to solving, then why wouldn't we be incentivized to solve that, to help more people? Like what a beautiful way to
+
+Andy [00:52:18]
+Mm-hmm.
+
+Andy [00:52:34]
+Mm.
+
+Kane [00:52:37]
+You know, create value. And I think for our SME businesses, and you come back exactly what you're saying, we are forced to lead with value. Because if you do not create value, we're the first ones to get cut. And not by, you know, I guess because it's, you know, right or wrong, but it's sort of like, that consultant line, we can save some money there. Or we could, you know, you know, whatever it is. But we can't cut Telstra. We can't cut Microsoft. We can't cut those guys. And so They don't have to lead with value so much. And that's not necessarily a good thing. And you go back through, you know, I remember reading a philosophical example, Bertrand Russell, down a real little rabbit hole. But yeah, the worst thing that can happen is have monopolies for human outcomes.
+
+Andy [00:53:22]
+Mm-hmm.
+
+Pete Winn [00:53:23]
+Yeah. I mean sorry you got any.
+
+Andy [00:53:26]
+No, I was just gonna say like the it's hard as well when you're just on the treadmill all the time. You know, you're running a small business, you're busy, you've got like like every day throws up a new set of demands. You know, you don't really get the fresh air to kind of come out and think about this stuff, you know, to step out to that 10,000 foot view and go, okay, let me think about what the problems are and how I can solve them. And because you just never really get the time to do it. And it kind of reminds me, you know, like one of the earlier businesses that I had started, the lesson I'd learnt was like.
+
+Kane [00:53:44]
+Yeah.
+
+Andy [00:53:56]
+I was really in the business of selling preventative maintenance. And preventative maintenance isn't an important thing for anybody that's busy, you know, because they will only want to solve the problem once the problem rears its head. And it might be the most valuable thing in the world to them, but it's just not now. And so I'll worry about that in the future. And the problem with the preventative maintenance stuff is it isn't actually a solution to the problem. It's a solution to the problem potentially emerging. So if when you do have the problem, I can't solve it for you, it's too late.
+
+Kane [00:54:04]
+Yeah.
+
+Kane [00:54:11]
+Yeah, yeah.
+
+Kane [00:54:23]
+Mm. Yeah, that's right.
+
+Pete Winn [00:54:26]
+Mm.
+
+Andy [00:54:26]
+So you're in this like no man's land. And I think with a lot of like the way pit people are pitching AI is quite similar. It's like the kind of the promise of a lot of this stuff, you know, even I would lump in privacy and stuff into that discussion too. Like you have to solve a pressing problem for me today that makes me money, that saves me time, that enables me to actually get off this treadmill. If you can't do that, I'm not interested. And I think that's why, you know, people just kind of end up working towards the same set of things they've always known.
+
+Kane [00:54:45]
+Yeah. Yeah. Yeah.
+
+Kane [00:54:53]
+Yeah. A hundred percent. We talked to Gabe but succession with you know Adapt or Lumia and succession thinking, same thing, medium priority, medium risk until someone dies or until someone gets divorced. And is I think financial advice has been in that space at a time as well, because it's sort of like there's money in the bank today, I can pay for my groceries, we'll deal with that next week and then next week and then next week. And now we've just got the macro impact of an aging population declining advisor workforce. So
+
+Andy [00:55:05]
+Hm.
+
+Kane [00:55:23]
+As a from an economic perspective, you know, it's just basic supply and demand. And this but this is the challenge for you guys is the hook needs to solve a problem today and then transition into that preventative nature because you know that's the right thing. You know, it's a bit like privacy. It's not an issue until there's breach. It's too late.
+
+Pete Winn [00:55:41]
+Yeah. I mean there is an element that I maybe want to like circle back to what you said about the big corporate solving a problem in two years. 'Cause I think this is a very real thing as well, where AI really helps is that it can help you solve your problems now, like but the exact problem that you have. And I think we've had this situation in the past where if we if we scroll back like, I don't know, thirty years Like many of the businesses that would have existed wouldn't have had any s any form of software. Like nobody had like Microsoft licenses for everything like thirty years ago. Maybe you had Word or Office or something at best. You know, people weren't really too fussed about computers. Maybe you bought one for yourself and you were playing around with it.
+
+Kane [00:56:16]
+Mm.
+
+Pete Winn [00:56:22]
+We didn't have software for everything. And then we had this period where we moved into this world of what we call like the software as a service world where all of a sudden like every small business has got like a ton of these subscriptions to various softwares. And they could be fifty bucks a month or it could be what you talked about was like twelve grand a month for the right one that you've got. And the purpose of that is you kinda needed it because trying to do the work without the software versus with the software w were two different worlds. There's like a step change there.
+
+Kane [00:56:50]
+Yes. Yeah.
+
+Pete Winn [00:56:51]
+But then the software couldn't be written for you. So what you went from was like a world where all of your workflows and everything that you did was entirely in within your control. You could decide how you were going to do it. It could meet the particular needs of your clients and so on. And then you had to move into this world where it was a little bit Yeah, fifty percent of it we could do with this software and that becomes really quick, and then we'll just work around the edges. And then Yeah, exactly. Everyone buys a soft you'll buy I bet
+
+Kane [00:57:03]
+Yeah.
+
+Kane [00:57:15]
+Mm.
+
+Pete Winn [00:57:21]
+This stuff you pay twelve grand a year for. I bet there's a whole bunch of stuff that you've bolted onto this thing 'cause it just doesn't do it. That's insane, isn't it, when you think about it. Like it's Yeah.
+
+Kane [00:57:22]
+Big time. Well, and that's where well that's what it's why we didn't do Dynamics 365 for that reason, because we're like, well, it's this enterprise level and it's gonna be fifty to sixty percent right. And we can't strip it back. Whereas we went down the power platform route where it started fifty percent right and then we laid it up and it's been amazing. But we couldn't do that in the past. You couldn't get access to that software, you couldn't
+
+Pete Winn [00:57:36]
+Yeah.
+
+Pete Winn [00:57:42]
+Build it up. Yeah. Yeah. And I exactly
+
+Kane [00:57:51]
+Attack it with the resources that you needed, 'cause there's too much capital.
+
+Pete Winn [00:57:53]
+Yeah. And this is where I think like just the idea of having like local engineers like inside like like any SME, never mind like a regional SME, would be insane. You just wouldn't have that opportunity previously. Whereas all of a sudden you have this ability to like okay, things are getting easy enough now that if I understand the problem
+
+Kane [00:58:08]
+No.
+
+Pete Winn [00:58:13]
+And I understand a little bit about like logically how this stuff works and how to put it together, then I can start to build these things that do exactly what I want to do. And that's you know, that is only gonna get easier. I think that's a huge superpower for a lot of these SMEs. Yeah. Yep.
+
+Kane [00:58:27]
+That's the superpower of the SME, man. Like I as the business the way we are now, we could not have done this two years ago, let alone you know, ten years ago or fifteen years ago. And you know, they describe, you know, financial advice like in Australia as this cottage industry. Well, because it's it's had to be. You couldn't synthesize it and bring it all together effectively. And that's where coming back to what you guys are bringing to the table, like it's bigger than you know, just trying to make a bit of cash run an SME. Like it's gonna require people like you having the courage to fight for the ideology over sustained periods to let people know that they can actually do the alternative right. And because and this is the big dilemma with all of this, and the same for succession thinking or anything that's a little bit less conventional. It's like we need choice as a society. And But you need you know, you need courageous actors to c provide choice. And otherwise, before we know it in ten years' time, everything's just gobbled up into these handful of big businesses. Yeah, I it's crazy. I actually AI the other day, I said, NVIDIA, if you combine market cap of the large Australian companies, how many companies or how what how many what's the top X amount of Australian companies?
+
+Pete Winn [00:59:38]
+Yeah.
+
+Pete Winn [00:59:53]
+Yeah, w if we if we put all of Australia into the S&P, like, where would we rank?
+
+Kane [00:59:56]
+What do you think it was, man? If you were to guess.
+
+Pete Winn [01:00:00]
+I don't know if we'd even be top one hundred maybe.
+
+Kane [01:00:03]
+Nvidia is the same size as the top 324 Australian companies combined by market cap. Well, you think about that.
+
+Pete Winn [01:00:08]
+Okay. So if you rolled up if you rolled up like the top let's say all of the Australian companies, what where would we come? I guess we'd get we'd come to NVIDIA, right? If we rolled up the top three hundred.
+
+Kane [01:00:20]
+Well, not e you look at the ASX three hundred, that could absorb into NVIDIA. Theoretically. It's insane. And so you know, you look at Mr. Jensen Huang or how do you sell it? Huang. Yeah. But yeah, like you think of the mercy of the world to him, right? And you know, and you look at you know, whether it's at you know, Claude and Amodei or whatever his name is
+
+Pete Winn [01:00:23]
+Yeah.
+
+Pete Winn [01:00:34]
+Fine.
+
+Kane [01:00:49]
+Like we don't as a s planetary species, there shouldn't be so much power sitting with one individual. Like it's not good. But now you know, it's just not good. It's too risky. Like you think about that key person risk in an SME, well now we've got a global risk, to these to the scale of these institutions. So
+
+Pete Winn [01:00:57]
+Yeah, I agree. Possibly.
+
+Kane [01:01:12]
+Like, but otherwise, like we can only vote with our feet, and that's really any form of dis democracy. And it's like, how do we, you know, ultimately build these less corrupt systems that come in service of humankind? And you know, we talk I've talked a lot with Billy Withers about this over the years, this idea of SME capitalism. Because the reality is if you came to me today and said, Kane, here's your magic pill, it's AI enabled, swallow this and you can eliminate twelve human beings out of your business, your profitability's gonna go through the roof and you can go and get yourself a you know, a beach house in the Bahamas. I wouldn't take the pill. Like why would I want to go and cut the heads off ten of my favorite work brothers and sisters and you know what I mean? Like they're family in in some way. And if they're not family, they're you know, I've played a lot of sport. They're like this really loved professional sportspeople in my side who I know that I've gone into a you know competitive environment, they're gonna fight tooth and nail with me. So for me, it's not about replacing human endeavor. Like it's really how do we use this technology and in a superpower sense enable human endeavor and enable people to tackle bigger problems with courage.
+
+Pete Winn [01:02:28]
+Yeah.
+
+Andy [01:02:29]
+Yeah. Well you kinda touched on this earlier, right? You when you mentioned that you kind of see the technology r ro ending up hiring more people, like businesses using the technology will hire more people. Like I wrote about this last week. I think there's been a few people on podcast talking about this as well. Like if like the bottleneck that continues to exist is judgment and attention, it's like human judgment and attention. Your attention is scarce. Like I mean I find this working with AI as it is, like often
+
+Kane [01:02:54]
+Mm.
+
+Andy [01:02:55]
+When there's some latency, I'll like context-switch into a different project and then like spin that one up and then I'll context-switch into a different project. And like I'll find myself just like basically getting more and more ineffective the more I try to do that. And so then I'll be like, okay, I need to like just park that one off to the side and come back to one or two. And then I'm like, okay, now I'm super efficient on like one or two of these things. That's probably the sweet spot. And then if you throw like loops into the mix as well.
+
+Kane [01:03:15]
+Yeah.
+
+Andy [01:03:24]
+It's just like having these kind of like pipelines running in the background. You're like, okay, there are a set number of points for human judgment that exist here, and I can only be across so many of them at one point in time. And so what we then need is to like add more humans so more humans can throw their attention and their judgment into these like predefined processes and loops.
+
+Kane [01:03:25]
+Yeah.
+
+Andy [01:03:46]
+And so I think, yeah, people once they figure that out are gonna go, okay, well the logical way to go and scale a business now is to be able to just spin up more of these these loops. And so we need more human Yeah, so we need more human judgment. How do we tack how do we how do we tap into that effectively? So yeah, it's like a kind of one eighty of like I think the kind of the it's a it's a yeah, it's odd.
+
+Kane [01:03:55]
+Human-enabled loops. Yeah.
+
+Kane [01:04:05]
+It's a paradox, isn't it? But I well, I use the same artic argument in industry, right? Now you go from a corporate ideology perspective, they're selling this dream that as a financial advisor, we can service three hundred family units, right? Three hundred f so you look at all the data, the science, the research around human connection, it seems to top out about one fifty, right? So if I say I want to have deeper meaningful relationship with my siblings Yeah, my wife and children, there goes 10, 15, 20 spots, right? So then let's say I've got 130 spots left. Yeah, Andy, you don't want to be rolling into the meeting and be going, Andy, yeah, what was your daughter's name again? Yeah, yeah, yeah. You know, that human connection's jaded. Straight away, you know, I don't really know what's going on. And you're not interested in that relationship. So even if the technology enables 300, you know, compliance processes efficiency and report functionality and all these things, I don't think the human that wants to have deep empathetic relationships with their clients and have a meaningful impact on their life will ever have more than 130 to 150 because like you said, human judgment and attention is not scaling in conjunction with AI processing power. And so this is the bottleneck that I see. It's like as an industry for us, we need to be forward investing into more humans to come into the system that then can have that judgment that's required to coach people through really complex periods of their life. And that's the gap is that people, you know, when you come back to incentive and you show, you show us the incentive, we'll see the behavior. We continue to reward whether it's politicians or, you know, corporatized employees on short term incentives.
+
+Pete Winn [01:05:37]
+Yeah.
+
+Kane [01:05:55]
+Right. And you hit this quarterly bonus, hit this monthly sales target, or you get voted in at this election, you're gonna get a period. And ultimately when you break down the company, like you touched on earlier, it's just a network of humans and you break it down in the individual. Every individual's got a partner or a spouse or an individual self that they really just want to put a roof over their head, put food on the table, try and be sort of s semi fit and healthy and have some human connections, right? And so that's the big challenge that we have. It's like as humans. How do we compensate for the life that we actually want to live? And you come back to an SME and another superpower is a return on vision mindset. And I've continually fought invested in people that go against and it goes against the grain because on a short term incentive, it's insane. If I was working at a corporate, I'd be missing out on my bonus because I've taken six years to get wonderful humans through their qualification requirements to now be in actioned as an advisor. And so Now I know of friends who are working corporate environments they're not allowed to employ young talent because it's going to impact their EBIT. But eventually they can't grow because there's no talent that's come through the pathway. So for us, if we sort of keep this above the line idea, you know, for us it sort of consolidates down into this value of grow by good. If we employ good people that just want to do good things and help good people and have good incentives with how they go about it, we'll grow.
+
+Pete Winn [01:07:01]
+Mm-hmm.
+
+Kane [01:07:24]
+And if we get compromised on our good, well we won't grow because people won't refer people to you because the experience wasn't good. It's very simple, but it's an effective way I think to think about it that if you lead with value and just do good things, then ultimately everyone wins.
+
+Pete Winn [01:07:31]
+Mm.
+
+Pete Winn [01:07:38]
+So I think there's something like really interesting in this where like there's this real discourse, like it's all over the place. I think it's just part of modern society at the moment, but it certainly in the AI space that like doing the same work faster is just a net good and it almost has no ill effect at the end of it. It's just like I could produce one, now I can produce a hundred, and therefore everything stays the same and I just have all this extra time and a bit. To do stuff where can sell just as much stuff. But it kind of it's like the corporate example you have, right? Like, which is that like, you know, if I'm managing 300 people's financial advice, I can only give so much attention to that matter, versus if I've got 10, I can really pay attention to it. But you almost assume it's the same outcome of saying, well, this person manages 300 and nobody changes buying behavior and they continue to manage 300 and this person only manages 10. It's like, no, this person is always going to have 10 people that really value that.
+
+Kane [01:08:29]
+Yeah.
+
+Pete Winn [01:08:35]
+And they kind of ignore the value that's created at the other end of the like who's buying this, which is that like, yeah, this I'm getting managed by this guy. Now he's got all these tools and he's got three hundred of them and he gets paid less and there's less people around. And so they've reduced their costs. But the service quality is bullshit and I just don't want to go anymore. It's like it's like so it's not like it even just goes it just stops. It's like everybody just goes, nah, this is shit and just leaves and they go to people that will
+
+Kane [01:08:54]
+So
+
+Kane [01:09:00]
+Yeah.
+
+Pete Winn [01:09:03]
+Provide service. So I think you know, I do it would imply that there's gonna be some change in buying behaviour in some of this stuff, which is is hard to forecast, I think. But I would expect people might start going for I mean, we've me and Andy talked about this a bit with the podcast where we say, should we be, you know, YOLOing like AI slop into the world to try and drive up subscriber numbers and we said, No, we're just gonna have like authentic conversations 'cause we think that's gonna
+
+Kane [01:09:04]
+Hundred percent. Yeah.
+
+Kane [01:09:18]
+Mm.
+
+Kane [01:09:29]
+No. Authenticity. That's right. Cause it's gonna connect with the humans. And ultimately you guys and we all wanna connect with the decision-rights holder, which ultimately is human on the other side of it. And you can have the best solution and to any sort of challenge, but ultim you know, who do you know is all you know, realistically where the deal comes from a lot of the time. And I think, yeah, the more AI sloppy the world gets, that's the
+
+Pete Winn [01:09:33]
+Carrie.
+
+Kane [01:09:56]
+Bigger the opportunity becomes for authenticity to cut through. And human word of mouth, I think, is a superpower. And you see that, you know, discounted quite live, you know, people just, yeah, that don't worry about that. Like focus on your social media, LinkedIn marketing s whatever. Like our offices, we don't even have signage. Like it's irrelevant. We don't have social media. It's irrelevant. Because our clients refer clients because of the good that we're trying to bring to them. And I think any service provider, you need to lead if you know, because your your best clients, your clients become friends, friends become clients. Like it's this sort of virtuous loop that you'll just continue to see. You do a really good job for someone, they tell people. And the people they tell are the people that they like who who are more than likely, if it's a business owner, they're friends with other business owners because they've got that sense of connection and alignment. And so I think for all of us, if we keep tripling down on from an SME perspective, human service and human connection, then that will pull you forward through the AI slop that's gonna feed the world. Like yeah, yeah. Okay.
+
+Pete Winn [01:11:02]
+Yeah. And I always think as well, like 'cause AI slop is this big meme these days, but like it almost like it's it's h y I feel like there's a bit of nuance there that needs to be pulled apart and I feel like the slop is when there's literally no care and attention paid to the outcomes of what you're trying to do. Like I don't think something is sloppy because you use AI. I think when you use AI with just no care and attention, then the thing that comes out of it does feel
+
+Kane [01:11:29]
+Yeah. Yeah.
+
+Pete Winn [01:11:32]
+Like slop because there's been no care and attention. Like you could almost do ninety percent of the thing using AI and it could still come out feeling very good because there's been some involvement in there. It does solve a problem that somebody had. It's not just there for their sake, you know. It's
+
+Kane [01:11:33]
+Yeah. Yeah.
+
+Kane [01:11:48]
+Well, that's why I love what Andy said. I think I really find it difficult to focus on the AI output, if that makes sense. Like I don't go to AI and be like, hey, give me an idea. Like I don't need it to do that. Like, I don't need to talk to it about my feelings. And this is just me. I like to go to AI with a refined idea and then say, What do you think of this? Tell me things that I haven't thought of. And that's where I've found it a real, you know, that sort of J curve in productivity enhancement. I've you know, with every sort of example that I've come across, if you give it a human input, it's a much better AI output in my in my perspective, versus just you know, the challenge with the loops, these iterative loops is that yeah, like there's our human capacity, like our bullshit radar for AI ness is incredibly good.
+
+Pete Winn [01:12:43]
+Mm-hmm.
+
+Kane [01:12:46]
+And so over time, either people are gonna become desensitized just to the deluge of AI slop or they're gonna go the other way and be repulsed by it. So I think for us, we're very, very mindful with everything that we do. We don't want anything that's AI generated. Because it's like I'd rather be wrong and human than right and AI.
+
+Pete Winn [01:13:02]
+I think
+
+Pete Winn [01:13:05]
+Yeah. I feel like the bit for me is that what 'cause even when I try and solve my own problems and I might spend like a bit of time trying to explain to the AI what the problem is. But then if I just let it do everything hands off and it you know, like say I run some in the background for four hours and I come back to it, it's almost inevitably always wrong. And I kinda I've said a few times, I think this is an unsolvable problem, which is that it's wrong because you don't yet know exactly what your problem is and what your solution is. And the only way you find that out is by going through the process of doing the thing. And trying it a few times and iterating. So you have to be involved in the thing. And when I see people just creating a lot of stuff, you see all this stuff, it's like, yeah, you've kind of you have created a like what looks like the equivalent of zero or like a big SaaS company. But
+
+Kane [01:13:41]
+Yeah, yeah, yeah. Yeah. Yeah.
+
+Kane [01:13:51]
+Yeah.
+
+Kane [01:13:59]
+Mm. Yeah.
+
+Pete Winn [01:14:01]
+The problem those big SaaS companies is they were always shit and didn't solve a problem. So now we've just got more versions of the same shit that doesn't solve a problem and we're still missing the thing that actually solves the fucking problem that I have. And like that's that's where I see that difference between it's the same in like content that you might see online and stuff like that as well. It's like I don't we already had enough bullshit zombie human slop.
+
+Kane [01:14:09]
+Mm. Mm. Yeah. Yeah.
+
+Kane [01:14:19]
+Yeah. Yeah.
+
+Pete Winn [01:14:25]
+That went into LinkedIn, for instance. Like I don't need more of this. This is not something that I needed in my life. I want something that's actually authentic and meaningful to me. It solves a problem or speaks to me somehow.
+
+Kane [01:14:25]
+Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Well and you
+
+Kane [01:14:36]
+Yeah. And that the value is going on the journey with everything. Cause if you're a human with a growth mindset, you need failure and feedback loops to get better. And I so for me within an SME come another superpower moment is I think, you know, the ability, I always say shoot a bullet before you get the bazooka out. You know, do a little micro split test example. Did it yeah, that's interesting. That worked. The client connected with that, they did or didn't. This process did or didn't work. Cool. Let's go down that rabbit hole a little bit further. We'll shoot another bullet. Yeah, there's value. Let's shoot another bullet. And then you get this, yeah, you lock the sights in, then you can get the bazooka out and blow it away. But I don't I think that's the big c you know, come back to what I couldn't imagine worse is if you had so much bureaucracy in your system. You know, I want to shoot this bullet. No, you're not, son. Yeah, you've got to go through the approval process and the you know. The board's gonna meet at the end of the month. So just table your ticket. Yeah. I couldn't imagine it the worst. And so this is where now like there's this traditional breakdown of just compute where you guys in the past would have needed, you know, huge developers like, you know, huge cash flow to fund the human developers required to bring your ideas to life. Now you can do that. But then there's also the delivery and the conviction and the human side of it. You guys could build the sexiest app of all time, but you then need to connect human to human to pitch it either to potential investors or to, you know, clients or to whoever. And so if you haven't gone through the process of actually defining the problem, failing, iterating, working it out, I think it's very hard for you then to convey it with conviction.
+
+Pete Winn [01:16:21]
+That seems fine.
+
+Andy [01:16:22]
+Yeah. You know, like on the slop point, I feel like a lot of the slot is actually coming from like AI influences on all the platforms. Like this is this is like the biggest it's the biggest challenge, I think, because like that is also polluting what people expect to get from AI or what they should be getting from AI or how they should be thinking about AI. And it's like they're just being bombarded from so many different like bullshit positions, like usually from people that are clearly never used it meaningfully.
+
+Kane [01:16:29]
+Yeah. Ugh, the network marketing, yeah.
+
+Kane [01:16:50]
+Yeah. Yeah.
+
+Andy [01:16:51]
+And it's just so sad to see it 'cause I think it also just gets a bad rap. Like
+
+Kane [01:16:56]
+Yeah. Well, and that's the thing, like, yeah, I've been approached with the idea, for example, let's build a founder led brand with you and you're gonna do this, this, this, and this. So, okay, well, you know, how would that work? And they step you through and we'll get you a million impressions or two million impressions, yeah. But then, well, what's your what's your pipeline looking like? How have you got much work? No, I'm on the hunt, man, I need work. So it's like, well, if you've had two million impressions and that hasn't translated back to a pipeline, what's the point? You know? And I've got the opposite option. Our pipeline is absolutely jammed full of work. Why would I want to waste time, you know, s recording selfies to create impressions that go nowhere? You know? So it doesn't make sense. And you come back, what's the problem you're actually trying to solve? I love this idea of a theory of constraints. What is a constraint in your business? Focus on that. That's all I just what's that constraint? Throughput, cool. You know, and you come back to these pillars for our business, it's for us technology and brand and then human connection. Our constraint for a long time's been technology. We just couldn't efficiently process the work that we're bringing in. So the last thing I was gonna do is focus on branding and generate more inquiry into a system that couldn't handle the workload. So we've been locked in, locked in, locked in.
+
+Andy [01:17:52]
+Yeah.
+
+Kane [01:18:19]
+Now we're at point where operationally we can get through the works and now all in brand. How do we build brand? Yeah, and then ultimately keep filtering all the decisions through that process back to this need that it has to enhance human connection. And that's our filter. If this decision might make us more efficient, but it's going to impact human connection, kill it. Stay hyper focused on the one thing that I think is really going to have sustainability into the future.
+
+Andy [01:18:32]
+Yeah.
+
+Kane [01:18:47]
+Is that human component. And I love this idea. I hadn't thought of it. Yeah, human judgment, human inference. How do we think about what the limitations of that are? Because we couldn't hit those limitations in the past. Now we can.
+
+Andy [01:19:01]
+Yeah. It's also just more fun, you know? Like it's like you know, like our time is like really limited. So like we like that there's like no real upside to like, you know, the dance on TikTok to try and get two million impressions in the hope that you sell a product online to people that you don't know. But there's huge upside to having the relationships in and around your local community and like like it's the rising tide. If you can help all the boats.
+
+Kane [01:19:03]
+Yeah.
+
+Andy [01:19:29]
+You know, that seems like it would be like a really good use of your time and your existence.
+
+Kane [01:19:29]
+Big time.
+
+Kane [01:19:34]
+Yeah. Yeah. Well how the
+
+Pete Winn [01:19:36]
+Kind of interesting on the social media point that like I have so I would probably consume social media in one of two ways. Like one was the traditional like Twitter LinkedIn type thing where there's a company that has sells advertising and therefore needs to keep eyes on screens and that feeds me an awful lot of slop. And then I also have like accounts on Nostr which is like a almost more of like a peer-to-peer type social networking thing. It also does a lot of other cool stuff that I quite like. But on there, I only see people from I only see things from people I've actively followed and engaged with. And I can run algorithms on it if I want, but again it would be stuff I choose. But it just doesn't feed me slop in the same way. Because if somebody's just started slopping into my feed, I just get rid of them. And it's now no longer a problem. And but nobody seems to feel the need because it doesn't pay off in the same way. Whereas I think it's just literally the problem with these, again, like massive corporate social
+
+Kane [01:20:21]
+Yeah, yeah.
+
+Kane [01:20:25]
+Yeah. Yeah. Yeah.
+
+Pete Winn [01:20:33]
+Media things is that th they're just they're almost there as like I don't know tastemaking and points of control at this point in time, I think, where it's like this is what it needs to say, so slop it out. But it's been the same for ten years. Like it's not like slop on social media platforms is brand new. Yeah. Mm.
+
+Kane [01:20:41]
+Yeah. And I've had some yeah.
+
+Kane [01:20:50]
+No. I've gone the other way. I've just deleted all apps like over the last sort of twelve months and because you know, coming back to the
+
+Andy [01:21:06]
+Mm-hmm.
+
+Kane [01:21:09]
+Sorry. Yeah. So you come back to what we just talked about there with yeah, for me, what's more valuable than my attention in my own life right now? You know, and so I've that's led to you know, I've deleted the apps, really limited what can take up my bandwidth. And you know, I've got enough things to think about as it is. And you asked my wife, I'm still off with the fairies thinking about all this other shit. The last thing I need is a bit of doom scrolling on top of it, and so
+
+Andy [01:21:10]
+Mm.
+
+Andy [01:21:36]
+Mm.
+
+Pete Winn [01:21:37]
+Mm.
+
+Kane [01:21:38]
+Yeah, I think the superpower now at a human level for me is to read. Yeah, if you can read, reflect, you know, slow down. And I think, you know, content or even podcasts or there's a risk that they just become this sort of dopamine sensory experience where, you know, I can tap into it and kind of distract myself for a period.
+
+Pete Winn [01:22:03]
+This is that pipeline filling up there with the phone calls coming.
+
+Kane [01:22:10]
+Yeah, I you know, this is the thing. I'm sure Andy, you guys Pete, you guys stop and critically think about the world. You're trying to think about what I want to be and who I you know, where I want to go with this and what does success look like? And it's not extra zeros in your bank account. It's your capacity, you know, to I think have a meaningful, well
+
+Andy [01:22:17]
+Yeah.
+
+Kane [01:22:39]
+Sense of self-worth, right? And how and ultimately everything I've read, learned, explored, you know, you don't get much self worth by being obsessed with self. It's by helping other people and looking externally and coming in service of, you know, the people around you. And that's something I come back to a superpower of living regionally. The social contracts that we have are something to be super proud of and not be embarrassed by. Yeah, you can't get away with a shit job out here. That's beautiful.
+
+Pete Winn [01:23:09]
+Hm. I think that's a good thing.
+
+Kane [01:23:12]
+Sorry.
+
+Andy [01:23:16]
+That's that sounds like it's a great place to wrap, by the way, 'cause it's a nice positive note to end on.
+
+Kane [01:23:19]
+Yeah. Yeah. Yeah, yeah, I love it.
+
+Pete Winn [01:23:22]
+Yeah you go, you can give out all those phone calls. That's the pipeline, just dialing in. It's just proof point.
+
+Kane [01:23:27]
+I know. Yeah. No, no. Hopefully there's value in it, boys. It gets me fired up. But yeah, I think I in all seriousness too, I want to connect you in with my mate Daniel because I'm curious. Like if we can fight the fight in a sustainable way and do things like that, then I'm always yeah, wanna learn.
+
+Pete Winn [01:23:48]
+Let's do it. We help give you more control and privacy. All right, mate. Well that's The Good Stuff.
+
+Andy [01:23:49]
+Nice one.
+
+Kane [01:23:52]
+That's all right. Yeah, good stuff.

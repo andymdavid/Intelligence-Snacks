@@ -1,0 +1,524 @@
+Pete [00:01]
+All right, welcome to Intelligent Snacks episode 75.
+
+Andy [00:06]
+Damn.
+
+Pete [00:06]
+No faces this week because we decided to just go back to the beach. It's really nice.
+
+Andy [00:12]
+It's been nice weather. We had an opportunity. We need to come back.
+
+Pete [00:15]
+Yep. Which, and it's got that spring vibe where some days it's just basically summer. You're on a perfect temperature and some days you're just a little bit unsure if you're going to get rained on. That's the weather update.
+
+Andy [00:27]
+Plus a healthy dose of hay fever. It's jolly good.
+
+Pete [00:30]
+Yeah, so I had awful hay fever when I first moved here.
+
+Andy [00:33]
+Oh, you're over it?
+
+Pete [00:34]
+For like the first year or so, and then it just seemed to dissipate. Yeah, I don't know why specifically.
+
+Andy [00:41]
+It can be bad, like Perth is one of these places in the world that seemingly can be bad if you suffer with hay fever.
+
+Pete [00:47]
+I mean, I would assume just moving halfway around the planet, you just get a completely different sort of plants and pollen and stuff, and maybe it just needed a minute to get used to it. But yeah, the first year I was here was awful. And then these days seem okay.
+
+Andy [01:02]
+There you go.
+
+Pete [01:03]
+So maybe I had just enough local honey or whatever the old wives tale is.
+
+Andy [01:08]
+That's it. That's bound to be useful. It's been a slowish week in AI think, right?
+
+Pete [01:14]
+That's nice.
+
+Andy [01:15]
+For once. I kind of feel like there weren't too many big announcements or breakthroughs. Or maybe I just wasn't paying attention to it, which I think was probably also partially true. I did see one thing that I commented on. During the week, which was this launch of Gryphon. Did you see this? It was the first human interaction model. And they claimed that it was the first model to pass the video Turing test. Yes,
+
+Pete [01:38]
+I did see that. I don't mean I watched it though.
+
+Andy [01:42]
+I had a quick look, to be fair. My first, I mean, I had two thoughts near on simultaneously, which was, oh, that would be quite cool if I wanted a personal infinitely patient tutor. That would be quite nice. I might finally learn how to speak French.
+
+Pete [01:57]
+Okay, just having someone to look at as well.
+
+Andy [01:59]
+But to look at, yeah, yeah, because it will, I think the nuance there was that it can respond to you. It's watching you and can see like how you might react or respond to something. So I thought that was quite an interesting development. And my mind immediately went to having personal tuition. I think in certain cases that would be quite useful, not in all, but certainly if I'm learning a language and you want someone to talk to, that would be quite useful. And then my immediate second thought was like, oh, this is gonna steal my dad's banking passwords. It just felt like this was a tool for scammers.
+
+Pete [02:32]
+Yeah, I'm sure, yeah. And it would be like, oh, here's your wife asking for the password again, Like, oh, here's your son being kidnapped and tortured. Like, there's so many ways that this could just go really, really horribly. But, I mean, I would guess that you end up with everybody just becoming like way less trusting in video all of a sudden.
+
+Andy [02:53]
+So I imagine that's the case anyway, to some degree. I mean, so much of our internet is playing out as the dead internet theory these days. Hmm.
+
+Pete [03:05]
+I don't think it's too bad as long as it still exists. Like I think there'll always be like a free internet for doing stuff that you need to do. I think a lot of the, I don't know if it's like the dead internet, like it's, the stuff that shit is gonna be shit. You know what I mean? Like, you think about No Solutions with Friend of the Pod, Gigi, and Pablo, and they would talk about how in Nostr there's no global. So Nostr being a social network for the, you know, friends of the pod out there. Probably know about it, bang on about it all the time. But it has no, like, global state to it. There's no, like, one feed that you would go into. So you don't necessarily see a person's thing just because it's going viral.
+
+Pete [03:51]
+And what it tells you is that, yeah, it's really good for connecting over the internet with a group of people that you want to talk to. It works really nicely. It doesn't work really well for having one person with a massive megaphone shouting to everybody. But one of those things is good, and the other one is kind of anti-social and a bit terrible. It's good for marketing purposes, and I understand why people want to have big audiences on social media, but it's like it's just not that cool from a mental health point of view and all the rest of it and I kind of wonder whether this is good maybe this is good for us that we we discover that this notion of the internet as being this like one place where everybody is that then is great scammers because we just it's just full of AI bots we end up just connecting more via the internet with people but just people that we've verified sort of like in person and through other means and webs of trust and stuff like that like which I think would probably be pretty pretty good yeah I can imagine that being a nice outcome it's optimal it's optimal but I don't know if
+
+Andy [05:06]
+Necessarily for everyone and that's fine too it's fine yeah it's um if we do what they want yeah I mean partly why I say dead internet theory is I mean certainly if you're on um things like Instagram and TikTok which I have like a fairly dim view on anyway I I think it's already playing out like yeah at great scale at great mass like when people talk about ai slurp I'm always kind like well have you seen what's on most of our social media platforms kind of already exists whether it's created by humans or bots is kind of immaterial if people want to consume it they will consume it and seemingly people do want to consume it so there's a market for it but yeah well that too yeah that's it oh yeah I mean people do love spending time on on TikTok and racking up many viewing hours every day on this stuff.
+
+Pete [06:03]
+I presume so.
+
+Andy [06:05]
+It is a thing.
+
+Pete [06:06]
+Yeah.
+
+Andy [06:06]
+Yeah, which is a shame. But it is interesting to see this stuff play out. And as you say, there is also time and a place for it, particularly if you need the megaphone, which sometimes you do.
+
+Pete [06:16]
+Well, the other aspect of this is that I hadn't thought about this when I was saying that, you know, where might we go a minute ago. But you have seen like a pullback to the group chat. Yeah. Like so much more internet communication is actually not done on social media platforms. It's actually just done directly in group chats and big group chats and different mediated forums where if you go in and you just start getting pasted AI slop constantly, you just get booted. And that kind of like moderated private groups that exist everywhere. So I think you do kind of see it in both ways, right? Like there's definitely people doing more just slop into the public internet, but then there's this kind of more permissioned group-based local thing going on for people which maybe has high-quality content. And I would think most people, even the TikTok subscribers sort of thing, like they're still in the group chats as well.
+
+Pete [07:15]
+So it's not necessarily like a zero and a one there to see where they go. Yeah, like you can definitely kick out a lot of slop and take advantage of stuff with that.
+
+Andy [07:28]
+Yeah, I think this is where I've sometimes been, not critical, but I've drawn a line with this theory or this notion that like AI will just enable people to do whatever they want. And I've always kind of felt like this is going to benefit high agency people. There are already people who prefer to consume and they'll continue to just consume. And AI will be great for consumption. It already is. And will just amplify the amount of shit you can consume. So to that end, yeah, it's not necessarily going to be a case of everyone just turning the tools to their own personal productivity, I suspect. Some people are just not productive. And that is just what it is. And so there is like maybe just a barbell way of viewing this stuff. But yeah, I think you're right about the group chats.
+
+Andy [08:19]
+I think that is definitely something. I mean, that and real life IRL experiences. I'm big on like the analog experience coming back for a lot of people and optimizing that. No phones in venues and things like that. I think that would be an interesting thing to see the rebirth of. Because it kind of was what happened when we were growing up, you know, like even for me, like in my early 20s. Phone really couldn't do that much. I could text and I could call.
+
+Pete [08:47]
+Yeah.
+
+Andy [08:47]
+You know, so having it on me was, it was just pure utility. I wasn't filming everything or recording everything that someone was saying in a small catch up, you know? Everything wasn't being televised and broadcast. So I think that would be quite nice to just kind of return to that to some degree and just have these like IRL spaces where people can just come and talk and share their opinions but none of it's being captured and broadcast. And I suspect we'll see more of it.
+
+Pete [09:16]
+Yeah, I hope so. Again, I agree. I think that would be good. Yeah.
+
+Andy [09:22]
+So a light week on AI updates. I did-
+
+Pete [09:26]
+Internet's still dead, but hopefully there's some light.
+
+Andy [09:28]
+I feel like our corner of the internet is vibrant enough. I'm happy enough with it.
+
+Pete [09:33]
+I think that's it. I think everybody will find their own little bits of the internet that work for them. It's what matters more is that you can connect to people, not necessarily that you are connected to everyone.
+
+Andy [09:43]
+That's it.
+
+Pete [09:43]
+'Cause that's a little bit unnatural.
+
+Andy [09:46]
+Yeah, that's way too difficult. It sounds like a nightmare. So I released Sally this week.
+
+Pete [09:52]
+Okay.
+
+Andy [09:53]
+Sally is my, speaking of social media, I think this is a lovely little segue from the social media chat. Now I can tweet without going onto Twitter, or X, or whatever you wanna call it. 'Cause I had this sense of, I had something I wanted to tweet, and I was doing some work, and I was like, I'll come back to it later.
+
+Pete [10:13]
+Yep.
+
+Andy [10:14]
+And want to ruin the flow. And then about five hours later, I was like, something I was gonna post, I can't remember what it was. And it never came back to me. And I was like, well, obviously it's not that important 'cause I can't remember it. But I thought, wouldn't it be good if I could just dispatch tweets while I'm working mid-flow, just straight from something on my screen that just pops up. And then off it goes, and I never actually need to go on X and start getting distracted by the feed and what everyone's saying and get drawn into this debate over here and like this plague over there. And it's, yeah, I kind of, I pick my moments 'cause there are times I definitely like going on and consuming, but I don't want to be going on every like 10 minutes, every half an hour.
+
+Pete [10:57]
+Yeah.
+
+Andy [10:59]
+So yeah, I built a little notch app. So it appears under the notch. I can just go and like hover over that space on my MacBook. It'll drop down and start typing in my tweet and then it will schedule and then fire out. Or I can send it immediately, but I can schedule it if I want. And that's been quite good. And it just uses like my X plugin. I'd started using Bird as like a, as a, as a bridge for this. And then, yep, that got like blocked basically straight away. I think I'd managed two tweets from it. And then it, it was basically blocked as bot activity. So I couldn't use it. But I could just use the X login via like invisible browser. So it will connect to the notch app via an invisible browser.
+
+Andy [11:45]
+And then we'll go and essentially use X on my computer to go and schedule a tweet or a hit post, but I just don't see it. And I feel like that actually is much cleaner and much more stable. And cause Bird did have some, like, I don't know if I would, it was difficult to use in some ways because it's not supported anymore. And kind of have to finagle it to get it to do what you want it to do.
+
+Pete [12:11]
+Yeah, okay.
+
+Andy [12:13]
+So, Sally. And aptly named Sally, because obviously you can, a Sally is to move out from a protected space. It's like a deliberate movement. And like you might Sally out from your castle to go and break a siege. And then, yeah, so I can tweet Sally out onto Twitter without actually ever going out there. Sally does it for me, comes back to the safety of the notch on my MacBook. So it's a handy little tool. It's got me thinking about other little things I could build into that, which would be quite handy. Little like Pomodoro timers and things like that. But I didn't want to pollute it too much. It serves its purpose right now. Should lead potentially to more thoughts on X, more screaming into the void.
+
+Pete [13:00]
+It's probably a good call. I mean, there's also like probably a bit of a muscle to use to just remember to start getting it out there.
+
+Andy [13:09]
+Yeah.
+
+Pete [13:10]
+But at least it means that when you do that, you don't get distracted with everything. So you're more likely to push the thing.
+
+Andy [13:16]
+Yeah, I mean, that was definitely the challenge for the most part. I don't know if you've got this, but I've got like a full draft section in my Twitter. Like if I go into posts and I go to drafts, there's like a long list of shit that I've just never posted. Because I'd start typing something in there and then for whatever reason, just not, either not finished it or not.
+
+Pete [13:38]
+I don't think I have any saved drafts.
+
+Andy [13:39]
+Do you not?
+
+Pete [13:40]
+There might be some like from a long time ago, but for the most part, I don't care too much.
+
+Andy [13:45]
+Yeah.
+
+Pete [13:45]
+I kind of know Twitter's a good place to hide my thoughts. That's true too,
+
+Andy [13:48]
+Yeah. So there was that. And also I think there's some like content recycling, you know, like when we do put some stuff out there, it's useful to just have it rescheduled, going out at different times, different time zones, rather than just posting once and hoping for the best.
+
+Pete [14:04]
+Because most people don't see it. Yeah, like I said before, that's something I'd done on FactController for my Nostr posting when I was testing that out, is I would write something and I'd go, okay, we'll just send it out like three times at eight hour increments. So you just hit the same time in each time zone broadly as you go along. You're like, all right, that's good. And you would see just completely different people would reply to different things. Particularly in Nostr where there's no sort of algorithm. That's all right. But you could also just repost the post.
+
+Andy [14:35]
+Yeah.
+
+Pete [14:36]
+You know, you can sign it and then just send it again. That's kind of its own thing, but yeah. I mean, I think stuff like that is useful. I say it's just useful just to not be stuck in social media.
+
+Andy [14:52]
+Well, it's just more like owning the time as well. Cause I feel like if there's a gap, the tendency is like, let's see what's happening out in the world. And you just go straight to X and you're like, I don't need to be, I don't need to be here right now.
+
+Pete [15:05]
+Yeah.
+
+Andy [15:05]
+I could be doing something more productive. I could be doing nothing and that might actually be more productive. So yeah, that was part of the, I wanted to be more deliberate with my social media usage in general. I mean, I'm pretty good on most social media to be honest. I think it's mostly Twitter that I tend to like to spend time on. I don't really feel like I spend any time anywhere else, except maybe YouTube, but YouTube's like, that's fine.
+
+Pete [15:33]
+Yeah,
+
+Andy [15:33]
+It's usually on in the backgrounds. So, yeah, that was a little release this week. I'm trying to just get more little project releases, kind of similar to what you guys were doing in Sovereign Engineering. Drink. Yeah, there you go. And usually it's you saying it.
+
+Pete [15:50]
+There's dead man drinking.
+
+Andy [15:51]
+It's very rare for me to be invoking the drinking game. There you go.
+
+Pete [15:56]
+No it's a good muscle to exercise I think the shipping muscle.
+
+Andy [16:01]
+Yeah.
+
+Pete [16:02]
+Finish something and getting it out. It does also just like enable more
+
+Andy [16:07]
+Ideas to emerge.
+
+Pete [16:09]
+Yeah. So I feel like I've got very good at shipping to myself and then the bit that probably needs an extra push is getting stuff shipped and usable by others and trying to build like some of the infrastructure around that so the agents can fill it in for me. So I now do have agents pushing nightly builds with my wingman app up to TestFlight, sorry, it's what it's called. Flight Deck is my thing. And Zap Store. So now I'm gonna have daily builds on there, nightly builds on there, if everything's changed during the day so then the apps don't get too far back. It updates all the Flight Deck stuff in there, which is good. I thought, yeah, if I can just tighten some of these loops around the bits of the process that are a little bit painful. So like, you know, all the towers are getting updated, all the autopilots are getting updated and they track like what I'm doing.
+
+Andy [17:05]
+Yeah.
+
+Pete [17:05]
+I think that, that would be good. Like looking at different, different ways of managing the process. So one of the things that was big on X this week was the little spat that was going on between Potato from SpaceX. She joined Cursor and now obviously at SpaceX, so she does the SpaceX AI stuff. She had a big thing about her, which you call it P-Stack. That's what we do is we have a letter and then a stack for working with AI. Hers was like sets of skills and various different CLIs and stuff that she used. She did this whole talk about shipping, I think it was 2,500 PRs a month, that's more like that into Grokbot. She's one of the engineers behind that. We're talking about like, well, how do you set up that system so that you can operate with like a decent level of like high trust around what you're doing?
+
+Pete [17:59]
+And she did like a walkthrough with a guy called Matt Pocock, who's another guy that does a lot of skill work. Yeah, there's old TypeScript guy. It's TypeScript, sorry. And that was a pretty good interview I listened to the other day. And I was like, you know what, maybe I'll dig into this a little bit and just revisit again parts of my process. And look at how much am I having to push through this and how can I get better documentation and just representations of what's going on so I can more adequately say, no, change this, but change it here in the documentation. I was just playing around a lot with... So I've got this app called Rick's Artifacts, which is like a container for whatever. So it'll just highlight different HTML pages. But if you have HTML and JavaScript, you can kind of host almost anything in there.
+
+Pete [18:56]
+So it's got a little navigation, and it does Nostr authentication and sign-ins and stuff, like share with them all the sort of gubbins. But it means I can like just build like little apps in there and just test stuff out and see how it works So one of them I did was I was trying to write a letter like a couple of something You know the other day and I had like originally I started off with a version and I wanted to edit I kind of want to write three separate versions and then come back to one and then go again to two and like try all these different things and see which ones I like And so I just made like a little editor that you just like there's a letter on the screen and I can I can edit it I can check photos in there and whatever and then the agent can read it can generate new ones it can add new versions It can take versions away and we just version up and I can comment on anything in the screen I was like all right That works.
+
+Pete [19:51]
+It was pretty good And that was like one another way of like me interfacing with the AI where it's like yeah I wouldn't do this inside like the flight deck docs because they're kind of persistent docs this is a I care about this document for the sake of the next like half hour two hours or whatever that I'm working on it but then I kind of don't care it can go away so I wanted like a way of dealing with that and then I looked at like some of like the documentation of the the application and stuff and I was like yeah I mean you could do it in docs but it might be nice to I saw there's a guy 0xcera on Twitter who does a lot of like local inference work and home GPUs and stuff like this and he was talking about like these I'm getting really into like writing out these flow diagrams and I was like that's that's what I want is it's just that mixture of like what are the components like what's the state change like what's the link and the action that happens and like how does this describe like a particular workflow so you know going for in um say wingman you know when I send a chat message it actually involves like three different systems and components and things that are going on in there so like you know you write the chat on the flight deck but then that signs a Nostr message which then gets sent over to your tower. Your tower verifies that you are who you say you are and that you have access inside this group in this tower and so it'll only accept valid messages, make sure it's flagged that yes, this is Pete Wynn, we've checked the signature.
+
+Pete [21:28]
+Then it'll emit that and then that gets picked up by your autopilots via like WebSocket interface. So grab the new one again autopilot will say okay who's this person? Oh it's Pete's npub, right is the signature valid? Is it a valid request? Yes, it's a valid request so again like nobody else can impersonate me and get my bots to do stuff unless it's signed with my npub and I was like this is like it's it's kind of a little bit painful to document all this stuff but this would make a good sort of flow diagram of like how these common components work and I was like could I so I got I got rick to build me out like just a little I said just draw this out for me like this using these tools and I was like cool that works and and it's going, I want to change this, but I can't.
+
+Pete [22:13]
+So give me a version of this. What libraries are available that we could just represent this in JavaScript? I throw it up on the screen and I can change it and move it around and you can just review the changes and the diffs. And it's like, oh, yeah, we'd use this library. And then, like, cool. Now I've got, like, a drag and drop. I can add new sections to it and just adjust it. And I was like, oh, this would be, this is it. Like, it's like, all right, well, for one, I kind of want better documentation for all these sites. So I should just have nightly jobs now that just read through any changes and update this documentation and keep it fresh. But then also just going into a change, like on the fly, you can just say, right, just give me like, because now that's a template, that's an artifact type in Rick's artifacts.
+
+Pete [22:59]
+And I can just say like, okay, give me a flow diagram for exactly this. Like here's where we're starting, here's where we're ending. I want all the systems that touched in between. I can review that current state We forgot this. Dig into that. Get that document correct. And it's very visual. And then I can just make the point changes and corrections on that document and then send that back in the chat.
+
+Andy [23:18]
+Yeah.
+
+Pete [23:18]
+And I was like, yeah, that's what I wanted. And it just strikes me there's so much stuff that isn't chat. And it's just trying to figure out, like, what's the correct way of doing this? At some points I thought, well, maybe that's just documents. The documents are a bit... I don't like always documents that are written by AIs. They're too much. It's too verbose and wordy. And I suddenly found this constrained palette of describing this as a diagram works quite nicely. And then, I mean, previously I would have had docs with mermaid diagrams and stuff. Again, even when they write mermaid diagrams, They tend to write, they just look shit because they don't really view them in the same way that I do. Whereas this, this works really nicely. And I could be very exact about, all right, this, that link disappears, this comes in, these are the new links.
+
+Pete [24:25]
+And it can just diff the two JSON files behind it and go, okay, I see what it's changing. And you could potentially change it across multiple systems at once and all this. And I thought that was pretty cool.
+
+Andy [24:37]
+I like that.
+
+Pete [24:39]
+This is a bit of an area of investigation at the moment for me to figure out how can I just get way more effective here? Because I think this is maybe like a personal one. It's like there's this. Some changes you can just say make this change like this and it works. Some changes are big. And if I start engaging almost in the chat about a big change, The best way that works for me is kind of like dialoguing on it and trying to figure out exactly what it is that we're going to change and where it might impact different things and all the rest of it. And that just takes more time. And then I get it to write its own spec into a new thread for implementation and then push that one through. And that works okay. But often still, there's a few surprises in there.
+
+Pete [25:30]
+I thought it'd be interesting to like maybe go this sort of way where it's more directional of like, look, okay, let's agree on the current state. Let's write a future state. And then your job is to match future state. I think it would also give something that's just like that little bit more, has a bit more of like an evaluation against it. So it allows it to target a little bit better and assess its work and the rest of it.
+
+Andy [25:57]
+Yeah. I know I'd said a couple of weeks ago, one of the things I'd done to be able to better understand a code base was to get the agent to draw an artifact of basically diagrammatically what each part of the code base is actually doing. And I found that quite useful. Like that, again, was quite personal just because I was like, there's a mess here of stuff. And for me to try and figure out, especially once you've allowed this thing to run for quite a while, to try and pick it up again midway through is quite challenging. So I really just wanted a way to get a 20,000 foot view on it. A bit like I would with an index in a book. I'd often just scan the index in a book because you can just quickly get a sense of the key topics and themes and people.
+
+Andy [26:41]
+You're not actually getting any useful information in the sense that it's telling you something that's informational and useful. It's just like, oh no, this is actually going to be a valuable book for me.
+
+Pete [26:51]
+You're figuring out the structure of the sport and how it works. Yeah,
+
+Andy [26:55]
+And I think it makes it easier to then go and interrogate later. So having that as a reference point, and then when I'm talking to the agent going like, okay, this part C4 of the diagram, like let's just work in this space for a moment. Help me understand what you've done there. That was quite useful. But again, like I think I mentioned it, I wasn't sure if that was actually just something I was doing for my own like curiosity. I don't know if there was any like kind of practical benefit to me doing this but I think as a communication device that could actually be quite useful.
+
+Pete [27:29]
+Yeah I mean I've been doing it a little bit on whiteboards like because I'm I am very visual like this and I kind of need the drawings yeah and I I feel like maybe the difference that makes it because the whiteboards are fine for me and it would communicate back and the nice thing about the whiteboard is you can also just like chuck pictures next to it and visuals and draw how you want the screen laid out and all the rest of it. And I think what was kind of nice maybe with this more formal description of the flow was that because you've got some constraints around it, like again, the agent can read it a little bit cleaner. Because he goes, all right, well, that's a component. That one's an action. That was a change of state somewhere. So OK, that's what's going on.
+
+Pete [28:14]
+And then it internally maps that back to, all right, well, what do I need to do to add this new state change? Or Pete's saying that there's a new component here. Like, how does that work? So it kind of gives it a nice context, I think. I think what I was, because another thing I did, one of those like background weekend experiments, I wasn't really paying much attention to it, but I was having the agent build out a new thing inside Flight Deck, which was say, okay, I just want like a scope. Tree. I've got a context tree.
+
+Andy [28:50]
+Yeah.
+
+Pete [28:50]
+So in this scope, this scope is about these applications and these processes and these things and each of those is made up of bits. And I just want you to start building out like nested trees of these things. And it was basically just sets of components in a tree and then any of those trees could be linked to documents or tasks or whatever inside Flight Deck. And it's kind of scenario I've played with a little bit. I'm trying to figure out, well, what is that? What's that other navigation primitive? Scopes and channels works really well in a kind of... It directs the user where to ask the question. It's like, so I could... With your agent, if you've got one chat, you can ask whatever you want, and it'll try and figure out the correct thing. If I just say, all right, well, this scope is for asking questions about wingman, then every time I ask a question it knows what I'm talking about and then this channel is I'm actually making changes to this bit or this is about just designing and we're not actually making changes like having all that stuff just pre-configured just it's just like really quick yeah save prompts type things but it works really nicely at a day-to-day because you never have to prompt that stuff and you don't have to think about where you're where and how you're creating sessions.
+
+Pete [30:13]
+It's all managed before you just set it once in the structure and then you just start asking questions. But I thought, well, there's also, like, sometimes I'm asking questions inside this scope, but I do want you to act like that. But I want you to have a way of discovering better where everything else is. And then it becomes that question of, like, alright, well, is this some sort of, like, graph walking query or not? I just don't know that it necessarily is. Or is it like there's just a folder structure, but folder structures are kind of bad for that sort of thing because you can't do multiple links all over the place. And I was like, well, maybe this sort of like tree where I just reference these things and I could just have a convention for how I describe a project and how I describe a process and various things.
+
+Pete [30:59]
+And then they're not, it's not forced into the navigation, but at any point the agents can go and read, says, all right, well, I'm in this scope. So we'll look at the tree. All right, here's the process. This is the same name as the process I'm working on. Probably go and have a look at that see what it's about uh yeah and it'd just be a different way of like tagging and organizing all those things but that seems to be like where my head's at at the moment with this is I think a lot of primitives are kind of there and it's like there's different ways though I think that we want to try it I also moved my documents in flight deck to be more wiki-like so that I could just do like bracket bracket new one bang new page yeah nice off we go so it works more like my obsidian notebook that I've slowly just replaced flight deck yeah and then but again I still think the best way to use that is probably just to have the agent do self-documentation inside there.
+
+Pete [32:01]
+And then now I'm like, oh, maybe, maybe it's all about these like flow diagrams and I should just be using those. It just starts to say, I mean, is the, does it make sense to map the whole thing? Or does it make sense to map the thing you're about to work on and have it as part of your process? So when you go to make a change, one bit of the process is document the current state, document the future state which is very natural like just systems behavior like that's what you would do yeah it's just I just reckon these visuals will be more useful for me to review than the documents and the chat messages yeah certainly when you do it in the chat everything just it's like chats are too short and documents are too verbose like when you get a chat message from a summary from an agent you miss so much when it writes a document you're like I am not reading this fucking thing yeah like this it's gonna take me like an hour and you know you've just shut it out in two minutes like this is not not cool no it's it's interesting you say this
+
+Andy [33:07]
+Because I was thinking about the role of docs I think we'd spoken about this last week maybe on the pods about how you still need these like working primitives with agents the docs and the I think we're talking about it maybe in the context of spreadsheets and you'd still maybe replace a lot of spreadsheets because they could just become scripts and agents particularly good at standing up a lot of this stuff. But docs, I mean, I write way fewer docs than I ever would have in the past. And I think for me, the primary benefit of them would be to have some kind of audit trail. So if you're in a role or job function where you're like, do you know what? It would actually be beneficial for me to keep a good working record of, or maybe you are like legislatively required to keep such records.
+
+Andy [33:58]
+I think it makes a lot of sense. But otherwise I do not find myself wanting to keep docs. I keep notes roughly, but even those I find I will just remove and delete. Like I'm a lot better at deleting them. So I'm not sure that I have an obvious use case for Docs. Because I was thinking about this in the context of how I'd use Flight Deck as well. And I'm like, I actually don't use Docs that much. And it's probably because we don't have a strict requirement to keep records for a lot of the things we do. The records keeping is maybe a different kind of artifact. Or the artifact is a byproduct of the process. So depending on what the process is, you then have to determine what's a good artifact as a record store for that process. Then it might not necessarily be a doc.
+
+Andy [34:45]
+So yeah, that's just my personal use, 'cause I've noticed it. I think it was something I'd reflected on after you brought it up last week. And I was like, yeah, I actually don't find myself going in natively just like creating docs like I would have at one point, which is probably learned behavior to some degree, but I just don't do it.
+
+Pete [35:02]
+Yeah, I mean, I know that I want docs of some form, because like, I think as I said, They're useful. Whenever I've done, particularly collaborative work anywhere, it's so much easier to have track changes and comments. That's why Google Docs was good. It's not as good a Word formatter and presenter as Word, but the fact that you could just get five people in remote places in the world, all looking at the same screen, all reviewing the same comments, and seeing the same track changes was like, this actually is very useful versus just looks nice. So there's definitely a role for that sort of thing.
+
+Andy [35:44]
+Although it's useful, but I also feel like for a lot of those use cases, it was about, it was a planning exercise for the most part. And I feel like the cost to plan is just so low, you may as well just start building something and iterating and seeing if it actually works. Whereas in the past it'd be like, well, we've got to create this like planning document, this master plan, get everyone working. And I kind of get it. Look, if you're going out and you're building like a university campus, sure. There's gonna be like tens of thousands of documents associated with that, I get it. I'm not, I'm not building a university campus. Kind of don't feel the need for them quite as much. And then you're right, the exact problem with agent with talking to these models is that they are just so verbose, as you say, like they will just give you an essay where like 180 characters will do.
+
+Andy [36:34]
+I'll often ask them to just like, just give me like a one liner on this, like don't go into excessive amounts of detail, unless we're doing some kind of brainstorming and that's beneficial. But even then I'm not capturing the stuff in a document, which is interesting. I'm just kind of moving on from it. I'm kind of banking it and moving on quite quickly. So that was interesting. Like I felt like that was a deviation from learned behavior, like learned from years in the workforce. And now I just find myself not needing it. Interesting but I like what you're describing these like having these like visual aids as part of like a flow or as you're working with an agent I think would be way more useful for me because I'm more likely to get an immediate benefit from that than I would be from going like there's a document over here let me just like branch off over there and read that document I wouldn't find myself doing that anymore unless there's something specific that I'm trying to keep as I say like an audit record of
+
+Pete [37:38]
+Well I think this is where I got another thing that I think plays into this is that works become more individual plus agent than it is completely group of individuals because it's so much quicker to just split and say alright you work on it I'll work on this than it is to be let's all collaborate on this thing together it gets kind of messy and it's hard to control the agents in that environment and so you don't necessarily need this one document to get everybody on the same page because you already have the page in your head the point of putting the reason you write stuff on a whiteboard is to get it out of your head so that you can look at it slightly dispassionately from where you are and it's it's just going via language just doesn't quite hit the same way as far as I can tell with the models.
+
+Pete [38:39]
+So where I think it will come in handy is actually just tracking a lot of these sort of things. This is where I was like, you know what, I think I'd probably prefer this to be more wiki-like so I can just navigate. So every page is a doc, but it would be useful to just click from here to here and have, I've always been, for like 20 years, I've used those sort of like little wiki navigation for different apps to track these ideas. The trouble is they always get so freaking messy. And then they're not useful. And then you end up spending your time navigating. So there is this element of like, yeah, but then the agent can manage it for you. So it should be nicer. But I almost like prefer that idea to the graph where I'm like, I need to be able to see it.
+
+Pete [39:26]
+One of my big problems with some of the graph work we do is like, I feel like I don't, I can't tell that this is correct. Because maybe even if we pull up a visual of the graph, like it's.
+
+Andy [39:40]
+Yeah, it's hard.
+
+Pete [39:41]
+Even most graph stuff, when you do the visuals, you don't get the full graph because the full graph is just too complex. You can't see anything in it. So you end up with this like weird, you've got to make all these, how you visualize it. And I'm like, I just don't know if it's worth it for me.
+
+Andy [39:55]
+What's lost that you can't see it's like an assumption there yeah and I then I don't know
+
+Pete [40:02]
+Like okay it seems it's making these decisions like well why why is this stuff that I expect to be here not here and this one is like there's something about like just you building like click throughs on a wiki I click click is a click yeah that's the connection that'll do I get I get why that sort of worked for a lot of people for dealing with knowledge based stuff I think stuff like that where it's slow changing information should be in a doc the problem with a lot of the design stuff is that something that used to be slow changing because you had to design that was good for a month and it was worth reading and iterating on and coming to terms with is like it's not worth doing that for the next hour and then we're done and we're shipped and so it's like But then, you know, it is useful to have agents just, you go for a long conversation to develop something, getting them to summarize it into a doc kind of works.
+
+Pete [40:59]
+I think increasingly I just tell it to start a new thread. So I have like different, like my channel for, like my dialoguing channel is where I explore ideas. And then I'll have like an implementation channel and I'll be like, all right, this idea, all right, this affects tower, flight deck and autopilot. So start me a new thread in each of those and tag yourself, Rick, so you start work on it and just lay out exactly what changes need to be in and summarize everything that we needed out of this thread, but let's not start with this whole thread as a concept. And it gives it a link back to the thread if it needs to go and read it, but for the most part, it'll just take the implementation instructions and go, okay, I need to implement that, and this is how it works inside my space, and this is my contract with each of these other two systems.
+
+Pete [41:44]
+And then I just have like the dialogue one. I said, just keep an eye on it and make sure it delivers. It'll just sit there and watch. Just keep sending updates to all the different sessions as they go through. And that seems to work quite nicely. And it just avoids that dock being there. Because I would look at my old Git repos. And there's like a slash docs. And it's like, you'd look at these and think that these docs are relevant. And they were for 20 minutes. And then we just moved on. But this is all just pollution inside this repo now. So we need to... It needs to be outside the repo. And I think it's true also of a lot of process work as well. It's like you need it somewhere else.
+
+Andy [42:31]
+Yeah, yeah.
+
+Pete [42:32]
+Easy to look up if you need it. But slow-moving information that you can change easily, but it just sits there for reference work.
+
+Andy [42:42]
+It's interesting because sometimes I will just have the second agent. So in autopilot, I'll just have another agent session. And it's seeing what I'm doing in that repo with the other agent. But we're literally just having an exchange. It's not adding anything to the code base. It's like a watcher alongside me. And I've found that to be quite useful. To just essentially have the twin sessions going in tandem. But there's nothing being documented. And as I say, I think there's just like in the past, there was always a cost associated with any move you make, because if it was the wrong move, you'd have to try and wind it back. If it was the right move, great. It's worked out. It was a good return on your investment. But I just feel like there's just near no cost now to just movement.
+
+Andy [43:30]
+So just go and do the thing, see what it looks like, see how it functions. It will probably change half a dozen times from like, you know, your inception point to even that first milestone, whatever it happens to be in your planning doc. And it's like, well, okay, what was the point of the other 10 milestones in this doc? It's changed so much from the first milestone. The rest of the doc is worthless. So, yeah, I kind of get what you're saying.
+
+Pete [43:58]
+I feel like the bit that I want, that I feel like maybe this is the thing that document's not giving me, is I want to know what to expect when you're done. Because what I think is almost a shame is I think agents have got more intelligent and slower. And everybody loves this because they're working on longer horizon tasks, right?
+
+Andy [44:20]
+Yeah.
+
+Pete [44:21]
+I'm, the problem with that is that like they can go for a long time and then you get something that's not as good. So your iteration loop is gone. So there's, there's a definitely payoff to very, if you have much quicker iterations, they don't need to be as clever. Going, oh, we'll just be clever. And it's like, yeah, but you can't just be clever about decisions that need to be made. You need to make them. I kind of need to make them. And it's hard to make all the decisions up front because obviously you haven't done any of the work yet. And the doing of that is what makes the decisions. That's why Agile is the way it's supposed to be. But it's, yeah. And so I think maybe where I was getting with those logic diagrams is that feels like something that's a bit easier for me to assess.
+
+Pete [45:03]
+Have you understood where we're going?
+
+Andy [45:05]
+Yeah.
+
+Pete [45:06]
+Because we go like, all right, how does it work right now? How will it work when we're done? All right. As long as it works like that. But when you write that out, as a document, there's almost like too much nuance in the language. And I think constraining it back down to something more visual is going to be a good...
+
+Andy [45:24]
+Yeah, definitely.
+
+Pete [45:25]
+I haven't done enough experiments with it yet to see, but certainly just getting the agent to document stuff, I was like, ooh, I think you've missed this step here. Oh yeah that's that's fair and so I can imagine like me just getting comfortable with like oh that's not working how I thought it was and like for instance there's a whole bunch of these agents love to just leave in old code as backups yeah and fallbacks for stuff and like shit like that be like right that goes that does not need to exist like this needs to go that should be that if we go into that situation I want to see an error you know don't hide it from me so I think stuff like that is going to be more it's easier to see inside that constrained environment I hope we'll see
+
+Andy [46:14]
+In theory
+
+Pete [46:16]
+The other thing I picked up from that potato lady
+
+Andy [46:21]
+Sorry I don't know who this is
+
+Pete [46:23]
+She's been all over she's in like a little flame war with Tebow from ChatGPT saying that all he can do is reset stuff he can't actually ship any useful
+
+Andy [46:34]
+Products It appears that way.
+
+Pete [46:35]
+Yes. Like, it's a very, she's winning.
+
+Andy [46:38]
+Yeah. She's observing reality at this point.
+
+Pete [46:41]
+Saying, like, you know how we shipped the Grokbot and everybody likes it and you ship dots and it's just a copy and, like, nobody likes it because it doesn't work. Yeah, that was my experience.
+
+Andy [46:51]
+Yeah.
+
+Pete [46:54]
+But, yes, obviously one that I picked up was more around... I think I forgot where I was going. There was someone else that I'd picked up.
+
+Andy [47:04]
+Yeah.
+
+Pete [47:04]
+But I forgot it.
+
+Andy [47:06]
+It will come back to you, I'm sure. It will. It will be important. Do you know, speaking of models being verbose and also speed to decision making, one thing I've been experimenting this week for intelligent snacks is using JEV to help me improve the writing quality from the agent. So we get snacks, which are basically just distillations of the themes that we explore on this pod. And there's usually seven of them. I kind of just constrained them to seven. I don't know why, that seems like a number that works on the website, so done. And as a distillation, I accept that some degree of it is gonna sound like it's written by AI and that is kind of fine. I think it's okay, but I still think it could be better. And there are a bunch of rules that I've set in the pipeline for how I expect it to deal with certain parts of its own writing.
+
+Andy [47:58]
+So for instance, these things love to use abstraction rather than being very specific, especially when the specificity is baked into the transcript. Like you've literally got the transcript, you literally pull out the sentence you're using as an anchor, and yet you take that and you still come up with something that is stupidly verbose and abstract. Just be specific, right? That is essentially written as a rule into the pipeline. And then there are other things, there are simple ones like don't use em dashes and no contrast framing and all the stuff that everyone knows is AI. And so I was trying to split these 'cause I was like, I actually think adding too many of these rules into the pipeline basically makes the writing worse.
+
+Pete [48:43]
+Yeah.
+
+Andy [48:43]
+'Cause I got to a point where I was running an experiment where I thought, okay, I'm just gonna give the transcript to the pipeline and I'm gonna give the transcript to ChatGPT.
+
+Pete [48:51]
+Yeah.
+
+Andy [48:51]
+And I want you to create these like distillations. And the output from ChatGPT was actually in some ways better because there were no rules. But it would come with some of these things which, like for instance, another one is like, don't use superfluous language or signposting. These things love to have a sentence which just sets up the next sentence. And it's like, that is pointless. Just get rid of that stuff.
+
+Pete [49:12]
+Yeah.
+
+Andy [49:13]
+And so these are all rules that have emerged into, that have emerged into the pipeline that I actually now think make the writing quality like a little bit stale. So what I've been doing is going like, okay, let me use Jev to just try and like work out where these things are occurring rather than setting those as rules for the agent that's actually drafting it. So that way the agent can get just get to the point of distilling and then it can review as a secondary step the decisions made by Jev and go, "Oh yeah, I should rewrite that." And I found that's actually quite a bit more useful as a review step using Jev and not using a language model to then to do that review and to enforce a bunch of rules instead. So I don't know, It's a work in progress.
+
+Pete [49:57]
+So it's kinda like, has the rule been followed?
+
+Andy [50:00]
+Essentially.
+
+Pete [50:00]
+And it's like, this one hasn't, this one has.
+
+Andy [50:02]
+With a confidence scoring, yeah.
+
+Pete [50:03]
+And you just get back like, do you filter on the confidence scoring or do you send the confidence scoring back and then say,
+
+Andy [50:10]
+It's just there. The results? Yeah, you look at it, that's a secondary step.
+
+Pete [50:13]
+It's like getting a grade from your teacher. Essentially. And you go, ugh.
+
+Andy [50:16]
+'Cause that was the thing, right?
+
+Pete [50:17]
+There is a review step. - Yeah, you're right, I've got.
+
+Andy [50:19]
+There is an editing step, but the editing step doesn't, it's the same model just basically going and marking its own homework. You know what I mean? So I was like, I think this could actually be a way of...
+
+Pete [50:29]
+Yeah, it's like, even if you change the model, it's like, it's almost like a similar mind, even if it's a different mind, but it's the same mindset sort of thing. Like, so you always talk about Hemingway and like, you know, you write drunk, edit sober. It's like, maybe just having a different model is better. Like maybe having a different type of model that just says wrong, wrong, wrong, yes, right, yes, good. Exactly. - And it's just like, oh. It's very unemotional yes-nos across the board. And these are the red marks that I've got on here, and these are the ticks, so I'll go and deal with all these red marks. It's really obvious as opposed to- Yeah. No, that would make sense.
+
+Andy [51:08]
+I think it's useful as well as- because you have the confidence scoring along with the decision, it's basically going like, do I actually need to broadly rewrite this whole thing, or can I just surgically tweak this? And I think that's useful, because oftentimes, all it requires is the changing of two words.
+
+Pete [51:22]
+So is Jev giving, is it just like one confidence score that says like 60% you haven't hit the goals here?
+
+Andy [51:29]
+There's basically a set of like predetermined questions. So for instance, does this passage contain superfluous language? Yes, no. And then confidence scoring. Does this pattern, like I've not done this to anything that's like quite simple, like does it contain em dashes and stuff? Cause that's a rule that is relatively well enforced by the model.
+
+Pete [51:48]
+Yeah.
+
+Andy [51:49]
+Another one is, does this passage use like signposts or preempting. Does this passage contain abstraction?
+
+Pete [51:58]
+They're all in one call or in separate calls?
+
+Andy [52:00]
+That's one call, I think. Yeah. Yeah, yeah. So it's been an interesting experiment. I mean, I feel like this quick decision-making should be really useful, like across a whole range of things. And as I said, like a couple of weeks ago, I've just been like turning it to the stuff that we've got, that we work on. Yeah. I feel like maybe I could make this model a much better writer. By just giving it some kind of like decision scoring. As I say, it's not marking its own homework anymore. There's someone else going, that isn't me going like, fuck, this is just abstraction again. What are you doing? How many times are you just gonna like come up with like a bunch of like verbose sentences that mean nothing, you know? So I feel like that's been quite interesting to them just like work on a new iteration of that content pipeline.
+
+Andy [52:49]
+So, and then I think if that works, then I can go and apply that in a few different places.
+
+Pete [52:54]
+Yeah, that's interesting. I imagine that will work quite well. Another way you could do it is you could take that initial writing step and actually branch it. You could write it two or three times, and then compare—then you have the editor edit all of them and then bring those back to the ground if you get any more interesting information from that. Because it just takes advantage of that randomness. Because maybe they would have done a better one first time, and the next time it does it slightly different. And then you can compare, like, well, that one was better for this reason and it was better for that reason. And then you just let the model sort it out the other end. It's like, okay, how would you bring all these things in?
+
+Andy [53:36]
+Yeah. There's also a, I guess, truancy to my own writing style. So it's like, if I were to write this, what would it look like? And then like, how does your version compare to the version I've created? And I think that ultimately would be quite useful because as I say, the distillations are good. The accuracy is good. You know, they do have the excerpts from the transcripts. Like I can see that in the pipeline breakdown as well. So I know it's not just bullshitting me. It's like actually gone this timestamp. This is what was said. This timestamp. This is what was said. And this forms part of the distillation material. So it's always evidence backed. And I think that's useful. But it just sounds stale. And I'm like, yeah, but it could be entertaining and it could be accurate. Why not both?
+
+Pete [54:21]
+Yeah.
+
+Andy [54:21]
+So that has been a whole mission. Hopefully we'll start to see these intelligent snacks sounding a little bit better on the website and in the newsletter. Go sign up if you haven't.
+
+Pete [54:33]
+Sign up to the newsletter, like, and subscribe, intelligentsnacks.com.
+
+Andy [54:37]
+There you go.
+
+Pete [54:37]
+On that note, it's your intelligent snacks.

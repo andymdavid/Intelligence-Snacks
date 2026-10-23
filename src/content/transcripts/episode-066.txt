@@ -1,0 +1,578 @@
+Pete:
+All right, hello and welcome to episode 66 of Intelligent Snacks. 
+
+Andy: 65?
+
+Pete: 66. 65 was last week.
+
+Andy: Oh man, look at that.
+
+Pete: Messy start. Tell you what. 
+
+Andy: And we're live. 
+
+Pete: We are live. Yeah, this is good.
+
+Well, hopefully we're live. It's not been confirmed. We might be live. We'll see.
+
+We'll see. Well, it says we're live. That says live now.
+
+Is that this one?
+
+Andy:
+For anyone listening tomorrow on YouTube, they're going to be very confused. Yeah, all right. Okay, hang on.
+
+Pete:
+Shit, sorry guys. We're just listening to ourselves. Okay, right, that's no good.
+
+Okay, we appear to be live, right? Sorry about that. So we're live on Nostr.
+
+So if anybody wants to find stuff on Nostr, come along to that. Maybe I will, yeah, I don't know how we'll monitor the chat. Let's ignore that for a minute.
+
+Go back to the usual setup.
+
+Andy:
+So, yeah. And if you're listening on YouTube, obviously this podcast continues to go out on Thursdays. But you can listen to us live on Wednesday when we record.
+
+Pete:
+So, if you're on Nostr, that is very nice.
+
+Andy:
+And for YouTube, obviously, if you're on Nostr right now, you're probably not going to notice the difference. But on YouTube, you should see that there's a brand new name and identity for the pod. Kind of teased it out last week. That was the last ever Good Stuff. And this is the first ever Intelligent Snacks.
+
+Pete:
+Nice.
+
+Andy:
+Yes.
+
+Pete:
+So talk to me about Intelligent Snacks, Andy. What does it mean? What is an Intelligent Snack?
+
+Andy:
+Well, this is like a... Well, maybe let's tell the story of why we actually rebranded first. Because the Good Stuff, we've had like a lot of credible reports back from our handful of every week listeners. The loyal listeners every week.
+
+It's actually hard to find us when you actually type in the Good Stuff. Yes. Because there's many good stuffs.
+
+A lot of fake good stuffs out there. We are like the Gucci bag of podcasts. There's many of them that try to be like us.
+
+And we just let you know.
+
+Pete:
+Is that what they're trying?
+
+Andy:
+And when we first came up with the name, The Good Stuff, it was like a subtle nod to our company name, Other Stuff. Yep. And in hindsight, maybe it was a bit of a insider nod.
+
+Yep. And maybe not the most search friendly name. 'Cause it also doesn't really imply what we talk about at all.
+
+I think we liked the name.
+
+Pete:
+I loved it. It wasn't a great name. I don't know if there was like tons of thought, It was like, oh yeah, I like that name.
+
+Like everything. It's like good vibes, let's go. Name first.
+
+Andy:
+It's, we really just optimize for velocity. It's like, let's just go. We feel good about this, let's do it.
+
+And similarly, we felt good about intelligence next, but this is like, this is like a concept that we keep going back to. It's about like, where are the right places to go and insert intelligence in, you know, various processes and systems and knowing, you know, where to apply that leverage. It's not just let's throw intelligence at everything.
+
+It's let's go and find the specific points, the high leverage points, or it's actually really useful. And then like, you know, maybe the rest of it is pretty deterministic, but I think it's actually a really nice way for us to distill long form podcasts into like, you know, these kind of more thematic, short snippets that are like eminently more shareable. And I guess this came out of like, we've also got the newsletter, formerly The Good Stuff, Now also Intelligent Snacks will be going out weekly.
+
+Writing long form every week was super time consuming. I quite enjoy writing long form. But I also get the sense that like we're at a point now where fewer people read long form.
+
+And I just also had this battle every week thinking like it's probably like 10 to 15 themes that I could pull from in an hour and a bit podcast. Especially where we've got guests that is usually like, you know, sometimes 15, 20, 30 themes. We're a bit random.
+
+Yeah, there's a lot of good sorts of material.
+
+Pete:
+The way we move around, yeah.
+
+Andy:
+And so I thought actually what we should be doing is like maybe distilling that into like bite friendly themes that people can just like glance across and extract. And like we do overlap as well week to week, develop some of these themes further so.
+
+Pete:
+Well, that was one of the things that got me is I liked it 'cause I feel like there's, I don't know, like 50 memes or so that come up regularly and get developed over several different episodes. And I, when we first, like, I mean, we used the term intelligence snacks, as you said, as like part of a workflow. There's a little bit of intelligence that you want.
+
+It's not the whole thing. But yeah, it really like, I don't know, resonated in my head of saying like, yeah, that's kind of like what happens in this podcast is that you end up with these little snacks that come up like every week or every few weeks that get developed. And then, yeah.
+
+And I guess this is the full course meal on the podcast. We put out the meal and then we turn it into some snackable chunks afterwards.
+
+Andy:
+Yeah, it's also hard to necessarily tune in to an hour and a half every week, for an hour or however long it ends up being. And it's a nice way to just get across all of the themes and the topics. Because there is some, if I do say so myself, there is some interesting stuff we occasionally talk about.
+
+Pete:
+I've had several people tell me that they were surprised that we were about six to nine months ahead of most stuff that happened as it came out. So I'm okay with that. All right, so on topics.
+
+So today, we're going to talk a little bit, I think, about there was a reasonably serious, well, very serious, actually, sort of attack in the Bitcoin world over the weekend. And AI played a part in that. So I think we're going to talk about AI hacking, AI defense, and then how to use AI in terms of crisis management and response.
+
+I think there's quite a bit of novel use of this. There's certainly for myself that I had. And I think that will probably, as we said, draw ourselves on quite nicely into some of the more knowledge management work that we've been doing and different pipelines for that.
+
+So if that sounds interesting, then yeah, follow along.
+
+Andy:
+Interesting. Indeed. Let's do it.
+
+Pete:
+All right. So if I give a quick outline, what happened over the weekend was, this is like an Australian-based timeline, or I guess like Asian-based, so Singapore time. It would have been, I think I remember being a man of a certain age.
+
+I was having a wee around about three o'clock. I'd, for whatever reason, I had Twitter open on my phone and I saw a guy called Kevin Loic that said, oh, there could be something wrong with cold cards. I'm having some reports of stuff coming in.
+
+Don't want to FUD, but I'm just going to keep an eye on and dig into it. And I was like, oh, fuck, that sounds serious. I wonder what's going on.
+
+You know, I woke up a bunch of hours later and, you know, I took myself off to the office and did anything that I needed to do. But yeah, what happened is it turns out there was some code committed back in March 2021 on Coldcard devices. So it affects like Coldcard Mk3, 4, I think it's a 5 and a Q from a particular firmware date from March 2021.
+
+If you have any of those devices going and you store Bitcoin on them, go and look at it. Because what's happened here is it created private keys on those devices that were not random. So generally with private keys, like all the security around public private key cryptography revolves around the fact that you can choose a random number from a very large search space.
+
+And so as long as it is truly random, then you're okay and you're very well protected and very secure. If it's not truly random, somebody else can regenerate your key. And it turned out that this was not truly random.
+
+They actually had like a hardware random number generator that they were supposed to use. And the firmware they committed disabled that and used a pseudo random number generator, which is, we'll take in, say, three different forms of entropy. So in this case, it was like a device ID and some, I think it was like timing information from the the unit and it would use that to generate a random number and that random number was like orders and orders of magnitude uh easier to crack than a private key like it was the sort of thing that you crack on a laptop in a few hours versus all the compute in the world across all of time so they did very different numbers yes yeah um and then what happened is people's funds started to get swept on Friday morning.
+
+And so this was somebody where you would have a completely offline Bitcoin wallet. There would be funds in there. You haven't touched it and like nothing's happened.
+
+And all of a sudden you look at it and there's no funds there because somebody you've gone and got your key. The ways you protect against this is you can add additional entropy, you can roll dice, you can pick your own seed phrases on these devices. If you've done that, you're probably okay.
+
+If you've got a very strong passphrase that you add on top of it, that would also protect you. But we're not really a Bitcoin podcast, so I won't go into too much detail on that. But if you're worried about this, do reach out to somebody you know locally from your local Bitcoin meetup or whatever to get some advice.
+
+Yeah, but yeah, this was just money was getting withdrawn all over the place. So I think the initial run on it seemed to be around 500 Bitcoin. It's grown seemingly to about 1,300, 1,400 at the moment.
+
+It's obviously one of these hacks where you don't really know how many people are affected because there's no registry of who owns these devices. You can't really tell the difference between something that's just moved and something that's moved as part of a hack. So it's all very unclear at the moment, but there's a lot of ongoing analysis being done there.
+
+But yeah, so that was going on.
+
+Andy:
+So is that number just purely based on people essentially self-reporting?
+
+Pete:
+It's kind of self-reporting and pattern analysis. So what you can tell is if a lot of stuff gets withdrawn and goes to a similar address. So that was like one pattern. If stuff goes to separate addresses and consolidates, again, you'd see the same sort of thing. So I think there will be a lot of just analysis on this over the next.
+
+Andy:
+But which is weighted more heavily? Could it be that it's significantly underreported? Because a bunch of people are probably like set and forget and just haven't necessarily caught up to what's going on yet.
+
+Pete:
+My guess is that it's probably, I think it's probably about correct in the analysis. Because I think a lot of this is just people are grabbing the funds and nicking it. And it doesn't seem like it was a super sophisticated attack.
+
+And the conjecture that's out there is that this comes very shortly after Kimi K3 was released. And people could run the models locally. And then that was the model that found the exploit.
+
+That, again, can't be known that that's true. That seems to be a prevailing opinion just because when people have tried to recreate finding the book With sort of Opus or Fable or GPT 5.6, I think it was all the Claude models pretty much just refused to do anything. GPT 5.6, if you pushed it correctly, you could find the bug.
+
+You could certainly confirm it with that very quickly. And then, whereas I think Kimi K3, you could just let it loose and let it run for long enough time and it found it. And this was like a compile time bug.
+
+It was hard to see from the code unless you were kind of operating between C, MicroPython, and then the Python scripts, I think. So it was an obscure place to find something like that. It was a very, very bad bug.
+
+Yeah, so the conjecture is it was probably something like a Kimi K3 or a Frontier model that did it. Another place where some of the AI response comes into this is there's been like a whole red team sort of effort now where there's a lot of just sort of Bitcoin companies that were trying to help people out. Basically say, okay, step one was to get the word out to everybody.
+
+So like Twitter was crazy over the weekend, like all the local meetup groups and things have been buzzing. Everybody's trying to help each other out and explain what's going on and whether you're at risk or not and what to do about it. But then there was a lot of work to be done to figure out, okay, well, can we confirm the bug? And so again, there's a lot of time spent on recreating the bugs, trying to narrow down exactly where it was. Initially, this was reported as being a mark-free device only. And then it turned out that as that was traced further along, the later versions of of the devices were also compromised they were compromised in a slightly different way where they had more entropy which just means they were harder to crack but they weren't significantly harder to crack so it became something like you know if you had like a Mk3 with no passphrase your funds are probably already gone but if they're there move them like now if you have like a four or a queue maybe you've got a day yeah but this is out in the wild now everybody knows what the bug is, you should be acting straight away.
+
+And so again, a lot of that analysis was done so quickly because people were able to then turn those models onto it. Again, what was reported very quick was that the US models in particular, like the OpenAI and the anthropic models, even the cyber models were closed down. They wouldn't help.
+
+So people couldn't do retroactive sort of like red team analysis on their own code bases because it would shut them down they were cyber attacks. So everybody had to go and use Kimi K3 and then I think now like QN 3.8 max just released as well which is an even cheaper but similar output style model. So there's been like a whole effort to then scan all of the dependent code bases in the whole like the Bitcoin ecosystem for bugs using these with various exploits being reported. A few services that operate with kind of like hot wallets and different things that are under attack have shut those down over the weekend.
+
+But it's kind of like a mad scramble. There's some definitely interesting things there around the fact that, on the one hand, you could see somebody say, oh, this Chinese model has caused all this by being released without safeguards. But at the same time, you needed that model without any safeguards in order to have any retroactive, I don't know, just ability to defend yourself in this situation.
+
+So that's kind of nuts.
+
+Andy:
+It does beg the question, though, why the vendors wouldn't necessarily be using the models too and weren't already using Kimi K3 to scan the code base and look for vulnerabilities.
+
+Pete:
+I mean, this particular vendor has been very quiet, as I'm sure. So the vendor is CoinKite. Again, this was widely seen until Friday.
+
+It's like the gold standard of Bitcoin hardware wallets, which turns out was bullshit. But their release this morning said that they had been using up to like Fable, GPT-516, like the previous Kimi models, to scan their code bases. They hadn't found anything.
+
+So could be that this is just happens. There's all sorts of weird circumstances, right? Which, again, it's not really our podcast for that.
+
+Yeah, yeah, of course. But like, it could be that this is just, it happened that quick. Yeah.
+
+That there was an exploit there. And it kind of begs this question, like, yeah, you probably really need to be on top of these latest, particularly open models, and using them to attack your own code bases prior to stuff. I mean, there's certain like defense in depth as well that you can do, which is that like this particular attack is a known attack.
+
+It would be called like what's generally referred to as a retirement attack. And it's the idea that when somebody sells you a device like a hardware wallet, what they could do is they could say it's a random number, but not make it a random number. And they know where the random numbers are seeded from and therefore they can recreate all the seeds that these things would ever have created quite easily and harvest it in one go.
+
+Now the way you protect yourself against that is you don't use the random number generator from the device, you use something else, you create it yourself external to the device and therefore the device is entrusted with that thing and so I think it does like and similarly to a lot of just hacking from these these models is you've got to look at it and say all right I probably need to like rethink like my security posture and my if I see it is like these things are like if these things can come out and hack it was like with um open ai the other week hacking hugging face right like it's you go hmm all right we need to rethink like maybe how we do our api access like how are metering stuff like are we just accepting requests from any authenticated thing like do we can we put more like there's um there's always been a problem in in the uh in the internet which is if you run a service that's available on the internet right like I can go to it as a person and you want that because it's open and I can just turn up say hello and use your service and it shouldn't it doesn't cost you that much. If I run a computer that goes to your service like 400 times a second, now it costs you quite a lot. And this is like the DDoS sort of effect, which is denial of service. Well, distributed denial of service is DDoS, but DDoS is denial of service attack.
+
+It is all about like causing a lot of cost to the person running the service. Now, one of the things with a lot of these AIs is all of a sudden, not only can you like DDoS somebody around denying the service but making it hard to run and expensive to run but you can also attack them very quickly so you could be running like hundreds of exploits an hour on this service trying to get in and now as well as just dealing with the traffic you're responding to all of these these different attacks which really calls for like okay the only way you can really respond to that is you almost need your own like harnessing system that does that but it does beg the question is there something missing there from the internet so you know again like in this was a um something that came up very early in the bitcoin space was prior to bitcoin being invented there was a previous thing called hash cash hash cash was a an attempt at electronic money based on proof of work So this was like an Adam Back thing. And effectively what he said is like, instead of getting an email and it being full of spam, could I have something like an email, but with a stamp on it and the stamp costs money and it costs money for a computer to create it.
+
+And to do that, we'll use this algorithm of proof of work to show that our computer has worked on this for an amount of time. And therefore I won't accept anything unless it has a minimum proof of work. And so you can create these things where you say, okay, well, let's give you proof of work before I access your system.
+
+Now, this would materially slow down in Attacker because you'd have to be creating new proof of work on every request that you had. Now, you could do that. It does make the whole system way harder in the sense that you now have to do...
+
+You have to run your computer or your GPU, CPU, whatever, in a bunch of cycles for no reason to create something that you're just going to throw away in order to make a request. Now, that's good if someone's attacking you over and over again. Another one would be that you could create identities that are cryptographic and then you attach money to the identity.
+
+So it could be that to go and talk to my API, I will just refuse you unless you post a bond of a bunch of money. So there's various different like 402 protocols. So the internet always had a payment required protocol called 402.
+
+There's a Lightning 402, there's a Cashu 402, there's a Shitcoin 402. There's all sorts of different versions. Of this. But maybe that's the sort of defense that we need as well. It's like, okay, right, well, if you want to come and talk to this API, you've got to post $100 to start with, and it's going to cost you an amount of money each time you do it. And if we detect that you've got, you're attacking us, and we just take the money. And it's just one of those things where you would just lose enough money if you continually attack somebody. It just increases the cost. Security around this sort of stuff is always just, okay, how do I increase the cost of this thing and I guess as we talked about a lot AI decreases the cost around a lot of different activity so this is just another one this is the new one yeah so it and it decreases the cost around the offense and the defense yeah I was going to ask that do we do we know like
+
+Andy:
+Whether it's a single actor because it because this was my initial thought right it's like once the exploit is known it's multiple now yeah why wouldn't like a bunch of actors just basically spring up using the same model. And then all of a sudden you've just got this attack swarm. Whereas previously you'd just be like, one person's figured it out. And so your attack is limited to in size and scope to some degree. And now all of a sudden the scale number of attackers can just proliferate once that exploit is known and you've basically got like, you're on the clock.
+
+Pete:
+Yep, that's exactly what happened. So it's believed there was a single actor originally. Again, it seems like they weren't the most sophisticated Bitcoin actor because there were certain things done around how deep they scanned in the wallets and when they hit address limits, they didn't check.
+
+So you could have a situation where maybe you were saved because you generated an address, didn't use it, and then generated another address and received that one. They didn't scan that deep sort of thing in your wallet. So there's different things that would be going on in there, but then it's become more and more sophisticated.
+
+We already know that there are state actors, as in the Lazarus Group of North Korea, that regularly sweep. Usually on Ethereum, you get most of these attacks. They will regularly sweep crypto wallets, like exploit bugs.
+
+They have a whole division of people assessed to it. It would be odd if they weren't attacking those wallets right now. So again, you're probably going to have pretty sophisticated state actors.
+
+I know early on, I saw a friend Lloyd was reporting to various GPU cluster providers, like, okay, there's an attack ongoing. This is going to be used for theft. This is the signature of what this attack would look like running on GPUs.
+
+If you see this, monitor for it and shut it down. Because again, hopefully it's the sort of thing where if you can limit it to the GPUs people have got in their cupboards. That's less than somebody just spinning up a cluster for 100 GPUs and firing this thing off.
+
+But if they do that, then you're doing it with KYC and various other things. If it can be monitored, then you put yourself in danger. So again, it raises the cost.
+
+So it was nice to see that reaction to it. It was interesting to see that AI played both an offensive and, well, we assume offensive and definitely defensive role in this, of scanning all those code bases. I know for me personally, like I was there with Rick the whole time doing various things.
+
+So, you know, one of the things that you need to do is start to verify this stuff yourself. And so I got all of the latest firmware from the affected devices, like, you know, downloaded locally so that I could have my own agents crawling over that code base and just checking, like, if I had any questions around, all right, well, this seems to be an exploit in the random number generator. If I insert dice, is that used?
+
+Like, show me the code path, show me exactly what calls what. Let's walk through this step by step. And you can start to do that analysis yourself.
+
+Like you could probably just say, is it safe? And that'll get you one level of analysis. If you understand a bit more, you can talk the AI agents through how to analyze it.
+
+But it can give you a little bit more insight into exactly how things are done on the device that you wouldn't necessarily have maybe done five years ago. I couldn't have just audited the code because I don't know. I'd have got lost in the C stuff and I'd have got lost in the Python bits.
+
+It's not where I'm used to programming. So the ability to just audit code very quickly and talk through how various paths work and confirm that they're being called correctly from multiple different models, and again, attempt to find all those exploits yourself can be quite reassuring in that sort of situation. Another one that I was using quite a lot was, so Rick is my core agent.
+
+He has sub-agents. Like, when everybody has these buzz things at the moment with like 20 agents, I'm like, why do you want to manage 20 agents? Like, that's for the agent to manage the 20 agents.
+
+I want to manage one. One, yeah. Well, one, it's not true, I have like five, but I think you, this is a slight aside.
+
+I reckon you segregate your agents based on like information that you want them to know and places that they've got access to. So it's access and information, not role. Role-based agents, I think is strange.
+
+Just let your chief of staff manage the role anyway um yeah so working through the through that what I had rick do is he already has access to my twitter and there was like various people that I was following for the updates and that became the communication platform for the whole thing obviously I'll always call it twitter yeah nothing else x for the the new kids they're online um but but yeah it was so he was basically pulling my Twitter threads every 10 minutes and pulls it into the local database. And then I'd have him analyze and said, these are the people that I'm particularly interested in as high signals, but also cast a wide net and figure out what else is going on. And then I want an update every 15 minutes in this channel on Flight Deck that tells me what's changed.
+
+Has anything moved? Is there any material impact that we should be worried about across these devices? He said, if you find anything material, I want it validated in code and I want you to report on exactly where it is in the code that this has come out.
+
+So as new exploits were coming out, I had this system where I was getting, you know, within 10 minutes, I had, like, a validated proof of, like, okay, this is where in the code that exploit is and we can believe that. Like, here's a claim, but I can't verify it because it's all hearsay. And it was just tracking this whole thing live for me and then creating, like, reports when I needed to for various different things.
+
+And I was like, shit, it just really, like, struck me. I was like, this is incredibly useful to do. And you almost needed that sort of real-time emergency management situation.
+
+And it's like a lot of the stuff around, like gathering all the data from Twitter is all scripted. They're like, he does that anyway. I just changed the scope of what I was pulling and how often.
+
+But that's kind of nice because it just doesn't change too much. But then the analysis of that every 10 minutes is like, I couldn't do that myself. I almost couldn't read it enough.
+
+So it became very useful to have an on-the-line reporter that would just tell me exactly what's changed. And I was like, okay, sweet. This is good.
+
+Andy:
+Yeah. I think this has broad-based potential for companies in pretty much any situation. Because traditionally, you'd have a really expensive outsourced function around crisis management, especially if you're a publicly listed company. You know, if something goes wrong about your mining company, like they would basically bring in, you know, crisis managers.
+
+Pete:
+Some, well, some. Like they also do have internal stuff because I've managed a bunch of those. If you're big enough, yeah.
+
+Andy:
+Yeah. But if you're like a smaller company, like that's just a, that's a burden you can't necessarily carry on the like infrequent basis that crisis might occur. Yeah.
+
+But I think to be able to just spin up like an incident response room with your agents and just have like live tracking of all of that information, have it essentially filed, have it filed and scored and then distributed to the right people. If you've got reporting requirements, you can align to those outputs as well. And all of a sudden you can keep third parties notified.
+
+I think there's a lot of scope there that's still not really being explored for agent use. And this was like, when you were describing how you were using it over the weekend, I was just like, oh wow, this is quite handy. Like even like stuff you'd not necessarily think of a crisis yeah but even if you just want to be on top of like you know various things that are happening that might impact your company and you stand up that kind of a situation room
+
+Pete:
+Yeah that that's really useful I mean look for a lot of it could be the weather could be yeah I mean you know this around war is just fucked a lot of people right like just the you can't swing the price of oil like 50 for when you're not put people out of business like there's a lot of stuff to monitor these days that it seems you can't necessarily keep on top of in real time. I mean, just the fact that this is very code-based. It fit very nicely into that situation.
+
+And I was in various signal groups with local meetups and stuff talking about what was going on, trying to answer questions. If I didn't know anything, I would just, it's like, okay, here's my report that Rick's put together. You know we want to understand you know just trying to get like examples of the randomness and like how you would crack it and like how many turns it takes and size of gpu farms and stuff like that and like you just build it out on the fly you just write programs to calculate it all for you it's like this is it was it was nuts yeah and it kind of built on like I'd been tracking Twitter stuff for a while.
+
+Again, it's not that like Ricky's just on Twitter as an agent, but there's scripts that he's written that then go and just gather the data for me so that he's got access to stuff that I might want to know. So I had this in my Book of Sand website, which I nicked from Arian from last year, which was, it would kind of just track the news and tell me like what's new in AI and what's new in Bitcoin, like what's going on. And again it would flag stuff to me before I'd seen it because it can just watch Twitter in a way that I can't it would just give me one thing an hour that's an interesting thing it just keeps me abreast of an industry or something in a way that if I try and do that myself if I tried to go on Twitter and find one thing an hour that was interesting I would spend all day on Twitter whereas if I'm already in Flight Deck anyway and it just pops up and says here's a message yeah this is interesting I'd be like yeah it's interesting cheers let me just get rid of it it doesn't pull me out of my work it just sort of surfaces where I am that was really interesting but yeah to like it was interesting then to take that database and go to that next level of just like all right now do this analysis on it now I need to be informed around this these are the things that I care about in this situation and you need to keep me on top of it and then I just sort ratcheted that back through the weekend whereas it was like every 15 minutes and then it became like a once an hour then it was like all right let's just do this twice a day keep on top of it but I think we've we've passed the thing and I would you know just drop messages in and say okay follow this person follow this person this person's good this person's got a lot of data on this at
+
+Andy:
+The moment so I think there's also an element of being able to assess what to pay attention to like That's kind of a byproduct of any kind of crisis situation is there's a lot of information flying around. And you need to be able to figure out, okay, what's the signal? What do I need to know?
+
+What do I need to act on? And you need to do it quickly. And I think that confluence of events is the bit that causes the stress.
+
+Because you're trying to navigate in uncertain territory. And having your agent just be able to go, hang on a second. Let me handle the noise.
+
+Pete:
+And let me filter this for you.
+
+Andy:
+And here's step one, step two, step three, these are things you need to go and check. I think that's incredibly useful.
+
+Pete:
+Yeah.
+
+Andy:
+Especially if you're talking to someone who's maybe like less technical than you as well. 'Cause I know my first thought was, shit, how widespread is this? Yeah.
+
+You know, is this gonna be something that's limited to Coldcard or are we gonna basically have like a, that was just my first thought, right? Yeah, yeah, yeah. Very reasonable.
+
+Yeah, it's just a natural, It's a natural reaction, I think, to the situation. I think I told you, I was moving house at the time. So I'd seen a tweet in the morning from someone reporting that they'd had their wallet drained.
+
+And that was it. I hadn't really followed anything because I was right in the midst of a move. And then I think we'd kind of messaged each other.
+
+And then later that night, I kind of got across everything. But I was like, I was one of those people potentially in that situation. Like, I wouldn't have responded to it.
+
+I would have just missed it.
+
+Pete:
+Yeah.
+
+Andy:
+So again, like having an agent, like the difficulty with the agent is like crisis response, like teams are not necessarily waiting around all the time to give you information. But like an agent could, and it would be relatively inexpensive to just be like searching out the news and going, oh, this is a situation you need to be on top of because it affects X, Y, and Z. And I think that is quite handy and not something that's going to cost you a whole lot. So I think that's been quite good.
+
+And I know we've obviously both been pretty big on using agents for knowledge management, filtering through the kinds of information that we need to get our hands on quite quickly rather than being lost in feeds. Yep. But yeah, sometimes life, like real life gets in the way of this stuff.
+
+Like I did see someone else tweet. I can't remember who it was, but he was away on holiday. Had to get his neighbor to try and like, you know, find his Coldcard, find his seed phrase and see if his money was still in.
+
+Yeah. See if his Bitcoin was still there. And yeah, it was, it was, it was nuts.
+
+So those kinds of situations like what do you what do you do if you're not in the same country as as your um as your wallet and your seed phrase and then you don't know what off the top of your head and there's all sorts of stuff like that so yeah the real life can get in the way and that can add add a degree of stress and I just think these agents are going to be really handy at being able to filter out um all the signal and I think that should alleviate some stress as well
+
+Pete:
+I mean, because the underlying stress, I think a lot of people in that space are now feeling is that just, it shook a very like foundational brick. So you can reasonably quickly tell yourself that like, all right, that particular bug is that and I'm okay because I'm not exposed to that. But on top of that, you just go, ah, fuck, what else? What else? What else is wrong and that is perfectly reasonable that's just the natural thing and then because there's also like it's like this stampede right like I don't know you know in king's park right they've got the escarpment yeah you know the the aboriginals at the time they used to they used to hunt animals by setting a fire at the back of king's park and they just drive them all off the cliff yeah and it you've got to feel like it just has that sort of feel around the place at the moment where it's like fuck is this just like the fire to drive everybody off a cliff and like where where am I moving like what am I changing here like how comfortable am I in this because I'm everybody is doing it like in a fucking instant like this and it's like fuck it's just like so to be able to have these little robots that will go and help you understand these things and help you try and assess your risk like if nothing else you are going to be a hundred times better than you would be on your own so it was a very interesting experience working with them and like talking people through setups and trying to help them move and get themselves straight and deal with issues
+
+Andy:
+Yeah Well, it is just a perfect example of risk down in our other stuff model of capital up, margin up, risk down. I remember that. That old chestnut.
+
+Yeah. I mean, yeah, I think it is. Because that is probably the one component of that model that we probably don't spend a whole heap of time on.
+
+We tend to over-index on margin up and capital up, obviously. Yeah. But this is a really good example of risk down.
+
+I think oftentimes when we're talking to companies about how they should be using agents yeah I think the risk down bit gets less like almost like that preventative maintenance pitch which is just easy to ignore for a lot of people because the risk isn't like in their face yeah but I think this is like yeah this is a really good example I mean it's a sad example obviously for a lot of people it's just a really like it was gut-wrenching to just see people you know some of the OGs just like you know sharing their stories and I was just like oh fuck like this is this really painful now um but yeah the the agent use case I think is going to be is going to be really fascinating I don't know if we want to talk about like just how we're using agents to like manage knowledge and filter
+
+Pete:
+Out information and I I think we should like because you were talking about just Pliny of the elder like I need the elder kind of talked about buck a sound a little bit is just you can imagine it like an agent that runs and again like I try when I say agents the way I think about it's why I need to do like a whole review of the wingman system so people can understand what I'm talking about but like a lot of it is just programs that the agents write for themselves that run on demand and like gather stuff so you can gather together data from various places on the internet just programmatically and then you use the agent to classify that and you know build these knowledge graphs of what's going on what it means draw links between different stories and then I I've been kind of reasonably naively just using it as like a news capturing system until like this last weekend but I I was really interested in hearing more about
+
+Andy:
+But your your approach to this yeah I think it it was very much inspired by like Book of Sand but I got to a point where I was like you know I read a lot of books to learn but I read Twitter to consume but I feel like there's still a lot of I mean there's a heap of like really interesting content on Twitter especially now that the like I'm actually seeing people I follow again yeah it did get better and that was kind of a reminder that there is actually a lot of good stuff on Twitter if you can find it a lot of good stuff or a lot of intelligence? Oh that's true well not yet Hopefully we'll start to disseminate a few of the snacks on Twitter. But yeah, and I kind of wanted to get to a point where I was like, initially the thought was quite similar to Book of Sand.
+
+I was like, again, let's just find the signal and the noise and like remove the two to three hours a day that I'm probably on, just scrolling on Twitter. But I got to a point where I was like, yeah, I read because I want to learn. And there are certain clusters that I'm more interested in going deeper in.
+
+And so, yeah, Pliny was really like part news capture, but part educational briefing. So the agent will go and basically it might identify a tweet from someone that I follow and go, yeah, this really aligns well to, I don't know, agent use in business systems. So I don't know.
+
+That's very specific, but it might be something along those lines. But the tweet in and of itself is kind of abstract because it touches on one aspect. So I want the agent to then just go and say, yes, this is relevant.
+
+What I'm now going to do is I'm going to go and conduct my own research. And then I'm going to compile this into essentially a briefing. Something that gives me a... Like something I can consume, but go a bit deeper and build my own knowledge.
+
+And if I've never encountered that kind of content before in Pliny, it will basically do an ELI 5 and if I have already have like a bunch of artifacts on that knowledge it will just build on the stuff that already exists and will cite you know other other sources that already exist and so I'm partly building that kind of feedback loop into Pliny as well yeah so that I can track what I've read in the past and how it relates to the kind of new content that I'm seeing and who posted what and like it's not necessarily a graph it's just like linking artifacts together so that it doesn't just become like a disposable newspaper. It kind of looks like a newspaper at the moment, but yeah, the idea is that it's meant to help me actually learn more about the stuff that I'm interested in and go deeper. Then I've got essentially this chain of thought where I can go back and see how this stuff compounds and what content I've built this on, what assumptions that it's been built on.
+
+Because, you know, there might be a really good tweet, but it might be like half-baked. It hasn't really been thought through. There might be good replies to the tweet that are actually useful as well, that factor into that brief.
+
+Pete:
+So like a highly personalized sort of daily newspaper. Exactly. Of Twitter.
+
+Andy:
+Well, it's not just Twitter. But I think Twitter's like been one of the primary sources. I think there's probably like, I mean, it can do like a general website.
+
+Pete:
+Of all the social networks, Twitter is the most news-like. I think so. I think just because it had that short, punchy, real-time nature to it when it first launched as being like, this is what's going on now.
+
+Andy:
+It's often very good at incepting the nugget, the idea that is worth exploring in more detail, which is kind of the way I'd like to use. I think I mentioned to you, sometimes I will just hit the grok button at the top of the tweet because I'm curious and I'll go oh this is interesting because doing this is like one of Luke Groman's tweets recently because I was just like you know especially when you get tweets like that where you're like do you know what I would quite like to dig into the history a little bit I can't remember what it was this was like a few weeks back but you know there may be like some data that is cited that hasn't been necessarily fleshed out in detail in a tweet because it's a tweet so I'm like okay let me ask Grok more about the data that's in this tweet and then that I found I was using that anyway but I was like this is still time consuming and I don't get to do it on everything and I'm still scrolling a heap so let me actually just compile all this stuff into one place surface that information on like a set cadence so I don't run it as often as I mean I'm right now I'm just doing it using that running that pipeline manually okay um but I'd probably get it on a set cadence you know two or three times a day yeah okay yeah
+
+Pete:
+It's weird because I when I first started the Book of Sand I was like just send it once an hour I don't read it every hour. I'll kind of like go back to it and it just lives in a thread or a channel that just is those newsletters. But yeah, it's hard to know like what the right cadence is right because you probably want to read it each time. Otherwise you're probably never going to go and read 10 of them at once. So that's why I kind of refer to it as like maybe a daily
+
+Andy:
+Newspaper or something like that where it's once a day. I quite like the idea of going deeper on
+
+Pete:
+Like a smaller like the thing that it's like a newspaper you can click a story
+
+Andy:
+Yeah you get more yes exactly I think my problem with the newsfeed like with a Twitter feed for instance is that it's just so like it's a wide diaspora of like everything and your attention switch your context switching like constantly like in nanoseconds as you like scroll down the feed and I found that was probably not the most useful thing mentally for me to be doing but But you still can't look away because that's where the knowledge is dropping. That's where the events are happening. Everything's happening first there and you kind of want to be across it. And you kind of almost feel like a little, like not left out, but maybe behind if you're not there. But then as we've spoken about before, it's also such a bubble.
+
+Pete:
+Yeah.
+
+Andy:
+A lot of it's just fake lies. Yeah. You can't get too caught up in it.
+
+So some of it is just like, well, how do I actually like filter out the nonsense here? What can I actually learn from it if I can't learn from anything like what am I doing why am I doing this yeah and I don't know to some degree I was like how would I do this if I was like in school like well I wouldn't just read like you know 180 characters I'd pick up a book and then I'd go deeper in that book and then maybe there's another book and you pick that book up like if I was trying to learn a new subject matter I'd probably go and find like the top five books on that subject and and just read them back to back. That's what I would ordinarily do.
+
+And then that would give me like, at least like a foundation to work from. And I just like, I feel like I could just get these curated briefings every day on stuff that's actually interesting. Now there might not be anything that is all that interesting that aligns well to the kind of topical clusters that I've started mapping out.
+
+But yeah, it almost doesn't have to be, which is the beauty of it. It doesn't need to be continuously finding me information to consume. That's the consumer mindset.
+
+It needs to meet a certain threshold where I'm actually learning stuff, and it needs to be building on stuff that we've already found in the past.
+
+Pete:
+Well, and maybe there's something to be said about introducing a little bit of friction and time there. So maybe you can imagine a situation where you might read your Twitter newspaper once a day, and you're like, oh, I feel so much more at peace with the world. And you go, oh, that's an interesting subject.
+
+And then you click a button and instead of actually, it won't have it to hand. The AI hasn't yet gone and read the top 10 books on that. But you could sort of indicate interest.
+
+And be like, Jeeves, I'm interested in this story. And then you might not hear about it for another day, but then maybe tomorrow when it comes back, you've got that story. And it says, oh, we've done, there's an editorial section in today's paper, sir, which is all about the story you mentioned yesterday.
+
+And it has gone and read the 10 books. And it spent some time prepping it. And you kind of absorb it in a more at a more human speed yes like there's a lot about social media that's not very it's too much in a way there is something like I was telling you I I now have like my bots just reading linkedin because I was like if there's one place I don't really want to read but I feel like I sort of have to be vaguely across because of work it's linkedin and even like Even just the human reading of LinkedIn, it doesn't work.
+
+There's no chronological feed. It just throws stories around all over the place. You can't tell what anybody's said previously.
+
+It's just sort of absolute fucking potluck. And then most of it is just like when people moan about AI on LinkedIn, I'm like, did you read LinkedIn before AI? It's no different.
+
+It's just like the fact that a human creates the bullshit slop or a machine creates the bullshit slop, I really don't care. They've got the AI, there's this AI slop button now. You could have always had this.
+
+Everyone's told me about it. It's like, is there a button that just says, this is human slop that I don't want to read either? I don't think it's AI, but I just do not want to read this nonsense.
+
+But it's been quite useful for that, it'll slowly again just consolidates the information into a large database for me that I can then start to use to make decisions on but without having to consume it in that feed way yeah that it is that's been quite I can see that can be useful one of one of the things
+
+Andy:
+That I know like I kind of as I was like mapping out this pipeline one of the thoughts I had was The thing that an X feed gives you is like a degree of randomness and serendipity. This was the thing that I couldn't necessarily make like recreate in a deterministic way.
+
+Pete:
+I'd like basically lose all of the serendipity and the randomness.
+
+Andy:
+And so I was like trying to work out like, okay, I've got a specific number of known clusters that I would want to explore in more detail. But I've essentially established those through a random walk where I'm like, oh, actually, that's quite interesting. To come across that information somewhere or come across a tweet and then go on yeah I'd like to learn more about that and so that was the bit where I was like this is hard to substitute and so that is like one of these like essentially working questions I still have with Pliny is like how do I still inject an element of randomness and some of it is the feedback loop yeah so as and this is something that doesn't really work now but maybe in like six months a month from now Pliny will go right you might find this interesting because you've explored like some subset of knowledge that might have a loose connection but even that is not like purely random walk yeah
+
+Pete:
+It reminds this is like probably like inside baseball you remember like when we were doing the design work for like educational graphs back in the day is it just sort of reminds me of that so much where we would say, look, you have your own current knowledge graph. And then what you almost want is a subject area graph. Yes.
+
+So that you can compare, like, okay, well, I know these nodes and I have interest around here and maybe I want to go over here. I need some sort of baseline to project this onto to say, what are the obvious nodes that are missing? You can't necessarily do it from your own graph because you don't have that view of the whole thing yet.
+
+That's the whole point is you're learning about it. But there could be something else in these public graphs that just sort of explain a subject. They don't necessarily have all the detail on it, but it's like the ontology for this space looks like this.
+
+And you go, okay, so if I project that onto my graph, I can say I've probably missed some stuff around here. So maybe I go explore over there. It's that thing that then drives you forward.
+
+And that would probably, that's like what a teacher does and a mentor. Somebody that's their graph is more developed than your graph and they say oh you're missing these bits over here but the way you would get there is through these ideas and we'll walk you that way and that's kind of what you want from Pliny is right is that I need you to know everything and then I need you to figure out on my version what don't I know yeah I need you to guide me how to get there I think they like to see that people that are interested I mean this is probably where Facebook like the whole I think a lot of the development of graph databases was this idea of like we have all these like clusters of people that no one likes stuff what else might they like it's just you know they've got a graph database of everybody in it you don't have that you've got a graph database of your own interest yeah so I imagine if you could go and get like if you're a facebook level company you could probably do a lot of this work not figuring out all right That's very true. I hope, sorry.
+
+Andy:
+Let's not make assumptions.
+
+Pete:
+Yeah, I don't wanna assume, but.
+
+Andy:
+Oh, it's a pretty safe assumption, I think. Yeah, it would be news to me.
+
+Pete:
+Assume's not lizard. How well do we really know ourselves?
+
+Andy:
+I mean, we've sat here for a while.
+
+Pete:
+I've never seen your eyes just flick up inside your head.
+
+Andy:
+That's true. That is true, yeah.
+
+Pete:
+That's one. They are very, like. One data point.
+
+Andy:
+It's a subjective one, but yeah. Yeah, I wonder how else we can do that. Because you know, some of it is just incredibly random.
+
+Like, I quite enjoy, like for instance, the initial cluster I built this around was AI because obviously we use this for everything we do at the moment. It's just such a central part of our lives. But also, while it's not actually something I built into Pliny, I wanted it to help me find essentially content sources as well that I can go out and share with people that follow us.
+
+And I thought that would be quite useful, but I want to be able to learn something here. I don't just want it to be like recycled information, which seems pretty pointless, like anyone can do this. But you can't necessarily account for like things where there aren't necessarily any obvious connections to.
+
+So, you know, how agents work and, you know, I don't know, the line of like the last line of Roman emperors are probably not connected in any meaningful way. And so like those are like super disparate. And I might miss something really interesting about a particular Roman emperor.
+
+If my topic cluster is just purely geared for AI.
+
+Pete:
+So maybe this is, I mean, because you've got to know to do that, right? But because it does open the door to say, like, well, I could just have my agents go and listen to this podcast that Justin sent me of, like, a million hours about the Roman Empire. And then it builds the graph.
+
+And then I know where I fit on that sort of graph. Yeah. Maybe there is something like that where you just, it needs to go and do a whole bunch of additional reading.
+
+It just has to say, okay, well, Andy's looking at these subjects. What's like this subject? What else can I find that's out there?
+
+And how can I consume all of that? And then it's not that it knows everything about the subject area. It just knows the next two edges away from where you are.
+
+It's just you don't know it yet. And so the idea is there's always somebody like, there's always this joke about consulting. The job of the consultant is just read two pages ahead of the client.
+
+You don't necessarily need to be an expert, but you need to be further along the book than they are. So that when they ask you a question, you can answer confidently. Yeah, yeah, it's this.
+
+I read it yesterday. Anyway, I'm just going to go home and read. I'll get to see more pages.
+
+I'll get to read. But it's that sort of thing where, yeah, that I could see working. Because then it doesn't require to have the whole of the knowledge thing.
+
+It's just you need that element of randomness to say, okay, project forwards. If I'm interested in this, what else might I be interested in? Go and find people on Twitter that you can follow.
+
+Go and find podcasts that make sense. And then you consume that and build a graph. And then compare that to where I am.
+
+And then see where we've got overlaps between the two. I mean, this is way more data intensive. But that would make sense as a search algorithm.
+
+Because it's searching the edges from where you are currently.
+
+Andy:
+Yeah, my original thought was to use the graph as essentially like a topical map of my own interests. And it would just continue to grow as I consumed more of a particular topic. Because essentially I was thinking like the briefings that come through, I'd just have like a simple feedback system where I'd be like, I'm not really that interested in this or I am super interested in this. And then that would help identify future sources that I might want to go and look at. But equally, I was concerned that that might narrow the scope.
+
+Pete:
+Well, I think it does. I think that narrows it. But I think that's fine because you build good sources into it.
+
+You can say, I don't care about that. And that will help. But I really do think there's something there where having an LLM is actually probably almost way to project yeah like well because you know it's got that probabilistic style to it it has a bit of entropy like it's really built on the idea of a lot of people that say these words also say these words yes and the question you're really asking is like I'm liking these words what are similar words yeah and then okay now take those words and go and find stuff for those words but That core question of just, oh, if I like these words, what other words might I like?
+
+It's just such an LLM question to ask. True, yeah. I think it really fits.
+
+I hadn't really thought about that problem like that. As I said, I always kind of came at it from where you need a kind of complete public graph. I think that's probably overdoing it.
+
+I think you really could do this step out. We should do that.
+
+Andy:
+Yeah, I think so.
+
+Pete:
+It's a good experiment, if nothing else. It's business on air. We should do that. That'd be cool. Oh, there you go. Two pages. Oh, he's listening. Rod's listening. Look at that.
+
+Shout out to Rod. Thank you very much. Shout out to Rod. I mean, I'm typing it and saying it on the podcast.
+
+There we go. We've got a listener.
+
+Andy:
+Who knew? Our first listener to Intelligent Snacks.
+
+Pete:
+We've never actually known, except when we've had, obviously, people in the van. You know that there's somebody in the van and they say, "Oh yeah, I listen every week." But you're like, "Do you listen live though?" That's the question. That's the new...
+
+Andy:
+Yeah, I mean maybe we need to start doing... Friend of the rod. A pod before the pod could actually be like a live stream on Nostr.
+
+Pete:
+Oh, maybe. Yeah. That's true, yeah, because we do usually cover everything. Like five minutes before we go, "Oh, we should..."
+
+Andy:
+Our best material is often spent in the pod before the pod.
+
+Pete:
+All brought to you by Shoshow.live. Shout out Shoshow.live for being easy enough.
+
+I've never streamed anything before in my life. So this was kind of interesting. That was very nice.
+
+Fuck, what were we talking about? We were talking about the graph stuff. Yeah, I think we should...
+
+Andy:
+We should give that a go.
+
+Pete:
+We should build that.
+
+Andy:
+Yeah.
+
+Pete:
+I think that would be quite interesting.
+
+Andy:
+For anyone interested, I will have some more Pliny updates coming soon. It's been fun. I mean, I'm just completely addicted to just building these little wingman apps, aka WApps.
+
+And, like, every idea that pops into my head, I'm like, that could be a WApp, let's go. I said this last week. I've got a real, like, ADHD.
+
+Pete:
+There's too much WApp, yeah. I forget that it has a little meaning.
+
+Andy:
+It's got a cultural meaning of its own. Yeah, that's okay. But, yeah, managing that, like, ADHD component is a challenge. So, partly where the inspiration for Pliny came from, actually. So, I need to cut out as many of these, like, impacts on my mental load as possible.
+
+Pete:
+Definitely, there's too much to know. I mean, as you know, I've been doing, like, a ton of work just on getting flight deck ready. I mean we talked about last week I was a little bit gutted when Buzz came out Because I was like ah this would have Landed harder if that wasn't already out there But it's okay Yeah I think that's just
+
+Andy:
+Part and parcel products there's always something That's coming out Yeah And there's stuff we can learn from it as well I think it helps set the scene as well Because it's
+
+Pete:
+I always was fairly certain that like Multi-person multi-agent comms In that I still prefer the way I've organized it in Flight Deck, obviously, because it's for me, also. But I think there's some useful services in there that even Buzz could learn from for that. But it's... Yeah, we'll see.
+
+Completely. I feel like we completely sidetracked there because we saw a message. We're kind of bang on an hour.
+
+Andy:
+We will get better at live streaming, maybe. Debatable.
+
+Pete:
+You know, I don't even know how to sign off on this one.
+
+Andy:
+Yeah, 'cause We're gonna have to keep talking. We don't have an actual sign off now. 'Cause that was, that's the good stuff.
+
+Yeah. But you could keep saying that, but it would be quite confusing. Not on brand anymore.
+
+Pete:
+It's not on brand. You gotta remain on brand and on naming at all times. But there we go. All right, well. That's a wrap. That's the Intelligent Snacks.

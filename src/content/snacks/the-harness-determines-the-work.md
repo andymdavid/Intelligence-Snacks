@@ -1,5 +1,5 @@
 ---
-title: An Agent Harness Controls Context, Tools and Feedback
+title: "An agent harness controls context, tools and feedback"
 editorialTitle: Context, Tools and Feedback
 thumbnail: /images/snacks/agent-harness-context-tools-feedback-v2.webp
 standfirst: A coding harness controls which files an agent can inspect, which commands it can run and which results return to the model.
@@ -7,9 +7,7 @@ status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
-primaryTopic: agents
-relatedTopics:
-  - ai-coding
+theme: agents
 attribution: Developed from a conversation between Andy David, Pete Winn and dpc
 relationships:
   - target: coding-models-have-working-personalities

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import graphData from '@/data/graph.json';
+import { buildKnowledgeModel, buildTopicModel } from '@/lib/graph-model';
+
+const rawKnowledge = buildKnowledgeModel(graphData);
+const knowledge = {
+  nodes: rawKnowledge.nodes,
+  allConnections: rawKnowledge.links.map((link: any, index: number) => ({ id:`public:${index}`, sourceId:link.source, targetId:link.target, relationshipType:link.type, explanation:link.note||'' })),
+  totals: { knowledge: rawKnowledge.nodes.filter((node: any) => ['concept','claim','example','question'].includes(node.kind)).length },
+  focus: null,
+  explicitFocus: false,
+};
+const topics = buildTopicModel(graphData);
+const pageUrl = new URL('/graph/', Astro.site).href;
+const jsonLd = { '@context':'https://schema.org', '@type':'CollectionPage', '@id':pageUrl, url:pageUrl, name:'The Intelligence Snacks Graph', description:'Explore the people, episodes, ideas and recurring subjects connected across Intelligence Snacks.', isPartOf:{ '@id':new URL('/#website',Astro.site).href } };
+const serialise = (value: unknown) => JSON.stringify(value).replace(/</g, '\u003c');
+---
+
+<BaseLayout title="Graph — Intelligence Snacks" description="Explore the people, episodes, ideas and recurring subjects connected across Intelligence Snacks." {jsonLd} active="graph">
+  <section class="graph-page">
+    <header class="graph-intro page-shell">
+      <div><p class="eyebrow">The living archive</p><h1>Follow the ideas.</h1><p>Explore how people, episodes, Snacks and source ideas connect across Intelligence Snacks.</p></div>
+      <div class="view-switch" role="group" aria-label="Graph view"><button class="is-active" type="button" data-view="graph">Graph</button><button type="button" data-view="topics">Knowledge mix</button></div>
+    </header>
+
+    <div class="graph-view page-shell" data-panel="graph">
+      <header class="graph-map-header">
+        <h2>Knowledge Map</h2>
+        <div class="graph-legend" aria-label="Node types">
+          {[
+            ['root','Collection'],['host','Host'],['episode','Episode'],['contributor','Contributor'],['concept','Concept'],['claim','Claim'],['example','Example'],['question','Question'],['snack','Snack'],
+          ].filter(([kind])=>rawKnowledge.nodes.some((node:any)=>node.kind===kind)).map(([kind,label])=><span class={`graph-legend-item graph-kind-${kind}`}>{label}</span>)}
+        </div>
+      </header>
+      <div class="public-graph" data-public-graph></div>
+    </div>
+
+    <div class="topic-view page-shell" data-panel="topics" hidden>
+      <section class="topic-overview">
+        <div class="topic-donut" data-topic-donut></div>
+        <div class="topic-rows" data-topic-roots>{topics.map((topic:any)=><button type="button" data-topic={topic.id} style={`--topic:${topic.colour}`}><i></i><strong>{topic.name}</strong><span>{(topic.share*100).toFixed(1)}%</span></button>)}</div>
+      </section>
+      <section class="topic-detail" data-topic-detail></section>
+    </div>
+  </section>
+  <script is:inline id="knowledge-data" type="application/json" set:html={serialise(knowledge)}></script>
+  <script is:inline id="topic-data" type="application/json" set:html={serialise(topics)}></script>
+</BaseLayout>
+
+<script is:inline type="module">
+  // @ts-nocheck
+  import { mountKnowledgeGraph } from '/graph-explorer.js';
+  const model=JSON.parse(document.querySelector('#knowledge-data')?.textContent||'{}'); const topics=JSON.parse(document.querySelector('#topic-data')?.textContent||'[]');
+  const container=document.querySelector('[data-public-graph]'); let cleanup=()=>{};
+  const openNode=(id,node)=>{ if(node.href&&node.href!=='/graph/') window.location.href=node.href; };
+  const mount=(focusId='')=>{
+    cleanup();
+    const focus=model.nodes.find((node)=>node.id===focusId)||null;
+    try {
+      cleanup=mountKnowledgeGraph(container,{...model,focus,explicitFocus:Boolean(focus)},openNode);
+    } catch (error) {
+      console.error('Knowledge graph failed to mount',error);
+      container.innerHTML='<p class="graphRuntimeError">The graph could not be rendered in this browser.</p>';
+    }
+  };
+  requestAnimationFrame(()=>mount());
+  const panels=[...document.querySelectorAll('[data-panel]')]; document.querySelectorAll('[data-view]').forEach((button)=>button.addEventListener('click',()=>{document.querySelectorAll('[data-view]').forEach((item)=>item.classList.toggle('is-active',item===button));panels.forEach((panel)=>panel.hidden=panel.dataset.panel!==button.dataset.view);if(button.dataset.view==='graph')requestAnimationFrame(()=>mount());}));
+  const donut=document.querySelector('[data-topic-donut]');
+  if(donut&&topics.length){
+    const ns='http://www.w3.org/2000/svg',chart=document.createElementNS(ns,'svg');chart.setAttribute('viewBox','0 0 100 100');chart.setAttribute('aria-label','Knowledge mix');
+    const track=document.createElementNS(ns,'circle');for(const [key,value] of [['cx','50'],['cy','50'],['r','41']])track.setAttribute(key,value);track.classList.add('topic-donut-track');chart.appendChild(track);
+    const circumference=2*Math.PI*41,total=topics.reduce((sum,topic)=>sum+topic.share,0);let cursor=0;
+    const tooltip=document.createElement('div');tooltip.className='topic-donut-tooltip';tooltip.setAttribute('role','tooltip');
+    const hide=()=>{tooltip.classList.remove('is-visible');tooltip.textContent='';};
+    for(const topic of topics){const segment=document.createElementNS(ns,'circle'),share=topic.share/total,percentage=`${(topic.share*100).toFixed(1)}%`;for(const [key,value] of [['cx','50'],['cy','50'],['r','41'],['fill','none'],['stroke',topic.colour],['stroke-width','17'],['stroke-dasharray',`${share*circumference} ${circumference}`],['stroke-dashoffset',String(-cursor*circumference)],['tabindex','0'],['role','button'],['aria-label',`${topic.name}: ${percentage}`]])segment.setAttribute(key,value);segment.classList.add('topic-donut-segment');const show=()=>{tooltip.textContent=`${topic.name} · ${percentage}`;tooltip.classList.add('is-visible');};segment.addEventListener('pointerenter',show);segment.addEventListener('pointerleave',hide);segment.addEventListener('focus',show);segment.addEventListener('blur',hide);segment.addEventListener('click',()=>renderTopic(topic.id));chart.appendChild(segment);cursor+=share;}
+    const centre=document.createElement('div');centre.className='topic-donut-centre';const value=document.createElement('strong');value.textContent=String(topics.length);const label=document.createElement('span');label.textContent='topic families';centre.append(value,label);donut.append(chart,centre,tooltip);
+  }
+  const topicDetail=document.querySelector('[data-topic-detail]');function renderTopic(id){const topic=topics.find((item)=>item.id===id)||topics[0];if(!topic)return;document.querySelectorAll('[data-topic]').forEach((button)=>button.classList.toggle('is-active',button.dataset.topic===topic.id));topicDetail.replaceChildren();const head=document.createElement('header');const eyebrow=document.createElement('span');eyebrow.textContent='Topic family';const title=document.createElement('h2');title.textContent=topic.name;const description=document.createElement('p');description.textContent=topic.description;head.append(eyebrow,title,description);topicDetail.appendChild(head);const list=document.createElement('div');list.className='subtopic-list';for(const child of topic.children){const row=document.createElement('details');row.style.setProperty('--topic',child.colour);const summary=document.createElement('summary');const dot=document.createElement('i');const name=document.createElement('strong');name.textContent=child.name;const share=document.createElement('span');share.textContent=`${(child.share*100).toFixed(1)}%`;summary.append(dot,name,share);const copy=document.createElement('p');copy.textContent=child.description;const episodes=document.createElement('div');for(const episode of child.episodes){const link=document.createElement('a');link.href=episode.href||'#';const label=document.createElement('span');label.textContent=`Episode ${episode.number} · ${episode.title}`;const amount=document.createElement('b');amount.textContent=`${Math.round(episode.words/child.words*100)}%`;link.append(label,amount);episodes.appendChild(link);}row.append(summary,copy,episodes);list.appendChild(row);}topicDetail.appendChild(list);}document.querySelectorAll('[data-topic]').forEach((button)=>button.addEventListener('click',()=>renderTopic(button.dataset.topic)));if(topics.length)renderTopic(topics[0].id);
+</script>
+
+<style is:global>
+  .graph-page { padding:clamp(2rem,4vw,4rem) 0 clamp(5rem,8vw,8rem); background:var(--paper); }
+  .graph-intro { display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; margin-bottom:2rem; }
+  .graph-intro h1 { margin:.2rem 0 .55rem; font-size:clamp(2.5rem,5vw,5rem); font-weight:500; line-height:.92; letter-spacing:-.055em; }
+  .graph-intro>div:first-child>p:last-child { max-width:40rem; margin:0; color:var(--text-secondary); }
+  .view-switch { display:flex; flex:none; padding:.22rem; border:1px solid var(--ink); border-radius:3px; }
+  .view-switch button { padding:.62rem .85rem; border:0; border-radius:2px; background:transparent; font:600 .68rem var(--font-mono); letter-spacing:.04em; text-transform:uppercase; cursor:pointer; }
+  .view-switch button.is-active { background:var(--ink); color:white; }
+  .graph-view.page-shell { position:relative; width:min(calc(100% - (2 * var(--page-pad))),calc(1600px - (2 * var(--page-pad)))); overflow:hidden; border:1px solid var(--line); background:#faf9f9; padding-inline:0; }
+  .graph-map-header { position:absolute; top:0; right:0; left:0; z-index:4; display:flex; align-items:center; justify-content:space-between; gap:2rem; padding:.9rem 1.25rem; pointer-events:none; }
+  .graph-map-header h2 { margin:0; font:600 .7rem var(--font-mono); letter-spacing:.065em; text-transform:uppercase; }
+  .graph-legend { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.5rem .8rem; }
+  .graph-legend-item { display:inline-flex; align-items:center; gap:.38rem; color:var(--text-secondary); font-size:.72rem; white-space:nowrap; }.graph-legend-item::before { width:.52rem; height:.52rem; border-radius:50%; background:var(--graph-kind); content:''; }
+  .graph-kind-root{--graph-kind:#343b37}.graph-kind-host{--graph-kind:#4f78a8}.graph-kind-episode{--graph-kind:#72817a}.graph-kind-contributor{--graph-kind:#a26f49}.graph-kind-concept{--graph-kind:#4aa8a5}.graph-kind-claim{--graph-kind:#d96b45}.graph-kind-example{--graph-kind:#d49a32}.graph-kind-question{--graph-kind:#9674cf}.graph-kind-snack{--graph-kind:#d65f87}
+  .public-graph { position:relative; height:clamp(600px,72vh,880px); overflow:hidden; background:radial-gradient(circle at 50% 44%,rgba(249,73,1,.035),transparent 38%),linear-gradient(rgba(15,15,15,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(15,15,15,.018) 1px,transparent 1px),#faf9f9; background-size:auto,32px 32px,32px 32px,auto; }
+  .graphRuntimeError { max-width:34rem; margin:4rem auto; padding:1rem; border:1px solid var(--ink); background:var(--paper); text-align:center; }
+  .sigmaCanvas,.sigmaCanvas>div { position:absolute; inset:0; }.sigmaCanvas canvas { position:absolute; inset:0; }
+  .sigmaControls { position:absolute; right:1rem; bottom:1rem; z-index:5; display:flex; flex-direction:column; gap:.45rem; }
+  .sigmaControls button { width:2.4rem; height:2.4rem; border:1px solid var(--line); border-radius:2px; background:rgba(255,255,255,.94); color:var(--ink); font:500 1rem var(--font-mono); box-shadow:0 3px 12px rgba(10,10,10,.07); cursor:pointer; }.sigmaControls button:hover{border-color:var(--ink);background:var(--ink);color:white}
+  .graphSpotlight { position:absolute; z-index:6; width:min(320px,calc(100% - 2rem)); padding:1.2rem; transform:translate(-50%,-50%); border:1px solid var(--ink); border-radius:3px; background:rgba(255,255,255,.96); box-shadow:0 18px 50px rgba(10,10,10,.16); pointer-events:auto; }
+  .graphSpotlight .eyebrow { display:block; margin:0 0 .5rem; color:var(--coral); font:600 .65rem var(--font-mono); text-transform:uppercase; }.graphSpotlight h3 { margin:0 0 .35rem; font-size:1.25rem; line-height:1.08; }.graphSpotlight .metadata { color:var(--text-secondary); font-size:.68rem; }.graphSpotlight p { margin:.85rem 0 1rem; color:var(--text-secondary); font-size:.82rem; line-height:1.45; }.graphSpotlight button { padding:.65rem .8rem; border:0; border-radius:2px; background:var(--ink); color:white; font:600 .65rem var(--font-mono); text-transform:uppercase; cursor:pointer; }
+  .topic-view { border-block:1px solid var(--ink); }.topic-overview { display:grid; grid-template-columns:minmax(280px,.75fr) 1.25fr; gap:clamp(2rem,6vw,7rem); align-items:center; padding:clamp(2rem,5vw,5rem) 0; border-bottom:1px solid var(--line); }
+  .topic-donut { position:relative; width:min(100%,360px); aspect-ratio:1; display:grid; place-items:center; margin:auto; border-radius:50%; }.topic-donut>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform:rotate(-90deg)}.topic-donut-track{fill:none;stroke:var(--line);stroke-width:17}.topic-donut-segment{cursor:pointer;transform-box:fill-box;transform-origin:center;transition:scale 140ms ease,filter 140ms ease,opacity 140ms ease}.topic-donut-segment:hover,.topic-donut-segment:focus{filter:drop-shadow(0 3px 3px rgba(10,10,10,.25));outline:none;scale:1.025}.topic-donut-centre{position:relative;z-index:1;display:grid;width:58%;aspect-ratio:1;place-items:center;align-content:center;border-radius:50%;background:var(--paper);pointer-events:none;text-align:center}.topic-donut-centre strong,.topic-donut-centre span{display:block}.topic-donut-centre strong{font-size:3rem}.topic-donut-centre span{margin-top:.4rem;color:var(--text-secondary);font-size:.72rem}.topic-donut-tooltip{position:absolute;top:.8rem;left:50%;z-index:2;max-width:calc(100% - 2rem);transform:translate(-50%,-4px);border:1px solid var(--line);border-radius:3px;background:rgba(255,255,255,.96);padding:.45rem .65rem;color:var(--ink);font-size:.7rem;line-height:1.3;text-align:center;white-space:nowrap;box-shadow:0 7px 20px rgba(10,10,10,.12);opacity:0;pointer-events:none;transition:opacity 120ms ease,transform 120ms ease}.topic-donut-tooltip.is-visible{transform:translate(-50%,0);opacity:1}
+  .topic-rows { display:grid; grid-template-columns:repeat(2,1fr); gap:.55rem; }.topic-rows button { display:grid; grid-template-columns:10px 1fr auto; align-items:center; gap:.7rem; padding:.85rem; border:1px solid var(--line); border-radius:3px; background:transparent; text-align:left; cursor:pointer; transition:transform .18s ease,background .18s ease; }.topic-rows button:hover,.topic-rows button.is-active{transform:translateY(-2px);background:white;border-color:var(--ink)}.topic-rows i{width:10px;height:10px;border-radius:50%;background:var(--topic)}.topic-rows strong{font-size:.82rem}.topic-rows span{font:600 .7rem var(--font-mono)}
+  .topic-detail { padding:clamp(2rem,5vw,5rem) 0; }.topic-detail header{max-width:42rem;margin-bottom:2rem}.topic-detail header>span{font:600 .65rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase}.topic-detail h2{margin:.3rem 0 .65rem;font-size:clamp(2rem,4vw,3.6rem);font-weight:500;letter-spacing:-.045em}.topic-detail header p{color:var(--text-secondary)}
+  .subtopic-list{border-top:1px solid var(--line)}.subtopic-list details{border-bottom:1px solid var(--line)}.subtopic-list summary{display:grid;grid-template-columns:12px 1fr auto;gap:1rem;align-items:center;padding:1.15rem 0;cursor:pointer}.subtopic-list summary i{width:12px;height:12px;border-radius:50%;background:var(--topic)}.subtopic-list summary span{font:600 .72rem var(--font-mono)}.subtopic-list details>p{max-width:46rem;margin:0 0 1rem 28px;color:var(--text-secondary)}.subtopic-list details>div{display:grid;justify-items:start;gap:.35rem;margin:0 0 1.25rem 28px}.subtopic-list details a{display:inline-flex;align-items:center;gap:.65rem;padding:.45rem 0;color:var(--ink);font-size:.78rem;transition:color .16s ease}.subtopic-list details a span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}.subtopic-list details a:hover{color:var(--coral)}.subtopic-list details a b{padding:.24rem .45rem;border:1px solid var(--line);border-radius:999px;background:white;color:var(--text-secondary);font:600 .62rem var(--font-mono);white-space:nowrap}.subtopic-list details a:hover b{border-color:var(--coral);color:var(--coral)}
+  [hidden]{display:none!important}
+  @media(max-width:900px){.graph-map-header{flex-direction:column}.graph-legend{justify-content:flex-start}.topic-overview{grid-template-columns:1fr 1fr}}
+  @media(max-width:650px){.graph-intro{align-items:flex-start;flex-direction:column}.graph-map-header{padding:1.15rem}.public-graph{height:65vh;min-height:520px}.graphSpotlight{left:50%!important;top:auto!important;bottom:1rem;transform:translateX(-50%)}.topic-overview{grid-template-columns:1fr}.topic-donut{max-width:270px}.topic-rows{grid-template-columns:1fr}}
+</style>

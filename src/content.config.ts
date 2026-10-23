@@ -50,8 +50,7 @@ const episodes = defineCollection({
     originalPublishedAt: z.coerce.date().optional(),
     updatedAt: z.coerce.date().optional(),
     participants: z.array(reference('people')).min(1),
-    primaryTopic: reference('topics'),
-    relatedTopics: z.array(reference('topics')).default([]),
+    themes: z.array(reference('topics')).min(1),
     youtubeUrl: z.url().optional(),
     audioUrl: z.url().optional(),
     transcript: z.string().optional(),
@@ -82,8 +81,8 @@ const snacks = defineCollection({
     publishedAt: z.coerce.date().optional(),
     updatedAt: z.coerce.date().optional(),
     sourceEpisode: reference('episodes'),
-    primaryTopic: reference('topics'),
-    relatedTopics: z.array(reference('topics')).default([]),
+    episodePosition: z.number().int().positive().optional(),
+    theme: reference('topics'),
     attribution: z.string(),
     transcriptStart: z.string().optional(),
     relationships: z.array(z.object({
@@ -97,4 +96,16 @@ const snacks = defineCollection({
   }),
 });
 
-export const collections = { people, topics, episodes, snacks };
+const newsletters = defineCollection({
+  loader: glob({ base: './src/content/newsletters', pattern: '**/*.{md,mdx}' }),
+  schema: z.object({
+    title: z.string(),
+    status,
+    sourceEpisode: reference('episodes'),
+    snacks: z.array(reference('snacks')).min(3).max(4),
+    publishedAt: z.coerce.date().optional(),
+    seo,
+  }),
+});
+
+export const collections = { people, topics, episodes, snacks, newsletters };

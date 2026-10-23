@@ -1,0 +1,947 @@
+[00:00:01] Pete
+Alright, and welcome to The Intelligence Next, the big episode 67. We've been reliably informed anyway. Yes. So it's on. Alright, let me just get the chat back up. Alright, so once again, we're trying to stream live to Nostr, so let's see how that goes. As you can see, around the campfire, we've got one extra. the return. Well, it's not even a return. The first, the first time,
+
+[00:00:24] Anthony
+first time on the Intelligence Snacks Winning this, um, returning from the good stuff.
+
+[00:00:28] Andy
+Yeah. Do you know what I've done as well on the, uh, new Intelligence Snacks website, intelligencesnacks dot com.
+
+[00:00:33] Pete
+New hyphen? Intelligencesnacks dot com, no hyphen, just, we just got that domain name, right? Twenty
+
+[00:00:39] Andy
+twenty-six, just got it. Nailed it. But there's a contributors page, right? It's like- Guests will appear on the contributors page, and they are ranked by number of appearances.
+
+[00:00:47] Anthony
+Oh, okay, so I'm at the top. I'm gonna be at the top. I will be. So Jared, don't, uh, don't come, please. It's like an
+
+[00:00:54] Andy
+An unofficial leaderboard just appearing on my site.
+
+[00:00:57] Anthony
+Actually, I didn't have a sh- I shared this with you, Pepe, just before we got started, Jared. So if you're listening, Jared, I know you're listening, but, um, we have a mutual connection. So Um, previously I've talked about my mate Tim, who runs a food manufacturing business. He was actually the, the chef, um, that org-organized or coordinated your catering for your wedding. So Tim Corrick Um, there's a, there's a small purse connection there. Yeah, so there you go. 'Cause you were Jared, Jared, Jared Griggs, Tim Corrick, and I'm Dead Man Oz. There you go, there you go. All right,
+
+[00:01:27] Pete
+there you have it There we go, surprise live docs. Oh, we got, we got, we got someone. Yeah, I see someone came in. Hey, there we go. Kevin Strom. Oh no, he's reacting to Word Five.
+
+[00:01:39] Pete
+Oh, this is just like my notifications feed, maybe. I don't know, I don't know how- I was gonna say 'cause mine looks different. I don't know how the chat works. All right. And the
+
+[00:01:47] Andy
+worst thing is, mine says started one week ago, so we may have been live the whole time. I don't
+
+[00:01:52] Pete
+know.
+
+[00:01:54] Pete
+I pinged, like, Rod, if you're listening back or here, then, um, I did ping you a message this morning. It'd be good to have you on Intelligence Next to talk about— We should do that. AI development and entrepreneurship. I think you'd be a good guest. Anyway, so we have, we have a guest today, Anthony. Welcome back. Yeah, good to be back. Thank you for having me. What's the agenda for today? Like, what's been going on in, in AI world?
+
+[00:02:17] Anthony
+Well, I thought we'd talk a bit about
+
+[00:02:20] Pete
+Comparing your van to my own,
+
+[00:02:28] Pete
+okay,
+
+[00:02:28] Anthony
+'cause I got a 2014, uh, IAS, but the import all-wheel drive one. Mm. So I'm just pointing out, I got many differences. All right, no worries. If you don't mind. That's cool. We're doing a podcast, we're recording right now, but you're on it. So say
+
+[00:02:36] Pete
+hello to the audience. Hi. Hi, hi Guy, hi Buck. Yeah. All right, there you go, the disapproved. You don't want to talk about that project immediately. Yeah, I don't want to talk
+
+[00:02:46] Anthony
+a bit about like- Local models and model sovereignty and the like, I think that, um, I guess recently the events in the Bitcoin community around the, um, the cold code incident and then the Bitcoin Red Team that spun-up, the Red Team to Look into vulnerabilities in the various software stacks, but then also the, um, guardrails, um, dropping down from cheap, from OpenAI and Anthropic, and not being able to use the frontier capabilities, and then having to rely on the Chinese models, which is great, but it's still like an API you're calling out to, and there's still the, um, potential for that to be interference or censorship or, um, control being applied at that level. So Yeah, just talking about like local models, local capabilities, where this is all heading. I've got my own opinions, but you guys don't use local models as far as I know? I mean, maybe you play with it on your Mac, Pete? I, I play,
+
+[00:03:40] Pete
+I play with them, but not in any meaningful way. Local models. Like, I do use the open source models, but I just don't use them locally, usually. Like particularly, like in terms of doing, like, an out, like, security analysis And stuff like, they're just great, like they're the best. But, but you want like, kicks off, like what's, what's new or what's going on?
+
+[00:04:03] Anthony
+Well, um-
+
+[00:04:05] Anthony
+Meta, Facebook, um, they've been out of the game for a while, they've had some internal issues, I suppose. Like Llama
+
+[00:04:10] Pete
+4 was
+
+[00:04:11] Anthony
+just completely dog shit, it
+
+[00:04:13] Pete
+was dog shit, nobody liked it. Llama 3 was actually pretty good.
+
+[00:04:16] Anthony
+Llama 3 was Arguably what kind of kicked off the open weights, like, I guess there was a few players before it, um, but they were the one that kind of made the splash and sort of led to the explosion of all these Um, models being open waited, but they're back, they've got a new model, they've got a new s-set of models that they've released. So I think that,
+
+[00:04:37] Anthony
+and, and also Mark, Mark's like a bird, I mean Whatever your opinion of him, he's been talking shit about the, the big players, saying like, "Hey, look at us, we're opening things, like we're, we're making things available, we're gonna be doing things behind closed doors, which is cool." This is based, Zuck. Yeah, based, Zuck. So he's, he's back in some way. Yeah, yeah, yeah, yeah. You can switch, you can, it's the best. You can turn it on if you want to, but, um, so they're back with a, a model called MuseGLM, which is a thirty billion parameter model. I haven't played with it yet. I've got it set up, but I haven't switched. I still use the, the workhorse that is Kimi, sorry, Qwen three point six. Okay. Um, a local model that I use, which It's actually surprisingly good for like admin tasks and just doing things on your local system, like, um, organizing your documents or pulling, pulling PDFs, looking, looking through with the vision capabilities, looking for information, distilling or presenting it to you. So they're actually very capable once you've— I think the twenty-seven billion parameter, thirty billion parameter models are like very Capable, probably for most people's uses, I would say. Like, you're not, you're not doing, you know, the heavy stuff you do at work or, or the like, but in your own personal life, they would be absolutely appropriate for Having a private agent, a private model to sort of do, do things for you. So,
+
+[00:05:56] Pete
+I mean, the way we've phrased this before is that for a lot of the, the work that we do, what you want is just these little intelligence They do like small- Right, that's it. That's where the name came from originally. But like, this is like those small little jobs where there's a job that needs to be done, like this needs to be converted into this, this needs to be cleaned up like this, this is how, like, we can, you know, bridge these different software products like using an LLM to do that. Yeah. And I would imagine for a lot- That task, it's like you, you really are trying to restrain it anyway, so why not just do that locally in the UK? There's
+
+[00:06:27] Andy
+a consumer problem there, where everyone kind of just defaults to what's available and easy to get their hands on.
+
+[00:06:32] Anthony
+Well, that's the problem. So to run these These models, like even this Qwen model, you still need like a decent GPU, right? So we're talking like thirty-two gigs of RAM kind of thing. So that in and of itself these days is pretty, pretty pricey Um, thousands of dollars, no one's gonna, probably no one's gonna stump up for that when they could- It's, it is interesting, right?
+
+[00:06:53] Pete
+'Cause I used to like have a PC graphics card back in In the, you know, 3GX days when everything was first kicking off. And like a thirty-two gig graphics card, I, I had one of those twenty-five years ago. Like that doesn't feel like it should be that impressive anymore. Like, I'm sure I had graphics cards within a year after that that were like sixty-four and one hundred and twenty-eight. Like, what, what, what's happened there? No, no, this was gigs. Surely. No. Or maybe it was megs. It was megs. It was megs. It was Megs. Come on, let's be real.
+
+[00:07:30] Anthony
+They were definitely like the, yeah, the old Nvidia Riva cards and all that stuff, yeah. God, 3Dfx, they were all Megs. 64 Meg cards, 128 Meg cards. Sorry. Alright. A little bit off. Okay, I've been schooled. Yeah, fair enough. But like, um, that's, that's the i-issue I think that people, it's, it's just a cost-benefit analysis at the moment for people. Well, first of all, I don't think people aren't, people aren't aware, they're not in the midst of it like we are, so they're not knowledgeable of that
+
+[00:08:00] Anthony
+That this is like something you can do or it's within-
+
+[00:08:02] Andy
+That's the irony of it, right? It's like you mentioned these are like good for mat- like more administrative, smaller tasks that are on your local system. The people that would benefit from that don't need frontier intelligence, but frontier intelligence is easier for them to get their hands on, so they're throwing frontier intelligence at like really small manual tasks on their local system. It seems like that's, that's the disconnect.
+
+[00:08:23] Anthony
+And it's like a unit bias thing as well, like, oh, would you pay like five grand for like private AI or would you pay like twenty bucks a month kind of thing, right? So you're gonna go for twenty bucks a month. And there's no, I don't think there's any good, um- Well, uh, you have to build a PC basically, or you have to buy a PC off the shelf, right? So I think at some point we're gonna see, and then we are, we are already have some products and products under development, um- At least fit for purpose for like private AI. So, I know CoinClair had something that wasn't necessary, I don't know if they had a GPU actually, but it wasn't for actual- No, it wasn't. It wasn't
+
+[00:08:57] Pete
+for actual, yeah, it was for-
+
+[00:08:58] Anthony
+Okay, there's another one, Vora, which is- 'Cause that's so
+
+[00:09:00] Pete
+good at protecting-
+
+[00:09:02] Anthony
+Well, that's what I was gonna say.
+
+[00:09:05] Anthony
+But there's an interesting product from, um, some guys based in San Francisco, Jesse Posner and, um, Eric Kaczor, and so their product, their company's called Vora, and it's about, um, private AI that Serves you and is sovereign, like helps you with your sovereignty, right? So they've got a, it's an AMD box, um, it's under development at the moment, and it's, I think it's running like one of the Qwen models, Qwen three point six. But it's a— its sole purpose is to provide that what I've cobbled together in a product. And the point was gonna be
+
+[00:09:38] Pete
+like a, a rack,
+
+[00:09:40] Anthony
+it's how they were describing it like maybe that was like six months ago. No, it's a little nut, they're, they're like, um, you know, twenty centimeters by twenty centimeters kind of thing, or maybe a little bit larger. Like a DGX Spark. Same, same form factor as a DGX Spark, yep. So I think that this is the start of that type of industry, private AI, plug it into your, have, it's another, another appliance you have at home, right? And it will run your calendars, it could run your calendars, it could do all this stuff for you. I think that's where the, um, the massive opportunity is. Um, just because you don't need the, the bleeding edge capabilities, you just need something that can do You know, the ninety percent, and then you're gonna get huge utility out of it, right? So I, I'm super keen for that. I'm, um, pre-ordered, backing that project. Yeah.
+
+[00:10:27] Pete
+Um, but I always felt like a nice, um- Comparison there was just, 'Cause it seemed, it almost seems odd to go and buy these GPU stuff. I used to, uh, work with, um, Paul Etoy, friend of the pod, at Network. He was, he used to say like, "You can imagine it like a PlayStation, you know? Like people do have PlayStations in their house, they, they were, they had plenty of memory, they had plenty of graphics processing." So you can use them to play games. It's not that weird that they also have like a hard drive and just also run all of your private data there and then also run all of your local clearance and stuff. But it, it might be like that sort of chunky sort of thing Where we have a single purpose thing, it's not necessarily a PC, it's just there to run models and data and databases and whatnot of like your private information. Yeah. I think that'd be a good, I, I'm a fan. I think
+
+[00:11:14] Anthony
+we need that, we need that separation. Yeah, absolutely.
+
+[00:11:17] Pete
+Yeah, when I first bought my Mac Mini about a year and a half ago, that's what I thought I was buying into. I was like, "Oh yeah, there's a GPU's on here, it's got a bit of memory," and I, I didn't do any like check of what I needed to run any of these local models Beforehand, and then I got in and I was like, "Ah, yeah, it's not gonna do anything. I can't do anything else. It's a really good hosting sort of platform that I can use, and I can use it to run all the agents itself and the databases and all the— That doesn't really run the APIs, doesn't
+
+[00:11:43] Anthony
+really
+
+[00:11:43] Pete
+run
+
+[00:11:43] Anthony
+the models, right?
+
+[00:11:44] Pete
+But it would be nice to be able to like
+
+[00:11:45] Anthony
+plug someone else in there
+
+[00:11:47] Pete
+and
+
+[00:11:47] Anthony
+just go, "Alright, you're the models," and does everything, doesn't call out to any services, it just is running all on the box, right?
+
+[00:11:54] Andy
+Yeah. That would be great. I mean, the hard thing though is like if you've got a normie market, like you almost need to go through this journey of figuring out like what you can actually do with these models. Yeah. I think that's part of the challenge, is like the PlayStation, you know exactly what it does for you, you have a
+
+[00:12:14] Andy
+That's missing where people have to be like, "Why, why am I using this thing? " You know? You might start with something really small and manual, but you almost need to go through and do the reps with, with And then like, I mean, even I feel like this is a year or two people are building the product
+
+[00:12:28] Anthony
+to doing, I suppose. Yeah, exactly. They, they do, you do— it needs to be plug and play largely, like most people aren't gonna fuck around with, with it like to the level we are, right? They're just gonna want something that just sort of plugs in, maybe they log into a few accounts, and then off it goes. It, it's capable of just sort of like Starting to manage things for them or be use- useful for them. So that's the, the hardware's, you know, one part of it, that's kind of like the easy part. It's that bridging the productization for plug and play, that's like very, very challenging, I suppose. Yeah.
+
+[00:12:58] Pete
+That's
+
+[00:12:58] Anthony
+where a lot of the innovation's gonna be. I
+
+[00:12:59] Pete
+know we've seen this as well, like there's, there's this level where To actually figure out like the, the automations that you want inside a business isn't simple. Like people can often do things where they'll say, "Oh, it'd be great if an AI did this for me," and it can kinda do it, but it's not quite what you want And then the difference between going from like there to actually something that is just automated, does exactly what you want, minimal impact on like total spend, is predictable, is actually quite a, a decent like Process reengineering, yeah. Like the, the way you're doing something now, it seems obvious when you say it, i-is not how it would be done if you had an army of AI agents, because you didn't used to have an army of AI agents. So you will have to change Like the way you do stuff in order to best take advantage of these things.
+
+[00:13:47] Anthony
+Sure. And maybe the business world is, there's more heterogeneity, like so there's way more of a surface area to kind of cover off compared to like a, a house, managing a household. So like, like the, like the calendars, the finances, like maybe the shopping lists, like whatever, those type of things are probably all very Narrowing scope, or as you go into a business and every business is like running a different software stack and
+
+[00:14:10] Andy
+that- But do you think people just buy that stuff off the shelf? You know, that could actually just remain in SaaS, 'cause people will just be like, "Well-
+
+[00:14:16] Anthony
+Yeah, I don't know, I don't know about the business context. I think it's, for me, if there's a clear line of sight for the, the home consumer, the home market, then the business, like, there might, might be Like different industries or like verticals that are ripe for these type of products in the business world, but
+
+[00:14:37] Anthony
+I still, it
+
+[00:14:38] Pete
+still feels fairly hobbyist to me at the moment. In a bad way, but it
+
+[00:14:42] Anthony
+is
+
+[00:14:42] Pete
+in that, that sense, like, 'cause I think even for like your home use, you have to think about how you do it at home now. Hello?
+
+[00:14:52] Pete
+It's a different pod people. Yeah, sorry, sorry, that's the, that's the big stuff. If I remember correctly. This is intelligent snacks.
+
+[00:15:00] Pete
+That hasn't been grounded, it's still big stuff, yeah. But because like at least in a business, it's kind of normal for thinking of it, and it's more about how are we doing stuff, like what's the process here, can we make it better. Yeah. You know, it's, it's kind of weird when you do that at home. I like you come back and go, "Alright, wife, what's the process for this? Like, how can we do it better?" Like, it, it never goes down in the same way. Pull out those SOPs from the top drawer, let's go.
+
+[00:15:24] Pete
+Yeah, but things kinda just, I don't know, just sort of happen more so in my home lately. Or maybe that's just the way I am. I
+
+[00:15:30] Anthony
+don't know, like, I, I think if you can demonstrate a compelling, I, I, product vision, like, um- It, it can serve as a calendar, you can plug in your, your, your bank account feeds and stuff, and it can show you sort of like holistically like where your money is at or opportunities to like get better interest or wh-whatever it may be, like Look, are you still paying for this subscription? Are you using it? Like, I think that the— it doesn't require much of a leap for someone to be like, "Oh yeah, that's cool, I could, I could potentially save, save money or have..."
+
+[00:16:00] Anthony
+Better awareness of my life, right? I don't know, I think a lot of people maybe would resonate with that idea, but sure, they're not gonna go fuck around and tinker to get there, they just want to be given, given to them on a platter.
+
+[00:16:13] Anthony
+I, I don't want that given to a middle-platter. I'm happy to support it, but I think that, that's, um, how you get this into homes, just like the robots will do.
+
+[00:16:24] Anthony
+No,
+
+[00:16:25] Pete
+I think that was a previous podcast. The listeners will have to go back through the, back through the archives for that one. I think
+
+[00:16:33] Andy
+we need to go back. I can't remember the episode number. Yeah. I think there's also the, um, like I know even for me, last week I talked about building like Pliny, which is like my off-social media newspaper.
+
+[00:16:43] Anthony
+Yep.
+
+[00:16:43] Andy
+Um, like I went through, built that, it was just a series of pipelines, but those pipelines- It was so intensive, like they were running for like fifteen, twenty minutes, and I was like, "This isn't sustainable. Like, I've gotta completely re-engineer these, work through which bits of it could just be like code and the rest is..." Be really deterministic and then where do I specifically need the agent, where do I need the intelligence next? You know, but like most people aren't gonna do that. If I just sat in front of the terminal and just said, "Right, build this thing for me," and then I start using it I would have had the same tool, but it would have been like just grossly inefficient to be running three, four, five times a day.
+
+[00:17:18] Pete
+I always felt this is why so many people's open claw Setups broke after about a month, and it's, it's 'cause they had to, 'cause they've kind of like loaded a lot of stuff into an agent runtime, which is probably the wrong place For it, like agents were doing a lot of just running scripts that could just be scripts running scripts running scripts, like none of that needed to exist in a context window.
+
+[00:17:41] Andy
+Yeah.
+
+[00:17:42] Pete
+And so They're kind of the wrong setups, and then everything gets confused and starts doing weird stuff. 'Cause I can't build it anymore. Just... You say, "Why have you stopped? That's no mistakes, and these are mistakes." Like it just doesn't make any sense. But, yeah, it's- I, I do think you need that. And it's in, I find it interesting that like you've got, you're plenty the elder, and I have my book of sand, and we both have two separate, effectively like newspapers for reading social media. Yeah. But yours is, yours is a- But
+
+[00:18:10] Anthony
+we don't, we don't use- Yours is for Twitter, your, well, yours is more general. No, it's Twitter. Twitter is- Oh,
+
+[00:18:14] Andy
+but it'll do a web search as well. And the idea is like- It'll sort of give me the initial content, like it'll render the tweet, but it basically turns it into like basically like a, a research briefing, um, and maybe even like part lesson plan, like there's something technical there. Oh, and if I, if I think it's not Particularly technical, or if I'm right across it, I can give it feedback and just be like, "This is, I'm, I'm across this," and then the next time I won't go into so much detail. But it's more of a, um, like I was describing last week, it's like reading for learning rather than reading for consumption. And that was kind of the aim. But in that respect, it's been pretty good. So I'd say like we have pretty similar goals with it, and probably pretty similar pipelines under the hood, but still quite different form factors. And sorry,
+
+[00:18:59] Anthony
+does this all hook into the wingman?
+
+[00:19:02] Andy
+Mm,
+
+[00:19:02] Anthony
+yeah. Sweet. So you've got different,
+
+[00:19:05] Anthony
+whatever you call them, plugins, components, whapps, which are the wingmen Wingman,
+
+[00:19:11] Andy
+wingman, yep. I don't know what else you would call it. It's a wingman. Why would you wanna call it anything else? There's a WAP or a WAP. Anyway,
+
+[00:19:28] Pete
+moving on. Um, yeah, so they're both separate, separate websites. I mean, I, I don't know if I ever sent you the link to mine, but I could do. Mine also does, well, it was publishing into FlightDeck. I'd like a chance. So like, Flight Deck is like my version of Buzz, but better. I might do a live stream tomorrow, around tomorrow, in Java half hour, I'll talk through all of this and we'll get it up on screen. That might be useful. So I need somebody to just ask me questions about it, to, because if I try and like just talk about it, it'll just be nonsense. I'll just like ramble on for ages. I kinda need a few people to just go, alright, what's that? Like, why have you done that? But so I used to like stream back the articles into, into a channel, in there, and I'd just look at the channel, but I was getting annoyed that I constantly had these unread things I had to go, go and do, so I pulled it out of the channel and it just So I've still got the, the newspaper website where I can go, wherever, and then I've got like a new thing in Flight Deck now where I've got a feed. So there's various apps that are doing their thing, and then they just surface stuff like it's a social feed. And so if, if I look over and there's like five stories there, I can go and look at the stories if I- Just browse through them, it's easy to dismiss, but it'll just like pop up, but it's not an unread item I need to deal with in the same way as like agent feedback that's finished building something for me.
+
+[00:20:42] Pete
+So that's, so yeah, that's pretty main difference, and then I have like a So mine like just renders like a, a newspaper, there's a bunch of headline stories, and then I'm just adding some supporting sideline stories I'm not too fussed about, but they can go in there. And then everything, the, the thing underneath is like just a big graph database. So when it like finds a story, it'll write up the story for me as like a newspaper output, and then it'll figure out like what are the different nodes and like elements inside this story. So what's the topic it's covering What are useful, what are the, are there companies that are being called out, or particular individuals, or various things, and then it'll map all of those, and then it'll like link those as like edges into other nodes around the graph. So the idea being that once this has been running for a little while, I'll be able to go, okay, well, there's a story All right, here's all the other stories with Donald Trump in them, or here's all the other stories around Nvidia's AI development, or this data center implementation over here, and then it becomes a where And the idea is just to have something where, now, if my AIs are going off and reading the news, they're becoming like a little bit more informed on their current events, and then when I ask them about questions, they can check that as a resource to say, "Okay, well, do I already know about this? Like, okay, like you've already been interested in all these stories before in the past." And here we go. So it kind of personalizes a little bit better.
+
+[00:21:56] Anthony
+Right.
+
+[00:21:58] Andy
+Might be going a little deep here, but is that, is that graph in Tower or is it just local? Yes. Yeah, okay, interesting.
+
+[00:22:03] Pete
+I have,
+
+[00:22:04] Andy
+because I was doing something similar, but it was just local.
+
+[00:22:06] Pete
+Yeah, okay.
+
+[00:22:07] Andy
+Because I was like, do I want
+
+[00:22:11] Pete
+this to pollute the town? You can have multiple, like, this is a, a separate namespace inside our, inside my personal town, as opposed to our corporate town.
+
+[00:22:21] Pete
+Yeah, we're just, we're just basically doing business on the pond. Yeah, this is where,
+
+[00:22:25] Anthony
+like, I'll, I'll turn through this. This is where I live stream with the stuff. Yeah, you drop all
+
+[00:22:29] Pete
+these names and no one has any fucking idea what's going on. Well, this is why I wanted, I wanted to, like,
+
+[00:22:34] Anthony
+this isn't the right
+
+[00:22:37] Pete
+Bell maker, I assume that's what you go by. Friend of the pod, friend of the pod. Bell maker instantly, instantly promoted to friend of the pod position, get access to the secret signal group
+
+[00:22:50] Pete
+Yeah. So, yeah, no, we, we should do an overview of all of that sort of stuff. But the idea is that there's like one, the tower component is It's basically like a backend as a service that all stands behind like a Nostr ID. So your Nostr ID, you can say like, "Give me a workspace," "This workspace is my peak workspace," "This workspace is my other stuff workspace." For instance, too, I would use. And it's like this one, every one of those workspaces comes with storage, so you have S3 buckets, you have PostgreSQL databases ready to go, and you have, um, graph databases ready to go And I would probably add like Git service, like a Gitea server that is then npub authenticated. But it means that you and all of your agents that also have npubs can go and just talk to that stuff natively. And it- It just manages all of the, the orphan permissions, everything's NIP-98 API calls, so you can just say, "All right, your endpoint is now allowed to do all of these things," and it works. It abstracts all that. So it makes it very useful When you're building apps and just go, "Alright, we'll just put it in the,
+
+[00:23:53] Pete
+the infrastructure that already exists." So that was, that was the idea with that bit.
+
+[00:23:57] Andy
+That's good to know, 'cause I wanna do it for intelligence next. There's a graph
+
+[00:24:00] Andy
+Forming around each other, snacks, how they link together to which contributor, you know, who said what, that kind of thing makes for a nice graph. If that's in Tower, then, yeah, be handy for the agents to, yep, kind of think away with it.
+
+[00:24:10] Anthony
+Yeah, I think you've got You've been working on this for longer than, I guess, the team that Buzz, d-developed Buzz was developing Buzz, so you, and some, and you're Buzz friends of the pod. You've, you've, you've got a lot, your Got some more interesting features like the graph database that they don't have. So
+
+[00:24:29] Pete
+I shared my real life stuff.
+
+[00:24:31] Anthony
+Yeah, there's a lot, there's a, in some ways, like I used, when I used to work in industry, there was We, we spent a lot of time trying to, um, get our product out there in front of the right people, but we were a small company based in Perth and we couldn't necessarily educate the market, so we sort of, um- Got the idea that we were happy for our competitors to go start to move into the area that we were moving into, around, um, like a, AI surfaced like incidents or interesting events that happen in, in front of security cameras, because then they would s- these bigger players would spend their time e-educating the market for us, and then we could come and be like, "Hey, well, we've got a unique offering that these bigger guys can't." So in some ways, Buzz is doing that piece for you. They're gonna do that, that educational piece you guys can't. Educator market, Buzz educator market, and then you have a unique offering to come to, to bring to the fore once people are aware of what Buzz does, the whole, um- Like an agent sort of interaction, space interaction and getting things done, like, I don't know how you describe Buzz, but that's, that's one way of doing it. You've got that and more,
+
+[00:25:40] Andy
+right? I think it's, it's definitely been a problem, like, this is something we've noticed a lot, but I think One of the things I think makes a big difference talking, certainly for us, you know, we, we focus on like small businesses, small medium-sized companies, right? You kinda can't go in leading with features and benefits 'cause they just don't count.
+
+[00:25:55] Anthony
+No, you're right.
+
+[00:25:56] Andy
+Yeah, like ultimately you have to anchor it in like what the business problem is, like, where's the growth opportunity, how do they save money, how do they make money, and if you can do it that way, then great, but otherwise it's just another tool A bunch of words they don't understand, and no one really wants to invest the time and the effort into that stuff. So yeah, anything that lays the groundwork will be useful. But then I think also we kind of position ourselves as like a, an AI partner for those companies And then it's like we are the interface where the trust is put at hand, and then they take the recommendations.
+
+[00:26:28] Pete
+I've seen a couple of times, I think a good like leading indicator for us that someone that will buy is somebody that has- Gone and like got a Claude code subscription, realized they can do a bunch of stuff, and then got kind of a bit pissed off at Claude and a few of the things it gets wrong or it becomes a retard or it just can't do a particular thing that it's asking it to do or like the, the infrastructure around setting stuff up that other people can access it. Like we take care of all of that inside the stack It makes it easy. And I think like when people hit that, like, ah, like, I, I can see where this works, but I can't do it. Like then, then it works nicely, then that's, I think that's where we're kind of positioned for that, yeah. It's only said like the Our goal has always been like, how would you run a business on this and like, the whole thing, like, where would it sit, like, what would it look like, like, why does the, where does the value go? What are the bits you would need? And, you know, the, our flight deck component came out of just, once you have like, if you have one, if you've just got one agent that you're working with, it's quite easy to have like, one agent, many sessions. We do that in our autopilot, works very nicely. As soon as Fuck me, I've, I've now got like twelve of these things I need to be logging in all over the place. It's a pain in the ass, like, which one am I talking to right now? Like, as soon as you do that, like, then having like one common like communications fabric that sits above it becomes like infinitely useful. You're like, okay, I can see that. But then even there, we were just like, okay, now I need to worry about, can that one talk to that one or not? Like, is it allowed to make requests of that other
+
+[00:28:03] Anthony
+agent?
+
+[00:28:04] Pete
+Um, possibly not, 'cause This one's got access to all of these different things. Like in general, like my, like chief of staff agent can talk to anybody, but not everybody can ask you a question, for instance. But it's, yeah, it's, there's a lot to, to worry about, and then comms is part of it and like going across multiple agents, but then, you know, I would find that it would be,
+
+[00:28:26] Pete
+it, there became like this moment of overwhelm That was the other thing I was trying to do, which is like when I was working on like one or two sessions, like, like when I was saying autopilot, but like think of it like in a Claude Code terminal, you can manage like one or two things at a time, and then as soon as you sort of pull out to that, to trying to make Twenty changes to a project over the course of the day.
+
+[00:28:46] Anthony
+Rod, Rod is back.
+
+[00:28:47] Pete
+Oh, Rod's back! There you go. Sorry, I mean, I was talking. We got, we got some Rod. Rod, check your DMs. I sent you a DM earlier about coming on the pod. Come on the pod, Rod. Friend of the Rod.
+
+[00:28:59] Pete
+Uh-huh. Yeah, so, where was I? Yeah, we were, I, I found that I, I just couldn't run like more than one or two sessions, and/or I'd be in this like deep work mindset where I might make twenty different changes to something. And then I come out of it and like, you know, like talk to Annie and say, "Oh, yeah, like, what's changed?" I'm like, "Don't know." Like, I just, like, I, I don't know. Like, I'm not... Like, if you'd have asked me, like, when I was in the middle of it, I'd just, a, I wouldn't have heard you. But maybe I could have answered, but now I'm not in that mindset. I, I almost don't know what I did. Yeah. I'd have to, I gotta go and look at logs. Yeah.
+
+[00:29:32] Andy
+This is why I have Lara ship me a message every week saying, "This is what we did this week, this is like decisions that are open that we haven't moved forward, " 'cause I will just forget stuff.
+
+[00:29:40] Anthony
+Yeah.
+
+[00:29:40] Andy
+This is like, these are the milestones that we hit, and she'll just message me on Last Dot as a DM, and
+
+[00:29:52] Andy
+I'll be like, "Cool
+
+[00:29:55] Pete
+Yeah.
+
+[00:29:56] Andy
+And now I'm like, no, this is handy, like, this is really good, 'cause I just get lost in the, in the mess of it. I think this is actually why like business is a really good container for AI as well, because you already have like Systems and processes, you have people, they are all organized into domains, they use tools, you know, like there's just a really good like fabric, good structure that already exists that you can like- Again, it's like finding where you want to insert the intelligence into like systems that have generally been optimized over time to be more efficient because there is like a commercial driver to make them more efficient So then in that respect, it's not like, again, the hobbyist would just be like, "Okay, here's twenty things I wanna do, there are no constraints."
+
+[00:30:37] Pete
+Yeah.
+
+[00:30:38] Andy
+"You're not necessarily gonna run like an optimized version of, of whatever you're building, 'cause you don't have- After. But a company is like a really good container in that
+
+[00:30:47] Anthony
+way. Well, I think that like in general, we're obviously still very early in AI, right? But kind of, there's some stan— like standardization is kind of an important aspect of the way that technology develops and matures, right? So Um, at some point, what you're working on, there's gonna be sort of standardized ways to put, put things together, and I guess you've got a lot of insight as to what's worked and what hasn't, 'cause you've experimented with so much stuff over a number of years, right? But in general, like in the bigger picture Yeah, standardization, for example, like MCP be— becoming a standard and then like changing to a, a new, like a two point o standard, so this is like just part of the way that Everyone starts to use the same tools and, and inference really is just, just like a, um, a service. You just like send off some data to a model provider and get something back. That's, that's, that's all that sort of like the models are. Obviously, um, Anthropic and OpenAI are trying to build All their harnesses and the ecosystem around it, 'cause they know that they can't protect the model intelligence. The intelligence is just a, just a tool call, basically, a system, an API call. You can't protect that. We've, they've, we've, we've seen with Kimi and, and the Chinese models that
+
+[00:32:00] Anthony
+That's no longer defensible. You have to have, have to have everything else around it, and I guess you guys are building something not around a model, but around like, um- Yeah, composing different components for business, right?
+
+[00:32:14] Pete
+Yeah, I mean, my, my view is I wanted a system that could run the, an entire business, where I could define business processes into there The agents operate in, and then when the humans need to be in there, there'll be like a custom app that it just services the information in, and I can use that. And so we kind of have like all of that stuff is, is there In that platform. And then, like the bits you were saying about, like FlightDeck kind of developed from being like a common comms platform to then into, like, the other stuff it does is around files
+
+[00:32:48] Pete
+Files, documents, and tasks. So again, to me, like the overwhelm problem was just like, what was, what the fuck was I doing? Like, what do I need to tick off as being, you know, you make twenty changes to like a front end of an app, and you're like, I should probably test them. And see if it happened. But like, where's the list of things to test? So everything that gets implemented, like, everything starts as like a chat thread inside a particular channel, which is itself inside a scope So it'll be like, this scope is Wingman, these channels are all the different products inside Wingman, and every one of those channels has a custom prompt that explains to the agent how we do work on this product, and then that then delegates off to the lower level agent that does the work. Right? And then I, I will be chatting, we'll get something done, but as it creates, so as it delegates off the work in the back end, it creates tasks on the board. So the, like basically my, my task board is basically just review and done. Like it's, I almost never see those intermediate columns, but that's fine. Like sometimes someone will get stuck, and then I can go and go, "Ah, okay, that got stuck. Ah, that's why that's not there. Okay, cool." And I can— But it just gives me some context of what the hell has happened, and then I'll just like scroll through the, the review at the end. Make sure everything's working and I can take it off. But it means I can somehow just keep on top of these things, or I can point another, you know, another like agent that spins up every hour that just does catch up work, and they'll say like, "All right, is anything been dropped? Is there anything in progress on the cap— on the board that shouldn't be there? Okay, what happened?" And then he'll send me a report going, "Oh, this one got dropped, and this is what happened with this
+
+[00:34:20] Anthony
+one." How well does this scale, right? 'Cause it sounds like what you've got built is really good for your own personal, like, uh, if you're like a sole trader or something, like you've, you're across everything, um, but you're obviously using it for the other, the other, the other stuff, is that the business now, not the goods for other stuff? So you've got two people in there and a bunch of agents? What about, um, five people? What about ten people? What about twenty people? What, what if you
+
+[00:34:42] Andy
+just describe those like how everyone's used to working? In some respects, you've got comms, you've got Docs, you've got tasks, you know, you've got review points, check-ins, authorities. Like, I think this was part of the challenge is that you don't wanna reinvent, like A new way of working, because that will just create friction. You want it to kind of mirror up to how people used to work in. And I think that kind of form factor supports how people work in it all. It's just, like if you look at, like, Buzz, right? It looks for all intents and purposes like Slack. It's the comms interface with agents, right? I mean, I haven't really used it. I'd like to kind of play around with it, but I also feel like I don't have the need to, 'cause we've just got wingman who works. But yeah, that again, like, seems to be like the right kind of half step to start working with Agents, 'cause it's like, oh, it's an environment I'm used to. I'm already talking to actual humans I work with. Great, it's already multiplayer and now let's throw agents in. Oh, they can start doing work for us. Cool. And I feel like, yeah, you don't wanna just leap to some entirely new, like, way of working.
+
+[00:35:49] Pete
+I mean, the way we deal with the scale in Flight Deck is really around like the,
+
+[00:35:55] Pete
+I, I don't know if this, I've noticed this in Buzz, but I, I, you know, in Slack, say, you have like channels and then groupings of channels Like those groupings of channels, we call the scopes inside of this, and the idea would be that you would define for your business, like, what are the core scopes, and you might only do work Yeah. Five of them. And therefore, like, they're the only ones that you would see, somebody else would see different ones. Anybody can DM anybody, that's its own separate sort of scope area. But then, that's what defines like everything that's going on. So you can look at it as, "What's everything that I can see across the company? What's everything that I can see in this specific scope that I'm operating in?" Right now, so I'm just doing marketing work or I'm just doing development work, like just get rid of everything else that I don't want to see. And then for any of those, you can then drill into any channel, and it'll aggregate everything up, and then you can- Just separate out into like recent updates. So it does, I, I find it, it structures the work very nicely and it feels very similar to how I've worked in my life Hundred thousand person plus organization, so I assume it will scale, but I don't know. Like,
+
+[00:37:00] Anthony
+I mean, I don't care because I wouldn't. Sorry. That's, no, I, I agree to some extent, right?
+
+[00:37:04] Pete
+I don't care that much. Yeah. I kinda want it to work for
+
+[00:37:06] Anthony
+twenty
+
+[00:37:07] Pete
+people. Yeah, it doesn't need to scale that big. Yeah, yeah.
+
+[00:37:08] Anthony
+That's good enough. I really do wanna have, have a play with it. So for, is everything, so if I went on to your GitHub,
+
+[00:37:15] Pete
+yep,
+
+[00:37:15] Anthony
+can I just, um, clone everything and start to use it? Or have you still got stuff that you're like holding back from? No, I mean,
+
+[00:37:23] Pete
+I, I'm constantly just like banging stuff into pro- to me. Alright, so it's always open and I can start to experiment. Yeah, you should be able to. Like, it, it will make— I think what, what we'll do then tomorrow, let's do like, say, like half an hour or so. Might take a little longer, but we'll see. We'll, we'll fire it up. I'll, I'll like, I'll bring up the architecture document, and then I'll show you all the bits, and then I'll walk through like how I use it. And then that will make more sense, I think, 'cause then you— And I'll, I'll do it on my like- Live home.
+
+[00:37:54] Anthony
+I've seen some screenshots and stuff and like the, um, it does look sick and I've, I have liked some of the features. For me, it's just, um, yeah, like, like I guess a lot of people focus, I just, I struggle to focus on any one thing because there's, there's so many, so much shit, shit, shit going on. Building multiple projects at once and slowly closing one off. I won't, I won't deal with this. I feel like I brought
+
+[00:38:18] Andy
+this up with Pete like two weeks ago. Like, I feel like it's given me ADHD.
+
+[00:38:22] Anthony
+I agree that my, my attention is shot.
+
+[00:38:25] Pete
+So, and honestly, it's only about three weeks ago that I moved I moved full time, I got for like that good enough that I could move
+
+[00:38:34] Anthony
+full time.
+
+[00:38:34] Pete
+Alright.
+
+[00:38:35] Anthony
+This is what I wanna
+
+[00:38:35] Pete
+hear,
+
+[00:38:35] Anthony
+right? Right. Because I've experimented with, I played with one, one variant, wing, wingman, like a year ago or so, I was like, ah, there's a lot of rough edges here, I don't know if I can be bothered like committing to, to using something, but Um, yeah, like the re- the recent screenshots you've shared, like I could just consolidate, 'cause at the moment I'm using different harnesses, OpenCode sometimes I use OpenCode, sometimes I use Claude Desktop, sometimes I use Claude on the command line, sometimes I use Codex Desktop, sometimes I'm just using like Kimi command line, whatever. I'm just like so fucking scattered about what I'm doing, and it would be nice to consolidate these things. I've got projects Half implemented over here, different states, all the context is in my head or in sessions on disk, and like it's just like super overwhelming, and that's part of the attention piece, right?
+
+[00:39:19] Pete
+I mean, I, I can't promise you no refactoring.
+
+[00:39:22] Anthony
+No, I mean, right? As long as, as long as I know that you're like— The
+
+[00:39:24] Pete
+difference thing is, I am using this like all day, every day, and so-
+
+[00:39:29] Pete
+When I get a rough edge. Like, as, you know, I was talking about the van, so I was, before, in the pod, before the pod, before the pod, I was just telling Anthony about, like, the van, and I said, he said, "Oh, it's all homemade," I said, "Yeah, like, you couldn't sell somebody a van like this with just fucking gaffer tape all over the wall." But, like, it's But the thing is, I, I don't see that. Like, it, it's just, I have this, like, I remember, like, living in a flat in North Bridgeman, Perth, for three years. Like that. And at one point before we moved out, my wife mentioned the Purple Wall
+
+[00:40:00] Pete
+And I was like, "What are you talking about? We don't have a purple wall." And she was like, "You know, by the door on the right-hand side as you come in, it's a purple feature wall." And I was like, "You're just insane." And I went home and I was like, "It's a fucking purple wall there." I don't feel like living with this thing for three years. And it just, it was like that level where I was like, I, I don't need to know what color the wall is. It's a wall, it does its job. Like, there's no window in it, I'm not looking at it, I'm looking over there where the stuff is, but I have no idea. I,
+
+[00:40:29] Andy
+I also think that's a, like, this, this is part of the reason why we're so bullish on Wingman. Because most companies won't need to worry about the plumbing, they will just want you to do the thing that they need you to do, and like having that like well-designed like app interface is still valuable I think as long as the agents are like under the hood doing the work, I think that's gonna be— I think that's why I'm really bullish on it for like businesses, that layer is just gonna be really useful. And then you've got the infrastructure. So if you do need to go, right, what's the next bit of work we need the agents to do? It's either an extension to that. That WAP or it's a new WAP, and those things will talk to each other, which I think is really hard to do anywhere else. So it's like you've got the plumbing, you go and put the, lay, lay the plumbing in the business, and now you can just go and do what you need to do Yeah.
+
+[00:41:17] Anthony
+Well, I'm a sole trader, so I guess it'll be for business purposes. Exactly, exactly. You can, you can pay me
+
+[00:41:22] Pete
+for my consulting work.
+
+[00:41:24] Anthony
+So definitely not on the, on the rare cases, like what I was saying is that
+
+[00:41:26] Pete
+you can
+
+[00:41:27] Anthony
+Can't afford that. Thanks so much for the fucking frontier models,
+
+[00:41:30] Pete
+right? If stuff goes wrong, then let me know and we can fix it very quickly. 'Cause it, it might be one of those things where it's always kinda bugged me, but I never bothered fixing it. Like, there's a lot of stuff in like autopilot. So, I- whilst these days I work predominantly in flight deck, you can also work directly with the engines It's in autopilot, which I do still sometimes for like really focused changes where I wanna be on top of exactly what the model's doing. And it, it just always looked a bit like shit. And I think like maybe nine months ago I tried to make it look nice, and it just ruined the performance. It was done incorrectly, and I just couldn't be bothered to fix it, so I don't care. I'm, I'm really, I'm watching the stream, stream pass me, and then I care about the end bit, and the end bit's there, like, who, who gives a fuck? And then, I think it was when I was on holiday, like over in Japan, I just sort of tidied it all up as a bit of a side project, and, you know, the models of air and things worked easier and perform- I worked through the performance issues and got all that sorted. And I think, like, it just made, it just made your experience like a thousand times better Yeah, that stuff makes a huge, makes a huge
+
+[00:42:37] Anthony
+difference, right? Like, just the,
+
+[00:42:42] Anthony
+the, the visual like,
+
+[00:42:43] Pete
+yeah, the, the aesthetic
+
+[00:42:45] Anthony
+of it actually like matters.
+
+[00:42:46] Pete
+I think I tidied up the way that, like some, like, I tidied up a lot of the skills under the hood. As well, made those more transportable so that the, the app with the agents running inside Wingman were more aware of what they had access to in Wingman. Can you hook
+
+[00:42:58] Anthony
+up, um, M-MCPs? Yeah.
+
+[00:43:01] Pete
+Yeah, MCP skill. It, it actually uses like the native agents on your- So anything you can do with the native agents, you can do with this. This is
+
+[00:43:07] Anthony
+how— was it calling the CLIs directly?
+
+[00:43:10] Pete
+Uh, it— there's a few different methods. Like there is an ACP method for like Goos and various things. Goos and Py and Goos and Py run through ACP, Open Code runs through the Open Code SDK. Uh, Codex can do ACP, uh, Codex SDK or Agent API. Cloud runs through Agent API 'cause everything else it doesn't respect the subscription. The Agent API was done by- Code- Codex, they have ACP, right? They do, but you can only use API credits for that one. So if you want to use like your two hundred dollar or, well, I'd say all you can eat, but it's not all you can eat, it's— We're gonna con— We're constantly gonna rate limit you. It's, uh, it's like- Rapidly shrinking. It's like, here's a buffet that you can't eat. That's, that's how- Yeah, I was gonna show you the-
+
+[00:43:56] Anthony
+And then we're also gonna tell you that what you're doing is wrong, and we're gonna You're just like, oh shit, um, I, I gotta, let's spin off that project and spin some tokens on that, anyway. But I've noticed that like the, um, the number of tokens per- Like spend is, is, is decreasing. Like, I haven't been tracking this, but I just know mentally, like, oh, hang on, I had this, this many billion tokens like last thirty days, like, to, to You know, two weeks ago, and now it's this, but I'm at the same, like, level, like what? So it's like, yeah, the reduction, I don't, I don't look at that.
+
+[00:44:37] Pete
+Like, I, I honestly don't find that my Codex gets, I mean, I, I've been on the Max plan since forever. But it just doesn't, I, I run out. Would you go close? You're doing, you're doing too much nonsense stuff.
+
+[00:44:48] Anthony
+I'm got, I've got some like long, a long running
+
+[00:44:51] Pete
+focus.
+
+[00:44:52] Anthony
+Yeah, I do. I got a long running, long running project which will come out one day, but Um, yeah, I just put all the monitoring and stuff, right? I just, yeah, and I've, I've got a few other like Bitcoin related things which are like just masses of data to sort of, sort of consolidate, and I've just, whenever I got some like token spare and, um, Codexs, I'm just like, alright Yeah. Five point six Soul Ultra, continue, just, I mean, just sat it off for a few hours, it just churns through.
+
+[00:45:19] Pete
+Yeah. Yeah, like you, you could set up a few different agents with different subscriptions, again, I guess, as well and just have them in Separate containers, and they each have their own Codex subscription, and you can max it out. I know, I,
+
+[00:45:32] Anthony
+I did look into this, but I thought, I don't wanna get, don't wanna
+
+[00:45:35] Pete
+get banned. At that point, you feel like, oh, I might as well just have a, use API.
+
+[00:45:40] Anthony
+I mean, like, you learn, then you need to learn to be efficient.
+
+[00:45:42] Pete
+So the thing that I'm really into like DeepSeek for Flash, like recently, it's, it seems, I'm, I'm not like, it doesn't seem like a retard, it seems very effective, it's more- It's quick as fuck and it costs hardly anything. Like, are you using this locally at all?
+
+[00:45:59] Anthony
+No, I, I, the, the best model I can run locally is, um, is it too big for your local setup? Too big. I can't look, I can't look. Look,
+
+[00:46:04] Pete
+I don't think it's too
+
+[00:46:06] Anthony
+big. You, you kind of need like, um- A spark or something to run those, but the problem with— I would, would have got a spark, but it's, um,
+
+[00:46:16] Anthony
+you kinda want the compute and the memory ban— mem-memory bandwidth is like a very impor-important aspect of, like, not only the VRAM, like the size of the memory, but actually how quickly you can interact with the memory, so the memory bandwidth effectively, or how much you push through. So the Spark has like a memory bandwidth that is pretty imbalanced to the compute, so you can't do, you can't get fast decodes. Decode is basically the Tokens per second kind of like response, so when you're, when you're, when you're chatting with it, how many tokens it can spit out at once per second. Um,
+
+[00:46:54] Anthony
+and that's definitely gonna get picked up by this, yeah, this mic's terrible for audio, okay, okay.
+
+[00:47:00] Anthony
+So, um, yeah, the, the Spark has rubbish memory bandwidth compared to the Compute, so I just, I've held off because I know it's kind of like, uh, nerfed hardware, it's like the first gen, waiting for the second gen to come, which hopefully will have pumped up, um, memory bandwidth Anyway, so you need like something like that to run the Flash though, DCB4 Flash. Um,
+
+[00:47:21] Anthony
+which, yeah, it'll be much better than the Qwen probably. Have
+
+[00:47:23] Pete
+you looked at the
+
+[00:47:24] Anthony
+framework that's, that's
+
+[00:47:26] Pete
+like 128
+
+[00:47:28] Anthony
+gigs unified memory? I did have a look, um, it's, it's, uh, similar, like they, n-none of these systems are really built for what we know to be useful, um, hardware properties. Like, I think we're still maybe one generation behind that. So to get good memory bandwidth to get Um, yeah, unified memory to get a bunch of compute. And in Beach Place. You guys on the
+
+[00:47:54] Pete
+cappuccino strip? No, we're not on the cappuccino strip. We're at City Beach. That's just a sixty-year-old and a
+
+[00:48:00] Pete
+In a convertible, like nailing it to the airport with coke and going hard, so we've got that going on. But yeah. Yeah, like I would like these things to just— I just want somebody to sell me a box that is the cutting edge. I feel like it's gonna take a little while to calm down. Yeah, right. It's been so hard to get GPUs, memory's so expensive at the moment that you kind of feel like all the,
+
+[00:48:28] Pete
+I don't know, commoditization of this stuff is probably a few years away before you can reliably-
+
+[00:48:36] Anthony
+Yeah. Like I looked at the, um, RTX 6000, which is kind of like the, um, top professional slash consumer card you can get. That doesn't go into like the Um, data center cards kind of thing. Yeah. And they probably, um, I don't know how much they cost before this all kicked off, but I'm assuming it was probably seven thousand dollars or something like that, or eight thousand dollars maybe. They're over twenty thousand dollars. Like, that's just- How, how crazy things have got. And people would have like four of these in a system, right? So you're talking about already like eighty grand of e-expenditure on a GPU, um, on GPUs alone, they've got ninety-six gigs of RAM, so Even then, you still can't run like the, the very top end models, you still like, those are out of reach. But if you could have like a Kimi K3 run that in your own hardware, like, geez. Yeah. Imagine how good the world, how the, the world will be an amazing place probably after all the, everyone gets hacked, but eventually.
+
+[00:49:35] Pete
+I mean, the HRF, I mean, sure, friends of the pod, HRF
+
+[00:49:38] Anthony
+Human Rights
+
+[00:49:38] Pete
+Foundation, they have a guy, zero ex zero, yeah, zero, yeah, zero, yeah, zero, he's
+
+[00:49:43] Anthony
+been on,
+
+[00:49:43] Pete
+yep, a few podcasts. He's been, he's looking into this, isn't he? Like, he's the local models running guy, he's
+
+[00:49:49] Anthony
+one of them, yep, that's, yep,
+
+[00:49:51] Pete
+following a lot of this stuff. Any, any updates from him? Good stuff
+
+[00:49:54] Anthony
+to see. Um, I mean, yeah, he's always buying new hardware, makes- It's good for him. Yeah. He's just like, I bought another Spark, or bought two Sparks, and I'm like, oh great, I don't even have to, I don't need another one, but they're
+
+[00:50:04] Pete
+kinda hard to source, I've been looking for-
+
+[00:50:06] Anthony
+Yeah, again, I looked at Sparks, and I was like, ten, five, one. But they're like seven grand. I'm like, Jesus, what the fuck. So yeah, that needs to be— and there's no incentive really for Nvidia or anyone to help manufacturers to nail that because like, the margin on the data center stuff is just way, way better. So, is there a rod enjoying
+
+[00:50:27] Pete
+the animation? Friend of the pod. Shout out, we got live chat. Yeah. We're officially, uh, a modern day podcast. Live from the beach, we've got background music brought to us by Guy in Car. We've got waves. We haven't seen dolphins yet, that would top it off. Although in all honesty, this is a day where you can see dolphins out there, that is so flat. Once again, I, you don't get to see the dolphins, you get to see the, the
+
+[00:50:52] Anthony
+flat. Really? You guys, you guys should be sitting here and I should be sitting there. Nah, nah, you, you're good. But the, the guests, the guests always sat there. Like, I
+
+[00:51:00] Pete
+don't know, it's, it's just how it works. I mean, like, oh, so, you know, obviously you're sat in the middle Right? Yeah. It's for nighttime as well. Yeah. And we're on the beach, so I don't know what we're talking about. We've got our backs to the sea, it's terrible.
+
+[00:51:15] Anthony
+But yeah, to be able to run your own like, I was talking to some guy that works at, for a farmer company and- Like, I guess would they, they have a lot of IP that they wouldn't want, um, going to anyone like outside of the company, um, like, and probably don't know whatever And pro-probably if they wanted to use the front-end media capabilities, they would have had to do that. They would have to go to one of the big labs. Now it's within their like- Reach that they can, again, they need a few million dollars of investment, but they could run something like Kimi, and they could just have this totally, um, isolated, their own IP, everything's just sort of locked down, nothing leaks And they could get the capabilities of the front, frontier internally, and then they could get, presumably, great value from that. But there's no, um, technical capabilities to build that out at a local level. So there's no one in Perth that's gonna be like, "Yeah, I'll build you a box, I'll build you some infrastructure to, to run Kimi." There, there may be a handful of people, but that doesn't exist at, that level of like expertise in the market doesn't exist. I think that that's, if you wanna get your kids to- Get into an area of massive growth like build out of like and maintenance of like that type of infrastructure. I understand you're nine, I know you're
+
+[00:52:33] Pete
+nine, but I need somebody to pull the cables through this rack. This is like the modern day chimney sweep.
+
+[00:52:41] Pete
+You're the only one with the hands that are small enough to get into it. Come on.
+
+[00:52:48] Pete
+Oh dear. Nah, it's, I mean, like, I guess the bit that, the question there then is, becomes like, if you're gonna look at like a few million dollars of purchasing hardware that I feel like we're gonna see massive growth in the ability of this hardware to get better at running these models. And you kinda think like, why would I do that versus just offloading that onto hyperscalers and just buying GPUs?
+
+[00:53:12] Anthony
+Yeah, so you could run some- I can rent
+
+[00:53:13] Pete
+GPUs, I can run the servers myself. You could do, you could run
+
+[00:53:16] Anthony
+Bedrock or something, yeah, uh, that's true, you could do all those things. I guess that's probably the better option, maybe I'm looking at it from a like- Have everything within our walls kind of thing, which is— I,
+
+[00:53:26] Pete
+I would like that, I just— It feels like— Sure. It's a bit idealistic, that's,
+
+[00:53:29] Anthony
+that's true. Yeah, it feels
+
+[00:53:30] Pete
+like we're— It's like buying early Bitcoin miners, right? Like they were, they just got outdated so quick.
+
+[00:53:37] Anthony
+The hardware isn't- But now it feels like it's- The hardware is still gonna be useful, like there's gonna be a lot of optimizations on the, the software and the, the model architecture level, but, yeah, maybe it's smarter to just-
+
+[00:53:49] Anthony
+Just rent, rent the capacity and, and you can still have it, so it's hard to not just,
+
+[00:53:56] Anthony
+justify the wrong way, but to try and work out what your return on investment is gonna be. You don't have like very clear understanding of how why using this. Maybe I should, yeah. I told, I told this guy he should look into buying like hyper hardware. I'll go back to him and say, hey, you should look, look at like Bedrock or, um, still having data control, so you still have your own Have your own IPs protected, but yeah, it's not a massive like capital outlay. You could justify it, right? Like once you've actually built out that capacity and gone, "Okay, like now I'm running like a twenty million dollar company on the back of this," you'd be like, "Yeah, cool, I should have this stuff local in-house." It's easier for you to then go, right, let's, let's go local. But if you haven't quite figured out like where your return on invested capital is, why would you, why would you do it? Yeah, and it, it even just as I explained, the skills, the skill sets To do that don't exist in the market, like you couldn't, I don't think you'd, you'd find people to build that for you, but whereas you could engage some Amazon consultants and spin up sort of like your own sovereign Data warehouse with bedrock and all that stuff with Amazon consultants that live around Australia, around the world, so it's a different like model of interaction
+
+[00:55:09] Anthony
+But yeah, I'd love to run Kimi, Kimi, Kimi K3, Simone Hardware or something like that, that'd be fucking amazing.
+
+[00:55:14] Pete
+I could pretty, I, I know a guy, I've got a guy that could probably do this, 'cause we used to do a lot of like high performance compute work together. Back in the
+
+[00:55:24] Anthony
+day. I don't have the money, I don't have the capital to spend. I've
+
+[00:55:27] Pete
+got a guy, you've got the capital. I don't have the capital. I've
+
+[00:55:33] Pete
+got a, I've got a, got a guy. We can, we can do this. No, like it's, it's not an unknown problem though, 'cause we used to do this a lot in, you know, like, again, like high performance compute clusters, high performance like GPU clusters for various stuff in the biomedical fields, like you- You can do it. Like, you do need— there's only certain people that I would trust to do it, like a lot of the standard, I don't know, like big tech
+
+[00:56:00] Pete
+Solution architect types and technical architects, I wouldn't trust them, but like I, I know, I ha- if anybody is interested that's listening to this and does wanna play in that space and has the capital,
+
+[00:56:12] Pete
+I, I know a guy
+
+[00:56:15] Anthony
+I mean, I, I used to work for a company that sold like, um,
+
+[00:56:20] Anthony
+it's not him, it's not the guy, he's not the guy, boxes for processing, um, CCTV camera streams, totally offline, right? So we used to sell like server racks or servers. So we used to do, and we actually talked about a few years ago It wasn't my idea, I think it was maybe the CEO's idea, but box, sell boxes to, when this was, when the first like, um, Llama 3 stuff came out, like sell boxes to put into businesses so that we already sold the hardware to process the video feeds, but then also have a separate box for the, the LLM. And so- That, that was like, um, sort of like to, to bolt on to extend their capabilities. Didn't, we didn't agree to pursue that, but that, that idea was there about having these capabilities Just, um, sovereign to you, right? Anyway, we've, we've talked all over the shop. I'm keen to play with Wingman. I, I think it will just bring some calm to my life.
+
+[00:57:17] Pete
+I, I honestly think it does. Like, this, like, how many months was like our regular topic on here just like- Yep. I'm just fucking, like, I, I've been through that pain. Yeah. I know exactly what you mean. Like, we had so many times you can go through the back catalog and just be like, "I'm just so fucking confused," like, "I'm, I'm getting so..." I don't know why I did. Or like, I, stuff gets dropped and I can't feedback enough, I'm getting so sick of trying to like, scroll through chats and type stuff and then go back and get stuff. And this is like, you know, like these days, like the, even the, the docs in, sort of Flight Deck We'll be like, alright, well, this, what I'm, what we're talking about here, we've, we've talked and that's good, we've had that little dialogue, but I want you to clarify it into like a document, and you give me the document, and then I can go through the document And I can comment on it like it's a Google Doc, and then we can continue the discussion in the comments, and then when we're done, we bring it back into a new chat, and then we implement the outcome of all of that stuff. But, but the ability to like seamlessly go between like Tasks and comments and chats and stuff, it's like, I, I couldn't work remotely with people w-unless we had Google Docs and comments and track changes, right? It made such a huge difference to that, that work flow And you go, right, yeah, I've reviewed it, let's just walk through every one of my comments step by step. Yeah. And you do that with somebody else on there, like you do it with your agent, you have the document, you have the comments on, you go, right, let's just walk through the chat. And it works surprisingly well, 'cause it turns out that's We built it like that 'cause it worked for people like that. And so having like all of that stuff available, it, it calmed stuff down 'cause I knew where it was. Everything was always in the right scopes and channels, like it all- The commissions was there so then it flows through to all the agents and they know what they're doing, and I can, you know, and code became a retard, I can swap it out for Codex or Kimi or, like, if I'm doing a security review, I have a different I have, like, Rick is my agent and Brick, it's B Rick, is, is my evil, like,
+
+[00:59:15] Anthony
+it's a slightly evil, cynical version. Oh, don't you have Lana that runs our Lara? Lara. Lara
+
+[00:59:22] Pete
+I did have, that was running se- that was completely separate to, okay, that
+
+[00:59:25] Anthony
+was a different,
+
+[00:59:26] Pete
+that was just a different like experiment I was running. Which I've seen like a, um, another harness, another open-source harness, just like adopt a very similar approach Like essentially just pans that are levered, so they're just like an agent can just pull those or just run these scripts every time they need to do something. You take a lot of the, um- We just inject a heap of determinism into it.
+
+[00:59:50] Pete
+There's interesting to say it's like, where do you differentiate the agents, right? Because I have like, the only two I've got on like my home machine are Rick and Brick. And Brick is the slightly cynical security guy that runs on Chinese models, and Rick just does all the work. And then any, any piece of work I give to Rick, like he can then delegate into any other sub, like an, another agent inside AutoPart, I never see any of that. I don't care. Like, I don't care, he manages all of those guys and he will- His feedback. But almost any job I give him, he figures out where do I delegate it, what's the task, how do I track it, how do I make sure people are aware of what's going on. He will Answer questions and dialogue with me and stuff like that, and he can search the graph and like understand. So I also have in the graph, like, this is a new thing for me, but I, I've been passing like all of my code bases, like every hour, into the graph through various like LSPs so I can understand like how does the code fit together so I can start to ask questions about, and this is another one we took from Stackwork from back in the day, they were years ahead on this, but what's that stream power? You can't, you can't just stop me every time. The problem with the chat
+
+[01:00:59] Pete
+Is it true that Anthony's post Richard Hendrix and Peter's post Billie Bateman? Oh no. Oh, that,
+
+[01:01:05] Anthony
+that's, oh, you're the fuck. Um,
+
+[01:01:08] Pete
+oop
+
+[01:01:09] Anthony
+I think that's, I think that's
+
+[01:01:09] Pete
+us watching the stream, so that's, it's still, it says still streaming, so we'll assume it's okay.
+
+[01:01:14] Anthony
+Yeah.
+
+[01:01:15] Pete
+Uh, that is true.
+
+[01:01:16] Anthony
+Sorry, so the company, the company I used to work for, like for a short period, we made it required, um, this is talking directly to the one, one viewer, it was required watching to, um, for Silicon Valley, the show was required watching, so we gave Silicon Valley six
+
+[01:01:35] Anthony
+Six, um, six seasons on USB, so people that join, say, "Watch this. You need to understand how the, where's the tech company operate."
+
+[01:01:42] Andy
+Yeah.
+
+[01:01:42] Anthony
+And yeah, I was, I was a Richard.
+
+[01:01:45] Andy
+No, I, I've done a lot of work. Maybe I- I don't know, I don't get any of them. Oh, you gotta watch it, lookin' over here. No, yeah, I watched
+
+[01:01:52] Anthony
+it all. Hang on, I've just realized that, um, your,
+
+[01:01:56] Anthony
+what you've got, wingman, is not a harness, but it sits above the harness.
+
+[01:02:00] Pete
+I, I refer to it as an orchestra, usually.
+
+[01:02:02] Anthony
+Yeah.
+
+[01:02:02] Pete
+Yeah.
+
+[01:02:03] Anthony
+So there's another like, there's multiple layers of the stack. You have obviously the model providing the intelligence, then you have like the tool calls, um, then you've got the, the harness which does a lot of the orchestra, sorry, it does like It does do orchestration at the moment, but it does compaction and those type of things. But then you've got this, another layer, kind of a layer which sits on top, which is what you've got, as you, you called it the orchestrator, but it's like the, it's, it's pulling all these things together, so it's, it's like It's different to a harness, I would say. Yeah.
+
+[01:02:36] Pete
+It, well, it also does all of your app management and your DNS routing, so it can spin up like live websites for
+
+[01:02:41] Anthony
+you. Yeah.
+
+[01:02:42] Pete
+Um,
+
+[01:02:43] Anthony
+so there's a real like OSI kind of stack, like the network stack is being replicated organically in some way for- The model stack, right?
+
+[01:02:51] Pete
+Yeah. So it does that, it also does your triggers, so you can like have regularly triggered jobs, jobs triggered by file watchers, jobs triggered by like Nostr events or whatever you fancy, uh, and then you can also have Your pipelines in there, and the pipelines are these like declarative pipelines that will just run code. So if you like, run this function, then run this function, then run this function, then spin up this agent and get this answer, and then pass that into this, and then do that, and
+
+[01:03:16] Anthony
+then
+
+[01:03:16] Pete
+So you have these like workflows that you can define that will run any system code that you want, uh, some of them I have that are just system, they're just code that will run, like our one that reads LinkedIn for me So I don't read LinkedIn for me like every five minutes, and it just goes and gets all the stuff. And then you have an agent that spins up every now and again, and then it can add context to it. I call it LinkedIn,
+
+[01:03:38] Andy
+which is why like I
+
+[01:03:39] Pete
+don't want to read LinkedIn. So re LinkedIn for me and tell me if there's somebody I should reach out to. That's talking about this sort of stuff in my local area.
+
+[01:03:50] Anthony
+Stuff
+
+[01:03:50] Pete
+like that is, like a lot of it is just code, like you don't need to have an agent constantly running. This is why people burn all their tokens, right? And offload the stuff that should be done
+
+[01:04:00] Pete
+In code. I mean, this DPC we had on a couple of weeks ago, he talks about this a lot on Twitter. It's like, you know, all my, all my life as being a software engineer, I've always tried to find the things that he was doing as a software engineer and like, can I just do them in software so I never have to do them again? Like, and the same is true these days, it's like they can do stuff for you, but if it can be done software, it is a thousand times cheaper, so it's worth doing that 'cause now you have all this headroom Con- like it solves all your problems around context management, it solves all your problems around costs, it's just don't do it in the agent. No. What,
+
+[01:04:33] Anthony
+what's missing from this stack? Like, where, where is, what are you gonna build next or where do you think?
+
+[01:04:39] Pete
+I might add Git as a, I liked in Buzz that they had like a Git server in, like alongside the Relay, and I was like, you know what, that makes a lot of sense. Like, I might add that as something just to manage like common code and interactions across like the npubs. It's, it's a little bit more Slack At the moment. To do, to do that level, I think Buzz seemed better
+
+[01:05:03] Pete
+for how that worked, and because, because we're using GitHub for the communication, like it's just- It's just harder for the agents, right? Like, so you have to have your own, you're gonna create all the API keys for it, you're gonna have that level of extra,
+
+[01:05:15] Pete
+um, sort of integration over the top, whereas If I just have like a, I, I've, I've done this previously, like Wingman has got like Gitea interfaces that are, uh, input mediated, yep. But I'll, I'll put the whole, I'll put a version of Gitea behind Tower So you'll get everything that you want in Gitea, like as in G I T E A, plus, so you get all the issues and tracking and stuff that you want, but it'll be every username is an endpoint, all of your agents automatically have access to it, you can mediate it all through the same, Gitea eight, and I think that will be useful. So I'll probably add that at some point. Yeah. But in all honesty, like the database, the graph, the storage, like it gives you most of the stuff you actually want in the backend, you only deploy
+
+[01:05:56] Pete
+it
+
+[01:05:59] Pete
+Communication stuff, but then it also you expand it via WAP, and WAP is important, and we should talk more about WAP. This might not be the day for WAP. Every day
+
+[01:06:09] Anthony
+is a good day for a WAP. Okay, maybe it is, maybe
+
+[01:06:11] Pete
+this man that loves his WAP. But like what we can do is like any WAP can just be whatever function that you need. Yeah, yeah. I'm already thinking about, um, gonna build a WAP for, for, you know, And the thing that makes it the web is that like just, it runs in autopilot as well. So it's like on the same infrastructure stra-stack, it uses the same DB in the background, it can use the same graph Like it, it understands NOS, the, like the starter repos that build on top of that. Say, say you
+
+[01:06:35] Anthony
+wanted to, um, introduce new, like, visualization capabilities or something where it presents some data to you and updates some data, live data, or it shows, like, a tree of information or something, would, how, how does that, how do those type of capabilities fit into the model of extending Wingman? Are they WAPS?
+
+[01:06:54] Pete
+Yeah, it's, it's a web for your business. Like one of the things I need is a report dashboard, I'll do that. So I have a web called Artifacts or Rick's Artifacts, I call it, which is like Laura's Artifacts now, it's for you and it's, and I say, look, I, I want a website that does this. And it will, it just sends me a website, and I have one map that says like, these are all the project, these are all the different projects we're working on, these are the different artifacts that we've got, and then these are the versions, and I can, I can scan through them and choose any version of any artifact that's in there. And it'll just pull up like whatever HTML website it sends me, with the addition of anywhere on that HTML I can right-click and leave a comment, and then it gets that comment natively inside its like database, it feeds back It also does whiteboarding as well, so I have Excalidraw built into that as well. So I can just go, "Alright, like, here's a whiteboard," and then he— that Excalidraw is actually a file on the local disk, and he just reads it directly, can read all the comments, can read all the And so I have like all my architecture diagrams now, sort of build out into one whiteboard. So, like, so when you're planning stuff, don't look at this whiteboard, just see how everything fits together and how I've described it visually, 'cause it's gonna help.
+
+[01:08:03] Anthony
+Yeah. I've been thinking about using, like, one, I think one area where Buzz will excel is, like, like a Discord replacement for open communities where there's people. Yeah, I think that, that I think is like absolutely, Discord's a piece of shit. Like, no one wants, I stopped using Discord because of Just, just, just a turn. So,
+
+[01:08:23] Anthony
+but, but I think that Buzz is absolutely like fit for purpose for that, where, whereas, um, as a Slack replacement, I think that, yeah, it could fit that bill, but what you've built is like way richer, there's way more, um- Capabilities, and so I'm keen to use Buzz for setting up some like a community around like Bitcoin monitoring, and so having agents in there sort of providing insight as to what my, my monitored nodes are seeing or any information like that, right? But like for all my project development and all that shit, like just to bring some calm to the chaos, I would I think that Wingman is much better suited for what I personally I would use, because it has all of those, um, just a richer set of features, a richer way to extend So probably gonna start using both, but for different purposes.
+
+[01:09:15] Pete
+Um, yeah, as I said, there'll be some rough edges, but like just let me know and we'll fix them. Yeah, there you go. We're gonna do a middle out
+
+[01:09:22] Anthony
+demo tomorrow. Middle
+
+[01:09:23] Pete
+out demo
+
+[01:09:25] Anthony
+tomorrow. Do you, we'll do that, the middle out. Do you
+
+[01:09:26] Pete
+know
+
+[01:09:29] Anthony
+anything about middle out? Yeah, yeah. Okay. Amazing. Fuck that show was so out of time. You have to
+
+[01:09:34] Pete
+start middle out.
+
+[01:09:37] Pete
+But yeah.
+
+[01:09:38] Anthony
+Um, I would love to rewatch that show, by the way, but I just got no— it's not a priority 'cause there's so much going on.
+
+[01:09:44] Pete
+It's, it's just easier to vibe code. It's just easier to vibe code than make a deal with my ADHD. Yeah, yeah. Yeah. Yeah. Yeah. I,
+
+[01:09:52] Pete
+I, I honestly, I— to me, that was the first- Where I calmed down was like, a few weeks ago, I, I got to a point where I was like, "Yeah, this actually I can keep on top of this," and then stuff that gets dropped, 'cause like a lot of the sessions get killed off But then everything can be restored anyway, which I could always do manually, but I never did because I would forget, so I'd have to leave tabs open to know what I'm working on. Whereas now in FlightDeck, they've all got a place where they live And any conversation I'm having, I can stop for a day and I can come back to it. Like I've got my, my red dots are there if I need them, the task boards are there if, like, I just forget about something completely when I review stuff. And it's, it's a very human way of working With these things, which is what I've been searching for. For. Right. I mean, this is like the fourth or fifth full rebuild of this platform. Yeah. And then now I'm like, okay, I think this is the version that I, I feel a bit more confident sharing, although I've spent the last two weeks doing Security reviews on it for obvious reasons since that whole Cold Guard hack. Like, I was pleased to see the CryptoJS,
+
+[01:10:54] Anthony
+yeah, I know, was also using
+
+[01:10:55] Pete
+like phase two, phase two, that was bad, that was bad, that's bad, 'cause that's like hugely used. I got that in like an old project from about a year and a half ago that's abandoned, so I was like, okay, that's It's okay, I can never use it for anything reasonable, but just go and order all the Nostrl—
+
+[01:11:13] Pete
+sort of submodules. Anyway, that's, uh, by the bye.
+
+[01:11:19] Anthony
+I think pipelines in Wingman is just been like so delightful to use, like really delightful, just because it's just so easy to put together and then go and audit and then go and rebuild if you need to from scratch. I feel like doing that in the past was always just a bit of a pain. Not just in Wingman, like if you wanna do it anywhere, I guess it's like, how do you do this? What do you use? Like, how do you manage this? How do you monitor it? I feel like it's gone So pipelines are like the, um, like defined or declared jobs? Yeah, it's basically anything that I know I need to do more than once. Now I basically think through the first time, like front-end load the work and go, right, like how should this run? Yeah. As a pipeline. It's,
+
+[01:11:58] Pete
+it's like for scripts
+
+[01:12:00] Pete
+It's like, you know, there's a lot of software that doesn't need to be software, doesn't need a front end, doesn't need anything like that, any workflows that you can define. And it's just the nice thing about agents is suddenly you can go, "Huh? I can just like, I can have this thing that..." I couldn't really do as a script, 'cause I had to make these decisions at some points that couldn't be automated, but I can offload that to the agent. Like there's, there's huge swaths of
+
+[01:12:25] Pete
+work that can be done like that And they just never need a UI, yeah. And then, but then you end up creating a UI to like contain the output of it or something like that, and that would be a little more-
+
+[01:12:35] Andy
+Or to figure out how it's meant to run. Like, I find myself doing this, yeah, quite a bit. I was talking to Jared about this actually. Like, I build out a UI and it's really like, quite janky initially, just because it'll have like all the mechanics of the work Baked into it, and there'll just be buttons all over the place and you'll find the most-
+
+[01:12:52] Pete
+But your UIs look nice. Well, that's because mine look like that.
+
+[01:12:55] Andy
+I will strip them away, right? It's like, um, as I'm working with it, I'm like, Okay, cool. I don't need to fire this manually. Let's just remove this entire screen. I don't wanna see it. This is under the hood. And then, like, how do we get to this minimum viable kind of interface? If I, if it all, if, if you even need one at all yet? You often don't. So I think that's like really interesting too. You just end up with like a bunch of work that is just running on a cadence. Like this podcast, like as I said earlier, the, um, the website is basically Just constantly taking snack-sized, bite-sized like shorts of this podcast, writing them out. There might be some audio coming. Um, and- And it's just logging them into the website every week as a bit of a back catalog of what we're doing, so a mixtape of like all the ideas that we have, and then just being distilled into two or three paragraphs And like that whole thing just runs, like the SEO runs as pipeline, the, yeah, the snack creation runs as pipeline. There isn't an interface that I've got, but it's largely just to see how this all works. And I'll probably just deprecate it.
+
+[01:13:59] Andy
+Well, that's been huge. I, and I, I say, if you go into a business, like, how much work inside of a business is just the same stuff that you do on a set cadence every week, every day?
+
+[01:14:11] Andy
+There's a huge opportunity
+
+[01:14:13] Pete
+there. So it's, uh, a bit of business on there. Like a good when you're working with pipelines, like one of the things I will do is I'll get Rick to create me like a flowchart artifact The pipeline as well. Because I, I never, because it's not, it, you can sort of see how it works like on the webpage, but sometimes I just, just build me a flowchart and annotate it with like all the decisions that are being made, 'cause I don't wanna see all the crap. There you go. And stuff like that is quite useful, yeah, to reviewing them. But artifacts are good. Mm.
+
+[01:14:44] Anthony
+We still live in a massive bubble, though, don't we? We're all like, oh yeah, so, so far, buried down in some bubble, but, um, I
+
+[01:14:51] Pete
+keep talking about the normal world. I really need to just- Set one up for you. It's, I think the problem is I've made so many changes in the last like two months as, as things have crystallized, like autopilot changed, it, it didn't, did it, did it change? Like, yeah, a lot of small things changed and like a lot of like rough edges got rounded off.
+
+[01:15:09] Andy
+The experience changed.
+
+[01:15:11] Pete
+Yeah. And then similarly, like Flight Deck recently. But I feel like now I'm probably at that point where most of the changes I wanna make now aren't really fundamental, where I say like six months ago I was like, I think I have to abandon this encrypted record sync Model that we've got is too complex, like it's, and it's not adding enough because you probably wanna self-host the tower anyway, so,
+
+[01:15:34] Pete
+yep, fuck, what was the point? Like, I was like, I can go Just, that's probably like good knowledge to put away from the back of the head. I think it's good that you thought about it. Again, I
+
+[01:15:43] Anthony
+had the same when I started to build these like home calendars, um, that I, I've been building, I really wanted to have, um, like Encryption at rest with Nostr keys, and it just complicated so many aspects of like the way you think about the data model. I was like, "Alright, well, fuck it, let's just strip that out." Like, it's, it's just, it's a nice— I mean, I thought about it, it's too challenging, I can't,
+
+[01:16:06] Pete
+can't work. Once you realize that they don't actually read fucking anything, like you need the encryption key live in the app So you're like, okay, so is that the key? Is it your key, or do I generate a new key, right? And now we've got like epochs for encryption and like, it's just like, this is just—
+
+[01:16:20] Anthony
+Leave it to the guys, leave it to the Maple guys. It's like, I
+
+[01:16:23] Pete
+don't even need to do this. It's my app, it's running on my server. Like, it's, it's there. I can see it. Like, do I even
+
+[01:16:29] Anthony
+need to— I would, I'll see this. I think the, there's, um I see these things sort of consolidating, like your stack, you have like a box like Vora or some sort of box that, um, is running a local model, and then if you really need like intelligence capabilities that extend beyond that model, you call out to Maple, and if you've got— You, you control everything. Well, that's what I do currently, so that would be amazing. So
+
+[01:16:53] Pete
+I run a Maple proxy and I just use that for some jobs, but Like we, we need to get Mark back on the pod, like we need to spare time. Um, and I think that, 'cause they're like slow rolling out now their Maple agent, yep, so I, I wanna say, okay, well Uh, Maple Agent can just be like Codex or Claude inside. Hopefully there's a CLI available for it, I'll check then. But if I can just put that into Wingman then It'll just be like another agent that sits there and I'll have, you know, Rick, Brick, and Crick, named after Francis Crick of course, inventor of DNA. Uh, and that'll be my private version, Prick, Prick, Prick for private. Rare. Yeah, you're right, come on, you're right. I'll give him a military, military uniform, Private Rick.
+
+[01:17:41] Pete
+All right. So Mark, friend of the, friend of the pod. Yep. Uh, I, I need to extend my processing pipeline I'd like to publish all this to Nostr and grab the show show link and stuff, because that would be useful. Um, yeah, like we'll, we'll get him back on, we'll integrate Maple Agent into Wingman, 'cause, like, I looked at- So it probably does some of the stuff, like there'll be some of the use cases that cross over, but I think like being able to put it into the rest of this context is gonna make a big difference. But I would just like an agent in there that I can talk to To that's more private. At the moment, I have Fred, who's my local on my laptop agent, that's way more locked down and less access to stuff. But, yeah, if I need a prick.
+
+[01:18:26] Pete
+All right. And on that note, that's the intelligence next, and we need a new sign-off.

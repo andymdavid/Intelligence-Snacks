@@ -18,7 +18,7 @@ export const GET: APIRoute = async () => {
     '## Core resources',
     '',
     `- [Home](${site}/)`, `- [About](${site}/about/)`, `- [Snacks archive](${site}/snacks/)`,
-    `- [Podcast episodes](${site}/episodes/)`, `- [Topics](${site}/topics/)`, `- [Contributors](${site}/contributors/)`,
+    `- [Podcast episodes](${site}/episodes/)`, `- [Topics](${site}/topics/)`, `- [Knowledge graph](${site}/graph/)`, `- [Contributors](${site}/contributors/)`,
     `- [RSS feed](${site}/rss.xml)`, `- [XML sitemap](${site}/sitemap.xml)`,
     '',
     '## Published snacks',

@@ -14,10 +14,9 @@ const { episode } = Astro.props;
 const { Content } = await render(episode);
 const participants = await Promise.all(episode.data.participants.map((participant) => getEntry(participant)));
 const contributors = participants.filter((person): person is NonNullable<typeof person> => Boolean(person));
-const topic = await getEntry(episode.data.primaryTopic);
 const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status) && data.sourceEpisode.id === episode.id);
 const topics = new Map((await getCollection('topics')).map((entry) => [entry.id, entry]));
-const relatedEpisodeTopics = episode.data.relatedTopics.map(({ id }) => topics.get(id)).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
+const episodeThemes = episode.data.themes.map(({ id }) => topics.get(id)).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 const transcriptFiles = import.meta.glob('../../content/transcripts/*.txt', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
 const transcriptSource = episode.data.transcript
   ? Object.entries(transcriptFiles).find(([path]) => path.endsWith(`/${episode.data.transcript}.txt`))?.[1]
@@ -43,8 +42,8 @@ const jsonLd = [{
   image: new URL(pageImage, Astro.site).href,
   partOfSeries: { '@id': new URL('/episodes/#podcast', Astro.site).href },
   contributor: contributors.map((person) => ({ '@type': 'Person', '@id': new URL(`/contributors/${person.id}/#person`, Astro.site).href, name: person.data.name, url: new URL(`/contributors/${person.id}/`, Astro.site).href })),
-  about: [topic, ...relatedEpisodeTopics].filter((entry): entry is NonNullable<typeof entry> => Boolean(entry)).map((entry) => ({ '@type': 'DefinedTerm', name: entry.data.name, url: new URL(`/topics/${entry.id}/`, Astro.site).href })),
-  keywords: [topic, ...relatedEpisodeTopics].filter((entry): entry is NonNullable<typeof entry> => Boolean(entry)).map((entry) => entry.data.name),
+  about: episodeThemes.map((entry) => ({ '@type': 'DefinedTerm', name: entry.data.name, url: new URL(`/topics/${entry.id}/`, Astro.site).href })),
+  keywords: episodeThemes.map((entry) => entry.data.name),
   associatedMedia: episode.data.youtubeUrl ? { '@type': 'VideoObject', '@id': `${pageUrl}#video`, name: episode.data.title, description: pageDescription, contentUrl: episode.data.youtubeUrl, embedUrl: `https://www.youtube-nocookie.com/embed/${youtubeId}`, uploadDate: episode.data.originalPublishedAt?.toISOString(), thumbnailUrl: pageImage, duration: isoDuration, inLanguage: 'en-AU' } : undefined,
   potentialAction: episode.data.audioUrl ? { '@type': 'ListenAction', target: episode.data.audioUrl } : undefined,
   hasPart: snacks.map((snack) => ({ '@type': 'Article', '@id': new URL(`/snacks/${snack.id}/#article`, Astro.site).href, name: snack.data.title, url: new URL(`/snacks/${snack.id}/`, Astro.site).href })),
@@ -63,7 +62,14 @@ const jsonLd = [{
     <div class="episode-head__details">
       <p class="standfirst">{episode.data.summary}</p>
       <div class="episode-head__source">
-        <div><ContributorRow people={contributors} /><p>With {contributors.map((person) => person.data.name).join(', ')}</p></div>
+        <div>
+          <ContributorRow people={contributors} avatarsOnly />
+          <p>
+            With {contributors.map((person, index) => (
+              <><a href={`/contributors/${person.id}/`}><strong>{person.data.name}</strong></a>{index < contributors.length - 1 && (index === contributors.length - 2 ? ' and ' : ', ')}</>
+            ))}
+          </p>
+        </div>
         <p>{snacks.length} ideas developed from this conversation</p>
       </div>
     </div>
@@ -71,13 +77,13 @@ const jsonLd = [{
   <div class="page-shell episode-media">
     {youtubeId
       ? <iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} title={`Episode ${episode.data.number}: ${episode.data.title}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      : <StoryVisual label="Full conversation" colour={topic?.data.colour ?? '#9aa7ff'} index={episode.data.number} />}
+      : <StoryVisual label="Full conversation" colour={episodeThemes[0]?.data.colour ?? '#9aa7ff'} index={episode.data.number} />}
     {episode.data.audioUrl && <a class="audio-link" href={episode.data.audioUrl} rel="external">Listen on Spotify <span aria-hidden="true">↗</span></a>}
   </div>
   <section class="episode-intro page-shell section"><p class="eyebrow">About this conversation</p><div><Content /></div></section>
   <section class="page-shell section">
     <div class="section-heading"><h2>Ideas from Episode {episode.data.number}</h2></div>
-    <div class="episode-snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.primaryTopic.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" />; })}</div>
+    <div class="episode-snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.theme.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" />; })}</div>
   </section>
   {transcriptTurns.length > 0 && (
     <section class="transcript page-shell section">
@@ -105,6 +111,7 @@ const jsonLd = [{
   .episode-head__source { display: flex; flex-direction: column; gap: 1.5rem; color: var(--muted); font-size: .78rem; }
   .episode-head__source > p { margin: 0; }
   .episode-head__source > div > p { margin: .7rem 0 0; }
+  .episode-head__source a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
   .episode-media { position: relative; padding-block: var(--page-pad); }
   .episode-media :global(.story-visual), .episode-media iframe { width: 100%; height: calc(100svh - 58px - var(--page-pad)); min-height: 0; border: 0; border-radius: var(--radius-small); background: var(--ink); }
   .audio-link { display: flex; width: max-content; align-items: center; gap: .7rem; margin: .75rem 0 0 auto; padding: .9rem 1.1rem; border-radius: var(--radius-small); background: var(--coral); color: var(--ink); font-family: var(--font-display); font-size: .9rem; font-weight: 500; }

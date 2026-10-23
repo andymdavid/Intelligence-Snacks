@@ -1,5 +1,5 @@
 ---
-title: Coding Models Have Working Personalities
+title: "Coding models have working personalities"
 editorialTitle: Models Have Working Personalities
 thumbnail: /images/snacks/coding-models-working-personalities-v2.webp
 standfirst: Every coding model brings its own mix of literalness, initiative, caution and recurring habits to a coding session.
@@ -7,9 +7,7 @@ status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
-primaryTopic: agents
-relatedTopics:
-  - ai-coding
+theme: agents
 attribution: Developed from a conversation between Andy David, Pete Winn and dpc
 relationships:
   - target: the-harness-determines-the-work

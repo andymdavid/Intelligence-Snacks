@@ -1,5 +1,5 @@
 ---
-title: AI Speed Makes Architectural Judgement More Important
+title: "AI speed makes architectural judgement more important"
 editorialTitle: Speed Magnifies Architecture
 thumbnail: /images/snacks/ai-speed-architecture-v2.webp
 standfirst: Rapid implementation lets an early choice about data, queues or background workers spread across a codebase within weeks.
@@ -7,9 +7,7 @@ status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
-primaryTopic: software-systems
-relatedTopics:
-  - ai-coding
+theme: software-systems
 attribution: Developed from a conversation between Andy David, Pete Winn and dpc
 relationships:
   - target: ai-coding-agents-are-power-tools

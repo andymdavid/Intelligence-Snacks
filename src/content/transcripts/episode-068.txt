@@ -1,0 +1,960 @@
+Pete Winn (00:05.87)
+Hello and welcome to the good stuff, the big episode sixty eight. So today we have a guest around the campfire, which is the magnificent Rod, who I know from Nostr. So I've never actually met Rod in the well, I say in the flesh, but in the video before, I guess, before this, but hang on a sec. I've just got I just
+
+Rod (00:30.602)
+What's up?
+
+Pete Winn (00:34.848)
+Hang on, hang on, hang on. Alright, sorry, I had the audio coming back at me from my own voice delayed for two seconds. So still not quite there with the live stream imperfection as of yet, but it is running, so that's that's good to know. Alright. Rods, would you like to introduce yourself?
+
+Rod (00:51.87)
+I mean, what a layup. G'day everyone, I'm Rod. You might know me from such hits as Notes posted on Nostr. I'm the founder of Shoshow. I've previously been in startup land for, geez, I guess most of two decades. Sydney-based technology entrepreneur. Formerly CEO of some things, formerly a list co-CEO, formerly listed that co.
+
+But interested in founding technology companies really leaning heavily into the AI space at the moment.
+
+Pete Winn (01:28.238)
+Nice. Welcome, welcome Rod to the Intelligence Snacks campfire. Get my new rebranded name incorrect. did I say good stuff? god damn it. That's how you know that we're we're real, I guess. We're not just making it Heavily unedited. Alright, so and knowing you from notes on Nostr, Rod.
+
+Rod (01:33.398)
+It's pleasure. Thanks for having me.
+
+Andy (01:35.538)
+There we go. Yeah, some muscle memory kicked in that intro. You did.
+
+Andy (01:48.072)
+That's there's no AI involved in this podcast at all, as you can see, clearly.
+
+Pete Winn (01:56.973)
+Like one of the one of the things that's come up previously, I think I was just saying was I think it's like maybe one or two weeks ago you wrote a note about how what life's like as like a solo entrepreneur these days. We see now I've had many companies, I've usually got like a team of engineers that I have to work with and I've been using AIs now for like a year plus. And I think I saw some of you really like I think you had the AI Kanban boards I remember seeing you showing off on Nostor previously. And
+
+You're saying like you're just doing everything yourself now. And it mirrored so much of my experience in the last year and I thought, okay, that could be a good place to dive in and just talk about what's it like now working as a solo entrepreneur versus a team or like just expand. Any way you want to take it.
+
+Rod (02:42.55)
+Yeah, look, it's a really profound moment in time. I don't know if I've ever seen in most of two decades doing technology such a profound change in the landscape as we've had in the last six months or maybe the last 16 as, you know. My background is kind of an interesting thing because you kind of the context of this. 12, no, wow, how many years ago? 2012, how many years ago was that? 14 years ago now.
+
+I started a technology company.
+
+Pete Winn (03:13.888)
+No, no. I'm not having that. Well let's say that two thousand and twelve was two years ago. Let's just let's let's not feel so old.
+
+Rod (03:20.694)
+Very good. Yeah, Look, I started the technology company and over the course of some time I ran that. I ran that six years private. I listed that on the ASX. I ran that six years public. I stepped out a couple of years ago now. And in that time, technology and you read TechCrunch and you know how technology is done.
+
+talk to some angel investors and you get some capital in and then you continue to show some milestones, you get some series A and so on and so forth. And over the course of all of that time, you're building technology the old way, which means you're headcount of technology people. That's building technology. Your very first starting out as a non-technical founder, the very first thing you need as a technical co-founder, that's 50 % of your equity. You bring that person on board, you give them a large slice of the company.
+
+Some people try to get away with less, but ultimately you want a person who's going to be there with you with the same upside. It means 50 % of your equity. You then want more technical talent because you want to accelerate. You need a capital raising. You see investors want 25 % of equity.
+
+you do the math on this, you're now down to a third to a quarter of equity. Okay, now you're underway. You've got a technical co-founder, you've got a few technical team members, not many by the way, but you can build some stuff and that can get you some milestones and you can get potentially, if you're lucky, if you're successful to a series A where you get more money to build more technology. Over the course of, well, what is it, again, 12 years at the helm of J, six private, six public, we raised, give or take $40 million to build technology.
+
+Pete Winn (04:52.014)
+Mm-hmm.
+
+Rod (04:52.086)
+At the time, again, as I started, you're down to 33 % as you start. I was down to maybe 15 % of the company as I listed. Bigger companies, the old adage goes, smaller size, bigger pie. That was true. But still smaller slice. By the time you're continuing to raise money on the public markets, that's what they're for, to access deeper pools of capital. By the time I'm stepping out of the company, I'm somewhere around 7 % of equity.
+
+And at that point, and nobody tells you this, but at that point, you're not the solo founder that you started out with anymore. You've got a job. You're less a founder, meaning dominant equity share, and you're more an employee, or the board and shareholders.
+
+Pete Winn (05:31.628)
+Hmm.
+
+Rod (05:43.191)
+You're accountable, right? At that period, know, Jay Wright had what? had 150 headcount, we had 600 shareholders, we had five board of directors. You're doing the job for all of these people. You're not doing it for yourself. I think when founders start, you know, they think, I don't want a job, I want to run a thing. Well, the moment you take equity and you're on that VC-fuelled hamster wheel for a number of years, you're progressively getting employed.
+
+it becomes over time doing this for other people as opposed to doing it for yourself. Which is, think, again, profoundly a mental shift because it means, you know, unless you've managed to get yourself a massively preferential voting stock or something in the structuring along the way, ultimately you're not in charge. People will tell you what to do.
+
+And you know, that's that's good. I guess again if they're if they're smart people and you know, it's all working out But also it's not what your typical founder signs up for, you know You tell your typical founder of a high-tech company someone's gonna tell you what to do. They say no, it's one So I'm rolling my own company because I want to do it my way You know, I think I've got the insight. I think I've got the talent I back myself But again, it's this progression and it never stops
+
+Pete Winn (06:46.36)
+Yeah.
+
+Rod (06:55.062)
+And that's how it had to be done because capital was expensive, right? Technology was expensive, required capital, capital was expensive, requires equity. Everything in that chain is expensive and you as the founder would division get diluted and it's just the way it is. until, what was it now? Three years ago? I lose track. Time has been very strange over the last 12 months, hasn't it?
+
+Pete Winn (07:16.522)
+It was it was kinda like the end of twenty two was the ChatGPT moment. And then
+
+Rod (07:22.24)
+That was the, yeah, ChatGPT. And it was profound, right? All of a sudden, overnight, we've all got the power of gods. Where did that come from? You know, and there's room to improve and so on and so forth, but it's possible to look at, even then, a sufficiently prescient person. You can look at the landscape and you can say, well, shit, you know, I've just put $40 million into developing technology, which I had hoped to be a moat against new entrants. And I can think ahead and I can say, well, in 10 years' time,
+
+I will be able to say, ChatGPT, please write me a competitor to this. And ChatGPT will go beep, beep, beep, beep, beep, beep, beep, competing company codebase instantly and pretty much for free. And so here you are, leading a public company, a public technology company with $40 million invested in a technology moat, and a pretty sneaking suspicion that in 10 years time that residual value of that investment will be zero.
+
+Pete Winn (08:18.915)
+Hmm.
+
+Rod (08:20.468)
+You know, it wasn't guaranteed. Who knows what's going to happen? The future's uncertain. But you have to wait the probability that our competitor is going to be able to enter the market and compete with you for zero and your moat doesn't exist anymore. Isn't that profound? So, you know, so 12 years at J, there was a long time at J and I step out and I start doing my own thing. And it was in May last year.
+
+Pete Winn (08:34.126)
+Hmm.
+
+Yeah.
+
+Pete Winn (08:40.739)
+Mm-hmm.
+
+Rod (08:46.486)
+So this was 16 months ago now. think, well, maybe I was wrong by seven and a half years. You know, I said it'll be 10 years until I can tell a thing, hey, maybe write some code for me. And it would. And I think in May last year, maybe I'm wrong by three quarters. Maybe I can do it right now. And this was May last year. So Claude Code had technically been released, but you probably didn't have access to it. You might have used it. might not have.
+
+Pete Winn (08:53.954)
+Yeah, yeah.
+
+Pete Winn (09:02.851)
+Yeah.
+
+Rod (09:13.098)
+was kind of unclear if that was the case. There were a couple of harnesses that would run one of the frontier LLMs, which were terrible, if you remember 12 months ago that they were terrible. And they'd sit in your IDE and there was no subscription, so you were paying API costs. I think I was paying $2,000, $3,000 a month API costs to get something that these days will run for free on your phone.
+
+Pete Winn (09:20.398)
+Mm-hmm.
+
+Pete Winn (09:23.842)
+I mean I was using Yeah.
+
+Pete Winn (09:34.562)
+Hmm. I mean I think at that point I was running so obviously cursor had happened. I think I by May I think I'd moved on to Roo Code. because Roo Code had like a nicer way of establishing the different agents and good hand of Yes, yeah, Cline I liked, but it was fuck me, Cline was expensive. Like it was like it cost a lot of time.
+
+Rod (09:43.35)
+Hmm. Hmm.
+
+Rod (09:47.806)
+Roo Code forked from Cline. Cline was where I was at about that time.
+
+Rod (09:55.915)
+yes, yeah, yeah, yeah, yeah, yeah, yeah. And you know, compared to where we are today, you'd laugh at the result. How bad was the code, right? But it was a profound moment because, you know, here's me, non-technical co-founder, I want to start a technology company. Fundamentally, I've got to give away 50 % of my equity to get anybody on board to help me and that person's going to help me manually over time. Moving from that, can't do it without help, to I can do it.
+
+Pete Winn (10:01.421)
+Yeah.
+
+Yeah.
+
+Pete Winn (10:24.013)
+Yeah.
+
+Rod (10:24.158)
+as bad as the agents were back then, and moved binary from zero to one in that instance. And then just look at what's happened since. These agents have moved from, you can't trust this thing to use a tool correctly, and if you don't sit there pressing approve on every single request, then it's going to accidentally delete your hard drive, to a massive multiplex of agents.
+
+Pete Winn (10:27.779)
+Mm-hmm.
+
+Pete Winn (10:41.984)
+Yeah.
+
+Pete Winn (10:48.78)
+Yeah, if you haven't used these things Yeah. I mean it's almost become especially with the like the recent cold card hacks in Bitcoin world and things like that, it I feel like we very quickly went from you can't trust agents and if you use them you're insecure to unless you've thrown agents at your code base continually, you are now insecure. Like it's just it was a huge flip, right? Yeah.
+
+Rod (11:10.07)
+And isn't that a crazy turn of events? So again, just over the course of 18 months, like May last year, maybe I'm mad, maybe this can be done, maybe a card, who knows? A couple of frontier folk in Silicon Valley are making big noises, maybe I should pay attention. Even in December last year, I'm still sitting there, for right or wrong, in an IDE with one agent, mostly looking at what they're doing. Then in January,
+
+The very first, actually it was kind of November, December, the very, very first multi-agent thing that seemed to really actually increase your speed, which was Google Antigravity, but you could only use it with Google models. So in January, finally starting to find, what about like Kanban-based multi-agent harnesses? And in January, so what are we, August? So still not very many months ago. You're suddenly going from one agent to multi-agent credibly, and it's working, and they're on auto all the time.
+
+But you still can't really trust them with the code base, know, that file sensitive, don't go near it. And then progressively over months, it's, mean, where is Fable? It's just, you just have five Fables and five Opuses and you just say, go do a whole bunch of stuff and then review each other's work. You know, you can, you can tell it to generate a code review sub agent for itself and tell it to do 10 reviews of its own code. And it's more or less free for you to do that. So you should.
+
+And so suddenly when you finally get engaged as a human to step in and say, well, is this thing actually any good? It usually is. And that is just so profound. Over the course of a few months to move from where we were to here, from zero to one and then to 10x, and what has it been? 18 months total. Crazy.
+
+Andy (12:45.031)
+So
+
+Andy (12:56.06)
+I'm I'm curious, like knowing what you know, would you be more or less likely to start your company today than you were in twenty twelve? You know, would it change, how would it change? Would you even do it?
+
+Rod (13:12.744)
+Look, mean people start companies because they don't know how hard it's going to be to start a company. I don't think any founder has ever started something and goes, shit, that was easier than I expected. Right? That doesn't happen. Right? People start things and then they get into it and they go, wow, this problem space is actually really niggly. It exists because it's got all sorts of intractable stuff that has been hard to solve. Now the code is free, but the judgment still isn't and the review time isn't.
+
+Pete Winn (13:17.249)
+Yeah.
+
+Pete Winn (13:24.515)
+Yeah.
+
+Rod (13:41.963)
+You know, the sitting there and really deciding, well, what is good enough for a human isn't. And that's going to continue, I think, to be a place where people add value for a long time. But the way of going about starting a company, it profoundly changes. So name dropping important people. Alan Musk saying this controversial line, no one's going to care about money in a few years. And you hear that and you say, well, that's what an absurd thing to say.
+
+Pete Winn (13:45.731)
+Hmm.
+
+Rod (14:09.47)
+And now I'm telling you, instead of raising $50 million to run 150 headcount, you can do it for zero. What purpose does capital have? What purpose does capital formation have in building debt companies anymore, if any?
+
+I mean, you ask a VC to contextualize that, what's going to happen to your deal flow if suddenly every entrepreneur says, sorry, we don't need money, it doesn't help us because the models are nearly free and I was only building technology anyway? What kind of profound moment is that?
+
+Andy (14:27.997)
+Yeah.
+
+Pete Winn (14:39.726)
+I mean, I think back home.
+
+Andy (14:42.13)
+Yeah. It's the like venture was like the delivery mechanism of choice for most people starting a company, but I think also for the wrong reason, because a lot of people drawn to starting companies. Like it became like entre entrepreneurship became like the new like NBA in some respect, right? It was attracting a lot of like fame hunters more than necessarily people who are like just driven to solve a problem. And so in that respect I think you will always still have people who are driven to solve a problem, especially when it's deeply personal.
+
+But I think the delivery mechanism, which was venture, was kind of binary. It was it was always a an all or nothing kind of approach. You know, the VCs take a big spread trade on you. If you succeed, great, good for them for the most part. And if you fail, so what? You know, it's a spread trade. But it's a bigger problem for you. Whereas I think like a lot of technology startups are really just glorified small business. And like I think that is like the really encouraging thing is more people can start.
+
+more small businesses and small doesn't need to mean we only make like you know five hundred thousand a year or a million dollars a year. You could be a small business in terms of your headcount and still be turning over a hundred million, five hundred million dollars. I think that's the opportunity. And yeah, as you say, like the capital the capital allocation piece of the puzzle now kind of disappears to some degree. And hopefully that encourages more people to just go out and start smaller companies.
+
+Rod (16:09.45)
+the old adage, right, the software eats the world.
+
+Pete Winn (16:12.962)
+Mm.
+
+Rod (16:14.486)
+the software, obviously it was a VC who said this, but still software eats the world. Why was that true, right? That was true because in general software can realize efficiencies that businesses need it. And so where's the value accrue for software eating the world? Well, historically again, you're a small business and you need some software and you are not a software engineering company and so you...
+
+maybe can save a million dollars in efficiencies, you're happy to give up half a million dollars in software licensing to some Silicon Valley behemoth and you recognize half a million dollars worth of new efficiencies and they recognize a very fat multiple on their revenue and go and list on the NASDAQ and it was kind of a win-win trade. now software eats the world but the software is free.
+
+you as a small business able to realise that million dollar efficiency without paying a single dollar of margin to anyone.
+
+And you not only save the margin, but also maybe that software company that is vertically integrated, kind of not horizontal at all, your business had specific problems, you would have to pay integrators to solve those specific problems, or else you'd have to have Ed Kahn and work around those specific edge cases. You can now have not just the best CRM stack in the world, name brand, owns skyscrapers in every city, the best CRM for left-handed blue widget makers.
+
+Pete Winn (17:34.04)
+Mm-hmm.
+
+Rod (17:47.21)
+Great, yeah, I rolled it myself. And without paying a single dollar in excess margin to anyone. And it can be better fit for my business.
+
+Pete Winn (17:48.918)
+Yeah. I
+
+Pete Winn (17:52.961)
+I really I really like this conversation because this is like the first ten episodes of this podcast like from about a year and a half ago. We used to have you know, like the titles were things like the death of SaaS, you know, why VC is bullshit or something like that. I can't remember the exact phrasing we used. I think we did the death of Venture Capital at one point. Like we and we'd always talked a lot initially about where the value accrued. And
+
+Andy (18:00.274)
+Mm-hmm.
+
+Rod (18:11.86)
+the SaaSpocalypse. It's very popular.
+
+Pete Winn (18:22.912)
+And the point was always that like software has effectively become free or will do at some level, that you can have your own software. it doesn't mean that there's gonna be no software or less software, it means that it's gonna become ubiquitous everywhere and it's gonna become very personalized for the specific thing that you have. Therefore SaaS dies because SaaS is like the all right, what's the sort of eighty percent of the stuff we can do for everybody that's the same?
+
+without the twenty percent that actually drives the value. Whereas now everyone's gonna go, well I don't want the eighty percent good version, I want the version that is exactly what I need. and it's free. Okay, well now there's no point of me buying this from like somebody over in Silicon Valley who won't even pick up a phone to me. So like why would I buy it from somebody that won't pick up a phone when it's just as good to buy it from somebody that stood next to me that I could punch in the face if they get it wrong.
+
+Rod (18:53.098)
+Yeah.
+
+Pete Winn (19:19.478)
+So you know, y you start to say, Okay, it's not necessarily that software integrators even go away. It's just you're probably better off with the integrator you can punch you in the face because, you know, you've got some sort of comeback, or they'll listen to you in some way, or they're more focused on your specific niche and your specific geography, with your specific tax issues and the rest of it, and regulatory things. And so I think everything moves closer to those guys. Hmm.
+
+Rod (19:41.555)
+And I don't want to focus on the negative too much because it's fundamentally so positive, but isn't it strange that a software company that makes a CRM has a skyscraper in every city on earth? Like if you had to describe what a software SaaS bubble looked like, wouldn't you describe that? And I'm not picking losers. I'm just saying, isn't it profound?
+
+Andy (19:56.122)
+Mm-hmm. Mm-hmm.
+
+Pete Winn (19:58.594)
+Ha.
+
+Rod (20:07.558)
+And so where will this value go? Because Silicon Valley would love for you to believe that it will stay there, it will just shift to a different winner. And I think everyone who's participated in selling the SaaS Pocalypse to buy your AI stocks, whatever it is, the AI stock du jour wants you to believe that the US remains the powerhouse of this internet economy and...
+
+Pete Winn (20:22.892)
+Mm-hmm.
+
+Rod (20:29.174)
+all the margin that used to be commanded by Salesforce and other SaaS companies now is commanded by Anthropic and other AI companies. But I don't know if it's true because the product seems to be commodity. I've just gone and my little Mac Studio started running Qwen 3.8 and it's as capable as the AI that built most of Shoshow last year, except slower, sure, for now. I'm running it on a 4,000 piece of consumer hardware.
+
+Pete Winn (20:39.138)
+Nope.
+
+Pete Winn (20:51.438)
+Yeah.
+
+Rod (20:59.242)
+You know, this stuff's gonna run on your phone. This stuff's gonna run on your toaster, your fridge, your vape, right? You'll talk to your vape and say, please write me a Doom port, and it will. You know, what is this world? And so, you know, if you've got Anthropic going IPO in November and everyone says, the subsidy on these tokens is going to end at that point because, you know, they're suddenly gonna be profit driven. Well, I know some open source AI companies who would have a word to say about that.
+
+Pete Winn (21:12.942)
+Yeah.
+
+Pete Winn (21:28.472)
+Yeah, yeah. That's
+
+Rod (21:28.822)
+And if it is therefore, what do you say, like it's a picks and shovels play and so therefore you want to own the hardware maker and the data center, I would say well no, but it's also going to the edge, isn't it? Because every small business is going to have a $4,000 Mac Studio sitting in the corner where the CEO can just spitball at it and it will produce some code, with or without a Frontier AI subscription.
+
+Pete Winn (21:57.613)
+Yeah. I don't know if this has ever like come across your like remake and what you were doing in your previous role, but it you know what it reminds me of is like when I used to work in like large like oil and gas projects and my 'cause I live in Perth, so y that's what you that's what you do. It's it's where the money is. and one of the things that we would do is you would map out, let's say, like this hundred billion dollar oil and gas project that we've got going on.
+
+Rod (21:58.762)
+So.
+
+Rod (22:12.533)
+That's what you do.
+
+Pete Winn (22:24.212)
+And you map it out in two ways when you do like the architecture for the system, which is you have the value stream and you have the support functions. And it's this just sort of reminds me that like all the SaaS w it's all support function. It's all just the basic like nonsense type stuff that has to happen so you can support the value stream. And like when I think about like well where does where does value go here? It's like, isn't it weird?
+
+that the biggest companies in the world weren't value stream, they were support function. But they aggregated the support functions across all these different companies. And I kind of feel like everyone's just gonna effectively hand roll their own support functions and internal tools because they're just going to be better. Cause then they support the value stream. So when I think about where's the value going, it's like, well it goes back to the value stream.
+
+Rod (23:03.903)
+Yeah.
+
+Rod (23:10.675)
+which is how it used to be.
+
+Pete Winn (23:18.988)
+And the value stream was always well, what are the core unique things that we do as a business that are like that only we can do and we do it inside this small niche and that's what drives the money and then yeah, all this stuff we pay for to get it done. Like I think that stuff becomes very, very cheap to free. And there will be supporting services that deliver that. I just think they're more local to those companies. But the value goes back to accruing more at the people that do the thing, take an input and make an output.
+
+that is better and they improve like they you know, build the capital in that way. But it's that value stream bit where it goes. And if your job is to be a middleman on somebody else's value stream, then I kind of feel like you're fucked.
+
+Andy (23:54.352)
+Mm-hmm.
+
+Rod (24:02.928)
+And as all of this cost to serve disappears and as all of this extra efficiency is realized in that kind of primary production of value, ultimately the value flows to the end consumer, Because it can justify lower prices, higher quality, whatever it is. And so I guess the biggest picture for me then is capital formation not required to go and try an idea anymore.
+
+Andy (24:03.025)
+Mm.
+
+Rod (24:32.135)
+more innovators get started, more interesting new stuff comes to market.
+
+Large Silicon Valley based middlemen with extractive margins no longer required over the course of the next five, 10 years get cannibalized. There's an opportunity for you. You want to start a business right now? Go find an incumbent Silicon Valley company with excess margins they can't defend based on a technology moat that doesn't exist anymore. Go find that company, create a fast follower. But it also is not going to stick around with the AI companies because, oops, despite all of their capex, it turns out that machine learning is a commodity product.
+
+Pete Winn (24:46.03)
+Yeah.
+
+Rod (25:07.423)
+and you can run it at the edge on your toaster. therefore, know, primary production companies end up with software eating the world at no cost to them and end users get cheaper everything. What a utopia. I mean, I don't want to be, you know, that e/acc guy, but you know, I think there's reason to be fundamentally optimistic here about where this is going. I think as a punter, as a Nostr user interested in self sovereignty, suddenly having, you know,
+
+Pete Winn (25:27.448)
+Yeah.
+
+Rod (25:36.111)
+all of the power of gods that this stuff produces at my fingertips and knowing that it's coming for everyone. I think it's just fundamentally really great.
+
+Pete Winn (25:39.31)
+Yeah.
+
+Pete Winn (25:44.269)
+And I think the bit that plays into that we didn't cover off is like you said, like the current Silicon Valley, although I think it's starting to die a little bit at the moment, but like for the last sort of two or three months, like if you listen to all in podcast, which we obviously hate listening to every now and again, just to see what's going on, it would be all about it's all about anthropic now. You know, like
+
+Rod (26:06.646)
+Hmm.
+
+Pete Winn (26:06.974)
+Nine months ago it was all about OpenAI and they were unassailable. Now it's all about Anthropic and they're unassailable and they're gonna take everybody's jobs and they'll be a five trillion dollar company because they're all invested in it. So therefore they're talking their book. But I think it's dying as you see these new models come in. Like I used Anthropic a lot a year and a half ago. I pretty much stopped using Anthropic
+
+I think it was around this time, maybe September last year, when it suddenly just nerfed itself prior to I think the four the round of four models coming out for Opus and I moved to Codex. I've been mostly happy with Codex, but these days I can't run just Codex. Like I have to run the Chinese models, otherwise I can't get good like red teaming on my own code. Like I will start up a codex session, I ask it to do the red teaming stuff and it just stops.
+
+Just as like, I yeah, I decided that was against the cybersecurity rules, so I'm not allowed to check your code for bugs. And it's like you wrote the goddamn code. Come on, check your work. And so I have to run a suite of much cheaper, highly capable Chinese models in order to do this stuff. And you're like, Alright, well, I was as happy to just stick with one provider on a subscription as anybody.
+
+But it's so easy to move, it's such a commodity thing, the intelligence piece. And it's so hard to defend it that I don't see any value getting accruing to Anthropic over time. I mean I'd buy the sort of they're a decent product company. And they've managed to innovate slash, I don't know, steal like it's it felt a bit like they went into Figma, sat on their board, took all their ideas and then just did them themselves. And you're like
+
+At some point people are gonna stop inviting the wolf into the sheep pen to have a look around. But I don't know. I it doesn't feel defensible to me. I don't like what are your thoughts on that? 'Cause I think we've danced around it.
+
+Rod (28:10.006)
+Well, just as I said.
+
+And for what it's worth, they had to get out the gate fast and raise a bunch of money in case it turned out that it was important to do so. And then once you are, as a company that's raised a bunch of money and made a bunch of promises on that track, well you must, it's your job to keep raising and keep promising. Now unfortunately, I think it's turned out that they were wrong. And I heard, and I don't have this first hand, but I did hear that Anthropic's last capital raising.
+
+you know, and this was not too many months ago. Their pitch was essentially, we're on the verge of hard takeoff. There will be a moment where our models will be so advanced and so self-accelerating that no one will be able to keep up. And therefore we're raising this much money now, the train is leaving the station.
+
+you're on the train or you're not on the train, but you will never get a chance to invest in the world leader in AI ever again. This is it. That's the pitch, that's a bold pitch. And then six months later, suddenly Kimi K3 comes out and GLM 5.0, who's even counting, right? And I mean, they're every bit as good, except they haven't been nerfed, as you've mentioned, by the US government. So, well, I guess we'll just use them. they're also cheaper? great. And you're suddenly...
+
+Pete Winn (29:17.123)
+Yeah.
+
+Pete Winn (29:27.052)
+Mm.
+
+Pete Winn (29:37.048)
+Yep.
+
+Rod (29:39.208)
+not only have they not had their hard takeoff and not only are they not now suddenly blowing everyone away, they can't even release their frontier models, presupposing that they're honest and they exist.
+
+Pete Winn (29:50.872)
+Hm. And they don't keep calling them words that just mean not true.
+
+Rod (29:55.178)
+Hmm, hmm, yeah, see there's something in that, right? So, you know, in any case, you can look at that and you can go, well, six months have passed, we all have new knowledge and the knowledge is they were wrong. You know, and so the investment thesis flips on its head. Suddenly you're not buying AI software companies, maybe you're GPU hardware companies, or maybe you are like, like I've been saying, you know, betting on all of the margin to come out of all of the companies and ultimately accrue to the user. It won't happen overnight.
+
+And so I guess this is then how come I end up starting a new software company if this is the landscape. I think there's a five or maybe 10 and again with a grain of salt as I've been wrong by 75 % already earlier in this podcast, right? There's a five or 10 year window where the margin drains from companies that had high margins as a result of defensible tech moats. They now no longer have defensible tech moats. And there's a five or 10 year window where all of the margin drains out of those companies.
+
+Pete Winn (30:29.996)
+Hmm, it's Tell me about it.
+
+Rod (30:54.581)
+a lot of companies, a lot of margin to drain. People are slow, they switch slow. Companies are slower, they switch slower. So find a bloated behemoth operating 600 to 1,000 headcount in a niche Silicon Valley industry with 30 to 50 % margins, which is widely hated by everyone, and be a fast follower. Tell the AI, we're building a competitor to this, and the AI will say, yeah, I know exactly how to do that.
+
+You don't have to ask the AI to innovate, you have to ask the AI to do the thing that it's very, very good at, which is replicate. Go and replicate that. Literally open and play their website, build me one that looks like it. Now change the colors. These sorts of activities, AI is very, very, good at. And suddenly you're a fast follower, except you don't have the capital stack, you don't have the shareholders to appease, you don't have the...
+
+Pete Winn (31:34.637)
+Mm-hmm.
+
+Yeah.
+
+Rod (31:46.294)
+600 headcount and expensive Silicon Valley offices and free lunch service and all of these other things you get to live by the beach in your van or playing some beach volley as I do. You get to do something, to feed your family as opposed to satisfy public market investors and their infinite lust for margin and you can compete. So you can out compete and you can out compete on margin.
+
+Pete Winn (31:56.152)
+Ha.
+
+Rod (32:11.124)
+And that's the game suddenly that you're playing. They had expensive cost of capital to build their capital moat, to build their technology moat. That's now zero. You're competing without the cost of capital and you can compete. I just see so many, if there's any message that I would give, now's the time to be upstart. Now's the time to be an upstart that goes and picks an incumbent and just see if we can kill them by a death of a thousand cups.
+
+Pete Winn (32:11.47)
+Yeah, okay.
+
+Pete Winn (32:38.498)
+Yeah.
+
+Andy (32:38.78)
+Hmm. I think I agree on the end state, but I'm less sold on the on the on the path to getting there. Like I kinda think this is gonna be a little bit not choppy, choppy's the wrong word, but I think it's not a st it's not a straight line. And I think you know, like the way ev even we run our business, you know, I have this like view that you're you're almost better off like providing a hell of a lot of value for people that know you and trust you, that you have a relationship with.
+
+Pete Winn (32:51.5)
+Mm.
+
+Andy (33:06.33)
+know as Pete says, people that will punch you in the face if something goes wrong. It's it's like building for smaller communities. And you can actually build like a really valuable business doing that. You know, it's not the it's not the all or nothing unicorn type build. But you know I think that is like a really interesting potential end state where it's like, okay, yeah, you do have abundance. You can go and try and like build pretty much anything almost overnight, but you can't go an inch deep and a mile wide. I think that model
+
+Rod (33:19.226)
+no, I agree.
+
+Andy (33:35.855)
+Of like traditional SaaS is that train is leaving the station. But I think you can go and build really deep for a small cohort that have like a very similar problem as you and you've got a relationship with, and like I think something like that is going to be incredibly durable. And I'm like super bullish on like using the technology for that. And I think the other aspect of this is that like the internet was always meant to be like a really great leveler. And yet if you fast forward out.
+
+Rod (33:40.842)
+me.
+
+Rod (33:48.732)
+sorry.
+
+Andy (34:05.575)
+You've got people who have built multi-billion dollar companies on the internet, and then other people who really just use it to see what their friends are up to and look up a recipe. And like so you do have like a pretty broad dispersion of use cases like with the same technology. And I kind of wonder if like to some degree AI will just like accelerate that as well. And people who are like have high agency will go and like shoot the lights out. And people that really don't and just want to consume, they'll keep doing that.
+
+Rod (34:38.366)
+No challenges here. mean, you know, the world's best CRM for left-handed blue widget makers is where I first pitched. And you know, you can be more nichey, be satisfied with smaller TAM, and also do at lower margin because you don't have the overhead. All of these things are true and I don't see incumbents resisting it. It seems like an inexorable force, right?
+
+Andy (34:39.656)
+Ha.
+
+Pete Winn (34:45.911)
+Mm.
+
+Andy (34:46.246)
+Yeah.
+
+Rod (35:06.718)
+And so who are the next 10,000 vertically integrated little CRM companies or workplace chat companies that all happen to be better for their specific verticals? And as I keep saying, cheaper to use because the CapEx is gone.
+
+Andy (35:26.352)
+Well, there's a IRL component to it as well. You know, it's like you can build a business now and you can go outside. You know, you can go and spend some time with your customers, touch grass, get to know them. You know, like I think that is actually like a much more like rewarding way to live as well, rather than just be like stuck at a terminal, your customers are all numbers and some of them leave you, you get some new ones, you don't really care because it's literally just a numbers game. I think
+
+I think that like IRL like even more of a push into like analog, I think is gonna be like quite an interesting development as well.
+
+Rod (36:03.88)
+IRL good segue into streaming.
+
+Andy (36:06.492)
+Hmm.
+
+Rod (36:08.182)
+It's very hard to fake a live broadcast like this guys. We are actually all real humans. If you're tuning in live, there's your proof. Although, I mean, I've seen some things, but let's leave it at that. This is probably real. And look, as anything, it's a random walk. What you see that it becomes your opportunity that you can come up with. So here I am, I founded a new company. It's called Shoshow. It does.
+
+Andy (36:14.332)
+Mm-hmm.
+
+Andy (36:18.736)
+Rod (36:34.996)
+live streaming on the internet. We are streaming live right now, this podcast. will also, I guess, be on the beautiful channel that Pete and Andy have set up. But how I came to be here is as ever a random walk and as ever as nichey as niche. See, I'd never heard of video streaming e-commerce before at all. A good friend of mine comes over to Australia for a holiday from the UK where he's a tech executive.
+
+Pete Winn (36:53.859)
+Hmm.
+
+Rod (37:03.798)
+I guess a big OEM. And mentions in passing that he made 15,000 pounds last year by accident flipping baseball cards. What is this? yeah, live streaming e-commerce, it's a thing. You know, I turn up on a live stream and I break a pack of baseball cards and I have people pre-bidding that and I do it and here are these companies I do it with. Holy wow.
+
+Pete Winn (37:11.982)
+Hmm.
+
+Rod (37:25.16)
+Okay, so here's a trend I've never heard of, which I'm exposed to completely by accident, serving a niche that I have no real knowledge of at all. Hearing about fantastic margins and making money by accident, you know, there's like a level of pattern recognition here. So, you take a look and you say, well, this is a fast and upcoming trend, live streaming e-commerce. It's enormous in China, it's not yet enormous in the West.
+
+Pete Winn (37:25.486)
+Mm-hmm.
+
+Right.
+
+Pete Winn (37:38.659)
+Yeah.
+
+Rod (37:46.038)
+Companies like TikTok have it as a side business doing 60 billion turnover. Important Silicon Valley company, what not, has 600 headcount and 6 billion turnover. I say, well, how much turnover do I need to live by the beach and play volleyball without my 600 headcount? For a fast growing industry, can I peel half a percent of that somehow, some way by niching down? Possibly I start with a really kind of tight knit.
+
+Pete Winn (38:07.586)
+Hmm.
+
+Rod (38:15.765)
+excited tech entrepreneur type internet community who will be desperately keen to try any buggy product that I might launch with my AIs. Possibly that would be a good first, get an audience that loves you. It also solves the chicken and egg problem because I don't have any streamers to start with, that's okay. There's an open network with some content on it, I can pull that in.
+
+Pete Winn (38:18.67)
+Mm.
+
+Pete Winn (38:23.894)
+Nostr Yeah.
+
+Andy (38:25.288)
+Yeah.
+
+Rod (38:38.709)
+You can put together, however you come across it, you can put together still an interesting segment that's a fast growing segment, an incumbent that looks like it's widely hated with excess margin to take and a way to fast start.
+
+I think the way to fast start and I can't rep Nostr enough and if you're listening to this podcast and you don't know what a Nostr is, go find out what a Nostr is. It fundamentally is a die-hard community of people who will love to use your product for you and also solves your chicken and egg problem for free.
+
+Pete Winn (38:58.158)
+Hmm.
+
+Rod (39:11.625)
+You can't beat it as a place to start. And you can layer these things and have the AI go and do it. again, so 16 months ago, can the AI write code? Well, start with something that's probably in its learning corpus. Streaming has been open source forever, and e-commerce is well understood, also I've done it for a decade. So find something that you and the AI can, through your existing knowledge, align on. Pick a fast trend, pick a nice place to start and go. And it just becomes very, very accessible.
+
+Pete Winn (39:13.795)
+Yeah.
+
+Pete Winn (39:41.071)
+That's interesting. I d I don't know anything about streaming e-commerce. Like I like my entire history of streaming is available in that show link where I went. I wouldn't I've seen this because I just I saw you on Nostr and I saw you doing stuff and obviously then I saw stuff appear at the top of various Nostr clients saying stuff was live. So I was kind of aware that it was there. I'd never done it and I think maybe about half an hour before we did the first live stream of Intelligence Snacks was when I got it to work.
+
+Andy (39:51.889)
+Rod (39:55.135)
+Mm-hmm.
+
+Pete Winn (40:11.244)
+And it was remarkably easy to put together, you know, I just inputted the data, followed the thing. okay, cool, it works. Let's just stream this first episode. But how do I make all this money from this rug? Do I need to sell this mug for twenty one million sats?
+
+Rod (40:25.247)
+Someone take a screenshot please of Pete with that mug. There you go. Yep. And then send me that screenshot and we'll get that mug for sale. It is the first mug that Pete ever sold on a podcast. Collector's Edition.
+
+Pete Winn (40:30.67)
+Yeah.
+
+Pete Winn (40:37.932)
+Yeah. Twenty one million sats.
+
+Rod (40:40.853)
+Okay, very good. Streaming e-commerce. Okay, so some headline things. Fastest growing e-commerce vertical in the world. know, 2025 it went from 0 % of e-commerce in China to 25 % of all e-commerce in China. 25 % of all e-commerce in China? Individual retailers doing multi-million dollar TTV in a single show.
+
+Andy (40:42.056)
+Mm-hmm.
+
+Rod (41:08.167)
+Okay, well this is really interesting. So what is it, right? Why? Why? Because e-commerce itself is saturated. I'm a retailer of some product and I want to it on Amazon alongside 500 clones of me. And I have to go through all of the trouble of taking studio photography and writing compelling listings and then also still, how do I get cut through? I kind of need to bring my own audience anyway. And so...
+
+Pete Winn (41:33.122)
+Hmm.
+
+Rod (41:36.214)
+I guess I call it legacy e-comm. Having reached a point of saturation is very hard for an e-comm retailer. Picture now then instead the idea that you have your product but you go live on a show. You tell everyone that all of this product is going to be sold on this date at this time and you turn up and you say this sold, this sold, this. Who's that good for?
+
+I mean, you've got fast fashion, you've got ends of lines, you've got collectibles one of a kinds. There's very many segments where the act of going through the preparation of a listing for something that's a low number of inventory items is just too much cost. And so you end up with all of this inventory that you can't clear through legacy channels that you can now just clear, bang, bang, bang, bang, bang. And it becomes...
+
+Pete Winn (42:05.4)
+Hmm.
+
+Rod (42:28.735)
+for the viewer who's interested in a great deal or find that they can't get anywhere else or hit if they're into the collector's cards, it becomes entertainment. And so now suddenly the internet's gone full circle, we're back to infomercials. But you see suddenly an entertainment shopping channel on the internet as niche as you like. It adds a level of trust, right? Again,
+
+Pete Winn (42:39.394)
+Hmm.
+
+Andy (42:43.384)
+Yeah.
+
+Pete Winn (42:44.066)
+Yeah, it's QVC.
+
+Rod (42:57.095)
+It's the AI slop-pocalypse. Video is rather hard to fake. That trust layer that you get doing a live streaming kind of commerce is really important for some verticals. Again, and I'll come back to collectibles, right? I'm here, I'm breaking a pack of baseball cards. You don't care about every team. You care only about your team. The pack's gonna contain all teams, most of it you won't care about. So you pre-buy a slot in the break for just your team will break it.
+
+everybody gets their team that they've bought, but how do you trust the breaker? And are they just gonna just tell you that you didn't get any good hits and quickly pocket them all? Well no, because they're doing it live on camera. You can watch the replay if you want to, but everyone's watching them do it live and their hands are always in the camera. And it's very, hard to fake. And so it adds that kind of level of trust and authenticity, which especially in this world of AI, is gonna become increasingly hard to do. So you get, again, you get cut through, you...
+
+Pete Winn (43:34.638)
+Mm.
+
+Pete Winn (43:47.245)
+Yeah.
+
+Rod (43:51.254)
+all sorts of stuff that you couldn't otherwise sell because of the marginal cost of listing it. You get trust that you can't get any other way, especially not versus AI. Fast growing vertical, high margins, widely hated competitors. You know, let's go do it. It's been, we're just getting out the door with it. Right now you can list your products on ShowShow for free. We do hope to charge a margin at some future point. But even then, as I've said.
+
+it's a cost-beat play, so we hope to be the most cost-effective option, kind of feature comparable with the incumbent.
+
+Pete Winn (44:26.594)
+Alright. So after the after the live stream then I could just take that screenshot and I add it to that Shoshow stream and then somebody can just buy it. Okay. Yeah, okay, cool. Let's do it. Alright, yeah, let's do that.
+
+Rod (44:33.141)
+Absolutely. And in fact, I'm going to do it for you, whether you like it or not. I'm going to establish your shop for you after this and list that mug. And we'll do it at whatever price you like, and it'll be shipped to you from Perth.
+
+Pete Winn (44:44.826)
+I do like this mug, but I would sell it for twenty one million sats. Which is well sorry, like twelve grand twelve thousand US dollars. I'll be okay with that. now it's yeah, that it's interesting though, because I when I think about like my buying behaviour and my relationship with podcasts is that I like podcasts and I appreciate and you feel you have that like connection to
+
+Rod (44:50.056)
+I'm actually going write that down and let's get that set up.
+
+Pete Winn (45:12.92)
+people that podcast regularly that you listen to is if they're like friends in your house, sort of thing. Like it's that very intimate sort of connection. But I don't I don't necessarily always want to just buy subscriptions to podcasts necessarily. It does work, but it's 'cause there's so many of them, it's kinda hard to like subscribe all over the place. I kinda like the sat streaming stuff, but where I will pay attention is when they come up with a product
+
+And I'm like, okay. You've come up with a product and it's it you're charging more than I would normally buy, but I'll just factor in all the value that I got from this other thing and I'll just go buy that from you because you're there. And so it does feel like that like that's something that I can recognise in myself and go, yeah, I wouldn't be the guy watching somebody crack baseball cards, 'cause I don't care about that. But I could see other shows that I watch doing something like that and maybe in
+
+Like, okay, yeah, this is maybe this is a more natural way of buying something, which is I
+
+Rod (46:15.765)
+There's no better way to back a creator than buying the thing they've created. Right now on the Shoshow, no good selling his art books.
+
+Pete Winn (46:17.912)
+Yeah.
+
+Pete Winn (46:24.974)
+Yeah, that's a great example.
+
+Andy (46:26.012)
+Mm-hmm. Yeah.
+
+Rod (46:26.453)
+Ivy, Loomy and Joe Martin are selling their albums. You can buy Joe's vinyl and he'll ship it to you. You can watch his live stream. You can watch his replay of him doing a gig and buy the vinyl while you're listening to his music without even leaving the stream. Some of the stuff is, we hope, pretty sticky in terms of just like a compelling and fun experience. So again, we're building it.
+
+Pete Winn (46:39.235)
+Yeah.
+
+Rod (46:53.417)
+we're going to see if it works. And in the style, I guess, of this world that we're in, if it doesn't work, then we'll do something else because the software is so cheap to try.
+
+Pete Winn (46:53.517)
+Hmm.
+
+Andy (47:03.91)
+It was the no good radio live stream as well. That was part of the impetus for us to go yeah, we should just live stream on Nostr every week as well. So there you go, that's the that's the connection there. Yeah.
+
+Rod (47:13.695)
+Shout out to No Good, No Good Studio in Amsterdam. Thomas, what a legend.
+
+Andy (47:18.898)
+Yep.
+
+Pete Winn (47:19.2)
+OC Amsterdam. Okay, interesting. I didn't realise. I mean we've talked about that as well with the book and saying like isn't that nice that he's got like 'cause it's almost like the problem is that you get like the audience and the awareness and stuff comes from the streaming and the free stuff that you've got. But then y you almost can't buy that. But y you could just you could take all of that, write it down in a book and it's a physical thing and now I'll buy it at a huge markup. Like it's there's something about it that's like
+
+You make it that special thing as opposed to that transient I guess the streaming, like the Yeah.
+
+Andy (47:47.335)
+Yeah.
+
+Rod (47:54.367)
+Yeah, and I mean, so.
+
+Andy (47:55.091)
+But there's all clearly a lot of care and craft that's gone into that as well. You know, like you can tell it this is like something high quality. I really want to own this. It's like an artifact and like a piece of a piece of Nostr.
+
+Pete Winn (47:58.146)
+Hmm.
+
+Rod (48:09.225)
+Yeah, and so if you pay attention to his channel, he goes live creating the art.
+
+So he'll do live streams of his drawings so that you can see kind of his creative process. You know, what better way to kind of engage with an artist, right, than to be there as they're creating the art. MX12Art, right, he's custom inking t-shirts, which he then sells on the store and you can watch him produce a t-shirt or a canvas on the live stream. We've got another guy just turned up, an airbrush artist from, I think it's Houston, Texas, AirTechAnt, and he'll custom airbrush.
+
+Pete Winn (48:28.515)
+Yeah.
+
+Rod (48:45.495)
+clothes and then sell them on the stream. I mean I didn't know any of this stuff existed when I first started. Again it's all a random walk but there's people out there with real skills and then how do they get reach is not traditional e-comm channels. But there was one thing though that I did want to kind of touch on again quoting big name people to keep it interesting. I loved Jeff Bezos line.
+
+Pete Winn (48:48.45)
+Yeah.
+
+Pete Winn (48:53.368)
+Mm-hmm.
+
+Pete Winn (49:01.357)
+Hmm.
+
+Rod (49:11.861)
+And his line was broadly this, I'm going to butcher the quote. But the quote was roughly, nine out 10 businesses go to zero, but the one business that works goes to 100. And so any sane person will take that bet. They'll lose everything on nine times, but they'll get 100x on the 10th time if you can average enough bets.
+
+Pete Winn (49:32.674)
+Hmm.
+
+Pete Winn (49:38.007)
+Hmm.
+
+Rod (49:41.266)
+anyone would take that bet. And the problem is that no one has the time to take enough bets. Because life is short. We have other things to do. You functionally couldn't start 10 companies in a career. And so you look at that and you say, well, the probability of a strikeout then is too high. But now you can functionally start 10 companies in lifetime. You can start them in a year. You could have your AI spin up 10 business models tomorrow.
+
+Pete Winn (49:44.812)
+Can't afford to. Yeah.
+
+Pete Winn (50:05.411)
+Mm.
+
+Rod (50:10.302)
+and see which one hits. Earlier you talked about how was a spread bet, the VCs were making a spread bet. And the problem as a founder, you focus on one.
+
+Pete Winn (50:19.864)
+Mm.
+
+Pete Winn (50:24.382)
+Okay.
+
+Rod (50:24.468)
+and it either hits or it doesn't and the VC takes the beta across that risk by betting 100 things and one returns the fund and the other 99 are gone or whatever it is. And this was always the way the risk mitigation and the value accrues to the VCs in the world is that they had the ability to play multiple.
+
+opportunities, you as a founder now have the opportunity to do the same. You can play multiple opportunities. You don't have to vigilante yourself and niche yourself. You could have your AI do multiples in parallel. Again, just reduces the risk. You can be an innovator and if it doesn't hit, try again in a way that you never ever could before.
+
+Andy (51:04.806)
+Yeah. We talk about this quite a lot. I've kind of made this point a few times on the pod where I'm like, I feel like AI has given me ADHD. But it's it's real like that vein was always there, you know, like I've always had this like itch to go and like pursue different ideas. And you know, like I started my first like small company when I was nineteen. So like this is just like for me, AI is a gift. But equally you can like you need to almost like temper what you do to some degree and think about like, okay, like which
+
+Pete Winn (51:14.232)
+Mm.
+
+Andy (51:33.466)
+Which thread am I gonna go down today? Because you can actually do yourself a disservice as well. Like there is some benefit to focus and to make sure that these things are actually like commercially valuable to you as well. And but it is just still fascinating to go and experiment. And I think we've we I think we talked about this in a recent pod with DPC, like the cost of taking the cost of the bet has been reduced, so you can go and take more swings. And I think that is like
+
+Pete Winn (51:41.228)
+Yeah.
+
+Rod (51:57.248)
+in.
+
+Andy (52:00.457)
+the really interesting thing because before you'd have to measure that in terms of opportunity cost, both in terms of your time, how much you could be earning doing something else, you know, how much capital, as you've pointed out, you'd need to go and raise in order to start the thing as well. And I just think those costs have collapsed. So it's much easier to go and take that take that pump.
+
+Pete Winn (52:14.072)
+Yeah.
+
+Rod (52:19.988)
+Yeah, but also interestingly, only for upstarts, right? Because if you've got yourself pot committed with a couple of capital raises under your belt along a specific business trajectory with promises made to investors, well, you don't have any more of that optionality to go and pivot, do you? Right? You've made commitments, so now you've got to follow through for right or wrong. So it's the time to be on the outside more so than any other time, I think.
+
+Andy (52:23.688)
+Mm.
+
+Pete Winn (52:30.094)
+Mm.
+
+Rod (52:48.066)
+the time to be a solopreneur and upstart and parallelise your approach to different business opportunities, use the tools to get ahead and do it without the capital formation not just because you can but because that way you can swing and miss as many times as it takes to get it right.
+
+Pete Winn (52:48.12)
+Yeah.
+
+Pete Winn (53:05.336)
+Hmm. I think that's an important part because when you look at the Jeff Bezos quote that you used, it's like saying, like, okay, well, nine out of ten fail and go to zero. One goes to a hundred. Now it maybe it doesn't go to a hundred anymore, because again, the software is free, so you're gonna get it's unlikely that you now become the thing that becomes like the one SaaS or the one Amazon or whatever that does it for the whole world. It's likely to be a smaller pie. But then you now own the pie as well. So A
+
+again, you don't have to follow through with these commitments that you've made to a bunch of investors because you never made them because you never needed the capital. So you have that control to say, actually this isn't working. I don't need to pursue this for two more years and burn the runway to make sure it's not working. I can just stop 'cause it's me. So you can pivot a little bit quicker and make those bets, but also when you get that like, you know, one that goes to a hundred, maybe it goes to fifty, but you own a hundred percent of the fifty as opposed to ten percent of the hundred. So it's it's a simpler
+
+Rod (53:52.886)
+Hmm.
+
+Pete Winn (54:03.799)
+Calculus maybe.
+
+Rod (54:04.086)
+Yeah, and there'll be somewhere once all the dust has settled on this massive change in the world that we've all seen over last 12 months, they'll become room for capital again, right? Because the process will be well established and people will understand how to deploy capital efficiently in a way we go again. But it's been very hard at the moment. Like, can you imagine hiring a developer at the moment? You've hired developers before. How would you even interview?
+
+Pete Winn (54:10.358)
+Hmm.
+
+Pete Winn (54:19.146)
+I think capital goes to the edge. Yeah.
+
+Pete Winn (54:27.47)
+Hmm.
+
+Rod (54:29.822)
+Right? I mean, everything that they call themselves a senior and have been doing for three decades is now irrelevant. So, you know, on what basis are you hiring them?
+
+Pete Winn (54:34.242)
+Yeah.
+
+Yep. I'd be looking for their like portfolio on GitHub and like how they're using these tools. But yeah, it's it's not as simple.
+
+Rod (54:46.996)
+And so we hired for Shoshow, you know, a good friend of mine, but I only felt comfortable to hire him because he was the guy I was going to for advice on AI for six months before. You know, he was the smartest guy I knew. He's on Austin Outlands, I'll share his handle. He doesn't say much, but he lurks. Haha, yes, all four of us.
+
+Pete Winn (54:56.044)
+Hmm, interesting.
+
+Pete Winn (55:01.762)
+Okay.
+
+Yeah, stick it in there. He'll get upwards of four followers. That's good. Yeah.
+
+Andy (55:09.672)
+Friend of the pods.
+
+Rod (55:15.848)
+You know, so here's a guy who is the smartest guy in AI.
+
+Pete Winn (55:19.33)
+Hmm. Hmm.
+
+Rod (55:21.866)
+but kind of for anybody else. I mean, there are still people out there who write code by hand. There are people who read diffs. mean, Excuse me. I'm joking, of course, but like, it's a... And some people think that you have to, because they've always done it that way.
+
+Pete Winn (55:32.353)
+Hmm.
+
+Andy (55:34.088)
+Mm-hmm.
+
+Pete Winn (55:39.192)
+Yeah.
+
+Pete Winn (55:45.844)
+Yeah. It's I think that goes away personally, but that's interesting.
+
+Andy (55:53.513)
+So the so the lesson here is that you can you can have your own spread trade as a builder, which I think is quite nice actually. Like it's it's you've got a small like a portfolio of small bets. And you can go and build them without needing to go and raise a shit ton of capital. You don't need to give away equity to a technical co-founder day one. You don't need to go and hire a headcount in order to scale any of these things. You just need to basically build your relationships and
+
+care about the people you serve, care about the problem. And then off you go. Use the technology productively.
+
+Rod (56:27.678)
+And for the next five or ten years you've got at least two really interesting things to do. One, to steal all the excess margin from all of the incumbents. And two, to pursue this radical change is a hundred percent opportunity and no threat.
+
+And again, we've got to flash back to and remember there are people out there in large corporates and big co's who can't engage with this opportunity as an opportunity. Because they've got a million customers a year and they've got 50 million turnover and what happens if they replace their customer service team with robots and it doesn't work? no, they've blown up all their SLAs, it's all terrible. But you as an upstart who have no customers can try it and if it doesn't work, no worries. But if it does work, win hands down against the incumbent.
+
+Pete Winn (56:52.846)
+Hmm.
+
+Pete Winn (57:04.75)
+Mm-hmm.
+
+Rod (57:13.834)
+And that, again, that opportunity exists only now.
+
+Pete Winn (57:18.262)
+I love it. I love it. This is this is sort of exactly what I wanted to hear. I don't know if you would have listened to any of the older sessions of this, but we had one. It was number twenty two unfortunately, 'cause it should have been number twenty one. But it was with G and we were wandering around in the streets of Madeira. And like one of the things that he would often talk about was this concept of like digital lemonade stands, which
+
+Rod (57:18.592)
+Get into it.
+
+Andy (57:20.848)
+Mm-hmm.
+
+Pete Winn (57:43.161)
+Pretty similar to like what we talk about is these like smaller niche businesses and value going to the edge where like there is this world now where you can just accept payments online. You do have this community, as you said, of like these Nostr users that will use any anything. They'll just like raw dog a key into it and start using these systems. Just to try them out and see how they work. And they'll engage with it and they'll get excited about it and they'll try
+
+buying and selling stuff and there's all these opportunities to create businesses. And I think often because we come from like a tech background, we want to create like a tech business in some way. But as you say, like the tech's no longer the moat, but so what we probably need to do is bring like a whole bunch of like real life like say these lemonade stands like to this world and just start having normal businesses.
+
+That people can engage with in some sort of way. And then maybe the thing to realise is that there is like an audience. I know, like, talking with Andy, like we said a few times, like, we've had this podcast for about a year, year and a half, maybe. And it was it was very much like, Alright, well we're talking anyway. and we'll start it. And like we've somehow picked up users. Well, I was I was I was inviting my mate Pearson the other day. I said, you should come on and talk about your stuff, and he's like
+
+What you talking about? And I said, do you not know that we've been running a podcast for a year and a half? It's like, I had no idea. I was like, right, I've I've really not done a great job getting this across to people. So I think I was part of our like intelligence snacks rebrand. I we're g we're gonna be doing a lot more like outreach of this sort of stuff and building that audience. 'Cause I think it is important to get it out there and be useful to people.
+
+Rod (59:28.916)
+Rock and roll.
+
+Andy (59:30.182)
+Yeah, distribution, that age old problem. Still ever present.
+
+Pete Winn (59:32.182)
+Hmm.
+
+Rod (59:35.113)
+There will always be business models on the internet. That's always going to be one. Yeah, more reach. Also, transactions? Hard.
+
+Pete Winn (59:35.192)
+Yeah.
+
+Rod (59:43.519)
+So e-commerce, think, will continue to be a business. So there will be winners and losers, but certainly getting out to market is always going to be a tricky problem to solve. So best wishes. And if we can help, let me know.
+
+Pete Winn (59:48.259)
+Yeah.
+
+Pete Winn (59:52.173)
+I think like Andy said earlier, like I think Andy said this earlier, but like it's very much a it's an agency multiplier, right? Like it's like the internet itself, like some people created huge companies that were centralized things and the value flowed there. I don't think the value flow is in the same way, but I do think you have this same problem of like somebody with agency will do very well, somebody without agency won't do well. Like it's I think
+
+This you can get the tools and you can get like a series of people that are gonna like or agents that are gonna do all the like a lot of the work for you. They can't pay attention to the problem and steer themselves, at least yet. So I think, you know, you still need to be doing that. But like that person with agency can do that, but you can't make somebody do that. If you don't wanna do that, you just won't. You'll just consume
+
+whatever like gets stuffed down the pipe. So I still think there's gonna be a big bifurcation of who does well out of these tools. The bit that I quite like as like an Australian is God said that. I remember when I used to be British. is that you it's it's nice for the high agency small business owner. and if I had to like choose like one example of somebody that's just been kind of fucked over a lot,
+
+Andy (01:00:59.186)
+Ha.
+
+Pete Winn (01:01:15.458)
+for the past few years it would be the high agency small business owner that just has to swallow like more and more like red tape and taxes and nonsense and just doesn't seem to get anything back for it. Like it's nice that they get a win with this technology, so I'm I'm a fan. I think it's good.
+
+Andy (01:01:36.681)
+Yeah, and if they win, I think like society wins as a whole. You know, like small business as like in a like a well developed fabric tends to provide this like really durable, sustainable dividend that people get to enjoy, you know, 'cause it's not just tech companies, it's like, you know, the local cafes and restaurants and, you know, little mum and pop shops as well and all this stuff that like growing up these were just abundant.
+
+you'd be able to and they'd all have their own like unique personality that they'd kind of capture the individuality of the people who ran the business. And you know, like there wasn't this like descent into minimalism that we kind of have now. It's like that unique act that unique uniqueness was captured in the in the essence of the business. We just had a lot of them. And yeah, as be saying, like a lot of this stuff has been made more difficult, shall we say, from the people who are running the show, certainly in Australia.
+
+So yeah, I think like it's incumbent upon some of us potentially as well who do enjoy using the tools and do use them every day to actually be kind of like stewarding smaller businesses to help them get across the stuff and use it in a meaningful and productive way as well. So everyone benefits, hopefully.
+
+Pete Winn (01:02:48.118)
+I think so. I can see there's been some there are people in the chat. Like I it just occurred to me about five minutes ago that I should have had that on my other screen so I could check it, so I can see. Shout out to Mighty Penguin and Greenie and Deadman for joining on the live stream. Friends of the Pod. Offici officially now Friends of the Pod. I do feel like I don't know who's gonna buy my mug, but you know, it's a mere twelve thousand US dollars.
+
+Rod (01:02:48.329)
+Hear.
+
+Andy (01:03:08.882)
+Friends of the pod, there we go.
+
+Pete Winn (01:03:17.942)
+Or maybe more, who knows what the price currently is.
+
+Andy (01:03:20.498)
+You know we do have we do have supply drop coming soon. It's been coming soon for about six months, but it's but it is coming soon. So maybe that is something we should test out on Nostr.
+
+Pete Winn (01:03:26.446)
+Yeah.
+
+Rod (01:03:30.544)
+Andy, can you shill us a supply drop please? Watch the elevator pitch for supply drop.
+
+Pete Winn (01:03:30.808)
+Yeah, okay. We start.
+
+Andy (01:03:34.99)
+Supply drop is basically just like we didn't want merch for other stuff and intelligent snacks because merch is just like no one cares, right? So we wanted to like tap into the kind of the tech AI zeitgeist, if you will. Kind of make a little bit of fun about fun of it and then like turn that into its own brand. So supply drop is really just like tapping into the latest the latest kind of I don't know, developments memes from the world of from the world of tech and AI.
+
+And we're putting those on caps and T-shirts and jumpers and things like that. So
+
+Pete Winn (01:04:08.8)
+Memes on T-shirts. Boom. Here we go. Plus I need some new T-shirts, so we need to need to do that so I can get some new T-shirts to wear.
+
+Rod (01:04:11.667)
+That's great. We can help you sell that.
+
+Andy (01:04:11.901)
+That's it.
+
+Andy (01:04:16.164)
+Yes.
+
+Andy (01:04:21.458)
+Coming soon.
+
+Pete Winn (01:04:26.83)
+Alright, have you got anything you want to leave us with, Rod? I'm I'm really excited that I've now learnt what streaming commerce is. I've no idea that this even existed, so that's that's an interesting development. Okay.
+
+Rod (01:04:37.779)
+I do have one more thing, if you'd like a one more thing to finish with, and this would be kind of the first time we're talking about it. So for all of those who have joined the pod live, there you go, everyone tune in live because the live streamers, listeners heard about this one first. And just on that example of parallel tracking, shortly in the next day I'll be announcing Livelier.live.
+
+Pete Winn (01:04:42.414)
+Let's do it.
+
+Rod (01:05:01.479)
+Livelier, as in making it more lively, dot live and it's a bridge from other streaming directories to Nostr so if you are for example an own cast streamer and you have your own cast chat getting discovered is a big problem how do you get more people into your live this is why self hosted streamers have traditionally gone to things like twitch and others because they have more reach but I think ultimately the open internet network effects
+
+must be bigger than any one gated kingdom can be. so, Livelier.live exists to bridge those external networks to Nostr and thus create a bigger network effect of chat users. You can add that bridge relay now to your Nostr client if you want. It's live stream dot Livelier.live. I'll be kind of talking more about how to use that. You can follow streamers that are on, I know, lots of lives. It's good name. It doesn't have an STR in it at all.
+
+Pete Winn (01:05:49.454)
+Sorry, livestream.livelier.live is solid URL.
+
+Andy (01:05:56.252)
+Ha.
+
+Rod (01:05:58.365)
+It's an important thing to avoid on Nostr. I didn't say Livester. You can add that to your Nostr client. You can get all of own cast. In the future, perhaps as it's open source community project, somebody may add an adapter to PeerTube or whatever else they want. I firmly believe that the future of Nostr is like a...
+
+It's interoperable Legos with every other system. You can bridge anything to Nostr. So we've created a bridge and we've open sourced it and we'll be talking about that more in the coming days. But you heard it here first on Intelligent Snacks Live.
+
+Pete Winn (01:06:29.452)
+Nice. Alright. And that's the that's the snack drop. That's the sword call. Alright, thank you.
+
+Andy (01:06:35.57)
+Ha.
+
+Andy (01:06:40.25)
+Row testing it. It's good.
+
+Pete Winn (01:06:44.463)
+Yeah.

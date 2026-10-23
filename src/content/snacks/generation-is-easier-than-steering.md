@@ -1,15 +1,12 @@
 ---
-title: Long Agent Runs Depend on Reliable Feedback
+title: "Long agent runs depend on reliable feedback"
 thumbnail: /images/snacks/long-agent-runs-feedback-v2.webp
 standfirst: Tests, specifications and human review determine how long a coding agent can keep producing useful software on its own.
 status: published
 publishedAt: 2026-08-05T00:00:00Z
 updatedAt: 2026-08-06T00:00:00Z
 sourceEpisode: episode-064
-primaryTopic: agents
-relatedTopics:
-  - ai-coding
-  - software-systems
+theme: agents
 attribution: Developed from a conversation between Andy David, Pete Winn and dpc
 relationships:
   - target: the-harness-determines-the-work
