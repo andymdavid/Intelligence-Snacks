@@ -1,4 +1,4 @@
-FROM oven/bun:1-alpine AS build
+FROM oven/bun:1.4.4-alpine AS build
 WORKDIR /app
 COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile
@@ -7,7 +7,7 @@ ARG PUBLIC_INCLUDE_REVIEW=false
 ENV PUBLIC_INCLUDE_REVIEW=${PUBLIC_INCLUDE_REVIEW}
 RUN bun run build
 
-FROM oven/bun:1-alpine
+FROM oven/bun:1.4.4-alpine
 WORKDIR /app
 COPY --from=build /app/dist ./dist
 COPY server ./server
