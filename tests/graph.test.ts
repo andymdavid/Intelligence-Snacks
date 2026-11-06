@@ -27,3 +27,10 @@ test('topic mix primary shares sum to one and represented words equal classified
  const topics=buildTopicModel(data);expect(topics.reduce((sum:number,topic:any)=>sum+topic.share,0)).toBeCloseTo(1,6);
  expect(topics.reduce((sum:number,topic:any)=>sum+topic.words,0)).toBe(data.topicIndex.analyses.reduce((sum:number,item:any)=>sum+item.classifiedWordCount,0));
 });
+
+import {deriveEpisodeMap} from '../src/lib/episode-map.js';
+test('Episode 78 groups every published idea and Snack into a readable board',()=>{
+ const episode=model.nodes.find(node=>node.kind==='episode'&&node.episodeNumber===78)!;
+ const view=deriveEpisodeMap({...model,allConnections:model.links.map(edge=>({sourceId:edge.source,targetId:edge.target,relationshipType:edge.type}))},episode.episodeId)!;
+ expect(view.nodes).toHaveLength(37);expect(view.people).toHaveLength(2);expect(view.groups.map(group=>[group.kind,group.nodes.length])).toEqual([['concept',8],['claim',13],['example',3],['question',6],['snack',7]]);
+});
