@@ -31,7 +31,7 @@ export function initialiseGraphPage() {
   const el = (tag: string, text: string) => { const element = document.createElement(tag); element.textContent = text; return element; };
   function updateUrl() {
     const url = new URL(location.href);
-    for (const [key,value] of Object.entries({node:selected,context:episodeContextId,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
+    for (const [key,value] of Object.entries({node:selected,context:episodeContextId,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value,density:document.querySelector<HTMLSelectElement>('[data-density]')!.value==='1000000'?'all':''})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
     history.replaceState(null,'',url);
   }
   function filter() {
@@ -47,11 +47,12 @@ export function initialiseGraphPage() {
   function mount() {
     if(!mountGraph) return;
     const anchor=episodeContextId?model.nodes.find((node:Node)=>node.kind==='episode'&&node.episodeId===episodeContextId):byId.get(selected)||null;
-    const key=anchor?.id||'overview';
+    const limit=Number(document.querySelector<HTMLSelectElement>('[data-density]')!.value)||320;
+    const key=`${anchor?.id||'overview'}:${limit}`;
     if(key===renderedViewKey && cleanup.updateSelection?.(selected)){canvas.dispatchEvent(new CustomEvent('graph-layout-change'));return;}
     cleanup();
-    const focused={...model,focus:anchor,explicitFocus:Boolean(anchor),selectedNodeId:selected,freezeLayout:frozen};
-    const view=selectGraphView(focused,{focusId:anchor?.id,limit:160});
+    const focused={...model,focus:anchor,explicitFocus:Boolean(anchor),selectedNodeId:selected,freezeLayout:frozen,viewLimit:limit};
+    const view=selectGraphView(focused,{focusId:anchor?.id,limit});
     document.querySelector('[data-view-count]')!.textContent=`${view.nodes.length} of ${model.nodes.length} nodes · ${view.allConnections.length} connections in view`;
     try { cleanup=mountGraph(canvas,focused,(id:string)=>{ void select(id,true); }); renderedViewKey=key; }
     catch { canvas.replaceChildren(el('p','The visual map is unavailable. Use the complete archive index below.'));emit('render-fallback'); }
@@ -99,11 +100,12 @@ export function initialiseGraphPage() {
   for(const row of rows)row.querySelector('a')!.addEventListener('click',event=>{event.preventDefault();void select(row.dataset.result!,true);});
   search.addEventListener('input',filter);for(const control of [kind,episode,topic])control.addEventListener('change',()=>{filter();emit('filter');});
   document.querySelectorAll<HTMLElement>('[data-topic-pick]').forEach(button=>button.addEventListener('click',()=>{topic.value=button.dataset.topicPick!;filter();search.focus();}));
+  document.querySelector('[data-density]')!.addEventListener('change',()=>{updateUrl();mount();});
   document.querySelector('[data-reset]')!.addEventListener('click',()=>{selected='';episodeContextId='';setDetails(false);updateUrl();mount();});
   const motion=document.querySelector<HTMLButtonElement>('[data-motion]')!;
   motion.textContent=frozen?'Show static map':'Freeze layout';motion.setAttribute('aria-pressed',String(frozen));
   motion.addEventListener('click',()=>{frozen=!frozen;motion.textContent=frozen?'Resume layout':'Freeze layout';motion.setAttribute('aria-pressed',String(frozen));if(frozen){canvas.dispatchEvent(new CustomEvent('graph-freeze'));}else {renderedViewKey='';mount();}});
-  const params=new URLSearchParams(location.search);search.value=params.get('q')||'';kind.value=params.get('kind')||'';episode.value=params.get('episode')||'';topic.value=params.get('topic')||'';filter();
+  const params=new URLSearchParams(location.search);if(params.get('density')==='all')document.querySelector<HTMLSelectElement>('[data-density]')!.value='1000000';search.value=params.get('q')||'';kind.value=params.get('kind')||'';episode.value=params.get('episode')||'';topic.value=params.get('topic')||'';filter();
   if(params.get('context')&&model.nodes.some((node:Node)=>node.kind==='episode'&&node.episodeId===params.get('context')))episodeContextId=params.get('context')!;
   if(params.get('node'))void select(params.get('node')!);
   // The text index works before or without WebGL and before the rendering bundle downloads.

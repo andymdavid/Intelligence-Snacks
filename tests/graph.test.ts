@@ -27,3 +27,16 @@ test('topic mix primary shares sum to one and represented words equal classified
  const topics=buildTopicModel(data);expect(topics.reduce((sum:number,topic:any)=>sum+topic.share,0)).toBeCloseTo(1,6);
  expect(topics.reduce((sum:number,topic:any)=>sum+topic.words,0)).toBe(data.topicIndex.analyses.reduce((sum:number,item:any)=>sum+item.classifiedWordCount,0));
 });
+
+test('balanced and focused views preserve all episode gateways and complete focused episode',()=>{
+ const allConnections=model.links.map((edge,index)=>({id:String(index),sourceId:edge.source,targetId:edge.target}));
+ const graph={...model,allConnections};const episodes=model.nodes.filter(n=>n.kind==='episode');
+ for(const focus of [null,...episodes.map(n=>n.id)]){
+  const view=selectGraphView(graph,{focusId:focus});const ids=new Set(view.nodes.map((n:any)=>n.id));
+  expect(view.nodes.length).toBe(320);for(const episode of episodes)expect(ids.has(episode.id)).toBe(true);
+  if(focus){const episode=episodes.find(n=>n.id===focus)!;for(const node of model.nodes.filter(n=>n.episodeId===episode.episodeId))expect(ids.has(node.id)).toBe(true);}
+  for(const episode of episodes)expect(view.nodes.some((n:any)=>n.episodeId===episode.episodeId&&n.kind!=='episode')).toBe(true);
+ }
+ const full=selectGraphView(graph,{limit:model.nodes.length});expect(full.nodes.length).toBe(model.nodes.length);expect(full.allConnections.length).toBe(allConnections.length);
+ const tiny=selectGraphView(graph,{limit:1});expect(tiny.nodes.filter((n:any)=>n.kind==='episode').length).toBe(episodes.length);
+});
