@@ -1,3 +1,5 @@
+import { readFileSync, existsSync } from 'node:fs';
+import { parse } from 'yaml';
 import raw from '../data/graph.json';
 import { readPublishedSnacks, resolvePublishedSnack } from './published-manifest';
 // Published files are the authority for URLs and public copy; editorial draft identities are retained only on exact matches.
@@ -13,7 +15,18 @@ export function canonicalPublicGraph() {
     const item = { ...candidate, title: published.title, standfirst: published.standfirst, href: `/snacks/${published.slug}/` };
     bySlug.set(published.slug, item); return [item];
   });
-  const episodeBySlug = new Map<string, any>(data.candidates.map((candidate: any) => [candidate.episodeHref, candidate]));
+  // New Studio exports may contain an episode whose accepted drafts have no published match.
+  // Its published Snacks still belong in the archive, using the explicit episode inventory.
+  const episodeBySlug = new Map<string, any>();
+  for (const episode of data.episodes || []) {
+    const slug = episode.href?.split('/').filter(Boolean).at(-1);
+    if (!slug || !existsSync(`src/content/episodes/${slug}.md`)) continue;
+    const source = readFileSync(`src/content/episodes/${slug}.md`,'utf8');
+    const header = /^---\r?\n([\s\S]*?)\r?\n---/.exec(source)?.[1];
+    const metadata = header ? parse(header) : {};
+    episodeBySlug.set(episode.href,{episodeId:episode.episodeId,episodeNumber:episode.episodeNumber,episodeHref:episode.href,episodeTitle:metadata.title||`Episode ${episode.episodeNumber}`});
+  }
+  for (const candidate of data.candidates) episodeBySlug.set(candidate.episodeHref,candidate);
   for (const item of manifest) {
     if (bySlug.has(item.slug)) continue;
     const episode = episodeBySlug.get(`/episodes/${item.sourceEpisode}/`);
