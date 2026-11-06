@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "concepts": [
+    { "id": "graph-memory", "title": "Graph memory", "summary": "Using connected records as retrievable memory. The linked observations retain their own claims and evidence.", "reviewState": "accepted", "reviewer": "lara", "reviewMethod": "agent-editorial-review", "reviewedAt": "2026-11-06", "mentions": ["57b4dcfd-8db6-4697-b3c3-c1a5994d8d81", "ddaaea0d-bf59-4066-8520-35f113d2ccbb", "eecd917c-27a5-4fc9-8550-ae017cae8006"] },
+    { "id": "agent-harness", "title": "Agent harnesses", "summary": "The software around a model that supplies capabilities and coordinates work. These are related discussions, not assertions that their claims are equivalent.", "reviewState": "accepted", "reviewer": "lara", "reviewMethod": "agent-editorial-review", "reviewedAt": "2026-11-06", "mentions": ["3a8fa89c-92c7-4df4-8a6c-02923d7449df", "97daa368-1833-464e-8b1c-cd054a36cb60"] }
+  ],
+  "suggestions": []
+}

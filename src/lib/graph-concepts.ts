@@ -1,0 +1,20 @@
+export function applyCanonicalConcepts(model: { nodes: any[]; links: any[] }, registry: { concepts: any[]; suggestions?: any[] }) {
+  const ids = new Set(model.nodes.map((node) => node.id));
+  const conceptIds = new Set<string>();
+  for (const concept of registry.concepts) {
+    if (conceptIds.has(concept.id)) throw new Error(`Duplicate canonical concept ${concept.id}`);
+    conceptIds.add(concept.id);
+    if (concept.reviewState !== 'accepted' || !concept.reviewer || !concept.reviewMethod) continue;
+    const mentions = [...new Set<string>(concept.mentions)];
+    for (const id of mentions) if (!ids.has(`knowledge:${id}`)) throw new Error(`Canonical concept ${concept.id} has missing mention ${id}`);
+    const id = `canonical:${concept.id}`;
+    model.nodes.push({ id, kind: 'canonical', title: concept.title, summary: concept.summary, episodeId: '', href: `/graph/?node=${encodeURIComponent(id)}`, reviewMethod: concept.reviewMethod, reviewer: concept.reviewer });
+    for (const mention of mentions) model.links.push({ source: id, target: `knowledge:${mention}`, type: 'discussed-in', note: 'A reviewed topic connection; the observations retain distinct meanings and evidence.' });
+  }
+  // Suggestions are deliberately excluded from the public graph until reviewed into the registry.
+  return model;
+}
+export function proposeConceptMentions(nodes: any[], title: string) {
+  const words = title.toLowerCase().split(/\W+/).filter((word) => word.length > 3);
+  return nodes.filter((node) => node.kind === 'concept' && words.some((word) => `${node.title} ${node.summary}`.toLowerCase().includes(word))).map((node) => ({ nodeId: node.id, reviewState: 'proposed', rationale: `Text overlaps with “${title}”; an editor must assess the source.`, evidenceIds: (node.evidence || []).map((item: any) => item.id) }));
+}

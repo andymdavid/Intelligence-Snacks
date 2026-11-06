@@ -5,6 +5,7 @@ import SnackCard from '@/components/SnackCard.astro';
 import StoryVisual from '@/components/StoryVisual.astro';
 import ContributorRow from '@/components/ContributorRow.astro';
 import { isVisible } from '@/lib/content';
+import { canonicalPublicGraph } from '@/lib/public-graph-data';
 import { parseTranscript } from '@/lib/transcript';
 
 export async function getStaticPaths() {
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
   return entries.map((episode) => ({ params: { id: episode.id }, props: { episode } }));
 }
 const { episode } = Astro.props;
+const graphEpisode = canonicalPublicGraph().candidates.find((item:any) => item.episodeHref === `/episodes/${episode.id}/`);
 const { Content } = await render(episode);
 const participants = await Promise.all(episode.data.participants.map((participant) => getEntry(participant)));
 const contributors = participants.filter((person): person is NonNullable<typeof person> => Boolean(person));
@@ -79,6 +81,7 @@ const jsonLd = [{
     {episode.data.audioUrl && <a class="audio-link" href={episode.data.audioUrl} rel="external">Listen on Spotify <span aria-hidden="true">↗</span></a>}
   </div>
   <section class="episode-intro page-shell section"><p class="eyebrow">About this conversation</p><div><Content /></div></section>
+  {graphEpisode && <p class="page-shell"><a href={`/graph/?episode=${encodeURIComponent(graphEpisode.episodeId)}`}>Explore this episode’s connected ideas</a></p>}
   <section class="page-shell section">
     <div class="section-heading"><h2>Ideas from Episode {episode.data.number}</h2></div>
     <div class="episode-snack-grid">{snacks.map((snack, index) => { const itemTopic = topics.get(snack.data.theme.id)!; return <SnackCard {snack} topicName={itemTopic.data.name} colour={itemTopic.data.colour} index={index + 1} episodeNumber={episode.data.number} variant="archive" />; })}</div>
@@ -89,8 +92,8 @@ const jsonLd = [{
       <details class="transcript-reader">
         <summary><span>Read full transcript</span><span>{transcriptTurns.length} passages <b aria-hidden="true">+</b></span></summary>
         <div class="transcript-turns">
-          {transcriptTurns.map((turn) => (
-            <article class="transcript-turn">
+          {transcriptTurns.map((turn, index) => (
+            <article class="transcript-turn" id={`transcript-turn-${index}`}>
               <div><strong>{turn.speaker}</strong>{episode.data.youtubeUrl ? <a href={`${episode.data.youtubeUrl}&t=${timestampSeconds(turn.timestamp)}s`} rel="external" aria-label={`Watch ${turn.speaker} at ${turn.timestamp} on YouTube`}>{turn.timestamp}</a> : <span>{turn.timestamp}</span>}</div>
               <p>{turn.text}</p>
             </article>
@@ -99,6 +102,15 @@ const jsonLd = [{
       </details>
     </section>
   )}
+<script>
+function revealTranscriptTarget() {
+  if (!location.hash.startsWith('#transcript-turn-')) return;
+  const target = document.getElementById(location.hash.slice(1));
+  const reader = target?.closest('details'); if (reader) reader.open = true;
+  requestAnimationFrame(() => target?.scrollIntoView());
+}
+revealTranscriptTarget(); window.addEventListener('hashchange', revealTranscriptTarget);
+</script>
 </BaseLayout>
 <style>
   .episode-head { padding-block: clamp(4rem, 8vw, 8rem); }

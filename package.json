@@ -6,21 +6,26 @@
   "scripts": {
     "dev": "astro dev --host 0.0.0.0",
     "start": "PUBLIC_INCLUDE_REVIEW=true bunx astro dev --host 0.0.0.0",
-    "build": "astro check && astro build",
+    "build": "bun run graph:check && astro check && astro build && bun scripts/check-graph.ts --built",
     "build:prototype": "PUBLIC_INCLUDE_REVIEW=true astro check && PUBLIC_INCLUDE_REVIEW=true astro build",
     "sync:episodes": "node scripts/sync-youtube-episodes.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "social:generate": "node scripts/generate-social-images.mjs",
     "preview": "astro preview --host 0.0.0.0",
-    "check": "astro check"
+    "check": "astro check",
+    "graph:check": "bun scripts/check-graph.ts",
+    "graph:test": "bun test tests/graph.test.ts",
+    "graph:browser": "node scripts/graph-browser-smoke.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "astro": "^7.1.6"
+    "astro": "^7.1.6",
+    "yaml": "2.9.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@types/bun": "^1.3.14",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "playwright-core": "1.51.1"
   }
 }
