@@ -1,0 +1,672 @@
+Pete (00:01.454)
+All right, welcome to Intelligence Snacks episode seventy-nine. Like we were halfway through a sentence and I said I'm just gonna hit record and let's finish the sentence. So it was like all of the Patreon goal tier members were on the pod. So pod before the pod. But we were just talking about working in Ambulando and I was saying we're talking about task boards and Kanbans for agents and
+
+Andy David (00:08.782)
+If you missed the pod before the pod, it was a banger.
+
+Andy David (00:20.538)
+Ha ha.
+
+Pete (00:27.29)
+I was about to say that like I always thought that the way I would use that is I would be like just setting up like a whole bunch of tasks for the agent to like knock over and then I'd come and review them at the end. And I say like for it's almost like I used a lot of the Kanban boards, particularly in the software space, is it's almost just for auditing purposes now. So I can see that tasks are happening and happened in the past and I can go back to the details if I need to. But it's it almost it all happens so quick is one problem that like it's just done. And I find that when I even creating the work, like I the agent creates better tasks than I do. I'm good at chatting to it about what I want and telling it why it's wrong. But then once it's got like once we've gone through that like dialogue
+
+Andy David (01:17.016)
+Yeah.
+
+Pete (01:26.264)
+sort of loop of going backwards and forwards on the issue and like what we're trying to explore and how it might work and the planning cycle. I'm like, I really don't care how you write the task. So they have this habit of just creating these like elaborately detailed technical tasks and you look through the comment stream and you just like this is not communicating much to me, but like I know when I then go back and get an update, like the you know
+
+Andy David (01:48.494)
+Yeah.
+
+Pete (01:54.671)
+Like Rick, my agent, will just go through and like just reread all the comments that he's doing and it'll be like, yeah, that's wrong. This is right, this is where I need to go next. So it kinda helps that communication. But yeah, sorry, you go. Yeah. Hmm.
+
+Andy David (02:04.364)
+Yeah. I was saying to you like I was kinda cheating because I would spin up like Lara in another thread and go, Hey, can you just review all the open tasks? 'Cause it seems like there's a lot for me to review and I don't want to review all of it right now. So you review it, do some triage, make sure these open tasks are actually open for a reason and haven't been forgotten and just give me like the lay of the land. 'Cause I was saying like sometimes the messages they leave in the open tasks are actually quite
+
+Pete (02:14.692)
+Mm.
+
+Pete (02:18.436)
+Yeah.
+
+Andy David (02:34.402)
+quite complicated. They're basically just brain dumps as they're working. So if I'm not following along, I've got no idea where to pick this stuff up. So I felt like that agent step to just, okay, you pick this up, tell me where things are at, what are the messages that I need to pay attention to, that's been quite useful. It feels like I mean there's a there's a broader question then around like, you know, how useful is the Kanban? I think the Kanban is super useful. And it's also like a
+
+Pete (02:38.095)
+Yeah.
+
+Andy David (03:01.73)
+like a valuable visual tool to just go, Yep, the work is being done. This is the work that's being done and I can basically like gut check it. That's good.
+
+Pete (03:05.412)
+Mm.
+
+Pete (03:14.01)
+where it works for me, like, is been in like so I was doing some like consulting work where I would, you know, have a meeting, come up with a bunch of changes that need to be done, and then now on the canvas, I'll pull up like my I'll whiteboard everything. I pretty much always work inside an Excalidraw whiteboard and then I'll pull up a chat next to it with like Rick and I'll be like, All right, this is how I see the world. These are the sort of things I want.
+
+And then I'll drop a couple of also I think there's two main areas that we want to do. So here's main one, main two. And those two areas I'll drop on as what I have this knapplet in there called task trees. And a task tree is a quick way of like you add a task, and then on that task you can create subtasks underneath it or follow-on tasks next to it with the predecessor bank. And so I'll map instead of working on the task board.
+
+I work in this more visual task space where I'll just go like, all right, this task is made up of one, two, three, and four. And I'll map it out. And then this is made up of like then this, then we'll do this, and then we'll do this. And I'll map it out in these like little task tree areas. And it lets me create the shape of the task board for what I want the work to be. And I found like when I'm like being having to be quite deliberate and planning and like forcing the agent to work in a way. That's quite a new feature that I added like a couple of weeks ago. And I've been kind of iterating on it to try and figure it. Like I feel like there's something here. Because like I don't want to write the tasks. And if I ask it to write the task, it doesn't do a good job of it's like the shape and form of the task it can't do. The detail of the task it can do. But it doesn't quite have that to my mind the correct feel or the what I want it to be for like how I would approach this work. You know, I mean I was fuck, I was technical project manager for like twenty five years sort of thing. So like that's the bit where, you know, I'm kinda like, twenty five years, that sounds like too much. Surely, surely, surely not. Not quite. Twenty ish. Yeah, maybe a might over twenty to put and forth. But yeah, fuck. Fuck.
+
+Andy David (05:27.522)
+No, we're both too young for that. That doesn't sound right.
+
+Let's not go down that track. That's a can of worms. No, it's interesting though, right? Because so I had this I well I had this dilemma actually during the week, right? This is something we talk about a little bit. It's like, does the thing you're doing deserve to be its own app? And I feel like if I go back six months ago, for me the answer was yeah, everything should just be apps. And now I'm like
+
+Pete (05:36.45)
+Like what happened there? It is, isn't Like
+
+Andy David (06:04.074)
+certain things should be apps when I want to like deep dive. So for instance, Snack Studio has been an app. So Snack Studio is a is an app where we basically create all of the snacks, all of the written content for this podcast. And then it's basically one big production pipeline. There are steps where I still need to sit in the middle and manually check things like thumbnails and the like. And then it gets automatically pushed out to our
+
+Pete (06:06.724)
+Hmm. Yeah.
+
+Andy David (06:31.692)
+intelligencesnacks.com website, go check that one out. And that is an app. And more recently I've been trying to rework this with Lara, my agent, inside of Ambulando, where I think she could just be the orchestrator of this pipeline. And I actually don't need to go into Snack Studio at all as an app. Except potentially in certain circumstances where I actually want to do some editing because I'm not happy with
+
+Pete (06:58.628)
+Yeah. Yeah.
+
+Andy David (06:59.202)
+with some piece of and so I kind of it's like the it's like this like that godfather quote right so just when I thought I was out it pulls me back in just when I'm like least expecting it is quite irritating. But then I was doing something else this week, which is like a revamp of a it's like a business development platform. Basically my goal over the last week has been like how many tasks do I need to be doing more of that I don't do enough of and how do I gamify it so that I actually want to do more of.
+
+Pete (07:11.78)
+Yeah. Hmm.
+
+Pete (07:23.61)
+Mm-hmm.
+
+Andy David (07:28.492)
+And a simple example was like tweeting, right? So in Sally, I now have like an activity dashboard. So it's basically like my GitHub contribution tracker and it just is there staring me in the face. And I'll get to the end of the day and I'm like, haven't posted at all today. Like what should I what have I done today that would be useful? So it's just a like a form of forcing me to actually do the task. And similarly, yeah.
+
+Pete (07:31.438)
+Yeah.
+
+Pete (07:39.45)
+Yeah. That's it.
+
+Pete (07:47.62)
+Hmm. Okay. I had noticed you were tweeting more. So it's working. Yeah.
+
+Andy David (07:54.444)
+It is working, yeah, it's interesting. It is working to see it. And it works with GitHub. Like if I go back a year, my GitHub was basically like two or three like scattered dots on a on a like six-month chart, and now it's like every day. Like I think I've missed four days in like seven months or something. So one of those was my birthday, so I feel like that was okay. Yeah. So but the B D platform, I was like, Do you know what? Okay, this needs to be an app, because I feel like
+
+Pete (07:58.895)
+Mm.
+
+Pete (08:14.724)
+It's okay. It's okay.
+
+Andy David (08:22.754)
+This is like I don't want other things occupying my headspace when I'm doing this. Like I just want to be able to dive into it with the agent. But I had no idea what this should look like. I didn't want it to be anything like a CRM. and so I'd originally just set Lara off with a task. It was like a brain dump of what I want to actually achieve and what she needs to do as part of this, you know, kind of collaborative, right? And big part of it is we'd obviously worked on.
+
+Kindling as like a BD pipeline finding leads for businesses. And so I wanted that to like basically inform that backend and go, okay, there's a lead pipeline here, but there's a like gonna be a new surface, and some of it is chat, and some of it needs to be like basically dynamic artifacts that we can spin up. I don't yet know what that needs to look like, but just attack this problem. And it was really interesting because she built the app, it looks quite nice. I mean, I gave some like visual cues of
+
+Pete (09:09.326)
+Mm-hmm. Yep.
+
+Andy David (09:21.218)
+kind of what I needed to look like. Looked quite nice, but all of the information being surfaced was basically just like the raw data model. And I was just like, God, like this is so far removed from what I need it to be. That's an interesting interpretation of like how I'd set this out. So that was one of those examples where I was like, okay, I actually need to drill into this deeper. I don't have all of the answers. But it was useful to just go,
+
+Pete (09:32.354)
+Mm.
+
+Pete (09:38.575)
+Yeah.
+
+Andy David (09:49.814)
+Let's go and dump all of this into code straight away and just see what it gives me, rather than me trying to figure it out. And I could have spent like 10 hours trying to get to a point where I still wouldn't have been sure what I wanted. But the fact that half an hour later I basically had an interface that I was playing around with and going, Okay, this makes sense. The fundamental problem is you've just surfaced the data model rather than actually like adding a layer of
+
+Pete (09:52.442)
+Mm.
+
+Andy David (10:19.094)
+I guess make make this make sense for me without having to interpret data.
+
+Pete (10:25.774)
+Yeah, there's definitely this it's like, you know, I don't know a lot about art but I know what I hate sort of going on where you're just like, I don't like this and I mean you said a lot of times, this feels like almost the role of the human is to just be like, no, that's not right. Like we're not ideally we'd we'd be perfect at just saying what we want. But again, if I if I look back at twenty years of like working a product and project management and
+
+Andy David (10:33.015)
+Yeah.
+
+Andy David (10:44.366)
+Mm.
+
+Pete (10:56.042)
+listening to what people say they want and then the interpretation into what they actually want and then what they get are all just completely different things. And they're all also wrong at the start and they're only ever correct at the end through that process of iteration and refinement anyway, that you're just like, yeah, that's kinda like it is kind of impossible to say what you want to an agent.
+
+You can say a thing and then you'll get something and you it might be fine because you might not care much. But then generally that's where I feel like the slop is, if you know what I mean. Because the slop is always the nobody really cares about this, and you can tell. Like it's interesting that like I you know, I've seen that you've picked up like a I'm landed like a lot more like this week. And I think it's because I went to the n I'm speculating a little bit, but I assume this is because it went to the native app.
+
+And the native app is like just it was one of those things where I knew the web app wasn't perfect, but it worked for me and it did everything I needed. But then I know I said to you, I moved to the native app, and I was like, I do not know why I didn't do this earlier. This is like it's just so it's just so much faster in its responsiveness to stuff and it has so much more like resource available to it that you're like, shit, this is like particularly on the phone, it is like I've moved
+
+I've moved like significantly more stuff to the phone where I could always do it from the phone, but it was second class. Whereas now I'm like, I can't be bothered to go into the office and grab the laptop. I'm just gonna do it from here. And you and I yeah, and I feel like that's the that's the extra bit of the human, is just to go like, what's wrong? And then how do I describe that fix there? And just and it has to be.
+
+Andy David (12:32.526)
+Yeah.
+
+Pete (12:49.39)
+That process of iteration. I know like friend of the pod, Gigi, still talks about this a lot where he says like his his go-to process is to just ramble for 20 minutes when he wants something to exist and then kind of not care and just let it turn up on his phone as an install. And it's like, okay, right, let's have a look at it and see what's wrong with it. And then just ramble into it to tell it why it's wrong. Until eventually it's not wrong. It just like
+
+Andy David (13:18.126)
+'Cause it just doesn't matter that much, which is I guess the lesson from it. You know, like I was talking about Snack Studio, like
+
+Pete (13:22.884)
+Well, in a way it kinda does a little bit if you know, but it's the iteration is the mattering. It doesn't need to be it's never right. Like you can't say it correct. If it was as simple as just only saying the right thing, it'd be fine. But yeah, sorry, carry on, like I just
+
+Andy David (13:28.972)
+Yeah, true. Yeah.
+
+Andy David (13:39.244)
+Yeah. No, no, I was I mean, I think the inverse is also true to some degree. You know, like Snack Studio ended up being exactly what I wanted. And then I realized this isn't what I need. And that's you know, that's just a process of trial and error and actually using this thing for a for a period of time. And I'm like, well, so this is like a really well optimized pipeline for producing these things. I mean, like I was looking at it through the lens of how does it sound?
+
+Pete (13:54.071)
+Mm.
+
+That's interesting.
+
+Andy David (14:08.642)
+Do people actually want to read this stuff? It's concise, it's brief, it gives you like a nugget of an idea and it's distilled from the podcast. That was the intent. You know, sometimes the language can be a little a little wooden, and that's to be expected. It's not human authors. but equally, yeah, I got to a point where I was like, do you know what? I actually don't want to be sat here steering this. And
+
+Pete (14:08.996)
+Yeah.
+
+Andy David (14:34.68)
+The bits where I've embedded myself. And it's a it's a it's a nice looking app. Like it works. It's quite it's quite enjoyable to actually go into. And then if I do want to start editing some of the writing, which I frequently do, I can do it. And it's quite nice. It's a nice environment. But I don't need it. I don't need it at all. I can now fire off like a message to Lara and just be like, you are the orchestrator, you are basically the editor of Intelligence Snacks. Push the pipeline through.
+
+Pete (14:53.156)
+Mm-hmm.
+
+Andy David (15:04.086)
+You do the check. If there's something you want to surface, let me know. I'll have a look at it. Otherwise
+
+Pete (15:07.854)
+Yeah. I mean I have two gut feelings there. And one is that I wonder if you could have built built it to be what you needed without building it the way you had. If you know what I mean, like is because it's very hard like once you get to the end of that process you kind of realize that like this could just be abstract and I could just ask Laura to do it. But then to actually have designed the thing to be good enough in the first place.
+
+Andy David (15:18.914)
+Hm. Yeah.
+
+Pete (15:36.781)
+entirely in the abstract as like pipelines that you can't really engage with without the visual of the software. Like that feels like a hard thing to do just in general for humans. You'll end up drawing it somewhere else. So you've got I know I'm a I don't know if this is just me 'cause I'm kind of visual with it, but like if something just exists in like a process that I've got to then visualize in my head, I'm like, why am I doing that? I must just have it on a screen even if it doesn't look right.
+
+Andy David (15:38.606)
+Mm-hmm. Yeah.
+
+Pete (16:05.784)
+I kinda wonder if you'd if you'd get there. And then I guess the other bit of it is that I wonder if you've got a similar feeling with the software that I have with like Wingman, which is I don't use Wingman directly anymore, but I wouldn't give it up. Because w even though I'm not like you know, there could be there's probably like twenty sessions running in it right now on my home PC. But when it goes wrong or when I want a little bit more information, I want to know it's there.
+
+And I can go in and see everything that I need to see. But for the most part, I do everything more abstracted away. And again, I don't know if I could have ever got like what I've built around Ambulando and NSTACs and cloud agents and stuff without Autopilot and Wingman. And then like we kind of said we might get into this today was like there's several other form factors that I'm now doing, which are kind of these.
+
+little Wingman light implementations and Wingman cloud agents and various things for different jobs. But
+
+Andy David (17:08.493)
+Hmm. Yeah. I find it depends on the task. And so that kind of B D studio is a good example. I think I hit a point where I needed to dive into the I needed to dive into Autopilot because I felt like there are a bunch of disparate changes here, but I can focus on them in this environment and it's relatively quick feedback. And that made more sense.
+
+Pete (17:15.694)
+Mm.
+
+Pete (17:35.45)
+Mm-hmm.
+
+Andy David (17:38.328)
+But it but it was after I had something on screen, which is a that's a deviation from how I've worked in the past, where in the past I still would have started there and I would have I would have basically had a chat about this thing in Autopilot and then started building, whereas now I can just like abstract that into Ambulando and much quicker.
+
+Pete (17:42.042)
+Yeah.
+
+Pete (17:58.147)
+Yeah. Yeah, I feel like in Ambulando I work like a manager, just dictating work and things. Whereas if Autopilot is like coming and sitting down at the desk with somebody and just been like, Right, just I'm gonna watch what you're doing. We're in this together.
+
+Andy David (18:07.522)
+Yeah. It did
+
+Andy David (18:11.884)
+Yeah. I it did make me wonder this week, like if that's if that's a leap. Like I feel like you and I have like very clear way look, I think if you're entrepreneurial, this is really good. I wonder if it's still a big leap for people who are in an office environment. That's my kind of I don't know. Use Ambulando. Yeah, I wonder. I'm I would be cu I don't think it's a negative or a positive. I'd just be curious to watch, be a fly on the wall, watch people who are
+
+Pete (18:30.254)
+Which one?
+
+Andy David (18:41.902)
+who are more office driven to be like, okay, how am I working with this with that with agents one and then and two in this environment. I'd be so curious. Cause I feel like Ambulando's great if you're kind of permissionless. Like I can just do whatever. You know, like I know that's that seems almost quite abstract to be saying in the first place, but I just love that there are no guardrails. I can just I can just go.
+
+And whatever's in my head, I can get it out of my head pretty quickly and into code and there's something happening. There's some work that is being done, there's a task, there's an app. there's something. I think that's really useful. But I yeah, I'd be curious to see how other people start to start to play. 'Cause even for me it's been a it's been a progression.
+
+Pete (19:33.243)
+Hmm. I mean from so I use I use this with my kids as well, right? And then I know from their point of view, like when we used Wingman to do stuff, like they wouldn't really get involved in it and they wouldn't ask the questions themselves. It would always be having me having to drive it and maybe sat alongside it and it felt more like a me pushing stuff. Whereas recently they now both have like Ambulando, just the native app.
+
+installed on their iPads and they can ask questions for whatever they need to happen. Like so Caris like I've been experimenting a little bit with the research wiki concepts and I've had some yeah a boy is doing like a project on Derinkuyu at the moment and it's there's not a ton of like good research like I'll like we're into the local library and it's like have you got any books on Derinkuyu and it's like what? Like it's like we've got one
+
+Andy David (20:28.835)
+Yeah.
+
+Pete (20:30.786)
+in the state, we'll order it in. It's like a 30 page pamphlet. And it's like, okay, like it's kind of interesting. 12 years, all what have you got on the Byzantine Empire and its relationship with like these people? And you're like, fuck, don't know how to stop. but he just couldn't find good textbooks. And I was like, all right, I'm just gonna set an agent going. Like every hour it's gonna ask a new question about what it needs to know next. And it started building out this whole like wiki for him about Derinkuyu that's sourced from various different things and this morning it's like, dad, I clicked on one of the sources and it was like a six hundred page report in Turkish. And I was like, yeah, yeah, you're probably gonna have to use the translation for stuff like that. But that's like this is the point. It's like you wouldn't find this information otherwise. So use this as like a gathering tool. Look at the analysis and then you can go back to the source if you can or I ask it to pull out the direct thing and the quotations and you can use that if it's real if it's useful and relevant, this is where
+
+Andy David (21:12.568)
+That's awesome, yeah. Yeah.
+
+Pete (21:28.804)
+But this can help you find the stuff. my daughter's got one on like musical history that talks about like how through the ages, like how we arrived at various forms of pop music and stuff, and it just runs. But yeah, like all stuff like that they do, and then they'll just I went on the other day to have a look, see how he's been interacting with it, and I can see like comments on some of the documents just being like, No, I want it to be more like this and I need
+
+Andy David (21:31.437)
+Yeah.
+
+Pete (21:57.125)
+this sort of information and then like, you know, the triggers go off and starts a schedule. And then all of a sudden there's new pages are popping up like inside that little wiki. And it's like, okay, this is it's working. Like he so I found like the kids engage a bit better in that sense compared to Autopilot. And I think it's probably closer to that sort of it's hard for me to be a normie myself. This is why I like using my kids for it. But
+
+Andy David (22:25.015)
+Exactly, yeah.
+
+Pete (22:26.754)
+Like it's more I think most people that would use a ChatGPT are using it to just say stuff to it and get an answer. And they're like, cool, it figured out an answer. And like not but I think more people should be using it for software, but like that's just a different battle at the moment. But I don't think most people will. And it's useful that stuff's there in the background, but 'cause this was one of the motivating factors behind the cloud agent stuff that we talked about. Is
+
+It's kind of like I will continue to use Wingman because it's very powerful and very much like a power user agent setup. Like it's basically it's like all of Replit but running on your own machine. You know, it's very useful. It does a lot. It's difficult to get up and running. And I was like, look, there's a few other use cases that I have where I'm like, I just want that machine to have an agent on and I can't I just am not gonna go through and set this up.
+
+And I want it to be like a Windows executable that I go bum bum bump, give me an MPUP right now you're on the network and I can talk to you. And so I've been building out some of these like local, like Wingman Lite as a kind of like local sort of running app. So I think you might have one running on the Mac at the moment, right? For Py Mac, but it's not gonna get called Py Mac. That's a terrible name. Like Wingman Light or something this. But it's just a much simplified version of what's in Autopilot where it doesn't assume
+
+Andy David (23:48.995)
+Yeah.
+
+Pete (23:55.141)
+that you need like the persistent file access and it doesn't presume that you need like app hosting and network traffic stuff and FIPS and the rest of it. It's just small and package and it just reads your N stack and says like, okay he's talking to me. I'll go in action stuff. And I was like it was instantly useful to me when I built it. Because like, all right, cool. Now Rick, you can talk to this and tell it what to do on my computer. So when I'm doing like an audit of something.
+
+I can send someone to rig, I can send it there. It just all works magically, which is nice. And then the other aspect was like there's also just I want to be, you know, we talk about the point of Ambulando is then become a product that we can then deliver into the market so people can have these like agent experiences. And then the point of Nstac to be able to say, like, right, we can we're gonna host all this important data in a way that your agents can't just get to it.
+
+And if you have your agent on the same machine, it can get to it. And so I mean looking at like these different form factors to how do you deliver and host agents to people and like what does it look like and what are the costs involved with it. And you know, we had like a version with Autopilot where i in a at minimum it's probably gonna be about like a five hundred dollar a month running cost for something like that, if you're gonna look after it for somebody else. Like it's free if they do it themselves on their own computer.
+
+But it's like the it's probably not the right price point for, you know, Johnny Normy. And so the question becomes like, how do you get to that price point? So now we've got a model with these like swarm of cloud agents where you can have as many you can create agents that you need. You know, they're all going to use like an inference platform like Tinfoil or OpenRouter in the background, but inference checks depending on your privacy model for that and what you want to pay.
+
+And then you can spin up the effectively we just reuse resources where you can have pools of servers and any server can run a maximum number of agents at a time and we just find like an empty slot and then when you hit a question in Ambulando and hits NSTEC, we can hydrate all the information we need and hydrate that agent on that box that runs and then it shuts down when it's done.
+
+Pete (26:21.006)
+But when it's on the box, it has access to its own sandbox. It has access to all the various tools and things for work. You know, it can do the web browsing, it can create software if it wants, it can publish stuff back into your NStack. So you could have the thing write you persistent software. And it's just, it uses your NStack, like Postgres databases, the back end, and it will then run like effectively like naplets in the front end. So you could just have a very simple app that then pops up and it's a report and it does exactly the report you want, and we just click through to it.
+
+inside Ambulando stuff like this where I think you've got nice lightweight easy to model like approaches that insert in the agents but not assuming that you have a machine. So and it's almost and then I think the machine is like that should be a graduated thing that you almost go to yourself. So I still think people should like you probably want to move towards something like an Autopilot but you would get
+
+Andy David (27:05.4)
+Yeah.
+
+Pete (27:20.086)
+The thing is you'll get eighty percent, maybe even ninety percent of what you need out of something that is way more lightweight. And then we can just deliver it at a completely different price point, because that's now shared infrastructure across a whole bunch of people. That kind of just runs itself. Like if no one's using it, it's all off. There's no persistent fees for it. It's way simpler. And then you pay for like the storage and the consumption costs as you use your agents. And so and I think that's just a better model.
+
+Andy David (27:45.806)
+Hmm. What's the what's the yeah I think my and like initially I was thinking like the big idea here is, you know, you kind of moving from like AI being something you interact with back and forth to something that's like in its own its own running its own computer and working independently on its own behalf. On your behalf rather, but like what is like how would you define like a
+
+Pete (28:07.962)
+Mm-hmm.
+
+Andy David (28:14.638)
+cloud agent. Like I think the definition is probably wrapped in that in that description somewhere, but do you have like a like a straightforward way to define these things?
+
+Pete (28:21.657)
+I think.
+
+I think in many ways the I mean I don't think a cloud agent is more persistent than a let's say an Autopilot, like a Wingman. If you know what I mean, 'cause the point of Wingman was always it this is your computer. You have the whole computer. Like we that's what we're aiming for here. And therefore like you get so much power associated with having that whole machine. Whereas I think in a cloud agent is more like a in my mind it's like the swarm of agent type things.
+
+Andy David (28:31.053)
+Yeah, okay.
+
+Pete (28:53.048)
+I mean maybe we should maybe it could be Windman Swarm to make it more obvious. And it's kind of it's agents that pop into existence almost full it is it's your agent. The agent's personality persists, the data that it has access persists, the tools that it has persist. But when it stops when it stops it's agent turn. So it might run for five minutes or it might run for an hour to do something. And then when it's done, we just reclaim that compute and it's
+
+It's just sat in your NStack. And then when the next message comes in, a new one hydrates and bang, it carries on the work. And to the agent's point of view, like it doesn't see anything. It doesn't understand that it's not one persistent computer because it gets injected into that workspace everything that it needs to carry on. And so that there's some conventions about how to manage that with MStack. But because we have an NStack that again, we can either host the NSTAC for you or you or you host it yourself, it allows you access to this in a way that we can just pull that data in when we need it. And then we can carry the cost and the overhead of running those agents. And then they become cheaper to manage. So I think the other way of doing it is you have something more like a Meta Muse, where like it seems to be that with Muse, they're kind of reserving compute.
+
+I would imagine that it's not literally reserved. There'll be some aggregation across like all the different users, but it seemed like you would get a several CPU compute infrastructure with a hard drive of an a hundred megs or a hundred gigs or something like this. Probably gigs these days than megs 'cause that's like point one terabyte. Yeah. That's like my mind so we had the graphics card one. That's like I used to have these
+
+Andy David (30:39.446)
+Mm-hmm.
+
+Pete (30:47.332)
+32 megabyte graph 32 gigabyte graphics cards and AM was just like, nah, that's that was megabytes in your day and I was like, yeah, that make that tracks. Did come a long way. yeah, it's so I think like when you look at their model, like it seems like they've got reserved compute that is yours. That is like kinda nuts expensive wise and
+
+Andy David (30:55.96)
+Yeah.
+
+Andy David (31:13.91)
+Hm.
+
+Pete (31:14.658)
+I think the thing is though that is more useful.
+
+Andy David (31:17.923)
+Yeah.
+
+Pete (31:19.48)
+Like so I think when I think about like the swarm agent approach or the cloud agent approach, the nice thing is that you could then just have as many as are required for a job. You can do bursting of stuff. It's probably not quite as powerful as having the exact thing like on your hand, which does match a lot of cloud stuff, right? Like a lot of the promise of cloud is it's supposed to be slightly easier and somebody else looks after it for you, but it's it is less powerful than just having all the stuff yourself.
+
+To decide how to use it. So my view would be cloud agents would be less powerful than say Rick. But I still might use them because often Rick has access to way more information than some of these cloud agents. So and with the cloud agents, I can be sure that they can't get access to this other information because I've got like a solid boundary where it has nothing and it can only retrieve stuff that it can sign for.
+
+cryptographically. So I have that clear separation between what's going on. Whereas trying to keep secrets from Rick on his own computer is hard. Like it's basically a losing battle. Like it's Yeah. Hm.
+
+Andy David (32:22.062)
+Mm.
+
+Andy David (32:32.248)
+This is interesting. Yeah. So there's Manaus as well. I think they've talked about their cloud computer. I haven't actually read into this too much. This kind of just popped into my head while you were while you were talking. But I think they make this distinction as well between like these kind of temporary task sandboxes and then the persistent cloud computer as well. Be kind of curious to see. It feels like this might be one of those convergence points where a lot of people are kind of building loosely in the same area and
+
+Pete (32:39.81)
+Yeah.
+
+Andy David (32:59.416)
+And maybe they arrive at like slightly different solutions for people as well. But yeah, this it feels like a big area. I know when we were talking offline, I feel like just being able to stand up these temporary tasks that an agent can just pick up and run with. And then like potentially offering these things as like predefined services to people could be could be quite interesting. but yeah, do you have any like examples like of stuff where you would you would throw at this, like a swarm. Because I know the s the like the swarm. I was reading another tweet, I was just c I'm trying to remember who I saw this tweet by now. I've saved it, so I'll try and pull it out. But they were talking about how they shifted from having like everyone in the organization having their own personal agent to just having one company agent. And I think we've talked about this before on identity management. and I think part of the problem there was
+
+Pete (33:55.578)
+Mm-hmm.
+
+Andy David (33:58.63)
+people being able to find out information they shouldn't be able to find out because, you know, these agents basically had like the same data access.
+
+Pete (34:05.166)
+Yeah. It's hard to humanly it's kinda it's probably easier to like reason about in your own mind if you give agents different identities. Even if under the hood it's really like running the same thing. It's just that like you kinda know it's like gossip. You can All right, if I've gossiped about it with that person, I know they know and they can tell somebody else. I hope they don't, but they could. And that kind of makes sense. Whereas if it's if it's all just like one named
+
+Andy David (34:19.756)
+The same thing, yeah.
+
+Pete (34:34.382)
+thing, you're a bit like, well, what does it know and what doesn't it know? And even if you have the same permission structure underneath, it's just it doesn't make any sense to you because you've got to go, all right, well the agent when it talks to me has this different permission structure, which is not obvious versus just it's a different person than that one. So they see different things. It kind of fits nicer, I think. I mean Yeah.
+
+Andy David (34:58.572)
+Yeah. I guess my question there is like if you've got the cloud agent, is it easier to manage, you know, the files, the data that those agents actually have access to? You're standing them up for a very specific purpose and then you're setting them down again. So maybe a lot a lot of that risk is kind of alleviated there.
+
+Pete (35:11.588)
+Yeah. Certainly. Yeah.
+
+Pete (35:19.106)
+It certainly does. I mean, I think the unfortunate answer here is that this is probably a more of a back end infrastructure reasoning as to why it's powerful than it is a front end user question. Cause for the person that is using the agent, it is going to be more powerful and more useful seeming for the agent to have this one persistent computer. This is why I'm saying like I wouldn't give up like my Wingman because it's going to be more powerful than this. But I might have other tasks that I just I don't care about that I'll just push over here into these agents 'cause they're more throwaway for me. They're easier to set up, they're easier to forget about. I can give them limited access to stuff. So I can have tasks that just work like that. so I think it's almost worse for the human. But then when it comes to like provisioning that for like an an organization of if you got a thousand people and you want them to all have their own personal agent, like it doing it with a thousand computers is not the answer to that, right? It's but also having one agent that everybody talks to is for other reasons very risky. So then the question, all right, so what's the answer? Is it 10 agents? And it's like, like I mean, even for me and you, right? We ended up with like we'll have some shared agents and we'll have one each and we'll mostly work with one each. And the shared agent is then the thing where you're like, all right, I know
+
+Andy David (36:27.63)
+Yeah. Mm-hmm.
+
+Pete (36:45.678)
+That you only have limited access to this information. And I think that's just that kind of tracks where you would go, like, yeah, if it's on my laptop and this is my laptop, maybe it's different if it's company laptop, but you're like, it should be mine. Like and you like you shouldn't be able to direct the one on my laptop, and I shouldn't be able to direct the one that's on your laptop. Like that's the that's the correct sort of rule, right? It's
+
+Andy David (37:13.442)
+Yeah.
+
+Pete (37:15.02)
+And so that's the way it should be. And then when we've got something where we both need to talk to it, that should just probably be a third one. And even for that one, you'd well, my bot I'm happy for my bot to talk to it. But it can't talk to my bot, if you know what mean. So that would be that would be the difference. So it's not, you know, that shared one would might be dispatchable by me, Rick, you, and Lara. But it can't.
+
+Andy David (37:28.908)
+Yeah. Yeah, it's interesting, yeah.
+
+Pete (37:41.376)
+if it responds to Rick, Rick can read it, but it won't action anything that it says. Sort of thing. It doesn't come in as a dispatchable item. We've got to then do that.
+
+Andy David (37:51.212)
+Yeah, I can see this stuff being really useful for like event driven work where you actually don't need to be the one directing it. It's like you know there's like a I don't know, like we need to generate a report and the report is triggered by someone making a r a request for some piece of information. Now ordinarily that would have to come through to one of us and then you go, Okay, let me provision the report. But I feel like some of this stuff could be quite useful for
+
+Pete (38:05.166)
+Yeah.
+
+Pete (38:10.159)
+Yeah.
+
+Andy David (38:19.448)
+cloud agents, they have some idea of what that task is and then there's a known event triggers the task. They spin up, complete the task and power down. And I think that's quite that's quite nice.
+
+Pete (38:30.052)
+Well and there's a segregated set of contexts that it should have access to. Right. And that's where the firewalling of like you know, the one of the things with like I mean Wingman was done what, like architecturally it was kind of put in place like eighteen months ago or something. Like it's and it was built on a what happens if we just give it everything?
+
+And one of the outcomes of that is it's very powerful, but it has access to everything. I was then this is the kind of like NSTEC was always about like what happens if I take the everything and put it over here, then you can only get access to what you can cryptographically prove you can get access to. Right. Okay, that gives me a bit more confidence that I can put stuff in there and it can't be seen, which is how it should be, sort of thing. So okay, well now I've got that separation.
+
+Andy David (39:12.814)
+Mm.
+
+Pete (39:23.234)
+And you look back at that agent, he's like, okay, well, anything that he gets out, he can see. So yeah, Rick can see most stuff inside my workspace. But there's some areas that he can't see because it's just like my internal notes to myself and my own internal wikis and stuff like that. And then you would go, a new agent can come in and it can see the groups that it can see. But also if it's on the same machine as Rick, then it's kinda it's a little bit dodgy. Like you can probably figure out a way around it.
+
+Andy David (39:48.621)
+Yeah.
+
+Pete (39:51.557)
+So I need to take another machine. So I'm not going to spin up a new machine for every task. But there's certainly tasks that I want to support where I just want it to do one task. I want it to have a limited amount of information and I want to be able to spin it up. And again, you know, this reminds me of what you said earlier about Snack Studio, right? Which was like you had to build you built it in that certain way and it really worked as you were building it. And when you got to the end of it, it didn't really feel like you needed all the stuff that you built.
+
+Andy David (40:03.03)
+Mm-hmm. Yeah.
+
+Pete (40:20.184)
+I feel like this like personification of agents is going to be a bit like this, where it's almost the scaffolding we're going to need to understand that there are all these different agents that are all going to do different things that need specific permissions. And it's just that in the abstract of trying to work out those permission structures, without this just sort of like scaffolding of going like
+
+Andy David (40:38.114)
+Yeah.
+
+Pete (40:48.544)
+it's a bit like a person that I've told something to. It's just harder to for anybody to reason about. And not just like, you know, your Uber technical mega brain or like your super bot that's building it for you. It's just that with something like access to information in a business, everybody needs to understand the risk and who's got what. And in general, like it'll be your, you know, like why so you might have a sizo that understands a lot of technical stuff.
+
+You know, often it's just the head if you're a small business, it's the head of the business needs to know, have I just given away all my company secrets or not? And they're not like if you say, Yes, you told them all to some brick called Claude, so he's got Like, that's just the way it works. Whereas if he's like, All right, you we've only ever talked about it in this group, and in this group we've got Billy Bob, and Billy Bob only knows what's in that group, but everybody else in the organization
+
+Talks to Charlie. Fantastic. Right. They're not the same thing. And they can reason about that a little clearer. But you can imagine by the end of it, maybe it all gets abstracted away under just you ask the company bot, and the company bot applies all of these permissions in this way, and you don't see it because everybody just uses the same tag, blah, blah, blah, blah, blah, blah. But there's to me, it feels
+
+Andy David (41:48.398)
+Mm-hmm.
+
+Pete (42:14.166)
+I feel like if that helps in like a team of two, it's gonna help in a team of a hundred a lot more because it's confusing to understand what you've leaked. Yeah.
+
+Andy David (42:21.806)
+Completely.
+
+Hmm. Yes. I suspect this is a problem that most people haven't yet realized they may they may need to plan for. Is kind of my gut feel on this. So it's a it's a it's a hard one to get in front of people because they haven't they haven't yet like envisaged the world in which it's relevant to some degree. my one thought about all of this stuff, well at the moment.
+
+Pete (42:32.27)
+Yes.
+
+Pete (42:46.202)
+Mm-hmm.
+
+Andy David (42:51.618)
+We start talking about agent swarms is always really a case of like, okay, there's supervision load. You know, it's like, okay, I've now multiply continue to multiply the kind of execution capacity. And there's still this like this feedback loop. I'm still needing to be across all of this stuff. And so there feels like there's this, there's so much flex that you can give, and then there's like a breaking point.
+
+And it's kind of like what I was saying earlier with like the tasks on the Kanban board, right? It's like it's like you I'll give it to another agent, or I'll give it to the same agent, but in a new a new session, just be like, go and triage all this stuff. And I'm still like trusting that agent to go and review all of this stuff and make sure it's correct. But I feel like it's that on steroids, right? It's all of a sudden it's like now we've got swarms of agents going off and doing all of these different tasks. Like, how does my supervision
+
+Pete (43:21.05)
+Fantastic. Yeah.
+
+Andy David (43:47.586)
+capacity actually expand with it can't, right? So
+
+Pete (43:51.131)
+I mean I think maybe two things. Like one is that like this is just like running a massive business, right? Like you can't supervise everyone. So you have these other agents called managers that come in and have different incentives and like really then it becomes an incentive alignment piece. So there's that and just yeah, I think this is also why companies shrink but they don't disappear. Like it's there is you can only do so much.
+
+Andy David (44:02.345)
+Yeah.
+
+Yeah. Yeah.
+
+Pete (44:20.78)
+And without like there is a danger to slop. And I in my head when I think of AI slop, I know I no longer think that it means made by AI. It's just somebody shat this out without caring about it. Like it's just you might have said the prompts initially, you might have even like gone through a couple of iterations, but you didn't care. And it be it becomes kind of obvious in the output that you see. And I think
+
+That will continue. I don't think that's a matter of the AI is getting better because there's the differences between somebody that used the same tool to just get something out the door that kind of misses the point, and somebody that really used it to solve a problem. And so I think we're still going to be able to differentiate these things based on, this one actually solves my problem. It doesn't just look like it kind of solves it and then introduces 20 other things. and so.
+
+Yeah, so I feel like you're gonna have you're gonna have to have a team of people that is appropriately sized to the problem. It's just that maybe previously that was ten thousand people to deliver a an offshore oil and gas platform or something like that. And then it becomes thousand people. Because everything is just all the communication is flowing better, things are getting better.
+
+communicated well, like all of these like little jobs that get done in the background to keep on top of stuff are getting done by agents and there's just the review work left. And so and then maybe some of the physical work left until we get the robots watched. But like all of a sudden like there's a balance there where it's like, okay, there's it's it does it's not that we destroy everything that's come before. It's that we go
+
+Andy David (46:00.61)
+Yeah, yeah.
+
+Pete (46:09.602)
+Huh, it's changed and the numbers are different and the form and function is a little bit different to how it used to be. But that's kinda that's just life, right? That's just like people evolving into a different species of just like, yeah, we got four arms now. It's nice, get a lot of stuff done. Like it's just but we're still similar shaped, I don't know.
+
+Andy David (46:29.432)
+Well, I suspect the other side of that is you still need to be very strategic about what you want to do. Just because you can go and multiply your execution capacity doesn't mean you should just do it willy-nilly. It should probably be some like intent and some compound benefit to doing that work in the first place. Otherwise don't do it. But I what I do think is really interesting is the cost constraint look at the reduction in costs around constraints that would have ordinarily like essentially kept people out of doing certain types of jobs. Like for instance, let's say you want to go and buy a company, buy your competitor. Well, you probably have like half a million to a million dollars in legals, right? You've got to consult a bunch of bunch of different lawyers, you've got to write up a bunch of different documents. You've got to make sure you, you know, meet with all of these various different pieces of legislation, different regulations that are industry specific. Like I reckon I reckon you could collapse the cost of a lot of that.
+
+By doing it in internally, even if you had like an in-house lawyer just doing that work internally with AI. And we're not we're not there yet if you speak to lawyers. Like they don't they don't believe that this is a thing yet. But I think they are like deluding themselves to some degree. And this absolutely is a thing. And if all of a sudden, like let's say that's a half million dollar cost or a million dollar cost, that's before you buy the company, right? So that is a constraint. That's an artificial constraint, a capital constraint that exists that means that only companies of a certain size that can throw the half million dollars at the legals can actually go and even entertain buying that company. All of a sudden if you can drop the cost of that by, let's say even seventy percent, let's be like somewhat more pragmatic about it. Seventy percent all of a sudden opens that up to a lot of different companies that otherwise wouldn't have entertained it. If you drop it by ninety percent, all of a sudden almost everyone can do it. Ninety five, ninety eight, ninety nine, it's like there's so many more things you can go and you can go and do.
+
+Pete (47:59.234)
+Mm.
+
+Andy David (48:25.804)
+And now the shackles are off. And so now you're marrying like the reduction in cost constraints that would have like forced you into like working in a certain channel along with swarms of agents that go and multiply your execution capacity. That's really interesting because I don't yet envision I can't yet envisage all of the different ways people will go and apply that. Cause it's just opening opening doors that just weren't weren't open for so long for so many different people.
+
+Pete (48:40.836)
+Mm.
+
+Pete (48:54.35)
+Hmm. That's interesting. I think it's true. I this is a bit out there, but you it's we're coming up to fifty minutes now, so we can do this. I was listened to a podcast the other day around morphic fields. I don't know if this is like something that you like looked at, but and I can't remember, I don't know if you've seen there's like a biologist, I think he works at Tufts or something like that called Michael Levin that does work around like
+
+Andy David (49:04.322)
+Mm-hmm.
+
+Andy David (49:09.355)
+yeah?
+
+Pete (49:21.132)
+animal and what he's seems to be discovering is that you can take like the DNA of an animal, but the way it grows and how it grows is actually influenced by seemingly like these electromagnetic fields around it. And so you can make you can turn like one plant into another type of plant by adjusting the fields around the thing and you're like, that sounds nuts and you can do the same things with animals. And this and there's what's what was the name of the biologist that was on the thing? I think he's
+
+I assume this is seen as like somewhat kooky. But like his his supposition is that like no, there's like a form to stuff in nature and there's like this sort of shared field that we're just not aware of that makes things grow in a certain way. So like oak trees know they're oak trees and they grow like oak trees, and then you have this like feel of like you can learn there's some sort of like shared, what do you call it, amorphic resonance where have this like shared knowledge of like what it is to be an oak tree everywhere around the world. And they seem to tap into this and operate in certain ways. And that's kind of weird. And like so one of the experiments they had that kind of proved this was around you had these rats in Edinburgh, I think it was, where there's a guy you put the rats in this in this maze and they had to escape through one of these tunnels. And it was always the dimly lit tunnel was the one that went out. And the bright one is the one where you got an electric shock. And it took rats like, I don't know, like three hundred times to
+
+Or it's 250 or something like that, to figure this out. And then what they found is that over time, the rats knew how to escape the tunnel. Like a new set of rats, like ten generations younger, were able to do this in like 20 times. And then okay, maybe that's like epigenetic learning and they're passing it on through the breeding. And then somebody else did it in Australia and the rats figured it out in 30 times. And like what the fuck? Like and then it's been replicated that now rats
+
+Andy David (51:13.741)
+What?
+
+Pete (51:16.514)
+as a species seem to know this trick and that you should take the dark tunnel. And they figure it out like within 30 attempts as opposed to 250 where they used to. He just like it's that sort of thing where you go, God, that's fucking weird. And like again what he talks about is that there's this kind of y this used to be how like the ancient Greeks thought about various things, which was that there were like mechanical forces and then there were like forming
+
+Andy David (51:25.357)
+Wow.
+
+Pete (51:46.245)
+forces. And we had these like different ways of being. And like you would end up being shaped by what forms you. And that was like a set of fields and actions in the universe. And then you would have like the mechanical stuff of like that touches that, hits that, hits that, which causes the thing. And it's there's something about it just it ri you know, like sometimes like an idea, you just go, Ooh, that seems right. And feels like it would explain
+
+Andy David (52:11.63)
+Yeah.
+
+Pete (52:15.288)
+way more stuff than some of our current theories, like where like it's you know when people will talk about like say string theory, it just feels wrong. Like the many world stuff in quantum mechanics. It feels wrong enough that I get that like, maybe we just can't intuit these things because we're not meant to. It's like outside of our perception. But there's some it feels wrong enough that you're like, nah, it's not that and you know if we have to like you look at like
+
+Andy David (52:25.262)
+Mm-hmm.
+
+Pete (52:44.036)
+astrophysics stuff and it's like everything's dark matter and dark energy and you're like Seems like we're just wrong on something. Maybe there's something else going on. Yeah. I sort of feel that yeah, maybe there is a form to this.
+
+Andy David (52:51.405)
+Yeah.
+
+But someone could intuit it, you know, so therefore it's capable of being intuited, you know, like it's
+
+Pete (52:58.552)
+Mm.
+
+Pete (53:02.82)
+But I don't think I don't think anyone really intuits the many worlds things. It's just like that's what the math says. It's kinda their argument is like shut off and read the maths and you're like, Yeah, but maybe we just modeled it incorrectly and then you can do the maths and it works out that way, but the model's wrong. Could be. It just works in some senses. But I guess where I was getting out of all that, which is a nice diversion for a couple of minutes. Was that maybe that's just the it's kinda like how things play out in nature when you see them, right? Is that
+
+Andy David (53:09.368)
+Yeah, has space.
+
+Andy David (53:16.323)
+Yeah.
+
+Mm-hmm.
+
+Pete (53:32.377)
+Companies become a certain size and shape because of the fields and the forming structures around them. And that'll be the pressures of like how much a human can do. Like we talked about the analogy of the truck. You know, it's the size it is because it needs that's the correct size for it. You know, and that's like a mechanical truck that we built. We could have built it bigger, we could have built it smaller, we did it that size because it was the local maxima for this set of constraints.
+
+And then if you take the driver out, you ruin all the constraints and you should be rethinking about it. And it's it feels like that's the thing, is that it's not that everything's doomed and that all the jobs are gone and that there's nothing left to do. And this is something that I don't think I intuited like until like it's been forming in me recently, if you know what mean. Is that it's not that, it's not all doom and gloom, it's just the form changes. So
+
+We have businesses for good reasons, but it's it looks like the size and shape and pressures on the business are different. And so it's going to reform. And so you might, you know, your business might collapse if you can't reform correctly and quick enough. But it's that's what's happening here. It's not a there are no longer any jobs and so everything's pointless situation. It's a, the way work gets done and executed in reality is shifted.
+
+A lot of it does go to these sort of subagents, but they have their own constraints, which means that you need this type of human in this space and this many to cover this amount of attention that needs to be paid to make it the non-slop version. And then maybe your point is that you know there was always free versions of everything. If you looked around, it's just a lot of them were shit. So there will be
+
+Andy David (55:13.208)
+Yeah.
+
+Andy David (55:20.322)
+Yeah. Yeah, yeah.
+
+Pete (55:23.374)
+better free versions of stuff, but they won't necessarily be as good as the thing that somebody's paid care and attention to. And so maybe you just buy the thing that gets care and attention.
+
+Andy David (55:30.2)
+Yes. Yep.
+
+Andy David (55:34.392)
+Think there's also a mindset element to this as well. You know, so if you are like unwilling to see the possibility, the potential of what you could go and do now by leveraging these tools and not allowing yourself to be constrained by like what was traditionally a constraint, then I think you have the potential for like seriously outsized returns. It makes me think of friend of the pod.
+
+Paul Itoy, you know, we would chat with him. Sometimes like when we get into like more casual chats, he'd just say, like, why not us? And that always stuck like that always stuck with me because he and a lot of people who are very entrepreneurial will have that attitude. It's like, yeah, why not me? Why not us? Like, we can, so why don't we? And that I think paired with like this incredible.
+
+Pete (56:15.578)
+Mm.
+
+Andy David (56:33.088)
+leverage that you have your own domain expertise and then also like these like these collapsing barriers. The thing is like it's not obvious the barriers are collapsing to everybody. Like if you take the example of the costs of like filing all of these documents, preparing and filing all of these documents for a for an acquisition of a company. That's like I'm just trying to find like a very specific example which is high cost. Most people are not aware that is the case right now.
+
+So they won't like it's just not entering into the kind of the pantheon of options they have. It's just like traditionally we can't buy companies like that because we can't even begin to think through the process of buying it. So we won't. And that is like a mindset that is built on the last 10 years. And I think the like the people that can ad adjust now who can go, do you know what? Yeah, that was in the past.
+
+And yep, we built a very successful business and it's still successful. But if we want to continue being successful, we actually just need to like break down all of these barriers. We need to unlearn a bunch of things about how we've worked, about how we work as individuals and how we work as teams, and like level up the ambition and go, fuck it, let's let's go and do a bunch of cool things here. Because we can. Like, why not us? And that feels like
+
+Instead of it being all doom and gloom, that feels like it could be a really exciting time to be in business.
+
+Pete (58:05.176)
+Yeah. I agree.
+
+Andy David (58:08.27)
+So shout out to friend of the pod, Paul Itaway, for planting that one.
+
+Pete (58:15.544)
+Yeah, I think that's the that's the answer, right? It's somebody's gonna do it. And it's I think just to go back to the form thing, like it's just it's a failure of the other people that could have done it to not do it. Like there's always this race to be best fit for this stuff. I mean I do think one thing that I'm kinda looking forward to is that the I feel like a lot of the size of these things was always this like
+
+There's so much like regular a regulation and bureaucracy that's associated with this class of people that just insert themselves into everything and take things that it's it forced things to become a large size. and like as much as like, you know, you'd it's not how most politics plays out. Say, no, we're trying to force everything into the hands of fewer large individuals and organizations, but that is what happens over time when you do this sort of thing.
+
+And I think it's nice that it lets a smaller entity fight back against that. You can be just as regulatory compliant because you don't have to do any of the work necessarily like you have your robots can do it. You can do it with systems and it can be systematized in a way that it can hopefully just chip away at some of that stuff and allow people to have agency again, which is a great thing in my view.
+
+Andy David (59:39.534)
+Mm. I agree.
+
+Pete (59:42.554)
+It's the resumption of agency or a new dawn, a new dawn in human agency. There you go.
+
+Andy David (59:49.666)
+There's a b I mean, I think you could even just go with cloud agents today. That's a nice on the podcast. you're not? it feels like that was
+
+Pete (59:53.208)
+Yeah. I wasn't necessarily naming the project the podcast. A little bit, but like it was yeah, we could go with either. I'm okay.
+
+Andy David (01:00:03.852)
+I mean it all it all works, but yeah, I mean I think I think this is a nice I don't know, I personally find this stuff like just super invigorating and super interesting. 'Cause it does just force you to rethink a lot of this stuff that I mean, we're also like potentially at the right age for it too. We've got enough experience, but we're also not so old that we're trying to like think about retirement just yet. So there's
+
+Pete (01:00:15.042)
+Mm-hmm.
+
+Pete (01:00:19.503)
+Yeah.
+
+Pete (01:00:28.762)
+Mm.
+
+Andy David (01:00:29.346)
+You know, whereas if you're quite a bit younger well, I actually think this would be really good if you're quite a bit younger because there's less like unlearning to do to some degree. Like fewer fewer like conventional or traditional habits that you need to try and like grapple with. But yeah, it does it feels like we should be in a bit of a sweet spot for this. So it's quite it's quite exciting in that sense.
+
+Pete (01:00:50.156)
+Mm. I've got to admit there's times where I think like, God, it'd be nice to just be getting paid to do like some bullshit job instead of having to figure all this out. But I feel like the turkey that left in January, you know, like it's we might have left early so we can figure it out, but like come December when everybody else is fleeing, yeah, we'll be used to living off the land. It's okay. Be the be the early turkey. That's the advice for the friends of the pod.
+
+Andy David (01:00:57.186)
+Yeah, for sure.
+
+Andy David (01:01:02.562)
+No.
+
+Andy David (01:01:06.499)
+Yeah.
+
+Andy David (01:01:11.692)
+Yeah.
+
+Andy David (01:01:19.98)
+Yeah. It was always a case of like it's okay to be early so long as you can remain solvent. It's kind of the it's kinda the aim of the game.
+
+Pete (01:01:26.148)
+Mm.
+
+Pete (01:01:29.785)
+Yep. Alright. And on that note, be early, be solvent. That's your Intelligence Snacks. See ya next time. Like and subscribe.
+
+Andy David (01:01:31.638)
+On that note.
+
+Andy David (01:01:37.912)
+See you next time.
