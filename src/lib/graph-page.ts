@@ -109,6 +109,6 @@ export function initialiseGraphPage() {
   if(params.get('context')&&model.nodes.some((node:Node)=>node.kind==='episode'&&node.episodeId===params.get('context')))episodeContextId=params.get('context')!;
   if(params.get('node'))void select(params.get('node')!);
   // The text index works before or without WebGL and before the rendering bundle downloads.
-  const moduleUrl='/graph-explorer.js';
+  const moduleUrl=canvas.dataset.rendererUrl||'/graph-explorer.js';
   import(/* @vite-ignore */ moduleUrl).then(module=>{mountGraph=module.mountKnowledgeGraph;mount();}).catch(()=>{canvas.replaceChildren(el('p','The visual map could not load. The archive index and source details remain available.'));});
 }
