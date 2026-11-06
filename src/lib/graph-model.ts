@@ -1,3 +1,5 @@
+import registry from '../data/graph-concepts.json';
+import { applyCanonicalConcepts } from './graph-concepts';
 type AnyRecord = Record<string, any>;
 
 const rootColours: Record<string, string> = {
@@ -15,7 +17,7 @@ function colourFamily(hex: string, count: number) {
   return Array.from({ length: count }, (_, index) => `hsl(${hue} ${saturation}% ${count === 1 ? 58 : Math.round(34 + 48*index/(count-1))}%)`);
 }
 
-export function buildTopicModel(data: AnyRecord) {
+export function buildTopicModel(data: AnyRecord): AnyRecord[] {
   const topics = data.topicIndex?.topics || []; const passages = data.topicIndex?.passages || []; const analyses = data.topicIndex?.analyses || [];
   const byId = new Map<string,AnyRecord>(topics.map((topic: AnyRecord) => [String(topic.id), topic]));
   const rootFor = (id: string) => { let topic: AnyRecord | undefined = byId.get(id); const seen = new Set<string>(); while (topic?.parentTopicId && byId.has(topic.parentTopicId) && !seen.has(topic.parentTopicId)) { seen.add(topic.id); topic = byId.get(topic.parentTopicId); } return topic?.id || id; };
@@ -31,7 +33,7 @@ export function buildTopicModel(data: AnyRecord) {
       episodes: [...(episodeWords.get(child.id)||new Map<string,number>()).entries()].map(([id,words]) => ({ id,words,...(episodeById.get(id)||{}) })).sort((a,b) => Number(b.words)-Number(a.words)) })).filter((child: AnyRecord) => child.words).sort((a: AnyRecord,b: AnyRecord) => b.words-a.words) })).filter((root: AnyRecord) => root.words).sort((a: AnyRecord,b: AnyRecord) => b.words-a.words);
 }
 
-export function buildKnowledgeModel(data: AnyRecord) {
+export function buildKnowledgeModel(data: AnyRecord): { nodes: AnyRecord[]; links: AnyRecord[] } {
   const candidates = data.candidates || []; const contributors = data.contributors || []; const knowledge = data.knowledge || { nodes:[],edges:[],snackLinks:[] };
   const episodes = [...new Map(candidates.map((item: AnyRecord) => [item.episodeId,{ id:item.episodeId,number:item.episodeNumber,title:item.episodeTitle,href:item.episodeHref }])).values()] as AnyRecord[];
   const episodeById = new Map(episodes.map((episode) => [episode.id,episode]));
@@ -40,18 +42,20 @@ export function buildKnowledgeModel(data: AnyRecord) {
     ...episodes.map((episode) => ({ id:`episode:${episode.id}`,kind:'episode',title:`Episode ${episode.number} · ${episode.title}`,summary:episode.title,href:episode.href,episodeId:episode.id,episodeNumber:episode.number })),
     ...contributors.map((person: AnyRecord) => ({ id:`contributor:${person.contributorId}`,kind:/host/i.test(person.role)?'host':'contributor',title:person.name,summary:person.shortBio||person.role,href:person.href,episodeId:'' })),
     ...candidates.map((snack: AnyRecord) => ({ id:`snack:${snack.candidateId}`,kind:'snack',title:snack.title,summary:snack.standfirst,href:snack.href,episodeId:snack.episodeId,episodeNumber:snack.episodeNumber })),
-    ...(knowledge.nodes||[]).map((node: AnyRecord) => ({ id:`knowledge:${node.id}`,kind:node.kind,title:node.title,summary:node.summary,evidence:node.evidence||[],episode:episodeById.get(node.episodeId),href:episodeById.get(node.episodeId)?.href,episodeId:node.episodeId,episodeNumber:episodeById.get(node.episodeId)?.number })),
+    ...(knowledge.nodes||[]).map((node: AnyRecord) => ({ id:`knowledge:${node.id}`,kind:node.kind,title:node.title,summary:node.summary,evidenceCount:(node.evidence||[]).length,episode:episodeById.get(node.episodeId),href:episodeById.get(node.episodeId)?.href,episodeId:node.episodeId,episodeNumber:episodeById.get(node.episodeId)?.number })),
   ];
   const ids = new Set(nodes.map((node) => node.id)); const links: AnyRecord[] = [];
   for (const episode of episodes) links.push({ source:'root:intelligence-snacks',target:`episode:${episode.id}`,type:'contains' });
   for (const snack of candidates) links.push({ source:`episode:${snack.episodeId}`,target:`snack:${snack.candidateId}`,type:'publishes' });
-  for (const person of contributors) { links.push({ source:'root:intelligence-snacks',target:`contributor:${person.contributorId}`,type:/host/i.test(person.role)?'hosted by':'features' }); for (const episodeId of person.episodeIds||[]) links.push({ source:`contributor:${person.contributorId}`,target:`episode:${episodeId}`,type:/host/i.test(person.role)?'hosted':'contributed to' }); }
+  for (const person of contributors) { links.push({ source:'root:intelligence-snacks',target:`contributor:${person.contributorId}`,type:/host/i.test(person.role)?'hosted-by':'features' }); for (const episodeId of person.episodeIds||[]) links.push({ source:`contributor:${person.contributorId}`,target:`episode:${episodeId}`,type:/host/i.test(person.role)?'hosted':'contributed-to' }); }
   const normalise = (value: unknown) => String(value||'').trim().toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
   const contributorBySpeaker = new Map<string,string>(); for (const person of contributors) for (const label of [person.name,...(person.aliases||[])]) if(normalise(label)) contributorBySpeaker.set(normalise(label),person.contributorId);
   for (const node of knowledge.nodes||[]) { links.push({ source:`episode:${node.episodeId}`,target:`knowledge:${node.id}`,type:'develops' }); for (const speaker of new Set((node.evidence||[]).map((item:AnyRecord)=>normalise(item.speaker)).filter(Boolean))) { const personId=contributorBySpeaker.get(String(speaker)); if(personId)links.push({source:`contributor:${personId}`,target:`knowledge:${node.id}`,type:'contributed'}); } }
   for (const edge of knowledge.edges||[]) links.push({ source:`knowledge:${edge.sourceNodeId}`,target:`knowledge:${edge.targetNodeId}`,type:edge.relationshipType,note:edge.explanation });
   for (const link of knowledge.snackLinks||[]) links.push({ source:`knowledge:${link.knowledgeNodeId}`,target:`snack:${link.candidateId}`,type:link.relationshipType });
   for (const relationship of data.relationships||[]) links.push({ source:`snack:${relationship.sourceCandidateId}`,target:`snack:${relationship.targetCandidateId}`,type:relationship.relationshipType,note:relationship.explanation });
+  applyCanonicalConcepts({ nodes, links }, data.conceptRegistry || registry);
+  for (const node of nodes) ids.add(node.id);
   const publicLinks = links.filter((link) => ids.has(link.source)&&ids.has(link.target)); const degree = new Map<string,number>(); for (const link of publicLinks) { degree.set(link.source,(degree.get(link.source)||0)+1); degree.set(link.target,(degree.get(link.target)||0)+1); }
   return { nodes: nodes.map((node) => ({ ...node, degree:degree.get(node.id)||0 })), links:publicLinks };
 }

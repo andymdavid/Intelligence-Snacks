@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import SnackVisual from '@/components/SnackVisual.astro';
 import ContributorRow from '@/components/ContributorRow.astro';
 import ShareButtons from '@/components/ShareButtons.astro';
+import { canonicalPublicGraph } from '@/lib/public-graph-data';
 import { formatDate, isVisible } from '@/lib/content';
 
 export async function getStaticPaths() {
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { snack } = Astro.props;
+const graphSnack = canonicalPublicGraph().candidates.find((item:any) => item.href === `/snacks/${snack.id}/`);
 const { Content } = await render(snack);
 const episode = await getEntry(snack.data.sourceEpisode);
 const contributors = episode
@@ -91,6 +93,7 @@ const jsonLd = [{
       </article>)}
     </div>
   </section>}
+{graphSnack && <p class="page-shell"><a href={`/graph/?node=${encodeURIComponent(`snack:${graphSnack.candidateId}`)}`}>Explore the ideas and sources connected to this Snack</a></p>}
 </BaseLayout>
 <style>
   .article-head { padding-block: clamp(4rem, 8vw, 8rem); }

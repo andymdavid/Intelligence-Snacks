@@ -1,0 +1,96 @@
+import { selectGraphView } from './graph-view.js';
+type Node = { id: string; kind: string; title: string; summary: string; episodeId: string; episodeNumber?: number; href?: string; evidenceCount?: number; reviewer?: string; reviewMethod?: string };
+type Edge = { sourceId: string; targetId: string; relationshipType: string; explanation: string };
+export function initialiseGraphPage() {
+  const model = JSON.parse(document.querySelector('#knowledge-data')?.textContent || '{}');
+  const membership = JSON.parse(document.querySelector('#topic-membership')?.textContent || '{}');
+  const byId = new Map<string, Node>(model.nodes.map((node: Node) => [node.id,node]));
+  const search = document.querySelector<HTMLInputElement>('[data-search]')!;
+  const kind = document.querySelector<HTMLSelectElement>('[data-kind]')!;
+  const episode = document.querySelector<HTMLSelectElement>('[data-episode]')!;
+  const topic = document.querySelector<HTMLSelectElement>('[data-topic]')!;
+  const detail = document.querySelector<HTMLElement>('[data-detail]')!;
+  const canvas = document.querySelector<HTMLElement>('[data-public-graph]')!;
+  const rows = [...document.querySelectorAll<HTMLElement>('[data-result]')];
+  let cleanup = () => {};
+  let selected = '';
+  let frozen = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let mountGraph: any;
+  let detailsPromise: Promise<Record<string, any>> | null = null;
+  const emit = (name: string, node?: Node) => document.dispatchEvent(new CustomEvent('snack-graph', { detail:{name,kind:node?.kind,episodeNumber:node?.episodeNumber} }));
+  const el = (tag: string, text: string) => { const element = document.createElement(tag); element.textContent = text; return element; };
+  function updateUrl() {
+    const url = new URL(location.href);
+    for (const [key,value] of Object.entries({node:selected,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
+    history.replaceState(null,'',url);
+  }
+  function filter() {
+    const query = search.value.toLocaleLowerCase().trim(); let count = 0;
+    for(const row of rows) {
+      const node=byId.get(row.dataset.result!)!;
+      const show=(!query || `${node.title} ${node.summary}`.toLocaleLowerCase().includes(query)) && (!kind.value || node.kind===kind.value) && (!episode.value || node.episodeId===episode.value) && (!topic.value || (membership[topic.value]||[]).includes(node.episodeId));
+      row.hidden=!show; if(show)count++;
+    }
+    document.querySelector('[data-result-count]')!.textContent=`${count} of ${model.nodes.length} archive results`;
+    updateUrl();
+  }
+  function mount() {
+    if(!mountGraph || frozen) return;
+    cleanup();
+    const focused={...model,focus:byId.get(selected)||null,explicitFocus:Boolean(selected)};
+    const view=selectGraphView(focused,{focusId:selected,limit:160});
+    document.querySelector('[data-view-count]')!.textContent=`${view.nodes.length} of ${model.nodes.length} nodes · ${view.allConnections.length} connections in view`;
+    try { cleanup=mountGraph(canvas,focused,(id:string)=>{ void select(id,true); }); }
+    catch { canvas.replaceChildren(el('p','The visual map is unavailable. Use the complete archive index below.'));emit('render-fallback'); }
+  }
+  async function select(id:string, focusPanel=false) {
+    const node=byId.get(id); if(!node)return;
+    selected=id;updateUrl();emit('select',node);mount();
+    detail.replaceChildren();
+    const title=el('h2',node.title);title.id='graph-detail-title';title.tabIndex=-1;
+    detail.append(el('p',`${node.kind}${node.episodeNumber?` · Episode ${node.episodeNumber}`:''}`),title,el('p',node.summary||''));
+    if(node.href && !node.href.startsWith('/graph/')) {
+      const link=el('a',node.kind==='snack'?'Read this Snack':'Open source page') as HTMLAnchorElement;link.href=node.href;link.addEventListener('click',()=>emit('content-open',node));detail.append(link);
+    }
+    if(node.reviewMethod)detail.append(el('p',`Grouping review: ${node.reviewMethod} by ${node.reviewer}. Source claims remain independent.`));
+    const edges=model.allConnections.filter((edge:Edge)=>edge.sourceId===id||edge.targetId===id);
+    detail.append(el('h3',`${edges.length} connections`));
+    const list=el('ul','');
+    for(const edge of edges) {
+      const outgoing=edge.sourceId===id;const target=byId.get(outgoing?edge.targetId:edge.sourceId);if(!target)continue;
+      const row=el('li','');const type=el('span',`${outgoing?'Outgoing':'Incoming'} · ${edge.relationshipType.replaceAll('-',' ')}`);type.className='edge-type';
+      const link=el('a',target.title) as HTMLAnchorElement;link.href=`/graph/?node=${encodeURIComponent(target.id)}`;link.addEventListener('click',(event)=>{event.preventDefault();emit(target.episodeId!==node.episodeId?'cross-episode':'follow-connection',target);void select(target.id,true);});
+      row.append(type,link);if(edge.explanation)row.append(el('p',edge.explanation));list.append(row);
+    }
+    detail.append(list);
+    const evidenceSection=el('section','');detail.append(evidenceSection);
+    if(node.kind==='canonical') {
+      evidenceSection.append(el('p','Open a linked discussion to inspect its separate source evidence.'));
+    } else if(node.evidenceCount) {
+      evidenceSection.append(el('p','Loading source excerpts…'));
+      try {
+        detailsPromise ||= fetch('/graph/details.json').then(response=>{if(!response.ok)throw new Error('Evidence request failed');return response.json();}).catch(error=>{detailsPromise=null;throw error;});
+        const all=await detailsPromise;if(selected!==id)return;
+        const record=all[id];evidenceSection.replaceChildren(el('h3','Source evidence'),el('p',record?.reviewMethod||'Source record'));
+        for(const evidence of record?.evidence||[]) {
+          const quote=el('blockquote',evidence.excerpt);const caption=el('p',evidence.speaker||'Speaker not identified');quote.append(caption);if(evidence.sourceHref){const source=el('a',evidence.timestamp?`Read at ${evidence.timestamp}`:'Read source transcript') as HTMLAnchorElement;source.href=evidence.sourceHref;source.addEventListener('click',()=>emit('source-open',node));quote.append(source);}evidenceSection.append(quote);
+        }
+        evidenceSection.append(el('p','Excerpts ground this idea in the transcript. They do not independently verify that the claim is true.'));
+        emit('evidence-open',node);
+      } catch { evidenceSection.replaceChildren(el('p','Source excerpts could not load. Open the source episode or select this node again to retry.')); }
+    }
+    if(focusPanel)title.focus({preventScroll:true});
+  }
+  for(const row of rows)row.querySelector('a')!.addEventListener('click',event=>{event.preventDefault();void select(row.dataset.result!,true);});
+  search.addEventListener('input',filter);for(const control of [kind,episode,topic])control.addEventListener('change',()=>{filter();emit('filter');});
+  document.querySelectorAll<HTMLElement>('[data-topic-pick]').forEach(button=>button.addEventListener('click',()=>{topic.value=button.dataset.topicPick!;filter();search.focus();}));
+  document.querySelector('[data-reset]')!.addEventListener('click',()=>{selected='';updateUrl();mount();});
+  const motion=document.querySelector<HTMLButtonElement>('[data-motion]')!;
+  motion.textContent=frozen?'Show static map':'Freeze layout';motion.setAttribute('aria-pressed',String(frozen));
+  motion.addEventListener('click',()=>{frozen=!frozen;motion.textContent=frozen?'Resume layout':'Freeze layout';motion.setAttribute('aria-pressed',String(frozen));if(frozen){canvas.dispatchEvent(new CustomEvent('graph-freeze'));}else mount();});
+  const params=new URLSearchParams(location.search);search.value=params.get('q')||'';kind.value=params.get('kind')||'';episode.value=params.get('episode')||'';topic.value=params.get('topic')||'';filter();
+  if(params.get('node'))void select(params.get('node')!);
+  // The text index works before or without WebGL and before the rendering bundle downloads.
+  const moduleUrl='/graph-explorer.js';
+  import(/* @vite-ignore */ moduleUrl).then(module=>{mountGraph=module.mountKnowledgeGraph;if(frozen){frozen=false;mount();frozen=true;requestAnimationFrame(()=>canvas.dispatchEvent(new CustomEvent('graph-freeze')));}else mount();}).catch(()=>{canvas.replaceChildren(el('p','The visual map could not load. The archive index and source details remain available.'));});
+}
