@@ -1,0 +1,36 @@
+import {chromium} from 'playwright-core';
+import {writeFileSync} from 'node:fs';
+const base=process.env.GRAPH_PREVIEW_URL||'http://127.0.0.1:8768';
+const browser=await chromium.launch({executablePath:process.env.GRAPH_CHROMIUM_EXECUTABLE,headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:1600,height:1100}}),checks=[],errors=[];page.on('pageerror',e=>errors.push(e.message));
+const check=(ok,label,detail)=>{checks.push({label,ok,detail});console.log(label,ok,detail||'');if(!ok)throw Error(label+': '+JSON.stringify(detail));};
+const geometry=()=>page.locator('.graphTextLayer g').evaluateAll(groups=>{const boxes=groups.map(g=>g.querySelector('rect').getBoundingClientRect());let overlaps=0;for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++)if(Math.min(boxes[i].right,boxes[j].right)>Math.max(boxes[i].left,boxes[j].left)&&Math.min(boxes[i].bottom,boxes[j].bottom)>Math.max(boxes[i].top,boxes[j].top))overlaps++;return {labels:boxes.length,overlaps};});
+try{
+ await page.goto(base+'/graph/',{waitUntil:'networkidle'});await page.waitForTimeout(1800);
+ const model=await page.evaluate(()=>JSON.parse(document.querySelector('#knowledge-data').textContent));const episodes=model.nodes.filter(n=>n.kind==='episode');
+ check((await page.locator('[data-view-count]').textContent()).startsWith('320 of'),'balanced overview shows 320 nodes');
+ check(await page.getByRole('button',{name:/^Explore Episode/}).count()===episodes.length,'every episode has a labelled clickable gateway',{episodes:episodes.length});
+ check((await geometry()).overlaps===0,'overview label rectangles do not overlap',await geometry());
+ await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-gateways-overview.png'});
+ await page.getByRole('button',{name:'Explore Episode 79',exact:true}).click();await page.waitForTimeout(500);
+ check((await page.locator('[data-view-count]').textContent()).startsWith('320 of'),'episode focus retains broad context');
+ check(await page.getByRole('button',{name:/^Explore Episode/}).count()===episodes.length,'focused episode retains every gateway');
+ check(await page.locator('[data-detail]').isHidden(),'episode keeps graph full width');
+ await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-gateways-episode79.png'});
+ await page.getByRole('button',{name:'Explore Episode 78',exact:true}).focus();await page.waitForTimeout(150);await page.keyboard.press('Enter');await page.waitForTimeout(500);
+ check(page.url().includes(encodeURIComponent(episodes.find(n=>n.episodeNumber===78).id)),'keyboard gateway switches directly to another episode');
+ const idea=model.nodes.find(n=>n.kind==='concept'&&n.episodeNumber===78&&n.evidenceCount);
+ await page.evaluate(()=>window.gatewayCanvas=document.querySelector('[data-public-graph] canvas'));
+ await page.locator('[data-result]').filter({has:page.locator('a')}).evaluateAll((rows,id)=>rows.find(r=>r.dataset.result===id).querySelector('a').click(),idea.id);await page.waitForSelector('[data-detail] blockquote');
+ check(await page.evaluate(()=>window.gatewayCanvas===document.querySelector('[data-public-graph] canvas')),'idea inspection retains renderer');
+ const anchor={id:idea.id};
+ const point=()=>page.locator('.graphTextLayer g').evaluateAll((groups,id)=>{const g=groups.find(g=>g.dataset.nodeId===id);return {x:Number(g.dataset.nodeX),y:Number(g.dataset.nodeY)};},anchor.id);const a=await point();await page.waitForTimeout(500);const b=await point();check(Math.hypot(a.x-b.x,a.y-b.y)<.5,'idea inspection retains settled positions');const bounds=await page.locator('[data-public-graph]').boundingBox();await page.mouse.move(bounds.x+b.x,bounds.y+b.y);await page.waitForSelector('.graphHoverTitle:not([hidden])');check(await page.locator('.graphHoverTitle').textContent()===idea.title,'hover retains full source title');await page.mouse.move(0,0);
+ check((await geometry()).overlaps===0,'inspection labels do not overlap');check((await page.locator('.graphTextLayer text').allTextContents()).every(text=>text.length<=26),'canvas labels remain short');await page.locator('[data-details-toggle]').click();await page.locator('[data-expand]').click();await page.waitForTimeout(150);check(await page.evaluate(()=>Boolean(document.fullscreenElement)||document.querySelector('.graph-layout').classList.contains('is-expanded')),'graph expands');if(await page.evaluate(()=>Boolean(document.fullscreenElement)))await page.evaluate(()=>document.exitFullscreen());
+ await page.getByLabel('Map density',{exact:true}).selectOption('1000000');await page.waitForTimeout(700);check((await page.locator('[data-view-count]').textContent()).startsWith(`${model.nodes.length} of ${model.nodes.length}`),'all-nodes mode renders the complete archive');
+ check((await page.locator('[data-view-count]').textContent()).includes(`${model.allConnections.length} connections`),'all-nodes mode retains all connections');
+ check(await page.getByRole('button',{name:/^Explore Episode/}).count()===episodes.length,'all-nodes mode keeps all episode gateways labelled');
+ await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-gateways-all.png'});
+ await page.getByLabel('Map density',{exact:true}).selectOption('320');await page.setViewportSize({width:390,height:844});await page.waitForTimeout(500);
+ const mobile=await geometry();check(mobile.overlaps===0,'mobile labels do not overlap',mobile);const mobileGateways=await page.getByRole('button',{name:/^Explore Episode/}).count();check(mobileGateways===episodes.length,'mobile exposes every episode label without zoom',{mobileGateways,episodes:episodes.length});check(await page.evaluate(()=>document.documentElement.scrollWidth===innerWidth),'mobile has no horizontal overflow');await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-gateways-mobile.png'});
+ check(errors.length===0,'no browser errors',errors);
+}finally{writeFileSync('/tmp/snack-gateways-results.json',JSON.stringify(checks,null,2));console.log(JSON.stringify(checks,null,2));await browser.close();}
