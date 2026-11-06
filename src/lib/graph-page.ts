@@ -1,4 +1,3 @@
-import { deriveEpisodeMap } from './episode-map.js';
 import { selectGraphView } from './graph-view.js';
 type Node = { id: string; kind: string; title: string; summary: string; episodeId: string; episodeNumber?: number; href?: string; evidenceCount?: number; reviewer?: string; reviewMethod?: string };
 type Edge = { sourceId: string; targetId: string; relationshipType: string; explanation: string };
@@ -15,7 +14,6 @@ export function initialiseGraphPage() {
   const rows = [...document.querySelectorAll<HTMLElement>('[data-result]')];
   let cleanup = () => {};
   let selected = '';
-  let episodeContextId = '';
   let frozen = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let mountGraph: any;
   let detailsPromise: Promise<Record<string, any>> | null = null;
@@ -23,7 +21,7 @@ export function initialiseGraphPage() {
   const el = (tag: string, text: string) => { const element = document.createElement(tag); element.textContent = text; return element; };
   function updateUrl() {
     const url = new URL(location.href);
-    for (const [key,value] of Object.entries({node:selected,context:episodeContextId,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
+    for (const [key,value] of Object.entries({node:selected,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
     history.replaceState(null,'',url);
   }
   function filter() {
@@ -37,21 +35,16 @@ export function initialiseGraphPage() {
     updateUrl();
   }
   function mount() {
-    if(!mountGraph) return;
+    if(!mountGraph || frozen) return;
     cleanup();
-    const focused={...model,focus:byId.get(selected)||null,explicitFocus:Boolean(selected),episodeContextId,selectedNodeId:selected,freezeLayout:frozen};
+    const focused={...model,focus:byId.get(selected)||null,explicitFocus:Boolean(selected)};
     const view=selectGraphView(focused,{focusId:selected,limit:160});
-    const episodeView = episodeContextId ? deriveEpisodeMap(model,episodeContextId) : null;
-    document.querySelector('[data-view-count]')!.textContent=episodeView ? `${episodeView.totalNodes} episode nodes · grouped by idea type` : `${view.nodes.length} of ${model.nodes.length} nodes · ${view.allConnections.length} connections in view`;
-    document.querySelector('.graph-layout')?.classList.toggle('is-episode-view',Boolean(episodeView));
+    document.querySelector('[data-view-count]')!.textContent=`${view.nodes.length} of ${model.nodes.length} nodes · ${view.allConnections.length} connections in view`;
     try { cleanup=mountGraph(canvas,focused,(id:string)=>{ void select(id,true); }); }
     catch { canvas.replaceChildren(el('p','The visual map is unavailable. Use the complete archive index below.'));emit('render-fallback'); }
   }
   async function select(id:string, focusPanel=false) {
     const node=byId.get(id); if(!node)return;
-    if(node.kind==='episode') { episodeContextId=node.episodeId;episode.value=node.episodeId;filter(); }
-    else if(node.kind==='root'||node.kind==='canonical')episodeContextId='';
-    else if(episodeContextId && node.episodeId && node.episodeId!==episodeContextId) episodeContextId='';
     selected=id;updateUrl();emit('select',node);mount();
     detail.replaceChildren();
     const title=el('h2',node.title);title.id='graph-detail-title';title.tabIndex=-1;
@@ -61,19 +54,15 @@ export function initialiseGraphPage() {
     }
     if(node.reviewMethod)detail.append(el('p',`Grouping review: ${node.reviewMethod} by ${node.reviewer}. Source claims remain independent.`));
     const edges=model.allConnections.filter((edge:Edge)=>edge.sourceId===id||edge.targetId===id);
-    detail.append(el('h3',node.kind==='episode'?'Browse episode contents':`${edges.length} connections`));
+    detail.append(el('h3',`${edges.length} connections`));
     const list=el('ul','');
     for(const edge of edges) {
-      const outgoing=edge.sourceId===id;const target=byId.get(outgoing?edge.targetId:edge.sourceId);if(!target || (node.kind==='episode'&&target.kind==='root'))continue;
+      const outgoing=edge.sourceId===id;const target=byId.get(outgoing?edge.targetId:edge.sourceId);if(!target)continue;
       const row=el('li','');const type=el('span',`${outgoing?'Outgoing':'Incoming'} · ${edge.relationshipType.replaceAll('-',' ')}`);type.className='edge-type';
       const link=el('a',target.title) as HTMLAnchorElement;link.href=`/graph/?node=${encodeURIComponent(target.id)}`;link.addEventListener('click',(event)=>{event.preventDefault();emit(target.episodeId!==node.episodeId?'cross-episode':'follow-connection',target);void select(target.id,true);});
       row.append(type,link);if(edge.explanation)row.append(el('p',edge.explanation));list.append(row);
     }
-    if(node.kind==='episode'){
-      const grouped=new Map<string,HTMLUListElement>();
-      for(const row of [...list.children]){const link=row.querySelector('a')!;const targetId=new URL((link as HTMLAnchorElement).href).searchParams.get('node')!;const target=byId.get(targetId);const labels:Record<string,string>={concept:'Concepts',claim:'Claims',example:'Examples',question:'Questions',snack:'Snacks',host:'People',contributor:'People'};const label=labels[target?.kind||'']||'Other';const group=grouped.get(label)||document.createElement('ul');group.append(row);grouped.set(label,group);}
-      for(const [label,items] of grouped){const section=el('details','');section.append(el('summary',`${label} · ${items.children.length}`),items);detail.append(section);}
-    }else detail.append(list);
+    detail.append(list);
     const evidenceSection=el('section','');detail.append(evidenceSection);
     if(node.kind==='canonical') {
       evidenceSection.append(el('p','Open a linked discussion to inspect its separate source evidence.'));
@@ -93,16 +82,15 @@ export function initialiseGraphPage() {
     if(focusPanel)title.focus({preventScroll:true});
   }
   for(const row of rows)row.querySelector('a')!.addEventListener('click',event=>{event.preventDefault();void select(row.dataset.result!,true);});
-  search.addEventListener('input',filter);for(const control of [kind,episode,topic])control.addEventListener('change',()=>{filter();if(control===episode){const node=model.nodes.find((node:Node)=>node.kind==='episode'&&node.episodeId===episode.value);if(node)void select(node.id);else {episodeContextId='';selected='';mount();}}emit('filter');});
+  search.addEventListener('input',filter);for(const control of [kind,episode,topic])control.addEventListener('change',()=>{filter();emit('filter');});
   document.querySelectorAll<HTMLElement>('[data-topic-pick]').forEach(button=>button.addEventListener('click',()=>{topic.value=button.dataset.topicPick!;filter();search.focus();}));
-  document.querySelector('[data-reset]')!.addEventListener('click',()=>{selected='';episodeContextId='';episode.value='';filter();updateUrl();mount();});
+  document.querySelector('[data-reset]')!.addEventListener('click',()=>{selected='';updateUrl();mount();});
   const motion=document.querySelector<HTMLButtonElement>('[data-motion]')!;
   motion.textContent=frozen?'Show static map':'Freeze layout';motion.setAttribute('aria-pressed',String(frozen));
   motion.addEventListener('click',()=>{frozen=!frozen;motion.textContent=frozen?'Resume layout':'Freeze layout';motion.setAttribute('aria-pressed',String(frozen));if(frozen){canvas.dispatchEvent(new CustomEvent('graph-freeze'));}else mount();});
   const params=new URLSearchParams(location.search);search.value=params.get('q')||'';kind.value=params.get('kind')||'';episode.value=params.get('episode')||'';topic.value=params.get('topic')||'';filter();
-  if(params.get('context') && model.nodes.some((node:Node)=>node.kind==='episode'&&node.episodeId===params.get('context')))episodeContextId=params.get('context')!;
   if(params.get('node'))void select(params.get('node')!);
   // The text index works before or without WebGL and before the rendering bundle downloads.
   const moduleUrl='/graph-explorer.js';
-  import(/* @vite-ignore */ moduleUrl).then(module=>{mountGraph=module.mountKnowledgeGraph;mount();}).catch(()=>{canvas.replaceChildren(el('p','The visual map could not load. The archive index and source details remain available.'));});
+  import(/* @vite-ignore */ moduleUrl).then(module=>{mountGraph=module.mountKnowledgeGraph;if(frozen){frozen=false;mount();frozen=true;requestAnimationFrame(()=>canvas.dispatchEvent(new CustomEvent('graph-freeze')));}else mount();}).catch(()=>{canvas.replaceChildren(el('p','The visual map could not load. The archive index and source details remain available.'));});
 }
