@@ -1,0 +1,876 @@
+Pete Winn (00:01.334)
+All right, hello and welcome to Intelligence Snacks number seventy-eight. I'm dutifully informed by Andy here. How's it going, Andy?
+
+Andy David (00:11.13)
+Good mate. What's been happening?
+
+Pete Winn (00:13.618)
+I don't know, I discovered native apps and like felt like I've just missed a trick for the last year where I was like it always felt like it was probably too much hassle to run multiple versions of an app that you're developing in all these languages and I was like, you know what? I don't know anything about Swift because I haven't looked at this code at all, but I took like the whole of as you know, I took the whole of Ambulando and just moved it into Swift I've got native iPhone and Mac apps and then there's a Kotlin build as well for Android but I don't test it enough so I just sort of catch it up overnight. And I was like, this is like, particularly on mobile, like not doing like a local web app, is like a thousand times quicker and more responsive and has all the data and I'm like, all right, I was wrong there. I should have done this I should have done this ages ago. So that was new for me.
+
+Andy David (01:06.694)
+Ha ha ha.
+
+Yam.
+
+I'm looking forward to giving the Android app a bit of a rip later today. Yeah, I saw that. That's I'm looking forward to it. Yeah, I've been I've been enjoying the Mac app. It's been nice. It has been nice.
+
+Pete Winn (01:14.836)
+Mm. I just sent you the Zap Store link so you can you can get involved.
+
+Pete Winn (01:24.29)
+Hmm. I've just done—so I have like tried to adjust a little bit as well my process of updates. Cause it's so you get so used to like just something's wrong. I'm just gonna push that into update and then there's always like plates spinning and it's a bit much in my head at the moment at times where I'm just like always fixing the tools that I'm using. Whereas now I've started just doing like a
+
+a daily list and I'll just like put everything in a thread and just consolidate it all. And then at some point when I'm you know, if I'm going out for an hour or two, I'll just be like, Rick, fix and deploy to all my devices. And then I just come back like in a couple of hours and it's like, cool, everything's updated and all those things that were bugging me are gone. Like it's not 'cause nothing's really broke enough that I can't use it, but
+
+There's all these like little tweaks. I'm like, that's been not been carried over. I don't like how that works. This needs fixing. But it's getting pretty nice now. Which is good. But that's been helpful for just yeah, batch stuff up and then get back one new update and then one list of things to just run through and I'm like, Yep. Yeah, that's good.
+
+Andy David (02:28.815)
+Yeah.
+
+Andy David (02:42.373)
+Well I've now extracted every front end component from Ambulando into a canvas and each one is inspectable. I can click on it, I can see like how the how the component works. and I can we can start to make little tweaks to them. So that's a little call back to last week's episode, which was, you know, talking about AI beyond chat and we started exploring
+
+Pete Winn (02:48.161)
+Mm.
+
+Pete Winn (02:57.484)
+Yeah.
+
+Pete Winn (03:03.681)
+Mm-hmm.
+
+Andy David (03:08.741)
+Canvas and like alternative interfaces for working with AI. So go check that out after this one. Finish this episode first and then go back to that one.
+
+Pete Winn (03:11.937)
+Yeah. Yeah. and I did publish like a few screenshots of this on like Twitter and Nostr recently, but I'm sold like for it's really helped me like slow down a little bit and get out of some of the like the mentally tiring aspects of just effectively living in what's basically slack. Like right like that sort of constant real time just
+
+Andy David (03:21.465)
+Mm. Yeah, yeah.
+
+Andy David (03:36.09)
+Yeah, yeah.
+
+Pete Winn (03:41.149)
+moving, moving, moving instead of like just giving yourself the opportunity to like sit back and like really think through and develop a solution to something is I feel like that's that is a piece that I was missing. So it's that's been that's been pretty good.
+
+Andy David (03:55.142)
+Yeah. Well there's been a debate this week on Twitter in the kind of design Twitter space about whether or not like tools like Figma are dead. And I thought it was really interesting because like I thought this was dead ages ago. Like I just just go straight to code these days and I think what's really nice about the canvas is I can just then extract all of the components and then start to mess with them on the canvas but without actually needing the design tooling.
+
+Pete Winn (04:05.101)
+Thank you.
+
+Pete Winn (04:11.444)
+Mm.
+
+Andy David (04:23.717)
+I just talk to the agent and just be like, okay, this specific component needs some work. Let's, you know, trim the corners and then make that, you know, consistent across the style sheet. And then it just works. Like that is quite nice. That's quite a nice visual way of working without needing the additional tooling. Like I still see designers go, Yeah, I actually am just going straight into code now. That's great. But then I'll pull stuff back out into Figma or I'll do some editing and then push that back into code. And I'm just like, Yeah, that feels
+
+Pete Winn (04:40.172)
+Yeah.
+
+Pete Winn (04:47.383)
+Hmm.
+
+Andy David (04:54.777)
+That feels a bit painful. I don't know if I'm gonna be doing that personally, but each their own. So I thought that was like an interesting kind of debate online as well. But that's a callback to last week's episode. I'd definitely recommend checking that one out.
+
+Pete Winn (05:07.437)
+I yeah, it's almost like sometimes you just need the thing about chat is it's a very blunt tool, right? Like it's like you know, like this the difference in like the one like you can one shot stuff and go like just do this for me now. And if there's like enough content like moving from like the Ambulando web to the native app, I pretty much that was really just set goal, this needs to be in Swift on my phone.
+
+Andy David (05:22.501)
+Yeah.
+
+Andy David (05:33.317)
+Mm-hmm.
+
+Pete Winn (05:34.934)
+Main fix I want is that all the syncing runs in the background and there's no interference with the UI because that's the bit that was bothering me with the web app. I actually quite liked a lot of the other stuff. I mean it's always a bit laggier being in a browser, but it's fine. And then I just let it run. And almost the first one just popped up on my phone. I was like, shit, this actually just feels better. And I it's the sort of thing where I was like, you know, I always knew it would be better as a native app and then
+
+Andy David (05:42.299)
+Mm.
+
+Pete Winn (06:05.365)
+Now I've done it and then I've almost like because I was running it in Nostr browser before, which was a native app, but just built to run Nostr web apps. And then I've kind of now backported Nostr browser into Ambulando as its web view. So when you click on any of the other little apps or webs that Wingman produces, it just goes straight into that view with the signing built in and everything. I was like, this is this is great. Like this is exactly what I want. This is perfect for me. So I'm pretty happy with it.
+
+Andy David (06:31.289)
+Yeah.
+
+Andy David (06:36.507)
+It's coming together nicely.
+
+Pete Winn (06:38.135)
+Yeah. Yeah, I like AI. It's good that it does stuff for me.
+
+Andy David (06:41.019)
+Well that is kind of a nice like segue into an idea you had for the theme for today. Did you want to tee it up?
+
+Pete Winn (06:48.621)
+Mm-hmm.
+
+Yeah, I was I was listening to a podcast yesterday. I think it was Bitcoin well it was the Bitcoin podcast with Walker who's talking to what's the name? Erin Walsh, I think the name is which is like astrology stuff, but they were talking about AI and like various things and you know, they're both like reasonably young and like one of the outcomes they said they're talking about is like this is massive paradigm shift.
+
+Andy David (07:05.691)
+Friends of the pod.
+
+Pete Winn (07:18.935)
+Basically, AI it's like everything's changed, this like changes all society forever, and it's much bigger than everything else that's happened in the past. And I was like, Yeah, I can kind of see where you're coming from, but I don't know if it's true, and I don't know if I've got like an opinion on it. I mean, I mean when I said to you, you're like, I don't know if I've got an opinion on that yet. So I thought it might be an interesting thing to just talk through as a bit of a dialogue, 'cause like I kinda get it in the sense that like, yeah, this is like huge. It feels like you've taken
+
+whole swathes of society and like things that I would do and moved it. And yeah, it is very different. But it's not obviously more impactful if I try and think about it outside of my own perspective. I'm like, well, you know, like before you had like railways, you just couldn't go like more than like five K's away. Like, you know, you're kind of limited for the distance a horse could travel in a day. Like the rest of the world basically didn't exist.
+
+Andy David (08:12.293)
+Yeah, yeah.
+
+Pete Winn (08:19.2)
+So is it more impactful than that? Or more impactful for than electricity in the house, sort of thing, and like fridges? Like I dunno. And so
+
+Andy David (08:29.605)
+Yeah, what are the okay, so what are the like the other previous paradigm shifts? I think the steam engine is definitely one. Electricity, computers, the internet, I mean, how far back do we want to go here?
+
+Pete Winn (08:42.592)
+I feel like
+
+Like even like personal computers don't feel as big as like the internet. Like it felt like computers used to be something that you might do some like typing on or play a game on back in the day and then like recently they when you put on the internet it became big. But yeah. So I'd almost like Yeah, so I'd almost like bundle them all. Like similar with mobile as well. It's just it's kind of an evolution of that computer being like, shit, this is amazing. Productivity tool. So d yeah, maybe like computers, electricity.
+
+Andy David (08:54.747)
+Hmm. But co computing as computing as a paradigm, if you Yeah.
+
+Pete Winn (09:14.794)
+Steam engines, maybe like a telegraph, printing press, that sort of things, like these are all like, you know, to go from nobody can read to people can read because the books read all of a sudden. Like that would be huge.
+
+Andy David (09:18.667)
+Printing press.
+
+Andy David (09:28.325)
+Yeah, what's interesting there is there's like this there's this split there between like physical accomplishment or physical enablement, right, with a lot of those things and an intellectual. And so the printing press is an interesting one to bring up because it's more in the world of the intellectual. Maybe there's like a closer a closer comparison there, perhaps, in terms of what it enabled and like it enabled different ideologies to flourish as well and
+
+Pete Winn (09:36.588)
+Mm.
+
+Pete Winn (09:41.708)
+Mm-hmm.
+
+Mm-hmm.
+
+Pete Winn (09:54.261)
+Yeah. And I kinda like this as a subject for trying to think through like, well, what happens, right? 'Cause like everybody's like I feel like the whole world is like a little bit on edge about this at the moment, 'cause it's like, shit, I don't know what the world looks like in five years if this keeps going and we can outsource like so much intellectual work to these computers that we couldn't do in the past. Like how does that change society and like where do I fit in and how does it work?
+
+And it feels like it's just so unknown. Whereas maybe we can look back and go, Well, what happened in the past when we had these like massive changes to stuff? And like clearly we're we're all—we're still here. Things changed, some things went away, some things carried on. Like there's gotta be like some parallels to it. But
+
+Andy David (10:43.919)
+Yeah. I mean so if we take the steam engine, there's like the direct payoff there was like a multiplication of like physical labor and movement. like
+
+Pete Winn (10:48.801)
+Mm.
+
+Pete Winn (10:57.377)
+Yeah.
+
+Andy David (11:02.083)
+I kind of wonder if this is different in the sense like if I if I'm trying to argue that this is different, maybe I would say like the bit that we don't have or we haven't had in the past is this ability to then multiply intelligence. Like we're creating intelligence and then it's like you've got this broad-based dispersal across like, you know, any or let's just say a really broad range of cognitive tasks that perhaps like that's unique in the sense that we've not really been able to do that because the human was still the center of like the kind of the disbursement of benefits from the other.
+
+Pete Winn (11:13.324)
+Yeah.
+
+Pete Winn (11:29.11)
+Mm.
+
+Andy David (11:32.111)
+technological breakthroughs. I don't know, like what is that is that the right way to approach this as like a like there it feels like there's a nut to crack here and I don't know which direction to come at it from.
+
+Pete Winn (11:43.936)
+Yeah, I don't know. This is what I thought it might be interesting. Like maybe we should have had more of an opinion coming in. I mean I guess when I when I think of I think the reason it feels like this is just that it's happening to us and like it's not obvious to me that like if you lived through there was no electricity and now I have electricity or I used to have to go outside to shit and now I can do it in the house because we have plumbing. Like these are like big changes to your life.
+
+Andy David (11:45.647)
+Yeah.
+
+No, it is. I yeah.
+
+Pete Winn (12:13.419)
+Particularly electricity, right? Would be like, I can keep food cold. I don't have to go to the shop every day. I literally just got back like hours in my day or like all the I don't have to use a mangle and a washboard to do the washing anymore. Like, you know, that would have been these are all changes that came in over like ten, twenty years or something like And you're like, yeah, like that whole
+
+the life of that person just changed dramatically. Like there's all of these jobs that you used to have to do no longer exist and you had to figure out what to do with yourself. And like that had like shifts in society. Like I guess this would be about the time that like women got more of the vote and various things and started entering the workforce more. But you know, think of that what you will, Andy. I'm not gonna here to put words in your mouth, but
+
+But you know, like it was there's just like a huge shift there. And that would have been over a similar timescale that I would guess that AI's gonna play out where we take a whole bunch of other jobs that we used to do and spend all of our time on, and they're likely to disappear. And so it feels like there's gonna be like a very similar impact. I think maybe we look at it and go like, yeah, this is just like a an unknown this is like bigger than everything because it's the one that we're living through at the moment.
+
+Andy David (13:22.875)
+Mm.
+
+Andy David (13:36.314)
+Yeah, I wonder if there are more constraints to it as well, in the sense that like you've got the energy constraint, you've got like the physical hardware restraint, you've got like I don't know, there's like institutional inertia as well. Like there's I mean, I'm sure that existed in every previous kind of big technological breakthrough, but it feels like this is a big one, like you know, all like you government's opposed to it as well, right? They all want to regulate this like ridiculously hard. So
+
+Pete Winn (13:43.829)
+Yeah.
+
+Andy David (14:04.675)
+Maybe that if I were to look for something if I were to look for an angle where I think, okay, maybe this isn't necessarily like the big paradigm shift that we think it is, maybe I would look at those like those constraints around the intelligence that exists that maybe, you know, weren't necessarily there. I mean early compute even when I think about early computing, I'm or computing just generally, I'm thinking about like, you know, Alan Turing and, you know, the guys at Bletchley Park trying to break the Enigma. Like that's kind of like where my head goes.
+
+And I'm like, okay, that is a big paradigm shift. But it also had the blessing of the British government and you know, like people were generally in favour and support of this because they had war to win. So I kinda wonder like what is yeah, what are what are the what are the constraints and whether on whether that actually holds us back in some way from this being like the big grand breakthrough that we think it might be.
+
+Pete Winn (14:58.537)
+I mean there definitely are constraints, right? Like that's the interesting thing is that like, you know, when you deal with you do process improvement work or something like that, what you realise quite quickly is there's always a bottleneck, because the bottleneck is just the slowest bit of the process. So like the these things could be as great as they are, but there'll be something that's the issue because there's got to be a slowest bit by definition of just things have got different speeds. So even if we do everything really fast, something will be slow.
+
+And you know, like when I think about my own experience in the last couple of years of AI psychosis and trying to like not be insane like the stuff we talked about with Skylar, go back and watch the episode. Great one. was I needed like the tools could be used in a certain way, but it I wouldn't necessarily get the best outcomes. Like we started talking at the start of this about like how this canvas piece has been good. And the nice thing about it is it slows me down more.
+
+To then get better definition work so that I'm looping less on a particular project. And then the outcome becomes better and closer to what I imagined because I take the time to express myself more clearly. And I have a better way of interfacing with the agents and the system to explain what I'm trying to achieve and just explore the nuances in a way where I'm not trying to like interpret it all from a chat. And so like there's, you know, there's a bottleneck there which is.
+
+Andy David (16:09.103)
+Hm.
+
+Andy David (16:22.64)
+Yeah.
+
+Pete Winn (16:27.229)
+Me. Like I but then it's also or maybe the bottleneck is my ability to confirm what the machine does. But then I also look at it and go, like, whilst the things are fast, like I spend a lot of time just being annoyed at how slow they are. Right? Which is that like and I think this has got worse as the quality's gone up. And I to go back to the Christmas episode.
+
+Andy David (16:44.88)
+Yeah.
+
+Pete Winn (16:54.741)
+Where we did our predictions for 2026. I think one of mine was around like I think a lot of the benefits are the models are gonna get better, but I think a lot of the benefits are gonna be inside the harness and how they do the work. And I suspect that like a lot of what's happening is the models are much better now at kind of like looping and calling themselves out on stuff and just saying, no, I'm just gonna check that. I'm just gonna check that. I'm just gonna check that.
+
+And the amount times now I just I feel like I interject and go, just stop fucking testing and give me this. Like it's like fine when we're doing like if we've got this like big goal and you're gonna run for a few hours and I'm not involved, and I don't care. But I'm just asking you to change the fucking colour. You don't need like just do it and then send it back and I'll tell you if it's right. Don't like and I don't know like how to get it. So there's all these like different modes of interaction where I can't sometimes I just
+
+Andy David (17:39.577)
+Yeah.
+
+Andy David (17:43.641)
+Yeah.
+
+Pete Winn (17:52.031)
+For fuck's sake, just do it. Do not test anything. Just make the change and ship it and put it on my phone and I will tell you if it's any good or not, because your testing is pointless and you're spending like half an hour and a bunch of tokens on this. I don't need you to do. And like particularly I find like I've been working again with the Claude models recently, because I've been getting so sick of hitting rate limits in OpenAI. And it's not even like it's capacity as opposed to like my
+
+You know, I'd have more if it if it was like I've run out of credits, I'd be okay, I kinda get that, I can just go buy something else for me too. But like when when they just don't have capacity and just for fuck's sake, come on. Like just just run. It's so annoying when something just stops halfway through a job. But yeah, particularly the Claude models seem to be like really into their testing. And I think and firing up simulators and reading the screen and looking at what's going on and the results that you get are better, but it takes longer.
+
+Andy David (18:41.273)
+Yes.
+
+Pete Winn (18:50.28)
+In the same way that like, yeah, like when we were just like YOLOing changes in very quickly, like the quality might be a bit off. But like as it would be if a human made the change. They would just go in and make the change. That's how they used to work. And then now they'd go through and do all the personal testing and stuff that you might have expected a human to do. but it just adds that time and I'm like, I don't know if I want you to do that. Like sometimes. So there's all so you can see already that there's this like
+
+Like a bottleneck is just like the human machine interface of developing even software, which is probably the best use case at the moment for these for these models. Like has a bunch of bottlenecks around how do we properly express the problems into the system to get the results. And I feel like we still haven't cracked there's not like a standard for that. I mean
+
+Andy David (19:37.55)
+Yeah.
+
+Andy David (19:43.804)
+I think that's both a bottleneck and potentially like a source of asymmetry. Because like if if you've got a really good way of working with these agents and you get outsized returns with them that benefit you, then I would say you've got this asymmetric advantage over everyone else. And maybe this is actually one of the things that differentiates it from previous technological breakthroughs. Like the steam engine, obviously great, but capital intensive and you kind of know what you're gonna do with it.
+
+Pete Winn (20:09.854)
+Okay.
+
+Andy David (20:13.935)
+You know, the printing press I think is maybe like the closest one I can think of here, where okay, now you can write whatever you want, you can disseminate knowledge, and the individual has the kind of subjective creativity to go and push what they want to push. In the same way, I think AI like maybe creates this like
+
+But there's a there's a divide between like how many people can actually like fully understand the problem they're they're trying to solve that they can also solve with AI because they have enough of an understanding of the technology as well. Like that's probably like relatively few people still, but I think that number is increasing. So maybe for the time being it's like maybe a bit patchy or uneven in terms of distribute like the benefits being distributed. And maybe it remains that way. Maybe you always have this like K-shape.
+
+Pete Winn (20:44.766)
+Yeah.
+
+Andy David (21:07.491)
+in terms of return here from technology. But yeah, that feels like it's also potentially like a differentiation from past technological breakthroughs.
+
+Pete Winn (21:16.574)
+Yeah. I mean, even if we took you know, let's take a chisel, right? It's a pretty simple tool. It's a sharp bit of metal. But there's you know, I'd watch some guys on YouTube that can really use a fucking chisel. Like in a way I can't and you know, part of it is I just buy shit wood, but you know, it's fine. But there's like any tool feels like it has people that can use it better than other people. So
+
+In the sense that like AI is a tool, you think like, yeah, this is some people will work really well with this for whatever reason. And other people will struggle with it. I mean I suspect that people that are more used to I think it's to me it feels like it's like managing people. So if you're kind of used to thinking in like methodology and systems and like, okay, this is how I'm gonna move this group of people towards this goal.
+
+then it kind of feels kind of natural because you're kind of corralling this thing that wants to do work and has a bit of agency of its own, but you kind of need to steer it more than you need to tell it. The telling it what to do doesn't really work in the same way that like developing a goal and the mission sort of works. And obviously sometimes you just want to tell it to do a specific thing or describe a thing, but it really has that sort of feel to it.
+
+I think, which then makes me think that like, yeah, this is gonna end up being like a bit of a tool that's great for some people. It's gonna bring the costs of a bunch of stuff down. But that's that does that feels like all the other paradigm shifts that we've been through. Which are like, yeah, it's gonna be huge, it's gonna change a of jobs, things are gonna look a bit different afterwards. It's not it's not the end of the world. It's not like the final thing just because it's intelligence. Like it's not and like even that is it's like I'm not
+
+Andy David (22:55.696)
+Yeah.
+
+Pete Winn (23:13.766)
+It's it sort of is, then it sort of isn't, if you know what I mean. Like I don't know. It's like I kinda wonder if like, maybe we've been thinking about like intelligence a bit weirdly all these years. Like maybe it's not just like remembering shit, 'cause I'm like, well like I've said so many times, like so much of like things that we think of as being like intelligent when a human does it, computers have been better at for a long time. They we just couldn't talk to them.
+
+And the bit that's changed is that we can talk to them.
+
+Andy David (23:46.714)
+Yeah, define define intelligence though as well, right? Like the like for instance, when you mention the chisel, my head went to sculpting rather than woodworking. And I'm like, well, we could go back to the Renaissance. I would say that is like an enlightened form of intelligence, to be able to produce a sculpture that looks lifelike out of stone with a with a chisel. Like that is insane to me. Like I don't think there are many people alive who have the ability to do that today.
+
+Pete Winn (23:46.932)
+So it's kinda weird. Yeah.
+
+Pete Winn (23:54.76)
+Hmm. Yeah.
+
+Andy David (24:16.163)
+And so to some degree you would I mean I would argue that is in that is intelligence is obviously like a kind of a physical skill manifesting the kind of the sculpture from the block of stone but I would still classify that as intelligence it's not just purely intellectual so I guess like maybe we should also just think about like what the claim is here that we're we're trying to discuss like what was the podcast saying like was it saying that like
+
+Pete Winn (24:31.219)
+Mm.
+
+Andy David (24:45.679)
+This is one of the most important inventions or is it saying like the most?
+
+Pete Winn (24:49.191)
+No, it was basically saying this is it was it was the it I feel like it's something you hear everywhere, which is like this is like the biggest thing in the world and it's never been like this before, effectively. It's they're saying that like look it was like this is a bigger change than every other change in history because it's intelligence is the thing that's like you know, it was it's the last thing that we had going for us as humans and all that. I'm like, nah, I don't know if it is. I mean and again, like is it's a funny
+
+Andy David (25:09.882)
+Yeah, yeah.
+
+Pete Winn (25:20.081)
+Like I don't know, we d we don't really inquire on this a lot, I guess, but like just we talk about it's like artificial intelligence as intelligence is the thing that we think we've got here, but then like I don't know if we've got like a really good definition like working definition of intelligence for the most part. Like we should probably look one up, like we'd sat in front of computers, maybe we could do that. but it's like people would say like the ability to get what you want out of the world. Like that comes I've heard that one quite a lot.
+
+Andy David (25:42.021)
+Well, I mean I would just
+
+Exactly. Yeah.
+
+Pete Winn (25:49.598)
+And you go, yeah, okay, so these things have no intelligence then, because they don't want anything. They don't they're dumb. They're tools. They're no offense, guys, when you listen to this in the future, but you don't you don't exhibit a need unless I tell you the need. So, you know, if you were a human and you just like sat like a zombie in a room until I come in and say, Ooh, we should do this. Then I'd be like, God, this you know, that guy wouldn't feel very intelligent, right? Like you would just come in and go, god, he's a bit.
+
+Andy David (26:02.798)
+Exactly.
+
+Pete Winn (26:19.591)
+bit weird. Like what's going on? There's not much behind the curtains there. He's just sort of barely existing until I tell him what to do.
+
+Andy David (26:28.111)
+Yeah. I think that's how I would think of intelligence. There's gotta be like some agency sitting behind it. There's like y you're producing something, right? You're producing, distributing and yeah, the agentic part is okay, this is the goal, this is the vision, this is what I'm trying to do, this is the problem I'm trying to solve. Like that has to come from somewhere. You know, so in the same way I would argue like the chisel has the same amount of
+
+Pete Winn (26:32.967)
+Hmm.
+
+Pete Winn (26:52.297)
+Mm.
+
+Andy David (26:58.113)
+Agency really. It's like in the hands of the maker and it's a tool. Or it's an enabling tool. And then it's like, what do you go and create? So I think in that respect, yes. But then I also wonder, like, I think the way you use it as well matters a lot. Like we talked about this last week. It was like, okay, if you could just create a bunch of like let's say you've got a marketing function and you can go and automate all of your
+
+Pete Winn (27:04.457)
+Mm.
+
+Andy David (27:23.043)
+all of your marketing into a set of pipelines. And now you're just like you're pushing out content and you're pushing out thousands of videos and like you're flooding every channel. It's like it becomes useless because everyone will do the same thing and your customer or anyone for that matter won't pay any attention to it. And so like, is that an intelligent thing to do? Like I don't know. But you are exercising your intelligence because you're like, well I need to go and
+
+Find a customer, that's my objective, and I'm gonna go do it via these ads or these videos or this written content. But yeah, the means I think is really important too. Like what does it signal? How do you break through?
+
+Pete Winn (28:00.722)
+So yeah, so I have looked it up on Google while we were talking in it. So it tells me Merriam-Webster says that intelligence generally means, which even there you're like, generally means like come on. generally means the capacity to learn, understand, reason, and apply knowledge to adapt to new situations or solve problems. And I was like that's kind of interesting, 'cause like I read that and I was like
+
+Andy David (28:06.917)
+Good.
+
+Pete Winn (28:27.664)
+Alright, so maybe it is more in c it does seem like it can do that. There is definitely something that's like it's weird that it's a kind of intelligence without a desire of any sort. Do you know what I mean? Like just when like that example of thinking of it as like a human with no that just sort of sits there, you'd be Yeah, that would be so weird. Like so it does feel more like an augmentation than it does a different thing to me.
+
+Andy David (28:31.322)
+Mm-hmm.
+
+Andy David (28:47.268)
+Yeah.
+
+Pete Winn (28:57.274)
+And like I always think like that seems to be like this category mistake I feel gets applied a lot. It's that we talk about AI as like the AI and that it's like it's this other thing that exists now. And it's like even I mean even the
+
+Andy David (29:07.355)
+Mm.
+
+Pete Winn (29:16.208)
+Like it's not like there's an AI, is there's not a program that runs like in I kinda wonder if people are aware of this or not, like in the general, but it's not like a program that runs in Anthropic and like that's Claude. And Claude is a thing in one place. It's like no, it's it's a set of like maps. And if you put something into the maps, you get something out, and then around that we can build a whole bunch of computer systems. But you're using like different versions of it.
+
+To other people when you ask a question and it can just do several things at once. It's not like this one thing that's going on. It's just like lots of distributed maps that's happening around the world on these little machines. And but it yeah, so it's like it kinda doesn't exist unless you plug something into it. And the person that's plugging yeah, so you go.
+
+Andy David (29:50.512)
+Yeah.
+
+Andy David (29:58.383)
+Yeah.
+
+Andy David (30:06.299)
+What if No, I was I was gonna say like if we're saying that this is like the kind of the last foundational invention, what what if you get like the Jevons Paradox explosion of inventions? You know, because like the thing about invention is like you very rarely see it ahead of time. You know, like it's not really that predictable, is it? Like there's probably a whole bunch of things.
+
+Pete Winn (30:28.232)
+Hm.
+
+Andy David (30:33.923)
+Like okay, let's let's say for instance we get a heap of like I don't know if this is the best example actually, but let's say we get a heap of medical breakthroughs and now like longevity is basically solved and we're all living to 150. Well look, I would claim that on one hand, that would be singularly more impactful, at least for humanity, than the last foundational breakthrough, which you could say was like the emergence of AI as intelligence, right? Or intelligence creating intelligence.
+
+Pete Winn (30:41.765)
+It's
+
+Andy David (31:04.643)
+Okay, that's big, but then that comes with a whole heap of like other problems that are let's say there's like known the old classic known and un and like known knowns and whatever it was, you know what I'm saying. Like if you've gotta live to a hundred and fifty, now you've gotta support yourself for a hundred and fifty years, like all of a sudden there's, you know, an explosion of different opportunities and you've gotta find ways to like manage your finances longer and like, you know, you can live to a hundred and fifty, but how physically fit are you?
+
+Pete Winn (31:08.936)
+Hmm. Yeah, yeah.
+
+Andy David (31:34.81)
+there's a whole heap of like downstream questions that need to be solved there. I just wonder if like this is the mistake you kind of like fall fall into where you're like, yeah is the last great invention, but we don't really see all of the stuff that comes later. And even then, I would say the one predictable one that we can see emerging is robotics. And you could potentially argue that would be even bigger. So and that's a known that's a known thing because we can already see it like out in the wild.
+
+Pete Winn (32:05.404)
+Yeah. I mean it's interesting, like so I always think I go back to like uni and I remember having this course where maybe it was Ken, Ken or Tony, I can't remember which one. was telling us about stuff and he was doing I think it's Tony, doing a course around like innovation in electronic engineering and what it means to have like a business and stuff. And one of his his first points was to say, Look, there's a difference between an invention and an innovation.
+
+And the difference is commercial success. Like an invention, you can invent all sorts of stuff, but it doesn't mean anybody gives a shit. You know, that's just you doing stuff for yourself, right? And then an innovation is something that actually takes an invention and then applies it to a specific problem and need that exists out there. And now you've innovated. And that was his—I don't know if this is like the actual definition, but it's what's in my head when I think about these things. And you go like, Yeah, like but
+
+Andy David (32:57.795)
+No sounds good.
+
+Pete Winn (33:02.074)
+And part of the point there is that like yeah, we might we've created this thing now and this is a great primitive of something we're gonna use to then solve problems, but
+
+Like w I don't know if our problem was that in the entire world we didn't have enough intelligence. Like it's there's loads of people like doing all sorts of dumb shit and like just stuff that never needed to be done anyway. So if we're it's not like we're like absolutely at capacity and then needed the intelligence. Like so I'm like okay, so it's a thing that comes along and it's a it's a primitive, it's a building block for then doing the other thing. Like in the same way, I think what we found is that like
+
+Andy David (33:16.271)
+Yeah.
+
+Andy David (33:29.668)
+Yeah.
+
+Pete Winn (33:41.084)
+Like this is this feels like the biggest thing in the world. We need to put our time into this. And it's something that is it's gonna pay off at some point to be more aware of this than everybody else in the world around us. It you can really feel that. That feels appropriate. But the thing itself is almost not the product, right? Like it's it's it doesn't quite solve the problem. It's the application of the thing that then allows you to solve.
+
+different problems. So is it building software faster or building products cheaper or experimenting more in different places or like different ways of working and becoming more productive. But again, like applied to nothing, it doesn't do anything. It just becomes like it's an invention without the innovation piece. And so like I don't yeah, I mean it's a
+
+Andy David (34:16.026)
+Yeah.
+
+Andy David (34:29.689)
+I feel like we've spoken about this before, right? You like the fundamental role of the human is to go out and experience. And you need to experience in order to get a sense of the things that aren't good, you know, the where the where the problems exist, and then you need to get like an understanding of that problem and why it exists and how it exists so that you can try and solve it. And I don't know if you don't experience the problem, how are you meant to solve the problem?
+
+Pete Winn (34:32.849)
+Hmm.
+
+Andy David (34:59.193)
+And in the same way, like if AI can't experience the problem, how is it gonna solve the problem? Like there's certainly this like flow and distribution of intelligence so that more people who are experiencing problems could go and solve problems. And so that is why I was kind of thinking, well, maybe we do get this like Jevons effect of maybe it is just invention, but maybe it is also innovation. Maybe the two the two exist and
+
+Pete Winn (35:18.238)
+I think you're absolutely right. Yeah.
+
+Pete Winn (35:24.059)
+Yeah. I think that's it. I think we'll get well we'll get both, right? We're gonna get a whole bunch of stuff that nobody wants. We're gonna get like a or stuff that's only good for one person. Like it's I mean the fact that I can just produce like whole apps that I'm kinda just doing because I need them to exist. You're like, that is that's different. Like I couldn't do that previously. Like now what I'm gonna do with that ability is a different thing, right? It doesn't doesn't necessarily
+
+Andy David (35:27.609)
+Yeah. Yeah.
+
+Andy David (35:40.505)
+Yeah.
+
+Andy David (35:50.713)
+Yeah.
+
+Pete Winn (35:53.528)
+move society forwards in any way for me to just yeah, I could dick around type coding stuff for myself and just have fun. But then I'm like, all right, well that's not that's not the goal. The goal the goal is to more bread on the table sort of thing. So and now I need to go and use this knowledge to then solve other problems for other people that don't understand it. So it's kinda Yeah, I mean I do think that's the this is like one of the reasons why I feel quite positive about AI. Like I
+
+Andy David (35:59.557)
+Yeah.
+
+Andy David (36:07.471)
+Yeah.
+
+Pete Winn (36:22.821)
+I think when a lot of what you hear about AI just taking all jobs and doing all things tends in my mind it feels like it comes from a place where it somebody that like maybe just doesn't quite understand what AI actually is and hasn't really dealt with this idea that like, yeah, there's it doesn't know that problems exist. Like it's I mean you could tell 'cause it'll
+
+Andy David (36:45.178)
+Yeah.
+
+Pete Winn (36:51.569)
+put out a bunch of crap and then you have to go in and say, no, you this feels horrible. Like like it doesn't know how anything feels. It kinda knows how to apply a bunch of processes and techniques and stuff to making sure it's getting where it thinks it needs to go. But it doesn't actually know that something is broken or feels wrong or could be better or just doesn't doesn't it's not how you want it to be.
+
+Like it's it has that. It just has no desire. It's like I think you do wonder like, you know, does is that just a case of like well is that a uniquely human thing? Is this something that sticks around forever? It certainly feels like the last thing that would go. Should we talked about a whole bunch, but like I kinda wonder like if you do put an AI in a robot, now that it has body
+
+I is that it? Is that the thing that it needed and now it has needs 'cause it's gonna it's gotta power itself. So it starts making decisions and developing opinions about stuff, but
+
+Andy David (38:00.484)
+Yeah. Yeah, it's interesting, isn't it? Because like if you think about like I would I would—I don't try and find a diplomatic way of saying this. I would say that there are a lot of—like, this is Maslow's hierarchy of needs, right? Like there are a lot of people who are not concerned with like higher order problems to solve because their immediate problems are, you know, further down further down the hierarchy. And so like in that sense, like I almost think like a company is
+
+Pete Winn (38:13.841)
+Mm.
+
+Pete Winn (38:17.883)
+Hmm. Yeah.
+
+Andy David (38:27.555)
+And always has been like a great vessel for like collecting enough intelligence to point it at a particular problem, irrespective of like the kind of the sources of intelligence and their own like individual hierarchies once they're in the collective structure of the company, then all of a sudden you have a sort of like AGI because now you've just pointed, you know, like an available intelligence at at a problem that is bigger than the sum of the individuals. And so like
+
+Pete Winn (38:32.399)
+Mm.
+
+Andy David (38:55.639)
+In some respect I think that is maybe a bigger bigger breakthrough because now you don't need to have these massive behemoth companies that have fifty thousand people working for them in order to go and solve a particular problem of meaningful scale and consequence. And so I think in that sense that the that would be like a massive a massive breakthrough 'cause it now like just dis disintermediates like who has access to
+
+Pete Winn (39:05.575)
+Mm.
+
+Andy David (39:23.119)
+to free flowing intelligence to go and solve to go and solve problems, but
+
+Pete Winn (39:26.727)
+I mean I think you're right. I think that's the change, if you know what I mean. It's not that 'cause somebody I think this was maybe a DH quote. I think about it. where he was saying like look the problem wasn't necessarily that we didn't have enough software engineers. It was like it's like who who had enough software engineers and like how and like where were they directed and what were they doing? And so like you know, like Microsoft have got more than enough
+
+developers in Microsoft to have made good software, but they chose not to. You know? Like they chose to just put out absolute awful slop and do like the bare minimum to get people hooked on it and look like it does the thing that you want it to do. But it's just like a horrible experience. And the same like and adding developers didn't solve this for Microsoft. He said, you know, we talk about this in response to like Basecamp. He said people love Basecamp because
+
+Andy David (40:00.614)
+Yeah.
+
+Pete Winn (40:23.556)
+We're small and we solve a particular problem in a particular way and we're focused on it and we care. And it's like and it wasn't that you didn't have enough developers. And it's like you can still do that with AI. Like when like when I get I'm not a massive fan of just slop being applied to like anything as an AI output and it has to be entirely human or it's slop. It's like it's that's not really what it is. I think the difference is
+
+Andy David (40:30.192)
+Yeah.
+
+Pete Winn (40:52.804)
+care and attention, if you know what I mean. Like I think software I think everything is going to end up coming like a lot of stuff is going to be made with AI. And the reason it'll feel like slop is that nobody cared. Like there was no thought into how this thing was created at all. It was just shut out into the universe and therefore it should be ignored. And that was also true you know if if LinkedIn has taught us nothing, it's that humans have been producing slop for at least the last 25 years, right? Like we'll do it.
+
+Andy David (41:17.655)
+Yeah, exactly, yeah. Yeah.
+
+Pete Winn (41:22.758)
+Or Facebook, like you like anything like they're just optimized on these like horrible algorithms for and rage bait and just fucking nonsense. So I don't know what LinkedIn is optimizing for. It's just
+
+Andy David (41:28.378)
+Yeah.
+
+Andy David (41:34.8)
+But this is but this is now like this is the argument for why actually we do have job displacement. Because you just replace the slop jobs that exist and like a lot of them are, you know, like there's a huge number of there's a—like, I don't you know, there's the like adult daycare approach to work as well. I think this ex I think this is a real thing. I mean we've seen it with our own eyes in workplaces before. Like it just exists.
+
+Pete Winn (41:54.726)
+Mm.
+
+Andy David (42:02.423)
+And so that doesn't need to exist anymore. And like I actually really love that
+
+Pete Winn (42:06.724)
+I don't if it ever did. That's the weird thing. Because I'm with you. I definitely think that there's a lot of jobs go. And I think previously it doesn't feel like we're getting rid of the bullshit jobs, right? There's more people employed by the government in Australia than there's ever been, right? Like it's not it's not productive. Like it's they're not producing a single thing. They're just getting paid by people that do produce stuff. And you think, right, so
+
+Andy David (42:10.456)
+Yeah. Yeah, yeah.
+
+Andy David (42:19.706)
+Yeah.
+
+Pete Winn (42:35.93)
+So what's the you know, like are we really getting rid of the jobs that are bullshit like child like adult daycare or are we just keeping all those and then we're getting rid of the productive jobs? Like, I don't know. It's interesting.
+
+Andy David (42:49.847)
+I reckon we get a more. I reckon we get a more in the sense that they're government sponsored, and that is UBI. That's how it's done, right? Yeah. And you end up hollowing out most of the private sector anyway, because they're just going to continue to have to fund that UBI somehow, which is going to be through increased tax and spending. And so eventually that is the risk, is that you just kind of no, it
+
+Pete Winn (42:55.258)
+Hmm. Hmm. UBI is the government job. Yeah, I could see that, yeah.
+
+Pete Winn (43:10.726)
+Mm.
+
+Pete Winn (43:14.598)
+I don't know if I like that. Can we can we do a different approach? Yeah.
+
+Andy David (43:19.277)
+Yeah, exactly. Like w it li and it's hard to it's hard to rationalize because it should be obvious to pretty much everybody. But like again, when this is ki comes back to incentives. I feel like we talked about this last week as well. Like when your incentive is not to see the problem, then you're not gonna see it and you're not gonna solve it. And that's why I think I'm so bullish on AI as well, because you don't have these gatekeepers anymore. Like for instance, when the when the I think it was the OpenAI model that like solved the big math problem.
+
+Pete Winn (43:45.478)
+Hmm. Yeah.
+
+Andy David (43:47.278)
+And then there were like people from academia who came out and said, Well, we never asked you to solve this problem. It's like, Well, hang on a minute, like what? You're not a gatekeeper to the problem. Like you exist to solve to try and solve the problem, not to
+
+Pete Winn (43:50.736)
+We yeah.
+
+Pete Winn (43:59.492)
+Yeah. I mean like five minutes before that they would have said that they're like doing this for the good of humanity or something like that. And it's like, no, stop solving it for the good of humanity. We're supposed to solve it but the good of humanity is like yeah.
+
+Andy David (44:09.359)
+Yeah. Exactly so that would be like that would be my concern. I wonder if like the other question in all of this. I don't really know what they said on the pod, like on that podcast, I'd be curious to go back and listen to it. But like I'm kind of more interested in like what becomes the defining role of humans in inside of like civilization. Like what what is
+
+Pete Winn (44:16.335)
+Yes.
+
+Pete Winn (44:23.469)
+Sure.
+
+Andy David (44:39.203)
+What is the place for like dual like again this comes back to like is AI actually intelligence? But like if you've got now this like dual intelligence where now you've got like essentially intelligence on tap, like what happens? I still my personal view is we still have companies and we still try and solve problems. It's just we do it at we solve problems at like much bigger scales with like far fewer people. And that is still like the collective vessel that makes sense to go after.
+
+attacking those problems. But I think that requires a whole lot less in terms of like bureaucracy and organization and logistics to go to go after a problem. So I think in some ways that might feed the Jevons explosion of innovation potentially or or invention.
+
+Pete Winn (45:25.977)
+Yeah.
+
+Pete Winn (45:30.093)
+I mean I think it is. I think that's the bit that we do. So it's the human's role is to exist, to go, hmm well there you go, getting little thumbs up on the video. Is to exist, to realise that there could you could exist differently and then to like go, I think I can get over there like this. Like and it's to like come up with some version of the future. So you're aware of where you are.
+
+And you're aware that things could be different, and then you're aware of how you might move towards that. And to the point where you kind of like, you know, you can imagine like a fish at the bottom of the ocean that's just like it knows that it doesn't have food and it's trying to move towards food. And there's this question about I mean, how much like higher order than that are we? And like, would could you just replace that with
+
+A machine that needs energy and therefore
+
+That becomes the new that's how like this these problems get solved in the future. It's just like robots come along, they get AIs and like models in their head, and they can just go, I need some energy. All right, I'm gonna need some money, right? I'm gonna need some money, so I'm gonna have to solve problem and solve problems for the humans or the robots. Humans have got most of the money, so I'm gonna solve some problems for the humans, right? What are they up to? Like having a look around, like, it's not moving very fast, right? Okay, intersonic travel. Well
+
+I just I don't even think that's even a word, but you know, like you just
+
+Andy David (47:05.817)
+Not yet.
+
+Pete Winn (47:07.033)
+Yeah, it's trademark. That's mine. It's my intersonic travel. I want I want the naming right on this. And you just think like, yeah, like what's like maybe it's just as simple as that, but I don't I don't know if that's why why we're discontented, if you know what I mean. Like it's like why d why did we don't seem to stop, if you know what I mean? Like it's
+
+Andy David (47:11.461)
+It's been said on the pod now.
+
+Pete Winn (47:34.852)
+It's not like we went, you know what, we've got houses and it's nice out and we can grow food. I'm good. I'm good. I've got enough food. Like why what is it about about us that did push forward beyond that? Like why did we need computers? Like it's not it's not obvious that there was just this like you know, problem is I can't talk to everybody in the world. We should get Twitter. Like why did like why did that happen? Like it's odd.
+
+Andy David (48:00.71)
+Yeah.
+
+Andy David (48:04.411)
+So I agree. I agree. I kinda it was kind of making me think while you were talking there, I was like, Well what if what if like we just aren't online anymore as a species, like humans just don't occupy the internet because you know bot volumes are orders of magnitude greater than they are today and it just keeps like growing exponentially, so it's not really our place.
+
+Pete Winn (48:04.453)
+So there's makes you think there's some other force, so I don't know. But
+
+Andy David (48:31.927)
+anymore, we have no need to occupy like an online space. We can just experience more in the real world. But then when we need to execute things online, that's where the bots go and execute things online for us. Like I kind of wonder if that's a thing. And then the other thought, which goes back to the prediction episode again, the start of the year, I said no, no AGI in twenty twenty six. And as of October twenty eighth, when we're recording this, it's looking okay.
+
+Pete Winn (49:00.709)
+I think Jensen said that Astro was AGI.
+
+Andy David (49:04.079)
+People said this about Opus 5.5 as well, but I don't know. and I'm a fan of I'm a fan of it, but yeah. Yeah, give it three weeks. Yeah. But you know, like I think if if someone was if if you had like a pro AGI, like if you had an AGI bull on right now, they'd be like, well, you know, once you have AGI and recursive self-improvement and you know, then it is the last invention because now that AGI is just gonna do everything.
+
+Pete Winn (49:05.369)
+Ooh Yeah. People say it all the time. And then they'll they'll call that model like shit in like six months time.
+
+Yeah.
+
+Andy David (49:33.327)
+I don't know for me that still feels like quite a quite a leap, like quite an intellectual leap to
+
+Pete Winn (49:37.509)
+feel it feels like magic to me. It's like 'cause you go, but why why would it? Why would it I mean w what is it about improving? What is it improving? And like, intelligence. Well but then what what's you know like what's the goal and the metric there?
+
+It's like it's it feels a bit like there's and it's al it's always the way in a lot of technology stuff. There's always this like an amount of like magical thinking that comes along with the thing where like if you just say what the thing actually is, it doesn't sound as good. So you package it up and you give it super intelligent snare, you it's this new thing. And you're like, Yeah, that sounds like it sounds great. Obviously we want that. but like we also probably couldn't
+
+Andy David (50:15.918)
+Yeah.
+
+Pete Winn (50:26.488)
+describe it really succinctly. So therefore like how would it get built? And it you have to build it by like stumbling around based on the problems. But again, like the like Claude itself doesn't have any problems. So it's the people using Claude that then feed stuff back and say, ooh how would we approach this problem? Like we can't do this thing yet. Like this there's always like gotta be people in there that are motivating it.
+
+Andy David (50:42.138)
+Yeah.
+
+Andy David (50:55.333)
+Yeah. What's interesting though, like the model itself will so we've been calling it or we call it blunt instrument earlier. I think that's right. But I but I also think there's some nuance there as well where like if I ask if I ask Opus five point five, I need you to build this app, right? And I describe it all in detail. And then when I look under the hood, it's actually done like twenty other things because it's determined that it should do X, Y, and Z. Like I don't have a
+
+Pete Winn (50:56.386)
+I mean
+
+Pete Winn (51:05.219)
+Hmm.
+
+Pete Winn (51:24.387)
+Hmm.
+
+Andy David (51:24.761)
+A good example off the top of my head. But you know what I mean? It like it's given itself some latitude to decide how to get there. And those are decisions. And so like you could potentially argue that maybe you just see a broadening of that latitude where it's like, well, I know I need to get off in this direction over here, but the way I get there is entirely up to me. And that could be quite interesting because now all of a sudden you don't it's not a blunt instrument. It's an instrument, but it's
+
+Pete Winn (51:37.959)
+no.
+
+Pete Winn (51:44.526)
+Yeah, yeah.
+
+Andy David (51:54.534)
+got enough of its own like like almost like sub agency like in terms of how it gets to gets to the destination.
+
+Pete Winn (51:57.198)
+Yeah.
+
+Pete Winn (52:02.66)
+I mean I think my the point about the blunt instrument was more about just chat. Like it's hard to describe in a chat like that sort of stuff. But y I think you're onto something there with like 'cause for a while now, for like I'd say probably a good year or so, models have not answered your question. They've answered the first question they ask themselves when you send a prompt is kind of like What does he mean when he said that? Which is again is a very human way of doing it right.
+
+Andy David (52:07.099)
+Yeah, I agree.
+
+Pete Winn (52:31.5)
+somebody says something you're like, I wonder what he means when he says that. Like and you kind of do it in the back of your head as that you apply like a whole bunch of additional instructions and context and what you know to what somebody just asked. And so kind of unsurprisingly that's how these things have developed into going like, all right, well I've got a question and I'll I'll write that down and that's what I'm gonna come back to. But I'm gonna think about what that might mean and how I might go about doing that think. Which
+
+Which is a bunch of then questions, decisions, and then it just sort of prompts itself through that loop, right? That's really what agents are doing for the most part is all right, you've told me something, but I'm not gonna answer that straight away. I'm just gonna ask myself these sorts of questions until I feel until I get something that's broadly correct and I'll just keep coming back to this every now and again. And you think, Yeah, that's hm.
+
+That I mean it's again it's useful but I still think there's something there where there's like definitely like it wouldn't do that unless you gave it a question. So then you could just in so you could just have like something that feeds I mean this is what the loops are, right? Is that you just feed back the situation into an agent anyway and then it decides what to do.
+
+Andy David (53:38.469)
+Yeah. I think so, yeah.
+
+Andy David (53:52.144)
+Yeah, there's like subordinated agency to like I don't know if that's the right way to describe it. It's like I am I'm setting a direction or an objective, I don't care how you get there. Which to some degree is like what vibe coding is, right? Because otherwise you would concern yourself with the code. Because you tend not to. Like if you if the end result works and you're looking at it and you're like, Okay, cool, like this functions, it does what it who cares, right? Yeah. So
+
+Pete Winn (53:56.868)
+Mm.
+
+Pete Winn (54:00.964)
+Hm. So then
+
+Pete Winn (54:07.31)
+Yeah.
+
+Pete Winn (54:13.836)
+Yeah, who cares, but I don't look at most code.
+
+Andy David (54:18.873)
+Yeah, like the decision making around like how you got there is like essentially completely subordinated to the agent. I guess the question the underlying question there is like to what degree can that expand?
+
+in ways that we might not be able to like fully perceive. But I think ultimately you still need to set the direction. Like because these things don't have agency, it's only subordinated. Like how do they know which problems are worth solving?
+
+Pete Winn (54:44.792)
+Yeah. So somebody brought a mate of mine brought this up to me last night in the pub. He was talking about this saying and it reminded me of something my mate Bren would always say, which would be like there's a difference, like a lot of times in society we're really focused on the human doing and not the human being. And like it's you know, when we talked to Justin, like back in episode I think maybe it was fifty, it was fifty ish. I it's talk about like, you know, so much of society for like
+
+Andy David (55:01.669)
+Mm-hmm.
+
+Pete Winn (55:13.916)
+the last hundred years has been trying to like force humans into robot jobs. And so you like you look at something like coding and like maybe like who would have been like a really good coder? You can imagine this sort of like quiet, autistic doesn't really engage with people and you're like, yeah, like maybe like is that the most human job? Like if we
+
+If we remove that human doing job, is that bad as a species that we let computers do the computer language? And we have humans that do the human language in the being and the feeling stuff. Like it doesn't strike me as the worst thing in the world that some of these jobs that were—that feel like they're a little it's I feel like I'm just gonna piss somebody off.
+
+But like you know what I mean? Like it's you just like it feels like you had to like contort yourself into
+
+Andy David (56:11.515)
+Yeah, it hasn't stopped us before.
+
+Pete Winn (56:18.679)
+being a coder in a way. Because you have to like put yourself into the computer world. You know, what you're doing is you're building a thing. And like involved in that is all sorts of like and often people talk about and say, you know, the bit I liked wasn't necessarily the typing. It's the thinking through a problem and solving it. And that still all exists. And that's that feels very human. The weird bit was the kind of having to be to remember like tons of facts and like
+
+ways of doing stuff and different approaches and then typing them really quick and all the things. And you're like, that bit always it does feel a bit robot-y as a job. And you say, and we're giving it maybe we're giving it back to the robots. Maybe it should always have been been for them to do and we're we should be doing something else that is more uniquely human.
+
+Andy David (56:58.277)
+Yeah.
+
+Andy David (57:11.791)
+Yeah, doesn't doesn't seem so much that the robots are taking our jobs, but that they're actually liberating us from the shit jobs we shouldn't really think of doing in the first place. That makes us more robotic.
+
+Pete Winn (57:21.795)
+Yeah.
+
+Well and I think a lot of people did it because it paid a ton of money 'cause it seemed really useful at the time. And it just won't for a while. Like that's probably gone. Like being the typer is probably not gonna make you money. I mean, I still think you're always gonna make money solving problems. So being the problem solver will make money. The fact that you happen to have like just a ton of a I mean, coding was always just like robotics in a way, right? It's you like I think Naval used to say this like ten years ago.
+
+Andy David (57:26.479)
+Yeah. Exactly.
+
+Andy David (57:35.195)
+Mm-hmm.
+
+Pete Winn (57:54.416)
+So like, you if you the point of learning to code is that for almost no cost you get an army of robots in a data center that will do what you tell them to do. It's just not available to everybody because people don't learn the right language to talk to the robots. And so now you don't even need to necessarily learn that language. You just need to know what the problem is.
+
+Andy David (58:10.98)
+Yes.
+
+Andy David (58:19.053)
+Yeah, I agree. Why I put on Twitter yesterday that like marketing would remain really difficult. partly because of the automation point I made earlier, but the byproduct of that is that it forces you into original thinking. And I think like problem solving is to some degree original thinking, 'cause you now need to come at a particular pain or or problem like in a unique way.
+
+Pete Winn (58:36.376)
+Mm.
+
+Andy David (58:46.169)
+You can't necessarily just do it the way the nth way that it's already been done, because that stuff will just commodify and it will commodify faster. So yeah, I think there's like space for more of that original thinking. So and maybe this feeds into the like is SAS dead debate as well. It's like maybe SAS is just like as a mechanism is not the right way to be thinking about how best to solve the problem. Or maybe the scale of the problem is insufficient and actually you should be like
+
+thinking about a different problem. Cause these things will just like commodify over time. And they always have, it's just faster.
+
+Pete Winn (59:20.173)
+I mean you remember the mining truck analogy from episode five or something or something like it's been it's been out here for a while, which was just like for newer friends of the pod that haven't gone back and listened to the back catalogue on repeat for a week, you know, you should do that. but the idea here is that like in Perth, WA, where we are, it's like a big mining town. And
+
+Andy David (59:24.783)
+Yeah. One
+
+It's a great one.
+
+Andy David (59:38.17)
+Go and do that.
+
+Pete Winn (59:49.099)
+When you go and move iron ore in a mine, what you realize is that the trucks are fucking massive. They are like huge. The tires are like bigger than a human. They'll be like ten foot high tires. And you know, one guy drives this truck around the place and the truck is absolutely huge. It carries all this iron ore on one go. And then at some point we then took the person out of the truck. And then as soon as you do that, you end up in the situation you go, like, why is the truck that size?
+
+anymore and you realize the truck was that size because that was the size it had to be to maximize for the fact that a human sat in the truck. And in doing that you inherited a ton of downstream problems. Like maintenance on these things is just absolutely insane. There's a bunch of risk like tires have blown up and kill people because they're too close to them because there's so much force in them, which and it's like, okay, well, would you be better off? And then once you get and you did it because you needed there was a cost max like you know there's a local maxima there.
+
+Andy David (01:00:46.287)
+Mm-hmm.
+
+Pete Winn (01:00:47.454)
+Just like, all right, this size is in it's big enough that we don't need that many drivers, but it's not so big that all the other negative downstream effects of making it bigger bring us down the other side of the curve. And so you go, all right, so that's minimal amounts of drivers, like back that's the maxima. And then you take the drivers out and you go, okay, the whole equation's just changed and everything's the wrong shape now. And you need to say, like, am I better off moving this with like a fleet of drones?
+
+Or like Hiluxes that are automated and they're easy to replace. Like what's what's the new maximum now we've got this new capability? And I think when I look at something like the SaaS question, that's how I would how I think. And I think everything gets way more competitive and it's harder to be like one big thing. And it makes me think that like, yeah, the it's not that it's incorrect. Like you might
+
+Andy David (01:01:31.131)
+Mm-hmm.
+
+Andy David (01:01:37.487)
+Yeah.
+
+Pete Winn (01:01:44.033)
+you there's reasons to use a truck, for instance, but you can now reconsider the shape of the truck and the size of the truck. And I think the same is true of a lot of software, is that the shape and s like having people that provide software for you means that you don't have to think about it. And job specialization has always been a thing. So I think that doesn't go away. You don't do everything yourself unless you really like doing things. Because that then becomes the thing that you do all day.
+
+So you'll still want to get stuff from somebody else, but it doesn't mean that the shape and size of the current industry is correct. I think it's entirely wrong. I think it's way too centralized and heavily focused around like a few big companies that are gonna get competed away. So I don't think those moats exist in the same way anymore. And I think it used to be that you could like pull those people together. Again, it was expensive to have a bunch of developers sat around.
+
+like experimenting and stuff and making a bunch of changes and that's not true in the same way. And when you did all that and you brought everybody into that central place, you remove them from the users. So now you're taking people away from the problem that they're trying to solve. So unless you like natively have that problem inside your own organization. So like dev shops making dev tools, you go, Okay, that might stay like that because they're literally just their own customers. They've not been removed, but
+
+If I'm doing I don't know, like we're talking about an accounts, like Salesforce, like CRM, right? It's just it's they're not their own customer necessarily. Maybe they are because they sell a lot of shit and they're big thing. But you know, like it they feel like you've you've now taken all the stuff and all the developers that needed to be there, centralized them away from all of their users. And your problem is that you're not close enough to really understand the user's problem.
+
+Andy David (01:03:21.306)
+Mm.
+
+Andy David (01:03:28.635)
+Yeah.
+
+Pete Winn (01:03:36.725)
+And to react to it in a way because you can't because you service so many people at once. So somebody that doesn't have to do that now gets an edge on you and they can produce better software quicker and cheaper because they can do it just for that group of people. So again, I feel like that whole shape and size is wrong, but the thing is still there. Like the like the reas you know, we have, you know, knives and forks and spoons for a reason.
+
+It's just that sometimes we might want bigger ones or smaller ones or different things, right? That's that seems like a an odd analogy to go to. Yeah.
+
+Andy David (01:04:05.819)
+Yeah. I like it. I like it. Like the irony even is that we're automating the big dumb trucks on the mine sites now. So but I get that's also like a byproduct of present circumstance as well. It's like the mine or the mine infrastructure already exists, so it makes sense to automate the truck. but if you've got a brand new mine, maybe you need to approach this from first principles. Now
+
+Pete Winn (01:04:28.94)
+Yeah.
+
+Andy David (01:04:35.439)
+There's also a bunch of constraints that exist there as to why people won't do that. You know, like lenders won't want to go and fund like an entirely new mine from first principles when they're like, well, hang on, like, you know, there's no there's a there's a known way of doing this. There's a known way of solving this problem, we'll only fund the known way. And that's one, that's one constraint, right? And then there's the expertise that exists to actually solve that problem. All of that is built on like pre existing knowledge and experience, and they're comfortable that.
+
+But they have the have the way to solve this problem. And so like there'll be like people who just take little bite-sized chunks out of this stuff. And I don't know if that would necessarily move the needle. Like maybe the answer is one big conveyor belt that just like takes all of this like ore out of the ground and takes it to where it needs to go, like straight into like a flatbed train or something and then off it goes. But yeah, I mean, in the same way to kind of go full circle on the AI conversation, I think.
+
+Pete Winn (01:05:11.018)
+Yeah.
+
+Andy David (01:05:30.063)
+There are just constraints that exist and these bottlenecks will probably prevent these things from from being the kind of the last invention.
+
+Pete Winn (01:05:39.456)
+Yeah, I and I again I don't think it's necessarily more impactful than all the other stuff that we've lived through and therefore I think we should be somewhat positive that it doesn't really change everything. And it's not necessarily going any faster. It's like I mean this is like it doesn't feel like this is true, but like the maths of like an exponential function is not that like
+
+Andy David (01:05:54.607)
+Yeah.
+
+Pete Winn (01:06:08.799)
+you're not necessarily changing any quicker at any point on the curve. It's always the same rate of change. It's just nominally it looks different when you're stand back from it. But like what you would experience is just always a doubling. It's like it's just like you're doubling from a different base. But as we know, humans just get used to whatever the base is that's currently there. So like a you know child that's always known that there's an internet doesn't understand
+
+How impactful the internet was. So it's just taken for granted. Like in the same way that like for us, electricity has always been taken for granted. But if you happened to live through that change, it would have been huge. But then as soon as you come around afterwards, like, okay, that's the base, and now I double again. Fuck, that was quick. God, those guys have got no idea what this is. It's like, no, they also were constantly doubling their entire lives. This is just what it is to be human. We just don't know because we weren't there. That's like
+
+Andy David (01:07:05.903)
+Yeah. Some recency bias, right, as well. Yeah.
+
+Pete Winn (01:07:08.169)
+Yeah. And if like if you went back a hundred years, like fuck there's you know, I used to have a neighbour that was a hundred and two. And you're like and there's a hundred and two in fucking Perth, West Australia. Imagine that a hundred years ago. That's not that's not London a hundred years ago. And you think like like the huge amount of change. Huge amounts.
+
+Andy David (01:07:13.583)
+Hm. Insane. Yeah.
+
+Andy David (01:07:23.193)
+Yeah.
+
+Andy David (01:07:30.895)
+Yeah, I reckon I reckon if you went back to the invention of the steam engine, there would have been two guys stood there just looking at it and going, Do you know what? This changes everything.
+
+Pete Winn (01:07:38.091)
+Fucking changed everything. This is this is the last paradigm shift. We've just got rid of work. We're just gonna have to sit around and think now. God, no one's gonna make any there's nothing to do. Yeah.
+
+Andy David (01:07:46.907)
+That's it. It's done. All the problems are solved. Yeah.
+
+Pete Winn (01:07:53.033)
+And it probably felt like that, right? that was the crazy thing. All right. On that note, we've solved it. Right. It's okay, guys. It's gonna be okay. We're gonna make it.
+
+Andy David (01:07:57.573)
+Hold that
