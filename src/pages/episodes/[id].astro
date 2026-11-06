@@ -5,6 +5,7 @@ import SnackCard from '@/components/SnackCard.astro';
 import StoryVisual from '@/components/StoryVisual.astro';
 import ContributorRow from '@/components/ContributorRow.astro';
 import { isVisible } from '@/lib/content';
+import { parseTranscript } from '@/lib/transcript';
 
 export async function getStaticPaths() {
   const entries = (await getCollection('episodes')).filter(({ data }) => isVisible(data.status));
@@ -21,10 +22,7 @@ const transcriptFiles = import.meta.glob('../../content/transcripts/*.txt', { qu
 const transcriptSource = episode.data.transcript
   ? Object.entries(transcriptFiles).find(([path]) => path.endsWith(`/${episode.data.transcript}.txt`))?.[1]
   : undefined;
-const transcriptTurns = transcriptSource?.trim().split(/\n\s*\n/).flatMap((block) => {
-  const match = block.match(/^(.+?) \((\d{2}:\d{2}(?::\d{2})?)\)\n([\s\S]+)$/);
-  return match ? [{ speaker: match[1]!, timestamp: match[2]!, text: match[3]!.replace(/\s*\n\s*/g, ' ') }] : [];
-}) ?? [];
+const transcriptTurns = parseTranscript(transcriptSource ?? '');
 const timestampSeconds = (timestamp: string) => timestamp.split(':').reverse().reduce((total, part, index) => total + Number(part) * (60 ** index), 0);
 const durationSeconds = transcriptTurns.length ? timestampSeconds(transcriptTurns.at(-1)!.timestamp) : undefined;
 const isoDuration = durationSeconds ? `PT${Math.floor(durationSeconds / 3600) ? `${Math.floor(durationSeconds / 3600)}H` : ''}${Math.floor((durationSeconds % 3600) / 60)}M${durationSeconds % 60}S` : undefined;
