@@ -6,7 +6,7 @@ export function applyReviewedRelationships(model: {nodes:any[];links:any[]}, kno
  for(const edge of registry.relationships){
   if(ids.has(edge.id))throw new Error(`Duplicate reviewed relationship ${edge.id}`);ids.add(edge.id);
   if(edge.reviewState!=='accepted')continue;
-  if(!edge.reviewer||edge.reviewMethod!=='agent-editorial-review'||!edge.reviewedAt||!edge.explanation?.trim()||!['extends','parallels','complements','supports','contradicts','exemplifies','enables'].includes(edge.relationshipType))throw new Error(`Incomplete relationship review ${edge.id}`);
+  if(!edge.reviewer||!['agent-editorial-review','editor-explicit-review'].includes(edge.reviewMethod)||!edge.reviewedAt||!edge.explanation?.trim()||!['extends','parallels','complements','supports','develops','contradicts','exemplifies','enables','caused-by','related-to'].includes(edge.relationshipType))throw new Error(`Incomplete relationship review ${edge.id}`);
   if(edge.sourceId===edge.targetId)throw new Error(`Self relationship ${edge.id}`);
   for(const id of [edge.sourceId,edge.targetId]){
    const node=byId.get(id),source=edge.sources?.find((item:any)=>item.nodeId===id);
