@@ -1,5 +1,5 @@
 export function parseTranscript(source: string) {
-  const headers = [...source.matchAll(/^(?:(.+?) \((\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\)|\[(\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\] (.+?):)[ \t]*/gm)];
+  const headers = [...source.matchAll(/^(?:(.+?) \((\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\)|\[(\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\] (.+?)(?::|$))[ \t]*/gm)];
   return headers.map((header, index) => ({
     speaker: (header[1] || header[4])!.trim(),
     timestamp: (header[2] || header[3])!,
@@ -18,6 +18,12 @@ export function evidenceTurnIndex(turns: ReturnType<typeof parseTranscript>, evi
   .replace(/^[^()\n]+ \([\d:.]+\)[ \t]*\n?/gm,'')
   .split('\n').filter(line=>!/^\s*\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?\s*$/.test(line)&&!speakers.has(normalise(line))).join(' ');
  const excerpt=normalise(cleaned).slice(0,120);if(excerpt.length<24)return -1;
- const matches=turns.map((turn,index)=>normalise(turn.text).includes(excerpt)?index:-1).filter(index=>index>=0);
- return matches.length===1?matches[0]!:-1;
+ const texts=turns.map(turn=>normalise(turn.text));
+ const matches=texts.map((text,index)=>text.includes(excerpt)?index:-1).filter(index=>index>=0);
+ if(matches.length)return matches.length===1?matches[0]!:-1;
+ // A lightly edited published transcript may retain a unique interior passage
+ // rather than the excerpt opening. Require a long exact match, never a fuzzy guess.
+ const full=normalise(cleaned),windows:string[]=[];for(let start=0;start+100<=full.length;start+=25)windows.push(full.slice(start,start+100));
+ const interior=texts.map((text,index)=>windows.some(window=>text.includes(window))?index:-1).filter(index=>index>=0);
+ return interior.length===1?interior[0]!:-1;
 }
