@@ -8,7 +8,9 @@ async function geometry(){return page.locator('.graphTextLayer g').evaluateAll(g
 try{
  await page.goto(base+'/graph/',{waitUntil:'networkidle'});await page.waitForSelector('.graphTextLayer text');
  check(await page.getByRole('button',{name:'Ideas',exact:true}).getAttribute('aria-pressed')==='true','ideas is the default perspective');
- check((await page.locator('[data-view-count]').textContent()).startsWith('320 of 528 ideas'),'default semantic projection counts only ideas');
+ check((await page.locator('[data-view-count]').textContent()).startsWith('528 of 528 ideas'),'default semantic projection shows every idea');
+ check((await page.locator('[data-view-count]').textContent()).includes('425 connections'),'full overview includes every semantic connection');
+ await page.getByLabel('Map density',{exact:true}).selectOption('320');check(page.url().includes('density=balanced'),'explicit balanced choice has a shareable URL');await page.reload({waitUntil:'networkidle'});await page.waitForSelector('.graphTextLayer text');check((await page.locator('[data-view-count]').textContent()).startsWith('320 of 528 ideas'),'balanced choice survives reload');await page.getByLabel('Map density',{exact:true}).selectOption('1000000');
  check(await page.getByRole('button',{name:/^Explore Episode/}).count()===0,'episode gateways do not organise the Ideas view');
  check(await page.locator('canvas').count()===7,'node-link map is retained');
  check((await page.locator('[data-idea-discovery]').textContent()).includes('not rankings of the whole archive'),'pilot coverage is explicit');
@@ -18,7 +20,7 @@ try{
  await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-ideas-overview.png'});
  await page.locator('[data-idea-scope]').selectOption('pilot');await page.waitForTimeout(300);
  check((await page.locator('[data-view-count]').textContent()).startsWith('25 of 528 ideas · 26 connections'),'reviewed pilot preserves its connected context');
- await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-ideas-pilot.png'});
+ await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-ideas-pilot.png'});await page.locator('[data-reset]').click();check((await page.locator('[data-view-count]').textContent()).startsWith('528 of 528 ideas'),'archive overview clears the pilot restriction');await page.locator('[data-idea-scope]').selectOption('pilot');
  await page.locator('[data-shared-idea="canonical:graph-memory"]').click();await page.waitForSelector('[data-detail] li a');check(await page.locator('[data-detail] li a').count()===3,'shared concept preserves three distinct discussions');
  await page.locator('[data-detail] li a').filter({hasText:'News can accumulate into connected memory'}).click();await page.waitForSelector('[data-detail] blockquote');
  check((await page.locator('[data-detail]').textContent()).includes('agent editorial review by lara'),'cross-episode interpretation is labelled as agent review');

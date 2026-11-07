@@ -6,7 +6,7 @@ const page=await browser.newPage({viewport:{width:1600,height:1100}}),checks=[],
 const check=(ok,label,detail)=>{checks.push({label,ok,detail});console.log(label,ok,detail||'');if(!ok)throw Error(label+': '+JSON.stringify(detail));};
 const geometry=()=>page.locator('.graphTextLayer g').evaluateAll(groups=>{const boxes=groups.map(g=>g.querySelector('rect').getBoundingClientRect());let overlaps=0;for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++)if(Math.min(boxes[i].right,boxes[j].right)>Math.max(boxes[i].left,boxes[j].left)&&Math.min(boxes[i].bottom,boxes[j].bottom)>Math.max(boxes[i].top,boxes[j].top))overlaps++;return {labels:boxes.length,overlaps};});
 try{
- await page.goto(base+'/graph/?view=episodes',{waitUntil:'networkidle'});await page.waitForTimeout(1800);
+ await page.goto(base+'/graph/?view=episodes&density=balanced',{waitUntil:'networkidle'});await page.waitForTimeout(1800);
  check((await page.locator('[data-public-graph]').getAttribute('data-renderer-url')).match(/graph-explorer\.js\?v=[a-f0-9]{16}$/),'renderer URL is content-versioned');
  const model=await page.evaluate(()=>JSON.parse(document.querySelector('#knowledge-data').textContent));const episodes=model.nodes.filter(n=>n.kind==='episode');
  check((await page.locator('[data-view-count]').textContent()).startsWith('320 of'),'balanced overview shows 320 nodes');
