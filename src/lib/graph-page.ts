@@ -35,7 +35,7 @@ export function initialiseGraphPage() {
   const el = (tag: string, text: string) => { const element = document.createElement(tag); element.textContent = text; return element; };
   function updateUrl() {
     const url = new URL(location.href);
-    for (const [key,value] of Object.entries({view:displayMode,scope:displayMode==='ideas'&&scope.value==='pilot'?'pilot':'',node:selected,context:episodeContextId,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value,density:document.querySelector<HTMLSelectElement>('[data-density]')!.value==='1000000'?'all':''})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
+    for (const [key,value] of Object.entries({view:displayMode,scope:displayMode==='ideas'&&scope.value==='pilot'?'pilot':'',node:selected,context:episodeContextId,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value,density:document.querySelector<HTMLSelectElement>('[data-density]')!.value==='1000000'?'all':'balanced'})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
     history.replaceState(null,'',url);
   }
   function filter() {
@@ -115,11 +115,11 @@ export function initialiseGraphPage() {
   for(const idea of discovery.recent){const button=el('button',`${idea.title} · Episode ${idea.episodeNumber}`) as HTMLButtonElement;button.type='button';button.addEventListener('click',()=>void select(idea.id,true));recent.append(button);}
   discoveryElement.append(shared,recent);
   document.querySelector('[data-density]')!.addEventListener('change',()=>{updateUrl();mount();});
-  document.querySelector('[data-reset]')!.addEventListener('click',()=>{selected='';episodeContextId='';setDetails(false);updateUrl();mount();});
+  document.querySelector('[data-reset]')!.addEventListener('click',()=>{selected='';episodeContextId='';scope.value='all';setDetails(false);updateUrl();mount();});
   const motion=document.querySelector<HTMLButtonElement>('[data-motion]')!;
   motion.textContent=frozen?'Show static map':'Freeze layout';motion.setAttribute('aria-pressed',String(frozen));
   motion.addEventListener('click',()=>{frozen=!frozen;motion.textContent=frozen?'Resume layout':'Freeze layout';motion.setAttribute('aria-pressed',String(frozen));if(frozen){canvas.dispatchEvent(new CustomEvent('graph-freeze'));}else {renderedViewKey='';mount();}});
-  const params=new URLSearchParams(location.search);if(params.get('density')==='all')document.querySelector<HTMLSelectElement>('[data-density]')!.value='1000000';search.value=params.get('q')||'';kind.value=params.get('kind')||'';episode.value=params.get('episode')||'';topic.value=params.get('topic')||'';filter();
+  const params=new URLSearchParams(location.search);document.querySelector<HTMLSelectElement>('[data-density]')!.value=params.get('density')==='balanced'?'320':'1000000';search.value=params.get('q')||'';kind.value=params.get('kind')||'';episode.value=params.get('episode')||'';topic.value=params.get('topic')||'';filter();
   if(params.get('context')&&model.nodes.some((node:Node)=>node.kind==='episode'&&node.episodeId===params.get('context')))episodeContextId=params.get('context')!;
   if(params.get('node'))void select(params.get('node')!);
   // The text index works before or without WebGL and before the rendering bundle downloads.
