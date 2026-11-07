@@ -21,7 +21,7 @@ try{
  await page.locator('[data-idea-scope]').selectOption('pilot');await page.waitForTimeout(300);
  check((await page.locator('[data-view-count]').textContent()).startsWith('25 of 528 ideas · 26 connections'),'reviewed pilot preserves its connected context');
  await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-ideas-pilot.png'});await page.locator('[data-reset]').click();check((await page.locator('[data-view-count]').textContent()).startsWith('528 of 528 ideas'),'archive overview clears the pilot restriction');await page.locator('[data-idea-scope]').selectOption('pilot');
- await page.locator('[data-shared-idea="canonical:graph-memory"]').click();await page.waitForSelector('[data-detail] li a');check(await page.locator('[data-detail] li a').count()===3,'shared concept preserves three distinct discussions');
+ await page.locator('[data-discovery-toggle]').click();await page.locator('[data-shared-idea="canonical:graph-memory"]').click();await page.waitForSelector('[data-detail] li a');check(await page.locator('[data-detail] li a').count()===3,'shared concept preserves three distinct discussions');
  await page.locator('[data-detail] li a').filter({hasText:'News can accumulate into connected memory'}).click();await page.waitForSelector('[data-detail] blockquote');
  check((await page.locator('[data-detail]').textContent()).includes('agent editorial review by lara'),'cross-episode interpretation is labelled as agent review');
  check((await page.locator('[data-detail]').textContent()).includes('proposed use, not evidence'),'relationship explanation retains source limitations');
