@@ -1,3 +1,5 @@
+import {readFileSync} from 'node:fs';
+import {parseTranscript,evidenceTurnIndex} from '../src/lib/transcript';
 import {expect,test} from 'bun:test';
 import {canonicalPublicGraph} from '../src/lib/public-graph-data';
 import {buildKnowledgeModel} from '../src/lib/graph-model';
@@ -23,4 +25,9 @@ test('reviewed relationships fail closed for stale evidence and do not publish p
 test('discovery separates distinct source reach from recency and popularity',()=>{
  const discovery=ideaDiscovery(model);expect(discovery.reviewedCrossEpisodeLinks).toBe(3);expect(discovery.shared.map((n:any)=>n.episodeReach)).toEqual([3,2]);expect(discovery.shared.every((n:any)=>n.recentEpisodes===0)).toBe(true);expect(discovery.latestEpisodes).toEqual([79,78,77,76,75]);expect(discovery.recent.every((n:any)=>discovery.latestEpisodes.includes(n.episodeNumber))).toBe(true);
  const duplicated={...model,allConnections:[...model.allConnections,...model.allConnections]};expect(ideaDiscovery(duplicated).shared.map((n:any)=>n.episodeReach)).toEqual([3,2]);
+});
+
+test('every reviewed pilot endpoint has a uniquely matchable published source passage',()=>{
+ const ids=new Set(relationships.relationships.flatMap(edge=>[edge.sourceId,edge.targetId]));
+ for(const id of ids){const node=data.knowledge.nodes.find((node:any)=>node.id===id);const published=raw.nodes.find(node=>node.id===`knowledge:${id}`)!;const slug=published.href.split('/').filter(Boolean).at(-1);const turns=parseTranscript(readFileSync(`src/content/transcripts/${slug}.txt`,'utf8'));expect(node.evidence.some((e:any)=>evidenceTurnIndex(turns,e)>=0)).toBe(true);}
 });

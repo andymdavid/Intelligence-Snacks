@@ -21,3 +21,11 @@ test('inline published turns preserve text and evidence resolves through fragmen
  expect(evidenceTurnIndex(turns,{excerpt:'This is not present anywhere in the source.'})).toBe(-1);
  expect(evidenceTurnIndex([...turns,...turns],{excerpt:turns[0]!.text})).toBe(-1);
 });
+
+test('reads colon-free legacy bracket headers and locates only unique long interior passages',()=>{
+ const phrase='This long distinctive explanation describes capabilities that attach through standard input and standard output as separate processes.';
+ const turns=parseTranscript(`[00:20:42] Pete\nAn edited opening. ${phrase}\n\n[00:21:10] Andy\nA separate response.`);
+ expect(turns).toHaveLength(2);expect(turns[0]!.speaker).toBe('Pete');
+ expect(evidenceTurnIndex(turns,{excerpt:`An original opening with several filler words that differ from the edited publication. ${phrase}`})).toBe(0);
+ expect(evidenceTurnIndex([...turns,...turns],{excerpt:`Different opening. ${phrase}`})).toBe(-1);
+});
