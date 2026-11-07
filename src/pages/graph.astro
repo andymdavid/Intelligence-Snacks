@@ -7,7 +7,7 @@ import { buildKnowledgeModel, buildTopicModel } from '@/lib/graph-model';
 const rendererVersion=createHash('sha256').update(readFileSync('public/graph-explorer.js')).digest('hex').slice(0,16);
 const data = canonicalPublicGraph();
 const raw = buildKnowledgeModel(data);
-const model = { nodes:raw.nodes, allConnections:raw.links.map((link:any,index:number)=>({id:`public:${index}`,sourceId:link.source,targetId:link.target,relationshipType:link.type,explanation:link.note||'',reviewMethod:link.reviewMethod,reviewer:link.reviewer,reviewedAt:link.reviewedAt,reviewedRelationshipId:link.reviewedRelationshipId})),totals:{knowledge:data.knowledge.nodes.length},focus:null,explicitFocus:false,selectImmediately:true,hideCount:true };
+const model = { nodes:raw.nodes, allConnections:raw.links.map((link:any,index:number)=>({id:`public:${index}`,sourceId:link.source,targetId:link.target,relationshipType:link.type,explanation:link.note||'',reviewMethod:link.reviewMethod,reviewer:link.reviewer,reviewedAt:link.reviewedAt,reviewedRelationshipId:link.reviewedRelationshipId})),totals:{knowledge:data.knowledge.nodes.length},focus:null,explicitFocus:false,selectImmediately:true,hideCount:true,reconciliationCoverage:data.reconciliationCoverage||null,archiveReconciliation:Boolean(data.relationshipRegistry) };
 const topics = buildTopicModel(data);
 const membership = Object.fromEntries(topics.map((topic:any) => { const ids = new Set([topic.id,...topic.children.map((child:any)=>child.id)]); return [topic.id,[...new Set(data.topicIndex.passages.filter((passage:any)=>ids.has(passage.primaryTopicId)).map((passage:any)=>passage.episodeId))]]; }));
 const analyses=data.topicIndex.analyses;
