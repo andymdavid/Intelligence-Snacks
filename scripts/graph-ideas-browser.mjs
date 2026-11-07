@@ -1,0 +1,39 @@
+import {chromium} from 'playwright-core';
+import {writeFileSync} from 'node:fs';
+const base=process.env.GRAPH_PREVIEW_URL||'http://127.0.0.1:8768';const checks=[],errors=[];
+const browser=await chromium.launch({executablePath:process.env.GRAPH_CHROMIUM_EXECUTABLE,headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:1600,height:1100}});page.on('pageerror',e=>errors.push(e.message));
+const check=(ok,label,detail)=>{checks.push({label,ok,detail});console.log(label,ok,detail||'');if(!ok)throw Error(label+': '+JSON.stringify(detail));};
+async function geometry(){return page.locator('.graphTextLayer g').evaluateAll(groups=>{const boxes=groups.map(g=>g.querySelector('rect').getBoundingClientRect());let overlaps=0;for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++)if(Math.min(boxes[i].right,boxes[j].right)>Math.max(boxes[i].left,boxes[j].left)&&Math.min(boxes[i].bottom,boxes[j].bottom)>Math.max(boxes[i].top,boxes[j].top))overlaps++;return{labels:boxes.length,overlaps};});}
+try{
+ await page.goto(base+'/graph/',{waitUntil:'networkidle'});await page.waitForSelector('.graphTextLayer text');
+ check(await page.getByRole('button',{name:'Ideas',exact:true}).getAttribute('aria-pressed')==='true','ideas is the default perspective');
+ check((await page.locator('[data-view-count]').textContent()).startsWith('320 of 528 ideas'),'default semantic projection counts only ideas');
+ check(await page.getByRole('button',{name:/^Explore Episode/}).count()===0,'episode gateways do not organise the Ideas view');
+ check(await page.locator('canvas').count()===7,'node-link map is retained');
+ check((await page.locator('[data-idea-discovery]').textContent()).includes('not rankings of the whole archive'),'pilot coverage is explicit');
+ check((await page.locator('[data-shared-idea="canonical:graph-memory"]').textContent()).includes('3 episodes · 0 in the latest five'),'shared reach and recent coverage are distinct');
+ check(await page.getByRole('button',{name:'Explore Graph memory',exact:true}).count()===1&&await page.getByRole('button',{name:'Explore Agent harnesses',exact:true}).count()===1,'reviewed shared hubs remain labelled on the full map');
+ check((await geometry()).overlaps===0,'overview labels do not overlap',await geometry());
+ await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-ideas-overview.png'});
+ await page.locator('[data-idea-scope]').selectOption('pilot');await page.waitForTimeout(300);
+ check((await page.locator('[data-view-count]').textContent()).startsWith('25 of 528 ideas · 26 connections'),'reviewed pilot preserves its connected context');
+ await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-ideas-pilot.png'});
+ await page.locator('[data-shared-idea="canonical:graph-memory"]').click();await page.waitForSelector('[data-detail] li a');check(await page.locator('[data-detail] li a').count()===3,'shared concept preserves three distinct discussions');
+ await page.locator('[data-detail] li a').filter({hasText:'News can accumulate into connected memory'}).click();await page.waitForSelector('[data-detail] blockquote');
+ check((await page.locator('[data-detail]').textContent()).includes('agent editorial review by lara'),'cross-episode interpretation is labelled as agent review');
+ check((await page.locator('[data-detail]').textContent()).includes('proposed use, not evidence'),'relationship explanation retains source limitations');
+ await page.evaluate(()=>window.ideaCanvas=document.querySelector('[data-public-graph] canvas'));
+ await page.locator('[data-detail] li a').filter({hasText:'Conversation can become private agent memory'}).click();await page.waitForSelector('[data-detail] blockquote');
+ check(await page.locator('[data-detail] h2').textContent()==='Conversation can become private agent memory','semantic connection traverses to a different episode');
+ check(await page.getByRole('button',{name:'Ideas',exact:true}).getAttribute('aria-pressed')==='true','cross-source traversal stays in Ideas view');
+ check(await page.evaluate(()=>window.ideaCanvas===document.querySelector('[data-public-graph] canvas')),'visible idea selection retains the renderer');
+ const href=await page.locator('[data-detail] blockquote a').first().getAttribute('href');check(href.includes('/episode-070/#transcript-turn-'),'idea retains exact transcript evidence',href);
+ await page.reload({waitUntil:'networkidle'});await page.waitForSelector('[data-detail] blockquote');check(page.url().includes('view=ideas')&&page.url().includes('scope=pilot'),'perspective, scope and focus survive a shared URL');
+ await page.locator('[data-details-toggle]').click();await page.setViewportSize({width:390,height:844});await page.waitForTimeout(300);
+ check((await geometry()).overlaps===0,'mobile idea labels do not overlap',await geometry());check(await page.evaluate(()=>document.documentElement.scrollWidth===innerWidth),'mobile Ideas view has no horizontal overflow');await page.locator('[data-public-graph]').screenshot({path:'/tmp/snack-ideas-mobile.png'});
+ await page.setViewportSize({width:1600,height:1100});await page.locator('[data-idea-scope]').selectOption('all');await page.getByLabel('Map density',{exact:true}).selectOption('1000000');await page.waitForTimeout(300);check((await page.locator('[data-view-count]').textContent()).startsWith('528 of 528 ideas'),'complete idea view includes all semantic nodes');
+ await page.getByRole('button',{name:'Episodes',exact:true}).click();await page.waitForTimeout(500);check((await page.locator('[data-view-count]').textContent()).startsWith('708 of 708 nodes'),'Episodes view preserves the complete archive');check(await page.getByRole('button',{name:/^Explore Episode/}).count()===21,'all episode gateways remain available');check(await page.locator('[data-idea-discovery]').isHidden(),'pilot discovery panels belong only to Ideas');
+ await page.goto(base+'/graph/?node=episode%3A1d2c8c00-ecc4-4966-bdac-cbf6ce3e1385',{waitUntil:'networkidle'});await page.waitForSelector('.graphTextLayer text');check(await page.getByRole('button',{name:'Episodes',exact:true}).getAttribute('aria-pressed')==='true','old episode deep links keep their episode perspective');
+ check(errors.length===0,'no uncaught browser errors',errors);
+}finally{writeFileSync('/tmp/snack-ideas-results.json',JSON.stringify(checks,null,2));console.log(JSON.stringify(checks,null,2));await browser.close();}

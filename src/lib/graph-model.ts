@@ -1,3 +1,5 @@
+import relationships from '../data/graph-relationships.json';
+import {applyReviewedRelationships} from './graph-relationships';
 import registry from '../data/graph-concepts.json';
 import { applyCanonicalConcepts } from './graph-concepts';
 type AnyRecord = Record<string, any>;
@@ -55,6 +57,7 @@ export function buildKnowledgeModel(data: AnyRecord): { nodes: AnyRecord[]; link
   for (const link of knowledge.snackLinks||[]) links.push({ source:`knowledge:${link.knowledgeNodeId}`,target:`snack:${link.candidateId}`,type:link.relationshipType });
   for (const relationship of data.relationships||[]) links.push({ source:`snack:${relationship.sourceCandidateId}`,target:`snack:${relationship.targetCandidateId}`,type:relationship.relationshipType,note:relationship.explanation });
   applyCanonicalConcepts({ nodes, links }, data.conceptRegistry || registry);
+  applyReviewedRelationships({nodes,links},knowledge.nodes||[],relationships);
   for (const node of nodes) ids.add(node.id);
   const publicLinks = links.filter((link) => ids.has(link.source)&&ids.has(link.target)); const degree = new Map<string,number>(); for (const link of publicLinks) { degree.set(link.source,(degree.get(link.source)||0)+1); degree.set(link.target,(degree.get(link.target)||0)+1); }
   return { nodes: nodes.map((node) => ({ ...node, degree:degree.get(node.id)||0 })), links:publicLinks };

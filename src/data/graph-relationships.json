@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "scope": "Graph memory and agent harnesses pilot",
+  "relationships": [
+    {
+      "id": "conversation-extends-news-memory",
+      "sourceId": "ddaaea0d-bf59-4066-8520-35f113d2ccbb",
+      "targetId": "57b4dcfd-8db6-4697-b3c3-c1a5994d8d81",
+      "relationshipType": "extends",
+      "explanation": "The Episode 70 discussion explicitly recalls the news graph and extends that proposal to recurring, speaker-attributed podcast opinions as input for personal agents. This is a proposed use, not evidence that preference inference has been demonstrated.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-07",
+      "sources": [
+        {
+          "nodeId": "ddaaea0d-bf59-4066-8520-35f113d2ccbb",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "4c66e8af-c71d-496f-a634-726267dbd51b",
+            "15f40789-7874-45fb-8491-252631876af4"
+          ]
+        },
+        {
+          "nodeId": "57b4dcfd-8db6-4697-b3c3-c1a5994d8d81",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "ec6724d7-49f9-4384-8834-b154a4d470d6",
+            "014f4552-55a0-403e-bbf6-c35c5b5409d4",
+            "07841da2-5bfa-4b82-a035-c35609754efb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shared-and-personal-memory",
+      "sourceId": "eecd917c-27a5-4fc9-8550-ae017cae8006",
+      "targetId": "57b4dcfd-8db6-4697-b3c3-c1a5994d8d81",
+      "relationshipType": "parallels",
+      "explanation": "Both discussions describe retaining structured discoveries so agents can retrieve prior context instead of starting again. Episode 67 concerns personalised news; Episode 71 concerns shared operational routes and workflows. The applications and claims remain distinct.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-07",
+      "sources": [
+        {
+          "nodeId": "eecd917c-27a5-4fc9-8550-ae017cae8006",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "b9f114dd-9171-45dc-b629-79deedd05861",
+            "80049ed1-7d41-476e-84fa-579f7cb1081d",
+            "f46668f8-2f78-4002-8a82-2f3ef95f6ffe",
+            "93e5af67-8c2a-4340-bbcd-3e4edb59dfab"
+          ]
+        },
+        {
+          "nodeId": "57b4dcfd-8db6-4697-b3c3-c1a5994d8d81",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "ec6724d7-49f9-4384-8834-b154a4d470d6",
+            "014f4552-55a0-403e-bbf6-c35c5b5409d4",
+            "07841da2-5bfa-4b82-a035-c35609754efb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orchestration-complements-minimal-harness",
+      "sourceId": "3a8fa89c-92c7-4df4-8a6c-02923d7449df",
+      "targetId": "97daa368-1833-464e-8b1c-cd054a36cb60",
+      "relationshipType": "complements",
+      "explanation": "Episode 64 places replaceable capabilities outside a small coding harness. Episode 67 describes a separate orchestration layer above model harnesses for triggers, pipelines and app management. These are complementary decompositions of the stack, not proof that either architecture is required or that one speaker endorsed the other.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-07",
+      "sources": [
+        {
+          "nodeId": "3a8fa89c-92c7-4df4-8a6c-02923d7449df",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "86ac0b7c-eb4b-493f-97ff-aea126761de3",
+            "ce1d5aad-08e7-41c9-8001-9fb3eae9232e",
+            "9e969017-d65c-49b1-8bcc-917d2e286f87",
+            "53ceeafb-a034-4c76-a9bd-dbba3e80cce8"
+          ]
+        },
+        {
+          "nodeId": "97daa368-1833-464e-8b1c-cd054a36cb60",
+          "transcriptRevisionId": "17330e15-337f-484f-b46d-1da33c833899",
+          "evidenceIds": [
+            "1015840b-9254-45a4-aa8e-98cc960ec9ba",
+            "d20676f4-08ac-4c9d-b922-eaba5dbe980a",
+            "9a4a1a43-d0b3-4e8c-8138-66490f7ddfe1",
+            "d2d82b9c-083f-4bcf-982e-3c2f065e8b38"
+          ]
+        }
+      ]
+    }
+  ]
+}
