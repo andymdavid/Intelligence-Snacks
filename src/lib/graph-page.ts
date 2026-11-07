@@ -16,7 +16,7 @@ export function initialiseGraphPage() {
   let episodeContextId='';
   let displayMode=new URLSearchParams(location.search).get('view')==='episodes'?'episodes':'ideas';
   const scope=document.querySelector<HTMLSelectElement>('[data-idea-scope]')!;scope.value=new URLSearchParams(location.search).get('scope')==='pilot'?'pilot':'all';
-  function syncView(){document.querySelectorAll<HTMLButtonElement>('[data-graph-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.graphView===displayMode)));document.querySelector<HTMLElement>('[data-ideas-controls]')!.hidden=displayMode!=='ideas';document.querySelector<HTMLElement>('[data-idea-discovery]')!.hidden=displayMode!=='ideas';document.querySelector<HTMLElement>('[data-view-help]')!.textContent=displayMode==='ideas'?'Ideas are arranged by their connections, across episodes. Size reflects direct idea connections; it is not an importance score. Open an idea for its sources.':'Every episode stays available as a gateway. Selecting one expands its content while retaining the other episode gateways.';}
+  function syncView(){document.querySelectorAll<HTMLButtonElement>('[data-graph-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.graphView===displayMode)));document.querySelector<HTMLElement>('[data-ideas-controls]')!.hidden=displayMode!=='ideas';document.querySelector<HTMLElement>('[data-idea-discovery]')!.hidden=displayMode!=='ideas';document.querySelectorAll<HTMLElement>('[data-ideas-only]').forEach(element=>element.hidden=displayMode!=='ideas');document.querySelectorAll<HTMLElement>('[data-kind-key]').forEach(element=>element.hidden=displayMode==='ideas'&&!['concept','claim','example','question','canonical'].includes(element.dataset.kindKey!));document.querySelector<HTMLElement>('[data-view-help]')!.textContent=displayMode==='ideas'?'Ideas are arranged by their connections, across episodes. Size reflects direct idea connections; it is not an importance score. Open an idea for its sources.':'Every episode stays available as a gateway. Selecting one expands its content while retaining the other episode gateways.';}
   syncView();
   let renderedViewKey='';
   const layout=document.querySelector<HTMLElement>('.graph-layout')!;
@@ -58,6 +58,8 @@ export function initialiseGraphPage() {
     const focused={...model,focus:anchor,explicitFocus:Boolean(anchor),selectedNodeId:selected,freezeLayout:frozen,viewLimit:limit,displayMode,ideaScope:scope.value};
     const view=selectGraphView(focused,{focusId:anchor?.id,limit});
     document.querySelector('[data-view-count]')!.textContent=`${view.nodes.length} of ${view.totalNodes} ${displayMode==='ideas'?'ideas':'nodes'} · ${view.allConnections.length} connections in view`;
+    const connected=new Set(view.allConnections.flatMap((edge:any)=>[edge.sourceId,edge.targetId]));const unlinked=view.nodes.filter((node:any)=>!connected.has(node.id)).length;
+    document.querySelector<HTMLElement>('[data-connectivity-count]')!.textContent=displayMode==='ideas'?`${view.nodes.length-unlinked} ideas with connections · ${unlinked} without an idea connection in this view · ${new Set(view.nodes.map((node:any)=>node.layoutGroup)).size} separate groups`:'';
     try { cleanup=mountGraph(canvas,focused,(id:string)=>{ void select(id,true); }); renderedViewKey=key; }
     catch { canvas.replaceChildren(el('p','The visual map is unavailable. Use the complete archive index below.'));emit('render-fallback'); }
   }
@@ -103,16 +105,17 @@ export function initialiseGraphPage() {
     }
     if(focusPanel)title.focus({preventScroll:true});
   }
-  for(const row of rows)row.querySelector('a')!.addEventListener('click',event=>{event.preventDefault();void select(row.dataset.result!,true);});
+  for(const row of rows)row.querySelector('a')!.addEventListener('click',event=>{event.preventDefault();void select(row.dataset.result!,true);canvas.scrollIntoView({block:'center',behavior:'instant'});});
   search.addEventListener('input',filter);for(const control of [kind,episode,topic])control.addEventListener('change',()=>{filter();emit('filter');});
   document.querySelectorAll<HTMLElement>('[data-topic-pick]').forEach(button=>button.addEventListener('click',()=>{topic.value=button.dataset.topicPick!;filter();search.focus();}));
   document.querySelectorAll<HTMLButtonElement>('[data-graph-view]').forEach(button=>button.addEventListener('click',()=>{displayMode=button.dataset.graphView!;selected='';episodeContextId='';setDetails(false);syncView();updateUrl();mount();}));
   scope.addEventListener('change',()=>{selected='';episodeContextId='';setDetails(false);updateUrl();mount();});
   const discovery=ideaDiscovery(model),discoveryElement=document.querySelector<HTMLElement>('[data-idea-discovery]')!;
   const shared=el('section','');shared.append(el('h2','Shared ideas — reviewed pilot'),el('p',`${discovery.reviewedCrossEpisodeLinks} reviewed cross-episode connections. Coverage is limited to graph memory and agent harnesses; these are not rankings of the whole archive.`));
-  for(const idea of discovery.shared){const button=el('button',`${idea.title} · ${idea.episodeReach} episodes · ${idea.recentEpisodes} in the latest five`) as HTMLButtonElement;button.type='button';button.dataset.sharedIdea=idea.id;button.addEventListener('click',()=>void select(idea.id,true));shared.append(button);}
+  function discoveryLink(idea:any,meta:string){const link=el('a','') as HTMLAnchorElement;link.className='search-result';link.href=`/graph/?view=ideas&node=${encodeURIComponent(idea.id)}`;const type=el('span',meta);type.className='search-result__type';const title=el('strong',idea.title);const arrow=el('span','↗');arrow.className='search-result__arrow';arrow.setAttribute('aria-hidden','true');link.append(type,title,arrow);link.addEventListener('click',event=>{event.preventDefault();void select(idea.id,true);canvas.scrollIntoView({block:'center',behavior:'instant'});});return link;}
+  for(const idea of discovery.shared){const link=discoveryLink(idea,`${idea.episodeReach} episodes · ${idea.recentEpisodes} in the latest five`);link.dataset.sharedIdea=idea.id;shared.append(link);}
   const recent=el('section','');recent.append(el('h2','Recent discussions'),el('p','From the latest five published episodes. Recency is a discovery cue, not evidence that an idea is growing.'));
-  for(const idea of discovery.recent){const button=el('button',`${idea.title} · Episode ${idea.episodeNumber}`) as HTMLButtonElement;button.type='button';button.addEventListener('click',()=>void select(idea.id,true));recent.append(button);}
+  for(const idea of discovery.recent)recent.append(discoveryLink(idea,`Episode ${idea.episodeNumber}`));
   discoveryElement.append(shared,recent);
   document.querySelector('[data-density]')!.addEventListener('change',()=>{updateUrl();mount();});
   document.querySelector('[data-reset]')!.addEventListener('click',()=>{selected='';episodeContextId='';scope.value='all';setDetails(false);updateUrl();mount();});

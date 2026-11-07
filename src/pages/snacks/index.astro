@@ -78,18 +78,9 @@ const jsonLd = [{
   }
 </script>
 <style>
-  .archive-head { min-height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-block: clamp(3rem, 6vw, 6rem); border-bottom: 1px solid var(--line); text-align: center; }
-  .archive-head h1 { margin: 0; font-size: var(--type-page); font-weight: 500; line-height: var(--leading-hero); letter-spacing: var(--tracking-hero); }
-  .archive-head > p:last-child { max-width: 30.5rem; margin: 1.5rem auto 0; color: var(--text-secondary); }
   .snack-archive__toolbar { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: clamp(3rem, 5vw, 5rem); }
   .snack-archive__toolbar h2 { margin: 0; font-size: var(--type-section); font-weight: 500; line-height: var(--leading-display); letter-spacing: var(--tracking-display); }
   .snack-filters { display: flex; align-items: end; gap: .6rem; }
-  .filter-control { position: relative; display: grid; min-width: 12rem; }
-  .filter-control > span { position: absolute; z-index: 1; top: .55rem; left: .9rem; color: var(--text-muted); font-family: var(--font-mono); font-size: .58rem; font-weight: 600; letter-spacing: .07em; line-height: 1; text-transform: uppercase; pointer-events: none; }
-  .filter-control::after { content: ''; position: absolute; right: 1rem; bottom: 1.15rem; width: .42rem; height: .42rem; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); pointer-events: none; }
-  .filter-control select { width: 100%; height: 3.5rem; padding: 1.35rem 2.6rem .35rem .9rem; appearance: none; border: 1px solid var(--line); border-radius: 3px; outline: 0; background: var(--paper); color: var(--ink); font: 500 .88rem/1 var(--font-display); cursor: pointer; transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease; }
-  .filter-control:hover select { border-color: #aaa; background: var(--paper-raised); }
-  .filter-control select:focus-visible { border-color: var(--ink); box-shadow: 0 0 0 2px var(--coral); }
   .snack-archive__groups { display: grid; }
   .episode-group { padding-bottom: clamp(3.5rem, 6vw, 6rem); margin-bottom: clamp(3.5rem, 6vw, 6rem); border-bottom: 1px solid var(--line); }
   .episode-group:last-child { margin-bottom: 0; }
