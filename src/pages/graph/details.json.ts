@@ -1,6 +1,6 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { parseTranscript } from '../../lib/transcript';
+import { parseTranscript,evidenceTurnIndex } from '../../lib/transcript';
 import type { APIRoute } from 'astro';
 import { canonicalPublicGraph } from '../../lib/public-graph-data';
 export const GET: APIRoute = () => {
@@ -11,10 +11,8 @@ export const GET: APIRoute = () => {
     const slug = href.split('/').filter(Boolean).at(-1);
     const path = join(process.cwd(), 'src/content/transcripts', `${slug}.txt`);
     const turns = slug && existsSync(path) ? parseTranscript(readFileSync(path,'utf8')) : [];
-    const normalise = (text:string) => text.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
     return node.evidence.map((evidence:any)=> {
-      const excerpt = normalise(evidence.excerpt.replace(/^[^\n]+?\(\d[^)]*\)\s*/,''));
-      const index = turns.findIndex(turn=>normalise(turn.text).includes(excerpt.slice(0,120)));
+      const index=evidenceTurnIndex(turns,evidence);
       return { ...evidence, sourceHref: index >= 0 ? `${href}#transcript-turn-${index}` : href, timestamp: index >= 0 ? turns[index]!.timestamp : null };
     });
   }

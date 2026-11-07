@@ -1,6 +1,6 @@
-import { selectGraphView } from './graph-view.js';
+import { selectGraphView,ideaDiscovery } from './graph-view.js';
 type Node = { id: string; kind: string; title: string; summary: string; episodeId: string; episodeNumber?: number; href?: string; evidenceCount?: number; reviewer?: string; reviewMethod?: string };
-type Edge = { sourceId: string; targetId: string; relationshipType: string; explanation: string };
+type Edge = { sourceId: string; targetId: string; relationshipType: string; explanation: string; reviewMethod?:string; reviewer?:string; reviewedAt?:string; reviewedRelationshipId?:string };
 export function initialiseGraphPage() {
   const model = JSON.parse(document.querySelector('#knowledge-data')?.textContent || '{}');
   const membership = JSON.parse(document.querySelector('#topic-membership')?.textContent || '{}');
@@ -14,6 +14,10 @@ export function initialiseGraphPage() {
   const rows = [...document.querySelectorAll<HTMLElement>('[data-result]')];
   let cleanup: (()=>void) & {updateSelection?:(id:string)=>boolean} = () => {};
   let episodeContextId='';
+  let displayMode=new URLSearchParams(location.search).get('view')==='episodes'?'episodes':'ideas';
+  const scope=document.querySelector<HTMLSelectElement>('[data-idea-scope]')!;scope.value=new URLSearchParams(location.search).get('scope')==='pilot'?'pilot':'all';
+  function syncView(){document.querySelectorAll<HTMLButtonElement>('[data-graph-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.graphView===displayMode)));document.querySelector<HTMLElement>('[data-ideas-controls]')!.hidden=displayMode!=='ideas';document.querySelector<HTMLElement>('[data-idea-discovery]')!.hidden=displayMode!=='ideas';document.querySelector<HTMLElement>('[data-view-help]')!.textContent=displayMode==='ideas'?'Ideas are arranged by their connections, across episodes. Size reflects direct idea connections; it is not an importance score. Open an idea for its sources.':'Every episode stays available as a gateway. Selecting one expands its content while retaining the other episode gateways.';}
+  syncView();
   let renderedViewKey='';
   const layout=document.querySelector<HTMLElement>('.graph-layout')!;
   const detailToggle=document.querySelector<HTMLButtonElement>('[data-details-toggle]')!;
@@ -31,7 +35,7 @@ export function initialiseGraphPage() {
   const el = (tag: string, text: string) => { const element = document.createElement(tag); element.textContent = text; return element; };
   function updateUrl() {
     const url = new URL(location.href);
-    for (const [key,value] of Object.entries({node:selected,context:episodeContextId,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value,density:document.querySelector<HTMLSelectElement>('[data-density]')!.value==='1000000'?'all':''})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
+    for (const [key,value] of Object.entries({view:displayMode,scope:displayMode==='ideas'&&scope.value==='pilot'?'pilot':'',node:selected,context:episodeContextId,q:search.value,kind:kind.value,episode:episode.value,topic:topic.value,density:document.querySelector<HTMLSelectElement>('[data-density]')!.value==='1000000'?'all':''})) { if(value)url.searchParams.set(key,value);else url.searchParams.delete(key); }
     history.replaceState(null,'',url);
   }
   function filter() {
@@ -46,19 +50,21 @@ export function initialiseGraphPage() {
   }
   function mount() {
     if(!mountGraph) return;
-    const anchor=episodeContextId?model.nodes.find((node:Node)=>node.kind==='episode'&&node.episodeId===episodeContextId):byId.get(selected)||null;
+    const anchor=displayMode==='ideas'?(byId.get(selected)||null):episodeContextId?model.nodes.find((node:Node)=>node.kind==='episode'&&node.episodeId===episodeContextId):byId.get(selected)||null;
     const limit=Number(document.querySelector<HTMLSelectElement>('[data-density]')!.value)||320;
-    const key=`${anchor?.id||'overview'}:${limit}`;
+    const key=`${displayMode}:${scope.value}:${displayMode==='ideas'?'semantic':anchor?.id||'overview'}:${limit}`;
     if(key===renderedViewKey && cleanup.updateSelection?.(selected)){canvas.dispatchEvent(new CustomEvent('graph-layout-change'));return;}
     cleanup();
-    const focused={...model,focus:anchor,explicitFocus:Boolean(anchor),selectedNodeId:selected,freezeLayout:frozen,viewLimit:limit};
+    const focused={...model,focus:anchor,explicitFocus:Boolean(anchor),selectedNodeId:selected,freezeLayout:frozen,viewLimit:limit,displayMode,ideaScope:scope.value};
     const view=selectGraphView(focused,{focusId:anchor?.id,limit});
-    document.querySelector('[data-view-count]')!.textContent=`${view.nodes.length} of ${model.nodes.length} nodes · ${view.allConnections.length} connections in view`;
+    document.querySelector('[data-view-count]')!.textContent=`${view.nodes.length} of ${view.totalNodes} ${displayMode==='ideas'?'ideas':'nodes'} · ${view.allConnections.length} connections in view`;
     try { cleanup=mountGraph(canvas,focused,(id:string)=>{ void select(id,true); }); renderedViewKey=key; }
     catch { canvas.replaceChildren(el('p','The visual map is unavailable. Use the complete archive index below.'));emit('render-fallback'); }
   }
   async function select(id:string, focusPanel=false) {
     const node=byId.get(id); if(!node)return;
+    if(!['concept','claim','example','question','canonical'].includes(node.kind)){displayMode='episodes';syncView();}
+    if(displayMode==='ideas'&&scope.value==='pilot'){const pilot=selectGraphView({...model,displayMode:'ideas',ideaScope:'pilot'},{limit:1000000});if(!pilot.nodes.some((n:Node)=>n.id===id))scope.value='all';}
     if(node.kind==='episode')episodeContextId=node.episodeId;
     else if(node.kind==='root'||node.kind==='canonical'||(node.episodeId&&node.episodeId!==episodeContextId))episodeContextId='';
     selected=id;updateUrl();emit('select',node);setDetails(node.kind!=='episode');mount();
@@ -76,7 +82,7 @@ export function initialiseGraphPage() {
       const outgoing=edge.sourceId===id;const target=byId.get(outgoing?edge.targetId:edge.sourceId);if(!target)continue;
       const row=el('li','');const type=el('span',`${outgoing?'Outgoing':'Incoming'} · ${edge.relationshipType.replaceAll('-',' ')}`);type.className='edge-type';
       const link=el('a',target.title) as HTMLAnchorElement;link.href=`/graph/?node=${encodeURIComponent(target.id)}`;link.addEventListener('click',(event)=>{event.preventDefault();emit(target.episodeId!==node.episodeId?'cross-episode':'follow-connection',target);void select(target.id,true);});
-      row.append(type,link);if(edge.explanation)row.append(el('p',edge.explanation));list.append(row);
+      row.append(type,link);if(edge.explanation)row.append(el('p',edge.explanation));if(edge.reviewMethod)row.append(el('p',`Connection interpretation: ${edge.reviewMethod.replaceAll('-',' ')} by ${edge.reviewer}, ${edge.reviewedAt}. Open each idea to inspect its separate source evidence.`));list.append(row);
     }
     detail.append(list);
     const evidenceSection=el('section','');detail.append(evidenceSection);
@@ -100,6 +106,14 @@ export function initialiseGraphPage() {
   for(const row of rows)row.querySelector('a')!.addEventListener('click',event=>{event.preventDefault();void select(row.dataset.result!,true);});
   search.addEventListener('input',filter);for(const control of [kind,episode,topic])control.addEventListener('change',()=>{filter();emit('filter');});
   document.querySelectorAll<HTMLElement>('[data-topic-pick]').forEach(button=>button.addEventListener('click',()=>{topic.value=button.dataset.topicPick!;filter();search.focus();}));
+  document.querySelectorAll<HTMLButtonElement>('[data-graph-view]').forEach(button=>button.addEventListener('click',()=>{displayMode=button.dataset.graphView!;selected='';episodeContextId='';setDetails(false);syncView();updateUrl();mount();}));
+  scope.addEventListener('change',()=>{selected='';episodeContextId='';setDetails(false);updateUrl();mount();});
+  const discovery=ideaDiscovery(model),discoveryElement=document.querySelector<HTMLElement>('[data-idea-discovery]')!;
+  const shared=el('section','');shared.append(el('h2','Shared ideas — reviewed pilot'),el('p',`${discovery.reviewedCrossEpisodeLinks} reviewed cross-episode connections. Coverage is limited to graph memory and agent harnesses; these are not rankings of the whole archive.`));
+  for(const idea of discovery.shared){const button=el('button',`${idea.title} · ${idea.episodeReach} episodes · ${idea.recentEpisodes} in the latest five`) as HTMLButtonElement;button.type='button';button.dataset.sharedIdea=idea.id;button.addEventListener('click',()=>void select(idea.id,true));shared.append(button);}
+  const recent=el('section','');recent.append(el('h2','Recent discussions'),el('p','From the latest five published episodes. Recency is a discovery cue, not evidence that an idea is growing.'));
+  for(const idea of discovery.recent){const button=el('button',`${idea.title} · Episode ${idea.episodeNumber}`) as HTMLButtonElement;button.type='button';button.addEventListener('click',()=>void select(idea.id,true));recent.append(button);}
+  discoveryElement.append(shared,recent);
   document.querySelector('[data-density]')!.addEventListener('change',()=>{updateUrl();mount();});
   document.querySelector('[data-reset]')!.addEventListener('click',()=>{selected='';episodeContextId='';setDetails(false);updateUrl();mount();});
   const motion=document.querySelector<HTMLButtonElement>('[data-motion]')!;

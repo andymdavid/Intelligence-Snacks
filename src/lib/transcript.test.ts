@@ -1,5 +1,5 @@
 import { test, expect } from 'bun:test';
-import { parseTranscript } from './transcript';
+import { parseTranscript,evidenceTurnIndex } from './transcript';
 
 test('retains fractional timestamps and continuation paragraphs', () => {
   expect(parseTranscript('Pete (00:01.334)\nFirst paragraph.\n\nContinues here.\n\nAndy (01:02:03.45)\nReply.')).toEqual([
@@ -12,4 +12,12 @@ test('reads previously published bracketed timestamps and whole seconds', () => 
     {speaker:'Pete Winn',timestamp:'00:00:01.463',text:'Hello.'},
     {speaker:'Andy David',timestamp:'00:12',text:'Good morning.'},
   ]);
+});
+
+test('inline published turns preserve text and evidence resolves through fragmented headers',()=>{
+ const turns=parseTranscript('[17:38] Pete: I mean, we often talk about how you want to impart more knowledge into agents and stuff. And we use graphs.\n\n[18:45] Andy: Another thought.');
+ expect(turns).toHaveLength(2);expect(turns[0]!.text).toContain('And we use graphs.');
+ expect(evidenceTurnIndex(turns,{speaker:'Pete',excerpt:'Pete\n17:38\nI mean, we often talk about how you want to impart more knowledge into agents and stuff.\n\nPete\n17:45\nAnd we use graphs.'})).toBe(0);
+ expect(evidenceTurnIndex(turns,{excerpt:'This is not present anywhere in the source.'})).toBe(-1);
+ expect(evidenceTurnIndex([...turns,...turns],{excerpt:turns[0]!.text})).toBe(-1);
 });
