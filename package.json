@@ -13,8 +13,9 @@
     "social:generate": "node scripts/generate-social-images.mjs",
     "preview": "astro preview --host 0.0.0.0",
     "check": "astro check",
+    "graph:propose-shared": "bun scripts/propose-shared-ideas.ts",
     "graph:check": "bun scripts/check-graph.ts",
-    "graph:test": "bun test tests/graph.test.ts tests/graph-explorer-layout.test.ts tests/graph-explorer-discovery.test.ts",
+    "graph:test": "bun test tests/graph.test.ts tests/graph-explorer-layout.test.ts tests/graph-explorer-discovery.test.ts tests/graph-shared-review.test.ts",
     "graph:browser": "node scripts/graph-explorer-browser.mjs",
     "graph:preview:package": "node scripts/package-graph-preview.mjs"
   },

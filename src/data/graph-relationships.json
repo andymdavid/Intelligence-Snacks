@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "scope": "Graph memory and agent harnesses pilot",
+  "scope": "Source-reviewed cross-episode interpretations; thematic membership remains separate.",
   "relationships": [
     {
       "id": "conversation-extends-news-memory",
@@ -93,6 +93,33 @@
             "d20676f4-08ac-4c9d-b922-eaba5dbe980a",
             "9a4a1a43-d0b3-4e8c-8138-66490f7ddfe1",
             "d2d82b9c-083f-4bcf-982e-3c2f065e8b38"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subscription-friction-extends-consumer-inertia",
+      "sourceId": "d18ec2b6-93df-496d-a0a0-53c1c24cf734",
+      "targetId": "62be2815-7f52-4f13-8913-d3b10db331e9",
+      "relationshipType": "extends",
+      "explanation": "Episode 74 explicitly recalls the previous week’s consumer-inertia discussion and develops it through subscription cancellation and recurring revenue. This is a proposed market mechanism, not evidence that displacement has occurred.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "sources": [
+        {
+          "nodeId": "d18ec2b6-93df-496d-a0a0-53c1c24cf734",
+          "transcriptRevisionId": "3371f26e-97c7-4907-96fb-835563a0fb5b",
+          "evidenceIds": [
+            "a6464783-5d05-4adf-a1f5-b61d68439409"
+          ]
+        },
+        {
+          "nodeId": "62be2815-7f52-4f13-8913-d3b10db331e9",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "46448853-a38e-4be0-beab-e994415751aa"
           ]
         }
       ]

@@ -1,0 +1,22 @@
+---
+interface Props { coverage: any }
+const {coverage:c}=Astro.props;
+---
+<details class="shared-review" data-review-coverage>
+ <summary>Shared-idea review: {c.screenedEpisodes}/{c.episodes.length} episode inventories · {c.screenedFamilies}/{c.families.length} topic catalogues screened <span>View coverage ↗</span></summary>
+ <div class="review-content">
+  <h2>What this review covers</h2>
+  <p>Reviewed {c.reviewedAt} by Lara (agent). <strong>{c.screenedRecords} of {c.totalRecords} extracted records screened; {c.linkedRecords} source observations linked in {c.themeCount} shared themes.</strong> {c.newSourceChecks} observations were checked against source excerpts in this pass; {c.priorSourceChecks} retain earlier source reviews.</p>
+  {c.pendingRecords>0&&<p role="status" class="review-pending">{c.pendingRecords} new or changed records need another review.</p>}
+  <p>Screening reads the extracted titles and summaries. Source review checks the evidence for accepted groupings. This is a systematic pass through the published knowledge inventory, not a claim that every transcript has been reread or every possible theme has been found. Ungrouped records are not proven unique.</p>
+  <p>{c.perspectiveThemes} themes compare different perspectives. Shared membership does not assert agreement, equivalence or causality. One separately reviewed development link follows an explicit reference to the preceding episode; no new contradictions are inferred from similarity.</p>
+  <div class="review-tables">
+   <div><h3>Episode coverage</h3><table><thead><tr><th>Episode</th><th>Screened</th><th>Linked</th><th>Ungrouped</th></tr></thead><tbody>{c.episodes.map((e:any)=><tr><th><a href={`/episodes/episode-${String(e.number).padStart(3,'0')}/`}>Ep {e.number} · {e.title}</a></th><td>{e.screened}/{e.total}</td><td>{e.linked}</td><td>{e.unlinked}</td></tr>)}</tbody></table></div>
+   <div><h3>Topic catalogue coverage</h3><table><thead><tr><th>Family</th><th>Subtopics</th><th>Themes</th></tr></thead><tbody>{c.families.map((f:any)=><tr><th>{f.name}{!f.screened&&' · needs review'}</th><td>{f.subtopics}</td><td>{f.themes}</td></tr>)}</tbody></table><p>Themes have editorial family tags for review navigation. They do not change transcript classifications or Knowledge mix percentages. The {c.families.reduce((sum:number,f:any)=>sum+f.passages,0)} indexed passages are available source material, not {c.families.reduce((sum:number,f:any)=>sum+f.passages,0)} full-text passage reviews.</p><h3>Candidate decisions</h3><p>{c.candidatePairs} cross-episode text-similarity candidates screened: {c.representedPairs} represented in reviewed themes; {c.separatePairs} kept separate. Text similarity never publishes a relationship automatically. Broader editorial screening also found themes beyond those candidates.</p><h3>Recorded gaps</h3><ul>{c.gaps.map((gap:any)=><li><strong>{gap.topic}.</strong> {gap.reason}</li>)}</ul></div>
+  </div>
+ </div>
+</details>
+<style>
+.shared-review{border-block:1px solid var(--line);margin-block:1rem;scroll-margin-top:85px}.shared-review>summary{display:flex;justify-content:space-between;gap:1rem;cursor:pointer;font:400 .75rem/1.5 var(--font-mono);padding:1rem 0}.shared-review>summary>span{white-space:nowrap}.review-content{padding:1rem 0 2rem}.review-content h2{font:500 1.75rem var(--font-display)}.review-content h3{font:500 1.2rem var(--font-display)}.review-content p{font-size:.9rem;line-height:1.6;max-width:62rem}.review-tables{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem}.review-tables>div{min-width:0}.review-tables table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:.75rem}.review-tables th,.review-tables td{text-align:left;padding:.7rem .3rem;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.review-tables tr>th:first-child{width:40%;font-weight:500}.review-tables a{text-decoration:underline;text-underline-offset:.15em}.review-pending{border-left:3px solid var(--coral);padding-left:1rem}.shared-review>summary:focus-visible{outline:2px solid var(--coral);outline-offset:3px}@media(max-width:850px){.review-tables{grid-template-columns:1fr}.shared-review>summary{display:block}.shared-review>summary>span{display:block;margin-top:.4rem}}
+.review-content li{font-size:.85rem;line-height:1.6;margin-bottom:.7rem}
+</style>
