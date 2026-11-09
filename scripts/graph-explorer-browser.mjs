@@ -324,7 +324,14 @@ try {
     "donut and family bars represent identical primary-topic shares summing to 100 percent",
   );
   const chartLink = page.locator("[data-topic-chart-link]").last();
+  await chartLink.dispatchEvent("pointerenter");
+  assert(await page.locator("[data-mix-tooltip]").evaluate(el => !el.hidden && !!el.textContent), "chart hover label appears immediately without a native tooltip delay");
+  await chartLink.dispatchEvent("pointerleave");
+  assert(await page.locator("[data-mix-tooltip]").evaluate(el => el.hidden), "chart hover label clears on leave");
   await chartLink.focus();
+  assert(await page.locator("[data-mix-tooltip]").isVisible(), "chart label appears on keyboard focus");
+  await page.keyboard.press("Escape");
+  assert(await page.locator("[data-mix-tooltip]").isHidden(), "Escape dismisses the chart label");
   await page.keyboard.press("Enter");
   const chartTopic = await chartLink.getAttribute("data-topic-chart-link");
   assert(
