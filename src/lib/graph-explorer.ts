@@ -651,6 +651,23 @@ export function initialiseExplorer() {
     }
   });
   document
+    .querySelectorAll<SVGAElement>("[data-topic-chart-link]")
+    .forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const family = document.getElementById(
+          `mix-${link.dataset.topicChartLink}`,
+        ) as HTMLDetailsElement | null;
+        if (!family) return;
+        event.preventDefault();
+        family.open = true;
+        family.querySelector("summary")?.focus({ preventScroll: true });
+        family.scrollIntoView({
+          block: "start",
+          behavior: reduced.matches ? "instant" : "smooth",
+        });
+      });
+    });
+  document
     .querySelectorAll<HTMLButtonElement>("[data-topic-pick]")
     .forEach((button) => {
       button.addEventListener("click", () => {

@@ -1,0 +1,58 @@
+---
+interface Props { topics: any[]; classified: number; totalWords: number; }
+const { topics, classified, totalWords } = Astro.props;
+const circumference = 2 * Math.PI * 43;
+let cursor = 0;
+const segments = topics.map(topic => {
+  const offset = cursor;
+  cursor += topic.share;
+  return { ...topic, offset };
+});
+---
+<section class="knowledge-mix section" aria-labelledby="mix-title">
+  <div class="section-heading"><h2 id="mix-title">Knowledge mix</h2></div>
+  <p>Share of classified transcript words by primary topic. {totalWords ? ((classified / totalWords) * 100).toFixed(1) : '0'}% of transcript words are classified ({classified.toLocaleString()} of {totalWords.toLocaleString()}); secondary tags do not add to these percentages. Word share is not speaking time or importance.</p>
+  <div class="mix-overview">
+    <figure class="mix-chart">
+      <svg viewBox="0 0 120 120" role="group" aria-labelledby="mix-chart-title mix-chart-description" data-mix-chart>
+        <title id="mix-chart-title">Primary topic shares</title>
+        <desc id="mix-chart-description">Each segment shows a topic's share of classified transcript words. Select a segment to open its breakdown. The same values appear in the labelled bars.</desc>
+        <g transform="rotate(-90 60 60)" fill="none" stroke-width="16">
+          <circle cx="60" cy="60" r="43" stroke="var(--line)" />
+          {segments.map(topic => <a href={`#mix-${topic.id}`} data-topic-chart-link={topic.id} aria-label={`${topic.name}: ${(topic.share*100).toFixed(1)}%. Open breakdown.`}>
+            <circle cx="60" cy="60" r="43" stroke={topic.colour} stroke-dasharray={`${topic.share*circumference} ${circumference}`} stroke-dashoffset={-topic.offset*circumference} data-topic-segment={topic.id} data-share={topic.share}><title>{topic.name} · {(topic.share*100).toFixed(1)}%</title></circle>
+          </a>)}
+        </g>
+        <text x="60" y="59" text-anchor="middle" class="mix-chart-count">{topics.length}</text>
+        <text x="60" y="69" text-anchor="middle" class="mix-chart-label">topic families</text>
+      </svg>
+      <figcaption>Select a segment or topic row to explore the breakdown.</figcaption>
+    </figure>
+    <div class="mix-families">
+      {topics.map(topic => <details id={`mix-${topic.id}`} data-topic-family={topic.id}>
+        <summary>
+          <span class="mix-row-heading"><span class="mix-name"><i style={`background:${topic.colour}`} aria-hidden="true"></i>{topic.name}</span><span>{(topic.share*100).toFixed(1)}%</span></span>
+          <span class="topic-share-track" aria-hidden="true"><span style={`width:${topic.share*100}%;background:${topic.colour}`} data-topic-bar={topic.id}></span></span>
+        </summary>
+        <div class="mix-breakdown">
+          <p>{topic.description}</p>
+          <button class="text-link" type="button" data-topic-pick={topic.id}>Browse episodes covering this topic</button>
+          {topic.children.map((child:any) => <div class="topic-child">
+            <h3>{child.name} · {(child.share*100).toFixed(1)}% of this family</h3>
+            <div class="topic-share-track" aria-hidden="true"><span style={`width:${child.share*100}%;background:${child.colour}`}></span></div>
+            <p>{child.description}</p>
+            <ul>{child.episodes.map((episode:any) => <li><a href={episode.href}>Episode {episode.number} · {episode.title}</a></li>)}</ul>
+          </div>)}
+        </div>
+      </details>)}
+    </div>
+  </div>
+</section>
+<style>
+.knowledge-mix{padding-block:2rem}.knowledge-mix>p{max-width:52rem;color:var(--text-secondary);line-height:1.6}
+.mix-overview{display:grid;grid-template-columns:minmax(230px,1fr) minmax(0,2fr);gap:clamp(1.5rem,4vw,4rem);align-items:start;margin-top:2rem}
+.mix-chart{margin:0;position:sticky;top:90px;text-align:center}.mix-chart svg{display:block;width:min(100%,340px);margin:0 auto}.mix-chart-count{font:500 16px var(--font-display);fill:var(--ink)}.mix-chart-label{font:400 4px var(--font-mono);fill:var(--text-secondary)}.mix-chart figcaption{font:400 .75rem/1.5 var(--font-mono);color:var(--text-secondary);max-width:19rem;margin:.75rem auto}
+.mix-chart a{cursor:pointer}.mix-chart a:hover circle,.mix-chart a:focus-visible circle{stroke-width:20;filter:brightness(.85)}.mix-chart a:focus-visible{outline:none}
+.mix-families{min-width:0}.mix-families details{border-top:1px solid var(--line);padding:0;scroll-margin-top:90px}.mix-families details:last-child{border-bottom:1px solid var(--line)}.mix-families summary{padding:1rem 0;cursor:pointer;list-style:none;font-family:var(--font-body)}.mix-families summary::-webkit-details-marker{display:none}.mix-row-heading{display:flex;justify-content:space-between;gap:1rem;font-size:.95rem}.mix-name{display:flex;gap:.6rem;align-items:center}.mix-name::after{content:'+';color:var(--text-muted)}details[open] .mix-name::after{content:'−'}.mix-name i{width:.6rem;height:.6rem;flex-shrink:0}.topic-share-track{display:block;height:7px;background:var(--line);margin-top:.7rem}.topic-share-track>span{display:block;height:100%}.mix-breakdown{padding:0 0 1.25rem}.mix-breakdown p{font-size:.9rem;line-height:1.6}.topic-child{padding:1rem 0 0 1rem}.topic-child h3{font:500 1.15rem/1.3 var(--font-display)}.topic-child ul{padding-left:1.25rem;line-height:1.6}.topic-child a{text-decoration:underline;text-underline-offset:.2em}.mix-families summary:focus-visible{outline:2px solid var(--coral);outline-offset:3px}
+@media(max-width:700px){.mix-overview{grid-template-columns:1fr;gap:1.5rem}.mix-chart{position:static}.mix-chart svg{max-width:260px}.mix-row-heading{font-size:.85rem}.topic-child{padding-left:.5rem}}
+</style>

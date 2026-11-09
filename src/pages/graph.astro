@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import KnowledgeMix from '@/components/KnowledgeMix.astro';
 import { canonicalPublicGraph } from '@/lib/public-graph-data';
 import { buildKnowledgeModel, buildTopicModel } from '@/lib/graph-model';
 const data = canonicalPublicGraph();
@@ -47,7 +48,7 @@ const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
       </aside>
     </div>
     <div class="explorer-footnote"><p>Colour groups source episodes. Lines show recorded connections; proximity alone does not imply a relationship.</p><span role="status" aria-live="polite" data-explorer-status>Scroll to zoom · drag to explore</span></div>
-  <section class="knowledge-mix section" aria-labelledby="mix-title"><div class="section-heading"><h2 id="mix-title">Knowledge mix</h2></div><p>Share of classified transcript words by primary topic. {totalWords?((classified/totalWords)*100).toFixed(1):'0'}% of transcript words are classified ({classified.toLocaleString()} of {totalWords.toLocaleString()}); secondary tags do not add to these percentages. Word share is not speaking time or importance.</p>{topics.map((topic:any)=><details><summary>{topic.name} · {(topic.share*100).toFixed(1)}%</summary><div class="topic-share-track" aria-hidden="true"><span style={`width:${topic.share*100}%;background:${topic.colour}`}></span></div><p>{topic.description}</p><button class="text-link" type="button" data-topic-pick={topic.id}>Browse episodes covering this topic</button>{topic.children.map((child:any)=><div class="topic-child"><h3>{child.name} · {(child.share*100).toFixed(1)}% of this family</h3><p>{child.description}</p><ul>{child.episodes.map((episode:any)=><li><a href={episode.href}>Episode {episode.number} · {episode.title}</a></li>)}</ul></div>)}</details>)}</section>
+    <KnowledgeMix {topics} {classified} {totalWords} />
     <noscript><style>#explorer-index[hidden]{display:block!important}.explorer-stage{display:none}</style><p>Browse the archive above. Enable JavaScript to explore the interactive map.</p></noscript>
   </section>
 </BaseLayout>
@@ -68,6 +69,5 @@ initialiseExplorer();
 .explorer-search-status{font:400 .75rem/1.5 var(--font-mono);color:var(--text-secondary);margin:.6rem 0}
 .explorer-topic select{max-width:13rem;min-height:44px;background:var(--paper);color:var(--ink);border:1px solid var(--line);font:400 .75rem var(--font-mono);padding:.5rem}
 .explorer-index{padding-top:.5rem;border-bottom:1px solid var(--line);margin-bottom:1rem;scroll-margin-top:85px}.explorer-index .section-heading{padding-top:.5rem}.explorer-index strong{font-size:1.1rem}.explorer-index li>a{padding-block:1rem}
-.knowledge-mix{padding-block:2rem}.knowledge-mix details{border-top:1px solid var(--line);padding:1.25rem 0}.knowledge-mix summary{cursor:pointer;font-family:var(--font-display)}.knowledge-mix>p{max-width:52rem;color:var(--text-secondary)}.topic-child{padding:1rem 0 0 1rem}.topic-child h3{font-size:1.25rem}.topic-share-track{height:6px;background:var(--line);margin-top:.75rem}.topic-share-track>span{display:block;height:100%}
 @media(max-width:650px){.explorer-bar-actions{flex-wrap:wrap}.explorer-topic select{max-width:11rem}.explorer-index .section-heading{display:block}.explorer-index>ul{max-height:40dvh}}
 </style>
