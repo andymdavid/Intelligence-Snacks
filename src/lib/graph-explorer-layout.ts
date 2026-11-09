@@ -9,6 +9,7 @@ export type ExplorerNode = {
   evidenceCount?: number;
   degree?: number;
   episodeCount?: number;
+  comparisonType?: "recurrence" | "perspectives";
   reviewer?: string;
   reviewMethod?: string;
 };

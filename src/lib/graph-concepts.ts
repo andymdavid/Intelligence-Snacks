@@ -1,3 +1,5 @@
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 export function applyCanonicalConcepts(
   model: { nodes: any[]; links: any[] },
   registry: { concepts: any[]; suggestions?: any[] },
@@ -43,12 +45,32 @@ export function applyCanonicalConcepts(
           !source.rationale?.trim() ||
           !source.evidenceIds?.length ||
           source.evidenceIds.some(
-            (id: string) => !record.evidence.some((e: any) => e.id === id),
+            (id: string) =>
+              !record.evidence.some(
+                (e: any) =>
+                  e.id === id &&
+                  source.evidenceSha256?.[id] ===
+                    createHash("sha256").update(e.excerpt).digest("hex"),
+              ),
           )
         )
           throw new Error(
             `Canonical concept ${concept.id} needs source re-review: ${mention}`,
           );
+        if (source.expandedContext) {
+          const context = source.expandedContext;
+          if (
+            !/^src\/content\/transcripts\/episode-\d+\.txt$/.test(
+              context.path,
+            ) ||
+            createHash("sha256")
+              .update(readFileSync(context.path))
+              .digest("hex") !== context.sha256
+          )
+            throw new Error(
+              `Canonical concept ${concept.id} needs source re-review: expanded context ${mention}`,
+            );
+        }
         episodes.add(record.episodeId);
       }
       if (episodes.size < 2)
@@ -67,6 +89,8 @@ export function applyCanonicalConcepts(
       reviewMethod: concept.reviewMethod,
       reviewer: concept.reviewer,
       reviewedAt: concept.reviewedAt,
+      comparisonType: concept.comparisonType || "recurrence",
+      topicFamilies: concept.topicFamilies || [],
       episodeCount: new Set(
         mentions
           .map(

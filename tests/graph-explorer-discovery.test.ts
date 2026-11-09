@@ -86,7 +86,7 @@ test("every shared concept spans episodes and pins its reviewed source revision,
     byId = new Map<string, SourceNode>(
       (data.knowledge.nodes as SourceNode[]).map((n) => [n.id, n]),
     );
-  expect(model.nodes.filter((n) => n.kind === "canonical").length).toBe(10);
+  expect(model.nodes.filter((n) => n.kind === "canonical").length).toBe(47);
   for (const concept of registry.concepts) {
     expect(
       new Set(concept.mentions.map((id) => byId.get(id)!.episodeId)).size,

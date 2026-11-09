@@ -4,15 +4,16 @@
     {
       "id": "graph-memory",
       "title": "Graph memory",
-      "summary": "Using connected records as retrievable memory. The linked observations retain their own claims and evidence.",
+      "summary": "Connected records can retain context for agents and human learning. Personal news, podcast opinions, workflow routes and code-learning graphs serve distinct purposes and preserve distinct claims.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
-      "reviewedAt": "2026-11-06",
+      "reviewedAt": "2026-11-09",
       "mentions": [
         "57b4dcfd-8db6-4697-b3c3-c1a5994d8d81",
         "ddaaea0d-bf59-4066-8520-35f113d2ccbb",
-        "eecd917c-27a5-4fc9-8550-ae017cae8006"
+        "eecd917c-27a5-4fc9-8550-ae017cae8006",
+        "07b90929-86a2-4ea4-87ce-1749973cbc90"
       ],
       "sources": [
         {
@@ -23,7 +24,12 @@
             "014f4552-55a0-403e-bbf6-c35c5b5409d4",
             "07841da2-5bfa-4b82-a035-c35609754efb"
           ],
-          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence."
+          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence.",
+          "evidenceSha256": {
+            "ec6724d7-49f9-4384-8834-b154a4d470d6": "9349de403af322592580954a600a16cf5bfd9251a4f1c803fc7369cff9c0471d",
+            "014f4552-55a0-403e-bbf6-c35c5b5409d4": "25ca1a5513a3ed6be7768517c40bba7686ae3c9ec647342c1790404b06f4f76e",
+            "07841da2-5bfa-4b82-a035-c35609754efb": "dc15f06884fba678795549423bed5e3d97fc6e150c8f4b8b08b004166f7d3a43"
+          }
         },
         {
           "nodeId": "ddaaea0d-bf59-4066-8520-35f113d2ccbb",
@@ -32,7 +38,11 @@
             "4c66e8af-c71d-496f-a634-726267dbd51b",
             "15f40789-7874-45fb-8491-252631876af4"
           ],
-          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence."
+          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence.",
+          "evidenceSha256": {
+            "4c66e8af-c71d-496f-a634-726267dbd51b": "34f421314645fdf65cb781f1a1b1bf251b7f9f83ac52bca0d4ac8d83d0564239",
+            "15f40789-7874-45fb-8491-252631876af4": "48149d820890acf9cf3dc22c2d60b114870b5e7eaa6f9d6852a5f9e81e471640"
+          }
         },
         {
           "nodeId": "eecd917c-27a5-4fc9-8550-ae017cae8006",
@@ -43,21 +53,45 @@
             "f46668f8-2f78-4002-8a82-2f3ef95f6ffe",
             "93e5af67-8c2a-4340-bbcd-3e4edb59dfab"
           ],
-          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence."
+          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence.",
+          "evidenceSha256": {
+            "b9f114dd-9171-45dc-b629-79deedd05861": "1687c154a9bb5a604e4db78f7b5df61b11a6ddf5030a87c8be7c44c62fd2cd56",
+            "80049ed1-7d41-476e-84fa-579f7cb1081d": "eb46f89598c9f4f06b8bf5fad3439da876c818ccfbe89ec0d0e5c6f29ddc90bd",
+            "f46668f8-2f78-4002-8a82-2f3ef95f6ffe": "3dc66207b39c40facc510275c5b45c57a4ea82f861b63f932f3d08f8e3ae2046",
+            "93e5af67-8c2a-4340-bbcd-3e4edb59dfab": "683796adae293c93e4195212143e36764266d5e9e42d80b122bb1124a55e9f05"
+          }
+        },
+        {
+          "nodeId": "07b90929-86a2-4ea4-87ce-1749973cbc90",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "f14e6807-1b4c-4f13-9e06-a279b5291a94"
+          ],
+          "rationale": "Episode 73 proposes a learning graph around a repository to preserve conceptual and architectural understanding, a human-learning application distinct from operational agent memory.",
+          "evidenceSha256": {
+            "f14e6807-1b4c-4f13-9e06-a279b5291a94": "c68a671bb43b7368d748a305df15a833260ee23385af85e99935186010e39798"
+          }
         }
+      ],
+      "comparisonType": "recurrence",
+      "topicFamilies": [
+        "knowledge-memory"
       ]
     },
     {
       "id": "agent-harness",
       "title": "Agent harnesses",
-      "summary": "The software around a model that supplies capabilities and coordinates work. These are related discussions, not assertions that their claims are equivalent.",
+      "summary": "The runtime, loops and surrounding tools that let models act. Harness improvement and minimal-runtime designs are distinct applications.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
-      "reviewedAt": "2026-11-06",
+      "reviewedAt": "2026-11-09",
       "mentions": [
         "3a8fa89c-92c7-4df4-8a6c-02923d7449df",
-        "97daa368-1833-464e-8b1c-cd054a36cb60"
+        "97daa368-1833-464e-8b1c-cd054a36cb60",
+        "27103b62-1bdc-49c3-a50e-fdeab900e210",
+        "670f6e15-2dfb-4f5a-a5e4-b05922331c2f",
+        "52a82096-b60a-4f75-a928-a25e1c2e9bad"
       ],
       "sources": [
         {
@@ -69,7 +103,13 @@
             "9e969017-d65c-49b1-8bcc-917d2e286f87",
             "53ceeafb-a034-4c76-a9bd-dbba3e80cce8"
           ],
-          "rationale": "The accepted pilot groups this source discussion under Agent harnesses while preserving its own claim and evidence."
+          "rationale": "The accepted pilot groups this source discussion under Agent harnesses while preserving its own claim and evidence.",
+          "evidenceSha256": {
+            "86ac0b7c-eb4b-493f-97ff-aea126761de3": "806a097af504bf02b7cb443520a6580a79ef4a0cfa7c4f79243472847fc8ff00",
+            "ce1d5aad-08e7-41c9-8001-9fb3eae9232e": "cf66c5d7dd4bdb56209f81c981822323816eda102977c533c8febe27c3870180",
+            "9e969017-d65c-49b1-8bcc-917d2e286f87": "cdcf7e93421ea0da355709830825dfd569cd25296fb47cc75bbd369631f2f09b",
+            "53ceeafb-a034-4c76-a9bd-dbba3e80cce8": "7553b7bd62fed9593e72db11e8045a6158411c82fec7c66b3cdcaf878b5e1931"
+          }
         },
         {
           "nodeId": "97daa368-1833-464e-8b1c-cd054a36cb60",
@@ -80,14 +120,58 @@
             "9a4a1a43-d0b3-4e8c-8138-66490f7ddfe1",
             "d2d82b9c-083f-4bcf-982e-3c2f065e8b38"
           ],
-          "rationale": "The accepted pilot groups this source discussion under Agent harnesses while preserving its own claim and evidence."
+          "rationale": "The accepted pilot groups this source discussion under Agent harnesses while preserving its own claim and evidence.",
+          "evidenceSha256": {
+            "1015840b-9254-45a4-aa8e-98cc960ec9ba": "5f45bedeb1e576e2ac3cd6edb88c8816e6b1f57b9708b6ca1f423592ca0f3603",
+            "d20676f4-08ac-4c9d-b922-eaba5dbe980a": "747efec76a776b6b151eed99052d73e3a9e3fede40497277ef1b63dcec7da0e0",
+            "9a4a1a43-d0b3-4e8c-8138-66490f7ddfe1": "878975d8982cab58a358f7c265b18f7e4afcf4ccf8a4e3221722b3027a09a246",
+            "d2d82b9c-083f-4bcf-982e-3c2f065e8b38": "6b14105ed6362ecd14d6d7cc52fd740e67edc4b8c4950ae86b654f85937cd71b"
+          }
+        },
+        {
+          "nodeId": "27103b62-1bdc-49c3-a50e-fdeab900e210",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "54d3ca09-612b-46df-9185-a9a34fc35a14"
+          ],
+          "rationale": "Episode 60 attributes some apparent model progress to improvements in the harness.",
+          "evidenceSha256": {
+            "54d3ca09-612b-46df-9185-a9a34fc35a14": "34c636102626fd28d271a2438f5b79bb70e8424dfb25024c78779d6e72873456"
+          }
+        },
+        {
+          "nodeId": "670f6e15-2dfb-4f5a-a5e4-b05922331c2f",
+          "transcriptRevisionId": "ddfa2c80-8197-48b2-bbcc-5ba0f315e862",
+          "evidenceIds": [
+            "8be76cd3-0ff0-4cc4-ba05-5476c47602f7"
+          ],
+          "rationale": "Episode 61 defines goal evaluation and stopping conditions in an agent loop.",
+          "evidenceSha256": {
+            "8be76cd3-0ff0-4cc4-ba05-5476c47602f7": "704155f9b98bb49b5c1611a6e3c6efc19c004c6adb7f5c6d3d52b20101457f93"
+          }
+        },
+        {
+          "nodeId": "52a82096-b60a-4f75-a928-a25e1c2e9bad",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "7bf3c28d-fd5c-4c77-9133-45ffd07afa25"
+          ],
+          "rationale": "Episode 79 describes a deliberately smaller local harness with fewer setup assumptions.",
+          "evidenceSha256": {
+            "7bf3c28d-fd5c-4c77-9133-45ffd07afa25": "3c9406ed05a01873398a660f33468c3f2f0d098988bae8e71d4c46ee3cb4b95b"
+          }
         }
-      ]
+      ],
+      "topicFamilies": [
+        "agents",
+        "ai-coding"
+      ],
+      "comparisonType": "recurrence"
     },
     {
       "id": "code-first-workflows",
       "title": "Code-first workflows",
-      "summary": "Keep repeatable process in code and invoke models for bounded judgement. These discussions apply the pattern in different systems; they do not establish identical results.",
+      "summary": "Use agents to discover and judge; encode repeatable routes and handoffs in code. Applications and claimed outcomes remain distinct.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
@@ -97,7 +181,16 @@
         "61316f11-678e-4824-b3b6-a555aaad4edc",
         "c511beda-8f28-446c-a452-5dfec8250ca2",
         "43b4f2b4-0f85-4376-94cb-bd2026835dd7",
-        "9ba6b920-3f16-4afb-abb6-4fc3857e973f"
+        "9ba6b920-3f16-4afb-abb6-4fc3857e973f",
+        "061762ff-e401-4f19-8924-793b977982bc",
+        "94ba1c6f-16d0-42b4-92bd-a815e65ca0ad",
+        "371d0397-2fd8-4a70-8781-dd4a348608a3",
+        "7c8ef9b8-b86d-446b-9c23-bb21fb0e60c6",
+        "46695a6f-e3db-4d67-a4c6-150532753be9",
+        "1956fb6d-2dce-4f11-90db-9eef8b728107",
+        "2bb891e3-3272-4b59-aa2c-b107ab4a85d2",
+        "caafb1fc-a713-4373-bd71-8387b7f30d77",
+        "fd78ef67-8106-430b-8d32-27bd5dc2eb19"
       ],
       "sources": [
         {
@@ -106,7 +199,10 @@
           "evidenceIds": [
             "d2ed1c05-bd0f-42f1-b911-7461df7336a0"
           ],
-          "rationale": "Episode 67 argues that repeatable script execution need not occupy an agent context window."
+          "rationale": "Episode 67 argues that repeatable script execution need not occupy an agent context window.",
+          "evidenceSha256": {
+            "d2ed1c05-bd0f-42f1-b911-7461df7336a0": "88a14bdc377cc854add45e31976630106240a06420785721c50db6a9137407c7"
+          }
         },
         {
           "nodeId": "61316f11-678e-4824-b3b6-a555aaad4edc",
@@ -114,7 +210,10 @@
           "evidenceIds": [
             "603c209b-43af-4e55-ae4b-d5e22528298f"
           ],
-          "rationale": "Episode 65 describes code-first pipelines that start an agent for a decision and return control to code."
+          "rationale": "Episode 65 describes code-first pipelines that start an agent for a decision and return control to code.",
+          "evidenceSha256": {
+            "603c209b-43af-4e55-ae4b-d5e22528298f": "b0bc1ab6aa80f2e75fa0ca818e3524fabcad0e94f209ac49dd2d000e88b7fda1"
+          }
         },
         {
           "nodeId": "c511beda-8f28-446c-a452-5dfec8250ca2",
@@ -122,7 +221,10 @@
           "evidenceIds": [
             "24792fa4-98df-4270-98a1-58351c66b504"
           ],
-          "rationale": "Episode 71 explicitly places the process outside the agent and bounds the agent to the part requiring it."
+          "rationale": "Episode 71 explicitly places the process outside the agent and bounds the agent to the part requiring it.",
+          "evidenceSha256": {
+            "24792fa4-98df-4270-98a1-58351c66b504": "45ea6c91b22d08f3f05bb283fadaad9658eaae4a617f2eb3508794d3b1d42a12"
+          }
         },
         {
           "nodeId": "43b4f2b4-0f85-4376-94cb-bd2026835dd7",
@@ -130,7 +232,10 @@
           "evidenceIds": [
             "2b0d63e8-9336-4aa5-ab78-a7887e6e7775"
           ],
-          "rationale": "Episode 73 applies the pattern to bounded decisions and translation inside mostly deterministic processes."
+          "rationale": "Episode 73 applies the pattern to bounded decisions and translation inside mostly deterministic processes.",
+          "evidenceSha256": {
+            "2b0d63e8-9336-4aa5-ab78-a7887e6e7775": "d339ed09ab2b024e8cb185d4f34a3ef1e1899313d3bc4649cfcc0cd94670275d"
+          }
         },
         {
           "nodeId": "9ba6b920-3f16-4afb-abb6-4fc3857e973f",
@@ -138,14 +243,121 @@
           "evidenceIds": [
             "4f95edff-4c97-41f7-9afa-1757cf2613f2"
           ],
-          "rationale": "Episode 76 separates exploration with agents from crystallising repeatable work in code."
+          "rationale": "Episode 76 separates exploration with agents from crystallising repeatable work in code.",
+          "evidenceSha256": {
+            "4f95edff-4c97-41f7-9afa-1757cf2613f2": "c4017f50a13fb10694ddfc15f569319d1b92d7ecbbe39de1380e8fa7a81e34d5"
+          }
+        },
+        {
+          "nodeId": "061762ff-e401-4f19-8924-793b977982bc",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "8ca3b42b-ba9b-439c-81de-1ddde83cb9f1"
+          ],
+          "rationale": "Episode 53 argues that most routine business work can run as deterministic transformations.",
+          "evidenceSha256": {
+            "8ca3b42b-ba9b-439c-81de-1ddde83cb9f1": "19eee030adc44fa2b14996d91f9886936aa7ff0c5cd00bf3dceea1a589bac1cb"
+          }
+        },
+        {
+          "nodeId": "94ba1c6f-16d0-42b4-92bd-a815e65ca0ad",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "32c5438d-f898-424b-9f6f-f6eb0949dd22"
+          ],
+          "rationale": "Episode 60 describes explicit ordered steps and data handoffs around bounded agent work.",
+          "evidenceSha256": {
+            "32c5438d-f898-424b-9f6f-f6eb0949dd22": "06169614c90deffd350f0b7d92e2aa872f28efb3115dbc22c3084ed33dae0dec"
+          }
+        },
+        {
+          "nodeId": "371d0397-2fd8-4a70-8781-dd4a348608a3",
+          "transcriptRevisionId": "d5ab1035-ef9d-494d-8648-6fa8915a5199",
+          "evidenceIds": [
+            "40a44660-125b-4289-a7cd-3d03c8075cdf"
+          ],
+          "rationale": "Episode 62 describes editable pipelines mixing deterministic preparation and bounded agent transformations.",
+          "evidenceSha256": {
+            "40a44660-125b-4289-a7cd-3d03c8075cdf": "9fb63314c643fce59ffe326629875aa2929689871785b0a8440c6db3fcd5fe09"
+          }
+        },
+        {
+          "nodeId": "7c8ef9b8-b86d-446b-9c23-bb21fb0e60c6",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "01d4ecf2-d93e-44e2-b9af-5c2990472be6"
+          ],
+          "rationale": "Episode 69 proposes encoding stable AI-discovered remedies as software rather than paying for repeated inference.",
+          "evidenceSha256": {
+            "01d4ecf2-d93e-44e2-b9af-5c2990472be6": "4816f0778eaffc3fd97116c9115927189c6d0ca6d3d0b506b06ab762b9ece742"
+          }
+        },
+        {
+          "nodeId": "46695a6f-e3db-4d67-a4c6-150532753be9",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "f82c90bc-7305-44df-9bc2-55393c5ee8bd"
+          ],
+          "rationale": "Episode 71 distinguishes open-ended discovery from preserving a repeatable route.",
+          "evidenceSha256": {
+            "f82c90bc-7305-44df-9bc2-55393c5ee8bd": "1687c154a9bb5a604e4db78f7b5df61b11a6ddf5030a87c8be7c44c62fd2cd56"
+          }
+        },
+        {
+          "nodeId": "1956fb6d-2dce-4f11-90db-9eef8b728107",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "96c8a565-0e57-4e7f-beaa-9beb6d49e485"
+          ],
+          "rationale": "Episode 73 proposes replacing repeated research with code fetching and specialised classification once the route is known.",
+          "evidenceSha256": {
+            "96c8a565-0e57-4e7f-beaa-9beb6d49e485": "25fec34a369b30f0f6bd6f046095017b48b99488d86fe49090de44240457f8b4"
+          }
+        },
+        {
+          "nodeId": "2bb891e3-3272-4b59-aa2c-b107ab4a85d2",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "16177103-c140-49ba-9c39-6a847476dcc0"
+          ],
+          "rationale": "Episode 71 describes declarative steps and bounded sessions for repeated work.",
+          "evidenceSha256": {
+            "16177103-c140-49ba-9c39-6a847476dcc0": "cbd893adf18c946a2cac2f7bacc9f9a134104acabeda95e93cc8a1c0721e076d"
+          }
+        },
+        {
+          "nodeId": "caafb1fc-a713-4373-bd71-8387b7f30d77",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "e9ef6e0a-bd5f-434b-bd6d-aa56bc3e7602"
+          ],
+          "rationale": "Episode 53 frames repeatable agent work as eventually collapsing back into software.",
+          "evidenceSha256": {
+            "e9ef6e0a-bd5f-434b-bd6d-aa56bc3e7602": "e2e7132d4d4e26cb6832a99b2f50c3cf906939b0c0905e3a975c8550981da67b"
+          }
+        },
+        {
+          "nodeId": "fd78ef67-8106-430b-8d32-27bd5dc2eb19",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "4e673856-fdcf-4dfc-a261-aef1fd794a76"
+          ],
+          "rationale": "Episode 71 argues that successful agent discovery should leave a repeatable software route.",
+          "evidenceSha256": {
+            "4e673856-fdcf-4dfc-a261-aef1fd794a76": "e3c5e2e1f2c4b1029921a8058674ad18380ab237bb294fa492de57c75402a434"
+          }
         }
-      ]
+      ],
+      "topicFamilies": [
+        "software-systems",
+        "agents"
+      ],
+      "comparisonType": "recurrence"
     },
     {
       "id": "cryptographic-authority",
       "title": "Cryptographic identity and authority",
-      "summary": "Using signed identities to connect systems and control who may act. Agent command authority, device approval and cross-application identity remain separate mechanisms.",
+      "summary": "Signed identities can connect systems and bound access. Device approval, credential replacement and delegated permissions have different trust boundaries.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
@@ -154,7 +366,14 @@
         "61bf949b-805d-4798-a4ff-8c5207a8c242",
         "49b1d666-58b7-4652-bbd4-269dd157bbde",
         "591d3615-102f-466d-97bf-0bc6c3eca770",
-        "3a9b5b72-599b-4f1e-b94b-1259e6f0d384"
+        "3a9b5b72-599b-4f1e-b94b-1259e6f0d384",
+        "0f395e68-97db-40d6-b947-7b4261ae197f",
+        "3529aa31-5194-4077-a183-178dbeee9489",
+        "74003759-043d-407e-b6fd-df1c42cd5150",
+        "ebf7e551-4a02-4b27-ba5a-72ecad4fdb8b",
+        "40a5f486-e57b-4adc-a68c-de4171a4f52d",
+        "7a485d09-8cf0-4b44-9d74-9f3aa18be05c",
+        "a403f2d3-787f-4694-9d9d-5139bdedfec9"
       ],
       "sources": [
         {
@@ -163,7 +382,10 @@
           "evidenceIds": [
             "60df51d8-d197-4efc-8404-9f9ec26a6a69"
           ],
-          "rationale": "Episode 65 asks who is allowed to command an agent in a shared conversation and points to signed identity."
+          "rationale": "Episode 65 asks who is allowed to command an agent in a shared conversation and points to signed identity.",
+          "evidenceSha256": {
+            "60df51d8-d197-4efc-8404-9f9ec26a6a69": "5a0f8e2708835187eb56727029f1b79a34ba00fb6535863618a0fda41d882ff5"
+          }
         },
         {
           "nodeId": "49b1d666-58b7-4652-bbd4-269dd157bbde",
@@ -171,7 +393,10 @@
           "evidenceIds": [
             "4b2b3b2f-bd75-4f8f-b12a-17d1f0cd2531"
           ],
-          "rationale": "Episode 70 describes an owner signing a device approval for selected applications."
+          "rationale": "Episode 70 describes an owner signing a device approval for selected applications.",
+          "evidenceSha256": {
+            "4b2b3b2f-bd75-4f8f-b12a-17d1f0cd2531": "2423e7256ad35cede166ffba690792fa5db10a7e36e1ebfc7f8ece5bd5ab6aff"
+          }
         },
         {
           "nodeId": "591d3615-102f-466d-97bf-0bc6c3eca770",
@@ -179,7 +404,10 @@
           "evidenceIds": [
             "60240f51-a789-4ffb-9330-40e8d167072d"
           ],
-          "rationale": "Episode 76 describes public-key identity and signed messages across shared data and agent systems."
+          "rationale": "Episode 76 describes public-key identity and signed messages across shared data and agent systems.",
+          "evidenceSha256": {
+            "60240f51-a789-4ffb-9330-40e8d167072d": "ba7008e33b8546222b64880686177df7453627904dcd637dd5c50c4fef0cdf92"
+          }
         },
         {
           "nodeId": "3a9b5b72-599b-4f1e-b94b-1259e6f0d384",
@@ -187,14 +415,100 @@
           "evidenceIds": [
             "970c57ea-6ed6-4e04-8098-a9c97bdf2d85"
           ],
-          "rationale": "Episode 72 distinguishes a device signing key from its owner identity and explains mapping them together."
+          "rationale": "Episode 72 distinguishes a device signing key from its owner identity and explains mapping them together.",
+          "evidenceSha256": {
+            "970c57ea-6ed6-4e04-8098-a9c97bdf2d85": "a5773bacdcf0a588610d8eb73d106af850617f442333b7165faf0ffa7e009e33"
+          }
+        },
+        {
+          "nodeId": "0f395e68-97db-40d6-b947-7b4261ae197f",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "f919b526-a494-4dff-8991-c95e5017d516"
+          ],
+          "rationale": "Episode 70 proposes one identity to reduce endpoint configuration and copied API credentials.",
+          "evidenceSha256": {
+            "f919b526-a494-4dff-8991-c95e5017d516": "0df179518fd9ca5fa26c310e5e5d81573436badf544f6f4dba7eacdd76567ef4"
+          }
+        },
+        {
+          "nodeId": "3529aa31-5194-4077-a183-178dbeee9489",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "4ef94c0c-050c-497e-b81b-456975d878a9"
+          ],
+          "rationale": "Episode 72 describes persistent identity authorising access across applications and devices.",
+          "evidenceSha256": {
+            "4ef94c0c-050c-497e-b81b-456975d878a9": "51489e2df880f3fb52c95ccd14f9eabbe46664b60cbb56b5ed775e7fd878505d"
+          }
+        },
+        {
+          "nodeId": "74003759-043d-407e-b6fd-df1c42cd5150",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "8f6794fb-3c4d-4667-8b09-07a882eacbda"
+          ],
+          "rationale": "Episode 79 describes separate data access granted through provable cryptographic authority.",
+          "evidenceSha256": {
+            "8f6794fb-3c4d-4667-8b09-07a882eacbda": "c1ee7572685c025e5c2baa1079e5cf8459acdbf3f4ecd39aa57c540592db1a96"
+          }
+        },
+        {
+          "nodeId": "ebf7e551-4a02-4b27-ba5a-72ecad4fdb8b",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "ae4e1884-6fdb-4bda-b909-09ac61dfd16b"
+          ],
+          "rationale": "Episode 76 qualifies portable identity with recoverable backups and revocable delegated keys.",
+          "evidenceSha256": {
+            "ae4e1884-6fdb-4bda-b909-09ac61dfd16b": "66d494da115c2ec5eb88faf2c310bf06ec27147b9bf29cc8cf5e8a560bb21e92"
+          }
+        },
+        {
+          "nodeId": "40a5f486-e57b-4adc-a68c-de4171a4f52d",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "558e7bf3-7e56-4a20-94cc-a5f49d7189fc"
+          ],
+          "rationale": "Episode 70 applies signed identities and repository permissions to agent Git collaboration.",
+          "evidenceSha256": {
+            "558e7bf3-7e56-4a20-94cc-a5f49d7189fc": "f16920d6b654ae09a0adf1de313e9b84050225449d6638c1168d328a15f328c4"
+          }
+        },
+        {
+          "nodeId": "7a485d09-8cf0-4b44-9d74-9f3aa18be05c",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "64682954-d003-4dac-8acd-9211a72374fa"
+          ],
+          "rationale": "Episode 65 proposes identity-gated Git access without distributing personal GitHub credentials.",
+          "evidenceSha256": {
+            "64682954-d003-4dac-8acd-9211a72374fa": "c67ad7d926b6d6aa9c5dcead353b7e6faabde640af9e1388692c05f75cbb3483"
+          }
+        },
+        {
+          "nodeId": "a403f2d3-787f-4694-9d9d-5139bdedfec9",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "4e42ceb8-afd6-4edb-a870-cebefe686659"
+          ],
+          "rationale": "Episode 79 qualifies shared-agent authority with directional dispatch boundaries rather than automatic reciprocal commands.",
+          "evidenceSha256": {
+            "4e42ceb8-afd6-4edb-a870-cebefe686659": "e14b781a6d8abf01974704aef2dbfe50f91ec001033a8157891826585bb0cc61"
+          }
         }
-      ]
+      ],
+      "topicFamilies": [
+        "privacy-security",
+        "software-systems",
+        "agents"
+      ],
+      "comparisonType": "recurrence"
     },
     {
       "id": "shared-work-layers",
       "title": "Shared work and data layers",
-      "summary": "Common records and identity let people, agents and interfaces work with the same state. The linked workspace and canvas designs preserve their different purposes.",
+      "summary": "Common records and identity let people, agents and different interfaces work from shared state. Workspace designs remain distinct.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
@@ -202,7 +516,9 @@
       "mentions": [
         "faa211e7-c304-4d88-be69-1dc853935520",
         "cd3c07d0-a08e-4e91-a3d5-eb79384488dd",
-        "710f86a5-3fcb-4b85-8553-f3e1a6dfce6a"
+        "710f86a5-3fcb-4b85-8553-f3e1a6dfce6a",
+        "66fad37e-4d64-4766-b9c6-d1832e0c962f",
+        "38ec572c-47df-4d3b-abd8-c51e1d0dc8f0"
       ],
       "sources": [
         {
@@ -211,7 +527,10 @@
           "evidenceIds": [
             "c9cabf35-19ee-4ceb-b1fd-2b18a9597601"
           ],
-          "rationale": "Episode 65 introduces a shared human-agent collaboration layer above separate Autopilot runtimes."
+          "rationale": "Episode 65 introduces a shared human-agent collaboration layer above separate Autopilot runtimes.",
+          "evidenceSha256": {
+            "c9cabf35-19ee-4ceb-b1fd-2b18a9597601": "f13a41c709ccc541d0d5387fd003968a8f9c501b7cdbc08ea5da762a48e24249"
+          }
         },
         {
           "nodeId": "cd3c07d0-a08e-4e91-a3d5-eb79384488dd",
@@ -219,7 +538,10 @@
           "evidenceIds": [
             "ed12d5b1-abb9-49ef-b54b-84f90688e0bc"
           ],
-          "rationale": "Episode 67 explains why multiple agents and runtimes motivate a common work interface."
+          "rationale": "Episode 67 explains why multiple agents and runtimes motivate a common work interface.",
+          "evidenceSha256": {
+            "ed12d5b1-abb9-49ef-b54b-84f90688e0bc": "333cd27a136e586f4c254ed39e8c388c66a251d45f6d6464f497ad306d3178ca"
+          }
         },
         {
           "nodeId": "710f86a5-3fcb-4b85-8553-f3e1a6dfce6a",
@@ -227,14 +549,44 @@
           "evidenceIds": [
             "8a3dc5f7-d110-4d95-a66c-6d61a86b205a"
           ],
-          "rationale": "Episode 77 describes a canvas retrieving an authenticated document directly from the common record layer."
+          "rationale": "Episode 77 describes a canvas retrieving an authenticated document directly from the common record layer.",
+          "evidenceSha256": {
+            "8a3dc5f7-d110-4d95-a66c-6d61a86b205a": "de8996e3a2cb3a4b96b0dc25c900356a3dd2c29f0450e809675a74722d83d0cb"
+          }
+        },
+        {
+          "nodeId": "66fad37e-4d64-4766-b9c6-d1832e0c962f",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "17f2a941-6187-4d29-88c9-4dc3a516d0f3"
+          ],
+          "rationale": "Episode 67 describes identity-separated workspaces sharing database and storage infrastructure.",
+          "evidenceSha256": {
+            "17f2a941-6187-4d29-88c9-4dc3a516d0f3": "00e09de10941237546e73978a6e51eb533b138e0aea7c49c24f7bb605882e172"
+          }
+        },
+        {
+          "nodeId": "38ec572c-47df-4d3b-abd8-c51e1d0dc8f0",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "9dca1420-0925-4320-9aad-2f29c5a2bdaa"
+          ],
+          "rationale": "Episode 71 describes a shared mobile control centre for agent context, work records and decisions.",
+          "evidenceSha256": {
+            "9dca1420-0925-4320-9aad-2f29c5a2bdaa": "51490d52a1b98081f8aa236f00fa608dbf1a31ae1504117233656591840d120e"
+          }
         }
-      ]
+      ],
+      "topicFamilies": [
+        "software-systems",
+        "agents"
+      ],
+      "comparisonType": "recurrence"
     },
     {
       "id": "selective-model-use",
       "title": "Local and selective model use",
-      "summary": "Choosing where models run and when to call a larger service. Local models, confidential hosting and task-specific models are related options, not equivalent privacy guarantees.",
+      "summary": "Capability, privacy, convenience and deployment cost constrain model choice. Local and hosted routing proposals are not equivalent privacy guarantees.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
@@ -242,7 +594,10 @@
       "mentions": [
         "761fcc84-7e04-48ba-abd7-48d1ee7917e3",
         "6ce9f78b-171d-4279-9939-a87b891f4cda",
-        "376d46f2-66ee-4fec-8fbd-e5cf1ab31172"
+        "376d46f2-66ee-4fec-8fbd-e5cf1ab31172",
+        "3c5ec445-22f8-4501-8a55-ca1a712fbdc5",
+        "30a687a5-df41-4f55-8e2e-a2562fb4047f",
+        "fa2f164d-ef68-4ce4-98de-440a9b47ac55"
       ],
       "sources": [
         {
@@ -251,7 +606,10 @@
           "evidenceIds": [
             "bfcfd4ee-f113-40a7-a12f-ece3e7afb38c"
           ],
-          "rationale": "Episode 67 proposes local routine execution with external calls when more capability is needed."
+          "rationale": "Episode 67 proposes local routine execution with external calls when more capability is needed.",
+          "evidenceSha256": {
+            "bfcfd4ee-f113-40a7-a12f-ece3e7afb38c": "b675afdd7ecca35b8c9904e42fd6dc3ceced8b4e4e37dc8ba93975411574dcce"
+          }
         },
         {
           "nodeId": "6ce9f78b-171d-4279-9939-a87b891f4cda",
@@ -259,7 +617,10 @@
           "evidenceIds": [
             "1cdd374c-5905-422d-941a-57e18521f8ff"
           ],
-          "rationale": "Episode 76 proposes open-weight or confidentially hosted routine work with occasional frontier-model escalation."
+          "rationale": "Episode 76 proposes open-weight or confidentially hosted routine work with occasional frontier-model escalation.",
+          "evidenceSha256": {
+            "1cdd374c-5905-422d-941a-57e18521f8ff": "a970e72e79dd574881e799e82dba7a3548edf789a80152fe4c860534d8c6ee82"
+          }
         },
         {
           "nodeId": "376d46f2-66ee-4fec-8fbd-e5cf1ab31172",
@@ -267,14 +628,63 @@
           "evidenceIds": [
             "09b9b07e-c446-4289-90b9-54782c554688"
           ],
-          "rationale": "Episode 62 discusses task-specific models trained for a user and kept locally, rather than routing every task to a frontier model."
+          "rationale": "Episode 62 discusses task-specific models trained for a user and kept locally, rather than routing every task to a frontier model.",
+          "evidenceSha256": {
+            "09b9b07e-c446-4289-90b9-54782c554688": "2c1bb339c79cb939a6d2fab3c18f7c64b9b85b87f60d82bab8cf6983bd6e72c4"
+          }
+        },
+        {
+          "nodeId": "3c5ec445-22f8-4501-8a55-ca1a712fbdc5",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "b918312c-a255-47d2-bc72-bd5f1aab4664",
+            "2fe39e37-3c7b-4eb7-adb5-47f4862c9f1b",
+            "e3ccd7b9-4dea-46fa-ba0b-12bec0d95a7e"
+          ],
+          "rationale": "Episode 53 contrasts desire for control over data with the convenience of a hosted service, while expressing reservations about production use.",
+          "evidenceSha256": {
+            "b918312c-a255-47d2-bc72-bd5f1aab4664": "e7dfefcb8f7f3dd164c2c8997081438b6a112f4cd4456f4dd0cd2d11cb4ed904",
+            "2fe39e37-3c7b-4eb7-adb5-47f4862c9f1b": "f078337d70018fac797de1ea2a499c8dd653246fe90502e230f5a2333f04cbed",
+            "e3ccd7b9-4dea-46fa-ba0b-12bec0d95a7e": "dc8df5edce6b1611583f92cc4728d216fa97570c610230a8eac87f3e6072b7fe"
+          }
+        },
+        {
+          "nodeId": "30a687a5-df41-4f55-8e2e-a2562fb4047f",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "d4bc4a3b-6895-47fd-b72f-b86da5a78e3e"
+          ],
+          "rationale": "Episode 67 reports useful routine personal work from mid-sized local models without claiming frontier equivalence.",
+          "evidenceSha256": {
+            "d4bc4a3b-6895-47fd-b72f-b86da5a78e3e": "f530de10bf1caa62beceeaa67bc369798842155b13a744a10fc5cfe6443c4113"
+          }
+        },
+        {
+          "nodeId": "fa2f164d-ef68-4ce4-98de-440a9b47ac55",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "dc8b14cd-ec8a-47cc-a4e2-7199c4fc0bd9",
+            "ff63b707-614f-4b08-8453-b821f6038af7",
+            "873683bb-6cc3-4b9e-84da-4dc6d419aa92"
+          ],
+          "rationale": "Episode 69 gives a two-stage example: private local log triage followed by stronger external investigation.",
+          "evidenceSha256": {
+            "dc8b14cd-ec8a-47cc-a4e2-7199c4fc0bd9": "17bc53d062727528a2f2aeec5c70e6664945bdc27ad922120e4a499c6fdb65ff",
+            "ff63b707-614f-4b08-8453-b821f6038af7": "72f05c11510862fdf1e732442fc5b7b912744cbf393dc8a0b12d1fcd1f4885f8",
+            "873683bb-6cc3-4b9e-84da-4dc6d419aa92": "d6a48d6c5965017c29a92746e4b25103c74b8152fd22ed0cddeb950be4ba35f6"
+          }
         }
-      ]
+      ],
+      "topicFamilies": [
+        "ai-models-infrastructure",
+        "privacy-security"
+      ],
+      "comparisonType": "recurrence"
     },
     {
       "id": "human-review",
       "title": "Human review and inspectable work",
-      "summary": "Keep the intermediate work and feedback needed for people to assess AI outputs. Software review, financial audit and review-oriented interfaces have different standards and stakes.",
+      "summary": "Keep enough intermediate work and checkpoints for people to steer and assess outcomes. Review cadence depends on task, stakes and interaction mode.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
@@ -282,7 +692,12 @@
       "mentions": [
         "8e32400e-dc71-4b66-be26-9fd49eee13d3",
         "8da8012a-e555-4692-bcbb-d9675018c588",
-        "0a21e139-01ce-4cc2-a1ad-407e887a1b4d"
+        "0a21e139-01ce-4cc2-a1ad-407e887a1b4d",
+        "79dc4798-7344-4e26-a155-e508d03cdc84",
+        "930158c0-7dda-40f5-b804-60919b51a106",
+        "9d6bcecc-b75a-4ad5-9846-bf19ce8782c0",
+        "b6e977c6-fdc2-4bc5-b4f4-41931ce329b4",
+        "23f55493-90c6-443d-9357-beb79e68d7e0"
       ],
       "sources": [
         {
@@ -291,7 +706,10 @@
           "evidenceIds": [
             "de8a3aae-b16b-4433-9b16-44fba782ad7f"
           ],
-          "rationale": "Episode 62 argues for close human involvement and awareness of changes instead of hands-off generation."
+          "rationale": "Episode 62 argues for close human involvement and awareness of changes instead of hands-off generation.",
+          "evidenceSha256": {
+            "de8a3aae-b16b-4433-9b16-44fba782ad7f": "bc7b739bece979ddf64b2582f9395fd568b29dfb5e4e283d4224eecdab9fde92"
+          }
         },
         {
           "nodeId": "8da8012a-e555-4692-bcbb-d9675018c588",
@@ -299,7 +717,10 @@
           "evidenceIds": [
             "3bd0d3e5-9139-4f3c-8269-062b3e6a6993"
           ],
-          "rationale": "Episode 71 prioritises intermediate spreadsheets and reasoning that can be inspected over an unsupported final answer."
+          "rationale": "Episode 71 prioritises intermediate spreadsheets and reasoning that can be inspected over an unsupported final answer.",
+          "evidenceSha256": {
+            "3bd0d3e5-9139-4f3c-8269-062b3e6a6993": "c26d3336aa3be587f0a0545c0987d72b24495b92b7fea47f03a695fa373f1075"
+          }
         },
         {
           "nodeId": "0a21e139-01ce-4cc2-a1ad-407e887a1b4d",
@@ -307,14 +728,77 @@
           "evidenceIds": [
             "ad01148a-cd64-4836-b6d9-bc529de02d8e"
           ],
-          "rationale": "Episode 76 identifies checking the agent’s work as a central remaining purpose of the interface."
+          "rationale": "Episode 76 identifies checking the agent’s work as a central remaining purpose of the interface.",
+          "evidenceSha256": {
+            "ad01148a-cd64-4836-b6d9-bc529de02d8e": "c701a1976663483654d9e900b8366d47349a5bef7f7b684f049943f5a22f6a80"
+          }
+        },
+        {
+          "nodeId": "79dc4798-7344-4e26-a155-e508d03cdc84",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "3f949cca-f984-4b57-beef-2d134d0ce7d3"
+          ],
+          "rationale": "Episode 60 argues that fresh human review contributes real-world understanding absent from the initial prompt.",
+          "evidenceSha256": {
+            "3f949cca-f984-4b57-beef-2d134d0ce7d3": "133122c35927e09934e706d1618b2e0d896f6e421a8d83a53ee04b9c84c28679"
+          }
+        },
+        {
+          "nodeId": "930158c0-7dda-40f5-b804-60919b51a106",
+          "transcriptRevisionId": "ddfa2c80-8197-48b2-bbcc-5ba0f315e862",
+          "evidenceIds": [
+            "b7b0997d-9027-4486-9bbf-7e676aa164b0"
+          ],
+          "rationale": "Episode 61 proposes bounded runs with planned human checkpoints for taste and consequences.",
+          "evidenceSha256": {
+            "b7b0997d-9027-4486-9bbf-7e676aa164b0": "30e2780d0b09b2c269d694f02733e657cb73f82b74fc078bf8c3d25b46147a2f"
+          }
+        },
+        {
+          "nodeId": "9d6bcecc-b75a-4ad5-9846-bf19ce8782c0",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "e167d487-676c-428d-88a6-85326244b875"
+          ],
+          "rationale": "Episode 65 argues for reviewable increments so undocumented decisions do not accumulate.",
+          "evidenceSha256": {
+            "e167d487-676c-428d-88a6-85326244b875": "4920c9cd66d9eaa8e8bbfd786f3f001795de8c86070131478cce247ff605c926"
+          }
+        },
+        {
+          "nodeId": "b6e977c6-fdc2-4bc5-b4f4-41931ce329b4",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "9963a959-2155-46f2-8822-76075330ab61"
+          ],
+          "rationale": "Episode 75 warns that longer runs can worsen results when they remove decisions discovered during implementation.",
+          "evidenceSha256": {
+            "9963a959-2155-46f2-8822-76075330ab61": "0b31888c544116a038bea6ea10d212873e362a7881439d4cdb63a1ba82aef7bb"
+          }
+        },
+        {
+          "nodeId": "23f55493-90c6-443d-9357-beb79e68d7e0",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "0345c643-a7e6-4c18-836f-54210a51206f"
+          ],
+          "rationale": "Episode 78 qualifies constant automated checking: unattended long jobs and immediate small visual edits need different verification rhythms.",
+          "evidenceSha256": {
+            "0345c643-a7e6-4c18-836f-54210a51206f": "aaee2c67f2011c53a10d2fb8a386f9b17ba58990d2eb919ee8076700010fc315"
+          }
         }
-      ]
+      ],
+      "topicFamilies": [
+        "agents",
+        "ai-coding"
+      ],
+      "comparisonType": "perspectives"
     },
     {
       "id": "malleable-interfaces",
       "title": "Stable, adaptable interfaces",
-      "summary": "Keep a familiar place to work while adapting the tools and artifacts inside it. Personal software, structured workspaces and bounded canvas applets offer distinct approaches.",
+      "summary": "Task-specific and disposable interfaces coexist with proposals for familiar containers and durable work objects. This compares design choices, not a consensus that every interface should be transient.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
@@ -322,7 +806,12 @@
       "mentions": [
         "09d62778-d468-4647-a1b9-bd52d73378f7",
         "91592044-f646-49ff-9b96-63f5ab25b525",
-        "4d258183-1913-4c42-b457-c2897fceae4a"
+        "4d258183-1913-4c42-b457-c2897fceae4a",
+        "f611f20b-9889-499f-b269-8bf673264a94",
+        "0b4a69a7-1d6e-42b8-8416-cad0ed6b08d5",
+        "c122971b-66e4-4d57-9106-60cd020644f3",
+        "f165b13c-14d9-4661-8301-ffbf9e60a68b",
+        "9954c724-df44-4f7f-955a-c5e868b070c6"
       ],
       "sources": [
         {
@@ -331,7 +820,10 @@
           "evidenceIds": [
             "60ef820f-db75-4758-906f-41e7ccbad5f8"
           ],
-          "rationale": "Episode 70 argues for a personal interface with a stable shape that changes when the job requires it."
+          "rationale": "Episode 70 argues for a personal interface with a stable shape that changes when the job requires it.",
+          "evidenceSha256": {
+            "60ef820f-db75-4758-906f-41e7ccbad5f8": "02bea05dec5d35377d5492e324a28fb2e276e34e4d19f54d5587cc6024e5808d"
+          }
         },
         {
           "nodeId": "91592044-f646-49ff-9b96-63f5ab25b525",
@@ -339,7 +831,10 @@
           "evidenceIds": [
             "01eec865-6410-49d7-8d09-dee63df272f9"
           ],
-          "rationale": "Episode 76 rejects a wholly new interface on every request in favour of familiar work structures."
+          "rationale": "Episode 76 rejects a wholly new interface on every request in favour of familiar work structures.",
+          "evidenceSha256": {
+            "01eec865-6410-49d7-8d09-dee63df272f9": "e2b9823b4d9f6b667308f80f74a7761652865acec58654038e2bb5056b6b5c59"
+          }
         },
         {
           "nodeId": "4d258183-1913-4c42-b457-c2897fceae4a",
@@ -347,14 +842,83 @@
           "evidenceIds": [
             "2121e2e8-483c-4e73-aa9e-e788e85f5e3b"
           ],
-          "rationale": "Episode 77 describes bounded applets and reusable templates within a stable canvas."
+          "rationale": "Episode 77 describes bounded applets and reusable templates within a stable canvas.",
+          "evidenceSha256": {
+            "2121e2e8-483c-4e73-aa9e-e788e85f5e3b": "95c33570fe97ef4d144aa8a7cc276f54ce55fd073e49a64e1ad499bf1eb92ace"
+          }
+        },
+        {
+          "nodeId": "f611f20b-9889-499f-b269-8bf673264a94",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "d4bff372-4bc5-4088-a2b6-4b843ace028c",
+            "7f303b44-1fb7-4602-96e0-a8ea2ddd2d4c"
+          ],
+          "rationale": "Episode 53 suggests that routine operational interfaces may remain mainly for audit and adjustment.",
+          "evidenceSha256": {
+            "d4bff372-4bc5-4088-a2b6-4b843ace028c": "9621b282f56ec4cde981dc448e5ad895f32e8b548de98b605845a8c451e89af7",
+            "7f303b44-1fb7-4602-96e0-a8ea2ddd2d4c": "90b381843face4af83682724487b678b4bae2d18be99a57cdd865d8a6c2bd862"
+          }
+        },
+        {
+          "nodeId": "0b4a69a7-1d6e-42b8-8416-cad0ed6b08d5",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "29cd2198-dbb8-4a8c-9d1d-5b8c313c761f"
+          ],
+          "rationale": "Episode 76 proposes software becoming a transient task event; this is a different emphasis from its stable-container discussion.",
+          "evidenceSha256": {
+            "29cd2198-dbb8-4a8c-9d1d-5b8c313c761f": "c338a1d27f39a565d7007a25d6c9e15a6f6b6bb46c9fb8084df8a00a21a640c2"
+          }
+        },
+        {
+          "nodeId": "c122971b-66e4-4d57-9106-60cd020644f3",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "bc15733d-f6cf-41a0-ba70-f0955acaa15a"
+          ],
+          "rationale": "Episode 75 argues that short-lived collaboration may need a rich temporary surface without a permanent document.",
+          "evidenceSha256": {
+            "bc15733d-f6cf-41a0-ba70-f0955acaa15a": "d538e86f97746d33bcbc3f815059067b8096fd6080f8307e739303b90bd2a4ba"
+          }
+        },
+        {
+          "nodeId": "f165b13c-14d9-4661-8301-ffbf9e60a68b",
+          "transcriptRevisionId": "3371f26e-97c7-4907-96fb-835563a0fb5b",
+          "evidenceIds": [
+            "eda23dc1-2e07-4379-b59b-9631de3a2434",
+            "835ccb65-6ac9-4c27-bba9-98cb4c1f6f89"
+          ],
+          "rationale": "Episode 74 rejects chat as a universal interface because structured objects preserve different context.",
+          "evidenceSha256": {
+            "eda23dc1-2e07-4379-b59b-9631de3a2434": "a908eef384ee876038decc0449a14005f34506a2e237ebfaf01528ad047c6f6a",
+            "835ccb65-6ac9-4c27-bba9-98cb4c1f6f89": "d127fbda39a4f99fb36f8f1debf0f9c6adeb8ed67579dfa521fbb85dc7b1c140"
+          }
+        },
+        {
+          "nodeId": "9954c724-df44-4f7f-955a-c5e868b070c6",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "bddd9eb2-3eed-48ce-977e-33be0937f1bb",
+            "065424f9-62f3-41b9-a9d0-217a61e8f508"
+          ],
+          "rationale": "Episode 77 distinguishes planning, dispatch, review and mobile interaction as different work modes.",
+          "evidenceSha256": {
+            "bddd9eb2-3eed-48ce-977e-33be0937f1bb": "9f830edadd3dd43c90488fc4dbed967b7cf944d06e07f494e6c88ced9ed4dec8",
+            "065424f9-62f3-41b9-a9d0-217a61e8f508": "4b813a10fe2a03e7d52a83b24d80fe455e4481cc53155d48a559c65f97b3c6f8"
+          }
         }
-      ]
+      ],
+      "topicFamilies": [
+        "software-systems",
+        "agents"
+      ],
+      "comparisonType": "perspectives"
     },
     {
       "id": "agent-continuity",
-      "title": "Short-lived agents, persistent work",
-      "summary": "Separate an agent’s temporary execution from the context and work that must survive. Small fresh sessions and shared cloud runtimes implement this in different ways.",
+      "title": "Agent runtimes and persistent work",
+      "summary": "Dedicated computers, fresh sessions and pooled short-lived workers make different cost, power and isolation trade-offs. State and outputs can persist without treating these architectures as equivalent.",
       "reviewState": "accepted",
       "reviewer": "lara",
       "reviewMethod": "agent-editorial-review",
@@ -362,7 +926,10 @@
       "mentions": [
         "c2b16144-a79e-476c-b648-0a2252024a14",
         "30e75138-d35e-4dc5-852c-7e3b5975bea2",
-        "5fb98fae-dcc1-4341-8990-6d095af6b603"
+        "5fb98fae-dcc1-4341-8990-6d095af6b603",
+        "d0b672d8-e209-44f0-b71e-cd2a8285b26b",
+        "9516a036-31d6-4811-b29d-7b512bc2ed51",
+        "8265f05c-5492-41eb-a4c4-cf4b528fbcf1"
       ],
       "sources": [
         {
@@ -371,7 +938,10 @@
           "evidenceIds": [
             "84721be7-ee2e-44c0-ac49-df337f1d1a26"
           ],
-          "rationale": "Episode 60 favours small disposable agent tasks while carrying useful context into a fresh session."
+          "rationale": "Episode 60 favours small disposable agent tasks while carrying useful context into a fresh session.",
+          "evidenceSha256": {
+            "84721be7-ee2e-44c0-ac49-df337f1d1a26": "4762ea72a4d5365480548d37e701bed02b2eed06cf3669460b9fcc1222ce9dfb"
+          }
         },
         {
           "nodeId": "30e75138-d35e-4dc5-852c-7e3b5975bea2",
@@ -379,7 +949,10 @@
           "evidenceIds": [
             "573c5caf-f59a-4a15-85ef-7269e0df6716"
           ],
-          "rationale": "Episode 79 describes hydrating agent information on pooled compute for a request and shutting execution down afterwards."
+          "rationale": "Episode 79 describes hydrating agent information on pooled compute for a request and shutting execution down afterwards.",
+          "evidenceSha256": {
+            "573c5caf-f59a-4a15-85ef-7269e0df6716": "b0e331a0a7bee66c3cb2b5daec58e6898a575c9ecb7e33351d08957b1c2db425"
+          }
         },
         {
           "nodeId": "5fb98fae-dcc1-4341-8990-6d095af6b603",
@@ -387,9 +960,50 @@
           "evidenceIds": [
             "3d692548-c488-4274-b576-324c98816f82"
           ],
-          "rationale": "Episode 79 explains how reports, software and data published to the shared backend remain after the runtime finishes."
+          "rationale": "Episode 79 explains how reports, software and data published to the shared backend remain after the runtime finishes.",
+          "evidenceSha256": {
+            "3d692548-c488-4274-b576-324c98816f82": "cdb83a0f3706ba49c38882db08e107b0614ade1f870b2f5bcdfd61a598aadc10"
+          }
+        },
+        {
+          "nodeId": "d0b672d8-e209-44f0-b71e-cd2a8285b26b",
+          "transcriptRevisionId": "3371f26e-97c7-4907-96fb-835563a0fb5b",
+          "evidenceIds": [
+            "b86db849-b00c-403a-858f-a372574fcea2"
+          ],
+          "rationale": "Episode 74 identifies the persistent personal computer as an emerging deployment pattern.",
+          "evidenceSha256": {
+            "b86db849-b00c-403a-858f-a372574fcea2": "952ba6326a1c402079565956ad2972bce39d5b3073a279689e1e1c2e338863b4"
+          }
+        },
+        {
+          "nodeId": "9516a036-31d6-4811-b29d-7b512bc2ed51",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "5f4db015-a69e-46c8-b8a2-0cc35cd44dd3"
+          ],
+          "rationale": "Episode 79 proposes shared runtime pools to lower the standing compute cost of idle personal agents.",
+          "evidenceSha256": {
+            "5f4db015-a69e-46c8-b8a2-0cc35cd44dd3": "94474cff18a82c4b0d4b762ff6ea7624165453a28794f5294e3ae43b84724dbf"
+          }
+        },
+        {
+          "nodeId": "8265f05c-5492-41eb-a4c4-cf4b528fbcf1",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "c4763e13-dcce-459b-a82e-3cde34889c75"
+          ],
+          "rationale": "Episode 79 explicitly compares more capable dedicated computers with bursts of isolated cloud workers.",
+          "evidenceSha256": {
+            "c4763e13-dcce-459b-a82e-3cde34889c75": "c1ee7572685c025e5c2baa1079e5cf8459acdbf3f4ecd39aa57c540592db1a96"
+          }
         }
-      ]
+      ],
+      "topicFamilies": [
+        "ai-models-infrastructure",
+        "agents"
+      ],
+      "comparisonType": "perspectives"
     },
     {
       "id": "protecting-attention",
@@ -411,7 +1025,10 @@
           "evidenceIds": [
             "04be7274-e227-429e-9032-233f5d108873"
           ],
-          "rationale": "Episode 67 moves optional news from unread work-channel items to a browsable feed."
+          "rationale": "Episode 67 moves optional news from unread work-channel items to a browsable feed.",
+          "evidenceSha256": {
+            "04be7274-e227-429e-9032-233f5d108873": "9e772f6cb0397f1b4f143dc8840f7e6669dfbcbfc63b1af13e8a1e340aa99b4f"
+          }
         },
         {
           "nodeId": "41ead85e-0909-4374-89a9-eec44c07a90d",
@@ -419,7 +1036,10 @@
           "evidenceIds": [
             "82fd85fe-0dff-4ba1-90a3-cce00de5856b"
           ],
-          "rationale": "Episode 75 separates publishing a thought from entering the social platform to consume its feed."
+          "rationale": "Episode 75 separates publishing a thought from entering the social platform to consume its feed.",
+          "evidenceSha256": {
+            "82fd85fe-0dff-4ba1-90a3-cce00de5856b": "b48fad2078b83679f5b4853147e5c3f1e444a55f9eb9976159604c58282ef8f1"
+          }
         },
         {
           "nodeId": "515391bb-3969-4c2d-961e-44c0a0b685e3",
@@ -427,10 +1047,2245 @@
           "evidenceIds": [
             "cf5891a6-8f2e-4312-85e7-005cb5133735"
           ],
-          "rationale": "Episode 76 proposes an agent interface as a protective barrier between a person and attention-seeking email interfaces."
+          "rationale": "Episode 76 proposes an agent interface as a protective barrier between a person and attention-seeking email interfaces.",
+          "evidenceSha256": {
+            "cf5891a6-8f2e-4312-85e7-005cb5133735": "99e7c63688a97a1e39808108970b8ed8851553cab16fb48c01c8362fe7318a1e"
+          }
         }
+      ],
+      "comparisonType": "recurrence",
+      "topicFamilies": [
+        "social-media",
+        "agents"
       ]
+    },
+    {
+      "id": "business-ownership",
+      "mentions": [
+        "12e39900-6b96-4cac-8bf0-0849f310db16",
+        "f49d9937-3969-4102-8919-3142b1cab819",
+        "6f679b81-5eb9-4cf8-a9e9-14ffe7957af6"
+      ],
+      "sources": [
+        {
+          "nodeId": "12e39900-6b96-4cac-8bf0-0849f310db16",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "d1c3f49b-8187-4ea2-8d15-cbe75283bbd8",
+            "ac37e0e4-ceb0-4ed8-9b3a-c68d64457575"
+          ],
+          "rationale": "Episode 53 argues that firms should own and be able to move the processes that define them.",
+          "expandedContext": {
+            "path": "src/content/transcripts/episode-053.txt",
+            "range": "10:47–12:19",
+            "sha256": "53ce67411b8bb38b236fc7afadf580aaa661aaa6b47f3caf31396948825279cd"
+          },
+          "evidenceSha256": {
+            "d1c3f49b-8187-4ea2-8d15-cbe75283bbd8": "1a0fae517221d42ebb24e7e5024b15cdb77afcb700d6f111145f5e07b5118c3d",
+            "ac37e0e4-ceb0-4ed8-9b3a-c68d64457575": "f4bf8fe4dbe9d01e2ab3430563630a64f0e40b2f6647fa914f6a7f392a35af56"
+          }
+        },
+        {
+          "nodeId": "f49d9937-3969-4102-8919-3142b1cab819",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "6d3ac668-f557-4347-b42d-cdf9017bdd7b"
+          ],
+          "rationale": "Episode 63 warns that outsourcing people, processes and data can hollow out the company’s value chain.",
+          "evidenceSha256": {
+            "6d3ac668-f557-4347-b42d-cdf9017bdd7b": "ba5e95fa0514ab0e0f5ff2a2e7f6f124e10fd1427bb3d1855ab42f6f3c10b62f"
+          }
+        },
+        {
+          "nodeId": "6f679b81-5eb9-4cf8-a9e9-14ffe7957af6",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "743e3cbf-492f-4659-9fc9-f1e08c8955fe"
+          ],
+          "rationale": "Episode 76 relates outside control of operating agents to business succession and continuing autonomy.",
+          "evidenceSha256": {
+            "743e3cbf-492f-4659-9fc9-f1e08c8955fe": "bc3c87c600fa3638b8b5ed5291505ff70cfc0877209f58f7ce2e416e1662118a"
+          }
+        }
+      ],
+      "title": "Ownership of AI-run businesses",
+      "summary": "When operations run through software and agents, owning the underlying processes and data becomes part of owning the firm. These are business arguments, not established legal conclusions.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "operational-knowledge",
+      "mentions": [
+        "9457edb5-1033-4fc5-83ff-8962aa2cdf38",
+        "4fabfe1b-6aa1-4b61-a1fd-9413a12ac449",
+        "08c94fd6-29bc-48c6-9846-8cbd41342605",
+        "9c778afc-b888-413a-889d-67bf67dfce5d",
+        "8787fff0-d91e-4109-b087-6df5ea8f5217"
+      ],
+      "sources": [
+        {
+          "nodeId": "9457edb5-1033-4fc5-83ff-8962aa2cdf38",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "93e38a70-1f7d-4828-b45d-bbb41da4009c",
+            "15f976ea-f5b8-4198-a694-5e0efa7c6e9e"
+          ],
+          "rationale": "Episode 53 treats accumulated judgement in private agent instructions as a portable productive asset.",
+          "expandedContext": {
+            "path": "src/content/transcripts/episode-053.txt",
+            "range": "42:32–43:03",
+            "sha256": "53ce67411b8bb38b236fc7afadf580aaa661aaa6b47f3caf31396948825279cd"
+          },
+          "evidenceSha256": {
+            "93e38a70-1f7d-4828-b45d-bbb41da4009c": "8fa494e35a4458b2f76502862be828f9c05547a141e7f236bed7dff355432338",
+            "15f976ea-f5b8-4198-a694-5e0efa7c6e9e": "6fc96799d23a618f27456a8bb8bb4c10cb4a9abafc29472d99740301c0993156"
+          }
+        },
+        {
+          "nodeId": "4fabfe1b-6aa1-4b61-a1fd-9413a12ac449",
+          "transcriptRevisionId": "ddfa2c80-8197-48b2-bbcc-5ba0f315e862",
+          "evidenceIds": [
+            "6bf2ad6d-a6c5-4463-b5ec-6fd02b4062ac"
+          ],
+          "rationale": "Episode 61 describes documenting a senior employee’s knowledge to reduce key-person risk.",
+          "evidenceSha256": {
+            "6bf2ad6d-a6c5-4463-b5ec-6fd02b4062ac": "5d5a5d7c9261ef6c3cc01e3d978fcd0626de7869e3c83a6e3f513e940931c70b"
+          }
+        },
+        {
+          "nodeId": "08c94fd6-29bc-48c6-9846-8cbd41342605",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "8742b481-15dc-4049-8392-204979dd9c91"
+          ],
+          "rationale": "Episode 63 describes business succession as handing over complex technology and systems rather than only physical assets.",
+          "evidenceSha256": {
+            "8742b481-15dc-4049-8392-204979dd9c91": "d8b7939c96d7cba26abf98917f43672f6a4a89bb92e3c60b0431574ca1525ac8"
+          }
+        },
+        {
+          "nodeId": "9c778afc-b888-413a-889d-67bf67dfce5d",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "b378768c-69ad-494a-851d-9f4fba8213e2",
+            "d878f5e0-99cc-4f47-b60a-689ac0ff8cd7"
+          ],
+          "rationale": "Episode 65 locates business value in encoded processes, authority and knowledge rather than generic tools.",
+          "evidenceSha256": {
+            "b378768c-69ad-494a-851d-9f4fba8213e2": "ceb3438dae7ca5bc3d7217411d1c49e2c781caffb77d8bbc1008ed24faab9be7",
+            "d878f5e0-99cc-4f47-b60a-689ac0ff8cd7": "2cd5d85fe6b3d9307fa543414514b07c15139edaa98b0f5c28e736f3f3be438b"
+          }
+        },
+        {
+          "nodeId": "8787fff0-d91e-4109-b087-6df5ea8f5217",
+          "transcriptRevisionId": "17330e15-337f-484f-b46d-1da33c833899",
+          "evidenceIds": [
+            "2e80a5cd-28c4-49c1-97f1-ed9c50b38b8c",
+            "ef658097-7cd8-4887-a573-d63fdd7243e3"
+          ],
+          "rationale": "Episode 64 argues that domain experts can encode business knowledge directly into software with less handoff loss.",
+          "evidenceSha256": {
+            "2e80a5cd-28c4-49c1-97f1-ed9c50b38b8c": "193c5345f68674d68acf5a2524591c5342fad22d128b15508b4767d05b697bd4",
+            "ef658097-7cd8-4887-a573-d63fdd7243e3": "f5c55c435b50195a12320eb0e9ce68a585ff0994dab1733e91e4a0dd775c7599"
+          }
+        }
+      ],
+      "title": "Making operational knowledge transferable",
+      "summary": "Private instructions, documented methods and inherited systems can preserve judgement beyond one person. Ownership, portability and transfer are related but different concerns.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "software-systems",
+        "business-markets",
+        "knowledge-memory"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "useful-output",
+      "mentions": [
+        "9753d08f-ccec-4632-a3a3-41e2720ebc95",
+        "158d641f-9a28-41ba-9c62-2028d59a1ba7",
+        "905ff035-12a4-4e7f-bf78-8223b739d223"
+      ],
+      "sources": [
+        {
+          "nodeId": "9753d08f-ccec-4632-a3a3-41e2720ebc95",
+          "transcriptRevisionId": "ddfa2c80-8197-48b2-bbcc-5ba0f315e862",
+          "evidenceIds": [
+            "bb85c278-729f-46ce-9651-30b2ef2479bb"
+          ],
+          "rationale": "Episode 61 rejects output volume as sufficient evidence of productivity.",
+          "evidenceSha256": {
+            "bb85c278-729f-46ce-9651-30b2ef2479bb": "89a66ab44c714a19f0e6122d2427d60bfde27a28f76ff986f042f940f08058e3"
+          }
+        },
+        {
+          "nodeId": "158d641f-9a28-41ba-9c62-2028d59a1ba7",
+          "transcriptRevisionId": "d5ab1035-ef9d-494d-8648-6fa8915a5199",
+          "evidenceIds": [
+            "f317d174-bcc1-47a9-bff2-70505ae216b0"
+          ],
+          "rationale": "Episode 62 recounts token consumption rising without proportional shipping.",
+          "evidenceSha256": {
+            "f317d174-bcc1-47a9-bff2-70505ae216b0": "e6197d330e700c8a217d8af736ef99ce6911a8738ab955de1a979b756200969d"
+          }
+        },
+        {
+          "nodeId": "905ff035-12a4-4e7f-bf78-8223b739d223",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "ed383a8d-1014-417b-a5cf-506953d0fac5"
+          ],
+          "rationale": "Episode 78 distinguishes invention from commercially useful application to an actual need.",
+          "evidenceSha256": {
+            "ed383a8d-1014-417b-a5cf-506953d0fac5": "131d0798eb00d0d1fc5750e26816b6b430bddeb46e867452126113d13bd09c39"
+          }
+        }
+      ],
+      "title": "Useful outcomes over output volume",
+      "summary": "Assess AI work by whether it solves a wanted problem rather than by tokens, code volume or effort alone. The linked discussions use different examples of misleading proxies.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets",
+        "ai-coding"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "sell-outcomes",
+      "mentions": [
+        "a3220817-c3cf-4694-851d-a218c5b0454d",
+        "28deccca-f7c9-44f0-a9fe-bf0609524128",
+        "78a8c258-8a08-45eb-802e-96f3242ef08f"
+      ],
+      "sources": [
+        {
+          "nodeId": "a3220817-c3cf-4694-851d-a218c5b0454d",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "5a3b1dbf-4788-44aa-8299-0c7aa4f16c18"
+          ],
+          "rationale": "Episode 67 argues that SMEs respond to growth, savings and trusted guidance rather than unfamiliar AI features.",
+          "evidenceSha256": {
+            "5a3b1dbf-4788-44aa-8299-0c7aa4f16c18": "4313da3ff5c5abbcab815604dcc736f4ac7e6b186c68c7f72a54e8ded5521998"
+          }
+        },
+        {
+          "nodeId": "28deccca-f7c9-44f0-a9fe-bf0609524128",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "83848831-ccd9-403c-a3b6-fe15ae53502f"
+          ],
+          "rationale": "Episode 69 argues for packaging infrastructure as a complete working outcome.",
+          "evidenceSha256": {
+            "83848831-ccd9-403c-a3b6-fe15ae53502f": "b50ddf1417957274bf7178a09a7a093491431d1b22fe5124b3affff9bd697107"
+          }
+        },
+        {
+          "nodeId": "78a8c258-8a08-45eb-802e-96f3242ef08f",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "685077ff-a5a0-4559-8e95-ea937e6874ba"
+          ],
+          "rationale": "Episode 63 identifies immediate money, time and bottleneck benefits as practical SME adoption drivers.",
+          "evidenceSha256": {
+            "685077ff-a5a0-4559-8e95-ea937e6874ba": "0cde93f47600476ae1cb5cf05069cb4696555348ebf4df4d7885901b3d3c4050"
+          }
+        }
+      ],
+      "title": "Selling outcomes customers understand",
+      "summary": "Translate capability into a concrete service, current bottleneck or customer benefit. Technical sophistication alone does not establish demand.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "niche-software",
+      "mentions": [
+        "7d4a51a2-1428-4828-8e11-92e245aac584",
+        "f0fcceb0-8d71-4017-97c7-bab867d8ed5e",
+        "1ba92542-bb38-42b6-a353-9dd54a10f017",
+        "b8488ff4-eeba-440c-becf-0003debf3fe2",
+        "380ff322-2c3d-466c-a7ca-181a01f6576a",
+        "dc0ac6ef-c7eb-400c-b220-3ca8bba6dce0"
+      ],
+      "sources": [
+        {
+          "nodeId": "7d4a51a2-1428-4828-8e11-92e245aac584",
+          "transcriptRevisionId": "17330e15-337f-484f-b46d-1da33c833899",
+          "evidenceIds": [
+            "1e2a0a5a-da88-436c-8147-98629a571bce",
+            "ba5291f6-b0e9-4e65-b278-5d00bbf5801a",
+            "4e27442b-39d4-4f7d-97e6-287078c61e1f"
+          ],
+          "rationale": "Episode 64 proposes value returning to business-specific software instead of generic intermediaries.",
+          "evidenceSha256": {
+            "1e2a0a5a-da88-436c-8147-98629a571bce": "d66414d65bac5b8d2997c60e46cb62af849df7762c026178cb389eb51133c122",
+            "ba5291f6-b0e9-4e65-b278-5d00bbf5801a": "cfb68f14e514cd8d73d8fdbd4da8a07b4c037ccee69fd1be663bb00921346b72",
+            "4e27442b-39d4-4f7d-97e6-287078c61e1f": "aab7b02cc1f25c4138d834a0a7c9a34659ae4d8a25462c64618c78068393b7fe"
+          }
+        },
+        {
+          "nodeId": "f0fcceb0-8d71-4017-97c7-bab867d8ed5e",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "fbbcdb96-9a5e-479c-840a-44a661fee7cb"
+          ],
+          "rationale": "Episode 65 argues that software should fit the firm’s actual process.",
+          "evidenceSha256": {
+            "fbbcdb96-9a5e-479c-840a-44a661fee7cb": "4e676a8da7bb5849483a75465b5c6428f423c25f0ab69ff37c120a5736b02bbd"
+          }
+        },
+        {
+          "nodeId": "1ba92542-bb38-42b6-a353-9dd54a10f017",
+          "transcriptRevisionId": "f25a7c03-4263-429e-9104-e66383029ce8",
+          "evidenceIds": [
+            "40e2f859-6253-4b07-bb22-7e597bbb1e41"
+          ],
+          "rationale": "Episode 68 proposes durable narrow suppliers competing through fit and trusted relationships.",
+          "evidenceSha256": {
+            "40e2f859-6253-4b07-bb22-7e597bbb1e41": "e6170a488b921cd425349f03e64bb5fa834d9e5c3c40b8ca283428a24bdd5fe3"
+          }
+        },
+        {
+          "nodeId": "b8488ff4-eeba-440c-becf-0003debf3fe2",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "ca6078a8-9842-4d89-99ae-a4d2c1fa2617"
+          ],
+          "rationale": "Episode 78 qualifies build-everything claims by retaining a role for focused suppliers close to users.",
+          "evidenceSha256": {
+            "ca6078a8-9842-4d89-99ae-a4d2c1fa2617": "1a18d81e63ef2286c5a03684d802199d4e24aa213c2ff0f24943869465d78150"
+          }
+        },
+        {
+          "nodeId": "380ff322-2c3d-466c-a7ca-181a01f6576a",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "70441299-f64c-436d-b01b-96d400dde6d6"
+          ],
+          "rationale": "Episode 76 proposes locally fitted software and accountable service as a decentralising possibility.",
+          "evidenceSha256": {
+            "70441299-f64c-436d-b01b-96d400dde6d6": "19d8a4933e47710205ae95e6cb9f7d91e751c71cf7f448d7e2f6442ecee4d36c"
+          }
+        },
+        {
+          "nodeId": "dc0ac6ef-c7eb-400c-b220-3ca8bba6dce0",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "4527d0d3-b8e2-4744-954a-5f5c18bb063a"
+          ],
+          "rationale": "Episode 63 gives a layered CRM example built around the SME workflow instead of a poorly fitting fixed enterprise system.",
+          "evidenceSha256": {
+            "4527d0d3-b8e2-4744-954a-5f5c18bb063a": "e7bd5239694b8c26d5d6290c25a603818a510ee88d0f5147ffcc780fbb7baf32"
+          }
+        }
+      ],
+      "title": "Tailored software and focused suppliers",
+      "summary": "Lower production costs can favour software close to a particular business or cohort, while buying from focused specialists can remain useful. In-house and supplier models are distinct routes.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets",
+        "software-systems"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "model-commoditisation",
+      "mentions": [
+        "ffabccd7-df30-44d2-a24a-a0713cdbc9a3",
+        "ff8f0952-a671-4fc6-8e78-c144f562213f"
+      ],
+      "sources": [
+        {
+          "nodeId": "ffabccd7-df30-44d2-a24a-a0713cdbc9a3",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "22b5395c-aa28-45f9-8c10-8deabeee55d4"
+          ],
+          "rationale": "Episode 60 argues that open models can satisfy many workloads without the absolute frontier.",
+          "evidenceSha256": {
+            "22b5395c-aa28-45f9-8c10-8deabeee55d4": "ae49504e779700f289005135b443674e634bb65b48390788fc7088cbc915164f"
+          }
+        },
+        {
+          "nodeId": "ff8f0952-a671-4fc6-8e78-c144f562213f",
+          "transcriptRevisionId": "f25a7c03-4263-429e-9104-e66383029ce8",
+          "evidenceIds": [
+            "1132c701-fb17-4159-a12e-23e2450d9797"
+          ],
+          "rationale": "Episode 68 argues that capable alternatives and low switching costs can weaken durable provider margins.",
+          "evidenceSha256": {
+            "1132c701-fb17-4159-a12e-23e2450d9797": "4df6832c9802fec4fa839bb06b918a90c357a7dc8091ffd54d4a65d2cfab7798"
+          }
+        }
+      ],
+      "title": "Model capability becomes substitutable",
+      "summary": "Useful model capability may become cheaper and easier to substitute. This is a commercial hypothesis about competition and application, not a prediction that all frontier models are identical.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "ai-models-infrastructure",
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "attention-bottleneck",
+      "mentions": [
+        "88d192d0-5a62-4f57-b248-1ec167e1778c",
+        "0d0e63a5-a33c-423f-85cc-e2b0ca37bf77",
+        "1df0dabb-28b8-4159-8f72-84d57b7ec8e8",
+        "e70cc105-03af-4652-a018-654bb5f94702",
+        "de68ec02-f451-4468-a4db-1a8dada89773"
+      ],
+      "sources": [
+        {
+          "nodeId": "88d192d0-5a62-4f57-b248-1ec167e1778c",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "5ca6e037-e115-49a6-b90d-b12ed946dc84"
+          ],
+          "rationale": "Episode 53 gives a management ceiling where additional agents still require continuous supervision.",
+          "evidenceSha256": {
+            "5ca6e037-e115-49a6-b90d-b12ed946dc84": "4f111071973a1ee721479aed30bd1134aaf46cc0dd68747810c6ca61da81557b"
+          }
+        },
+        {
+          "nodeId": "0d0e63a5-a33c-423f-85cc-e2b0ca37bf77",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "2b77d90b-abd2-46ac-b34d-7d526311934c"
+          ],
+          "rationale": "Episode 60 describes parallel work fragmenting operator awareness.",
+          "evidenceSha256": {
+            "2b77d90b-abd2-46ac-b34d-7d526311934c": "0445e207f6815035d4bba916a3f6261b26fd72019c17c8b4a6b86342ed899340"
+          }
+        },
+        {
+          "nodeId": "1df0dabb-28b8-4159-8f72-84d57b7ec8e8",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "dfb2eeae-8d11-48ad-8a4e-9577221410cc"
+          ],
+          "rationale": "Episode 63 argues that AI cannot scale a person’s relationship and context-switching capacity indefinitely.",
+          "evidenceSha256": {
+            "dfb2eeae-8d11-48ad-8a4e-9577221410cc": "f45eba411989f3bf2e18b4a73619032f76d1c6c0a4dc24b186ce9adbb9b9e8f9"
+          }
+        },
+        {
+          "nodeId": "e70cc105-03af-4652-a018-654bb5f94702",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "d17ef6c9-1b01-49ca-9ebc-3e007fa260f8"
+          ],
+          "rationale": "Episode 65 describes losing recall and presence across parallel sessions.",
+          "evidenceSha256": {
+            "d17ef6c9-1b01-49ca-9ebc-3e007fa260f8": "c64baf10dab9127b34075e970c967fb05d9012cb918a8f772b03ca5074181351"
+          }
+        },
+        {
+          "nodeId": "de68ec02-f451-4468-a4db-1a8dada89773",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "b855634d-5784-437a-a969-b868edc9cadb"
+          ],
+          "rationale": "Episode 79 raises the unresolved question of who verifies agent reviewers as execution scales.",
+          "evidenceSha256": {
+            "b855634d-5784-437a-a969-b868edc9cadb": "66bbc2d655e44e84bda1f803284151ad7bf89038212526a5e9f424611ace79fd"
+          }
+        }
+      ],
+      "title": "Human attention limits agent scale",
+      "summary": "Parallel execution does not remove human coordination, relationship or verification limits. The source cases raise different forms of attention pressure.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "agents",
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "problem-framing",
+      "mentions": [
+        "d115f47f-9b54-4bbb-ac6d-cd638e3947c6",
+        "1c243c7d-61ab-407c-9bca-1c3ce788ebdd",
+        "a5f04757-371f-4eef-a014-9db66178d8ae",
+        "d9fec1ce-86d7-4fe2-ae8f-76c2735c40ed",
+        "73925bad-0522-453a-90ae-028ff9dfb8ff"
+      ],
+      "sources": [
+        {
+          "nodeId": "d115f47f-9b54-4bbb-ac6d-cd638e3947c6",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "89a0066f-2bfc-4a12-a42b-fe798ea5bf90",
+            "43d41130-0f18-4fc3-a3a0-03d79617ef96"
+          ],
+          "rationale": "Episode 53 places elucidating the problem and unmet need before visual design.",
+          "evidenceSha256": {
+            "89a0066f-2bfc-4a12-a42b-fe798ea5bf90": "3e40ee919e1b144f04b7dbdf71ecec00ab247b95267da4a4222a53017f124212",
+            "43d41130-0f18-4fc3-a3a0-03d79617ef96": "ade7d2e24b51d3e6ab11d93286301d1da5b75138415b3bd824346029e2225ac9"
+          }
+        },
+        {
+          "nodeId": "1c243c7d-61ab-407c-9bca-1c3ce788ebdd",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "2c6a68ad-0356-4aca-a6a5-7ede9968700b"
+          ],
+          "rationale": "Episode 63 prioritises solving the right underlying problem over operating a technical language.",
+          "evidenceSha256": {
+            "2c6a68ad-0356-4aca-a6a5-7ede9968700b": "3ab757f21e6adea9185f492b79bbd492e661058b92998f5079b37492be9fe0e8"
+          }
+        },
+        {
+          "nodeId": "a5f04757-371f-4eef-a014-9db66178d8ae",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "4aaa837f-bbb4-4b8d-b238-4040e2eee7bc"
+          ],
+          "rationale": "Episode 76 argues that human experience identifies organisational problems before agents can act.",
+          "evidenceSha256": {
+            "4aaa837f-bbb4-4b8d-b238-4040e2eee7bc": "d1ed6f147c708505334ddc79b4a1c94c7db3e3856fa111d031744a3a85a26a51"
+          }
+        },
+        {
+          "nodeId": "d9fec1ce-86d7-4fe2-ae8f-76c2735c40ed",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "0f338ca9-3f9a-47ae-8e3f-bdbec88292b8"
+          ],
+          "rationale": "Episode 78 distinguishes enduring problem-solving judgement from memorising syntax and typing code.",
+          "evidenceSha256": {
+            "0f338ca9-3f9a-47ae-8e3f-bdbec88292b8": "e7c86278434754ac8c32ab6e6fb7208a613d3f96d0a5ad8ce9cf71ed9119b565"
+          }
+        },
+        {
+          "nodeId": "73925bad-0522-453a-90ae-028ff9dfb8ff",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "327847f4-8489-4efa-b0f7-0db65b57dbb9"
+          ],
+          "rationale": "Episode 78 links lived experience and noticing what feels wrong to identifying problems and standards.",
+          "evidenceSha256": {
+            "327847f4-8489-4efa-b0f7-0db65b57dbb9": "c85ee6e618629a26281a879ebc877b2ffe25e33b8b4b94fc645c6f5fb4aa56ab"
+          }
+        }
+      ],
+      "title": "Problem framing and lived experience",
+      "summary": "Knowing which problem to solve remains different from producing an implementation. The linked discussions place experience, requirements and judgement before syntax or generation.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "ai-coding",
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "iterative-discovery",
+      "mentions": [
+        "0cdefa89-3493-4e8f-b0e5-947bde35f521",
+        "ac76fa1f-2d52-4601-bcff-67b8526ee645",
+        "d5a31461-3a9a-4fdc-97f4-c7e9803527e4",
+        "5526ec1d-8e9e-4dfd-bea1-da7422c5e559",
+        "e71a0aa5-6878-4fbd-b850-a21b9e390d24"
+      ],
+      "sources": [
+        {
+          "nodeId": "0cdefa89-3493-4e8f-b0e5-947bde35f521",
+          "transcriptRevisionId": "ddfa2c80-8197-48b2-bbcc-5ba0f315e862",
+          "evidenceIds": [
+            "426e46be-693c-4712-ae25-dd0f437a5732"
+          ],
+          "rationale": "Episode 61 describes creative intent as partly tacit and discovered through making and use.",
+          "evidenceSha256": {
+            "426e46be-693c-4712-ae25-dd0f437a5732": "78279b01ba3e4904e1cc85706d625979c37bb3174037a93d1e734a4e80da50ea"
+          }
+        },
+        {
+          "nodeId": "ac76fa1f-2d52-4601-bcff-67b8526ee645",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "fcf778b0-a90d-457d-bee3-93320fbc53bf"
+          ],
+          "rationale": "Episode 75 argues that cheap working iterations can make extensive speculative plans obsolete.",
+          "evidenceSha256": {
+            "fcf778b0-a90d-457d-bee3-93320fbc53bf": "4d14a0df8f789f65b366c6a4f8274095781f26b7fbe03ebf359a030b8c2c740e"
+          }
+        },
+        {
+          "nodeId": "d5a31461-3a9a-4fdc-97f4-c7e9803527e4",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "cf1f6fa7-6fe5-42fb-bec5-aa300555004c"
+          ],
+          "rationale": "Episode 77 proposes a disposable prototype as a way to reveal requirements and become the plan.",
+          "evidenceSha256": {
+            "cf1f6fa7-6fe5-42fb-bec5-aa300555004c": "5aa62bc1be0d84dfd7b1d5bfd9f8303846e61b9cadbb17ae972250102322d4c8"
+          }
+        },
+        {
+          "nodeId": "5526ec1d-8e9e-4dfd-bea1-da7422c5e559",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "de09a418-61b7-47b1-b70f-a58eb21877ef"
+          ],
+          "rationale": "Episode 78 qualifies speed-first iteration: slower specification in a canvas can reduce revision loops.",
+          "evidenceSha256": {
+            "de09a418-61b7-47b1-b70f-a58eb21877ef": "bdf08167f7ef90a5a06484835fa96438eaac11dd8c2a8ed872183b315b5730ae"
+          }
+        },
+        {
+          "nodeId": "e71a0aa5-6878-4fbd-b850-a21b9e390d24",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "260af584-cf8b-4b00-adcb-f7514cff208d"
+          ],
+          "rationale": "Episode 79 describes successive interpretation, inspection and correction as how intent becomes precise.",
+          "evidenceSha256": {
+            "260af584-cf8b-4b00-adcb-f7514cff208d": "b2721140d239bad90666c1adc2cc993204de49a8fb1e875b0968b02146be90ae"
+          }
+        }
+      ],
+      "title": "Iteration discovers requirements",
+      "summary": "Concrete work and review can expose intent that was not available in the first brief. This does not mean every task benefits from less planning.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "software-systems",
+        "ai-coding"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "care-and-quality",
+      "mentions": [
+        "c30365ff-66c1-4254-8e4a-fe40ecdc5871",
+        "bb0edefb-48fa-43e0-b73f-3a7207c0f874",
+        "78ff3021-9fd0-47fb-b862-1e338f3a7610"
+      ],
+      "sources": [
+        {
+          "nodeId": "c30365ff-66c1-4254-8e4a-fe40ecdc5871",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "2e0c4844-7908-44b3-bd2a-51277828b829",
+            "4ec1c883-dc5e-4b33-b36c-22283dd2edb6",
+            "d051ad88-48dd-4c59-9835-ea0148c3573e"
+          ],
+          "rationale": "Episode 70 defines slop through carelessness and incoherence rather than whether a model produced it.",
+          "evidenceSha256": {
+            "2e0c4844-7908-44b3-bd2a-51277828b829": "3af1c621548cd0b5b5284f00061c1142f147dfef50f932c9207855f904193584",
+            "4ec1c883-dc5e-4b33-b36c-22283dd2edb6": "b0fae0c80ff938b459aca0852ef823e90071d10beb326d704345f9edf3ade062",
+            "d051ad88-48dd-4c59-9835-ea0148c3573e": "33e0bfc7366bcbca9b5f8a56c1487b10e44174d8d5393b3ef81c9356e0c22b44"
+          }
+        },
+        {
+          "nodeId": "bb0edefb-48fa-43e0-b73f-3a7207c0f874",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "8f2e5ede-438f-412b-8f57-cad3883496a6"
+          ],
+          "rationale": "Episode 78 again connects quality to focused care rather than the size or authorship of the producer.",
+          "evidenceSha256": {
+            "8f2e5ede-438f-412b-8f57-cad3883496a6": "40a08157de6af77a268a629454f5bb482d9654953861018f2d781ae9f12a7151"
+          }
+        },
+        {
+          "nodeId": "78ff3021-9fd0-47fb-b862-1e338f3a7610",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "f893ec40-af4b-4bd9-9fd5-6e1f3bf6d7aa"
+          ],
+          "rationale": "Episode 79 connects care and sufficient review attention to the quality of agent-assisted work.",
+          "evidenceSha256": {
+            "f893ec40-af4b-4bd9-9fd5-6e1f3bf6d7aa": "84d0356209d0a9470908a43ee90c120977456176a7a1728d979380d6bd8ce4e9"
+          }
+        }
+      ],
+      "title": "Care determines quality",
+      "summary": "The speakers distinguish careless output from AI authorship and retain responsibility for inspection and substance. This is a recurring editorial standard, not an automatic quality measure.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "ai-coding",
+        "social-media",
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "craft-after-automation",
+      "mentions": [
+        "d221f2d6-5b27-478c-9a3d-d87dacb51669",
+        "44a5c857-bde5-4f02-9a53-3540d4a2c7b0",
+        "8f55b3ed-a476-4804-bc6a-7c0764a3d2c8",
+        "768f8b54-6488-4272-824e-d921a769c334"
+      ],
+      "sources": [
+        {
+          "nodeId": "d221f2d6-5b27-478c-9a3d-d87dacb51669",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "408e3029-6d95-4dfd-b05a-bea0737433c9",
+            "a4359aeb-03d4-46d9-a079-bdb22bc0c818",
+            "e1340b51-3283-4bc7-b464-3f7bb56b5a1f"
+          ],
+          "rationale": "Episode 53 argues that cheap generation can increase the relative value of accumulated product and commercial judgement.",
+          "expandedContext": {
+            "path": "src/content/transcripts/episode-053.txt",
+            "range": "51:27–52:03",
+            "sha256": "53ce67411b8bb38b236fc7afadf580aaa661aaa6b47f3caf31396948825279cd"
+          },
+          "evidenceSha256": {
+            "408e3029-6d95-4dfd-b05a-bea0737433c9": "c11b89846b62a1cd4a81746c83820c6c781410798e68d04abd361c273ee18abe",
+            "a4359aeb-03d4-46d9-a079-bdb22bc0c818": "04b6594d022097bb0bf927bd6d0e73ad38b1babf210468545e73d3ae5d24a6b8",
+            "e1340b51-3283-4bc7-b464-3f7bb56b5a1f": "db5d38650ad92a3e34c351419c7856dd8b08ca0d7a60dcd02f209357186c8df5"
+          }
+        },
+        {
+          "nodeId": "44a5c857-bde5-4f02-9a53-3540d4a2c7b0",
+          "transcriptRevisionId": "17330e15-337f-484f-b46d-1da33c833899",
+          "evidenceIds": [
+            "d3877da3-f9cf-4e32-b696-5a0d2e68df0f"
+          ],
+          "rationale": "Episode 64 compares AI software production with a power tool that still needs craft judgement.",
+          "evidenceSha256": {
+            "d3877da3-f9cf-4e32-b696-5a0d2e68df0f": "12f32ac7b51d8a69ab9544a14ff3f573c7c3b029acac3ee44c9a46fff704190f"
+          }
+        },
+        {
+          "nodeId": "8f55b3ed-a476-4804-bc6a-7c0764a3d2c8",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "7f60285b-f119-4f86-a318-0462b6a09332"
+          ],
+          "rationale": "Episode 76 relates taste and wisdom to lived craft practice and experience.",
+          "evidenceSha256": {
+            "7f60285b-f119-4f86-a318-0462b6a09332": "82d0c356e11f9c30be2d24bd8d4cd2fbf8c23ffc672fe61da7c81d2fcc3433b4"
+          }
+        },
+        {
+          "nodeId": "768f8b54-6488-4272-824e-d921a769c334",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "f4cb7849-fa03-46d0-abde-a067753a16e9"
+          ],
+          "rationale": "Episode 78 uses physical sculpture to argue that intelligence includes embodied craft.",
+          "evidenceSha256": {
+            "f4cb7849-fa03-46d0-abde-a067753a16e9": "77e098fceecaabf1d1727171dea31b79043130bc35c1919da29515cbf0d6bda7"
+          }
+        }
+      ],
+      "title": "Craft after cheap generation",
+      "summary": "Automation changes production speed without supplying all the judgement, embodied practice or taste involved in craft. These sources discuss different kinds of expertise.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "ai-coding",
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "privacy-convenience",
+      "mentions": [
+        "9ff4296e-aee4-4424-b14e-bcf465bc06d3",
+        "4fa771ef-fc6b-40b7-a2b5-4a8d5f621dd8",
+        "31042d81-614a-4ba9-8089-498faea84eed"
+      ],
+      "sources": [
+        {
+          "nodeId": "9ff4296e-aee4-4424-b14e-bcf465bc06d3",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "0b292ecb-b64d-403e-ace2-bdc34421351c"
+          ],
+          "rationale": "Episode 63 describes people choosing convenient systems despite stated privacy preferences.",
+          "evidenceSha256": {
+            "0b292ecb-b64d-403e-ace2-bdc34421351c": "f5b66f98c817e3f4ce2da535bad482a87b4779452446df8ff018cc47bd227d6e"
+          }
+        },
+        {
+          "nodeId": "4fa771ef-fc6b-40b7-a2b5-4a8d5f621dd8",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "b29448a7-af24-4778-b282-fe5af8b8b2a7"
+          ],
+          "rationale": "Episode 67 identifies discovery and setup convenience as reasons for choosing hosted models.",
+          "evidenceSha256": {
+            "b29448a7-af24-4778-b282-fe5af8b8b2a7": "54b24e52da86ab6401370bc4c7a270a21ca36956502f12a26c65bc1fc9f8210d"
+          }
+        },
+        {
+          "nodeId": "31042d81-614a-4ba9-8089-498faea84eed",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "f8f2edec-97f1-4c3c-9b9e-039c4935fc5c",
+            "dd8f852d-aef4-4d0b-b76c-50609bde97de"
+          ],
+          "rationale": "Episode 73 asks whether embedded distribution can beat frontier capability while noting trust and compartmentalisation concerns.",
+          "evidenceSha256": {
+            "f8f2edec-97f1-4c3c-9b9e-039c4935fc5c": "de63f05bd077639bfe577a860453401039c7037e297a9cf6168d406a961b9263",
+            "dd8f852d-aef4-4d0b-b76c-50609bde97de": "258908412ebaffe924c870d5d3b29648699cabeb1297dbbe387f38947a0b680a"
+          }
+        }
+      ],
+      "title": "Convenience and private control",
+      "summary": "Privacy and control can lose to immediate convenience or distribution. The sources describe preferences, product friction and an open adoption question rather than one universal user choice.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "privacy-security",
+        "ai-models-infrastructure"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "chosen-networks",
+      "mentions": [
+        "3d9e2520-fd96-4d08-94d0-a95670c9ad8e",
+        "5ed6fc5b-e82b-49d3-a879-e292e26536ff",
+        "fbff2e70-4e2a-4020-841b-8a33751c2ddb"
+      ],
+      "sources": [
+        {
+          "nodeId": "3d9e2520-fd96-4d08-94d0-a95670c9ad8e",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "696cacf5-23e4-4360-abc3-f4465fcdb4cf"
+          ],
+          "rationale": "Episode 65 argues for feeds foregrounding people deliberately followed rather than unfamiliar provocation.",
+          "evidenceSha256": {
+            "696cacf5-23e4-4360-abc3-f4465fcdb4cf": "e3144cb89b451eef8279439392abe36db23f3674b7ca9db65cdf01cbb9b31a80"
+          }
+        },
+        {
+          "nodeId": "5ed6fc5b-e82b-49d3-a879-e292e26536ff",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "ecfe0bfe-9eec-46b4-8935-818fea662743"
+          ],
+          "rationale": "Episode 75 describes a social network oriented around chosen connections instead of one global feed.",
+          "evidenceSha256": {
+            "ecfe0bfe-9eec-46b4-8935-818fea662743": "0d56742b4b0c2d694e5e93d770f41f75bddfe3af436e3a85cab4799a52539a8a"
+          }
+        },
+        {
+          "nodeId": "fbff2e70-4e2a-4020-841b-8a33751c2ddb",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "f7677eda-ba4a-4c27-a823-645482c14196"
+          ],
+          "rationale": "Episode 75 proposes private-group moderation as a way to enforce quality against generated noise.",
+          "evidenceSha256": {
+            "f7677eda-ba4a-4c27-a823-645482c14196": "28fd7e36ce927ac8dd5ef32887fffbc6400ef8f93574a09a7b5bee383382f733"
+          }
+        }
+      ],
+      "title": "Chosen networks and community moderation",
+      "summary": "Social usefulness can come from deliberately chosen connections and enforceable local norms rather than universal reach. Public feeds and private communities need not be mutually exclusive.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "social-media"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "trust-distribution",
+      "mentions": [
+        "21de44ac-471c-44e5-a627-34c6a6b43af8",
+        "a3e97eb9-aeb6-4ff7-b7f5-958e9aecbcc4",
+        "f3cfbd89-4819-418d-8046-1cbe2e66869b"
+      ],
+      "sources": [
+        {
+          "nodeId": "21de44ac-471c-44e5-a627-34c6a6b43af8",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "4f62205d-18b5-48f6-a7f5-703d94df8ad7"
+          ],
+          "rationale": "Episode 63 argues that authentic human service and word of mouth become more valuable amid careless generated material.",
+          "evidenceSha256": {
+            "4f62205d-18b5-48f6-a7f5-703d94df8ad7": "a85357ad07ff8d664234a087e8f242bcffa5e776f8dfd3e2e6dfddacae0cdf86"
+          }
+        },
+        {
+          "nodeId": "a3e97eb9-aeb6-4ff7-b7f5-958e9aecbcc4",
+          "transcriptRevisionId": "3371f26e-97c7-4907-96fb-835563a0fb5b",
+          "evidenceIds": [
+            "5aa6abf1-f232-426a-a4b8-6fa7e9e9017e"
+          ],
+          "rationale": "Episode 74 describes a niche creator audience and repeated authentic exposure as potential business equity.",
+          "evidenceSha256": {
+            "5aa6abf1-f232-426a-a4b8-6fa7e9e9017e": "ba039b324efea2e6cdbde1fa0b2c3793c3802b1730eb59578f405294ac347dd1"
+          }
+        },
+        {
+          "nodeId": "f3cfbd89-4819-418d-8046-1cbe2e66869b",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "d4a1acb8-f8e1-48e5-bb0d-b064f93034bb"
+          ],
+          "rationale": "Episode 77 explains how reputation, placement and relationships change the reception of identical words.",
+          "evidenceSha256": {
+            "d4a1acb8-f8e1-48e5-bb0d-b064f93034bb": "168a6b32b4363b8f86601cbf03a2eb8abc320c1d6c8b3424c605f181775157f6"
+          }
+        }
+      ],
+      "title": "Trust when content is abundant",
+      "summary": "Repeated authentic exposure, trusted service and channel context can matter more when production becomes easy. These are proposed sources of credibility, not guarantees against deception.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "social-media",
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "bounded-authority",
+      "mentions": [
+        "e8a81b9e-2864-430b-ba06-b1f0e42964c9",
+        "bb17e281-c754-427f-8816-a8049949b436",
+        "7210b22e-ab63-4e9c-aee2-cdceef590443"
+      ],
+      "sources": [
+        {
+          "nodeId": "e8a81b9e-2864-430b-ba06-b1f0e42964c9",
+          "transcriptRevisionId": "17330e15-337f-484f-b46d-1da33c833899",
+          "evidenceIds": [
+            "0a2ecbfe-3589-4926-8e66-7a580e177bb0"
+          ],
+          "rationale": "Episode 64 argues that powerful coding tools need isolation and controlled communications.",
+          "evidenceSha256": {
+            "0a2ecbfe-3589-4926-8e66-7a580e177bb0": "c6ae4c6667086f51c66c5ffcf6fc774d7ceeed0f9a531cc529ccf9edbbe007a1"
+          }
+        },
+        {
+          "nodeId": "bb17e281-c754-427f-8816-a8049949b436",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "bcf12cf1-70c7-460b-a34d-97fbae446a22",
+            "98567dee-b5a3-4b86-a836-6fb39b023550"
+          ],
+          "rationale": "Episode 69 separates authorised evidence acquisition from bounded analysis over supplied material.",
+          "evidenceSha256": {
+            "bcf12cf1-70c7-460b-a34d-97fbae446a22": "1c2ed7c974bf7d1fb346a9b15aafc34417284c50dab3e30c23e0e4782b2917ed",
+            "98567dee-b5a3-4b86-a836-6fb39b023550": "923fc417d1577cbc12cfc841bfe72e998eebc2e5e5e913263ce2c82812ec56ef"
+          }
+        },
+        {
+          "nodeId": "7210b22e-ab63-4e9c-aee2-cdceef590443",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "f0c81588-62bb-4f3e-8a3c-d73d3eb7d68c",
+            "8a2c9638-e2f6-4510-b9e4-9cf0c1dd1d3a"
+          ],
+          "rationale": "Episode 79 warns that a restricted agent sharing a broadly authorised computer may bypass intended data boundaries.",
+          "evidenceSha256": {
+            "f0c81588-62bb-4f3e-8a3c-d73d3eb7d68c": "47c7181a68c3f5b6e7946041a4d84ad2e9bcc334a29f8306fe90c7b058c4aac5",
+            "8a2c9638-e2f6-4510-b9e4-9cf0c1dd1d3a": "068fcf794ec35f91fd0e923ff1d248050ff0fb0c6e765cfb8f36aa3c462c1d81"
+          }
+        }
+      ],
+      "title": "Bounded authority and isolated work",
+      "summary": "Agent safety requires limits on tools, acquisition methods and accessible data, not just a benign goal. The sources describe different technical and procedural boundaries.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "privacy-security",
+        "agents"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "security-pressure",
+      "mentions": [
+        "c022550e-286d-4303-b583-427791ccf9e1",
+        "ffbba2fe-93f6-4c45-863e-a881144ccf09",
+        "27b3cc45-178f-4706-a990-ba81669021ac",
+        "13300b71-de35-411b-a2a5-7fd5e62d07f7"
+      ],
+      "sources": [
+        {
+          "nodeId": "c022550e-286d-4303-b583-427791ccf9e1",
+          "transcriptRevisionId": "7a8da352-c105-41f8-a0f5-d6c4e902ad9c",
+          "evidenceIds": [
+            "247e5345-b637-4480-a56a-ffc03631c177"
+          ],
+          "rationale": "Episode 66 describes cheap automated repetition turning exploits into high-volume attacks.",
+          "evidenceSha256": {
+            "247e5345-b637-4480-a56a-ffc03631c177": "9b30cc8b2cba5c611649bd9692584f2851729f6d1901a6dae0f3bc96b17152fe"
+          }
+        },
+        {
+          "nodeId": "ffbba2fe-93f6-4c45-863e-a881144ccf09",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "496e50d4-7727-4ad9-98d6-5691c26aca9c"
+          ],
+          "rationale": "Episode 69 proposes Bitcoin as an exposed early security test rather than proving that it is uniquely vulnerable.",
+          "evidenceSha256": {
+            "496e50d4-7727-4ad9-98d6-5691c26aca9c": "6309480c73c2c45dc8558c23f83c5d74706e3d3b9b223924315ce48cc3fd9453"
+          }
+        },
+        {
+          "nodeId": "27b3cc45-178f-4706-a990-ba81669021ac",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "5dea3908-262a-421a-95e6-9eccc473e1db"
+          ],
+          "rationale": "Episode 69 argues that offensive capability increases the urgency of modernising legacy software.",
+          "evidenceSha256": {
+            "5dea3908-262a-421a-95e6-9eccc473e1db": "b51b51d38440fe0caa295dbb6424e1bd4db453194d37ba1ecbc66a7bf1effb6a"
+          }
+        },
+        {
+          "nodeId": "13300b71-de35-411b-a2a5-7fd5e62d07f7",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "0d367291-b613-4816-821d-255184da4b94"
+          ],
+          "rationale": "Episode 72 proposes distributed open-model access as a defensive counterweight to concentrated capability.",
+          "evidenceSha256": {
+            "0d367291-b613-4816-821d-255184da4b94": "f697ba4290109fc95b89c5a6cc4c998d6e84525df39f5f41ccbe03c21854ea85"
+          }
+        }
+      ],
+      "title": "Automation changes security pressure",
+      "summary": "Automation can increase attack volume and change defensive needs. Bitcoin-specific exposure and distributed defensive access are distinct parts of the discussion.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "bitcoin",
+        "privacy-security"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "risk-and-market-power",
+      "mentions": [
+        "ebaff686-a0f0-4f4c-bd83-f358851ba0b1",
+        "58720536-b63e-4d5e-9a96-14e2780170ec",
+        "ed3d133d-fe3e-4a49-bddc-370d8ceccf31"
+      ],
+      "sources": [
+        {
+          "nodeId": "ebaff686-a0f0-4f4c-bd83-f358851ba0b1",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "86c6157b-3ac7-4669-9aa7-eee7138e3322"
+          ],
+          "rationale": "Episode 53 suggests danger claims can serve valuation and fundraising narratives.",
+          "evidenceSha256": {
+            "86c6157b-3ac7-4669-9aa7-eee7138e3322": "a0db64a1bd13fcb11f0824b7ed788ede2cc62c91ecd0ff99618a60259f0cfa76"
+          }
+        },
+        {
+          "nodeId": "58720536-b63e-4d5e-9a96-14e2780170ec",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "0c686bc9-310e-4a1c-8c09-36345ada6a5e"
+          ],
+          "rationale": "Episode 60 argues that existential framing can create regulatory advantages for large labs.",
+          "evidenceSha256": {
+            "0c686bc9-310e-4a1c-8c09-36345ada6a5e": "b8d9e70ec88bc2501a0c0ef3a0073ca51bce6ef9f05487789136f793b0faf55f"
+          }
+        },
+        {
+          "nodeId": "ed3d133d-fe3e-4a49-bddc-370d8ceccf31",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "efbb8f59-c468-4b92-9202-d3cf513f0f09"
+          ],
+          "rationale": "Episode 72 compares calls to slow competitors while continuing internally with cartel-like behaviour.",
+          "evidenceSha256": {
+            "efbb8f59-c468-4b92-9202-d3cf513f0f09": "01440a0ade9ec164b047af6755d4e4137d0788a6884348a98bab7d98c61e3995"
+          }
+        }
+      ],
+      "title": "AI risk narratives and market power",
+      "summary": "The speakers interpret some risk rhetoric as commercially or institutionally advantageous to large providers. These are attributed arguments, not independently established motives.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "cheap-experiments",
+      "mentions": [
+        "b7cf705c-2274-4e8f-a3d0-4311157a9f8e",
+        "8f3922fc-e4bc-4965-81c1-0c6f6246ee63",
+        "63159600-21a7-43da-afcf-8a91b20edbd7"
+      ],
+      "sources": [
+        {
+          "nodeId": "b7cf705c-2274-4e8f-a3d0-4311157a9f8e",
+          "transcriptRevisionId": "d5ab1035-ef9d-494d-8648-6fa8915a5199",
+          "evidenceIds": [
+            "693a3111-301e-4ef6-88f7-d7c126470010"
+          ],
+          "rationale": "Episode 62 argues that AI makes the uncertain MVP bet cheaper for a solo builder.",
+          "evidenceSha256": {
+            "693a3111-301e-4ef6-88f7-d7c126470010": "f719a0506a09da9f3d8854d17ace100ee7b9b8c9a2a2eaa2b760ab9c85c0e7a8"
+          }
+        },
+        {
+          "nodeId": "8f3922fc-e4bc-4965-81c1-0c6f6246ee63",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "49f23c33-d1f3-4867-a598-c38d0699a0be"
+          ],
+          "rationale": "Episode 63 recommends small experiments before committing the larger business investment.",
+          "evidenceSha256": {
+            "49f23c33-d1f3-4867-a598-c38d0699a0be": "570163267897122712a0cd9609ae2854caf5662187688f81215d6d287f34f3a5"
+          }
+        },
+        {
+          "nodeId": "63159600-21a7-43da-afcf-8a91b20edbd7",
+          "transcriptRevisionId": "f25a7c03-4263-429e-9104-e66383029ce8",
+          "evidenceIds": [
+            "305f0bcb-c20a-4889-a9d9-b10b7126c5a9"
+          ],
+          "rationale": "Episode 68 proposes a founder portfolio of experiments with weak bets discarded.",
+          "evidenceSha256": {
+            "305f0bcb-c20a-4889-a9d9-b10b7126c5a9": "2338eca86805e9838f8439d400242694c16e5a4f84932f78c1103b82efa89f8a"
+          }
+        }
+      ],
+      "title": "Cheap experiments before large commitments",
+      "summary": "Lower build cost enables testing and learning before committing substantial resources. A cheaper prototype does not by itself validate a business.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets",
+        "ai-coding"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "switching-friction",
+      "mentions": [
+        "ca723b7b-3fcf-439c-b3f9-38077db58299",
+        "62be2815-7f52-4f13-8913-d3b10db331e9",
+        "d18ec2b6-93df-496d-a0a0-53c1c24cf734"
+      ],
+      "sources": [
+        {
+          "nodeId": "ca723b7b-3fcf-439c-b3f9-38077db58299",
+          "transcriptRevisionId": "f25a7c03-4263-429e-9104-e66383029ce8",
+          "evidenceIds": [
+            "5e929707-4e60-425f-ae84-9ef6bfef13f4"
+          ],
+          "rationale": "Episode 68 explains how customer inertia can slow the erosion of incumbent software margins.",
+          "evidenceSha256": {
+            "5e929707-4e60-425f-ae84-9ef6bfef13f4": "28d7439d88e68631d5c53508a6b3e3182ff4059309f9ab903e84ca303a796506"
+          }
+        },
+        {
+          "nodeId": "62be2815-7f52-4f13-8913-d3b10db331e9",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "46448853-a38e-4be0-beab-e994415751aa"
+          ],
+          "rationale": "Episode 73 proposes persistent agents that reprice services and remove unused subscriptions.",
+          "evidenceSha256": {
+            "46448853-a38e-4be0-beab-e994415751aa": "41daf39156a8cfe82e57cbe33b4908742dd6cf49619a84f706d26435bd22e8d1"
+          }
+        },
+        {
+          "nodeId": "d18ec2b6-93df-496d-a0a0-53c1c24cf734",
+          "transcriptRevisionId": "3371f26e-97c7-4907-96fb-835563a0fb5b",
+          "evidenceIds": [
+            "a6464783-5d05-4adf-a1f5-b61d68439409"
+          ],
+          "rationale": "Episode 74 proposes agents persisting through cancellation friction that currently supports recurring revenue.",
+          "evidenceSha256": {
+            "a6464783-5d05-4adf-a1f5-b61d68439409": "f46db543475acfb925253d47b18226e4882d2df947b573e7bc71140412cd6311"
+          }
+        }
+      ],
+      "title": "Customer switching friction",
+      "summary": "Episode 68 argues that inertia protects incumbents; Episodes 73 and 74 propose agents that may reduce it. This compares a baseline with a proposed change, not demonstrated market displacement.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets",
+        "agents"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "bubble-and-utility",
+      "mentions": [
+        "a4ed9659-a82a-4aed-8861-6aa443b51073",
+        "141e61c2-cc56-4d46-b9bc-0fb46bfbb022"
+      ],
+      "sources": [
+        {
+          "nodeId": "a4ed9659-a82a-4aed-8861-6aa443b51073",
+          "transcriptRevisionId": "ddfa2c80-8197-48b2-bbcc-5ba0f315e862",
+          "evidenceIds": [
+            "ce2745c5-dc27-4dbb-8863-611a8c46d4d9"
+          ],
+          "rationale": "Episode 61 distinguishes capital destruction in an AI bubble from lasting useful infrastructure.",
+          "evidenceSha256": {
+            "ce2745c5-dc27-4dbb-8863-611a8c46d4d9": "0c3d2356f8d9571546e5359117bee69532e5b310c17357af1f1aa9c3588dc71c"
+          }
+        },
+        {
+          "nodeId": "141e61c2-cc56-4d46-b9bc-0fb46bfbb022",
+          "transcriptRevisionId": "d5ab1035-ef9d-494d-8648-6fa8915a5199",
+          "evidenceIds": [
+            "ba7b7ceb-9d87-4c3f-8395-a28d7ce2f1e5"
+          ],
+          "rationale": "Episode 62 argues that useful AI may survive failures among financed providers and investors.",
+          "evidenceSha256": {
+            "ba7b7ceb-9d87-4c3f-8395-a28d7ce2f1e5": "7a22b6aa75f0844d3778d3779c6a0f6e3f686cf7b10ffc700d51faca6ff69c7f"
+          }
+        }
+      ],
+      "title": "Useful technology after a financial bubble",
+      "summary": "A financial loss for providers or investors need not erase useful technology or infrastructure. The analogy does not predict a particular market outcome.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "ai-models-infrastructure",
+        "business-markets"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "visual-shared-understanding",
+      "mentions": [
+        "0b041282-5444-442b-ba8b-972e3d237ee5",
+        "aa940768-67db-4ec8-b0bc-01210272120d",
+        "788064ec-2125-4397-8d03-b1523fb8d8f7"
+      ],
+      "sources": [
+        {
+          "nodeId": "0b041282-5444-442b-ba8b-972e3d237ee5",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "70431717-6c80-4fa8-b7f9-b0294fa68146"
+          ],
+          "rationale": "Episode 75 proposes structured flow diagrams as a shared human-agent vocabulary.",
+          "evidenceSha256": {
+            "70431717-6c80-4fa8-b7f9-b0294fa68146": "f20c1424020851a580f953623b8661df4d403b972735e7c0377f89d1c863d1e5"
+          }
+        },
+        {
+          "nodeId": "aa940768-67db-4ec8-b0bc-01210272120d",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "42b55b9b-5f82-4e18-8a2b-3e609f0627cf"
+          ],
+          "rationale": "Episode 77 proposes a one-screen schematic to compress relationships in a large system.",
+          "evidenceSha256": {
+            "42b55b9b-5f82-4e18-8a2b-3e609f0627cf": "f4da62f2fee77936b5901a33a0e217fc29e781f496b0f7dbf68d0e35b65f57b8"
+          }
+        },
+        {
+          "nodeId": "788064ec-2125-4397-8d03-b1523fb8d8f7",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "89541b9e-1c1f-466a-a780-ba4ee357311e"
+          ],
+          "rationale": "Episode 79 describes a human shaping a task tree while agents supply technical details.",
+          "evidenceSha256": {
+            "89541b9e-1c1f-466a-a780-ba4ee357311e": "e96abd4aff62de22e4b100d46d474ab5dd0b4a01abb5e4b4647d08c5450e7d65"
+          }
+        }
+      ],
+      "title": "Visual maps for shared understanding",
+      "summary": "Diagrams and task structures can make relationships inspectable and help people direct agents. Flow diagrams, code schematics and task trees retain different meanings.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "knowledge-memory",
+        "software-systems",
+        "ai-coding"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "durable-records",
+      "mentions": [
+        "ca62f6de-748c-4916-89c7-9c7892de429e",
+        "de848501-3671-411c-93a5-a228939969d9",
+        "2f52fcc0-ba1b-4648-94b7-684f184bff3c"
+      ],
+      "sources": [
+        {
+          "nodeId": "ca62f6de-748c-4916-89c7-9c7892de429e",
+          "transcriptRevisionId": "3371f26e-97c7-4907-96fb-835563a0fb5b",
+          "evidenceIds": [
+            "f212df91-928d-40f4-8f3b-2810e4f9eed8"
+          ],
+          "rationale": "Episode 74 retains durable records for agent-driven businesses, especially consequential and regulated work.",
+          "evidenceSha256": {
+            "f212df91-928d-40f4-8f3b-2810e4f9eed8": "8edf052e97cf0fdc830c6f5717e5ee74387c381b6c420a3e49c9a13e0cbd9ea1"
+          }
+        },
+        {
+          "nodeId": "de848501-3671-411c-93a5-a228939969d9",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "e13de467-6458-42c8-af21-15c10c0938c8",
+            "0dac8acf-bcc4-48fe-91bd-e874d32a2d5f",
+            "6450d637-636d-43cb-844f-762412075556"
+          ],
+          "rationale": "Episode 75 justifies persistent documents by audit, slow-changing reference and shared review.",
+          "evidenceSha256": {
+            "e13de467-6458-42c8-af21-15c10c0938c8": "5d1e407f3a77bf54246c3621f3da6e1f34fcf6592a1d0543e16dd55d550fe132",
+            "0dac8acf-bcc4-48fe-91bd-e874d32a2d5f": "f9a9011849265d65b07a90e307906d5da8a56244283244767fd657e1861c3392",
+            "6450d637-636d-43cb-844f-762412075556": "eeb241746595300789ecdd97d43ea7b8f984c528e274dd25c3a24ccda82ab778"
+          }
+        },
+        {
+          "nodeId": "2f52fcc0-ba1b-4648-94b7-684f184bff3c",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "bca8c854-f405-4986-96bc-5dbc48d5754a",
+            "9d6e1c38-646d-4327-ae1d-d96ceef1e0ce",
+            "8347f165-c17a-4420-99f3-787260aa80b4"
+          ],
+          "rationale": "Episode 77 balances durable documents against the human cost of slow careful reading.",
+          "evidenceSha256": {
+            "bca8c854-f405-4986-96bc-5dbc48d5754a": "6a107b8531aa4b47e9f9a018bf3a49ae7ee62d6837d424bc8c74a09175d9a413",
+            "9d6e1c38-646d-4327-ae1d-d96ceef1e0ce": "947d1f54e8cd0694a1a0811a07ec69264e6a98eaadf6fc1440b06d7034cc3e04",
+            "8347f165-c17a-4420-99f3-787260aa80b4": "c8a0cb0f0116037745f6ee7dd1faafa1384e9e54245e6edb87700642946880b0"
+          }
+        }
+      ],
+      "title": "When work needs durable records",
+      "summary": "Documents and records earn their cost through durable reference, review or accountability. This is a qualification of document creation, not a claim that all work should disappear.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "software-systems",
+        "knowledge-memory"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "anchored-work",
+      "mentions": [
+        "4efccc05-ffbc-411e-a808-74769049e4a4",
+        "dc4f3a3f-c786-4710-b238-d5fed44d0867",
+        "c923efc5-5867-4dc2-a941-22ca3f277c6a",
+        "09f977df-f629-48f6-9517-9e35ed7e7289"
+      ],
+      "sources": [
+        {
+          "nodeId": "4efccc05-ffbc-411e-a808-74769049e4a4",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "80d70fe8-ec54-440e-b45f-7f87a073ef8d"
+          ],
+          "rationale": "Episode 65 combines dialogue, a living document and threaded comments for reasoning and handoff.",
+          "evidenceSha256": {
+            "80d70fe8-ec54-440e-b45f-7f87a073ef8d": "5d1f7c159088ad019824a9e26ec06fbdab2671b6334740230f37797eb00d4d9b"
+          }
+        },
+        {
+          "nodeId": "dc4f3a3f-c786-4710-b238-d5fed44d0867",
+          "transcriptRevisionId": "3371f26e-97c7-4907-96fb-835563a0fb5b",
+          "evidenceIds": [
+            "87bb6894-1105-4583-9fa2-ff166972c5f9"
+          ],
+          "rationale": "Episode 74 argues for direct edits and anchored comments rather than indirect location descriptions in chat.",
+          "evidenceSha256": {
+            "87bb6894-1105-4583-9fa2-ff166972c5f9": "bbebe16ea8ff4cb9963f508a5e209bb92d35d6342cc264b7eded729816b6f5a3"
+          }
+        },
+        {
+          "nodeId": "c923efc5-5867-4dc2-a941-22ca3f277c6a",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "8fa233df-0792-4163-bf3b-f2093fce34f0"
+          ],
+          "rationale": "Episode 77 treats comments as threads bounded by a canvas object or workspace.",
+          "evidenceSha256": {
+            "8fa233df-0792-4163-bf3b-f2093fce34f0": "034408079124f7b0545ed83edd5db43da3dfbdcbaf991415dcad842b4786a808"
+          }
+        },
+        {
+          "nodeId": "09f977df-f629-48f6-9517-9e35ed7e7289",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "536e5d3c-0442-447a-9165-af38c70ce7e6",
+            "1993dc25-a34b-4dd5-b80d-49f0e7cbf056"
+          ],
+          "rationale": "Episode 79 gives a case where document comments steer subsequent scheduled research.",
+          "evidenceSha256": {
+            "536e5d3c-0442-447a-9165-af38c70ce7e6": "cf79d10f197154dcf721006263cb131b2dde78b7520f234f75748ee41e27e166",
+            "1993dc25-a34b-4dd5-b80d-49f0e7cbf056": "f7adf45c3ed393ca938fa61b388ca83752aa3a2c83a9f0c7af8ae12c0dc25e52"
+          }
+        }
+      ],
+      "title": "Work anchored to its object",
+      "summary": "Attach instructions and discussion to the document or work object they concern. Chat, comments and recurring research have different lifetimes and actions.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "software-systems",
+        "knowledge-memory",
+        "agents"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "mature-tool-reuse",
+      "mentions": [
+        "37dc8758-470c-4044-bd96-0896e59365d9",
+        "1ad44972-19ff-4e07-bb50-f9543d13f1b4",
+        "4477fe19-c254-47a0-b3fd-9a9284bc1da7"
+      ],
+      "sources": [
+        {
+          "nodeId": "37dc8758-470c-4044-bd96-0896e59365d9",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "00deb6c9-057f-42d7-97a9-7c5d8fa25951"
+          ],
+          "rationale": "Episode 72 argues for trying mature applications before rebuilding their capabilities in a new app.",
+          "evidenceSha256": {
+            "00deb6c9-057f-42d7-97a9-7c5d8fa25951": "86ab9abcd40f06ddbb3f7c0c13ae76b1fd613ca660308e166b9d837953b54c85"
+          }
+        },
+        {
+          "nodeId": "1ad44972-19ff-4e07-bb50-f9543d13f1b4",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "27b43d59-76e8-42f7-a8c0-3bc6b450992b"
+          ],
+          "rationale": "Episode 76 describes agents combining applications that a generalist would not have time to master.",
+          "evidenceSha256": {
+            "27b43d59-76e8-42f7-a8c0-3bc6b450992b": "44101c29647aceadde2c3d742cd3cc103243484d062311b65864d71446770649"
+          }
+        },
+        {
+          "nodeId": "4477fe19-c254-47a0-b3fd-9a9284bc1da7",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "78ca90d2-8efd-499f-8299-41f2e6f0b71c"
+          ],
+          "rationale": "Episode 72 qualifies visual computer use as a discovery bridge toward cheaper headless interfaces for proven workflows.",
+          "evidenceSha256": {
+            "78ca90d2-8efd-499f-8299-41f2e6f0b71c": "c10e04254b5347789ed1cf0e0da1ee81d56db19e56202b5d6cebade8f17f15fb"
+          }
+        }
+      ],
+      "title": "Reuse mature tools through agents",
+      "summary": "Computer-use agents can combine existing specialist applications instead of requiring developers to rebuild every capability. These are practical observations rather than a claim that visual automation is always best.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "agents",
+        "software-systems"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "learning-information-agents",
+      "mentions": [
+        "ea5e0108-aa04-43cd-aec8-b2a3d698450d",
+        "fa4c9c7b-3877-4009-933a-ffd6e0c6e039",
+        "0ef47fc7-0f21-4956-9e98-f71b740b335c",
+        "35e25d68-8ce4-473a-9c9e-2f8b9fb551bb"
+      ],
+      "sources": [
+        {
+          "nodeId": "ea5e0108-aa04-43cd-aec8-b2a3d698450d",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "f1b1e8f3-2383-40de-a1aa-9e35bb073169",
+            "c67ff1ca-a5e4-4ed8-bece-19742f431a11"
+          ],
+          "rationale": "Episode 65 describes a timely agent-curated briefing instead of an open-ended stream.",
+          "evidenceSha256": {
+            "f1b1e8f3-2383-40de-a1aa-9e35bb073169": "b80aedab11aa9c6f5c0b0ee84762ac1ce61efb09f60d21b54a5a22bb71b2edbe",
+            "c67ff1ca-a5e4-4ed8-bece-19742f431a11": "e2d784d55c839cc672a3ffab0901e96420b920937cd836c3b2dcaaa2e58ac6a2"
+          }
+        },
+        {
+          "nodeId": "fa4c9c7b-3877-4009-933a-ffd6e0c6e039",
+          "transcriptRevisionId": "7a8da352-c105-41f8-a0f5-d6c4e902ad9c",
+          "evidenceIds": [
+            "dabe98ac-2c08-4f2c-b03c-7b54ef5638a3",
+            "b84855ae-0a77-4e50-8b77-7619498b41af",
+            "9ca11e40-8cf1-43a7-a81c-5a1e22c6ef1a"
+          ],
+          "rationale": "Episode 66 proposes an agent staying a few connections ahead to guide nearby learning.",
+          "evidenceSha256": {
+            "dabe98ac-2c08-4f2c-b03c-7b54ef5638a3": "6b2178c468402a3e1d53dd335052afcf997ade33e4457d51aed871b20e480aa1",
+            "b84855ae-0a77-4e50-8b77-7619498b41af": "ecc43be4a80ff33d6c825e18ca85e5e60465c01e1d181b65de96d19acfb34b6b",
+            "9ca11e40-8cf1-43a7-a81c-5a1e22c6ef1a": "d2fa0c6cf1d44ac6f680fa1bd6d602cf2eb1e89516cb71ba3a8dbd7c92f82d28"
+          }
+        },
+        {
+          "nodeId": "0ef47fc7-0f21-4956-9e98-f71b740b335c",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "8bf8302d-6c94-4124-a277-42be3693ee8f"
+          ],
+          "rationale": "Episode 67 describes feedback-adjusted research briefings designed for understanding.",
+          "evidenceSha256": {
+            "8bf8302d-6c94-4124-a277-42be3693ee8f": "ed648ff434180a24306c70a67a0c44dccbb093c2f9290d73c1855f38b64d2e7c"
+          }
+        },
+        {
+          "nodeId": "35e25d68-8ce4-473a-9c9e-2f8b9fb551bb",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "a8f96b88-119a-4a66-af10-c0934288a390"
+          ],
+          "rationale": "Episode 79 describes scheduled research wikis while retaining the need to inspect difficult sources.",
+          "evidenceSha256": {
+            "a8f96b88-119a-4a66-af10-c0934288a390": "2f8fcc3c00804b6dbf21abb7e035a6fbfe762ea580523f9133981a3077fcc663"
+          }
+        }
+      ],
+      "title": "Information agents for learning",
+      "summary": "Use agents to gather, explain and guide exploration rather than only deliver a passive feed. Personal news, nearby mentorship and scheduled wikis are distinct applications.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "knowledge-memory",
+        "agents",
+        "social-media"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "consequential-escalation",
+      "mentions": [
+        "83ead2ab-a1fe-4d0d-a304-4b9c1b4ab838",
+        "a8300f0f-4464-4855-b8b0-74e8edda297a",
+        "146febf6-4d48-4b82-8ffc-957cd26e8d49",
+        "a6fdbaab-9b24-4ced-84fe-908efade5150",
+        "d6c5c8c9-76a2-4e5d-8d5b-b3e77506028f"
+      ],
+      "sources": [
+        {
+          "nodeId": "83ead2ab-a1fe-4d0d-a304-4b9c1b4ab838",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "ea1756b6-b24d-43d1-b3ee-4afdb75905f1"
+          ],
+          "rationale": "Episode 69 separates routine delegated payments from consequential transfers requiring inspection.",
+          "evidenceSha256": {
+            "ea1756b6-b24d-43d1-b3ee-4afdb75905f1": "476fab17c6a4fe2d0c8d14c3fc1c49daae95514a9acb4f04f748438f8a1ebe97"
+          }
+        },
+        {
+          "nodeId": "a8300f0f-4464-4855-b8b0-74e8edda297a",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "ed816b1d-4854-4300-ab22-d0fd29001369",
+            "c2f08b1c-667e-42cd-85fc-051af9bdcc29"
+          ],
+          "rationale": "Episode 73 uses confidence thresholds to escalate uncertain or consequential cases.",
+          "evidenceSha256": {
+            "ed816b1d-4854-4300-ab22-d0fd29001369": "0836545f307695570c826fa100855313fdddf17e131b14df11bcf7fd87c391d1",
+            "c2f08b1c-667e-42cd-85fc-051af9bdcc29": "6864f1813bef10bd26cab3ac3ee19e41a8df2bf09bf3cfac1e7ad4a011a396ba"
+          }
+        },
+        {
+          "nodeId": "146febf6-4d48-4b82-8ffc-957cd26e8d49",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "fcd662cc-a08b-4ea8-8757-869cfabaed32",
+            "9f84cb9c-cea4-45bb-bb4c-75a12322354a"
+          ],
+          "rationale": "Episode 79 proposes agent-led production that brings the human back for items requiring attention.",
+          "evidenceSha256": {
+            "fcd662cc-a08b-4ea8-8757-869cfabaed32": "642b1d00533cec9729debf0380c8e2f01fc5b9178e2b1c5f10b361f09e873530",
+            "9f84cb9c-cea4-45bb-bb4c-75a12322354a": "e765734dcf30e0b8402fcb3ec88e639471e6bc118b75e5b5c9fc473e9e87878c"
+          }
+        },
+        {
+          "nodeId": "a6fdbaab-9b24-4ced-84fe-908efade5150",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "ceaf5df3-d274-4e7a-8e60-ce7d47296a16",
+            "e02d0f9c-3a2e-4d5b-8569-7c90dba5e03b"
+          ],
+          "rationale": "Episode 73 proposes model-handled infrastructure exceptions, a different destination from mandatory human escalation.",
+          "evidenceSha256": {
+            "ceaf5df3-d274-4e7a-8e60-ce7d47296a16": "9a648568d95d223fa39f395fa96bd698e1e2ee9692957bf0d4a9a323d391d74b",
+            "e02d0f9c-3a2e-4d5b-8569-7c90dba5e03b": "c551541f3a952209b5aa4b3a6f4c2614e6da76ebc8150deac5683674fa4e3f65"
+          }
+        },
+        {
+          "nodeId": "d6c5c8c9-76a2-4e5d-8d5b-b3e77506028f",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "671f6fdc-0f59-4954-ae85-8090fb27ffe8",
+            "01564323-3109-411f-ad91-0217d3bba9b4"
+          ],
+          "rationale": "Episode 65 proposes codifying routine founder decisions while returning exceptions for intervention.",
+          "evidenceSha256": {
+            "671f6fdc-0f59-4954-ae85-8090fb27ffe8": "2f587666781d6036536dff564bb821e3d174cf48690d7e378e235952dd94603c",
+            "01564323-3109-411f-ad91-0217d3bba9b4": "d6e2101bface82eadf6af359021c99c54b333d31f2f86a5f1347911109f72fcf"
+          }
+        }
+      ],
+      "title": "Handling exceptions and consequential decisions",
+      "summary": "Normal cases, uncertainty and exceptions can follow different routes: models handle some exceptions while people retain consequential decisions. These proposals do not establish one universal escalation policy.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "agents",
+        "business-markets"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "private-backends",
+      "mentions": [
+        "b7a27f7b-fed1-479b-a6db-cd7b7d18dcd4",
+        "e166d8bc-80a8-41d3-b4f3-b4e87a329500",
+        "ce8b6688-fb2c-4ca9-858a-57539ae8441e"
+      ],
+      "sources": [
+        {
+          "nodeId": "b7a27f7b-fed1-479b-a6db-cd7b7d18dcd4",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "5d8cf1d1-653d-4623-9428-c5a4e4fd22ee"
+          ],
+          "rationale": "Episode 70 describes private access to locally hosted applications through a proxy.",
+          "evidenceSha256": {
+            "5d8cf1d1-653d-4623-9428-c5a4e4fd22ee": "7f346cc9dff7f0cdb1b07eff66c5fdb752b2416fe38b3f1c5641e3823e4f55a4"
+          }
+        },
+        {
+          "nodeId": "e166d8bc-80a8-41d3-b4f3-b4e87a329500",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "c47720bd-96bf-4181-9571-ef681c837b43"
+          ],
+          "rationale": "Episode 72 describes public interfaces using private user-owned backends.",
+          "evidenceSha256": {
+            "c47720bd-96bf-4181-9571-ef681c837b43": "e8117e248adc2ccda4c68f980d3ae6f7dae73b768159daaeba87b115bb162e3b"
+          }
+        },
+        {
+          "nodeId": "ce8b6688-fb2c-4ca9-858a-57539ae8441e",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "52889bc3-8d31-43fc-9d65-0f61d4f6ca17"
+          ],
+          "rationale": "Episode 72 describes serving local files directly instead of making cloud copies.",
+          "evidenceSha256": {
+            "52889bc3-8d31-43fc-9d65-0f61d4f6ca17": "3cdeb098eb964f3861feaf4588c2c72395d09612c06a7d8ae4bc14af244d02f2"
+          }
+        }
+      ],
+      "title": "Private backends behind familiar interfaces",
+      "summary": "A familiar public or local interface can reach user-owned services without moving all data into the interface provider. The designs have different networking and custody boundaries.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "software-systems",
+        "privacy-security"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "process-redesign",
+      "mentions": [
+        "b004f8b6-22f4-4302-b7b8-ab69fec1ffab",
+        "d462adec-bb1e-4ff1-bd02-d26226c35cbc",
+        "a5792dea-6e88-4106-ba7c-97d669b847ad",
+        "d73fec4a-2512-40e2-b34d-75317c161b2c"
+      ],
+      "sources": [
+        {
+          "nodeId": "b004f8b6-22f4-4302-b7b8-ab69fec1ffab",
+          "transcriptRevisionId": "3f9e067b-2017-4c88-9f22-be1cf324d24e",
+          "evidenceIds": [
+            "7efbe06b-3c7f-4cf2-a4bc-1c357e74cbc9"
+          ],
+          "rationale": "Episode 53 distinguishes individual acceleration from redesigning redundant workflows.",
+          "evidenceSha256": {
+            "7efbe06b-3c7f-4cf2-a4bc-1c357e74cbc9": "4fecfe789d82ef237df4e7f0c4cabb2963f9edd6587cc4efe6f25cf7c5b596da"
+          }
+        },
+        {
+          "nodeId": "d462adec-bb1e-4ff1-bd02-d26226c35cbc",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "c41e2e19-ede2-4725-a6d5-90a88d81db2e"
+          ],
+          "rationale": "Episode 67 argues that effective automation requires reshaping process around constraints and judgement.",
+          "evidenceSha256": {
+            "c41e2e19-ede2-4725-a6d5-90a88d81db2e": "46682841f8b5b5999931cf73338a66c09bc237e226dc8ca4dcf252ae53586f84"
+          }
+        },
+        {
+          "nodeId": "a5792dea-6e88-4106-ba7c-97d669b847ad",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "1a081acf-3b79-4f94-8200-b4d0ecd8252b"
+          ],
+          "rationale": "Episode 78 uses driverless ore transport to illustrate redesign when a major constraint changes.",
+          "evidenceSha256": {
+            "1a081acf-3b79-4f94-8200-b4d0ecd8252b": "a5ef48e09cac356bc7407fc664888bb2d92aa6f1d155cd1a5df2e6a8e5782adb"
+          }
+        },
+        {
+          "nodeId": "d73fec4a-2512-40e2-b34d-75317c161b2c",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "6bf4019f-8dd9-402f-b901-72fc4e022b73"
+          ],
+          "rationale": "Episode 79 applies changed human-work constraints to the size and form of businesses.",
+          "evidenceSha256": {
+            "6bf4019f-8dd9-402f-b901-72fc4e022b73": "950a0bbf2ca0f380d005cf56970044d56d41a405a94fdac44afae45613ab3094"
+          }
+        }
+      ],
+      "title": "Changed constraints require process redesign",
+      "summary": "Faster execution can change the right shape of a workflow or organisation. Task acceleration alone need not capture that opportunity.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets",
+        "software-systems"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "human-adoption",
+      "mentions": [
+        "1e455c39-130c-44cc-8e31-0e062618509a",
+        "3c336cef-245e-4900-9bb0-b80f4db7443e",
+        "2382eaba-8c33-4d0f-ba04-fe90d1c7468e"
+      ],
+      "sources": [
+        {
+          "nodeId": "1e455c39-130c-44cc-8e31-0e062618509a",
+          "transcriptRevisionId": "ccc81c4c-e3fb-404a-91cf-e38f7cf97ef6",
+          "evidenceIds": [
+            "f933937b-2b66-45bd-a1b4-0daa4c3bffe7"
+          ],
+          "rationale": "Episode 63 argues that people, incentives and power hierarchies can dominate technical quality in adoption.",
+          "evidenceSha256": {
+            "f933937b-2b66-45bd-a1b4-0daa4c3bffe7": "3b86ef43dae5c2bd93343d2d903cfd21b7f54f3c508d6ee0bf33556bec0bdbba"
+          }
+        },
+        {
+          "nodeId": "3c336cef-245e-4900-9bb0-b80f4db7443e",
+          "transcriptRevisionId": "3371f26e-97c7-4907-96fb-835563a0fb5b",
+          "evidenceIds": [
+            "3f6564c3-01dc-4ba8-a8d9-cd6f16547f8c",
+            "11206fa9-47a7-45b0-ad1a-b692b82d47c5",
+            "9ff4eb7e-46d5-44ec-9ac0-695ddea22736"
+          ],
+          "rationale": "Episode 74 recommends patient operator-led changes grounded in the people experiencing the problem.",
+          "evidenceSha256": {
+            "3f6564c3-01dc-4ba8-a8d9-cd6f16547f8c": "5f0c24386d50f54046c938c020fc52dc6e8d7648222fb471e5cecc0e4ea78c8e",
+            "11206fa9-47a7-45b0-ad1a-b692b82d47c5": "f46cfc3381b550447b5a7c9a70de3aa8979efdd9cce9ae89d0a2d436d4d05919",
+            "9ff4eb7e-46d5-44ec-9ac0-695ddea22736": "80972d69aa8242fb4c195647103471a07e5905e70dcf13eed934860b18a786db"
+          }
+        },
+        {
+          "nodeId": "2382eaba-8c33-4d0f-ba04-fe90d1c7468e",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "d7252469-3335-4294-9090-e8aa081d4609"
+          ],
+          "rationale": "Episode 76 pairs sovereign agents with in-person guided adoption rather than generic accounts alone.",
+          "evidenceSha256": {
+            "d7252469-3335-4294-9090-e8aa081d4609": "f92d01cc2c1de75c9563dc5dc5506cb6c6f6b6f19ee66de1cd142036c5739b47"
+          }
+        }
+      ],
+      "title": "Adoption through people and operating context",
+      "summary": "Successful adoption depends on people, trust, current work and supported change as well as technical capability. Regional firms and hands-on agent camps are distinct contexts.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets",
+        "agents"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "agent-accountability",
+      "mentions": [
+        "a45067af-a611-4251-9d42-762723fc185c",
+        "447391be-27d9-4f12-9c21-a61c17c6bb08"
+      ],
+      "sources": [
+        {
+          "nodeId": "a45067af-a611-4251-9d42-762723fc185c",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "482183ab-407c-4333-b1b7-073ecf183c16"
+          ],
+          "rationale": "Episode 69 asks who bears responsibility for an agent’s mistakes, fraud and income.",
+          "evidenceSha256": {
+            "482183ab-407c-4333-b1b7-073ecf183c16": "36bd96cdceb94bbf8cdeabd4b20c8844efa7826c9792bc0ad885cb5278ce246b"
+          }
+        },
+        {
+          "nodeId": "447391be-27d9-4f12-9c21-a61c17c6bb08",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "32c8883c-1155-4285-98d6-bda27bc3eee4"
+          ],
+          "rationale": "Episode 72 proposes applying existing consequences to people and companies responsible for harmful AI actions.",
+          "evidenceSha256": {
+            "32c8883c-1155-4285-98d6-bda27bc3eee4": "e3b73ebb3ead9f6c755f1774ce15ac3d288ea50dbad15d641026cd27b310de44"
+          }
+        }
+      ],
+      "title": "Accountability for agent actions",
+      "summary": "The speakers raise questions about liability and propose attaching consequences to responsible actors. These are attributed legal/policy views and open questions, not a legal determination.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "privacy-security",
+        "business-markets",
+        "agents"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "bounded-decomposition",
+      "mentions": [
+        "0e7b405c-e4bd-452a-90d3-21442a0bf1ed",
+        "8aea5e5a-c89c-4e93-821e-b78a3d9c4943",
+        "b601c4c9-0e39-4627-a7e4-a91c1b8b5a65"
+      ],
+      "sources": [
+        {
+          "nodeId": "0e7b405c-e4bd-452a-90d3-21442a0bf1ed",
+          "transcriptRevisionId": "d5ab1035-ef9d-494d-8648-6fa8915a5199",
+          "evidenceIds": [
+            "8bfa0f91-ee8d-414a-b262-66eb1a11a8bd"
+          ],
+          "rationale": "Episode 62 argues that bounded task decomposition can trade orchestration effort for cheaper model use.",
+          "evidenceSha256": {
+            "8bfa0f91-ee8d-414a-b262-66eb1a11a8bd": "8154b1301074944b007b296521ba260f06e94257a363b5f72183a479c9c8f7fb"
+          }
+        },
+        {
+          "nodeId": "8aea5e5a-c89c-4e93-821e-b78a3d9c4943",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "21ae1436-4e49-47cf-b6ad-3c37a73d31b7"
+          ],
+          "rationale": "Episode 71 describes factored expert judgement as small observable decisions.",
+          "evidenceSha256": {
+            "21ae1436-4e49-47cf-b6ad-3c37a73d31b7": "359e89cdc4ed47a9fa3f93b6f9bf39be64891b50193d9886793eb019f5e02a2b"
+          }
+        },
+        {
+          "nodeId": "b601c4c9-0e39-4627-a7e4-a91c1b8b5a65",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "37291b60-5cbb-4018-8dfa-746b489c9b80",
+            "d57c4c2a-82e0-4a10-8701-baf6749babf6",
+            "7baf28fb-76fc-4d2f-b848-c0a31b1e42ff"
+          ],
+          "rationale": "Episode 73 separates classification, translation and open-ended research among different model primitives.",
+          "evidenceSha256": {
+            "37291b60-5cbb-4018-8dfa-746b489c9b80": "eebde95ae74fb2712be108972b83833cfea3510f96162e80c89746a01687b948",
+            "d57c4c2a-82e0-4a10-8701-baf6749babf6": "bfd48ae06435fbd787a088cee188665c60fb2e130845ee57af7badc98601d958",
+            "7baf28fb-76fc-4d2f-b848-c0a31b1e42ff": "25fec34a369b30f0f6bd6f046095017b48b99488d86fe49090de44240457f8b4"
+          }
+        }
+      ],
+      "title": "Decomposing work into bounded tasks",
+      "summary": "Smaller observable decisions and specialised roles can make work more controllable and economical. The sources use different mechanisms and do not establish a universal optimal task size.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "agents",
+        "software-systems"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "reliable-outcomes",
+      "mentions": [
+        "8c394e86-e9ef-4cfd-8272-129b20a6b781",
+        "a9709194-49d8-4d17-8b41-172572ad4146",
+        "60216693-eb59-4c07-8813-8805348e242d",
+        "e8024232-eac5-4632-baa6-a51935a20e6a"
+      ],
+      "sources": [
+        {
+          "nodeId": "8c394e86-e9ef-4cfd-8272-129b20a6b781",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "d0158de8-ac85-4648-b289-ecc6e0ab9298"
+          ],
+          "rationale": "Episode 65 argues that ordinary businesses prefer dependable repetition to unconstrained improvisation.",
+          "evidenceSha256": {
+            "d0158de8-ac85-4648-b289-ecc6e0ab9298": "01e2be24a93f4252b3af3d875d6a5c5ce25db7e69ea5fa9ca745ca5e9b4ef209"
+          }
+        },
+        {
+          "nodeId": "a9709194-49d8-4d17-8b41-172572ad4146",
+          "transcriptRevisionId": "c165ba33-a2c6-4ff5-8cc9-0e7975c928c5",
+          "evidenceIds": [
+            "fe946fcf-6735-49d8-b8df-d8dc4bc486f5"
+          ],
+          "rationale": "Episode 69 argues that predictable outcomes matter more than open-ended intelligence in operations.",
+          "evidenceSha256": {
+            "fe946fcf-6735-49d8-b8df-d8dc4bc486f5": "6e62b0d1de59e9844e5ccd015a429d2ce649a2c0a69d9c763ffe5417b599f952"
+          }
+        },
+        {
+          "nodeId": "60216693-eb59-4c07-8813-8805348e242d",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "711747d1-d718-4fe2-805a-31dd8e2a6c67"
+          ],
+          "rationale": "Episode 71 stresses reliable rather than occasional correctness in consequential enterprise work.",
+          "evidenceSha256": {
+            "711747d1-d718-4fe2-805a-31dd8e2a6c67": "39013cfed797cc61f3de700a5c37ff23d67d11f225a9b08e28e49f4e3c7272fb"
+          }
+        },
+        {
+          "nodeId": "e8024232-eac5-4632-baa6-a51935a20e6a",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "7def4f74-8842-4815-9c37-3d225a7d73bd"
+          ],
+          "rationale": "Episode 73 prioritises speed and consistency once capability is sufficient.",
+          "evidenceSha256": {
+            "7def4f74-8842-4815-9c37-3d225a7d73bd": "ce64ae963621082976cd3f34cc0515db8a41dbdeecbc0598351b14125d5e584b"
+          }
+        }
+      ],
+      "title": "Reliable outcomes over maximum intelligence",
+      "summary": "A useful capability threshold is followed by demands for consistency, speed and dependable operation. Business, liability and model-service examples remain distinct.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets",
+        "ai-models-infrastructure",
+        "agents"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "evidence-and-voice",
+      "mentions": [
+        "ee76a85a-7005-431f-a514-399bf206b68b",
+        "f7deb158-c4ce-4aff-b4f2-d65629270f3f"
+      ],
+      "sources": [
+        {
+          "nodeId": "ee76a85a-7005-431f-a514-399bf206b68b",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "972ed556-537f-42bb-8d47-efffa5aa3452"
+          ],
+          "rationale": "Episode 70 describes a writing pipeline constrained to claims originating in the transcript.",
+          "evidenceSha256": {
+            "972ed556-537f-42bb-8d47-efffa5aa3452": "f5bbde54b1bdfc4911ed742f004fa2c8c22dba75cbdfb1d12446dfe20bffd2e0"
+          }
+        },
+        {
+          "nodeId": "f7deb158-c4ce-4aff-b4f2-d65629270f3f",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "67130b59-9618-404e-9a0d-7328e8f025d6"
+          ],
+          "rationale": "Episode 75 argues that transcript-backed factual grounding and a separate style comparison can preserve voice.",
+          "evidenceSha256": {
+            "67130b59-9618-404e-9a0d-7328e8f025d6": "4f7370467141d4c92dfbd68cd139d8ff53ebc0cd90fb2e2f2fe6d7e4c5b3f0d4"
+          }
+        }
+      ],
+      "title": "Evidence-grounded writing with voice",
+      "summary": "Ground generated writing in creator-owned source material while retaining separate editorial judgement about voice and clarity. Factual grounding alone does not guarantee good prose.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "social-media",
+        "knowledge-memory"
+      ],
+      "comparisonType": "recurrence"
+    },
+    {
+      "id": "architecture-fit",
+      "mentions": [
+        "8d435b59-2f82-4b24-a547-2f03895d4f5d",
+        "bbff9a61-767e-4164-b5b6-ed99b3f45f76",
+        "a5b0caa2-3413-4a7e-901e-8872c5fd8782"
+      ],
+      "sources": [
+        {
+          "nodeId": "8d435b59-2f82-4b24-a547-2f03895d4f5d",
+          "transcriptRevisionId": "ddfa2c80-8197-48b2-bbcc-5ba0f315e862",
+          "evidenceIds": [
+            "00a4371d-ae2f-4eca-8859-f0709b559adf"
+          ],
+          "rationale": "Episode 61 describes removing self-imposed complexity by returning to the actual requirements.",
+          "evidenceSha256": {
+            "00a4371d-ae2f-4eca-8859-f0709b559adf": "0d704dd69105ccdaea14883ceccc2cf609ff1588520138809868a97b76b5e537"
+          }
+        },
+        {
+          "nodeId": "bbff9a61-767e-4164-b5b6-ed99b3f45f76",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "98311318-94bd-4271-b452-f27a0cd5f0fd",
+            "fbde28f0-f9ca-47ce-a711-d3fea662141f"
+          ],
+          "rationale": "Episode 67 questions record-level encryption for an owner-controlled server because of its operational complexity.",
+          "evidenceSha256": {
+            "98311318-94bd-4271-b452-f27a0cd5f0fd": "9fd91b97a1e523d5538c5b356a1e2d91544db0c28678dad2105291a6af5b5c33",
+            "fbde28f0-f9ca-47ce-a711-d3fea662141f": "4eb1d41cbe795c7f8446ae7699beaa48e38559005411b2c726ff12df5ee061aa"
+          }
+        },
+        {
+          "nodeId": "a5b0caa2-3413-4a7e-901e-8872c5fd8782",
+          "transcriptRevisionId": "17330e15-337f-484f-b46d-1da33c833899",
+          "evidenceIds": [
+            "15a91db7-d5f6-41a6-a9df-bd1ce2eed92b"
+          ],
+          "rationale": "Episode 64 argues that architecture requires experience and can become wrong when business requirements change.",
+          "evidenceSha256": {
+            "15a91db7-d5f6-41a6-a9df-bd1ce2eed92b": "422b786c906a7853571489c0983ce47c884c14e43b74731480345037658b3eed"
+          }
+        }
+      ],
+      "title": "Architecture must fit the job",
+      "summary": "Architectural complexity and security mechanisms should be justified by requirements, ownership and changing work. These are contextual trade-offs, not a claim that encryption is generally unnecessary.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "software-systems",
+        "privacy-security"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "verification-and-discovery",
+      "mentions": [
+        "da285460-1015-45e4-bcf7-d5ed29e64e69",
+        "d54c72fb-9fc9-4f2c-bb42-e88e0230cafb"
+      ],
+      "sources": [
+        {
+          "nodeId": "da285460-1015-45e4-bcf7-d5ed29e64e69",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "dc409a23-11aa-4d9d-9555-d67b8a8f559e"
+          ],
+          "rationale": "Episode 60 distinguishes retrieval of prior mathematical results from novel discovery.",
+          "evidenceSha256": {
+            "dc409a23-11aa-4d9d-9555-d67b8a8f559e": "5d0b6036bf1cb60590fec5f2dfb613dca18902e9be5c70d8d2d9c5c58bc8e90b"
+          }
+        },
+        {
+          "nodeId": "d54c72fb-9fc9-4f2c-bb42-e88e0230cafb",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "cf68cda2-d292-4923-9b7d-59640aa00357"
+          ],
+          "rationale": "Episode 76 distinguishes verifiable mathematical search from human judgement in design.",
+          "evidenceSha256": {
+            "cf68cda2-d292-4923-9b7d-59640aa00357": "84f44b4914f2be6ca0eebf4ac3e488d1876e1c5227fc151bcccaaa0f45e7b868"
+          }
+        }
+      ],
+      "title": "Verification, retrieval and discovery",
+      "summary": "Finding a result, proving it and deciding its value are different tasks. Machine-checkable reasoning and human-speed design have different evaluation conditions.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "knowledge-memory",
+        "ai-models-infrastructure"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "recursive-improvement",
+      "mentions": [
+        "9b8a534e-664a-47c6-87c5-08cdad47c711",
+        "62368b2b-eea0-489e-a78d-6a504938e8b7"
+      ],
+      "sources": [
+        {
+          "nodeId": "9b8a534e-664a-47c6-87c5-08cdad47c711",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "78d99ade-f14a-476e-8f8d-3c936d1a9910"
+          ],
+          "rationale": "Episode 60 discusses automating training experiments through a model-managed loop.",
+          "evidenceSha256": {
+            "78d99ade-f14a-476e-8f8d-3c936d1a9910": "3657c9ab63f79a4a0f07a46044e14aead64ce61a8f5f1d424db001dea027a198"
+          }
+        },
+        {
+          "nodeId": "62368b2b-eea0-489e-a78d-6a504938e8b7",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "021b4dd6-6d2d-42d7-9432-6d3819f9a7c4",
+            "35bf122c-95b8-4688-905c-4aef1c2bdf78"
+          ],
+          "rationale": "Episode 78 asks what improvement means, which metric applies and who supplies the motivating problems.",
+          "evidenceSha256": {
+            "021b4dd6-6d2d-42d7-9432-6d3819f9a7c4": "80dd2a89fa985a273f929b4efcb8de324c953c37608953cd5e9b3d5cde7d542b",
+            "35bf122c-95b8-4688-905c-4aef1c2bdf78": "1530fb4bdb29f8e971c8a18869028080f7091917d00d924d8c33909f41c38f22"
+          }
+        }
+      ],
+      "title": "Recursive improvement needs an objective",
+      "summary": "Automated model-training proposals and questions about the goal of self-improvement belong in the same debate. The question does not establish that recursive improvement cannot occur.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "ai-models-infrastructure",
+        "knowledge-memory"
+      ],
+      "comparisonType": "perspectives"
+    },
+    {
+      "id": "marketing-originality",
+      "mentions": [
+        "7147b321-c611-4b8d-b4da-014b456b9dd4",
+        "0eeea304-9d6f-4a98-b24a-d2816ecaeedf"
+      ],
+      "sources": [
+        {
+          "nodeId": "7147b321-c611-4b8d-b4da-014b456b9dd4",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "5cd3df22-9529-4520-810b-2c30daf0af2e"
+          ],
+          "rationale": "Episode 77 argues that shared automation removes production volume as a marketing distinction.",
+          "evidenceSha256": {
+            "5cd3df22-9529-4520-810b-2c30daf0af2e": "192cecfe563dcfcd7901bdd9e5e6b0f0672c143cc03c8561fb64b4892be92a65"
+          }
+        },
+        {
+          "nodeId": "0eeea304-9d6f-4a98-b24a-d2816ecaeedf",
+          "transcriptRevisionId": "c872b71c-087f-438a-9395-20cd89ad64b1",
+          "evidenceIds": [
+            "13ca9b11-59af-466c-a647-dbf6f685ea30",
+            "185562f8-a215-4ca7-9e93-a05fdc8bb0cd"
+          ],
+          "rationale": "Episode 78 returns to automated content saturation and the continuing need for original approaches to customer problems.",
+          "evidenceSha256": {
+            "13ca9b11-59af-466c-a647-dbf6f685ea30": "1c8e4a75e8a4a5d9ae56e20d241ced8af9a31261852d62c7721bd2dec98b37ae",
+            "185562f8-a215-4ca7-9e93-a05fdc8bb0cd": "7b7ca3426877b08e274a1bd319f84b27b1df531360b974f223253f29978d7664"
+          }
+        }
+      ],
+      "title": "Originality after automated marketing",
+      "summary": "If competitors can run similar content pipelines, more production need not create distinction. These are arguments for finding customers through original, relevant approaches, not proof that every automated campaign fails.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "topicFamilies": [
+        "business-markets",
+        "social-media"
+      ],
+      "comparisonType": "recurrence"
     }
   ],
-  "suggestions": []
+  "suggestions": [],
+  "reviewSnapshotId": "archive-shared-ideas-2026-11-09"
 }

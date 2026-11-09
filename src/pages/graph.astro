@@ -1,10 +1,15 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import KnowledgeMix from '@/components/KnowledgeMix.astro';
+import SharedIdeaReview from '@/components/SharedIdeaReview.astro';
+import registry from '@/data/graph-concepts.json';
+import audit from '@/data/graph-shared-review.json';
+import {sharedReviewCoverage} from '@/lib/graph-shared-review';
 import { canonicalPublicGraph } from '@/lib/public-graph-data';
 import { buildKnowledgeModel, buildTopicModel } from '@/lib/graph-model';
 const data = canonicalPublicGraph();
 const raw = buildKnowledgeModel(data);
+const coverage=sharedReviewCoverage(data,registry,audit);
 const model = {nodes:raw.nodes, allConnections:raw.links.map((link:any,index:number)=>({...link,id:`public:${index}`,sourceId:link.source,targetId:link.target,relationshipType:link.type,explanation:link.note||''}))};
 const topics = buildTopicModel(data);
 const membership = Object.fromEntries(topics.map((topic:any) => {
@@ -35,7 +40,7 @@ const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
       <ul id="explorer-results">{raw.nodes.map((node:any)=><li data-index-node={node.id}><a href={node.href||'https://intelligencesnacks.com/graph/'} data-pick={node.id}><span class="eyebrow">{node.episodeNumber?`Episode ${node.episodeNumber} · `:''}{node.kind==='canonical'?'Reviewed shared concept':node.kind}</span><strong>{node.title}</strong><span>{node.summary}</span><span aria-hidden="true">↗</span></a></li>)}</ul>
     </section>
     <div class="explorer-perspective"><label><input type="checkbox" data-source-links /> Show source links</label><button type="button" class="text-link" data-clear-topic hidden>Clear topic</button><p data-scope-description>Idea connections are shown; source links add episode and speaker context.</p></div>
-    <nav class="explorer-concepts" aria-label="Shared ideas across episodes"><p class="eyebrow">Shared ideas across episodes</p><div>{raw.nodes.filter((node:any)=>node.kind==='canonical').map((node:any)=><button type="button" data-concept-pick={node.id} aria-pressed="false">{node.title}<span>{node.episodeCount} episodes</span></button>)}</div><p data-concept-empty hidden>No reviewed shared ideas in this topic selection yet. Clear the topic to explore other shared ideas.</p><p>Editorial groupings link distinct observations. Follow each discussion to its evidence.</p></nav>
+    <nav class="explorer-concepts" aria-label="Shared ideas across episodes"><p class="eyebrow">Shared ideas across episodes · {coverage.themeCount} themes</p><div>{raw.nodes.filter((node:any)=>node.kind==='canonical').map((node:any)=><button type="button" data-concept-pick={node.id} aria-pressed="false">{node.title}<span>{node.episodeCount} episodes</span></button>)}</div><button type="button" class="text-link" data-concepts-toggle aria-expanded="false">Browse all shared ideas</button><p data-concept-empty hidden>No reviewed shared ideas in this topic selection yet. Clear the topic to explore other shared ideas.</p><p>Editorial groupings link distinct observations. Follow each discussion to its evidence.</p></nav>
     <div class="explorer-stage">
       <div class="explorer-map" data-explorer-map role="region" aria-label="Interactive archive map. Drag to pan; use zoom controls. Search or browse the archive for keyboard access.">
         <svg data-explorer-svg role="group" aria-label="All published nodes arranged around their source episodes"></svg>
@@ -50,6 +55,7 @@ const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
       </aside>
     </div>
     <div class="explorer-footnote"><p>Colour groups source episodes. Lines show idea relationships. Optional source links show episode and speaker context; proximity alone does not imply a relationship.</p><span role="status" aria-live="polite" data-explorer-status>Scroll to zoom · drag to explore</span></div>
+    <SharedIdeaReview coverage={coverage} />
     <KnowledgeMix {topics} {classified} {totalWords} />
     <noscript><style>#explorer-index[hidden]{display:block!important}.explorer-stage{display:none}.explorer-perspective,.explorer-concepts{display:none}</style><p>Browse the archive above. Enable JavaScript to explore the interactive map.</p></noscript>
   </section>
@@ -75,4 +81,6 @@ initialiseExplorer();
 
 .explorer-perspective{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;margin:.75rem 0}.explorer-perspective label{display:flex;align-items:center;gap:.5rem;min-height:44px;white-space:nowrap;font:400 .75rem var(--font-mono)}.explorer-perspective p{flex:1;min-width:200px;margin:0;color:var(--text-secondary);font-size:.75rem;line-height:1.5}.explorer-perspective button{font-size:.7rem}.explorer-concepts{border-top:1px solid var(--line);padding-block:1rem}.explorer-concepts>.eyebrow{margin:0 0 .65rem}.explorer-concepts>div{display:flex;gap:.6rem;overflow-x:auto;padding:3px 3px .5rem}.explorer-concepts button{flex-shrink:0;min-height:44px;border:1px solid var(--line);border-radius:var(--radius-small);padding:.5rem .7rem;background:var(--paper);color:var(--ink);text-align:left;font:500 .85rem var(--font-display);cursor:pointer}.explorer-concepts button>span{display:block;font:400 .6rem var(--font-mono);color:var(--text-secondary);margin-top:.3rem}.explorer-concepts>p:last-child{margin:.2rem 0 0;font-size:.75rem;color:var(--text-secondary)}.explorer-detail details{border-top:1px solid var(--line);margin-top:1.5rem;padding-top:1rem}.explorer-detail details>summary{cursor:pointer;font-size:.85rem}
 .explorer-concepts button[aria-pressed="true"]{border-color:var(--coral);background:var(--paper-raised)}
+.explorer-concepts.is-expanded>div{flex-wrap:wrap;max-height:22rem;overflow:auto}.explorer-concepts [data-concepts-toggle]{font-size:.65rem;min-height:44px}
+.explorer{overflow-anchor:none}.explorer-search input{scroll-margin-top:85px}
 </style>

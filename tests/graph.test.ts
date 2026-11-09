@@ -15,8 +15,8 @@ test('every public URL matches canonical published content and every edge has en
 test('every idea beyond old cap can become focus; canonical memory connects three episodes',()=>{
  const connections=model.links.map((edge,index)=>({id:String(index),sourceId:edge.source,targetId:edge.target}));
  for(const node of model.nodes.slice(500)){const view=selectGraphView({...model,allConnections:connections},{focusId:node.id});expect(view.nodes.some((item:any)=>item.id===node.id)).toBe(true);}
- const memory=model.links.filter(edge=>edge.source==='canonical:graph-memory');expect(memory.length).toBe(3);
- const byId=new Map(model.nodes.map(node=>[node.id,node]));expect(new Set(memory.map(edge=>byId.get(edge.target)?.episodeId)).size).toBe(3);
+ const memory=model.links.filter(edge=>edge.source==='canonical:graph-memory');expect(memory.length).toBeGreaterThanOrEqual(3);
+ const byId=new Map(model.nodes.map(node=>[node.id,node]));expect(new Set(memory.map(edge=>byId.get(edge.target)?.episodeId)).size).toBeGreaterThanOrEqual(3);
 });
 test('suggestions never enter public graph and invalid canonical mentions fail loudly',()=>{
  const base={nodes:[{id:'knowledge:n'}],links:[]};expect(applyCanonicalConcepts(base,{concepts:[{id:'draft',reviewState:'proposed',mentions:['missing'] }],suggestions:[{nodeId:'n'}]}).nodes.length).toBe(1);

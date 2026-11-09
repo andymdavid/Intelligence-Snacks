@@ -70,9 +70,25 @@ try {
   );
   await page.locator("[data-source-links]").uncheck();
   assert(
-    (await page.locator("[data-concept-pick]:visible").count()) === 10,
-    "ten reviewed cross-episode hubs available as landmarks",
+    (await page.locator("[data-concept-pick]:visible").count()) === 8,
+    "initial shared-idea landmarks stay compact as the archive grows",
   );
+  await page.locator("[data-concepts-toggle]").click();
+  assert(
+    (await page.locator("[data-concept-pick]:visible").count()) === 47,
+    "all reviewed shared themes can be browsed",
+  );
+  await page.locator("[data-concepts-toggle]").click();
+  assert(
+    (await page.locator("[data-review-coverage]").textContent()).includes(
+      "526 of 526",
+    ) &&
+      (await page.locator("[data-review-coverage]").textContent()).includes(
+        "193 source observations",
+      ),
+    "public coverage distinguishes screened records from source-linked observations",
+  );
+
   assert(
     (await page.locator("[data-index-node]").count()) === count,
     "complete accessible archive index",
@@ -383,6 +399,15 @@ try {
       (await page.locator("[data-topic-bar]").first().isVisible()),
     "mobile chart and collapsed family bars render",
   );
+  await page.locator("[data-review-coverage] > summary").click();
+  assert(
+    (await page.locator("[data-review-coverage] tbody tr").count()) === 30 &&
+      (await page.evaluate(
+        () => document.documentElement.scrollWidth === innerWidth,
+      )),
+    "mobile review tables account for 21 episodes and nine families without horizontal overflow",
+  );
+  await page.locator("[data-review-coverage] > summary").click();
 
   await page.locator("#explorer-search").fill("graph memory");
   assert(
@@ -437,6 +462,11 @@ try {
     (await plain.locator("[data-mix-chart]").isVisible()) &&
       (await plain.locator("[data-topic-bar]").first().isVisible()),
     "Knowledge mix donut and family bars remain visible without JavaScript",
+  );
+  await plain.locator("[data-review-coverage] > summary").click();
+  assert(
+    await plain.locator("[data-review-coverage] table").first().isVisible(),
+    "review coverage remains readable without JavaScript",
   );
   await plain.close();
   const scoped = await browser.newPage({
@@ -504,6 +534,14 @@ try {
     (await scoped.locator("[data-source-links]").isChecked()) &&
       new URL(scoped.url()).searchParams.get("context") === "all",
     "source-link choice is preserved by shared URLs and reload",
+  );
+  await scoped.goto(`${base}/graph/?node=canonical:switching-friction`);
+  await scoped.waitForSelector("#explorer-detail-title");
+  assert(
+    (await scoped.locator("[data-detail-content]").textContent()).includes(
+      "different perspectives",
+    ),
+    "qualifying perspectives are labelled instead of implying agreement",
   );
   await scoped.close();
   assert(errors.length === 0, "no uncaught browser errors");

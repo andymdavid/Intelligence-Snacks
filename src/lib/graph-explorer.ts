@@ -54,6 +54,28 @@ export function initialiseExplorer() {
   ) as Record<string, string[]>;
   let visibleIds = new Set(nodes.map((node) => node.id)),
     scopeRevision = 0;
+  let expandedConcepts = false;
+  function updateConceptBrowser() {
+    const buttons = [
+      ...document.querySelectorAll<HTMLButtonElement>("[data-concept-pick]"),
+    ];
+    const matches = buttons.filter((button) =>
+      visibleIds.has(button.dataset.conceptPick!),
+    );
+    buttons.forEach(
+      (button) =>
+        (button.hidden =
+          !visibleIds.has(button.dataset.conceptPick!) ||
+          (!expandedConcepts && matches.indexOf(button) >= 8)),
+    );
+    const toggle = $<HTMLButtonElement>("[data-concepts-toggle]");
+    toggle.hidden = matches.length <= 8;
+    toggle.textContent = expandedConcepts
+      ? "Show fewer shared ideas"
+      : `Browse all ${matches.length} shared ideas`;
+    toggle.setAttribute("aria-expanded", String(expandedConcepts));
+    $(".explorer-concepts").classList.toggle("is-expanded", expandedConcepts);
+  }
   function applyScope() {
     visibleIds = topicVisibleIds(
       nodes,
@@ -76,12 +98,7 @@ export function initialiseExplorer() {
           : "-1",
       );
     }
-    document
-      .querySelectorAll<HTMLElement>("[data-concept-pick]")
-      .forEach(
-        (button) =>
-          (button.hidden = !visibleIds.has(button.dataset.conceptPick!)),
-      );
+    updateConceptBrowser();
     $("[data-concept-empty]").toggleAttribute(
       "hidden",
       nodes.some(
@@ -524,7 +541,7 @@ export function initialiseExplorer() {
     content.append(
       el(
         "p",
-        `${node.episodeNumber ? `Episode ${node.episodeNumber} · ` : ""}${node.kind === "canonical" ? "Reviewed shared concept" : node.kind}`,
+        `${node.episodeNumber ? `Episode ${node.episodeNumber} · ` : ""}${node.kind === "canonical" ? (node.comparisonType === "perspectives" ? "Shared theme · different perspectives" : "Shared theme · recurring discussion") : node.kind}`,
         "eyebrow",
       ),
       title,
@@ -722,6 +739,7 @@ export function initialiseExplorer() {
     const fragment = document.createDocumentFragment();
     for (const node of ordered) fragment.append(byRow.get(node.id)!);
     list.append(fragment);
+    list.scrollTop = 0;
     const count = ordered.length;
     showIndex(!!words.length || !!episodeIds);
     const label = `${count} ${count === 1 ? "result" : "results"}`;
@@ -732,7 +750,11 @@ export function initialiseExplorer() {
         : "Search every published idea, episode and Snack.";
     status.textContent = `${count} matching archive records`;
   }
-  search.addEventListener("input", filterIndex);
+  search.addEventListener("input", () => {
+    filterIndex();
+    if (!index.hidden)
+      search.scrollIntoView({ block: "start", behavior: "instant" });
+  });
   function changeTopic() {
     applyScope();
     filterIndex();
@@ -747,6 +769,10 @@ export function initialiseExplorer() {
     scopeRevision++;
     paint();
     updateUrl(selected, true);
+  });
+  $("[data-concepts-toggle]").addEventListener("click", () => {
+    expandedConcepts = !expandedConcepts;
+    updateConceptBrowser();
   });
   document
     .querySelectorAll<HTMLButtonElement>("[data-concept-pick]")
