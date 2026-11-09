@@ -1,82 +1,57 @@
 ---
-import {createHash} from 'node:crypto';
-import {readFileSync} from 'node:fs';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { canonicalPublicGraph } from '@/lib/public-graph-data';
-import { buildKnowledgeModel, buildTopicModel } from '@/lib/graph-model';
-const rendererVersion=createHash('sha256').update(readFileSync('public/graph-explorer.js')).digest('hex').slice(0,16);
+import { buildKnowledgeModel } from '@/lib/graph-model';
 const data = canonicalPublicGraph();
 const raw = buildKnowledgeModel(data);
-const model = { nodes:raw.nodes, allConnections:raw.links.map((link:any,index:number)=>({id:`public:${index}`,sourceId:link.source,targetId:link.target,relationshipType:link.type,explanation:link.note||'',reviewMethod:link.reviewMethod,reviewer:link.reviewer,reviewedAt:link.reviewedAt,reviewedRelationshipId:link.reviewedRelationshipId})),totals:{knowledge:data.knowledge.nodes.length},focus:null,explicitFocus:false,selectImmediately:true,hideCount:true };
-const topics = buildTopicModel(data);
-const membership = Object.fromEntries(topics.map((topic:any) => { const ids = new Set([topic.id,...topic.children.map((child:any)=>child.id)]); return [topic.id,[...new Set(data.topicIndex.passages.filter((passage:any)=>ids.has(passage.primaryTopicId)).map((passage:any)=>passage.episodeId))]]; }));
-const analyses=data.topicIndex.analyses;
-const classified=analyses.reduce((sum:number,item:any)=>sum+item.classifiedWordCount,0);
-const totalWords=analyses.reduce((sum:number,item:any)=>sum+item.totalWordCount,0);
+const model = {nodes:raw.nodes, allConnections:raw.links.map((link:any,index:number)=>({...link,id:`public:${index}`,sourceId:link.source,targetId:link.target,relationshipType:link.type,explanation:link.note||''}))};
 const episodes=raw.nodes.filter((node:any)=>node.kind==='episode');
-const colours: Record<string,string> = {root:'#343b37',host:'#4f78a8',episode:'#72817a',contributor:'#a26f49',concept:'#4aa8a5',claim:'#d96b45',example:'#d49a32',question:'#9674cf',snack:'#d65f87',canonical:'#1e7069'};
-const kinds=[...new Set(raw.nodes.map((node:any)=>node.kind))];
 const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
-const jsonLd={'@context':'https://schema.org','@type':'CollectionPage',name:'The Intelligence Snacks Graph',url:new URL('/graph/',Astro.site).href};
 ---
-<BaseLayout title="Graph — Intelligence Snacks" description="Search the archive, follow connections across episodes, and inspect the evidence behind each idea." active="graph" {jsonLd}>
-<header class="archive-head graph-head page-shell"><p class="eyebrow">The living archive</p><h1>Follow the ideas.</h1><p>Explore the connections, then follow an idea back to its source.</p></header>
-<section class="graph-page page-shell">
-  <div class="graph-toolbar">
-    <div class="graph-views" role="group" aria-label="Graph perspective"><button class="text-link" type="button" data-graph-view="ideas" aria-pressed="true">Ideas</button><button class="text-link" type="button" data-graph-view="episodes" aria-pressed="false">Episodes</button></div>
-    <div class="graph-options"><label class="filter-control" data-ideas-controls><span>Idea scope</span><select data-idea-scope><option value="all">Across the archive</option><option value="pilot">Reviewed pilot clusters</option></select></label><label class="filter-control"><span>Map density</span><select data-density aria-label="Map density"><option value="320">Balanced · 320 nodes</option><option value="1000000" selected>All nodes</option></select></label></div>
-  </div>
-  <div class="graph-layout">
-    <div class="graph-map"><div class="graph-map-actions"><div><button class="text-link" type="button" data-reset>Archive overview</button><button class="text-link" type="button" data-motion>Freeze layout</button><button class="text-link" type="button" data-details-toggle aria-controls="graph-detail" aria-expanded="false">Show details</button><button class="text-link" type="button" data-expand>Expand graph</button></div><span class="card-meta" data-view-count></span></div><ul class="graph-key" aria-label="Map node types">{kinds.map((kind)=><li data-kind-key={kind}><i style={`background:${colours[kind]}`} aria-hidden="true"></i>{kind}</li>)}</ul><div class="public-graph" role="region" data-public-graph data-renderer-url={`/graph-explorer.js?v=${rendererVersion}`} aria-label="Visual map; all nodes are also available in the archive list"></div><p class="graph-connectivity" data-connectivity-count role="status"></p><p class="graph-description" data-view-help></p><p class="graph-help">Hover for a title. Select an idea for its connections and source evidence. Zoom to explore a group.</p></div>
-    <aside id="graph-detail" class="graph-detail" data-detail aria-labelledby="graph-detail-title"><h2 id="graph-detail-title">Explore a connection</h2><p>Select an idea from the archive list or map. Search includes every published node, including ideas outside the current map.</p></aside>
-  </div>
-  <details class="graph-discoveries" data-ideas-only><summary data-discovery-toggle>Shared ideas &amp; recent discussions <span aria-hidden="true">↗</span></summary><div class="idea-discovery" data-idea-discovery></div></details>
-  <section aria-labelledby="archive-list-title" class="archive-list section"><div class="section-heading"><h2 id="archive-list-title">Archive index</h2><p>Search every published idea, episode and Snack.</p></div>
-  <form class="graph-filters" aria-label="Filter the archive index" role="search" onsubmit="return false">
-    <label class="search-field"><span class="visually-hidden">Search the archive</span><input type="search" name="q" data-search placeholder="Idea, person, or Snack" autocomplete="off" /></label>
-    <label class="filter-control"><span>Type</span><select data-kind><option value="">All types</option>{kinds.map((kind)=><option value={kind}>{kind}</option>)}</select></label>
-    <label class="filter-control"><span>Episode</span><select data-episode><option value="">All episodes</option>{episodes.map((episode:any)=><option value={episode.episodeId}>Episode {episode.episodeNumber}</option>)}</select></label>
-    <label class="filter-control"><span>Topic</span><select data-topic><option value="">All topics</option>{topics.map((topic:any)=><option value={topic.id}>{topic.name}</option>)}</select></label>
-  </form>
-  <p role="status" aria-live="polite" data-result-count>{raw.nodes.length} searchable nodes · {raw.links.length} connections</p>
-<ul data-results>{raw.nodes.map((node:any)=><li data-result={node.id} data-kind={node.kind} data-episode={node.episodeId}><a class="search-result" href={node.href||'/graph/'} data-node={node.id}><span class="search-result__type">{node.kind}{node.episodeNumber?` · Episode ${node.episodeNumber}`:''}</span><strong>{node.title}</strong><span class="search-result__description">{node.summary}</span><span class="search-result__arrow" aria-hidden="true">↗</span></a></li>)}</ul></section>
-  <section class="knowledge-mix section" aria-labelledby="mix-title"><div class="section-heading"><h2 id="mix-title">Knowledge mix</h2></div><p>Share of classified transcript words by primary topic. {totalWords?((classified/totalWords)*100).toFixed(1):'0'}% of transcript words are classified ({classified.toLocaleString()} of {totalWords.toLocaleString()}); secondary tags do not add to these percentages. Word share is not speaking time or importance.</p>{topics.map((topic:any)=><details><summary>{topic.name} · {(topic.share*100).toFixed(1)}%</summary><p>{topic.description}</p><button class="text-link" type="button" data-topic-pick={topic.id}>Explore this topic in the archive</button>{topic.children.map((child:any)=><div class="topic-child"><h3>{child.name} · {(child.share*100).toFixed(1)}% of this family</h3><p>{child.description}</p><ul>{child.episodes.map((episode:any)=><li><a href={episode.href}>Episode {episode.number} · {episode.title}</a></li>)}</ul></div>)}</details>)}</section>
-</section>
+<BaseLayout title="Graph — Intelligence Snacks" description="Explore the archive through its ideas, conversations and source evidence." active="graph">
+  <header class="explorer-heading page-shell">
+    <div><p class="eyebrow">The living archive</p><h1>Follow the ideas.</h1></div>
+    <p>One conversation leads to another.<br />Find an idea. See where it takes you.</p>
+  </header>
+  <section class="explorer page-shell" aria-label="Explore the archive">
+    <div class="explorer-bar">
+      <form role="search" onsubmit="return false" class="explorer-search">
+        <label for="explorer-search" class="visually-hidden">Find an idea, episode or person</label>
+        <span aria-hidden="true">⌕</span><input id="explorer-search" type="search" placeholder="Find an idea, episode or person" autocomplete="off" aria-controls="explorer-results" />
+      </form>
+      <div class="explorer-bar-actions"><button type="button" class="text-link" data-list-toggle aria-expanded="false" aria-controls="explorer-index">Browse the archive ↗</button></div>
+    </div>
+    <div class="explorer-stage">
+      <div class="explorer-map" data-explorer-map role="region" aria-label="Interactive archive map. Drag to pan; use zoom controls. Search or browse the archive for keyboard access.">
+        <svg data-explorer-svg role="group" aria-label="All published nodes arranged around their source episodes"></svg>
+        <div class="explorer-caption"><span class="eyebrow" data-map-mode>Across the archive</span><span data-map-count>{raw.nodes.length} nodes · {episodes.length} episodes</span></div>
+        <p class="explorer-hint" data-map-hint>Select a conversation to begin</p>
+        <div class="explorer-controls"><button type="button" data-overview>↖ Overview</button><div><button type="button" data-zoom="1.35" aria-label="Zoom in">+</button><button type="button" data-zoom="0.74" aria-label="Zoom out">−</button></div></div>
+        <div class="explorer-tooltip" data-tooltip hidden></div>
+      </div>
+      <aside class="explorer-detail" data-explorer-detail aria-labelledby="explorer-detail-title" hidden>
+        <div class="explorer-detail-actions"><button type="button" data-back>← Back</button><button type="button" data-close aria-label="Close details">×</button></div>
+        <div data-detail-content></div>
+      </aside>
+    </div>
+    <div class="explorer-footnote"><p>Colour groups source episodes. Lines show recorded connections; proximity alone does not imply a relationship.</p><span role="status" aria-live="polite" data-explorer-status>Scroll to zoom · drag to explore</span></div>
+    <section id="explorer-index" class="explorer-index" aria-labelledby="explorer-index-title" hidden>
+      <div class="section-heading"><h2 id="explorer-index-title">Find your next idea.</h2><p data-result-count>{raw.nodes.length} records in the published archive</p></div>
+      <ul id="explorer-results">{raw.nodes.map((node:any)=><li data-index-node={node.id}><a href={node.href||'https://intelligencesnacks.com/graph/'} data-pick={node.id}><span class="eyebrow">{node.episodeNumber?`Episode ${node.episodeNumber} · `:''}{node.kind==='canonical'?'Reviewed shared concept':node.kind}</span><strong>{node.title}</strong><span>{node.summary}</span><span aria-hidden="true">↗</span></a></li>)}</ul>
+    </section>
+    <noscript><style>#explorer-index[hidden]{display:block!important}.explorer-stage{display:none}</style><p>Browse the archive below. Enable JavaScript to explore the interactive map.</p></noscript>
+  </section>
 </BaseLayout>
 <script id="knowledge-data" type="application/json" is:inline set:html={serialise(model)}></script>
-<script id="topic-membership" type="application/json" is:inline set:html={serialise(membership)}></script>
 <script>
-import { initialiseGraphPage } from '../lib/graph-page';
-initialiseGraphPage();
+import { initialiseExplorer } from '../lib/graph-explorer';
+initialiseExplorer();
 </script>
 <style is:global>
-.archive-head.graph-head{min-height:0;padding-block:clamp(2.5rem,5vw,4rem)}
-.graph-page{padding-block:2rem 0}.graph-page [hidden]{display:none!important}
-.graph-toolbar,.graph-map-actions{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
-.graph-views,.graph-options,.graph-map-actions>div{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
-.graph-views button.text-link{font-family:var(--font-display);font-size:1rem;letter-spacing:var(--tracking-body);text-transform:none;min-height:3.5rem;padding:0;border-bottom:2px solid transparent}
-.graph-views button[aria-pressed="true"]{border-bottom-color:var(--ink)}
-.graph-options{gap:.6rem}.graph-description{margin:1rem 0 1.5rem;color:var(--text-secondary);font-size:var(--type-label)}
-.graph-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}.graph-layout.has-details{grid-template-columns:minmax(0,1fr) 340px}
-.graph-map,.graph-detail{min-width:0}.graph-map-actions{padding-block:.5rem;border-top:1px solid var(--line)}
-.graph-map-actions .text-link{padding:0;min-height:44px;margin:0;letter-spacing:.03em}.graph-map-actions>div{gap:1.25rem}
-.graph-map-actions .card-meta{margin:0;font-size:.65rem;line-height:1.5;letter-spacing:0}
-.graph-key{display:flex;flex-wrap:wrap;list-style:none;gap:.5rem 1rem;padding:0;margin:.6rem 0 1rem;color:var(--text-secondary);font:var(--type-label)/1.4 var(--font-mono)}
-.graph-key li{display:flex;align-items:center;gap:.4rem}.graph-key i{width:.5rem;height:.5rem;border-radius:50%}
-.public-graph{position:relative;height:680px;overflow:hidden;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-small)}
-.sigmaCanvas{position:absolute;inset:0}.sigmaControls{position:absolute;bottom:1rem;right:1rem;display:flex;gap:.25rem}
-.sigmaControls button{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--radius-small);background:var(--paper);color:var(--ink);font:500 1.1rem/1 var(--font-display);cursor:pointer}
-.sigmaControls button:hover{background:var(--ink);color:var(--paper)}
-.graph-connectivity,.graph-help{font-size:var(--type-label);color:var(--text-secondary);line-height:1.6}.graph-connectivity{margin:.8rem 0 .25rem}.graph-help{margin:0}
-.graph-detail{max-height:850px;overflow:auto;border-left:1px solid var(--line);padding-left:1.5rem}.graph-detail h2{font-size:var(--type-card);line-height:var(--leading-display);letter-spacing:var(--tracking-display)}
-.graph-detail h3{font-size:1.25rem;margin-top:2rem}.graph-detail p,.graph-detail li{font-size:.9rem;line-height:1.6}.graph-detail blockquote{margin:1.5rem 0;padding-left:1rem;border-left:2px solid var(--coral)}
-.graph-detail ul{padding-left:1rem}.graph-detail li{padding-block:.75rem;border-bottom:1px solid var(--line)}.graph-detail a{text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}.edge-type{text-transform:uppercase;display:block;font:var(--type-label)/1.5 var(--font-mono);color:var(--text-muted);margin-bottom:.4rem}
-.graph-layout:fullscreen{background:var(--paper);padding:1rem;overflow:auto}.graph-layout:fullscreen .public-graph{height:calc(100dvh - 200px);min-height:420px}.graph-layout.is-expanded .public-graph{height:85vh}
-.graph-discoveries{margin-top:2rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:1.5rem}.graph-discoveries>summary{display:flex;justify-content:space-between;cursor:pointer;list-style:none;font-family:var(--font-display);font-size:1.25rem}.graph-discoveries>summary::-webkit-details-marker{display:none}
-.idea-discovery{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding-top:2rem}.idea-discovery h2{font-size:var(--type-card);line-height:var(--leading-display);letter-spacing:var(--tracking-display)}.idea-discovery p{font-size:var(--type-label);color:var(--text-secondary);line-height:1.6}.idea-discovery .search-result{grid-template-columns:1fr 1.5rem;gap:.5rem;padding:1rem 0}.idea-discovery .search-result strong{grid-column:1;font-size:1.25rem}.idea-discovery .search-result__type{grid-column:1}.idea-discovery .search-result__description{grid-column:1;font-size:.8rem}.idea-discovery .search-result__arrow{grid-column:2;grid-row:1 / span 3}
-.graph-filters{display:grid;grid-template-columns:2fr repeat(3,minmax(0,1fr));gap:1rem;align-items:end}.graph-filters .filter-control{min-width:0}.graph-filters .search-field{min-width:0}.graph-filters .search-field input{font-size:1.15rem;padding:1rem 0;min-height:3.5rem}
-.archive-list>ul{list-style:none;margin:1.5rem 0 0;padding:0;max-height:650px;overflow:auto}.archive-list li{margin:0}.archive-list [data-result-count]{font:var(--type-label)/1.5 var(--font-mono);color:var(--text-muted);margin-top:1rem}
-.knowledge-mix details{border-top:1px solid var(--line);padding:1.25rem 0}.knowledge-mix summary{cursor:pointer;font-family:var(--font-display)}.knowledge-mix>p{max-width:52rem;color:var(--text-secondary)}.topic-child{padding:1rem 0 0 1rem}.topic-child h3{font-size:1.25rem}
-@media(max-width:900px){.graph-layout,.graph-layout.has-details{grid-template-columns:1fr}.graph-detail{border-left:0;border-top:1px solid var(--line);padding:1.5rem 0;max-height:none}.graph-filters{grid-template-columns:1fr 1fr}}
-@media(max-width:650px){.graph-toolbar{gap:1rem}.graph-views{gap:1.5rem}.graph-views button.text-link{min-height:44px}.graph-options{width:100%}.graph-options .filter-control{flex:1;min-width:0}.graph-map-actions{gap:.5rem}.graph-map-actions>div{display:grid;grid-template-columns:repeat(2,max-content);gap:0 1.5rem}.graph-map-actions .text-link{font-size:.65rem}.public-graph{height:460px}.idea-discovery{grid-template-columns:1fr;gap:2rem}.graph-filters{grid-template-columns:1fr}.graph-connectivity{font-size:.72rem}}
+.explorer-heading{display:flex;align-items:end;justify-content:space-between;gap:2rem;padding-block:2.5rem 2rem}.explorer-heading .eyebrow{margin:0 0 1rem}.explorer-heading h1{font:500 clamp(3rem,5.5vw,5.5rem)/.95 var(--font-display);letter-spacing:var(--tracking-hero);margin:0}.explorer-heading>p{font-size:var(--type-body);color:var(--text-secondary);margin:0;line-height:1.5}
+.explorer{padding-bottom:3rem}.explorer [hidden]{display:none!important}.explorer-bar{border-block:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.65rem}.explorer-search{display:flex;align-items:center;gap:.8rem;flex:1;max-width:34rem}.explorer-search>span{font-size:1.7rem}.explorer-search input{width:100%;min-width:0;padding:.7rem 0;border:0;border-radius:0;background:transparent;font:400 1rem var(--font-body);color:var(--ink)}.explorer-bar-actions{display:flex;align-items:center;gap:1.5rem}.explorer-bar .text-link{font-size:.7rem;min-height:44px;display:flex;align-items:center;white-space:nowrap}
+.explorer-stage{scroll-margin-top:80px;position:relative;display:grid;grid-template-columns:minmax(0,1fr);border-bottom:1px solid var(--line)}.explorer-map{position:relative;min-width:0;height:clamp(480px,73dvh,920px);overflow:hidden;background:var(--paper);touch-action:none}.explorer-map svg{display:block;width:100%;height:100%;cursor:grab}.explorer-map svg:active{cursor:grabbing}.explorer-map [data-node]{cursor:pointer}.explorer-map [data-node]:focus{outline:none}.explorer-map [data-node]:focus circle{stroke:var(--ink);stroke-width:3}.explorer-caption{position:absolute;top:1.25rem;left:0;pointer-events:none;display:flex;flex-direction:column;gap:.5rem}.explorer-caption>[data-map-count]{font:400 .7rem var(--font-mono);color:var(--text-muted)}.explorer-hint{position:absolute;left:0;bottom:1.4rem;margin:0;font:400 .75rem var(--font-mono);color:var(--text-muted);pointer-events:none}.explorer-controls{position:absolute;right:0;bottom:1.25rem;display:flex;align-items:end;gap:.7rem}.explorer-controls button,.explorer-detail-actions button{border:1px solid var(--line);background:var(--paper);color:var(--ink);font:400 .75rem var(--font-mono);min-height:44px;cursor:pointer;padding:.65rem 1rem;border-radius:var(--radius-small)}.explorer-controls>div{display:flex;flex-direction:column}.explorer-controls [data-zoom]{font:400 1.4rem var(--font-body);width:44px;padding:0}.explorer-controls button:hover,.explorer-detail-actions button:hover{background:var(--paper-raised)}.explorer-tooltip{position:absolute;z-index:3;max-width:260px;padding:.6rem .8rem;background:var(--ink);color:var(--paper);font-size:.8rem;pointer-events:none;border-radius:var(--radius-small)}
+.explorer-stage.has-selection{grid-template-columns:minmax(0,1fr) 370px}.explorer-detail{min-width:0;max-height:clamp(480px,73dvh,920px);overflow:auto;border-left:1px solid var(--line);padding:1.25rem 0 1.5rem 1.5rem;background:var(--paper)}.explorer-detail-actions{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.75rem}.explorer-detail-actions button{border:0;padding:0 .5rem}.explorer-detail-actions [data-close]{font-size:1.6rem}.explorer-detail h2{font:500 2rem/1.05 var(--font-display);letter-spacing:var(--tracking-display);margin:.8rem 0 1rem;overflow-wrap:anywhere}.explorer-detail h2:focus{outline:none}.explorer-detail h3{font:500 1.2rem var(--font-display);margin:1.8rem 0 .6rem}.explorer-detail p{font-size:.9rem;line-height:1.6}.explorer-detail .detail-summary{font-size:1rem}.explorer-detail .detail-actions{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;padding:1rem 0;border-block:1px solid var(--line)}.explorer-detail .text-link{font-size:.65rem;min-height:44px}.explorer-detail .connection-list{list-style:none;padding:0;margin:0}.connection-list li{border-bottom:1px solid var(--line);padding:.9rem 0}.connection-list button{display:block;background:none;border:0;text-align:left;padding:0;color:var(--ink);font:500 1rem/1.35 var(--font-display);cursor:pointer;text-decoration:underline;text-underline-offset:3px}.connection-list .eyebrow{display:block;font-size:.6rem;margin:0 0 .5rem;color:var(--text-muted)}.connection-list p{font-size:.8rem;margin:.5rem 0 0}.explorer-detail blockquote{border-left:2px solid var(--coral);padding-left:1rem;margin:1.2rem 0;font-size:.9rem;line-height:1.65}.explorer-detail blockquote cite{display:block;font-style:normal;font-size:.75rem;color:var(--text-muted);margin:.6rem 0}.explorer-detail a{overflow-wrap:anywhere}.explorer-detail blockquote a{font-size:.8rem;text-decoration:underline}.explorer-footnote{display:flex;justify-content:space-between;gap:2rem;padding-block:.75rem;color:var(--text-muted);font:400 .65rem/1.6 var(--font-mono)}.explorer-footnote p{margin:0;max-width:49rem}.explorer-footnote>span{white-space:nowrap}.explorer-index{padding-top:2rem}.explorer-index>ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem;max-height:650px;overflow:auto}.explorer-index li>a{position:relative;display:flex;flex-direction:column;gap:.6rem;padding:1.4rem 2rem 1.4rem 0;border-top:1px solid var(--line);text-decoration:none}.explorer-index strong{font:500 1.4rem/1.15 var(--font-display);letter-spacing:var(--tracking-display)}.explorer-index li>a>span:nth-last-child(2){color:var(--text-secondary);font-size:.85rem;line-height:1.5}.explorer-index li>a>span:last-child{position:absolute;right:.25rem;top:1.4rem}.explorer-index .eyebrow{font-size:.6rem}.explorer button:focus-visible,.explorer a:focus-visible,.explorer input:focus-visible{outline:2px solid var(--coral);outline-offset:3px}
+@media(max-width:900px){.explorer-stage.has-selection{grid-template-columns:minmax(0,1fr) 320px}.explorer-heading>p{max-width:16rem}.explorer-bar-actions{gap:1rem}.explorer-bar-actions a{display:none}}
+@media(max-width:650px){.explorer-heading{display:block;padding-top:2rem}.explorer-heading>p{max-width:none;margin-top:1.2rem}.explorer-heading>p br{display:none}.explorer-bar{flex-wrap:wrap;gap:0}.explorer-search{flex-basis:100%;max-width:none}.explorer-bar-actions{width:100%;justify-content:space-between}.explorer-bar-actions a{display:flex}.explorer-map{height:62dvh;min-height:430px}.explorer-stage.has-selection{display:block}.explorer-stage.has-selection .explorer-map{height:45dvh;min-height:280px}.explorer-detail{border-left:0;border-top:1px solid var(--line);padding:1rem 0;max-height:60dvh;overscroll-behavior:contain}.explorer-detail-actions{margin-bottom:.6rem}.explorer-detail h2{font-size:1.75rem}.explorer-hint{max-width:45%;font-size:.6rem;bottom:1.25rem}.explorer-caption{top:1rem}.explorer-caption .eyebrow{font-size:.65rem}.explorer-footnote{display:block}.explorer-footnote>span{display:block;margin-top:.6rem}.explorer-index>ul{grid-template-columns:1fr}.explorer-controls{gap:.4rem}}
 </style>

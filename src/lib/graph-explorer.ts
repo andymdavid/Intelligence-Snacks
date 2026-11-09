@@ -1,0 +1,778 @@
+import {
+  positionArchive,
+  type ExplorerNode,
+  type PositionedNode,
+} from "./graph-explorer-layout";
+type Edge = {
+  sourceId: string;
+  targetId: string;
+  relationshipType: string;
+  explanation?: string;
+  reviewMethod?: string;
+  reviewer?: string;
+  reviewedAt?: string;
+};
+type Evidence = {
+  excerpt: string;
+  speaker?: string;
+  sourceHref?: string;
+  timestamp?: string;
+};
+const structural = new Set([
+  "contains",
+  "hosted-by",
+  "features",
+  "hosted",
+  "contributed-to",
+  "contributed",
+  "develops",
+  "publishes",
+]);
+export function initialiseExplorer() {
+  const data = document.querySelector("#knowledge-data");
+  if (!data) return;
+  const model = JSON.parse(data.textContent || "{}") as {
+    nodes: ExplorerNode[];
+    allConnections: Edge[];
+  };
+  const nodes = positionArchive(model.nodes),
+    byId = new Map(nodes.map((node) => [node.id, node]));
+  const edges = model.allConnections.filter(
+    (edge) => byId.has(edge.sourceId) && byId.has(edge.targetId),
+  );
+  const $ = <T extends Element = HTMLElement>(selector: string) =>
+    document.querySelector<T>(selector)!;
+  const map = $("[data-explorer-map]"),
+    svg = $<SVGSVGElement>("[data-explorer-svg]"),
+    stage = $(".explorer-stage"),
+    panel = $<HTMLElement>("[data-explorer-detail]"),
+    content = $("[data-detail-content]"),
+    search = $<HTMLInputElement>("#explorer-search"),
+    index = $<HTMLElement>("#explorer-index"),
+    tooltip = $<HTMLElement>("[data-tooltip]"),
+    status = $("[data-explorer-status]");
+  const ns = "http://www.w3.org/2000/svg";
+  function s<K extends keyof SVGElementTagNameMap>(
+    tag: K,
+    attributes: Record<string, string> = {},
+  ) {
+    const el = document.createElementNS(ns, tag);
+    for (const [name, value] of Object.entries(attributes))
+      el.setAttribute(name, value);
+    return el;
+  }
+  // Avoid invalidating SVG paint for attributes whose values have not changed.
+  const attributes = new WeakMap<Element, Map<string, string>>();
+  function attribute(element: Element, name: string, value: string) {
+    let cache = attributes.get(element);
+    if (!cache) attributes.set(element, (cache = new Map()));
+    if (cache.get(name) === value) return;
+    cache.set(name, value);
+    element.setAttribute(name, value);
+  }
+  function el<K extends keyof HTMLElementTagNameMap>(
+    tag: K,
+    text = "",
+    className = "",
+  ) {
+    const item = document.createElement(tag);
+    item.textContent = text;
+    if (className) item.className = className;
+    return item;
+  }
+  const world = s("g"),
+    lines = s("g"),
+    dots = s("g"),
+    labels = s("g", { "pointer-events": "none" });
+  world.append(lines, dots, labels);
+  svg.append(world);
+  const incident = new Map(nodes.map((node) => [node.id, [] as Edge[]]));
+  for (const edge of edges) {
+    incident.get(edge.sourceId)!.push(edge);
+    incident.get(edge.targetId)!.push(edge);
+  }
+  // Batch connections by visual state rather than repainting thousands of SVG lines.
+  const edgeSegments = edges.map((edge) => {
+    const source = byId.get(edge.sourceId)!,
+      target = byId.get(edge.targetId)!;
+    return `M${source.x},${source.y}L${target.x},${target.y}`;
+  });
+  const edgePaths = new Map<string, SVGPathElement>();
+  for (const kind of ["context", "idea"]) {
+    for (const state of ["background", "active", "hover"]) {
+      const path = s("path", {
+        fill: "none",
+        stroke: kind === "context" ? "#d9dcd7" : "#9caaa4",
+        "stroke-width": state === "active" ? "1.4" : ".7",
+        "vector-effect": "non-scaling-stroke",
+        "pointer-events": "none",
+      });
+      lines.append(path);
+      edgePaths.set(`${kind}:${state}`, path);
+    }
+  }
+  const dotElements = new Map<string, SVGGElement>();
+  const labelElements = new Map<string, SVGTextElement>();
+  const hitElements = new Map<string, SVGCircleElement>();
+  const circleElements = new Map<string, SVGCircleElement>();
+  let selected: string | null = null,
+    hovered: string | null = null,
+    camera = { x: 0, y: 0, k: 0.4 },
+    width = 1,
+    height = 1,
+    animation = 0;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let detailsPromise: Promise<
+    Record<string, { evidence: Evidence[]; reviewMethod?: string }>
+  > | null = null;
+  const selectedNeighbours = () =>
+    new Set(
+      selected
+        ? [
+            selected,
+            ...incident
+              .get(selected)!
+              .map((edge) =>
+                edge.sourceId === selected ? edge.targetId : edge.sourceId,
+              ),
+          ]
+        : [],
+    );
+  for (const node of nodes) {
+    const group = s("g", {
+      "data-node": node.id,
+      transform: `translate(${node.x},${node.y})`,
+      tabindex:
+        node.kind === "episode" || node.kind === "canonical" ? "0" : "-1",
+      role: "button",
+      "aria-label": node.title,
+    });
+    const hit = s("circle", { r: "12", fill: "transparent", "data-hit": "" });
+    const circle = s("circle", {
+      r: String(node.radius),
+      fill: node.colour,
+      stroke: "white",
+      "stroke-width": "1",
+      "vector-effect": "non-scaling-stroke",
+      "pointer-events": "none",
+    });
+    group.append(hit, circle);
+    hitElements.set(node.id, hit);
+    circleElements.set(node.id, circle);
+    dots.append(group);
+    dotElements.set(node.id, group);
+    const label = s("text", {
+      fill: "#171c18",
+      "font-family": "Neue Montreal, Arial, sans-serif",
+      "font-weight": "500",
+      "paint-order": "stroke",
+      stroke: "white",
+      "stroke-linejoin": "round",
+      "data-label": node.id,
+    });
+    label.textContent =
+      node.title.length > 35 ? node.title.slice(0, 33) + "…" : node.title;
+    labels.append(label);
+    labelElements.set(node.id, label);
+    group.addEventListener("click", (event) => {
+      event.stopPropagation();
+      select(node.id, true);
+    });
+    group.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        select(node.id, true);
+      }
+    });
+    group.addEventListener("pointerenter", () => {
+      hovered = node.id;
+      schedulePaint();
+    });
+    group.addEventListener("pointermove", (event) => {
+      tooltip.hidden = false;
+      tooltip.textContent = node.title;
+      const bounds = map.getBoundingClientRect();
+      tooltip.style.left = `${Math.max(0, Math.min(width - 270, event.clientX - bounds.left + 14))}px`;
+      tooltip.style.top = `${Math.max(0, Math.min(height - 65, event.clientY - bounds.top + 15))}px`;
+    });
+    group.addEventListener("pointerleave", () => {
+      hovered = null;
+      tooltip.hidden = true;
+      schedulePaint();
+    });
+  }
+  let paintedSelected: string | null | undefined,
+    paintedHovered: string | null | undefined,
+    related = new Set<string>(),
+    hoverRelated: Set<string> | null = null,
+    ranked = nodes;
+  let pendingPaint = 0;
+  function schedulePaint() {
+    if (!pendingPaint)
+      pendingPaint = requestAnimationFrame(() => {
+        pendingPaint = 0;
+        paint();
+      });
+  }
+  function paint() {
+    attribute(
+      world,
+      "transform",
+      `translate(${width / 2 - camera.x * camera.k},${height / 2 - camera.y * camera.k}) scale(${camera.k})`,
+    );
+    const focusChanged =
+      selected !== paintedSelected || hovered !== paintedHovered;
+    if (focusChanged) {
+      paintedSelected = selected;
+      paintedHovered = hovered;
+      related = selectedNeighbours();
+      hoverRelated = hovered
+        ? new Set([
+            hovered,
+            ...incident
+              .get(hovered)!
+              .map((edge) =>
+                edge.sourceId === hovered ? edge.targetId : edge.sourceId,
+              ),
+          ])
+        : null;
+      const batches = new Map<string, string[]>();
+      edges.forEach((edge, i) => {
+        const kind = structural.has(edge.relationshipType) ? "context" : "idea";
+        const state =
+          selected && (edge.sourceId === selected || edge.targetId === selected)
+            ? "active"
+            : hovered &&
+                (edge.sourceId === hovered || edge.targetId === hovered)
+              ? "hover"
+              : "background";
+        const key = `${kind}:${state}`;
+        if (!batches.has(key)) batches.set(key, []);
+        batches.get(key)!.push(edgeSegments[i]!);
+      });
+      for (const [key, path] of edgePaths) {
+        attribute(path, "d", (batches.get(key) || []).join(""));
+        attribute(
+          path,
+          "opacity",
+          key.endsWith(":active")
+            ? ".85"
+            : key.endsWith(":hover")
+              ? ".65"
+              : selected
+                ? ".025"
+                : key.startsWith("context:")
+                  ? ".22"
+                  : ".32",
+        );
+      }
+      ranked = [...nodes].sort(
+        (a, b) =>
+          Number(b.id === selected || b.id === hovered) -
+            Number(a.id === selected || a.id === hovered) ||
+          Number(related.has(b.id)) - Number(related.has(a.id)) ||
+          Number(b.kind === "canonical") - Number(a.kind === "canonical") ||
+          Number(b.kind === "episode") - Number(a.kind === "episode") ||
+          (b.degree || 0) - (a.degree || 0),
+      );
+    }
+    const placed: { x: number; y: number; w: number }[] = [];
+    for (const node of ranked) {
+      const group = dotElements.get(node.id)!,
+        label = labelElements.get(node.id)!;
+      const isFocus = node.id === selected || node.id === hovered;
+      const active = related.has(node.id);
+      if (focusChanged)
+        attribute(
+          group,
+          "opacity",
+          selected && !active
+            ? ".12"
+            : hoverRelated && !hoverRelated.has(node.id)
+              ? ".35"
+              : "1",
+        );
+      attribute(
+        hitElements.get(node.id)!,
+        "r",
+        String(Math.max(node.radius, 8 / camera.k)),
+      );
+      attribute(
+        circleElements.get(node.id)!,
+        "r",
+        String(isFocus ? Math.max(node.radius, 7 / camera.k) : node.radius),
+      );
+      const sx = (node.x - camera.x) * camera.k + width / 2,
+        sy = (node.y - camera.y) * camera.k + height / 2;
+      const eligible =
+        isFocus ||
+        (selected
+          ? active
+          : node.kind === "episode" ||
+            node.kind === "canonical" ||
+            (camera.k > 1.05 && node.kind === "concept"));
+      const text =
+        node.title.length > 35 ? node.title.slice(0, 33) + "…" : node.title;
+      const labelWidth = text.length * 6.3;
+      const lx = sx + node.radius * camera.k + 7,
+        ly = sy + 4;
+      const collision = placed.some(
+        (other) =>
+          Math.abs(other.y - ly) < 19 &&
+          lx < other.x + other.w + 8 &&
+          lx + labelWidth + 8 > other.x,
+      );
+      const visible =
+        eligible &&
+        (isFocus || !collision) &&
+        lx + labelWidth < width - 5 &&
+        lx > 0 &&
+        ly > 50 &&
+        ly < height - 65;
+      attribute(label, "display", visible ? "" : "none");
+      if (visible) {
+        placed.push({ x: lx, y: ly, w: labelWidth });
+        attribute(label, "x", String(node.x + node.radius + 7 / camera.k));
+        attribute(label, "y", String(node.y + 4 / camera.k));
+        attribute(label, "font-size", String((isFocus ? 14 : 12) / camera.k));
+        attribute(label, "stroke-width", String(4 / camera.k));
+        attribute(label, "opacity", selected && !active ? ".15" : "1");
+      }
+    }
+  }
+  function move(target: typeof camera, animate = true) {
+    cancelAnimationFrame(animation);
+    if (!animate || reduced.matches) {
+      camera = target;
+      paint();
+      return;
+    }
+    const start = { ...camera },
+      time = performance.now();
+    function tick(now: number) {
+      const t = Math.min(1, (now - time) / 340),
+        e = 1 - Math.pow(1 - t, 3);
+      camera = {
+        x: start.x + (target.x - start.x) * e,
+        y: start.y + (target.y - start.y) * e,
+        k: start.k + (target.k - start.k) * e,
+      };
+      paint();
+      if (t < 1) animation = requestAnimationFrame(tick);
+    }
+    animation = requestAnimationFrame(tick);
+  }
+  function fit(ids?: Set<string>, animate = true) {
+    const picked = ids ? nodes.filter((node) => ids.has(node.id)) : nodes;
+    const xs = picked.map((node) => node.x),
+      ys = picked.map((node) => node.y);
+    const minX = Math.min(...xs) - 75,
+      maxX = Math.max(...xs) + 180,
+      minY = Math.min(...ys) - 100,
+      maxY = Math.max(...ys) + 100;
+    move(
+      {
+        x: (minX + maxX) / 2,
+        y: (minY + maxY) / 2,
+        k: Math.max(
+          0.12,
+          Math.min(
+            ids ? 1.8 : 0.85,
+            (width - 50) / (maxX - minX),
+            (height - 105) / (maxY - minY),
+          ),
+        ),
+      },
+      animate,
+    );
+  }
+  function updateUrl(id: string | null, push: boolean) {
+    const url = new URL(location.href);
+    if (id) url.searchParams.set("node", id);
+    else url.searchParams.delete("node");
+    if (push) history.pushState({ explorer: true }, "", url);
+  }
+  function select(id: string | null, push = false) {
+    if (id && !byId.has(id)) {
+      status.textContent = "That idea is not in this published archive.";
+      id = null;
+    }
+    selected = id;
+    tooltip.hidden = true;
+    panel.hidden = !id;
+    stage.classList.toggle("has-selection", !!id);
+    $("[data-map-mode]").textContent = id
+      ? "Following a connection"
+      : "Across the archive";
+    $("[data-map-hint]").textContent = id
+      ? "Select another node to keep exploring"
+      : "Select a conversation to begin";
+    $<HTMLButtonElement>("[data-back]").disabled =
+      !new URL(location.href).searchParams.has("node") && !id;
+    updateUrl(id, push);
+    width = map.clientWidth;
+    height = map.clientHeight;
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    if (id) {
+      renderDetail(byId.get(id)!);
+      fit(selectedNeighbours());
+      status.textContent = `Selected: ${byId.get(id)!.title}`;
+    } else {
+      content.replaceChildren();
+      fit();
+      status.textContent = "Across the archive";
+    }
+  }
+  async function renderDetail(node: PositionedNode) {
+    content.replaceChildren();
+    const title = el("h2", node.title);
+    title.id = "explorer-detail-title";
+    title.tabIndex = -1;
+    content.append(
+      el(
+        "p",
+        `${node.episodeNumber ? `Episode ${node.episodeNumber} · ` : ""}${node.kind === "canonical" ? "Reviewed shared concept" : node.kind}`,
+        "eyebrow",
+      ),
+      title,
+      el("p", node.summary, "detail-summary"),
+    );
+    const actions = el("div", "", "detail-actions");
+    if (node.href && !node.href.startsWith("/graph")) {
+      const source = el(
+        "a",
+        node.kind === "snack" ? "Read the Snack ↗" : "Open source ↗",
+        "text-link",
+      );
+      source.href = node.href;
+      actions.append(source);
+    }
+    const share = el("button", "Copy idea link", "text-link");
+    share.type = "button";
+    share.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        share.textContent = "Link copied";
+      } catch {
+        status.textContent = "Copy the current address to share this idea.";
+        share.textContent = "Use address bar to copy";
+      }
+    });
+    actions.append(share);
+    content.append(actions);
+    const allEdges = incident.get(node.id) || [];
+    const semantic = allEdges.filter(
+        (edge) => !structural.has(edge.relationshipType),
+      ),
+      context = allEdges.filter((edge) =>
+        structural.has(edge.relationshipType),
+      );
+    function connectionSection(list: Edge[], name: string) {
+      if (!list.length) return;
+      content.append(el("h3", `${name} · ${list.length}`));
+      const ul = el("ul", "", "connection-list");
+      for (const edge of list) {
+        const target = byId.get(
+          edge.sourceId === node.id ? edge.targetId : edge.sourceId,
+        )!;
+        const row = el("li");
+        row.append(
+          el(
+            "span",
+            `${edge.targetId === node.id ? "Incoming" : "Outgoing"} · ${edge.relationshipType.replaceAll("-", " ")}`,
+            "eyebrow",
+          ),
+        );
+        const button = el("button", target.title);
+        button.type = "button";
+        button.addEventListener("click", () => {
+          select(target.id, true);
+          $("#explorer-detail-title").scrollIntoView({ block: "nearest" });
+        });
+        row.append(button);
+        if (edge.explanation) row.append(el("p", edge.explanation));
+        if (edge.reviewMethod)
+          row.append(
+            el(
+              "p",
+              `Review: ${edge.reviewMethod.replaceAll("-", " ")}${edge.reviewer ? ` · ${edge.reviewer}` : ""}`,
+            ),
+          );
+        ul.append(row);
+      }
+      content.append(ul);
+    }
+    connectionSection(semantic, "Idea connections");
+    const evidenceSection = el("section");
+    content.append(evidenceSection);
+    if (node.evidenceCount) {
+      evidenceSection.append(
+        el("h3", "Source evidence"),
+        el("p", "Loading source excerpts…"),
+      );
+      try {
+        detailsPromise ||= fetch(new URL("details.json", location.href))
+          .then((response) => {
+            if (!response.ok) throw new Error("Could not load evidence");
+            return response.json();
+          })
+          .catch((error) => {
+            detailsPromise = null;
+            throw error;
+          });
+        const details = await detailsPromise;
+        if (selected !== node.id) return;
+        const record = details[node.id];
+        evidenceSection.replaceChildren(el("h3", "Source evidence"));
+        if (record?.reviewMethod)
+          evidenceSection.append(el("p", record.reviewMethod));
+        for (const evidence of record?.evidence || []) {
+          const quote = el("blockquote");
+          const excerpt = el(
+            "span",
+            evidence.excerpt.length > 600
+              ? evidence.excerpt.slice(0, 600) + "…"
+              : evidence.excerpt,
+          );
+          quote.append(excerpt);
+          if (evidence.excerpt.length > 600) {
+            const expand = el("button", "Show full excerpt", "text-link");
+            expand.type = "button";
+            expand.addEventListener("click", () => {
+              const full = expand.textContent === "Show full excerpt";
+              excerpt.textContent = full
+                ? evidence.excerpt
+                : evidence.excerpt.slice(0, 600) + "…";
+              expand.textContent = full ? "Show less" : "Show full excerpt";
+            });
+            quote.append(expand);
+          }
+          quote.append(
+            el("cite", evidence.speaker || "Speaker not identified"),
+          );
+          if (evidence.sourceHref) {
+            const a = el(
+              "a",
+              evidence.timestamp
+                ? `Read transcript at ${evidence.timestamp} ↗`
+                : "Read source transcript ↗",
+            );
+            a.href = evidence.sourceHref;
+            quote.append(a);
+          }
+          evidenceSection.append(quote);
+        }
+        if (!record?.evidence?.length)
+          evidenceSection.append(
+            el(
+              "p",
+              "No source excerpt is available for this record. Open its source to read the discussion.",
+            ),
+          );
+      } catch {
+        if (selected === node.id)
+          evidenceSection.replaceChildren(
+            el("h3", "Source evidence"),
+            el(
+              "p",
+              "Source excerpts could not load. Open the source above, or select this idea again to retry.",
+            ),
+          );
+      }
+    }
+    if (selected !== node.id) return;
+    if (node.kind === "canonical")
+      content.append(
+        el(
+          "p",
+          "Open a linked discussion below to inspect its source evidence.",
+        ),
+      );
+    connectionSection(context, "Archive context");
+    if (!allEdges.length)
+      content.append(el("p", "No recorded connections yet."));
+  }
+  const rows = [...document.querySelectorAll<HTMLElement>("[data-index-node]")];
+  function showIndex(show: boolean) {
+    index.hidden = !show;
+    $("[data-list-toggle]").setAttribute("aria-expanded", String(show));
+  }
+  search.addEventListener("input", () => {
+    const words = search.value
+      .toLowerCase()
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean);
+    let count = 0;
+    for (const row of rows) {
+      const node = byId.get(row.dataset.indexNode!)!;
+      row.hidden = !words.every((word) =>
+        `${node.title} ${node.summary} ${node.kind} ${node.episodeNumber || ""}`
+          .toLowerCase()
+          .includes(word),
+      );
+      if (!row.hidden) count++;
+    }
+    showIndex(true);
+    $("[data-result-count]").textContent =
+      `${count} ${count === 1 ? "result" : "results"}`;
+    status.textContent = `${count} matching archive records`;
+  });
+  document.querySelectorAll<HTMLAnchorElement>("[data-pick]").forEach((a) =>
+    a.addEventListener("click", (event) => {
+      event.preventDefault();
+      select(a.dataset.pick!, true);
+      showIndex(false);
+      search.value = "";
+      for (const row of rows) row.hidden = false;
+      $("[data-result-count]").textContent =
+        `${rows.length} records in the published archive`;
+      $("#explorer-detail-title").focus({ preventScroll: true });
+      stage.scrollIntoView({
+        block: "start",
+        behavior: reduced.matches ? "instant" : "smooth",
+      });
+    }),
+  );
+  $("[data-list-toggle]").addEventListener("click", () => {
+    showIndex(!!index.hidden);
+    if (!index.hidden)
+      index.scrollIntoView({
+        block: "start",
+        behavior: reduced.matches ? "instant" : "smooth",
+      });
+  });
+  $("[data-overview]").addEventListener("click", () => select(null, true));
+  $("[data-close]").addEventListener("click", () => {
+    select(null, true);
+    $<HTMLButtonElement>("[data-overview]").focus();
+  });
+  $("[data-back]").addEventListener("click", () => {
+    if (history.state?.explorer) history.back();
+    else select(null, true);
+  });
+  window.addEventListener("popstate", () =>
+    select(new URL(location.href).searchParams.get("node")),
+  );
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-zoom]")
+    .forEach((button) =>
+      button.addEventListener("click", () =>
+        move({
+          ...camera,
+          k: Math.max(
+            0.12,
+            Math.min(4, camera.k * Number(button.dataset.zoom)),
+          ),
+        }),
+      ),
+    );
+  svg.addEventListener(
+    "wheel",
+    (event) => {
+      event.preventDefault();
+      cancelAnimationFrame(animation);
+      const bounds = svg.getBoundingClientRect(),
+        x = event.clientX - bounds.left - width / 2,
+        y = event.clientY - bounds.top - height / 2;
+      const k = Math.max(
+        0.12,
+        Math.min(4, camera.k * Math.exp(-event.deltaY * 0.0015)),
+      );
+      camera = {
+        x: camera.x + x / camera.k - x / k,
+        y: camera.y + y / camera.k - y / k,
+        k,
+      };
+      schedulePaint();
+    },
+    { passive: false },
+  );
+  const pointers = new Map<number, { x: number; y: number }>();
+  let drag: {
+      x: number;
+      y: number;
+      cx: number;
+      cy: number;
+      distance: number;
+      k: number;
+    } | null = null,
+    moved = false;
+  svg.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0) return;
+    cancelAnimationFrame(animation);
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    const points = [...pointers.values()];
+    drag = {
+      x: event.clientX,
+      y: event.clientY,
+      cx: camera.x,
+      cy: camera.y,
+      distance:
+        points.length === 2
+          ? Math.hypot(points[0]!.x - points[1]!.x, points[0]!.y - points[1]!.y)
+          : 0,
+      k: camera.k,
+    };
+    moved = false;
+  });
+  svg.addEventListener("pointermove", (event) => {
+    if (!drag || !pointers.has(event.pointerId)) return;
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (pointers.size === 2) {
+      const points = [...pointers.values()],
+        distance = Math.hypot(
+          points[0]!.x - points[1]!.x,
+          points[0]!.y - points[1]!.y,
+        );
+      if (drag.distance)
+        camera.k = Math.max(
+          0.12,
+          Math.min(4, (drag.k * distance) / drag.distance),
+        );
+      moved = true;
+    } else {
+      const dx = event.clientX - drag.x,
+        dy = event.clientY - drag.y;
+      if (Math.hypot(dx, dy) > 4) moved = true;
+      camera.x = drag.cx - dx / camera.k;
+      camera.y = drag.cy - dy / camera.k;
+    }
+    if (moved && !svg.hasPointerCapture(event.pointerId))
+      svg.setPointerCapture(event.pointerId);
+    tooltip.hidden = true;
+    schedulePaint();
+  });
+  function release(event: PointerEvent) {
+    pointers.delete(event.pointerId);
+    drag = null;
+    if (svg.hasPointerCapture(event.pointerId))
+      svg.releasePointerCapture(event.pointerId);
+  }
+  svg.addEventListener("pointerup", release);
+  svg.addEventListener("pointercancel", release);
+  svg.addEventListener(
+    "click",
+    (event) => {
+      if (moved) {
+        event.stopImmediatePropagation();
+        moved = false;
+      }
+    },
+    { capture: true },
+  );
+  map.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      select(null, true);
+      $<HTMLButtonElement>("[data-overview]").focus();
+    }
+  });
+  new ResizeObserver(() => {
+    width = map.clientWidth;
+    height = map.clientHeight;
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    if (selected) fit(selectedNeighbours(), false);
+    else fit(undefined, false);
+  }).observe(map);
+  select(new URL(location.href).searchParams.get("node"));
+}
