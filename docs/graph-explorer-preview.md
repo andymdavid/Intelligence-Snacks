@@ -1,17 +1,19 @@
 # Graph explorer design preview
 
-The design was approved for implementation in the originating Flight Deck thread on 2026-11-09. This release replaces `/graph/` with the approved explorer. No new production route or graph data is introduced. The portable review file remains available for reproducing the original review workflow.
+The design was approved for implementation in the originating Flight Deck thread on 2026-11-09. This release replaces `/graph/` with the approved explorer. The original design preview introduced no duplicate production route. Subsequent reviewed concept additions are described below. The portable review file remains available for reproducing the original review workflow.
 
 ## Review
 
-- Overview: all 708 published nodes and 2,185 recorded connections; source episodes act as labelled landmarks.
+- Overview: all 716 published nodes and 2,212 recorded connections. The default shows 740 idea connections, with 1,472 source links available on demand. Shared ideas and source episodes act as labelled landmarks.
 - Hover for a title, select an episode/idea, follow connections, inspect evidence, return with Back or Overview.
 - Search covers the entire published archive; Browse the archive supplies keyboard and no-JavaScript navigation.
-- Selection is represented by `?node=...` and supports browser history and direct loading.
+- Selection, source-episode topic scope and source-link mode are represented by `?node=...&topic=...&context=all` and support browser history and direct loading.
 - Mobile selection presents details beneath the map. Mouse drag, wheel zoom, touch pan/pinch and explicit zoom controls are supported; animated camera moves respect reduced motion.
 - Existing site fonts, header, colour tokens and editorial controls are reused.
 
-Grouping is explicitly by source episode, not inferred concepts. All nodes and links use the existing accepted public graph, including its existing automated extraction/review policy. `Idea connections` and `Archive context` are separated in the panel. No new recurrence, emergence or semantic claims are generated.
+Layout neighbourhoods remain explicitly grouped by source episode. Topic scope filters those episodes and hubs linked to their observations; it does not classify every claim into that topic. Source lines are hidden by default and source context is collapsed in the detail panel. Literal search ranks exact, prefix and other title matches ahead of incidental summary matches.
+
+Ten shared-concept hubs are agent-editorial groupings, not assertions that observations are equivalent. Eight additions were reviewed against 27 source observations; the registry now links 32 observations across 13 episodes. Each mention pins its source transcript revision and evidence IDs with a specific rationale. Production validation fails for missing/stale source references or a hub that does not span at least two episodes. Original extracted graph and topic classification data are unchanged. See `src/data/graph-concepts.json` for the review ledger.
 
 ## Validation
 
@@ -33,13 +35,13 @@ A file URL is local: Copy idea link cannot produce a remotely shareable preview 
 
 ## Assessment still needed
 
-Review whether the episode-based overview is a useful starting point, the amount of background fading, label density and the mobile reading flow. Topic-based landmarks can be assessed separately when reliable idea-to-topic membership is available. The current data only has two curated shared concepts; this design does not manufacture more hubs to fill the map.
+Review whether the episode-based overview is a useful starting point, the amount of background fading, label density and the mobile reading flow. Topic-based landmarks can be assessed separately when reliable idea-to-topic membership is available. The reviewed registry now contains ten shared concepts; this remains an editorial starting set, not comprehensive thematic coverage.
 
 ## Release performance validation
 
-The normal built site reproduced the preview lag. The renderer now batches 2,185 connections into six paths by visual state, caches unchanged SVG attributes and node element references, recomputes connection highlighting only when selection/hover changes, and coalesces pointer/wheel updates to animation frames.
+The normal built site reproduced the preview lag. The renderer batches connections into six paths by visual state, caches unchanged SVG attributes and node element references, recomputes connection highlighting only when selection/hover changes, and coalesces pointer/wheel updates to animation frames.
 
-In the same headless Chromium session, at 1440 × 1050, a sequence of 60 wheel zoom frames measured:
+For the original 708-node release, in the same headless Chromium session, at 1440 × 1050, a sequence of 60 wheel zoom frames measured:
 
 | Measurement | Original | Optimized |
 | --- | ---: | ---: |
@@ -47,4 +49,4 @@ In the same headless Chromium session, at 1440 × 1050, a sequence of 60 wheel z
 | 95th percentile interval | 80.2 ms | 29.4 ms |
 | SVG attribute mutations | 437,855 | 47,082 |
 
-These are local comparative measurements, not a promise of a particular frame rate on every device. Browser regression checks verify every published connection is rendered and selection highlights exactly its recorded connections, alongside navigation, evidence, mobile overflow and fallback checks.
+These are local comparative measurements, not a promise of a particular frame rate on every device. Browser regression checks verify default idea connections and optional complete source connections are rendered and selection highlights exactly its recorded connections, alongside navigation, evidence, mobile overflow and fallback checks.

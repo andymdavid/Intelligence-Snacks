@@ -18,16 +18,12 @@ type Evidence = {
   sourceHref?: string;
   timestamp?: string;
 };
-const structural = new Set([
-  "contains",
-  "hosted-by",
-  "features",
-  "hosted",
-  "contributed-to",
-  "contributed",
-  "develops",
-  "publishes",
-]);
+import {
+  rankArchive,
+  topicVisibleIds,
+  connectionVisible,
+  structuralRelationships as structural,
+} from "./graph-explorer-discovery";
 export function initialiseExplorer() {
   const data = document.querySelector("#knowledge-data");
   if (!data) return;
@@ -51,6 +47,60 @@ export function initialiseExplorer() {
     index = $<HTMLElement>("#explorer-index"),
     tooltip = $<HTMLElement>("[data-tooltip]"),
     status = $("[data-explorer-status]");
+  const topicFilter = $<HTMLSelectElement>("[data-topic-filter]");
+  const sourceLinks = $<HTMLInputElement>("[data-source-links]");
+  const membership = JSON.parse(
+    $("#topic-membership").textContent || "{}",
+  ) as Record<string, string[]>;
+  let visibleIds = new Set(nodes.map((node) => node.id)),
+    scopeRevision = 0;
+  function applyScope() {
+    visibleIds = topicVisibleIds(
+      nodes,
+      edges,
+      topicFilter.value
+        ? new Set(membership[topicFilter.value] || [])
+        : undefined,
+    );
+    scopeRevision++;
+    hovered = null;
+    tooltip.hidden = true;
+    for (const node of nodes) {
+      const group = dotElements.get(node.id)!;
+      attribute(group, "display", visibleIds.has(node.id) ? "" : "none");
+      attribute(
+        group,
+        "tabindex",
+        visibleIds.has(node.id) && ["episode", "canonical"].includes(node.kind)
+          ? "0"
+          : "-1",
+      );
+    }
+    document
+      .querySelectorAll<HTMLElement>("[data-concept-pick]")
+      .forEach(
+        (button) =>
+          (button.hidden = !visibleIds.has(button.dataset.conceptPick!)),
+      );
+    $("[data-concept-empty]").toggleAttribute(
+      "hidden",
+      nodes.some(
+        (node) => node.kind === "canonical" && visibleIds.has(node.id),
+      ),
+    );
+    const ideaCount = edges.filter(
+      (edge) =>
+        visibleIds.has(edge.sourceId) &&
+        visibleIds.has(edge.targetId) &&
+        !structural.has(edge.relationshipType),
+    ).length;
+    $("[data-map-count]").textContent =
+      `${visibleIds.size} nodes · ${ideaCount} idea connections`;
+    $("[data-clear-topic]").toggleAttribute("hidden", !topicFilter.value);
+    $("[data-scope-description]").textContent = topicFilter.value
+      ? `Episodes covering ${topicFilter.selectedOptions[0]!.textContent}. Ideas retain their source episode's membership; this is not a topic label for every claim.`
+      : "All published nodes. Source links show episode membership and speaker attribution, rather than idea relationships.";
+  }
   const ns = "http://www.w3.org/2000/svg";
   function s<K extends keyof SVGElementTagNameMap>(
     tag: K,
@@ -134,7 +184,8 @@ export function initialiseExplorer() {
               .get(selected)!
               .map((edge) =>
                 edge.sourceId === selected ? edge.targetId : edge.sourceId,
-              ),
+              )
+              .filter((id) => visibleIds.has(id)),
           ]
         : [],
     );
@@ -205,7 +256,8 @@ export function initialiseExplorer() {
     paintedHovered: string | null | undefined,
     related = new Set<string>(),
     hoverRelated: Set<string> | null = null,
-    ranked = nodes;
+    ranked = nodes,
+    paintedScope = -1;
   let pendingPaint = 0;
   function schedulePaint() {
     if (!pendingPaint)
@@ -221,8 +273,11 @@ export function initialiseExplorer() {
       `translate(${width / 2 - camera.x * camera.k},${height / 2 - camera.y * camera.k}) scale(${camera.k})`,
     );
     const focusChanged =
-      selected !== paintedSelected || hovered !== paintedHovered;
+      selected !== paintedSelected ||
+      hovered !== paintedHovered ||
+      paintedScope !== scopeRevision;
     if (focusChanged) {
+      paintedScope = scopeRevision;
       paintedSelected = selected;
       paintedHovered = hovered;
       related = selectedNeighbours();
@@ -238,6 +293,7 @@ export function initialiseExplorer() {
         : null;
       const batches = new Map<string, string[]>();
       edges.forEach((edge, i) => {
+        if (!connectionVisible(edge, visibleIds, sourceLinks.checked)) return;
         const kind = structural.has(edge.relationshipType) ? "context" : "idea";
         const state =
           selected && (edge.sourceId === selected || edge.targetId === selected)
@@ -262,8 +318,8 @@ export function initialiseExplorer() {
               : selected
                 ? ".025"
                 : key.startsWith("context:")
-                  ? ".22"
-                  : ".32",
+                  ? ".10"
+                  : ".38",
         );
       }
       ranked = [...nodes].sort(
@@ -280,6 +336,10 @@ export function initialiseExplorer() {
     for (const node of ranked) {
       const group = dotElements.get(node.id)!,
         label = labelElements.get(node.id)!;
+      if (!visibleIds.has(node.id)) {
+        attribute(label, "display", "none");
+        continue;
+      }
       const isFocus = node.id === selected || node.id === hovered;
       const active = related.has(node.id);
       if (focusChanged)
@@ -290,7 +350,11 @@ export function initialiseExplorer() {
             ? ".12"
             : hoverRelated && !hoverRelated.has(node.id)
               ? ".35"
-              : "1",
+              : !sourceLinks.checked &&
+                  ["root", "host", "contributor"].includes(node.kind) &&
+                  !isFocus
+                ? ".2"
+                : "1",
         );
       attribute(
         hitElements.get(node.id)!,
@@ -363,7 +427,13 @@ export function initialiseExplorer() {
     animation = requestAnimationFrame(tick);
   }
   function fit(ids?: Set<string>, animate = true) {
-    const picked = ids ? nodes.filter((node) => ids.has(node.id)) : nodes;
+    const picked = nodes.filter(
+      (node) => visibleIds.has(node.id) && (!ids || ids.has(node.id)),
+    );
+    if (!picked.length) {
+      paint();
+      return;
+    }
     const xs = picked.map((node) => node.x),
       ys = picked.map((node) => node.y);
     const minX = Math.min(...xs) - 75,
@@ -390,23 +460,43 @@ export function initialiseExplorer() {
     const url = new URL(location.href);
     if (id) url.searchParams.set("node", id);
     else url.searchParams.delete("node");
+    if (topicFilter.value) url.searchParams.set("topic", topicFilter.value);
+    else url.searchParams.delete("topic");
+    if (sourceLinks.checked) url.searchParams.set("context", "all");
+    else url.searchParams.delete("context");
     if (push) history.pushState({ explorer: true }, "", url);
+    else history.replaceState(history.state, "", url);
   }
   function select(id: string | null, push = false) {
     if (id && !byId.has(id)) {
       status.textContent = "That idea is not in this published archive.";
       id = null;
     }
+    if (id && !visibleIds.has(id)) {
+      topicFilter.value = "";
+      applyScope();
+      filterIndex();
+    }
     selected = id;
+    document
+      .querySelectorAll<HTMLButtonElement>("[data-concept-pick]")
+      .forEach((button) =>
+        button.setAttribute(
+          "aria-pressed",
+          String(button.dataset.conceptPick === id),
+        ),
+      );
     tooltip.hidden = true;
     panel.hidden = !id;
     stage.classList.toggle("has-selection", !!id);
     $("[data-map-mode]").textContent = id
       ? "Following a connection"
-      : "Across the archive";
+      : topicFilter.value
+        ? `Episodes covering ${topicFilter.selectedOptions[0]!.textContent}`
+        : "Across the archive";
     $("[data-map-hint]").textContent = id
       ? "Select another node to keep exploring"
-      : "Select a conversation to begin";
+      : "Select a shared idea or conversation";
     $<HTMLButtonElement>("[data-back]").disabled =
       !new URL(location.href).searchParams.has("node") && !id;
     updateUrl(id, push);
@@ -420,10 +510,13 @@ export function initialiseExplorer() {
     } else {
       content.replaceChildren();
       fit();
-      status.textContent = "Across the archive";
+      status.textContent = topicFilter.value
+        ? `Showing ${visibleIds.size} nodes in episodes covering ${topicFilter.selectedOptions[0]!.textContent}`
+        : "Across the archive";
     }
   }
   async function renderDetail(node: PositionedNode) {
+    panel.scrollTop = 0;
     content.replaceChildren();
     const title = el("h2", node.title);
     title.id = "explorer-detail-title";
@@ -437,6 +530,13 @@ export function initialiseExplorer() {
       title,
       el("p", node.summary, "detail-summary"),
     );
+    if (node.kind === "canonical")
+      content.append(
+        el(
+          "p",
+          `${node.episodeCount} episodes · Editorial review by Lara (agent). Follow each source to assess the distinct claims.`,
+        ),
+      );
     const actions = el("div", "", "detail-actions");
     if (node.href && !node.href.startsWith("/graph")) {
       const source = el(
@@ -490,6 +590,10 @@ export function initialiseExplorer() {
           $("#explorer-detail-title").scrollIntoView({ block: "nearest" });
         });
         row.append(button);
+        if (topicFilter.value && !visibleIds.has(target.id))
+          row.append(
+            el("p", "Outside this topic selection. Opens across the archive."),
+          );
         if (edge.explanation) row.append(el("p", edge.explanation));
         if (edge.reviewMethod)
           row.append(
@@ -583,12 +687,18 @@ export function initialiseExplorer() {
     if (selected !== node.id) return;
     if (node.kind === "canonical")
       content.append(
-        el(
-          "p",
-          "Open a linked discussion below to inspect its source evidence.",
-        ),
+        el("p", "Select a linked discussion to inspect its source evidence."),
       );
-    connectionSection(context, "Archive context");
+    if (context.length) {
+      const contextDetails = el("details"),
+        summary = el("summary", `Source context · ${context.length}`);
+      contextDetails.append(summary);
+      content.append(contextDetails);
+      const before = content.childElementCount;
+      connectionSection(context, "Episode and speaker links");
+      while (content.childElementCount > before)
+        contextDetails.append(content.children[before]!);
+    }
     if (!allEdges.length)
       content.append(el("p", "No recorded connections yet."));
   }
@@ -597,34 +707,22 @@ export function initialiseExplorer() {
     index.hidden = !show;
     $("[data-list-toggle]").setAttribute("aria-expanded", String(show));
   }
-  const topicFilter = $<HTMLSelectElement>("[data-topic-filter]");
-  const membership = JSON.parse(
-    $("#topic-membership").textContent || "{}",
-  ) as Record<string, string[]>;
-  const searchable = new Map(
-    nodes.map((node) => [
-      node.id,
-      `${node.title} ${node.summary} ${node.kind} ${node.episodeNumber || ""}`.toLowerCase(),
-    ]),
-  );
   function filterIndex() {
-    const words = search.value
-      .toLowerCase()
-      .trim()
-      .split(/\s+/)
-      .filter(Boolean);
+    const words = search.value.trim().split(/\s+/).filter(Boolean);
     const episodeIds = topicFilter.value
       ? new Set(membership[topicFilter.value] || [])
       : null;
-    let count = 0;
-    for (const row of rows) {
-      const node = byId.get(row.dataset.indexNode!)!;
-      row.hidden = !(
-        words.every((word) => searchable.get(node.id)!.includes(word)) &&
-        (!episodeIds || episodeIds.has(node.episodeId))
-      );
-      if (!row.hidden) count++;
-    }
+    const ordered = rankArchive(nodes, search.value).filter((node) =>
+      visibleIds.has(node.id),
+    );
+    const matching = new Set(ordered.map((node) => node.id));
+    for (const row of rows) row.hidden = !matching.has(row.dataset.indexNode!);
+    const byRow = new Map(rows.map((row) => [row.dataset.indexNode!, row]));
+    const list = $("#explorer-results");
+    const fragment = document.createDocumentFragment();
+    for (const node of ordered) fragment.append(byRow.get(node.id)!);
+    list.append(fragment);
+    const count = ordered.length;
     showIndex(!!words.length || !!episodeIds);
     const label = `${count} ${count === 1 ? "result" : "results"}`;
     $("[data-result-count]").textContent = label;
@@ -635,18 +733,42 @@ export function initialiseExplorer() {
     status.textContent = `${count} matching archive records`;
   }
   search.addEventListener("input", filterIndex);
-  topicFilter.addEventListener("change", filterIndex);
+  function changeTopic() {
+    applyScope();
+    filterIndex();
+    select(null, true);
+  }
+  topicFilter.addEventListener("change", changeTopic);
+  $("[data-clear-topic]").addEventListener("click", () => {
+    topicFilter.value = "";
+    changeTopic();
+  });
+  sourceLinks.addEventListener("change", () => {
+    scopeRevision++;
+    paint();
+    updateUrl(selected, true);
+  });
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-concept-pick]")
+    .forEach((button) =>
+      button.addEventListener("click", () =>
+        select(button.dataset.conceptPick!, true),
+      ),
+    );
   search.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      rows
+      if (index.hidden) return;
+      [...document.querySelectorAll<HTMLElement>("[data-index-node]")]
         .find((row) => !row.hidden)
         ?.querySelector<HTMLAnchorElement>("[data-pick]")
         ?.click();
     } else if (event.key === "Escape") {
       search.value = "";
       topicFilter.value = "";
+      applyScope();
       filterIndex();
+      select(null, true);
       showIndex(false);
     }
   });
@@ -673,8 +795,8 @@ export function initialiseExplorer() {
       button.addEventListener("click", () => {
         topicFilter.value = button.dataset.topicPick!;
         search.value = "";
-        filterIndex();
-        index.scrollIntoView({
+        changeTopic();
+        stage.scrollIntoView({
           block: "start",
           behavior: reduced.matches ? "instant" : "smooth",
         });
@@ -687,12 +809,8 @@ export function initialiseExplorer() {
       select(a.dataset.pick!, true);
       showIndex(false);
       search.value = "";
-      topicFilter.value = "";
-      $("[data-search-status]").textContent =
-        "Search every published idea, episode and Snack.";
-      for (const row of rows) row.hidden = false;
-      $("[data-result-count]").textContent =
-        `${rows.length} records in the published archive`;
+      filterIndex();
+      showIndex(false);
       $("#explorer-detail-title").focus({ preventScroll: true });
       stage.scrollIntoView({
         block: "start",
@@ -708,7 +826,14 @@ export function initialiseExplorer() {
         behavior: reduced.matches ? "instant" : "smooth",
       });
   });
-  $("[data-overview]").addEventListener("click", () => select(null, true));
+  $("[data-overview]").addEventListener("click", () => {
+    topicFilter.value = "";
+    search.value = "";
+    applyScope();
+    filterIndex();
+    showIndex(false);
+    select(null, true);
+  });
   $("[data-close]").addEventListener("click", () => {
     select(null, true);
     $<HTMLButtonElement>("[data-overview]").focus();
@@ -717,9 +842,17 @@ export function initialiseExplorer() {
     if (history.state?.explorer) history.back();
     else select(null, true);
   });
-  window.addEventListener("popstate", () =>
-    select(new URL(location.href).searchParams.get("node")),
-  );
+  function restoreLocation() {
+    const params = new URL(location.href).searchParams;
+    topicFilter.value = params.get("topic") || "";
+    sourceLinks.checked = params.get("context") === "all";
+    search.value = "";
+    applyScope();
+    filterIndex();
+    showIndex(false);
+    select(params.get("node"));
+  }
+  window.addEventListener("popstate", restoreLocation);
   document
     .querySelectorAll<HTMLButtonElement>("[data-zoom]")
     .forEach((button) =>
@@ -840,5 +973,5 @@ export function initialiseExplorer() {
     if (selected) fit(selectedNeighbours(), false);
     else fit(undefined, false);
   }).observe(map);
-  select(new URL(location.href).searchParams.get("node"));
+  restoreLocation();
 }
