@@ -61,6 +61,15 @@ export function initialiseExplorer() {
       el.setAttribute(name, value);
     return el;
   }
+  // Avoid invalidating SVG paint for attributes whose values have not changed.
+  const attributes = new WeakMap<Element, Map<string, string>>();
+  function attribute(element: Element, name: string, value: string) {
+    let cache = attributes.get(element);
+    if (!cache) attributes.set(element, (cache = new Map()));
+    if (cache.get(name) === value) return;
+    cache.set(name, value);
+    element.setAttribute(name, value);
+  }
   function el<K extends keyof HTMLElementTagNameMap>(
     tag: K,
     text = "",
@@ -82,23 +91,30 @@ export function initialiseExplorer() {
     incident.get(edge.sourceId)!.push(edge);
     incident.get(edge.targetId)!.push(edge);
   }
-  const edgeElements = edges.map((edge) => {
+  // Batch connections by visual state rather than repainting thousands of SVG lines.
+  const edgeSegments = edges.map((edge) => {
     const source = byId.get(edge.sourceId)!,
       target = byId.get(edge.targetId)!;
-    const line = s("line", {
-      x1: String(source.x),
-      y1: String(source.y),
-      x2: String(target.x),
-      y2: String(target.y),
-      stroke: structural.has(edge.relationshipType) ? "#d9dcd7" : "#9caaa4",
-      "stroke-width": structural.has(edge.relationshipType) ? ".7" : "1",
-      "vector-effect": "non-scaling-stroke",
-    });
-    lines.append(line);
-    return line;
+    return `M${source.x},${source.y}L${target.x},${target.y}`;
   });
+  const edgePaths = new Map<string, SVGPathElement>();
+  for (const kind of ["context", "idea"]) {
+    for (const state of ["background", "active", "hover"]) {
+      const path = s("path", {
+        fill: "none",
+        stroke: kind === "context" ? "#d9dcd7" : "#9caaa4",
+        "stroke-width": state === "active" ? "1.4" : ".7",
+        "vector-effect": "non-scaling-stroke",
+        "pointer-events": "none",
+      });
+      lines.append(path);
+      edgePaths.set(`${kind}:${state}`, path);
+    }
+  }
   const dotElements = new Map<string, SVGGElement>();
   const labelElements = new Map<string, SVGTextElement>();
+  const hitElements = new Map<string, SVGCircleElement>();
+  const circleElements = new Map<string, SVGCircleElement>();
   let selected: string | null = null,
     hovered: string | null = null,
     camera = { x: 0, y: 0, k: 0.4 },
@@ -141,6 +157,8 @@ export function initialiseExplorer() {
       "pointer-events": "none",
     });
     group.append(hit, circle);
+    hitElements.set(node.id, hit);
+    circleElements.set(node.id, circle);
     dots.append(group);
     dotElements.set(node.id, group);
     const label = s("text", {
@@ -168,7 +186,7 @@ export function initialiseExplorer() {
     });
     group.addEventListener("pointerenter", () => {
       hovered = node.id;
-      paint();
+      schedulePaint();
     });
     group.addEventListener("pointermove", (event) => {
       tooltip.hidden = false;
@@ -180,78 +198,110 @@ export function initialiseExplorer() {
     group.addEventListener("pointerleave", () => {
       hovered = null;
       tooltip.hidden = true;
-      paint();
+      schedulePaint();
     });
   }
+  let paintedSelected: string | null | undefined,
+    paintedHovered: string | null | undefined,
+    related = new Set<string>(),
+    hoverRelated: Set<string> | null = null,
+    ranked = nodes;
+  let pendingPaint = 0;
+  function schedulePaint() {
+    if (!pendingPaint)
+      pendingPaint = requestAnimationFrame(() => {
+        pendingPaint = 0;
+        paint();
+      });
+  }
   function paint() {
-    world.setAttribute(
+    attribute(
+      world,
       "transform",
       `translate(${width / 2 - camera.x * camera.k},${height / 2 - camera.y * camera.k}) scale(${camera.k})`,
     );
-    const related = selectedNeighbours();
-    const hoverRelated = hovered
-      ? new Set([
-          hovered,
-          ...incident
-            .get(hovered)!
-            .map((edge) =>
-              edge.sourceId === hovered ? edge.targetId : edge.sourceId,
-            ),
-        ])
-      : null;
-    edgeElements.forEach((line, i) => {
-      const edge = edges[i]!;
-      const active =
-          selected &&
-          (edge.sourceId === selected || edge.targetId === selected),
-        hover =
-          hovered && (edge.sourceId === hovered || edge.targetId === hovered);
-      line.setAttribute(
-        "opacity",
-        active
-          ? "0.85"
-          : hover
-            ? "0.65"
-            : selected
-              ? ".025"
-              : structural.has(edge.relationshipType)
-                ? ".22"
-                : ".32",
+    const focusChanged =
+      selected !== paintedSelected || hovered !== paintedHovered;
+    if (focusChanged) {
+      paintedSelected = selected;
+      paintedHovered = hovered;
+      related = selectedNeighbours();
+      hoverRelated = hovered
+        ? new Set([
+            hovered,
+            ...incident
+              .get(hovered)!
+              .map((edge) =>
+                edge.sourceId === hovered ? edge.targetId : edge.sourceId,
+              ),
+          ])
+        : null;
+      const batches = new Map<string, string[]>();
+      edges.forEach((edge, i) => {
+        const kind = structural.has(edge.relationshipType) ? "context" : "idea";
+        const state =
+          selected && (edge.sourceId === selected || edge.targetId === selected)
+            ? "active"
+            : hovered &&
+                (edge.sourceId === hovered || edge.targetId === hovered)
+              ? "hover"
+              : "background";
+        const key = `${kind}:${state}`;
+        if (!batches.has(key)) batches.set(key, []);
+        batches.get(key)!.push(edgeSegments[i]!);
+      });
+      for (const [key, path] of edgePaths) {
+        attribute(path, "d", (batches.get(key) || []).join(""));
+        attribute(
+          path,
+          "opacity",
+          key.endsWith(":active")
+            ? ".85"
+            : key.endsWith(":hover")
+              ? ".65"
+              : selected
+                ? ".025"
+                : key.startsWith("context:")
+                  ? ".22"
+                  : ".32",
+        );
+      }
+      ranked = [...nodes].sort(
+        (a, b) =>
+          Number(b.id === selected || b.id === hovered) -
+            Number(a.id === selected || a.id === hovered) ||
+          Number(related.has(b.id)) - Number(related.has(a.id)) ||
+          Number(b.kind === "canonical") - Number(a.kind === "canonical") ||
+          Number(b.kind === "episode") - Number(a.kind === "episode") ||
+          (b.degree || 0) - (a.degree || 0),
       );
-      line.setAttribute("stroke-width", active ? "1.4" : ".7");
-    });
+    }
     const placed: { x: number; y: number; w: number }[] = [];
-    const ranked = [...nodes].sort(
-      (a, b) =>
-        Number(b.id === selected || b.id === hovered) -
-          Number(a.id === selected || a.id === hovered) ||
-        Number(related.has(b.id)) - Number(related.has(a.id)) ||
-        Number(b.kind === "canonical") - Number(a.kind === "canonical") ||
-        Number(b.kind === "episode") - Number(a.kind === "episode") ||
-        (b.degree || 0) - (a.degree || 0),
-    );
     for (const node of ranked) {
       const group = dotElements.get(node.id)!,
         label = labelElements.get(node.id)!;
       const isFocus = node.id === selected || node.id === hovered;
       const active = related.has(node.id);
-      group.setAttribute(
-        "opacity",
-        selected && !active
-          ? ".12"
-          : hoverRelated && !hoverRelated.has(node.id)
-            ? ".35"
-            : "1",
-      );
-      group
-        .querySelector("[data-hit]")!
-        .setAttribute("r", String(Math.max(node.radius, 8 / camera.k)));
-      group
-        .querySelector("circle:last-child")!
-        .setAttribute(
-          "r",
-          String(isFocus ? Math.max(node.radius, 7 / camera.k) : node.radius),
+      if (focusChanged)
+        attribute(
+          group,
+          "opacity",
+          selected && !active
+            ? ".12"
+            : hoverRelated && !hoverRelated.has(node.id)
+              ? ".35"
+              : "1",
         );
+      attribute(
+        hitElements.get(node.id)!,
+        "r",
+        String(Math.max(node.radius, 8 / camera.k)),
+      );
+      attribute(
+        circleElements.get(node.id)!,
+        "r",
+        String(isFocus ? Math.max(node.radius, 7 / camera.k) : node.radius),
+      );
       const sx = (node.x - camera.x) * camera.k + width / 2,
         sy = (node.y - camera.y) * camera.k + height / 2;
       const eligible =
@@ -279,14 +329,14 @@ export function initialiseExplorer() {
         lx > 0 &&
         ly > 50 &&
         ly < height - 65;
-      label.setAttribute("display", visible ? "" : "none");
+      attribute(label, "display", visible ? "" : "none");
       if (visible) {
         placed.push({ x: lx, y: ly, w: labelWidth });
-        label.setAttribute("x", String(node.x + node.radius + 7 / camera.k));
-        label.setAttribute("y", String(node.y + 4 / camera.k));
-        label.setAttribute("font-size", String((isFocus ? 14 : 12) / camera.k));
-        label.setAttribute("stroke-width", String(4 / camera.k));
-        label.setAttribute("opacity", selected && !active ? ".15" : "1");
+        attribute(label, "x", String(node.x + node.radius + 7 / camera.k));
+        attribute(label, "y", String(node.y + 4 / camera.k));
+        attribute(label, "font-size", String((isFocus ? 14 : 12) / camera.k));
+        attribute(label, "stroke-width", String(4 / camera.k));
+        attribute(label, "opacity", selected && !active ? ".15" : "1");
       }
     }
   }
@@ -634,7 +684,7 @@ export function initialiseExplorer() {
         y: camera.y + y / camera.k - y / k,
         k,
       };
-      paint();
+      schedulePaint();
     },
     { passive: false },
   );
@@ -691,7 +741,7 @@ export function initialiseExplorer() {
     if (moved && !svg.hasPointerCapture(event.pointerId))
       svg.setPointerCapture(event.pointerId);
     tooltip.hidden = true;
-    paint();
+    schedulePaint();
   });
   function release(event: PointerEvent) {
     pointers.delete(event.pointerId);

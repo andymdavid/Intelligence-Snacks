@@ -1,6 +1,6 @@
 # Graph explorer design preview
 
-This branch replaces `/graph/` only in its own build. The existing live website is the comparison baseline. Do not merge or deploy it as a transition without design review. No new production route or graph data is introduced.
+The design was approved for implementation in the originating Flight Deck thread on 2026-11-09. This release replaces `/graph/` with the approved explorer. No new production route or graph data is introduced. The portable review file remains available for reproducing the original review workflow.
 
 ## Review
 
@@ -34,3 +34,17 @@ A file URL is local: Copy idea link cannot produce a remotely shareable preview 
 ## Assessment still needed
 
 Review whether the episode-based overview is a useful starting point, the amount of background fading, label density and the mobile reading flow. Topic-based landmarks can be assessed separately when reliable idea-to-topic membership is available. The current data only has two curated shared concepts; this design does not manufacture more hubs to fill the map.
+
+## Release performance validation
+
+The normal built site reproduced the preview lag. The renderer now batches 2,185 connections into six paths by visual state, caches unchanged SVG attributes and node element references, recomputes connection highlighting only when selection/hover changes, and coalesces pointer/wheel updates to animation frames.
+
+In the same headless Chromium session, at 1440 × 1050, a sequence of 60 wheel zoom frames measured:
+
+| Measurement | Original | Optimized |
+| --- | ---: | ---: |
+| Median event-to-next-frame interval | 65.9 ms | 17.2 ms |
+| 95th percentile interval | 80.2 ms | 29.4 ms |
+| SVG attribute mutations | 437,855 | 47,082 |
+
+These are local comparative measurements, not a promise of a particular frame rate on every device. Browser regression checks verify every published connection is rendered and selection highlights exactly its recorded connections, alongside navigation, evidence, mobile overflow and fallback checks.

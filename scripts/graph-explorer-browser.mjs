@@ -24,6 +24,21 @@ try {
     "all published nodes on map",
   );
   assert(
+    await page.evaluate(() => {
+      const model = JSON.parse(
+        document.querySelector("#knowledge-data").textContent,
+      );
+      const segments = [
+        ...document.querySelectorAll("[data-explorer-svg] path"),
+      ].reduce(
+        (sum, path) => sum + (path.getAttribute("d")?.match(/M/g)?.length || 0),
+        0,
+      );
+      return segments === model.allConnections.length;
+    }),
+    "batched rendering preserves every published connection",
+  );
+  assert(
     (await page.locator("[data-index-node]").count()) === count,
     "complete accessible archive index",
   );
@@ -51,6 +66,28 @@ try {
   assert(
     new URL(page.url()).searchParams.get("node") === "canonical:graph-memory",
     "keyboard selection produces shareable address",
+  );
+  await page.waitForTimeout(400);
+  assert(
+    await page.evaluate(() => {
+      const selected = new URL(location.href).searchParams.get("node");
+      const model = JSON.parse(
+        document.querySelector("#knowledge-data").textContent,
+      );
+      const expected = model.allConnections.filter(
+        (edge) => edge.sourceId === selected || edge.targetId === selected,
+      ).length;
+      const actual = [
+        ...document.querySelectorAll(
+          '[data-explorer-svg] path[stroke-width="1.4"]',
+        ),
+      ].reduce(
+        (sum, path) => sum + (path.getAttribute("d")?.match(/M/g)?.length || 0),
+        0,
+      );
+      return expected > 0 && actual === expected;
+    }),
+    "selection highlights exactly its recorded connections",
   );
   await page.locator(".connection-list button").first().click();
   await page.waitForSelector("[data-detail-content] blockquote a");
