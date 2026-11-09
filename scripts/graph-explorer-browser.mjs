@@ -193,6 +193,58 @@ try {
     await page.locator("#explorer-index").isHidden(),
     "Escape clears and closes search results",
   );
+  assert(
+    await page.locator("[data-mix-chart]").isVisible(),
+    "Knowledge mix donut renders before opening a row",
+  );
+  assert(
+    await page.evaluate(() => {
+      const rows = [...document.querySelectorAll("[data-topic-family]")];
+      return (
+        rows.length > 0 &&
+        rows.every(
+          (row) =>
+            !row.open &&
+            row.querySelector("[data-topic-bar]").checkVisibility(),
+        )
+      );
+    }),
+    "all family bars remain visible with breakdowns collapsed",
+  );
+  assert(
+    await page.evaluate(() => {
+      const segments = [...document.querySelectorAll("[data-topic-segment]")];
+      const total = segments.reduce(
+        (sum, segment) => sum + Number(segment.dataset.share),
+        0,
+      );
+      return (
+        Math.abs(total - 1) < 1e-8 &&
+        segments.every((segment) => {
+          const width = parseFloat(
+            document.querySelector(
+              `[data-topic-bar="${segment.dataset.topicSegment}"]`,
+            ).style.width,
+          );
+          return (
+            Math.abs(width - Number(segment.dataset.share) * 100) < 0.001
+          );
+        })
+      );
+    }),
+    "donut and family bars represent identical primary-topic shares summing to 100 percent",
+  );
+  const chartLink = page.locator("[data-topic-chart-link]").last();
+  await chartLink.focus();
+  await page.keyboard.press("Enter");
+  const chartTopic = await chartLink.getAttribute("data-topic-chart-link");
+  assert(
+    await page
+      .locator(`[data-topic-family="${chartTopic}"]`)
+      .evaluate((row) => row.open),
+    "keyboard chart selection opens the corresponding breakdown",
+  );
+  await page.locator(`[data-topic-family="${chartTopic}"] summary`).click();
   const topicCount = await page.locator("[data-topic-pick]").count();
   assert(topicCount > 0, "topic families and subtopic breakdowns restored");
   await page
@@ -236,6 +288,12 @@ try {
     ),
     "mobile has no horizontal overflow",
   );
+  assert(
+    (await page.locator("[data-mix-chart]").isVisible()) &&
+      (await page.locator("[data-topic-bar]").first().isVisible()),
+    "mobile chart and collapsed family bars render",
+  );
+
   await page.locator("#explorer-search").fill("graph memory");
   assert(
     await page
@@ -284,6 +342,11 @@ try {
   assert(
     (await plain.locator("[data-index-node]:visible").count()) === count,
     "no-JavaScript archive remains browsable",
+  );
+  assert(
+    (await plain.locator("[data-mix-chart]").isVisible()) &&
+      (await plain.locator("[data-topic-bar]").first().isVisible()),
+    "Knowledge mix donut and family bars remain visible without JavaScript",
   );
   await plain.close();
   assert(errors.length === 0, "no uncaught browser errors");
