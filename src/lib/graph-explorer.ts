@@ -801,7 +801,26 @@ export function initialiseExplorer() {
   document
     .querySelectorAll<SVGAElement>("[data-topic-chart-link]")
     .forEach((link) => {
+      const mixTooltip = document.querySelector<HTMLElement>("[data-mix-tooltip]");
+      const showMixTooltip = () => {
+        if (!mixTooltip) return;
+        mixTooltip.textContent = link.dataset.topicLabel || "";
+        mixTooltip.hidden = false;
+        link.setAttribute("aria-describedby", "mix-tooltip");
+      };
+      const hideMixTooltip = () => {
+        if (mixTooltip) mixTooltip.hidden = true;
+        link.removeAttribute("aria-describedby");
+      };
+      link.addEventListener("pointerenter", showMixTooltip);
+      link.addEventListener("pointerleave", hideMixTooltip);
+      link.addEventListener("focus", showMixTooltip);
+      link.addEventListener("blur", hideMixTooltip);
+      link.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") hideMixTooltip();
+      });
       link.addEventListener("click", (event) => {
+        hideMixTooltip();
         const family = document.getElementById(
           `mix-${link.dataset.topicChartLink}`,
         ) as HTMLDetailsElement | null;
