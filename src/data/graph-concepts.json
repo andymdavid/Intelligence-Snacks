@@ -1,8 +1,436 @@
 {
   "version": 1,
   "concepts": [
-    { "id": "graph-memory", "title": "Graph memory", "summary": "Using connected records as retrievable memory. The linked observations retain their own claims and evidence.", "reviewState": "accepted", "reviewer": "lara", "reviewMethod": "agent-editorial-review", "reviewedAt": "2026-11-06", "mentions": ["57b4dcfd-8db6-4697-b3c3-c1a5994d8d81", "ddaaea0d-bf59-4066-8520-35f113d2ccbb", "eecd917c-27a5-4fc9-8550-ae017cae8006"] },
-    { "id": "agent-harness", "title": "Agent harnesses", "summary": "The software around a model that supplies capabilities and coordinates work. These are related discussions, not assertions that their claims are equivalent.", "reviewState": "accepted", "reviewer": "lara", "reviewMethod": "agent-editorial-review", "reviewedAt": "2026-11-06", "mentions": ["3a8fa89c-92c7-4df4-8a6c-02923d7449df", "97daa368-1833-464e-8b1c-cd054a36cb60"] }
+    {
+      "id": "graph-memory",
+      "title": "Graph memory",
+      "summary": "Using connected records as retrievable memory. The linked observations retain their own claims and evidence.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-06",
+      "mentions": [
+        "57b4dcfd-8db6-4697-b3c3-c1a5994d8d81",
+        "ddaaea0d-bf59-4066-8520-35f113d2ccbb",
+        "eecd917c-27a5-4fc9-8550-ae017cae8006"
+      ],
+      "sources": [
+        {
+          "nodeId": "57b4dcfd-8db6-4697-b3c3-c1a5994d8d81",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "ec6724d7-49f9-4384-8834-b154a4d470d6",
+            "014f4552-55a0-403e-bbf6-c35c5b5409d4",
+            "07841da2-5bfa-4b82-a035-c35609754efb"
+          ],
+          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence."
+        },
+        {
+          "nodeId": "ddaaea0d-bf59-4066-8520-35f113d2ccbb",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "4c66e8af-c71d-496f-a634-726267dbd51b",
+            "15f40789-7874-45fb-8491-252631876af4"
+          ],
+          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence."
+        },
+        {
+          "nodeId": "eecd917c-27a5-4fc9-8550-ae017cae8006",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "b9f114dd-9171-45dc-b629-79deedd05861",
+            "80049ed1-7d41-476e-84fa-579f7cb1081d",
+            "f46668f8-2f78-4002-8a82-2f3ef95f6ffe",
+            "93e5af67-8c2a-4340-bbcd-3e4edb59dfab"
+          ],
+          "rationale": "The accepted pilot groups this source discussion under Graph memory while preserving its own claim and evidence."
+        }
+      ]
+    },
+    {
+      "id": "agent-harness",
+      "title": "Agent harnesses",
+      "summary": "The software around a model that supplies capabilities and coordinates work. These are related discussions, not assertions that their claims are equivalent.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-06",
+      "mentions": [
+        "3a8fa89c-92c7-4df4-8a6c-02923d7449df",
+        "97daa368-1833-464e-8b1c-cd054a36cb60"
+      ],
+      "sources": [
+        {
+          "nodeId": "3a8fa89c-92c7-4df4-8a6c-02923d7449df",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "86ac0b7c-eb4b-493f-97ff-aea126761de3",
+            "ce1d5aad-08e7-41c9-8001-9fb3eae9232e",
+            "9e969017-d65c-49b1-8bcc-917d2e286f87",
+            "53ceeafb-a034-4c76-a9bd-dbba3e80cce8"
+          ],
+          "rationale": "The accepted pilot groups this source discussion under Agent harnesses while preserving its own claim and evidence."
+        },
+        {
+          "nodeId": "97daa368-1833-464e-8b1c-cd054a36cb60",
+          "transcriptRevisionId": "17330e15-337f-484f-b46d-1da33c833899",
+          "evidenceIds": [
+            "1015840b-9254-45a4-aa8e-98cc960ec9ba",
+            "d20676f4-08ac-4c9d-b922-eaba5dbe980a",
+            "9a4a1a43-d0b3-4e8c-8138-66490f7ddfe1",
+            "d2d82b9c-083f-4bcf-982e-3c2f065e8b38"
+          ],
+          "rationale": "The accepted pilot groups this source discussion under Agent harnesses while preserving its own claim and evidence."
+        }
+      ]
+    },
+    {
+      "id": "code-first-workflows",
+      "title": "Code-first workflows",
+      "summary": "Keep repeatable process in code and invoke models for bounded judgement. These discussions apply the pattern in different systems; they do not establish identical results.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "mentions": [
+        "cc3112ea-d391-4423-8ac5-17fdd4cd7fa0",
+        "61316f11-678e-4824-b3b6-a555aaad4edc",
+        "c511beda-8f28-446c-a452-5dfec8250ca2",
+        "43b4f2b4-0f85-4376-94cb-bd2026835dd7",
+        "9ba6b920-3f16-4afb-abb6-4fc3857e973f"
+      ],
+      "sources": [
+        {
+          "nodeId": "cc3112ea-d391-4423-8ac5-17fdd4cd7fa0",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "d2ed1c05-bd0f-42f1-b911-7461df7336a0"
+          ],
+          "rationale": "Episode 67 argues that repeatable script execution need not occupy an agent context window."
+        },
+        {
+          "nodeId": "61316f11-678e-4824-b3b6-a555aaad4edc",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "603c209b-43af-4e55-ae4b-d5e22528298f"
+          ],
+          "rationale": "Episode 65 describes code-first pipelines that start an agent for a decision and return control to code."
+        },
+        {
+          "nodeId": "c511beda-8f28-446c-a452-5dfec8250ca2",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "24792fa4-98df-4270-98a1-58351c66b504"
+          ],
+          "rationale": "Episode 71 explicitly places the process outside the agent and bounds the agent to the part requiring it."
+        },
+        {
+          "nodeId": "43b4f2b4-0f85-4376-94cb-bd2026835dd7",
+          "transcriptRevisionId": "cf92e7bc-dfcd-46b9-b080-d2bb7b420da8",
+          "evidenceIds": [
+            "2b0d63e8-9336-4aa5-ab78-a7887e6e7775"
+          ],
+          "rationale": "Episode 73 applies the pattern to bounded decisions and translation inside mostly deterministic processes."
+        },
+        {
+          "nodeId": "9ba6b920-3f16-4afb-abb6-4fc3857e973f",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "4f95edff-4c97-41f7-9afa-1757cf2613f2"
+          ],
+          "rationale": "Episode 76 separates exploration with agents from crystallising repeatable work in code."
+        }
+      ]
+    },
+    {
+      "id": "cryptographic-authority",
+      "title": "Cryptographic identity and authority",
+      "summary": "Using signed identities to connect systems and control who may act. Agent command authority, device approval and cross-application identity remain separate mechanisms.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "mentions": [
+        "61bf949b-805d-4798-a4ff-8c5207a8c242",
+        "49b1d666-58b7-4652-bbd4-269dd157bbde",
+        "591d3615-102f-466d-97bf-0bc6c3eca770",
+        "3a9b5b72-599b-4f1e-b94b-1259e6f0d384"
+      ],
+      "sources": [
+        {
+          "nodeId": "61bf949b-805d-4798-a4ff-8c5207a8c242",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "60df51d8-d197-4efc-8404-9f9ec26a6a69"
+          ],
+          "rationale": "Episode 65 asks who is allowed to command an agent in a shared conversation and points to signed identity."
+        },
+        {
+          "nodeId": "49b1d666-58b7-4652-bbd4-269dd157bbde",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "4b2b3b2f-bd75-4f8f-b12a-17d1f0cd2531"
+          ],
+          "rationale": "Episode 70 describes an owner signing a device approval for selected applications."
+        },
+        {
+          "nodeId": "591d3615-102f-466d-97bf-0bc6c3eca770",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "60240f51-a789-4ffb-9330-40e8d167072d"
+          ],
+          "rationale": "Episode 76 describes public-key identity and signed messages across shared data and agent systems."
+        },
+        {
+          "nodeId": "3a9b5b72-599b-4f1e-b94b-1259e6f0d384",
+          "transcriptRevisionId": "0df8a130-77ec-4154-93c0-044ff6b5a923",
+          "evidenceIds": [
+            "970c57ea-6ed6-4e04-8098-a9c97bdf2d85"
+          ],
+          "rationale": "Episode 72 distinguishes a device signing key from its owner identity and explains mapping them together."
+        }
+      ]
+    },
+    {
+      "id": "shared-work-layers",
+      "title": "Shared work and data layers",
+      "summary": "Common records and identity let people, agents and interfaces work with the same state. The linked workspace and canvas designs preserve their different purposes.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "mentions": [
+        "faa211e7-c304-4d88-be69-1dc853935520",
+        "cd3c07d0-a08e-4e91-a3d5-eb79384488dd",
+        "710f86a5-3fcb-4b85-8553-f3e1a6dfce6a"
+      ],
+      "sources": [
+        {
+          "nodeId": "faa211e7-c304-4d88-be69-1dc853935520",
+          "transcriptRevisionId": "4c7f9676-9620-44c9-a2c8-204401c98235",
+          "evidenceIds": [
+            "c9cabf35-19ee-4ceb-b1fd-2b18a9597601"
+          ],
+          "rationale": "Episode 65 introduces a shared human-agent collaboration layer above separate Autopilot runtimes."
+        },
+        {
+          "nodeId": "cd3c07d0-a08e-4e91-a3d5-eb79384488dd",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "ed12d5b1-abb9-49ef-b54b-84f90688e0bc"
+          ],
+          "rationale": "Episode 67 explains why multiple agents and runtimes motivate a common work interface."
+        },
+        {
+          "nodeId": "710f86a5-3fcb-4b85-8553-f3e1a6dfce6a",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "8a3dc5f7-d110-4d95-a66c-6d61a86b205a"
+          ],
+          "rationale": "Episode 77 describes a canvas retrieving an authenticated document directly from the common record layer."
+        }
+      ]
+    },
+    {
+      "id": "selective-model-use",
+      "title": "Local and selective model use",
+      "summary": "Choosing where models run and when to call a larger service. Local models, confidential hosting and task-specific models are related options, not equivalent privacy guarantees.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "mentions": [
+        "761fcc84-7e04-48ba-abd7-48d1ee7917e3",
+        "6ce9f78b-171d-4279-9939-a87b891f4cda",
+        "376d46f2-66ee-4fec-8fbd-e5cf1ab31172"
+      ],
+      "sources": [
+        {
+          "nodeId": "761fcc84-7e04-48ba-abd7-48d1ee7917e3",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "bfcfd4ee-f113-40a7-a12f-ece3e7afb38c"
+          ],
+          "rationale": "Episode 67 proposes local routine execution with external calls when more capability is needed."
+        },
+        {
+          "nodeId": "6ce9f78b-171d-4279-9939-a87b891f4cda",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "1cdd374c-5905-422d-941a-57e18521f8ff"
+          ],
+          "rationale": "Episode 76 proposes open-weight or confidentially hosted routine work with occasional frontier-model escalation."
+        },
+        {
+          "nodeId": "376d46f2-66ee-4fec-8fbd-e5cf1ab31172",
+          "transcriptRevisionId": "d5ab1035-ef9d-494d-8648-6fa8915a5199",
+          "evidenceIds": [
+            "09b9b07e-c446-4289-90b9-54782c554688"
+          ],
+          "rationale": "Episode 62 discusses task-specific models trained for a user and kept locally, rather than routing every task to a frontier model."
+        }
+      ]
+    },
+    {
+      "id": "human-review",
+      "title": "Human review and inspectable work",
+      "summary": "Keep the intermediate work and feedback needed for people to assess AI outputs. Software review, financial audit and review-oriented interfaces have different standards and stakes.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "mentions": [
+        "8e32400e-dc71-4b66-be26-9fd49eee13d3",
+        "8da8012a-e555-4692-bcbb-d9675018c588",
+        "0a21e139-01ce-4cc2-a1ad-407e887a1b4d"
+      ],
+      "sources": [
+        {
+          "nodeId": "8e32400e-dc71-4b66-be26-9fd49eee13d3",
+          "transcriptRevisionId": "d5ab1035-ef9d-494d-8648-6fa8915a5199",
+          "evidenceIds": [
+            "de8a3aae-b16b-4433-9b16-44fba782ad7f"
+          ],
+          "rationale": "Episode 62 argues for close human involvement and awareness of changes instead of hands-off generation."
+        },
+        {
+          "nodeId": "8da8012a-e555-4692-bcbb-d9675018c588",
+          "transcriptRevisionId": "a491f109-b1f1-4126-9948-3f27e0cd9fc8",
+          "evidenceIds": [
+            "3bd0d3e5-9139-4f3c-8269-062b3e6a6993"
+          ],
+          "rationale": "Episode 71 prioritises intermediate spreadsheets and reasoning that can be inspected over an unsupported final answer."
+        },
+        {
+          "nodeId": "0a21e139-01ce-4cc2-a1ad-407e887a1b4d",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "ad01148a-cd64-4836-b6d9-bc529de02d8e"
+          ],
+          "rationale": "Episode 76 identifies checking the agent’s work as a central remaining purpose of the interface."
+        }
+      ]
+    },
+    {
+      "id": "malleable-interfaces",
+      "title": "Stable, adaptable interfaces",
+      "summary": "Keep a familiar place to work while adapting the tools and artifacts inside it. Personal software, structured workspaces and bounded canvas applets offer distinct approaches.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "mentions": [
+        "09d62778-d468-4647-a1b9-bd52d73378f7",
+        "91592044-f646-49ff-9b96-63f5ab25b525",
+        "4d258183-1913-4c42-b457-c2897fceae4a"
+      ],
+      "sources": [
+        {
+          "nodeId": "09d62778-d468-4647-a1b9-bd52d73378f7",
+          "transcriptRevisionId": "85cbba33-464b-44fd-a84b-9dd994dfed2f",
+          "evidenceIds": [
+            "60ef820f-db75-4758-906f-41e7ccbad5f8"
+          ],
+          "rationale": "Episode 70 argues for a personal interface with a stable shape that changes when the job requires it."
+        },
+        {
+          "nodeId": "91592044-f646-49ff-9b96-63f5ab25b525",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "01eec865-6410-49d7-8d09-dee63df272f9"
+          ],
+          "rationale": "Episode 76 rejects a wholly new interface on every request in favour of familiar work structures."
+        },
+        {
+          "nodeId": "4d258183-1913-4c42-b457-c2897fceae4a",
+          "transcriptRevisionId": "b8da25a2-f489-4eca-be87-8bf84bf82ca4",
+          "evidenceIds": [
+            "2121e2e8-483c-4e73-aa9e-e788e85f5e3b"
+          ],
+          "rationale": "Episode 77 describes bounded applets and reusable templates within a stable canvas."
+        }
+      ]
+    },
+    {
+      "id": "agent-continuity",
+      "title": "Short-lived agents, persistent work",
+      "summary": "Separate an agent’s temporary execution from the context and work that must survive. Small fresh sessions and shared cloud runtimes implement this in different ways.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "mentions": [
+        "c2b16144-a79e-476c-b648-0a2252024a14",
+        "30e75138-d35e-4dc5-852c-7e3b5975bea2",
+        "5fb98fae-dcc1-4341-8990-6d095af6b603"
+      ],
+      "sources": [
+        {
+          "nodeId": "c2b16144-a79e-476c-b648-0a2252024a14",
+          "transcriptRevisionId": "263d70e6-f030-4ac1-b218-d9ecfe35b3ac",
+          "evidenceIds": [
+            "84721be7-ee2e-44c0-ac49-df337f1d1a26"
+          ],
+          "rationale": "Episode 60 favours small disposable agent tasks while carrying useful context into a fresh session."
+        },
+        {
+          "nodeId": "30e75138-d35e-4dc5-852c-7e3b5975bea2",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "573c5caf-f59a-4a15-85ef-7269e0df6716"
+          ],
+          "rationale": "Episode 79 describes hydrating agent information on pooled compute for a request and shutting execution down afterwards."
+        },
+        {
+          "nodeId": "5fb98fae-dcc1-4341-8990-6d095af6b603",
+          "transcriptRevisionId": "7c502928-0762-4719-8a30-0dffac22a3bc",
+          "evidenceIds": [
+            "3d692548-c488-4274-b576-324c98816f82"
+          ],
+          "rationale": "Episode 79 explains how reports, software and data published to the shared backend remain after the runtime finishes."
+        }
+      ]
+    },
+    {
+      "id": "protecting-attention",
+      "title": "Interfaces that protect attention",
+      "summary": "Separate useful information and actions from interfaces that demand attention. Optional feeds, publishing tools and agent-mediated inboxes address different distractions.",
+      "reviewState": "accepted",
+      "reviewer": "lara",
+      "reviewMethod": "agent-editorial-review",
+      "reviewedAt": "2026-11-09",
+      "mentions": [
+        "efafa728-c9b7-432e-b50e-97a580a14299",
+        "41ead85e-0909-4374-89a9-eec44c07a90d",
+        "515391bb-3969-4c2d-961e-44c0a0b685e3"
+      ],
+      "sources": [
+        {
+          "nodeId": "efafa728-c9b7-432e-b50e-97a580a14299",
+          "transcriptRevisionId": "e02bf4a6-3d78-480c-ba39-636de02a6f96",
+          "evidenceIds": [
+            "04be7274-e227-429e-9032-233f5d108873"
+          ],
+          "rationale": "Episode 67 moves optional news from unread work-channel items to a browsable feed."
+        },
+        {
+          "nodeId": "41ead85e-0909-4374-89a9-eec44c07a90d",
+          "transcriptRevisionId": "938fc20c-2d86-4401-b75b-313226c1cf85",
+          "evidenceIds": [
+            "82fd85fe-0dff-4ba1-90a3-cce00de5856b"
+          ],
+          "rationale": "Episode 75 separates publishing a thought from entering the social platform to consume its feed."
+        },
+        {
+          "nodeId": "515391bb-3969-4c2d-961e-44c0a0b685e3",
+          "transcriptRevisionId": "29579f45-2ead-492e-81ee-0d568ff81a91",
+          "evidenceIds": [
+            "cf5891a6-8f2e-4312-85e7-005cb5133735"
+          ],
+          "rationale": "Episode 76 proposes an agent interface as a protective barrier between a person and attention-seeking email interfaces."
+        }
+      ]
+    }
   ],
   "suggestions": []
 }

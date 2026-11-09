@@ -8,6 +8,9 @@ export type ExplorerNode = {
   href?: string;
   evidenceCount?: number;
   degree?: number;
+  episodeCount?: number;
+  reviewer?: string;
+  reviewMethod?: string;
 };
 export type PositionedNode = ExplorerNode & {
   x: number;
@@ -76,6 +79,17 @@ export function positionArchive(nodes: ExplorerNode[]): PositionedNode[] {
   const ungrouped = nodes
     .filter((node) => !groups.has(node.episodeId))
     .sort((a, b) => a.id.localeCompare(b.id));
+  const hubs = nodes
+    .filter((node) => node.kind === "canonical")
+    .sort((a, b) => a.id.localeCompare(b.id));
+  hubs.forEach((node, index) => {
+    const angle =
+      (index * 2 * Math.PI) / Math.max(1, hubs.length) - Math.PI / 2;
+    positions.set(node.id, {
+      x: Math.cos(angle) * 390,
+      y: Math.sin(angle) * 390,
+    });
+  });
   return nodes.map((node) => {
     const group = groups.get(node.episodeId);
     const index = ungrouped.findIndex((other) => other.id === node.id);

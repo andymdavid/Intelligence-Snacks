@@ -34,14 +34,89 @@ try {
         (sum, path) => sum + (path.getAttribute("d")?.match(/M/g)?.length || 0),
         0,
       );
-      return segments === model.allConnections.length;
+      return (
+        segments ===
+        model.allConnections.filter(
+          (edge) =>
+            ![
+              "contains",
+              "hosted-by",
+              "features",
+              "hosted",
+              "contributed-to",
+              "contributed",
+              "develops",
+              "publishes",
+            ].includes(edge.relationshipType),
+        ).length
+      );
     }),
-    "batched rendering preserves every published connection",
+    "default map renders idea connections without source-link clutter",
+  );
+  await page.locator("[data-source-links]").check();
+  assert(
+    await page.evaluate(() => {
+      const model = JSON.parse(
+        document.querySelector("#knowledge-data").textContent,
+      );
+      return (
+        [...document.querySelectorAll("[data-explorer-svg] path")].reduce(
+          (sum, p) => sum + (p.getAttribute("d")?.match(/M/g)?.length || 0),
+          0,
+        ) === model.allConnections.length
+      );
+    }),
+    "source links can be restored without losing any connections",
+  );
+  await page.locator("[data-source-links]").uncheck();
+  assert(
+    (await page.locator("[data-concept-pick]:visible").count()) === 10,
+    "ten reviewed cross-episode hubs available as landmarks",
   );
   assert(
     (await page.locator("[data-index-node]").count()) === count,
     "complete accessible archive index",
   );
+  await page.locator("#explorer-search").fill("graph memory");
+  assert(
+    (await page
+      .locator("[data-index-node]:visible")
+      .first()
+      .getAttribute("data-index-node")) === "canonical:graph-memory",
+    "exact shared-idea title ranks before incidental summary matches",
+  );
+  await page.locator("#explorer-search").press("Escape");
+  await page.locator("[data-topic-filter]").selectOption("bitcoin");
+  await page.waitForTimeout(400);
+  const filteredCount = await page.locator("[data-node]:visible").count();
+  assert(
+    filteredCount > 0 && filteredCount < count,
+    "topic selection visibly narrows map nodes",
+  );
+  assert(
+    new URL(page.url()).searchParams.get("topic") === "bitcoin",
+    "topic scope is shareable in the address",
+  );
+  await page.reload();
+  assert(
+    (await page.locator("[data-topic-filter]").inputValue()) === "bitcoin" &&
+      (await page.locator("[data-node]:visible").count()) === filteredCount,
+    "reloading preserves topic map scope",
+  );
+  await page.locator("[data-clear-topic]").click();
+  await page.waitForTimeout(400);
+  assert(
+    (await page.locator("[data-node]:visible").count()) === count,
+    "clearing topic restores full map",
+  );
+  await page.goBack();
+  assert(
+    (await page.locator("[data-topic-filter]").inputValue()) === "bitcoin" &&
+      (await page.locator("[data-node]:visible").count()) === filteredCount,
+    "browser Back restores topic and visible nodes",
+  );
+  await page.locator("[data-overview]").click();
+  await page.waitForTimeout(400);
   assert(
     !(await page.evaluate(() =>
       performance
@@ -226,9 +301,7 @@ try {
               `[data-topic-bar="${segment.dataset.topicSegment}"]`,
             ).style.width,
           );
-          return (
-            Math.abs(width - Number(segment.dataset.share) * 100) < 0.001
-          );
+          return Math.abs(width - Number(segment.dataset.share) * 100) < 0.001;
         })
       );
     }),
@@ -269,14 +342,31 @@ try {
       const matches = [
         ...document.querySelectorAll("[data-index-node]"),
       ].filter((row) => !row.hidden);
+      const ids = new Set(
+        [...nodes.values()]
+          .filter((node) => episodes.has(node.episodeId))
+          .map((node) => node.id),
+      );
+      const model = JSON.parse(
+        document.querySelector("#knowledge-data").textContent,
+      );
+      for (const edge of model.allConnections)
+        if (
+          nodes.get(edge.sourceId)?.kind === "canonical" &&
+          ids.has(edge.targetId)
+        )
+          ids.add(edge.sourceId);
+      const visible = [...document.querySelectorAll("[data-node]")].filter(
+        (node) => node.getAttribute("display") !== "none",
+      );
       return (
         matches.length > 0 &&
-        matches.every((row) =>
-          episodes.has(nodes.get(row.dataset.indexNode).episodeId),
-        )
+        matches.every((row) => ids.has(row.dataset.indexNode)) &&
+        visible.length === ids.size &&
+        visible.every((node) => ids.has(node.dataset.node))
       );
     }),
-    "topic breakdown links filter to matching source episodes",
+    "topic breakdown filters both map and results to matching episodes and linked hubs",
   );
   await page.locator("#explorer-search").press("Escape");
   await page.locator("[data-list-toggle]").click();
@@ -349,6 +439,73 @@ try {
     "Knowledge mix donut and family bars remain visible without JavaScript",
   );
   await plain.close();
+  const scoped = await browser.newPage({
+    viewport: { width: 1440, height: 1050 },
+  });
+  scoped.on("pageerror", (e) => errors.push(e.message));
+  await scoped.goto(`${base}/graph/`);
+  const journey = await scoped.evaluate(() => {
+    const model = JSON.parse(
+        document.querySelector("#knowledge-data").textContent,
+      ),
+      byId = new Map(model.nodes.map((n) => [n.id, n]));
+    const membership = JSON.parse(
+      document.querySelector("#topic-membership").textContent,
+    );
+    for (const [topic, episodes] of Object.entries(membership)) {
+      const ids = new Set(episodes);
+      for (const hub of model.nodes.filter((n) => n.kind === "canonical")) {
+        const mentions = model.allConnections
+          .filter((e) => e.sourceId === hub.id)
+          .map((e) => byId.get(e.targetId));
+        const outside = mentions.find((n) => !ids.has(n.episodeId));
+        if (outside && mentions.some((n) => ids.has(n.episodeId)))
+          return {
+            topic,
+            hub: hub.id,
+            target: outside.id,
+            title: outside.title,
+          };
+      }
+    }
+  });
+  assert(
+    !!journey,
+    "reviewed hubs expose source discussions across topic scopes",
+  );
+  await scoped.goto(
+    `${base}/graph/?topic=${journey.topic}&node=${journey.hub}`,
+  );
+  await scoped.waitForSelector("#explorer-detail-title");
+  assert(
+    (await scoped.locator("[data-detail-content]").textContent()).includes(
+      "Outside this topic selection",
+    ),
+    "out-of-scope connections announce that they open across the archive",
+  );
+  await scoped
+    .getByRole("button", { name: journey.title, exact: true })
+    .click();
+  assert(
+    (await scoped.locator("[data-topic-filter]").inputValue()) === "" &&
+      new URL(scoped.url()).searchParams.get("node") === journey.target,
+    "following an outside source visibly clears topic scope",
+  );
+  await scoped.goBack();
+  assert(
+    (await scoped.locator("[data-topic-filter]").inputValue()) ===
+      journey.topic &&
+      new URL(scoped.url()).searchParams.get("node") === journey.hub,
+    "Back restores the scoped shared concept after an outside connection",
+  );
+  await scoped.locator("[data-source-links]").check();
+  await scoped.reload();
+  assert(
+    (await scoped.locator("[data-source-links]").isChecked()) &&
+      new URL(scoped.url()).searchParams.get("context") === "all",
+    "source-link choice is preserved by shared URLs and reload",
+  );
+  await scoped.close();
   assert(errors.length === 0, "no uncaught browser errors");
 } finally {
   console.log(JSON.stringify(checks, null, 2));
