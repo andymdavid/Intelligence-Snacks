@@ -597,33 +597,82 @@ export function initialiseExplorer() {
     index.hidden = !show;
     $("[data-list-toggle]").setAttribute("aria-expanded", String(show));
   }
-  search.addEventListener("input", () => {
+  const topicFilter = $<HTMLSelectElement>("[data-topic-filter]");
+  const membership = JSON.parse(
+    $("#topic-membership").textContent || "{}",
+  ) as Record<string, string[]>;
+  const searchable = new Map(
+    nodes.map((node) => [
+      node.id,
+      `${node.title} ${node.summary} ${node.kind} ${node.episodeNumber || ""}`.toLowerCase(),
+    ]),
+  );
+  function filterIndex() {
     const words = search.value
       .toLowerCase()
       .trim()
       .split(/\s+/)
       .filter(Boolean);
+    const episodeIds = topicFilter.value
+      ? new Set(membership[topicFilter.value] || [])
+      : null;
     let count = 0;
     for (const row of rows) {
       const node = byId.get(row.dataset.indexNode!)!;
-      row.hidden = !words.every((word) =>
-        `${node.title} ${node.summary} ${node.kind} ${node.episodeNumber || ""}`
-          .toLowerCase()
-          .includes(word),
+      row.hidden = !(
+        words.every((word) => searchable.get(node.id)!.includes(word)) &&
+        (!episodeIds || episodeIds.has(node.episodeId))
       );
       if (!row.hidden) count++;
     }
-    showIndex(true);
-    $("[data-result-count]").textContent =
-      `${count} ${count === 1 ? "result" : "results"}`;
+    showIndex(!!words.length || !!episodeIds);
+    const label = `${count} ${count === 1 ? "result" : "results"}`;
+    $("[data-result-count]").textContent = label;
+    $("[data-search-status]").textContent =
+      words.length || episodeIds
+        ? `${label}${episodeIds ? " in episodes covering " + topicFilter.selectedOptions[0]!.textContent : ""}${count ? ". Select a result to explore it." : ". Try another search or topic."}`
+        : "Search every published idea, episode and Snack.";
     status.textContent = `${count} matching archive records`;
+  }
+  search.addEventListener("input", filterIndex);
+  topicFilter.addEventListener("change", filterIndex);
+  search.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      rows
+        .find((row) => !row.hidden)
+        ?.querySelector<HTMLAnchorElement>("[data-pick]")
+        ?.click();
+    } else if (event.key === "Escape") {
+      search.value = "";
+      topicFilter.value = "";
+      filterIndex();
+      showIndex(false);
+    }
   });
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-topic-pick]")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        topicFilter.value = button.dataset.topicPick!;
+        search.value = "";
+        filterIndex();
+        index.scrollIntoView({
+          block: "start",
+          behavior: reduced.matches ? "instant" : "smooth",
+        });
+        search.focus({ preventScroll: true });
+      });
+    });
   document.querySelectorAll<HTMLAnchorElement>("[data-pick]").forEach((a) =>
     a.addEventListener("click", (event) => {
       event.preventDefault();
       select(a.dataset.pick!, true);
       showIndex(false);
       search.value = "";
+      topicFilter.value = "";
+      $("[data-search-status]").textContent =
+        "Search every published idea, episode and Snack.";
       for (const row of rows) row.hidden = false;
       $("[data-result-count]").textContent =
         `${rows.length} records in the published archive`;

@@ -158,6 +158,22 @@ try {
     (await page.locator("[data-index-node]:visible").count()) > 0,
     "search retrieves archive ideas",
   );
+  assert(
+    await page
+      .locator("[data-index-node]:visible")
+      .first()
+      .evaluate((el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.top >= 0 && rect.top < innerHeight;
+      }),
+    "desktop search results appear in the current viewport",
+  );
+  assert(
+    (await page.locator("[data-search-status]").textContent()).includes(
+      "Select a result",
+    ),
+    "search reports matching results beside the input",
+  );
   await page.locator("[data-index-node]:visible a").first().focus();
   await page.keyboard.press("Enter");
   await page.waitForSelector("blockquote");
@@ -172,6 +188,45 @@ try {
     (await page.locator("[data-index-node]:visible").count()) === 0,
     "empty search is truthful",
   );
+  await page.locator("#explorer-search").press("Escape");
+  assert(
+    await page.locator("#explorer-index").isHidden(),
+    "Escape clears and closes search results",
+  );
+  const topicCount = await page.locator("[data-topic-pick]").count();
+  assert(topicCount > 0, "topic families and subtopic breakdowns restored");
+  await page
+    .locator(".knowledge-mix details")
+    .first()
+    .locator("summary")
+    .click();
+  await page.locator("[data-topic-pick]").first().click();
+  assert(
+    await page.evaluate(() => {
+      const topic = document.querySelector("[data-topic-filter]").value;
+      const episodes = new Set(
+        JSON.parse(document.querySelector("#topic-membership").textContent)[
+          topic
+        ],
+      );
+      const nodes = new Map(
+        JSON.parse(
+          document.querySelector("#knowledge-data").textContent,
+        ).nodes.map((node) => [node.id, node]),
+      );
+      const matches = [
+        ...document.querySelectorAll("[data-index-node]"),
+      ].filter((row) => !row.hidden);
+      return (
+        matches.length > 0 &&
+        matches.every((row) =>
+          episodes.has(nodes.get(row.dataset.indexNode).episodeId),
+        )
+      );
+    }),
+    "topic breakdown links filter to matching source episodes",
+  );
+  await page.locator("#explorer-search").press("Escape");
   await page.locator("[data-list-toggle]").click();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(150);
@@ -181,6 +236,23 @@ try {
     ),
     "mobile has no horizontal overflow",
   );
+  await page.locator("#explorer-search").fill("graph memory");
+  assert(
+    await page
+      .locator("[data-index-node]:visible")
+      .first()
+      .evaluate((el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.top >= 0 && rect.top < innerHeight;
+      }),
+    "mobile search results appear in the current viewport",
+  );
+  await page.locator("#explorer-search").press("Enter");
+  assert(
+    await page.locator("[data-explorer-detail]").isVisible(),
+    "Enter opens the first search result",
+  );
+
   await page.screenshot({ path: "/tmp/graph-explorer-mobile.png" });
   const direct = await browser.newPage({ reducedMotion: "reduce" });
   await direct.goto(`${base}/graph/?node=canonical%3Agraph-memory`, {
