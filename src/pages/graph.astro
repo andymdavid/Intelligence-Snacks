@@ -42,12 +42,7 @@ const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
     <div class="explorer-tools">
       <button type="button" class="text-link" data-concepts-toggle aria-expanded="false" aria-controls="shared-ideas">Shared ideas</button>
       <button type="button" class="text-link" data-clear-topic hidden>Clear topic</button>
-      <details class="explorer-options"><summary>Map options</summary><div>
-        <label><input type="checkbox" data-source-links /> Episode &amp; speaker links</label>
-        <p>Add lines showing which episodes and people each observation comes from.</p>
-        <p data-scope-description></p>
-        <p>Nearby themes share source discussions. Distance does not measure agreement.</p>
-      </div></details>
+
     </div>
     <nav id="shared-ideas" class="explorer-concepts" aria-label="Shared ideas" hidden><div>{raw.nodes.filter((node:any)=>node.kind==='canonical').map((node:any)=><button type="button" data-concept-pick={node.id} aria-pressed="false">{node.title}<span>{node.episodeCount} episodes</span></button>)}</div><p data-concept-empty hidden>No shared ideas in this topic yet. Try another topic.</p></nav>
     <div class="explorer-stage" id="graph-stage">
@@ -55,7 +50,12 @@ const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
         <svg data-explorer-svg role="group" aria-label="All published nodes arranged around their source episodes"></svg>
         <div class="explorer-caption"><span class="visually-hidden" data-map-mode></span><span data-map-count class="visually-hidden">{raw.nodes.length} nodes · archive</span></div>
         <p class="explorer-hint" data-map-hint>Select a shared idea · zoom in for episode labels</p>
-        <div class="explorer-controls"><button type="button" data-fullscreen aria-pressed="false" aria-controls="graph-stage" aria-label="Enter fullscreen" title="Enter fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path data-expand-icon d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><path data-collapse-icon d="M3 8h5V3m8 0v5h5M8 21v-5H3m13 5v-5h5"/></svg></button><button type="button" data-overview aria-label="Return to overview" title="Return to overview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></button><div><button type="button" data-zoom="1.35" aria-label="Zoom in">+</button><button type="button" data-zoom="0.74" aria-label="Zoom out">−</button></div></div>
+        <div class="explorer-controls"><details class="explorer-options"><summary aria-label="Map options" title="Map options"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3h4l.6 2.3 2 .9 2.2-.7 2 3.5-1.6 1.7v2.6l1.6 1.7-2 3.5-2.2-.7-2 .9L14 21h-4l-.6-2.3-2-.9-2.2.7-2-3.5 1.6-1.7v-2.6L3.2 9l2-3.5 2.2.7 2-.9L10 3Z"/><circle cx="12" cy="12" r="3"/></svg></summary><div>
+        <label><input type="checkbox" data-source-links /> Episode &amp; speaker links</label>
+        <p>Add lines showing which episodes and people each observation comes from.</p>
+        <p data-scope-description></p>
+        <p>Nearby themes share source discussions. Distance does not measure agreement.</p>
+      </div></details><button type="button" data-fullscreen aria-pressed="false" aria-controls="graph-stage" aria-label="Enter fullscreen" title="Enter fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path data-expand-icon d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><path data-collapse-icon d="M3 8h5V3m8 0v5h5M8 21v-5H3m13 5v-5h5"/></svg></button><button type="button" data-overview aria-label="Return to overview" title="Return to overview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></button><div><button type="button" data-zoom="1.35" aria-label="Zoom in">+</button><button type="button" data-zoom="0.74" aria-label="Zoom out">−</button></div></div>
         <div class="explorer-tooltip" data-tooltip hidden></div>
       </div>
       <aside class="explorer-detail" data-explorer-detail role="dialog" aria-modal="false" aria-labelledby="explorer-detail-title" hidden>
@@ -107,4 +107,8 @@ initialiseExplorer();
 @media(max-width:650px){.explorer-detail{top:auto;bottom:1rem;left:.75rem;right:.75rem;width:auto;height:48%;max-height:48%;padding:0 1.1rem 1.1rem;border-radius:12px}.explorer-detail h2{font-size:1.55rem}.explorer-detail-actions{margin-bottom:.25rem}.explorer-stage.has-selection .explorer-controls{bottom:calc(48% + 1.75rem)}.explorer-stage:fullscreen .explorer-detail,.explorer-stage.is-fullscreen .explorer-detail{max-height:48%;padding:0 1.1rem 1.1rem}.explorer-stage:fullscreen.has-selection,.explorer-stage.is-fullscreen.has-selection{display:block}}
 .explorer-stage.has-selection .explorer-controls{right:auto;left:1rem}@media(max-width:650px){.explorer-stage.has-selection .explorer-controls{right:.75rem;left:auto}}
 .explorer-detail-actions{padding:.35rem 0;margin-bottom:.35rem}.explorer-detail-actions button{min-height:36px}.explorer-detail [data-detail-content]>.eyebrow{margin:.4rem 0 .75rem}.explorer-detail h3{margin-top:1rem}
+
+.explorer-tools{width:fit-content}.explorer-controls .explorer-options{position:static;margin:0}.explorer-controls .explorer-options>summary{display:grid;place-items:center;box-sizing:border-box;list-style:none;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:var(--radius-small);background:var(--paper);color:var(--ink)}.explorer-options>summary::-webkit-details-marker{display:none}.explorer-controls .explorer-options>summary:hover{background:var(--paper-raised)}.explorer-controls .explorer-options svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;cursor:inherit}.explorer-controls .explorer-options>div{top:auto;bottom:calc(100% + .75rem);left:auto;right:0;z-index:7;box-sizing:border-box;max-height:min(280px,40dvh);overflow:auto}.explorer-stage.has-selection .explorer-options>div{left:0;right:auto}.explorer-options>summary:focus-visible{outline:2px solid var(--coral);outline-offset:3px}.explorer-controls:has(.explorer-options[open]){z-index:6}
+@media(min-width:651px){.explorer-stage.has-selection{scroll-margin-top:120px}.explorer-detail{top:-36px;max-height:calc(100% + 20px)}.explorer-stage:fullscreen .explorer-detail,.explorer-stage.is-fullscreen .explorer-detail{top:1rem;max-height:calc(100% - 2rem)}}
+@media(max-width:650px){.explorer-controls .explorer-options>div,.explorer-stage.has-selection .explorer-options>div{width:min(300px,calc(100vw - 3rem));left:auto;right:0;transform:none}.explorer-stage.has-selection .explorer-options>div{max-height:calc(37dvh - 84px)}}
 </style>
