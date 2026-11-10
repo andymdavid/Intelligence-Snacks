@@ -1057,7 +1057,9 @@ export function initialiseExplorer() {
     const active =
       document.fullscreenElement === stage ||
       stage.classList.contains("is-fullscreen");
-    fullscreenButton.textContent = active ? "Exit fullscreen" : "Fullscreen";
+    const fullscreenLabel = active ? "Exit fullscreen" : "Enter fullscreen";
+    fullscreenButton.setAttribute("aria-label", fullscreenLabel);
+    fullscreenButton.title = fullscreenLabel;
     fullscreenButton.setAttribute("aria-pressed", String(active));
     if (!active && expandedMap) {
       inertElements.splice(0).forEach((item) => (item.inert = false));
