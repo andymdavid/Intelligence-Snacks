@@ -6,6 +6,7 @@ import StoryVisual from '@/components/StoryVisual.astro';
 import ContributorRow from '@/components/ContributorRow.astro';
 import { isVisible } from '@/lib/content';
 import { canonicalPublicGraph } from '@/lib/public-graph-data';
+import { pilotIdeas } from '@/lib/agent-knowledge';
 import { parseTranscript } from '@/lib/transcript';
 
 export async function getStaticPaths() {
@@ -15,6 +16,7 @@ export async function getStaticPaths() {
 const { episode } = Astro.props;
 const graphEpisode = canonicalPublicGraph().candidates.find((item:any) => item.episodeHref === `/episodes/${episode.id}/`);
 const { Content } = await render(episode);
+const sharedIdeas = pilotIdeas().filter(idea=>idea.sources.some(source=>source.observation.episode.url===new URL(`/episodes/${episode.id}/`,Astro.site).href));
 const participants = await Promise.all(episode.data.participants.map((participant) => getEntry(participant)));
 const contributors = participants.filter((person): person is NonNullable<typeof person> => Boolean(person));
 const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status) && data.sourceEpisode.id === episode.id);
@@ -74,6 +76,7 @@ const jsonLd = [{
       </div>
     </div>
   </header>
+  {sharedIdeas.length>0&&<section class="page-shell episode-shared-ideas" aria-label="Shared ideas in this episode"><h2>Follow these ideas across episodes</h2><ul>{sharedIdeas.map(idea=><li><a href={idea.pageUrl!}>{idea.title} ↗</a></li>)}</ul></section>}
   <div class="page-shell episode-media">
     {youtubeId
       ? <iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} title={`Episode ${episode.data.number}: ${episode.data.title}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -151,3 +154,5 @@ revealTranscriptTarget(); window.addEventListener('hashchange', revealTranscript
   @media (max-width: 800px) { .episode-head__details, .episode-intro { grid-template-columns: 1fr; } .episode-head__details { gap: 2.5rem; } .episode-intro > div { grid-column: 1; } .episode-head__meta { align-items: flex-start; flex-direction: column; } }
   @media (max-width: 620px) { .episode-media :global(.story-visual), .episode-media iframe { height: auto; aspect-ratio: 16 / 9; } .audio-link { width: 100%; justify-content: space-between; margin-top: .5rem; } .episode-snack-grid { grid-template-columns: 1fr; } .transcript-reader summary { min-height: 4.5rem; } .transcript-turn { grid-template-columns: 1fr; gap: .75rem; } .transcript-turn > div { justify-content: flex-start; } }
 </style>
+
+<style>.episode-shared-ideas{padding-block:1.5rem}.episode-shared-ideas h2{font:500 1.4rem var(--font-display);margin-top:0}.episode-shared-ideas ul{list-style:none;padding:0;display:flex;gap:.75rem 1.5rem;flex-wrap:wrap}.episode-shared-ideas a{font-size:.9rem;text-decoration:underline;text-underline-offset:3px}</style>

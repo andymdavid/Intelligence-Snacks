@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "status": "Prepared question set; not a completed AI-answer or citation baseline",
+  "procedure": "Run the same questions against ordinary archive search and graph-assisted retrieval. Record platform/model/date, prompts and tool access, source URLs found, exact citations, attribution errors, unsupported conclusions and preservation of distinct perspectives. Human/editorial relevance judgements are needed; unit tests and lexical match scores are not answer-quality measurements.",
+  "questions": [
+    {"question":"How do persistent agents retain useful context between sessions?","startingThemes":["agent-continuity","graph-memory"],"reviewFocus":"Distinguish persistent operational work from personal learning or news graphs."},
+    {"question":"What should remain under human review when agents do the work?","startingThemes":["human-review","consequential-escalation"],"reviewFocus":"Preserve the scope and consequences of each source's review proposal."},
+    {"question":"Why might agents use code rather than operate a graphical interface?","startingThemes":["code-first-workflows","mature-tool-reuse"],"reviewFocus":"Keep interface and mature-tool tradeoffs; do not claim a universal best approach."},
+    {"question":"How can people and agents share a work record without losing context?","startingThemes":["shared-work-layers","anchored-work","durable-records"],"reviewFocus":"Separate source records, collaboration layers and UI choices."},
+    {"question":"What limits the number of agents one person can supervise?","startingThemes":["attention-bottleneck","protecting-attention"],"reviewFocus":"Distinguish arguments about human attention from measured capacity limits."},
+    {"question":"How can an agent's authority be bounded?","startingThemes":["bounded-authority","cryptographic-authority","agent-accountability"],"reviewFocus":"Attribute proposals and examples without asserting untested security guarantees."},
+    {"question":"Does a more intelligent model always produce a more useful result?","startingThemes":["reliable-outcomes","selective-model-use","useful-output"],"reviewFocus":"Preserve differing tasks and operating constraints."},
+    {"question":"How does a visual map help people and agents understand a system together?","startingThemes":["visual-shared-understanding"],"reviewFocus":"Keep diagrams, code schematics and task trees distinct."},
+    {"question":"How should a business test an AI idea before committing to a large build?","startingThemes":["cheap-experiments","iterative-discovery"],"reviewFocus":"Distinguish source suggestions from universal business or financial advice."},
+    {"question":"How do agents change the value of operational knowledge?","startingThemes":["operational-knowledge","business-ownership"],"reviewFocus":"Attribute ownership and transferability arguments to their sources."},
+    {"question":"What changes when generating content becomes cheap?","startingThemes":["trust-distribution","marketing-originality","craft-after-automation"],"reviewFocus":"Preserve the separate claims about trust, distribution and craft."},
+    {"question":"Where do convenience and private control pull in different directions?","startingThemes":["privacy-convenience","private-backends"],"reviewFocus":"Retain different product and deployment contexts."}
+  ],
+  "visibilityBaseline": {"status":"Not measured","requires":"Authorised Search Console/Bing Webmaster Tools access, crawl logs and referral/conversion analytics; public deployment alone is not indexing or citation evidence."}
+}

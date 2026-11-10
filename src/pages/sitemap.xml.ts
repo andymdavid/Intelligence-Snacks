@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { pilotIdeas } from '../lib/agent-knowledge';
 import type { APIRoute } from 'astro';
 
 const site = 'https://intelligencesnacks.com';
@@ -19,6 +20,9 @@ export const GET: APIRoute = async () => {
     { path: '/episodes/', lastmod: iso(latest) },
     { path: '/topics/', lastmod: iso(latest) },
     { path: '/graph/', lastmod: iso(latest) },
+    { path: '/ideas/' },
+    { path: '/for-agents/' },
+    ...pilotIdeas().map(idea => ({path: `/ideas/${idea.id}/`, lastmod: idea.guideUpdatedAt||idea.review.reviewedAt})),
     { path: '/contributors/' },
     ...people.map((person) => ({ path: `/contributors/${person.id}/`, image: person.data.image ? new URL(person.data.image, site).href : undefined })),
     ...topics.map((topic) => ({ path: `/topics/${topic.id}/`, lastmod: iso(latest) })),

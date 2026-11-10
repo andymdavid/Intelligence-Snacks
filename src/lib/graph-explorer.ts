@@ -668,6 +668,13 @@ export function initialiseExplorer() {
       source.href = node.href;
       actions.append(source);
     }
+    const readingPage = (node as PositionedNode & { readingHref?: string })
+      .readingHref;
+    if (readingPage) {
+      const guide = el("a", "Read the shared-idea guide ↗", "text-link");
+      guide.href = readingPage;
+      actions.append(guide);
+    }
     const share = el("button", "Copy idea link", "text-link");
     share.type = "button";
     share.addEventListener("click", async () => {
