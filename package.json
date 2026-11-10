@@ -16,10 +16,11 @@
     "graph:propose-shared": "bun scripts/propose-shared-ideas.ts",
     "graph:check": "bun scripts/check-graph.ts",
     "graph:test": "bun test tests/graph.test.ts tests/graph-explorer-layout.test.ts tests/graph-explorer-discovery.test.ts tests/graph-shared-review.test.ts",
-    "agent:test": "bun test tests/agent-knowledge.test.ts",
+    "agent:test": "bun test tests/agent-knowledge.test.ts tests/agent-search.test.ts",
     "agent:browser": "node scripts/agent-access-browser.mjs",
     "graph:browser": "node scripts/graph-explorer-browser.mjs",
-    "graph:preview:package": "node scripts/package-graph-preview.mjs"
+    "graph:preview:package": "node scripts/package-graph-preview.mjs",
+    "agent:evaluate": "node scripts/evaluate-agent-retrieval.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
