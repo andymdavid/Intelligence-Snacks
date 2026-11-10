@@ -1,0 +1,851 @@
+{
+  "runAt": "2026-11-10T09:30:30.995Z",
+  "base": "https://intelligencesnacks.com",
+  "contentRevision": "bbea73dfe3bedaf09f08eacacf5325f849ef485d519b331d5b984c7368f752b4",
+  "archiveIndexSha256": "5cc9f282748033295b95bb686ee66bec528e04da3d021fd9a01faa481a40e499",
+  "method": "Actual browser search UI, unchanged natural-language questions plus separately declared editorial keyword reformulations. Research client runs the unchanged natural-language questions. Result availability is not relevance or generated-answer quality.",
+  "summary": {
+    "ordinaryQuestionWithResults": 0,
+    "ordinaryKeywordsWithResults": 12,
+    "researchQuestionWithResults": 12,
+    "questions": 12
+  },
+  "rows": [
+    {
+      "question": "How do persistent agents retain useful context between sessions?",
+      "ordinaryQuestion": {
+        "query": "How do persistent agents retain useful context between sessions?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "agent context",
+        "count": "15 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-agents-need-standards-and-human-context/",
+            "title": "AI Agents Need Standards and Human Context"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/canvas-threads-give-ai-agent-chats-context/",
+            "title": "Canvas Threads Give AI Agent Chats Context"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/compression-cuts-ai-agent-context-costs/",
+            "title": "Compression Cuts AI Agent Context Costs"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/the-harness-determines-the-work/",
+            "title": "An agent harness controls context, tools and feedback"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/inspectable-records-keep-ai-agent-work-moving/",
+            "title": "Inspectable Records Keep AI Agent Work Moving"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "knowledge:3d529899-5519-43e1-a004-14b6ce648762",
+          "title": "One thread, one agent session",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/3d529899-5519-43e1-a004-14b6ce648762.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-065/",
+          "score": 20.011262414168357
+        },
+        {
+          "id": "knowledge:d0b672d8-e209-44f0-b71e-cd2a8285b26b",
+          "title": "Persistent computer deployment",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/d0b672d8-e209-44f0-b71e-cd2a8285b26b.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-074/",
+          "score": 19.30277810112495
+        },
+        {
+          "id": "canonical:agent-continuity",
+          "title": "Agent runtimes and persistent work",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/agent-continuity.json",
+          "citationUrl": "https://intelligencesnacks.com/ideas/agent-continuity/",
+          "score": 18.668584344759477
+        },
+        {
+          "id": "knowledge:c436b270-59e1-4418-87c4-d18db8f3db49",
+          "title": "Two-session attention limit",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/c436b270-59e1-4418-87c4-d18db8f3db49.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-065/",
+          "score": 16.733662686393174
+        },
+        {
+          "id": "knowledge:e70cc105-03af-4652-a018-654bb5f94702",
+          "title": "Parallel sessions obscure progress",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/e70cc105-03af-4652-a018-654bb5f94702.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-065/",
+          "score": 16.733662686393174
+        }
+      ]
+    },
+    {
+      "question": "What should remain under human review when agents do the work?",
+      "ordinaryQuestion": {
+        "query": "What should remain under human review when agents do the work?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "human review",
+        "count": "12 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/human-checkpoints-keep-ai-agent-work-aligned/",
+            "title": "Human Checkpoints Keep AI Agent Work Aligned"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/who-checks-the-ai-reviewer/",
+            "title": "Who checks the AI reviewer?"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/why-ai-agents-still-need-human-direction/",
+            "title": "Why AI Agents Still Need Human Direction"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/generation-is-easier-than-steering/",
+            "title": "Long agent runs depend on reliable feedback"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-cant-scale-an-advisers-attention/",
+            "title": "AI can’t scale an adviser’s attention"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "canonical:human-review",
+          "title": "Human review and inspectable work",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/human-review.json",
+          "citationUrl": "https://intelligencesnacks.com/ideas/human-review/",
+          "score": 25.778389091444623
+        },
+        {
+          "id": "knowledge:79dc4798-7344-4e26-a155-e508d03cdc84",
+          "title": "Human review translates world problems for agents",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/79dc4798-7344-4e26-a155-e508d03cdc84.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-060/#transcript-turn-55",
+          "score": 22.280315045606024
+        },
+        {
+          "id": "knowledge:78ff3021-9fd0-47fb-b862-1e338f3a7610",
+          "title": "Human care remains a constraint on team size and quality",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/78ff3021-9fd0-47fb-b862-1e338f3a7610.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-079/#transcript-turn-139",
+          "score": 20.591699187081314
+        },
+        {
+          "id": "knowledge:4e569ba7-0a13-489a-83a3-b56758a393c7",
+          "title": "Delegated work needs recovery and review loops",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/4e569ba7-0a13-489a-83a3-b56758a393c7.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-067/#transcript-turn-128",
+          "score": 17.09466100618768
+        },
+        {
+          "id": "knowledge:939b007a-3bbf-4cda-96aa-e69e142094f5",
+          "title": "Automation concentrates human work into hard cases",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/939b007a-3bbf-4cda-96aa-e69e142094f5.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-071/#transcript-turn-98",
+          "score": 15.10865745883044
+        }
+      ]
+    },
+    {
+      "question": "Why might agents use code rather than operate a graphical interface?",
+      "ordinaryQuestion": {
+        "query": "Why might agents use code rather than operate a graphical interface?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "code",
+        "count": "46 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/code-directed-workflows-keep-ai-agents-on-track/",
+            "title": "Code-Directed Workflows Keep AI Agents on Track"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-writes-examples-not-core-library-code/",
+            "title": "AI Writes Examples, Not Core Library Code"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/put-the-workflow-in-code/",
+            "title": "Put the workflow in code"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/turn-repeatable-ai-agent-work-into-code/",
+            "title": "Turn Repeatable AI Agent Work Into Code"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/visual-schematics-make-code-bases-inspectable/",
+            "title": "Visual Schematics Make Code Bases Inspectable"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "knowledge:e166d8bc-80a8-41d3-b4f3-b4e87a329500",
+          "title": "Public interfaces can use private user-owned backends",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/e166d8bc-80a8-41d3-b4f3-b4e87a329500.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-072/#transcript-turn-72",
+          "score": 19.37055864243907
+        },
+        {
+          "id": "knowledge:2bb891e3-3272-4b59-aa2c-b107ab4a85d2",
+          "title": "Declarative pipelines alternate code and agents",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/2bb891e3-3272-4b59-aa2c-b107ab4a85d2.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-071/#transcript-turn-121",
+          "score": 18.61100733403353
+        },
+        {
+          "id": "knowledge:0a21e139-01ce-4cc2-a1ad-407e887a1b4d",
+          "title": "The enduring interface is for checking the agent's homework",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/0a21e139-01ce-4cc2-a1ad-407e887a1b4d.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-076/#transcript-turn-90",
+          "score": 18.262790820275267
+        },
+        {
+          "id": "knowledge:1ad44972-19ff-4e07-bb50-f9543d13f1b4",
+          "title": "Computer-use agents bridge tool expertise",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/1ad44972-19ff-4e07-bb50-f9543d13f1b4.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-076/#transcript-turn-82",
+          "score": 17.56797506942479
+        },
+        {
+          "id": "knowledge:9954c724-df44-4f7f-955a-c5e868b070c6",
+          "title": "Agent interfaces should follow the work mode",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/9954c724-df44-4f7f-955a-c5e868b070c6.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-077/#transcript-turn-45",
+          "score": 17.08196497053786
+        }
+      ]
+    },
+    {
+      "question": "How can people and agents share a work record without losing context?",
+      "ordinaryQuestion": {
+        "query": "How can people and agents share a work record without losing context?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "shared work",
+        "count": "16 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/shared-automation-makes-marketing-output-indistinguishable/",
+            "title": "Shared Automation Makes Marketing Output Indistinguishable"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/when-agents-need-a-shared-layer/",
+            "title": "When agents need a shared layer"
+          },
+          {
+            "url": "https://intelligencesnacks.com/episodes/episode-065/",
+            "title": "Episode 65: Working with AI Agents"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/keep-agent-work-small-enough-to-steer/",
+            "title": "Keep agent work small enough to steer"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/a-planning-canvas-connects-whiteboards-and-task-lists/",
+            "title": "A Planning Canvas Connects Whiteboards and Task Lists"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "canonical:human-adoption",
+          "title": "Adoption through people and operating context",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/human-adoption.json",
+          "citationUrl": null,
+          "score": 25.8884414195727
+        },
+        {
+          "id": "canonical:durable-records",
+          "title": "When work needs durable records",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/durable-records.json",
+          "citationUrl": null,
+          "score": 22.780690330238137
+        },
+        {
+          "id": "knowledge:ca62f6de-748c-4916-89c7-9c7892de429e",
+          "title": "Durable records enable agentic business",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/ca62f6de-748c-4916-89c7-9c7892de429e.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-074/",
+          "score": 18.791468242619526
+        },
+        {
+          "id": "knowledge:66fad37e-4d64-4766-b9c6-d1832e0c962f",
+          "title": "Identity-bound workspaces can share infrastructure",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/66fad37e-4d64-4766-b9c6-d1832e0c962f.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-067/#transcript-turn-94",
+          "score": 16.392132526064323
+        },
+        {
+          "id": "knowledge:1c7f1e36-6209-420d-bb53-6c86a26a3492",
+          "title": "Model variants may share a training base",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/1c7f1e36-6209-420d-bb53-6c86a26a3492.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-073/",
+          "score": 15.299599283472595
+        }
+      ]
+    },
+    {
+      "question": "What limits the number of agents one person can supervise?",
+      "ordinaryQuestion": {
+        "query": "What limits the number of agents one person can supervise?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "attention",
+        "count": "31 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-cant-scale-an-advisers-attention/",
+            "title": "AI can’t scale an adviser’s attention"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-coding-agents-are-power-tools/",
+            "title": "AI coding agents work like power tools"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-gives-financial-advisers-more-client-time/",
+            "title": "AI gives financial advisers more client time"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/automation-leaves-humans-the-hard-decisions/",
+            "title": "Automation leaves humans the hard decisions"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/when-four-sessions-blur-the-work/",
+            "title": "When four sessions blur the work"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "canonical:attention-bottleneck",
+          "title": "Human attention limits agent scale",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/attention-bottleneck.json",
+          "citationUrl": null,
+          "score": 19.282616284399538
+        },
+        {
+          "id": "knowledge:591d3615-102f-466d-97bf-0bc6c3eca770",
+          "title": "One cryptographic identity can connect agent systems",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/591d3615-102f-466d-97bf-0bc6c3eca770.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-076/#transcript-turn-219",
+          "score": 13.982914625425144
+        },
+        {
+          "id": "knowledge:1cca3c02-4abc-4fd2-b9e0-e79fab384e53",
+          "title": "One identity can index a virtual drive across computers",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/1cca3c02-4abc-4fd2-b9e0-e79fab384e53.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-072/#transcript-turn-49",
+          "score": 13.708040206694923
+        },
+        {
+          "id": "knowledge:5d34665c-b9a1-40ec-9a21-b30ec52dea93",
+          "title": "Underspecified destinations limit autonomy",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/5d34665c-b9a1-40ec-9a21-b30ec52dea93.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-060/#transcript-turn-53",
+          "score": 13.096295660059994
+        },
+        {
+          "id": "knowledge:c436b270-59e1-4418-87c4-d18db8f3db49",
+          "title": "Two-session attention limit",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/c436b270-59e1-4418-87c4-d18db8f3db49.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-065/",
+          "score": 13.096295660059994
+        }
+      ]
+    },
+    {
+      "question": "How can an agent's authority be bounded?",
+      "ordinaryQuestion": {
+        "query": "How can an agent's authority be bounded?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "authority",
+        "count": "3 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/persistent-ai-assistants-can-leak-your-address/",
+            "title": "Persistent AI Assistants Can Leak Your Address"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/shared-automation-makes-marketing-output-indistinguishable/",
+            "title": "Shared Automation Makes Marketing Output Indistinguishable"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/when-an-agent-can-pay/",
+            "title": "When an agent can pay"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "canonical:bounded-authority",
+          "title": "Bounded authority and isolated work",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/bounded-authority.json",
+          "citationUrl": null,
+          "score": 23.726836471587227
+        },
+        {
+          "id": "knowledge:a403f2d3-787f-4694-9d9d-5139bdedfec9",
+          "title": "Shared agents need directional dispatch authority",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/a403f2d3-787f-4694-9d9d-5139bdedfec9.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-079/#transcript-turn-109",
+          "score": 17.0078226688368
+        },
+        {
+          "id": "knowledge:c42ce005-cb68-422c-a6a5-4339cc0f27d8",
+          "title": "Known events launch bounded agent jobs",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/c42ce005-cb68-422c-a6a5-4339cc0f27d8.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-079/#transcript-turn-99",
+          "score": 14.366746500892521
+        },
+        {
+          "id": "knowledge:61bf949b-805d-4798-a4ff-8c5207a8c242",
+          "title": "Cryptographic command authority",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/61bf949b-805d-4798-a4ff-8c5207a8c242.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-065/",
+          "score": 13.730222941061616
+        },
+        {
+          "id": "knowledge:74003759-043d-407e-b6fd-df1c42cd5150",
+          "title": "Separate data access requires cryptographic authority",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/74003759-043d-407e-b6fd-df1c42cd5150.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-079/#transcript-turn-97",
+          "score": 13.730222941061616
+        }
+      ]
+    },
+    {
+      "question": "Does a more intelligent model always produce a more useful result?",
+      "ordinaryQuestion": {
+        "query": "Does a more intelligent model always produce a more useful result?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "model",
+        "count": "58 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/better-ai-application-beats-more-model-intelligence/",
+            "title": "Better AI Application Beats More Model Intelligence"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/choose-ai-models-by-task-and-cost/",
+            "title": "Choose AI Models by Task and Cost"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/coding-models-have-working-personalities/",
+            "title": "Coding models have working personalities"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/decision-models-could-make-coding-agents-cheaper/",
+            "title": "Decision Models Could Make Coding Agents Cheaper"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/decision-models-keep-software-workflows-deterministic/",
+            "title": "Decision Models Keep Software Workflows Deterministic"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "knowledge:853d0216-4c1e-45b5-9c95-a0bd8f61e6ec",
+          "title": "Can a system become too intelligent to be useful?",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/853d0216-4c1e-45b5-9c95-a0bd8f61e6ec.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-060/#transcript-turn-108",
+          "score": 26.549418416098142
+        },
+        {
+          "id": "knowledge:4cdb0ed5-1e6b-461e-9f2d-b162f998fe5c",
+          "title": "Efficiency makes local and open models more practical",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/4cdb0ed5-1e6b-461e-9f2d-b162f998fe5c.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-061/#transcript-turn-74",
+          "score": 16.902862194699203
+        },
+        {
+          "id": "knowledge:ffabccd7-df30-44d2-a24a-a0713cdbc9a3",
+          "title": "Open models commoditise useful capability",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/ffabccd7-df30-44d2-a24a-a0713cdbc9a3.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-060/#transcript-turn-88",
+          "score": 15.966597391563637
+        },
+        {
+          "id": "knowledge:1c25a743-0bd9-44ef-aa7b-ff9f5a3a143c",
+          "title": "There is always a slowest part of the process",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/1c25a743-0bd9-44ef-aa7b-ff9f5a3a143c.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-078/#transcript-turn-61",
+          "score": 14.545655998629876
+        },
+        {
+          "id": "knowledge:6c1d9588-797e-4786-ac81-03ccc54c4eca",
+          "title": "Smarter systems matter more than smarter models",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/6c1d9588-797e-4786-ac81-03ccc54c4eca.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-053/#transcript-turn-245",
+          "score": 14.491814606049328
+        }
+      ]
+    },
+    {
+      "question": "How does a visual map help people and agents understand a system together?",
+      "ordinaryQuestion": {
+        "query": "How does a visual map help people and agents understand a system together?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "visual",
+        "count": "12 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/visual-schematics-make-code-bases-inspectable/",
+            "title": "Visual Schematics Make Code Bases Inspectable"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/give-every-recurring-job-a-visual-home/",
+            "title": "Give every recurring job a visual home"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/a-canvas-helps-make-ai-instructions-clearer/",
+            "title": "A canvas helps make AI instructions clearer"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/a-planning-canvas-connects-whiteboards-and-task-lists/",
+            "title": "A Planning Canvas Connects Whiteboards and Task Lists"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/canvas-threads-give-ai-agent-chats-context/",
+            "title": "Canvas Threads Give AI Agent Chats Context"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "knowledge:53761af9-9589-40c9-8edf-937eb544802d",
+          "title": "A codebase map works like a book index",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/53761af9-9589-40c9-8edf-937eb544802d.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-075/",
+          "score": 18.106966509079722
+        },
+        {
+          "id": "canonical:visual-shared-understanding",
+          "title": "Visual maps for shared understanding",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/visual-shared-understanding.json",
+          "citationUrl": null,
+          "score": 17.82030063222234
+        },
+        {
+          "id": "knowledge:3a9b5b72-599b-4f1e-b94b-1259e6f0d384",
+          "title": "Device identities can map back to a person",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/3a9b5b72-599b-4f1e-b94b-1259e6f0d384.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-072/#transcript-turn-82",
+          "score": 17.350905503109207
+        },
+        {
+          "id": "knowledge:9a8f5a0b-b08c-4fc6-b09d-fd9a0c50808c",
+          "title": "Map nearby knowledge gaps",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/9a8f5a0b-b08c-4fc6-b09d-fd9a0c50808c.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-066/",
+          "score": 17.350905503109207
+        },
+        {
+          "id": "knowledge:a2af0ebe-885e-486e-9830-9aed56ade827",
+          "title": "Autocomplete as a demand map",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/a2af0ebe-885e-486e-9830-9aed56ade827.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-074/",
+          "score": 15.593047585556834
+        }
+      ]
+    },
+    {
+      "question": "How should a business test an AI idea before committing to a large build?",
+      "ordinaryQuestion": {
+        "query": "How should a business test an AI idea before committing to a large build?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "experiment",
+        "count": "17 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-makes-mvp-experiments-faster-and-cheaper/",
+            "title": "AI Makes MVP Experiments Faster and Cheaper"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/better-ai-application-beats-more-model-intelligence/",
+            "title": "Better AI Application Beats More Model Intelligence"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/the-founders-portfolio/",
+            "title": "The founder’s portfolio"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-agent-prototypes-can-replace-upfront-plans/",
+            "title": "AI Agent Prototypes Can Replace Upfront Plans"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-agent-turns-pdf-comments-into-edits/",
+            "title": "AI Agent Turns PDF Comments Into Edits"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "canonical:cheap-experiments",
+          "title": "Cheap experiments before large commitments",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/cheap-experiments.json",
+          "citationUrl": null,
+          "score": 34.49741661589071
+        },
+        {
+          "id": "knowledge:9a345c37-8f00-419d-b849-c4886bba9c2d",
+          "title": "Build context through dialogue",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/9a345c37-8f00-419d-b849-c4886bba9c2d.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-065/",
+          "score": 22.50850532728809
+        },
+        {
+          "id": "knowledge:3b256115-97cd-4216-bea3-4a91621ec4b9",
+          "title": "Tests provide a way back from AI drift",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/3b256115-97cd-4216-bea3-4a91621ec4b9.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-064/#transcript-turn-144",
+          "score": 19.60569580034396
+        },
+        {
+          "id": "knowledge:d90edd0a-1b5d-4feb-a520-0a68958faff6",
+          "title": "Timestamped ideas become podcast navigation",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/d90edd0a-1b5d-4feb-a520-0a68958faff6.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-070/",
+          "score": 17.737556126294088
+        },
+        {
+          "id": "knowledge:5c061244-973f-4589-89fe-df8c87fb9873",
+          "title": "Tests and integrations form a replacement mold",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/5c061244-973f-4589-89fe-df8c87fb9873.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-064/#transcript-turn-159",
+          "score": 16.405350390852284
+        }
+      ]
+    },
+    {
+      "question": "How do agents change the value of operational knowledge?",
+      "ordinaryQuestion": {
+        "query": "How do agents change the value of operational knowledge?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "operational knowledge",
+        "count": "6 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/domain-experts-can-build-software/",
+            "title": "Domain experts can build software from operational knowledge"
+          },
+          {
+            "url": "https://intelligencesnacks.com/topics/software-systems/",
+            "title": "Software Systems"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-acquisitions-need-patient-operators/",
+            "title": "AI Acquisitions Need Patient Operators"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/training-ai-agents-reduces-key-person-risk/",
+            "title": "Training AI Agents Reduces Key-Person Risk"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/generation-is-easier-than-steering/",
+            "title": "Long agent runs depend on reliable feedback"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "knowledge:0ae0f2f3-3964-42f0-ad62-1ee7e9666564",
+          "title": "Agent onboarding encodes operational knowledge",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/0ae0f2f3-3964-42f0-ad62-1ee7e9666564.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-061/#transcript-turn-121",
+          "score": 31.45498015841426
+        },
+        {
+          "id": "knowledge:132bcfa3-6945-4743-af7c-3199747c532e",
+          "title": "Operational experts must own agent training",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/132bcfa3-6945-4743-af7c-3199747c532e.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-061/#transcript-turn-128",
+          "score": 27.615271973892657
+        },
+        {
+          "id": "canonical:operational-knowledge",
+          "title": "Making operational knowledge transferable",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/operational-knowledge.json",
+          "citationUrl": null,
+          "score": 23.473057815652986
+        },
+        {
+          "id": "knowledge:40db4f99-55fc-42ba-93b6-67b96f3fcacb",
+          "title": "Visual prototypes should precede expensive agent changes",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/40db4f99-55fc-42ba-93b6-67b96f3fcacb.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-076/#transcript-turn-72",
+          "score": 15.980700372318827
+        },
+        {
+          "id": "knowledge:9d872f9a-b94f-4b17-ba12-605cbd983342",
+          "title": "Acquisition economics price operational complexity",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/9d872f9a-b94f-4b17-ba12-605cbd983342.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-074/",
+          "score": 15.540331548957868
+        }
+      ]
+    },
+    {
+      "question": "What changes when generating content becomes cheap?",
+      "ordinaryQuestion": {
+        "query": "What changes when generating content becomes cheap?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "content",
+        "count": "6 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/snacks/ai-noise-separates-public-feeds-and-group-chats/",
+            "title": "AI Noise Separates Public Feeds and Group Chats"
+          },
+          {
+            "url": "https://intelligencesnacks.com/episodes/episode-075/",
+            "title": "Episode 75: The Human Bottleneck"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/marketing-gets-easier-to-automate-harder-to-make-original/",
+            "title": "Marketing gets easier to automate, harder to make original"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/shared-automation-makes-marketing-output-indistinguishable/",
+            "title": "Shared Automation Makes Marketing Output Indistinguishable"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/the-agent-leaves-but-the-server-stays/",
+            "title": "The agent leaves but the server stays"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "canonical:trust-distribution",
+          "title": "Trust when content is abundant",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/trust-distribution.json",
+          "citationUrl": null,
+          "score": 13.76430489811569
+        },
+        {
+          "id": "canonical:craft-after-automation",
+          "title": "Craft after cheap generation",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/craft-after-automation.json",
+          "citationUrl": null,
+          "score": 12.619984111815556
+        },
+        {
+          "id": "knowledge:ac76fa1f-2d52-4601-bcff-67b8526ee645",
+          "title": "Cheap iteration reduces speculative planning",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/ac76fa1f-2d52-4601-bcff-67b8526ee645.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-075/",
+          "score": 12.000944903409334
+        },
+        {
+          "id": "knowledge:cfb50416-dc21-444c-bf11-265e037b0c0a",
+          "title": "Cheap code does not make judgment free",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/cfb50416-dc21-444c-bf11-265e037b0c0a.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-068/#transcript-turn-43",
+          "score": 12.000944903409334
+        },
+        {
+          "id": "canonical:security-pressure",
+          "title": "Automation changes security pressure",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/security-pressure.json",
+          "citationUrl": null,
+          "score": 11.610567401951917
+        }
+      ]
+    },
+    {
+      "question": "Where do convenience and private control pull in different directions?",
+      "ordinaryQuestion": {
+        "query": "Where do convenience and private control pull in different directions?",
+        "count": "0 results",
+        "results": []
+      },
+      "ordinaryKeywords": {
+        "query": "privacy",
+        "count": "3 results",
+        "results": [
+          {
+            "url": "https://intelligencesnacks.com/topics/privacy-security/",
+            "title": "Privacy & Security"
+          },
+          {
+            "url": "https://intelligencesnacks.com/snacks/persistent-ai-assistants-can-leak-your-address/",
+            "title": "Persistent AI Assistants Can Leak Your Address"
+          },
+          {
+            "url": "https://intelligencesnacks.com/episodes/episode-074/",
+            "title": "Episode 74: Normie Mode"
+          }
+        ]
+      },
+      "researchQuestion": [
+        {
+          "id": "canonical:privacy-convenience",
+          "title": "Convenience and private control",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/ideas/privacy-convenience.json",
+          "citationUrl": null,
+          "score": 38.2107741068353
+        },
+        {
+          "id": "knowledge:009c91fd-67c2-45ba-b001-703fe1d48664",
+          "title": "Provider convenience can become business control",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/009c91fd-67c2-45ba-b001-703fe1d48664.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-053/",
+          "score": 21.979542530935447
+        },
+        {
+          "id": "knowledge:3c5ec445-22f8-4501-8a55-ca1a712fbdc5",
+          "title": "Local models trade control for capability",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/3c5ec445-22f8-4501-8a55-ca1a712fbdc5.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-053/#transcript-turn-272",
+          "score": 16.66836700944404
+        },
+        {
+          "id": "knowledge:ce8b6688-fb2c-4ca9-858a-57539ae8441e",
+          "title": "Local files can gain cloud convenience without cloud copies",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/ce8b6688-fb2c-4ca9-858a-57539ae8441e.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-072/#transcript-turn-43",
+          "score": 15.751640642625073
+        },
+        {
+          "id": "knowledge:4fa771ef-fc6b-40b7-a2b5-4a8d5f621dd8",
+          "title": "Convenience pushes consumers toward hosted AI",
+          "url": "https://intelligencesnacks.com/api/knowledge/v1/observations/4fa771ef-fc6b-40b7-a2b5-4a8d5f621dd8.json",
+          "citationUrl": "https://intelligencesnacks.com/episodes/episode-067/#transcript-turn-28",
+          "score": 12.637689698469888
+        }
+      ]
+    }
+  ]
+}

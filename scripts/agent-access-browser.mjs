@@ -30,8 +30,8 @@ try {
   assert(
     index.counts.ideas === 47 &&
       index.counts.observations === 526 &&
-      index.counts.publishedIdeaPages === 5,
-    "index advertises actual accepted coverage and pilot scope",
+      index.counts.publishedIdeaPages === 8,
+    "index advertises actual accepted coverage and published guide scope",
   );
   assert(
     response.headers.get("x-robots-tag") === "noindex",
@@ -116,6 +116,21 @@ try {
       "plain text retains title and canonical citation",
     );
   }
+  for (const slug of ['attention-bottleneck', 'bounded-authority', 'mature-tool-reuse']) {
+    await noJS.goto(new URL(`/ideas/${slug}/`, base).href);
+    await noJS.setViewportSize({ width: 390, height: 844 });
+    assert(await noJS.locator('.reading-notes h2').count() === 3, `${slug} has a question-led reading guide`);
+    assert(await noJS.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${slug} fits mobile width`);
+    const references = await noJS.locator('.reading-citations a').evaluateAll(as => as.map(a => a.hash));
+    for (const hash of references) assert(await noJS.locator(hash).count() === 1, `${slug} reading note resolves to its evidence`);
+    if (slug === 'attention-bottleneck') assert((await noJS.locator('.idea-source cite').allTextContents()).includes('Multiple speakers — see transcript'), 'mixed-speaker passage has neutral attribution');
+    await noJS.screenshot({ path: `/tmp/agent-${slug}-mobile.png` });
+  }
+  await noJS.setViewportSize({ width: 1440, height: 1000 });
+  const searchPage = await browser.newPage();
+  await searchPage.goto(new URL('/search/?q=bounded%20authority', base).href, { waitUntil: 'networkidle' });
+  assert(await searchPage.locator('.search-result[href="/ideas/bounded-authority/"]').count() === 1, 'ordinary archive search finds the new authority guide');
+  await searchPage.close();
   await noJS.goto(new URL("/ideas/graph-memory/", base).href);
   await noJS.screenshot({ path: "/tmp/agent-guide-desktop.png" });
   await noJS.setViewportSize({ width: 390, height: 844 });

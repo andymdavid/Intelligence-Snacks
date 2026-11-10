@@ -1,3 +1,4 @@
+import { evidenceAttribution } from '../src/lib/evidence-attribution';
 import { describe, expect, test } from "bun:test";
 import { canonicalPublicGraph } from "../src/lib/public-graph-data";
 import {
@@ -111,3 +112,11 @@ describe("public research records", () => {
     }
   });
 });
+
+ test('mixed-speaker evidence is not presented as one person’s quotation', () => {
+ const evidence = researchData().ideas.find(i=>i.id==='attention-bottleneck')!.sources.find(s=>s.observation.id==='knowledge:1df0dabb-28b8-4159-8f72-84d57b7ec8e8')!.observation.evidence[0]!;
+ expect(evidence.speaker).toBe('Kane');
+ expect(evidenceAttribution(evidence)).toBe('Multiple speakers — see transcript');
+ expect(evidenceAttribution({excerpt:'Pete\n04:30\nAn example.',speaker:'Pete'})).toBe('Pete');
+ expect(evidenceAttribution({excerpt:'An unlabeled passage.',speaker:null})).toBe('Speaker not identified');
+ });
