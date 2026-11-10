@@ -598,6 +598,9 @@ export function initialiseExplorer() {
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     if (id) {
       renderDetail(byId.get(id)!);
+      if (window.matchMedia("(min-width: 651px)").matches && !document.fullscreenElement && !stage.classList.contains("is-fullscreen") && panel.getBoundingClientRect().top < 72) {
+        stage.scrollIntoView({block:"start",behavior:"instant"});
+      }
       fit(selectedNeighbours());
       status.textContent = `Selected: ${byId.get(id)!.title}`;
     } else {
@@ -1185,6 +1188,12 @@ export function initialiseExplorer() {
   stage.addEventListener(
     "keydown",
     (event) => {
+      const options = $<HTMLDetailsElement>(".explorer-options");
+      if (event.key === "Escape" && options.open) {
+        options.open = false;
+        options.querySelector<HTMLElement>("summary")?.focus();
+        event.preventDefault(); event.stopPropagation(); return;
+      }
       if (!expandedMap) return;
       if (event.key === "Escape") {
         event.preventDefault();
