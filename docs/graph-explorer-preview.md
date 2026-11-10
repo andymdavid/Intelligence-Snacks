@@ -11,6 +11,10 @@ The design was approved for implementation in the originating Flight Deck thread
 - Mobile selection presents details beneath the map. Mouse drag, wheel zoom, touch pan/pinch and explicit zoom controls are supported; animated camera moves respect reduced motion.
 - Existing site fonts, header, colour tokens and editorial controls are reused.
 
+The shared-theme ring has been replaced by deterministic source anchors: each connected episode contributes one equal vote to a theme's centroid, followed by a bounded spacing pass around themes and episode neighbourhoods. Layout is computed once from the full graph, so selection and topic scope preserve node positions. Approximate proximity describes source navigation, not semantic similarity or agreement. Source-episode and observation positions remain unchanged.
+
+At the widest scale the map prioritises up to 14 shared-theme labels on desktop and six on narrow screens. Labels use measured font widths, try four placements and suppress collisions; more detail appears when zooming or selecting. Episode labels appear on zoom or focus. Background idea connections are quieter, while hovered and selected connections stay prominent. All published nodes and connections remain available, including optional source links.
+
 Layout neighbourhoods remain explicitly grouped by source episode. Topic scope filters those episodes and hubs linked to their observations; it does not classify every claim into that topic. Source lines are hidden by default and source context is collapsed in the detail panel. Literal search ranks exact, prefix and other title matches ahead of incidental summary matches.
 
 The registry now contains 47 agent-editorial shared themes linking 193 observations across all 21 episodes. The archive-wide pass screened all 526 extracted titles/summaries and the nine family / 71 subtopic catalogue. It checked 161 additional observations against source excerpts and retained 32 prior source reviews. Thirty-seven new themes were added; nine existing hubs were extended rather than duplicated. Twelve themes explicitly compare different perspectives. One new typed development relationship records an explicit later reference to the consumer-inertia discussion; no new contradictions are inferred.
@@ -33,7 +37,7 @@ bun run build
 GRAPH_PREVIEW_URL=http://127.0.0.1:8794 GRAPH_CHROMIUM_EXECUTABLE=/path/to/chrome bun run graph:browser
 ```
 
-The browser smoke covers complete rendering/index, overview labels, deferred evidence, pointer and keyboard selection, exact transcript links, history, overview, zoom/drag, search/empty results, mobile overflow, direct selection with reduced motion, evidence failure and no-JavaScript access. Actual touch-device usability and larger future archives still need human assessment; synthetic checks do not establish these.
+The browser smoke covers complete rendering/index, overview labels, deferred evidence, pointer and keyboard selection, exact transcript links, history, overview, zoom/drag, search/empty results, mobile overflow, direct selection with reduced motion, evidence failure and no-JavaScript access. Actual touch-device usability and larger future archives still need human assessment; synthetic checks do not establish these. The layout iteration also checks non-overlapping overview labels after fonts load, landmark budgets, stable positions through topic changes, source-weight invariance and hub separation.
 
 ## Portable review file
 

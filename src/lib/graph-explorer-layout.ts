@@ -34,7 +34,10 @@ const hash = (id: string) =>
     7,
   );
 /** Source-episode neighbourhoods are navigation, not new semantic edges. Layout is stable across selection. */
-export function positionArchive(nodes: ExplorerNode[]): PositionedNode[] {
+export function positionArchive(
+  nodes: ExplorerNode[],
+  connections: readonly { sourceId: string; targetId: string }[] = [],
+): PositionedNode[] {
   const episodes = nodes
     .filter((node) => node.kind === "episode")
     .sort(
@@ -83,14 +86,52 @@ export function positionArchive(nodes: ExplorerNode[]): PositionedNode[] {
   const hubs = nodes
     .filter((node) => node.kind === "canonical")
     .sort((a, b) => a.id.localeCompare(b.id));
-  hubs.forEach((node, index) => {
-    const angle =
-      (index * 2 * Math.PI) / Math.max(1, hubs.length) - Math.PI / 2;
-    positions.set(node.id, {
-      x: Math.cos(angle) * 390,
-      y: Math.sin(angle) * 390,
-    });
+  // Each source episode gets one vote, so prolific excerpts do not pull a theme
+  // toward a single episode. These anchors describe provenance, not similarity.
+  const byId = new Map(nodes.map(node => [node.id, node]));
+  const sourceEpisodes = new Map(hubs.map(node => [node.id, new Set<string>()]));
+  for (const edge of connections) {
+    for (const [hubId, memberId] of [[edge.sourceId, edge.targetId], [edge.targetId, edge.sourceId]]) {
+      const member = byId.get(memberId!);
+      if (sourceEpisodes.has(hubId!) && member && groups.has(member.episodeId))
+        sourceEpisodes.get(hubId!)!.add(member.episodeId);
+    }
+  }
+  const anchors = hubs.map(node => {
+    const sources = [...sourceEpisodes.get(node.id)!].sort().map(id => groups.get(id)!);
+    const seed = hash(node.id), angle = seed * 2.399963229728653;
+    const x = sources.length ? sources.reduce((sum, p) => sum + p.x, 0) / sources.length : Math.cos(angle) * 250;
+    const y = sources.length ? sources.reduce((sum, p) => sum + p.y, 0) / sources.length : Math.sin(angle) * 250;
+    return { id: node.id, x, y, px: x + Math.cos(angle) * 45, py: y + Math.sin(angle) * 45 };
   });
+  // A bounded deterministic relaxation runs once, never during navigation.
+  // Repulsion creates room around themes and source-episode neighbourhoods.
+  for (let step = 0; step < 180; step++) {
+    const forces = anchors.map(p => ({x: (p.x - p.px) * .045, y: (p.y - p.py) * .045}));
+    anchors.forEach((p, i) => {
+      for (let j = i + 1; j < anchors.length; j++) {
+        const q = anchors[j]!, dx = p.px - q.px, dy = p.py - q.py;
+        const distance = Math.hypot(dx, dy) || .001;
+        if (distance < 210) {
+          const force = (210 - distance) * .27;
+          const fx = dx / distance * force, fy = dy / distance * force;
+          forces[i]!.x += fx; forces[i]!.y += fy;
+          forces[j]!.x -= fx; forces[j]!.y -= fy;
+        }
+      }
+      for (const group of groups.values()) {
+        const dx = p.px - group.x, dy = p.py - group.y;
+        const distance = Math.hypot(dx, dy) || .001;
+        if (distance < 155) {
+          const force = (155 - distance) * .35;
+          forces[i]!.x += dx / distance * force;
+          forces[i]!.y += dy / distance * force;
+        }
+      }
+    });
+    anchors.forEach((p, i) => { p.px += forces[i]!.x; p.py += forces[i]!.y; });
+  }
+  for (const p of anchors) positions.set(p.id, {x:p.px, y:p.py});
   return nodes.map((node) => {
     const group = groups.get(node.episodeId);
     const index = ungrouped.findIndex((other) => other.id === node.id);

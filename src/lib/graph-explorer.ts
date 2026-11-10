@@ -31,7 +31,7 @@ export function initialiseExplorer() {
     nodes: ExplorerNode[];
     allConnections: Edge[];
   };
-  const nodes = positionArchive(model.nodes),
+  const nodes = positionArchive(model.nodes, model.allConnections),
     byId = new Map(nodes.map((node) => [node.id, node]));
   const edges = model.allConnections.filter(
     (edge) => byId.has(edge.sourceId) && byId.has(edge.targetId),
@@ -275,6 +275,16 @@ export function initialiseExplorer() {
     hoverRelated: Set<string> | null = null,
     ranked = nodes,
     paintedScope = -1;
+  const textMetrics = document.createElement("canvas").getContext("2d");
+  const labelWidths = new Map<string, number>();
+  function measureLabel(text: string, fontSize: number) {
+    const key = `${fontSize}:${text}`;
+    if (!labelWidths.has(key)) {
+      if (textMetrics) textMetrics.font = `500 ${fontSize}px "Neue Montreal", Arial, sans-serif`;
+      labelWidths.set(key, textMetrics ? textMetrics.measureText(text).width : text.length * fontSize * .6);
+    }
+    return labelWidths.get(key)!;
+  }
   let pendingPaint = 0;
   function schedulePaint() {
     if (!pendingPaint)
@@ -336,7 +346,9 @@ export function initialiseExplorer() {
                 ? ".025"
                 : key.startsWith("context:")
                   ? ".10"
-                  : ".38",
+                  : hovered
+                    ? ".025"
+                    : ".15",
         );
       }
       ranked = [...nodes].sort(
@@ -349,7 +361,10 @@ export function initialiseExplorer() {
           (b.degree || 0) - (a.degree || 0),
       );
     }
-    const placed: { x: number; y: number; w: number }[] = [];
+    const placed: { x: number; y: number; w: number; h: number }[] = [];
+    let overviewLabels = 0;
+    const overview = !selected && camera.k < .65;
+    const labelBudget = width < 600 ? 6 : 14;
     for (const node of ranked) {
       const group = dotElements.get(node.id)!,
         label = labelElements.get(node.id)!;
@@ -389,33 +404,37 @@ export function initialiseExplorer() {
         isFocus ||
         (selected
           ? active
-          : node.kind === "episode" ||
-            node.kind === "canonical" ||
+          : node.kind === "canonical" ||
+            (node.kind === "episode" && (!overview || sourceLinks.checked)) ||
             (camera.k > 1.05 && node.kind === "concept"));
-      const text =
-        node.title.length > 35 ? node.title.slice(0, 33) + "…" : node.title;
-      const labelWidth = text.length * 6.3;
-      const lx = sx + node.radius * camera.k + 7,
-        ly = sy + 4;
-      const collision = placed.some(
-        (other) =>
-          Math.abs(other.y - ly) < 19 &&
-          lx < other.x + other.w + 8 &&
-          lx + labelWidth + 8 > other.x,
+      if (!eligible || (overview && !isFocus && overviewLabels >= labelBudget)) {
+        attribute(label, "display", "none");
+        continue;
+      }
+      const text = node.title.length > 35 ? node.title.slice(0, 33) + "…" : node.title;
+      const fontSize = isFocus ? 14 : 12;
+      const labelWidth = measureLabel(text, fontSize);
+      const gap = Math.max(node.radius * camera.k, 5) + 7;
+      // Try both sides and vertical placements before hiding a colliding label.
+      const candidates = [
+        {x:sx + gap, y:sy - 9},
+        {x:sx - gap - labelWidth, y:sy - 9},
+        {x:sx - labelWidth / 2, y:sy - gap - 18},
+        {x:sx - labelWidth / 2, y:sy + gap},
+      ];
+      const position = candidates.find(p =>
+        p.x > 5 && p.x + labelWidth < width - 5 && p.y > 50 && p.y + 18 < height - 65 &&
+        !placed.some(other => p.x < other.x + other.w + 10 && p.x + labelWidth + 10 > other.x && p.y < other.y + other.h + 5 && p.y + 18 + 5 > other.y)
       );
-      const visible =
-        eligible &&
-        (isFocus || !collision) &&
-        lx + labelWidth < width - 5 &&
-        lx > 0 &&
-        ly > 50 &&
-        ly < height - 65;
+      const visible = eligible && !!position &&
+        (isFocus || !overview || overviewLabels < labelBudget);
       attribute(label, "display", visible ? "" : "none");
-      if (visible) {
-        placed.push({ x: lx, y: ly, w: labelWidth });
-        attribute(label, "x", String(node.x + node.radius + 7 / camera.k));
-        attribute(label, "y", String(node.y + 4 / camera.k));
-        attribute(label, "font-size", String((isFocus ? 14 : 12) / camera.k));
+      if (visible && position) {
+        placed.push({...position, w:labelWidth, h:18});
+        if (!isFocus) overviewLabels++;
+        attribute(label, "x", String((position.x - width / 2) / camera.k + camera.x));
+        attribute(label, "y", String((position.y + 13 - height / 2) / camera.k + camera.y));
+        attribute(label, "font-size", String(fontSize / camera.k));
         attribute(label, "stroke-width", String(4 / camera.k));
         attribute(label, "opacity", selected && !active ? ".15" : "1");
       }
@@ -513,7 +532,7 @@ export function initialiseExplorer() {
         : "Across the archive";
     $("[data-map-hint]").textContent = id
       ? "Select another node to keep exploring"
-      : "Select a shared idea or conversation";
+      : "Select a theme · zoom for episode labels";
     $<HTMLButtonElement>("[data-back]").disabled =
       !new URL(location.href).searchParams.has("node") && !id;
     updateUrl(id, push);
@@ -1019,4 +1038,5 @@ export function initialiseExplorer() {
     else fit(undefined, false);
   }).observe(map);
   restoreLocation();
+  document.fonts.ready.then(() => { labelWidths.clear(); schedulePaint(); });
 }
