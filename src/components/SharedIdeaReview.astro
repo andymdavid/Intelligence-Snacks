@@ -3,7 +3,7 @@ interface Props { coverage: any }
 const {coverage:c}=Astro.props;
 ---
 <details class="shared-review" data-review-coverage>
- <summary>Shared-idea review: {c.screenedEpisodes}/{c.episodes.length} episode inventories · {c.screenedFamilies}/{c.families.length} topic catalogues screened <span>View coverage ↗</span></summary>
+ <summary>About the shared ideas <span>Review &amp; coverage ↗</span></summary>
  <div class="review-content">
   <h2>What this review covers</h2>
   <p>Reviewed {c.reviewedAt} by Lara (agent). <strong>{c.screenedRecords} of {c.totalRecords} extracted records screened; {c.linkedRecords} source observations linked in {c.themeCount} shared themes.</strong> {c.newSourceChecks} observations were checked against source excerpts in this pass; {c.priorSourceChecks} retain earlier source reviews.</p>

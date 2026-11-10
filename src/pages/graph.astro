@@ -18,7 +18,7 @@ const membership = Object.fromEntries(topics.map((topic:any) => {
 }));
 const classified = data.topicIndex.analyses.reduce((sum:number,item:any)=>sum+item.classifiedWordCount,0);
 const totalWords = data.topicIndex.analyses.reduce((sum:number,item:any)=>sum+item.totalWordCount,0);
-const episodes=raw.nodes.filter((node:any)=>node.kind==='episode');
+
 const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
 ---
 <BaseLayout title="Graph — Intelligence Snacks" description="Explore the archive through its ideas, conversations and source evidence." active="graph">
@@ -34,19 +34,28 @@ const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
       </form>
       <div class="explorer-bar-actions"><label class="explorer-topic"><span class="visually-hidden">Filter by source episode topic</span><select data-topic-filter aria-label="Focus map and results by source episode topic"><option value="">All topics</option>{topics.map((topic:any)=><option value={topic.id}>{topic.name}</option>)}</select></label><button type="button" class="text-link" data-list-toggle aria-expanded="false" aria-controls="explorer-index">Browse the archive ↗</button></div>
     </div>
-    <p id="explorer-search-status" role="status" aria-live="polite" data-search-status class="explorer-search-status">Search every published idea, episode and Snack.</p>
+    <p id="explorer-search-status" role="status" aria-live="polite" data-search-status class="explorer-search-status"></p>
     <section id="explorer-index" class="explorer-index" aria-labelledby="explorer-index-title" hidden>
       <div class="section-heading"><h2 id="explorer-index-title">Find your next idea.</h2><p data-result-count>{raw.nodes.length} records in the published archive</p></div>
       <ul id="explorer-results">{raw.nodes.map((node:any)=><li data-index-node={node.id}><a href={node.href||'https://intelligencesnacks.com/graph/'} data-pick={node.id}><span class="eyebrow">{node.episodeNumber?`Episode ${node.episodeNumber} · `:''}{node.kind==='canonical'?'Reviewed shared concept':node.kind}</span><strong>{node.title}</strong><span>{node.summary}</span><span aria-hidden="true">↗</span></a></li>)}</ul>
     </section>
-    <div class="explorer-perspective"><label><input type="checkbox" data-source-links /> Show source links</label><button type="button" class="text-link" data-clear-topic hidden>Clear topic</button><p data-scope-description>Idea connections are shown; source links add episode and speaker context.</p></div>
-    <nav class="explorer-concepts" aria-label="Shared ideas across episodes"><p class="eyebrow">Shared ideas across episodes · {coverage.themeCount} themes</p><div>{raw.nodes.filter((node:any)=>node.kind==='canonical').map((node:any)=><button type="button" data-concept-pick={node.id} aria-pressed="false">{node.title}<span>{node.episodeCount} episodes</span></button>)}</div><button type="button" class="text-link" data-concepts-toggle aria-expanded="false">Browse all shared ideas</button><p data-concept-empty hidden>No reviewed shared ideas in this topic selection yet. Clear the topic to explore other shared ideas.</p><p>Editorial groupings link distinct observations. Themes sit near their source discussions; spacing is approximate and does not measure agreement. Select a theme to follow its evidence.</p></nav>
-    <div class="explorer-stage">
+    <div class="explorer-tools">
+      <button type="button" class="text-link" data-concepts-toggle aria-expanded="false" aria-controls="shared-ideas">Shared ideas</button>
+      <button type="button" class="text-link" data-clear-topic hidden>Clear topic</button>
+      <details class="explorer-options"><summary>Map options</summary><div>
+        <label><input type="checkbox" data-source-links /> Episode &amp; speaker links</label>
+        <p>Add lines showing which episodes and people each observation comes from.</p>
+        <p data-scope-description></p>
+        <p>Nearby themes share source discussions. Distance does not measure agreement.</p>
+      </div></details>
+    </div>
+    <nav id="shared-ideas" class="explorer-concepts" aria-label="Shared ideas" hidden><div>{raw.nodes.filter((node:any)=>node.kind==='canonical').map((node:any)=><button type="button" data-concept-pick={node.id} aria-pressed="false">{node.title}<span>{node.episodeCount} episodes</span></button>)}</div><p data-concept-empty hidden>No shared ideas in this topic yet. Try another topic.</p></nav>
+    <div class="explorer-stage" id="graph-stage">
       <div class="explorer-map" data-explorer-map role="region" aria-label="Interactive archive map. Drag to pan; use zoom controls. Search or browse the archive for keyboard access.">
         <svg data-explorer-svg role="group" aria-label="All published nodes arranged around their source episodes"></svg>
-        <div class="explorer-caption"><span class="eyebrow" data-map-mode>Across the archive</span><span data-map-count>{raw.nodes.length} nodes · {episodes.length} episodes</span></div>
+        <div class="explorer-caption"><span class="eyebrow" data-map-mode>Across the archive</span><span data-map-count class="visually-hidden">{raw.nodes.length} nodes · archive</span></div>
         <p class="explorer-hint" data-map-hint>Select a shared idea · zoom in for episode labels</p>
-        <div class="explorer-controls"><button type="button" data-overview>↖ Overview</button><div><button type="button" data-zoom="1.35" aria-label="Zoom in">+</button><button type="button" data-zoom="0.74" aria-label="Zoom out">−</button></div></div>
+        <div class="explorer-controls"><button type="button" data-fullscreen aria-pressed="false" aria-controls="graph-stage">Fullscreen</button><button type="button" data-overview>↖ Overview</button><div><button type="button" data-zoom="1.35" aria-label="Zoom in">+</button><button type="button" data-zoom="0.74" aria-label="Zoom out">−</button></div></div>
         <div class="explorer-tooltip" data-tooltip hidden></div>
       </div>
       <aside class="explorer-detail" data-explorer-detail aria-labelledby="explorer-detail-title" hidden>
@@ -54,10 +63,16 @@ const serialise=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
         <div data-detail-content></div>
       </aside>
     </div>
-    <div class="explorer-footnote"><p>Colour groups source episodes. Lines show idea relationships. Optional source links show episode and speaker context; proximity alone does not imply a relationship.</p><span role="status" aria-live="polite" data-explorer-status>Scroll to zoom · drag to explore</span></div>
+    <span class="visually-hidden" role="status" aria-live="polite" data-explorer-status></span>
     <SharedIdeaReview coverage={coverage} />
     <KnowledgeMix {topics} {classified} {totalWords} />
-    <noscript><style>#explorer-index[hidden]{display:block!important}.explorer-stage{display:none}.explorer-perspective,.explorer-concepts{display:none}</style><p>Browse the archive above. Enable JavaScript to explore the interactive map.</p></noscript>
+    <noscript><style>#explorer-index[hidden]{display:block!important}.explorer-stage{display:none}.explorer-perspective,.explorer-concepts{display:none}
+.explorer-heading{padding-block:1.75rem 1.25rem}.explorer-heading .eyebrow{display:none}.explorer-heading h1{font-size:clamp(2.5rem,4vw,4rem)}
+.explorer-tools{display:flex;align-items:center;gap:1.5rem;min-height:44px;position:relative;z-index:4}.explorer-tools>.text-link{padding:0;margin:0;font-size:.7rem;min-height:44px}.explorer-options{margin-left:auto;font:400 .75rem var(--font-mono)}.explorer-options>summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.explorer-options>div{position:absolute;right:0;top:100%;width:min(340px,calc(100vw - 2rem));padding:1rem;background:var(--paper);border:1px solid var(--line);box-shadow:0 8px 24px #0001}.explorer-options label{display:flex;align-items:center;gap:.5rem;min-height:44px}.explorer-options p{font:400 .8rem/1.5 var(--font-body);color:var(--text-secondary)}
+.explorer-concepts>div{flex-wrap:wrap;max-height:20rem;overflow:auto}.explorer-search-status:empty{display:none}.explorer-map{height:clamp(520px,78dvh,1100px)}
+.explorer-stage:fullscreen,.explorer-stage.is-fullscreen{width:100%;height:100dvh;background:var(--paper);padding:1rem;box-sizing:border-box;border:0}.explorer-stage.is-fullscreen{position:fixed;inset:0;z-index:1000}.explorer-stage:fullscreen .explorer-map,.explorer-stage.is-fullscreen .explorer-map{height:100%;min-height:0}.explorer-stage:fullscreen .explorer-detail,.explorer-stage.is-fullscreen .explorer-detail{max-height:100%;padding-right:1rem}
+@media(max-width:650px){.explorer-heading>p{display:none}.explorer-map{height:72dvh;min-height:430px}.explorer-controls{gap:.25rem}.explorer-controls button{padding:.5rem}.explorer-hint{bottom:auto;top:3rem;max-width:80%}.explorer-stage:fullscreen.has-selection,.explorer-stage.is-fullscreen.has-selection{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(180px,1fr) minmax(0,1fr)}.explorer-stage:fullscreen .explorer-detail,.explorer-stage.is-fullscreen .explorer-detail{padding:1rem;min-height:0}}
+</style><p>Browse the archive above. Enable JavaScript to explore the interactive map.</p></noscript>
   </section>
 </BaseLayout>
 <script id="knowledge-data" type="application/json" is:inline set:html={serialise(model)}></script>
@@ -83,4 +98,10 @@ initialiseExplorer();
 .explorer-concepts button[aria-pressed="true"]{border-color:var(--coral);background:var(--paper-raised)}
 .explorer-concepts.is-expanded>div{flex-wrap:wrap;max-height:22rem;overflow:auto}.explorer-concepts [data-concepts-toggle]{font-size:.65rem;min-height:44px}
 .explorer{overflow-anchor:none}.explorer-search input{scroll-margin-top:85px}
+
+.explorer-heading{padding-block:1.75rem 1.25rem}.explorer-heading .eyebrow{display:none}.explorer-heading h1{font-size:clamp(2.5rem,4vw,4rem)}
+.explorer-tools{display:flex;align-items:center;gap:1.5rem;min-height:44px;position:relative;z-index:4}.explorer-tools>.text-link{padding:0;margin:0;font-size:.7rem;min-height:44px}.explorer-options{margin-left:auto;font:400 .75rem var(--font-mono)}.explorer-options>summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.explorer-options>div{position:absolute;right:0;top:100%;width:min(340px,calc(100vw - 2rem));padding:1rem;background:var(--paper);border:1px solid var(--line);box-shadow:0 8px 24px #0001}.explorer-options label{display:flex;align-items:center;gap:.5rem;min-height:44px}.explorer-options p{font:400 .8rem/1.5 var(--font-body);color:var(--text-secondary)}
+.explorer-concepts>div{flex-wrap:wrap;max-height:20rem;overflow:auto}.explorer-search-status:empty{display:none}.explorer-map{height:clamp(520px,78dvh,1100px)}
+.explorer-stage:fullscreen,.explorer-stage.is-fullscreen{width:100%;height:100dvh;background:var(--paper);padding:1rem;box-sizing:border-box;border:0}.explorer-stage.is-fullscreen{position:fixed;inset:0;z-index:1000}.explorer-stage:fullscreen .explorer-map,.explorer-stage.is-fullscreen .explorer-map{height:100%;min-height:0}.explorer-stage:fullscreen .explorer-detail,.explorer-stage.is-fullscreen .explorer-detail{max-height:100%;padding-right:1rem}
+@media(max-width:650px){.explorer-heading>p{display:none}.explorer-map{height:72dvh;min-height:430px}.explorer-controls{gap:.25rem}.explorer-controls button{padding:.5rem}.explorer-hint{bottom:auto;top:3rem;max-width:80%}.explorer-stage:fullscreen.has-selection,.explorer-stage.is-fullscreen.has-selection{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(180px,1fr) minmax(0,1fr)}.explorer-stage:fullscreen .explorer-detail,.explorer-stage.is-fullscreen .explorer-detail{padding:1rem;min-height:0}}
 </style>

@@ -25,16 +25,48 @@ try {
   );
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(100);
-  assert(await page.evaluate(() => {
-    const labels=[...document.querySelectorAll("[data-label]")].filter(el=>el.getAttribute("display")!=="none");
-    const model=JSON.parse(document.querySelector("#knowledge-data").textContent);
-    return labels.length>5 && labels.length<=14 && labels.every(el=>model.nodes.find(n=>n.id===el.dataset.label).kind==="canonical");
-  }), "overview prioritises a bounded set of shared-theme landmarks");
-  assert(await page.evaluate(() => {
-    const boxes=[...document.querySelectorAll("[data-label]")].filter(el=>el.getAttribute("display")!=="none").map(el=>el.getBoundingClientRect());
-    return boxes.every((a,i)=>boxes.slice(i+1).every(b=>a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top));
-  }), "overview labels do not overlap after fonts load");
-  const originalPositions=await page.locator("[data-node]").evaluateAll(els=>els.map(el=>el.getAttribute("transform")));
+  assert(
+    await page.evaluate(() => {
+      const labels = [...document.querySelectorAll("[data-label]")].filter(
+        (el) => el.getAttribute("display") !== "none",
+      );
+      const model = JSON.parse(
+        document.querySelector("#knowledge-data").textContent,
+      );
+      return (
+        labels.length > 5 &&
+        labels.length <= 14 &&
+        labels.every(
+          (el) =>
+            model.nodes.find((n) => n.id === el.dataset.label).kind ===
+            "canonical",
+        )
+      );
+    }),
+    "overview prioritises a bounded set of shared-theme landmarks",
+  );
+  assert(
+    await page.evaluate(() => {
+      const boxes = [...document.querySelectorAll("[data-label]")]
+        .filter((el) => el.getAttribute("display") !== "none")
+        .map((el) => el.getBoundingClientRect());
+      return boxes.every((a, i) =>
+        boxes
+          .slice(i + 1)
+          .every(
+            (b) =>
+              a.right <= b.left ||
+              b.right <= a.left ||
+              a.bottom <= b.top ||
+              b.bottom <= a.top,
+          ),
+      );
+    }),
+    "overview labels do not overlap after fonts load",
+  );
+  const originalPositions = await page
+    .locator("[data-node]")
+    .evaluateAll((els) => els.map((el) => el.getAttribute("transform")));
   assert(
     await page.evaluate(() => {
       const model = JSON.parse(
@@ -65,6 +97,7 @@ try {
     }),
     "default map renders idea connections without source-link clutter",
   );
+  await page.locator(".explorer-options > summary").click();
   await page.locator("[data-source-links]").check();
   assert(
     await page.evaluate(() => {
@@ -81,9 +114,10 @@ try {
     "source links can be restored without losing any connections",
   );
   await page.locator("[data-source-links]").uncheck();
+  await page.locator(".explorer-options > summary").click();
   assert(
-    (await page.locator("[data-concept-pick]:visible").count()) === 8,
-    "initial shared-idea landmarks stay compact as the archive grows",
+    (await page.locator("[data-concept-pick]:visible").count()) === 0,
+    "shared-idea list stays closed until requested",
   );
   await page.locator("[data-concepts-toggle]").click();
   assert(
@@ -91,6 +125,72 @@ try {
     "all reviewed shared themes can be browsed",
   );
   await page.locator("[data-concepts-toggle]").click();
+  const mapTop = await page
+    .locator(".explorer-stage")
+    .evaluate((el) => el.getBoundingClientRect().top);
+  assert(mapTop < 420, "map appears prominently near the top of the page");
+  assert(
+    (await page.locator("[data-search-status]").textContent()) === "",
+    "idle search has no instruction clutter",
+  );
+  assert(
+    !(await page.locator(".explorer-concepts").isVisible()),
+    "theme list collapses again",
+  );
+  await page.locator("[data-fullscreen]").click();
+  await page.waitForFunction(
+    () =>
+      document.fullscreenElement || document.querySelector(".is-fullscreen"),
+  );
+  assert(
+    (await page.locator("[data-fullscreen]").getAttribute("aria-pressed")) ===
+      "true",
+    "fullscreen announces active state",
+  );
+  assert(
+    await page
+      .locator(".explorer-stage")
+      .evaluate((el) => el.getBoundingClientRect().height >= innerHeight - 2),
+    "fullscreen fills viewport",
+  );
+  await page.locator('[data-node="canonical:graph-memory"]').focus();
+  await page.keyboard.press("Enter");
+  assert(
+    await page.locator("[data-explorer-detail]").isVisible(),
+    "evidence remains usable in fullscreen",
+  );
+  await page.locator("[data-fullscreen]").click();
+  await page.waitForFunction(
+    () =>
+      !document.fullscreenElement && !document.querySelector(".is-fullscreen"),
+  );
+  assert(
+    (await page.locator("[data-fullscreen]").getAttribute("aria-pressed")) ===
+      "false",
+    "fullscreen exits cleanly",
+  );
+  await page.locator("[data-overview]").click();
+  // Exercise the in-page fallback used by browsers without element fullscreen.
+  await page.evaluate(() => {
+    document.querySelector(".explorer-stage").requestFullscreen = undefined;
+  });
+  await page.locator("[data-fullscreen]").click();
+  assert(
+    (await page.locator(".explorer-stage.is-fullscreen").count()) === 1,
+    "unsupported fullscreen uses expanded map fallback",
+  );
+  await page.keyboard.press("Escape");
+  assert(
+    (await page.locator(".is-fullscreen").count()) === 0 &&
+      (await page.locator("[inert]").count()) === 0,
+    "Escape restores fallback and page interaction",
+  );
+  assert(
+    await page
+      .locator("[data-fullscreen]")
+      .evaluate((el) => document.activeElement === el),
+    "fullscreen restores focus to its control",
+  );
   assert(
     (await page.locator("[data-review-coverage]").textContent()).includes(
       "526 of 526",
@@ -121,7 +221,14 @@ try {
     filteredCount > 0 && filteredCount < count,
     "topic selection visibly narrows map nodes",
   );
-  assert(JSON.stringify(await page.locator("[data-node]").evaluateAll(els=>els.map(el=>el.getAttribute("transform"))))===JSON.stringify(originalPositions), "topic changes preserve the layout's node positions");
+  assert(
+    JSON.stringify(
+      await page
+        .locator("[data-node]")
+        .evaluateAll((els) => els.map((el) => el.getAttribute("transform"))),
+    ) === JSON.stringify(originalPositions),
+    "topic changes preserve the layout's node positions",
+  );
   assert(
     new URL(page.url()).searchParams.get("topic") === "bitcoin",
     "topic scope is shareable in the address",
@@ -258,7 +365,10 @@ try {
     "drag does not select a node",
   );
   await page.locator("#explorer-search").fill("shared graph memory");
-  await page.locator("[data-index-node]:visible").first().waitFor({state:"visible", timeout:2000});
+  await page
+    .locator("[data-index-node]:visible")
+    .first()
+    .waitFor({ state: "visible", timeout: 2000 });
   assert(
     (await page.locator("[data-index-node]:visible").count()) > 0,
     "search retrieves archive ideas",
@@ -339,13 +449,27 @@ try {
   );
   const chartLink = page.locator("[data-topic-chart-link]").last();
   await chartLink.dispatchEvent("pointerenter");
-  assert(await page.locator("[data-mix-tooltip]").evaluate(el => !el.hidden && !!el.textContent), "chart hover label appears immediately without a native tooltip delay");
+  assert(
+    await page
+      .locator("[data-mix-tooltip]")
+      .evaluate((el) => !el.hidden && !!el.textContent),
+    "chart hover label appears immediately without a native tooltip delay",
+  );
   await chartLink.dispatchEvent("pointerleave");
-  assert(await page.locator("[data-mix-tooltip]").evaluate(el => el.hidden), "chart hover label clears on leave");
+  assert(
+    await page.locator("[data-mix-tooltip]").evaluate((el) => el.hidden),
+    "chart hover label clears on leave",
+  );
   await chartLink.focus();
-  assert(await page.locator("[data-mix-tooltip]").isVisible(), "chart label appears on keyboard focus");
+  assert(
+    await page.locator("[data-mix-tooltip]").isVisible(),
+    "chart label appears on keyboard focus",
+  );
   await page.keyboard.press("Escape");
-  assert(await page.locator("[data-mix-tooltip]").isHidden(), "Escape dismisses the chart label");
+  assert(
+    await page.locator("[data-mix-tooltip]").isHidden(),
+    "Escape dismisses the chart label",
+  );
   await page.keyboard.press("Enter");
   const chartTopic = await chartLink.getAttribute("data-topic-chart-link");
   assert(
@@ -409,16 +533,65 @@ try {
   await page.locator("[data-list-toggle]").click();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(150);
-  assert(await page.evaluate(() => {
-    const boxes=[...document.querySelectorAll("[data-label]")].filter(el=>el.getAttribute("display")!=="none").map(el=>el.getBoundingClientRect());
-    return boxes.length>=3 && boxes.length<=6 && boxes.every((a,i)=>boxes.slice(i+1).every(b=>a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top));
-  }), "phone overview keeps a small set of non-overlapping theme labels");
+  assert(
+    await page.evaluate(() => {
+      const boxes = [...document.querySelectorAll("[data-label]")]
+        .filter((el) => el.getAttribute("display") !== "none")
+        .map((el) => el.getBoundingClientRect());
+      return (
+        boxes.length >= 3 &&
+        boxes.length <= 6 &&
+        boxes.every((a, i) =>
+          boxes
+            .slice(i + 1)
+            .every(
+              (b) =>
+                a.right <= b.left ||
+                b.right <= a.left ||
+                a.bottom <= b.top ||
+                b.bottom <= a.top,
+            ),
+        )
+      );
+    }),
+    "phone overview keeps a small set of non-overlapping theme labels",
+  );
   assert(
     await page.evaluate(
       () => document.documentElement.scrollWidth === innerWidth,
     ),
     "mobile has no horizontal overflow",
   );
+  await page.locator("[data-fullscreen]").click();
+  assert(
+    await page
+      .locator(".explorer-stage")
+      .evaluate((el) => el.getBoundingClientRect().height >= innerHeight - 2),
+    "phone expanded map fills viewport",
+  );
+  await page.locator('[data-node="canonical:graph-memory"]').focus();
+  await page.keyboard.press("Enter");
+  assert(
+    await page.locator("[data-explorer-detail]").evaluate((el) => {
+      const b = el.getBoundingClientRect();
+      return b.height > 100 && b.bottom <= innerHeight + 1;
+    }),
+    "phone fullscreen keeps evidence inside viewport",
+  );
+  await page.locator("[data-close]").focus();
+  await page.keyboard.press("Tab");
+  assert(
+    await page
+      .locator(".explorer-stage")
+      .evaluate((el) => el.contains(document.activeElement)),
+    "expanded map keeps keyboard focus inside",
+  );
+  await page.keyboard.press("Escape");
+  assert(
+    (await page.locator(".is-fullscreen").count()) === 0,
+    "phone exits expanded map with Escape",
+  );
+  await page.locator("[data-overview]").click();
   assert(
     (await page.locator("[data-mix-chart]").isVisible()) &&
       (await page.locator("[data-topic-bar]").first().isVisible()),
@@ -553,6 +726,7 @@ try {
       new URL(scoped.url()).searchParams.get("node") === journey.hub,
     "Back restores the scoped shared concept after an outside connection",
   );
+  await scoped.locator(".explorer-options > summary").click();
   await scoped.locator("[data-source-links]").check();
   await scoped.reload();
   assert(
