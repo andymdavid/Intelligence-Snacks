@@ -59,22 +59,14 @@ export function initialiseExplorer() {
     const buttons = [
       ...document.querySelectorAll<HTMLButtonElement>("[data-concept-pick]"),
     ];
-    const matches = buttons.filter((button) =>
-      visibleIds.has(button.dataset.conceptPick!),
-    );
     buttons.forEach(
       (button) =>
-        (button.hidden =
-          !visibleIds.has(button.dataset.conceptPick!) ||
-          (!expandedConcepts && matches.indexOf(button) >= 8)),
+        (button.hidden = !visibleIds.has(button.dataset.conceptPick!)),
     );
     const toggle = $<HTMLButtonElement>("[data-concepts-toggle]");
-    toggle.hidden = matches.length <= 8;
-    toggle.textContent = expandedConcepts
-      ? "Show fewer shared ideas"
-      : `Browse all ${matches.length} shared ideas`;
+    toggle.textContent = "Shared ideas";
     toggle.setAttribute("aria-expanded", String(expandedConcepts));
-    $(".explorer-concepts").classList.toggle("is-expanded", expandedConcepts);
+    $(".explorer-concepts").toggleAttribute("hidden", !expandedConcepts);
   }
   function applyScope() {
     visibleIds = topicVisibleIds(
@@ -280,8 +272,14 @@ export function initialiseExplorer() {
   function measureLabel(text: string, fontSize: number) {
     const key = `${fontSize}:${text}`;
     if (!labelWidths.has(key)) {
-      if (textMetrics) textMetrics.font = `500 ${fontSize}px "Neue Montreal", Arial, sans-serif`;
-      labelWidths.set(key, textMetrics ? textMetrics.measureText(text).width : text.length * fontSize * .6);
+      if (textMetrics)
+        textMetrics.font = `500 ${fontSize}px "Neue Montreal", Arial, sans-serif`;
+      labelWidths.set(
+        key,
+        textMetrics
+          ? textMetrics.measureText(text).width
+          : text.length * fontSize * 0.6,
+      );
     }
     return labelWidths.get(key)!;
   }
@@ -363,7 +361,7 @@ export function initialiseExplorer() {
     }
     const placed: { x: number; y: number; w: number; h: number }[] = [];
     let overviewLabels = 0;
-    const overview = !selected && camera.k < .65;
+    const overview = !selected && camera.k < 0.65;
     const labelBudget = width < 600 ? 6 : 14;
     for (const node of ranked) {
       const group = dotElements.get(node.id)!,
@@ -407,33 +405,57 @@ export function initialiseExplorer() {
           : node.kind === "canonical" ||
             (node.kind === "episode" && (!overview || sourceLinks.checked)) ||
             (camera.k > 1.05 && node.kind === "concept"));
-      if (!eligible || (overview && !isFocus && overviewLabels >= labelBudget)) {
+      if (
+        !eligible ||
+        (overview && !isFocus && overviewLabels >= labelBudget)
+      ) {
         attribute(label, "display", "none");
         continue;
       }
-      const text = node.title.length > 35 ? node.title.slice(0, 33) + "…" : node.title;
+      const text =
+        node.title.length > 35 ? node.title.slice(0, 33) + "…" : node.title;
       const fontSize = isFocus ? 14 : 12;
       const labelWidth = measureLabel(text, fontSize);
       const gap = Math.max(node.radius * camera.k, 5) + 7;
       // Try both sides and vertical placements before hiding a colliding label.
       const candidates = [
-        {x:sx + gap, y:sy - 9},
-        {x:sx - gap - labelWidth, y:sy - 9},
-        {x:sx - labelWidth / 2, y:sy - gap - 18},
-        {x:sx - labelWidth / 2, y:sy + gap},
+        { x: sx + gap, y: sy - 9 },
+        { x: sx - gap - labelWidth, y: sy - 9 },
+        { x: sx - labelWidth / 2, y: sy - gap - 18 },
+        { x: sx - labelWidth / 2, y: sy + gap },
       ];
-      const position = candidates.find(p =>
-        p.x > 5 && p.x + labelWidth < width - 5 && p.y > 50 && p.y + 18 < height - 65 &&
-        !placed.some(other => p.x < other.x + other.w + 10 && p.x + labelWidth + 10 > other.x && p.y < other.y + other.h + 5 && p.y + 18 + 5 > other.y)
+      const position = candidates.find(
+        (p) =>
+          p.x > 5 &&
+          p.x + labelWidth < width - 5 &&
+          p.y > 50 &&
+          p.y + 18 < height - 65 &&
+          !placed.some(
+            (other) =>
+              p.x < other.x + other.w + 10 &&
+              p.x + labelWidth + 10 > other.x &&
+              p.y < other.y + other.h + 5 &&
+              p.y + 18 + 5 > other.y,
+          ),
       );
-      const visible = eligible && !!position &&
+      const visible =
+        eligible &&
+        !!position &&
         (isFocus || !overview || overviewLabels < labelBudget);
       attribute(label, "display", visible ? "" : "none");
       if (visible && position) {
-        placed.push({...position, w:labelWidth, h:18});
+        placed.push({ ...position, w: labelWidth, h: 18 });
         if (!isFocus) overviewLabels++;
-        attribute(label, "x", String((position.x - width / 2) / camera.k + camera.x));
-        attribute(label, "y", String((position.y + 13 - height / 2) / camera.k + camera.y));
+        attribute(
+          label,
+          "x",
+          String((position.x - width / 2) / camera.k + camera.x),
+        );
+        attribute(
+          label,
+          "y",
+          String((position.y + 13 - height / 2) / camera.k + camera.y),
+        );
         attribute(label, "font-size", String(fontSize / camera.k));
         attribute(label, "stroke-width", String(4 / camera.k));
         attribute(label, "opacity", selected && !active ? ".15" : "1");
@@ -766,7 +788,7 @@ export function initialiseExplorer() {
     $("[data-search-status]").textContent =
       words.length || episodeIds
         ? `${label}${episodeIds ? " in episodes covering " + topicFilter.selectedOptions[0]!.textContent : ""}${count ? ". Select a result to explore it." : ". Try another search or topic."}`
-        : "Search every published idea, episode and Snack.";
+        : "";
     status.textContent = `${count} matching archive records`;
   }
   search.addEventListener("input", () => {
@@ -796,9 +818,11 @@ export function initialiseExplorer() {
   document
     .querySelectorAll<HTMLButtonElement>("[data-concept-pick]")
     .forEach((button) =>
-      button.addEventListener("click", () =>
-        select(button.dataset.conceptPick!, true),
-      ),
+      button.addEventListener("click", () => {
+        expandedConcepts = false;
+        updateConceptBrowser();
+        select(button.dataset.conceptPick!, true);
+      }),
     );
   search.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
@@ -820,7 +844,8 @@ export function initialiseExplorer() {
   document
     .querySelectorAll<SVGAElement>("[data-topic-chart-link]")
     .forEach((link) => {
-      const mixTooltip = document.querySelector<HTMLElement>("[data-mix-tooltip]");
+      const mixTooltip =
+        document.querySelector<HTMLElement>("[data-mix-tooltip]");
       const showMixTooltip = () => {
         if (!mixTooltip) return;
         mixTooltip.textContent = link.dataset.topicLabel || "";
@@ -1024,6 +1049,104 @@ export function initialiseExplorer() {
     },
     { capture: true },
   );
+  const fullscreenButton = $<HTMLButtonElement>("[data-fullscreen]");
+  let expandedMap = false;
+  let priorFocus: HTMLElement | null = null;
+  const inertElements: HTMLElement[] = [];
+  function syncFullscreen() {
+    const active =
+      document.fullscreenElement === stage ||
+      stage.classList.contains("is-fullscreen");
+    fullscreenButton.textContent = active ? "Exit fullscreen" : "Fullscreen";
+    fullscreenButton.setAttribute("aria-pressed", String(active));
+    if (!active && expandedMap) {
+      inertElements.splice(0).forEach((item) => (item.inert = false));
+      stage.removeAttribute("role");
+      stage.removeAttribute("aria-modal");
+      stage.removeAttribute("aria-label");
+      document.documentElement.style.overflow = priorOverflow;
+      priorFocus?.focus({ preventScroll: true });
+    }
+    expandedMap = active;
+  }
+  let priorOverflow = "";
+  function fallbackFullscreen() {
+    stage.classList.add("is-fullscreen");
+    stage.setAttribute("role", "dialog");
+    stage.setAttribute("aria-modal", "true");
+    stage.setAttribute("aria-label", "Archive graph");
+    for (
+      let element: HTMLElement | null = stage;
+      element?.parentElement;
+      element = element.parentElement
+    ) {
+      for (const sibling of element.parentElement.children) {
+        if (
+          sibling !== element &&
+          sibling instanceof HTMLElement &&
+          !sibling.inert
+        ) {
+          sibling.inert = true;
+          inertElements.push(sibling);
+        }
+      }
+    }
+    document.documentElement.style.overflow = "hidden";
+    syncFullscreen();
+    fullscreenButton.focus();
+  }
+  async function exitFullscreen() {
+    if (document.fullscreenElement === stage) await document.exitFullscreen();
+    stage.classList.remove("is-fullscreen");
+    syncFullscreen();
+  }
+  fullscreenButton.addEventListener("click", async () => {
+    if (expandedMap) {
+      await exitFullscreen();
+      return;
+    }
+    priorFocus = document.activeElement as HTMLElement;
+    priorOverflow = document.documentElement.style.overflow;
+    try {
+      if (!stage.requestFullscreen) throw new Error("Use expanded view");
+      await stage.requestFullscreen();
+      syncFullscreen();
+      fullscreenButton.focus();
+    } catch {
+      fallbackFullscreen();
+    }
+  });
+  document.addEventListener("fullscreenchange", syncFullscreen);
+  stage.addEventListener(
+    "keydown",
+    (event) => {
+      if (!expandedMap) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopPropagation();
+        void exitFullscreen();
+      }
+      if (event.key === "Tab" && stage.classList.contains("is-fullscreen")) {
+        const focusable = [
+          ...stage.querySelectorAll<HTMLElement>(
+            'button, a[href], [tabindex="0"]',
+          ),
+        ].filter(
+          (item) => item.getClientRects().length && !item.closest("[hidden]"),
+        );
+        const first = focusable[0],
+          last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    },
+    { capture: true },
+  );
   map.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       select(null, true);
@@ -1038,5 +1161,8 @@ export function initialiseExplorer() {
     else fit(undefined, false);
   }).observe(map);
   restoreLocation();
-  document.fonts.ready.then(() => { labelWidths.clear(); schedulePaint(); });
+  document.fonts.ready.then(() => {
+    labelWidths.clear();
+    schedulePaint();
+  });
 }
