@@ -318,7 +318,17 @@ export function initialiseExplorer() {
         : null;
       const batches = new Map<string, string[]>();
       edges.forEach((edge, i) => {
-        if (!connectionVisible(edge, visibleIds, sourceLinks.checked)) return;
+        const touchesSelection =
+          !!selected &&
+          (edge.sourceId === selected || edge.targetId === selected);
+        if (
+          !connectionVisible(
+            edge,
+            visibleIds,
+            sourceLinks.checked || touchesSelection,
+          )
+        )
+          return;
         const kind = structural.has(edge.relationshipType) ? "context" : "idea";
         const state =
           selected && (edge.sourceId === selected || edge.targetId === selected)
@@ -335,18 +345,29 @@ export function initialiseExplorer() {
         attribute(path, "d", (batches.get(key) || []).join(""));
         attribute(
           path,
+          "stroke",
+          key.endsWith(":active")
+            ? key.startsWith("context:")
+              ? "#738a80"
+              : "#386d60"
+            : key.startsWith("context:")
+              ? "#b6c2bb"
+              : "#829b90",
+        );
+        attribute(
+          path,
           "opacity",
           key.endsWith(":active")
-            ? ".85"
+            ? "1"
             : key.endsWith(":hover")
               ? ".65"
               : selected
-                ? ".025"
+                ? ".07"
                 : key.startsWith("context:")
                   ? ".10"
                   : hovered
                     ? ".025"
-                    : ".15",
+                    : ".32",
         );
       }
       ranked = [...nodes].sort(
@@ -498,22 +519,36 @@ export function initialiseExplorer() {
       maxX = Math.max(...xs) + 180,
       minY = Math.min(...ys) - 100,
       maxY = Math.max(...ys) + 100;
+    // Fit into the exposed graph area without changing the map's dimensions.
+    const mapBounds = map.getBoundingClientRect();
+    const cardBounds = panel.getBoundingClientRect();
+    const phone = window.matchMedia("(max-width: 650px)").matches;
+    const availableWidth =
+      selected && !phone
+        ? Math.max(160, cardBounds.left - mapBounds.left - 24)
+        : width;
+    const availableHeight =
+      selected && phone
+        ? Math.max(160, cardBounds.top - mapBounds.top - 20)
+        : height;
+    const zoom = Math.max(
+      0.12,
+      Math.min(
+        ids ? 1.8 : 0.85,
+        (availableWidth - 50) / (maxX - minX),
+        (availableHeight - 80) / (maxY - minY),
+      ),
+    );
     move(
       {
-        x: (minX + maxX) / 2,
-        y: (minY + maxY) / 2,
-        k: Math.max(
-          0.12,
-          Math.min(
-            ids ? 1.8 : 0.85,
-            (width - 50) / (maxX - minX),
-            (height - 105) / (maxY - minY),
-          ),
-        ),
+        x: (minX + maxX) / 2 + (width - availableWidth) / 2 / zoom,
+        y: (minY + maxY) / 2 + (height - availableHeight) / 2 / zoom,
+        k: zoom,
       },
       animate,
     );
   }
+
   function updateUrl(id: string | null, push: boolean) {
     const url = new URL(location.href);
     if (id) url.searchParams.set("node", id);
@@ -551,7 +586,7 @@ export function initialiseExplorer() {
       ? "Following a connection"
       : topicFilter.value
         ? `Episodes covering ${topicFilter.selectedOptions[0]!.textContent}`
-        : "Across the archive";
+        : "";
     $("[data-map-hint]").textContent = id
       ? "Select another node to keep exploring"
       : "Select a theme · zoom for episode labels";
@@ -570,23 +605,31 @@ export function initialiseExplorer() {
       fit();
       status.textContent = topicFilter.value
         ? `Showing ${visibleIds.size} nodes in episodes covering ${topicFilter.selectedOptions[0]!.textContent}`
-        : "Across the archive";
+        : "";
     }
   }
   async function renderDetail(node: PositionedNode) {
     panel.scrollTop = 0;
     content.replaceChildren();
-    const title = el("h2", node.title);
+    const displayTitle =
+      node.kind === "episode"
+        ? node.title.replace(/^Episode\s+\d+\s*[·:\-]\s*/i, "")
+        : node.title;
+    const title = el("h2", displayTitle);
     title.id = "explorer-detail-title";
     title.tabIndex = -1;
     content.append(
       el(
         "p",
-        `${node.episodeNumber ? `Episode ${node.episodeNumber} · ` : ""}${node.kind === "canonical" ? (node.comparisonType === "perspectives" ? "Shared theme · different perspectives" : "Shared theme · recurring discussion") : node.kind}`,
+        node.kind === "episode"
+          ? `Episode ${node.episodeNumber}`
+          : `${node.episodeNumber ? `Episode ${node.episodeNumber} · ` : ""}${node.kind === "canonical" ? (node.comparisonType === "perspectives" ? "Shared theme · different perspectives" : "Shared theme · recurring discussion") : node.kind}`,
         "eyebrow",
       ),
       title,
-      el("p", node.summary, "detail-summary"),
+      ...(node.summary && node.summary.trim() !== displayTitle.trim()
+        ? [el("p", node.summary, "detail-summary")]
+        : []),
     );
     if (node.kind === "canonical")
       content.append(
@@ -629,7 +672,15 @@ export function initialiseExplorer() {
       if (!list.length) return;
       content.append(el("h3", `${name} · ${list.length}`));
       const ul = el("ul", "", "connection-list");
-      for (const edge of list) {
+      const ordered = [...list].sort((a, b) => {
+        const neighbour = (edge: Edge) =>
+          byId.get(edge.sourceId === node.id ? edge.targetId : edge.sourceId)!;
+        return (
+          Number(neighbour(a).kind === "root") -
+          Number(neighbour(b).kind === "root")
+        );
+      });
+      for (const edge of ordered) {
         const target = byId.get(
           edge.sourceId === node.id ? edge.targetId : edge.sourceId,
         )!;
@@ -637,7 +688,17 @@ export function initialiseExplorer() {
         row.append(
           el(
             "span",
-            `${edge.targetId === node.id ? "Incoming" : "Outgoing"} · ${edge.relationshipType.replaceAll("-", " ")}`,
+            structural.has(edge.relationshipType)
+              ? target.kind === "episode"
+                ? "Source episode"
+                : ["host", "contributor"].includes(target.kind)
+                  ? "Speaker"
+                  : target.kind === "root"
+                    ? "Archive"
+                    : target.kind === "snack"
+                      ? "Snack"
+                      : "Observation"
+              : edge.relationshipType.replaceAll("-", " "),
             "eyebrow",
           ),
         );
@@ -665,6 +726,10 @@ export function initialiseExplorer() {
       content.append(ul);
     }
     connectionSection(semantic, "Idea connections");
+    connectionSection(
+      context,
+      node.kind === "episode" ? "In this episode" : "Sources & people",
+    );
     const evidenceSection = el("section");
     content.append(evidenceSection);
     if (node.evidenceCount) {
@@ -747,16 +812,6 @@ export function initialiseExplorer() {
       content.append(
         el("p", "Select a linked discussion to inspect its source evidence."),
       );
-    if (context.length) {
-      const contextDetails = el("details"),
-        summary = el("summary", `Source context · ${context.length}`);
-      contextDetails.append(summary);
-      content.append(contextDetails);
-      const before = content.childElementCount;
-      connectionSection(context, "Episode and speaker links");
-      while (content.childElementCount > before)
-        contextDetails.append(content.children[before]!);
-    }
     if (!allEdges.length)
       content.append(el("p", "No recorded connections yet."));
   }
@@ -922,6 +977,14 @@ export function initialiseExplorer() {
     filterIndex();
     showIndex(false);
     select(null, true);
+  });
+  panel.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      event.stopPropagation();
+      select(null, true);
+      $<HTMLButtonElement>("[data-overview]").focus({ preventScroll: true });
+    }
   });
   $("[data-close]").addEventListener("click", () => {
     select(null, true);
