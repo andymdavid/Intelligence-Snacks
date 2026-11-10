@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { pilotIdeas } from '@/lib/agent-knowledge';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { isVisible } from '@/lib/content';
 
@@ -9,6 +10,11 @@ const topics = await getCollection('topics');
 const people = await getCollection('people');
 
 const searchIndex = [
+  ...pilotIdeas().map(idea => ({
+    type: 'Guide', title: idea.title, description: idea.summary,
+    href: new URL(idea.pageUrl!).pathname,
+    search: idea.readingNotes.map(note => `${note.heading} ${note.text}`).join(' '),
+  })),
   ...snacks.map((snack) => ({
     type: 'Snack', title: snack.data.title, description: snack.data.standfirst,
     href: `/snacks/${snack.id}/`, search: `${snack.data.editorialTitle ?? ''} ${snack.data.attribution} ${snack.body}`,
@@ -35,7 +41,7 @@ const searchIndex = [
       <h1>Find an idea.</h1>
       <label class="search-field">
         <span class="visually-hidden">Search Intelligence Snacks</span>
-        <input type="search" placeholder="Search snacks, episodes, topics and people" autocomplete="off" data-search-input />
+        <input type="search" placeholder="Search guides, snacks, episodes, topics and people" autocomplete="off" data-search-input />
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg>
       </label>
     </header>

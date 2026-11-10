@@ -1,3 +1,4 @@
+import { evidenceAttribution } from '@/lib/evidence-attribution';
 import { pilotIdeas } from "@/lib/agent-knowledge";
 import type { Idea } from "@/lib/agent-knowledge";
 export function getStaticPaths() {
@@ -33,7 +34,7 @@ export const GET = ({ props }: { props: { idea: Idea } }) => {
     )) {
       parts.push(
         `> ${e.excerpt.replace(/\n/g, "\n> ")}`,
-        `${e.speaker || "Speaker not identified"} — ${e.sourceUrl}${e.timestamp ? ` (${e.timestamp})` : " (episode-level citation; exact passage not resolved)"}`,
+        `${evidenceAttribution(e)} — ${e.sourceUrl}${e.timestamp ? ` (${e.timestamp})` : " (episode-level citation; exact passage not resolved)"}`,
       );
     }
   }

@@ -14,6 +14,9 @@ export const pilotIdeaIds = [
   "code-first-workflows",
   "human-review",
   "shared-work-layers",
+  "attention-bottleneck",
+  "bounded-authority",
+  "mature-tool-reuse",
 ];
 export const absolute = (path: string) => new URL(path, site).href;
 export const ideaPage = (id: string) =>

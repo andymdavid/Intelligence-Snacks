@@ -20,7 +20,8 @@
     "agent:browser": "node scripts/agent-access-browser.mjs",
     "graph:browser": "node scripts/graph-explorer-browser.mjs",
     "graph:preview:package": "node scripts/package-graph-preview.mjs",
-    "agent:evaluate": "node scripts/evaluate-agent-retrieval.mjs"
+    "agent:evaluate": "node scripts/evaluate-agent-retrieval.mjs",
+    "agent:compare-archive": "node scripts/compare-archive-retrieval.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
