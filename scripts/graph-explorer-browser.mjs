@@ -23,6 +23,18 @@ try {
     (await page.locator("[data-node]").count()) === count,
     "all published nodes on map",
   );
+  await page.evaluate(() => document.fonts.ready);
+  await page.waitForTimeout(100);
+  assert(await page.evaluate(() => {
+    const labels=[...document.querySelectorAll("[data-label]")].filter(el=>el.getAttribute("display")!=="none");
+    const model=JSON.parse(document.querySelector("#knowledge-data").textContent);
+    return labels.length>5 && labels.length<=14 && labels.every(el=>model.nodes.find(n=>n.id===el.dataset.label).kind==="canonical");
+  }), "overview prioritises a bounded set of shared-theme landmarks");
+  assert(await page.evaluate(() => {
+    const boxes=[...document.querySelectorAll("[data-label]")].filter(el=>el.getAttribute("display")!=="none").map(el=>el.getBoundingClientRect());
+    return boxes.every((a,i)=>boxes.slice(i+1).every(b=>a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top));
+  }), "overview labels do not overlap after fonts load");
+  const originalPositions=await page.locator("[data-node]").evaluateAll(els=>els.map(el=>el.getAttribute("transform")));
   assert(
     await page.evaluate(() => {
       const model = JSON.parse(
@@ -109,6 +121,7 @@ try {
     filteredCount > 0 && filteredCount < count,
     "topic selection visibly narrows map nodes",
   );
+  assert(JSON.stringify(await page.locator("[data-node]").evaluateAll(els=>els.map(el=>el.getAttribute("transform"))))===JSON.stringify(originalPositions), "topic changes preserve the layout's node positions");
   assert(
     new URL(page.url()).searchParams.get("topic") === "bitcoin",
     "topic scope is shareable in the address",
@@ -142,7 +155,7 @@ try {
     "evidence deferred until selection",
   );
   assert(
-    (await page.locator("[data-label]:visible").count()) >= 15,
+    (await page.locator("[data-label]:visible").count()) >= 6,
     "overview exposes readable landmarks",
   );
   await page.screenshot({ path: "/tmp/graph-explorer-overview.png" });
@@ -245,6 +258,7 @@ try {
     "drag does not select a node",
   );
   await page.locator("#explorer-search").fill("shared graph memory");
+  await page.locator("[data-index-node]:visible").first().waitFor({state:"visible", timeout:2000});
   assert(
     (await page.locator("[data-index-node]:visible").count()) > 0,
     "search retrieves archive ideas",
@@ -395,6 +409,10 @@ try {
   await page.locator("[data-list-toggle]").click();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(150);
+  assert(await page.evaluate(() => {
+    const boxes=[...document.querySelectorAll("[data-label]")].filter(el=>el.getAttribute("display")!=="none").map(el=>el.getBoundingClientRect());
+    return boxes.length>=3 && boxes.length<=6 && boxes.every((a,i)=>boxes.slice(i+1).every(b=>a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top));
+  }), "phone overview keeps a small set of non-overlapping theme labels");
   assert(
     await page.evaluate(
       () => document.documentElement.scrollWidth === innerWidth,
