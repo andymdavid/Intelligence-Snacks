@@ -814,6 +814,31 @@ try {
     }),
     "episode selections show their immediate source relationships without the global toggle",
   );
+  assert(
+    await cards.evaluate(() => {
+      const id = new URL(location.href).searchParams.get("node");
+      const m = JSON.parse(
+        document.querySelector("#knowledge-data").textContent,
+      );
+      const ids = new Set(
+        m.allConnections
+          .filter((e) => e.sourceId === id || e.targetId === id)
+          .flatMap((e) => [e.sourceId, e.targetId]),
+      );
+      const groups = [...document.querySelectorAll("[data-node]")].filter(
+        (g) => ids.has(g.dataset.node) && g.getAttribute("display") !== "none",
+      );
+      return (
+        groups.length > 1 &&
+        groups.every(
+          (g) =>
+            g.querySelector("circle:not([data-hit])").getBoundingClientRect()
+              .width >= 9.9 && Number(g.getAttribute("opacity")) === 1,
+        )
+      );
+    }),
+    "selected neighbours keep clearly visible circles and full opacity",
+  );
   for (const width of [1440, 700, 390]) {
     await cards.setViewportSize({ width, height: 844 });
     await cards.waitForTimeout(100);
