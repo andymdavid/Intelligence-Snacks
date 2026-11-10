@@ -398,12 +398,13 @@ export function initialiseExplorer() {
           group,
           "opacity",
           selected && !active
-            ? ".12"
+            ? ".24"
             : hoverRelated && !hoverRelated.has(node.id)
               ? ".35"
               : !sourceLinks.checked &&
                   ["root", "host", "contributor"].includes(node.kind) &&
-                  !isFocus
+                  !isFocus &&
+                  !active
                 ? ".2"
                 : "1",
         );
@@ -415,7 +416,18 @@ export function initialiseExplorer() {
       attribute(
         circleElements.get(node.id)!,
         "r",
-        String(isFocus ? Math.max(node.radius, 7 / camera.k) : node.radius),
+        String(
+          Math.max(
+            node.radius,
+            isFocus
+              ? 7 / camera.k
+              : selected && active
+                ? 5 / camera.k
+                : selected
+                  ? 1.25 / camera.k
+                  : 0,
+          ),
+        ),
       );
       const sx = (node.x - camera.x) * camera.k + width / 2,
         sy = (node.y - camera.y) * camera.k + height / 2;
@@ -598,8 +610,13 @@ export function initialiseExplorer() {
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     if (id) {
       renderDetail(byId.get(id)!);
-      if (window.matchMedia("(min-width: 651px)").matches && !document.fullscreenElement && !stage.classList.contains("is-fullscreen") && panel.getBoundingClientRect().top < 72) {
-        stage.scrollIntoView({block:"start",behavior:"instant"});
+      if (
+        window.matchMedia("(min-width: 651px)").matches &&
+        !document.fullscreenElement &&
+        !stage.classList.contains("is-fullscreen") &&
+        panel.getBoundingClientRect().top < 72
+      ) {
+        stage.scrollIntoView({ block: "start", behavior: "instant" });
       }
       fit(selectedNeighbours());
       status.textContent = `Selected: ${byId.get(id)!.title}`;
@@ -1192,7 +1209,9 @@ export function initialiseExplorer() {
       if (event.key === "Escape" && options.open) {
         options.open = false;
         options.querySelector<HTMLElement>("summary")?.focus();
-        event.preventDefault(); event.stopPropagation(); return;
+        event.preventDefault();
+        event.stopPropagation();
+        return;
       }
       if (!expandedMap) return;
       if (event.key === "Escape") {
