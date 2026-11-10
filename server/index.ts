@@ -121,7 +121,16 @@ async function staticResponse(request: Request) {
     if (await file.exists()) {
       const immutable = /\.(?:css|js|svg|png|jpe?g|webp|woff2?|otf)$/i.test(candidate);
       return new Response(request.method === 'HEAD' ? null : file, {
-        headers: { 'Cache-Control': immutable ? 'public, max-age=2592000, immutable' : 'no-cache' },
+        headers: {
+          'Cache-Control': immutable ? 'public, max-age=2592000, immutable' : 'no-cache',
+          ...(url.pathname.startsWith('/api/knowledge/v1/') ? {
+            'Access-Control-Allow-Origin': '*', 'X-Robots-Tag': 'noindex',
+          } : {}),
+          ...(/^\/ideas\/[^/]+\.md$/.test(url.pathname) ? {
+            'X-Robots-Tag': 'noindex',
+            Link: `<https://intelligencesnacks.com${url.pathname.slice(0,-3)}/>; rel="canonical"`,
+          } : {}),
+        },
       });
     }
   }

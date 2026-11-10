@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { pilotIdeas } from '../lib/agent-knowledge';
 import type { APIRoute } from 'astro';
 
 const site = 'https://intelligencesnacks.com';
@@ -20,6 +21,16 @@ export const GET: APIRoute = async () => {
     `- [Home](${site}/)`, `- [About](${site}/about/)`, `- [Snacks archive](${site}/snacks/)`,
     `- [Podcast episodes](${site}/episodes/)`, `- [Topics](${site}/topics/)`, `- [Knowledge graph](${site}/graph/)`, `- [Contributors](${site}/contributors/)`,
     `- [RSS feed](${site}/rss.xml)`, `- [XML sitemap](${site}/sitemap.xml)`,
+    '',
+    '## Research interface and shared ideas',
+    '',
+    `- [Agent documentation](${site}/for-agents/): Public read-only v1 interface; download the index and search locally. No server-side search query endpoint.`,
+    `- [Research index](${site}/api/knowledge/v1/index.json): Accepted themes and observations, stable record URLs and source citations.`,
+    `- [Reference retrieval client](${site}/agents/research.mjs)`,
+    `- [Shared-idea guides](${site}/ideas/)`,
+    ...pilotIdeas().map(idea => `- [${idea.title}](${idea.pageUrl}): ${idea.summary} Plain text: ${site}/ideas/${idea.id}.md`),
+    '',
+    'Cite speakers and original episodes for source claims. Agent-editorial themes do not establish agreement or verified fact. Evidence locator transcript-turn means an exact resolved passage; locator episode has no resolved timestamp.',
     '',
     '## Published snacks',
     '',
