@@ -743,6 +743,122 @@ try {
     "qualifying perspectives are labelled instead of implying agreement",
   );
   await scoped.close();
+  const cards = await browser.newPage({
+    viewport: { width: 1440, height: 1000 },
+    reducedMotion: "reduce",
+  });
+  cards.on("pageerror", (e) => errors.push(e.message));
+  await cards.goto(`${base}/graph/`, { waitUntil: "networkidle" });
+  assert(
+    (await cards.locator(".explorer-search-icon circle").count()) === 1 &&
+      (await cards.locator("[data-map-mode]").textContent()) === "",
+    "search uses a drawn icon and removes the archive caption",
+  );
+  const originalMapSize = await cards
+    .locator("[data-explorer-map]")
+    .evaluate((el) => ({ width: el.clientWidth, height: el.clientHeight }));
+  await cards.locator("[data-topic-filter]").selectOption("bitcoin");
+  const episodeId = await cards
+    .locator("[data-index-node]:visible")
+    .evaluateAll((rows) => {
+      const data = JSON.parse(
+        document.querySelector("#knowledge-data").textContent,
+      );
+      return rows
+        .map((r) => r.dataset.indexNode)
+        .find((id) => data.nodes.find((n) => n.id === id).kind === "episode");
+    });
+  await cards.locator(`[data-index-node="${episodeId}"] a`).click();
+  assert(
+    await cards
+      .locator("[data-explorer-detail]")
+      .evaluate(
+        (el) =>
+          getComputedStyle(el).position === "absolute" &&
+          getComputedStyle(el).boxShadow !== "none" &&
+          el.getAttribute("role") === "dialog",
+      ),
+    "selected topic result opens a raised dialog over the graph",
+  );
+  assert(
+    await cards
+      .locator("[data-explorer-map]")
+      .evaluate(
+        (el, before) =>
+          el.clientWidth === before.width && el.clientHeight === before.height,
+        originalMapSize,
+      ),
+    "opening a card preserves the full graph dimensions",
+  );
+  assert(
+    (await cards.locator("[data-explorer-detail] details").count()) === 0 &&
+      (await cards.locator(".connection-list button:visible").count()) > 0,
+    "source observations are directly visible without a context disclosure",
+  );
+  assert(
+    await cards.evaluate(() => {
+      const paths = [
+        ...document.querySelectorAll(
+          '[data-explorer-svg] path[stroke-width="1.4"]',
+        ),
+      ];
+      return (
+        !document.querySelector("[data-source-links]").checked &&
+        paths.some(
+          (p) =>
+            p.getAttribute("d") &&
+            Number(p.getAttribute("opacity")) >= 0.85 &&
+            p.getAttribute("stroke") !== "#d9dcd7",
+        )
+      );
+    }),
+    "episode selections show their immediate source relationships without the global toggle",
+  );
+  for (const width of [1440, 700, 390]) {
+    await cards.setViewportSize({ width, height: 844 });
+    await cards.waitForTimeout(100);
+    assert(
+      await cards
+        .locator(`[data-node="${episodeId}"]`)
+        .evaluate((el, phone) => {
+          const node = el.getBoundingClientRect(),
+            card = document
+              .querySelector(".explorer-detail")
+              .getBoundingClientRect(),
+            map = document
+              .querySelector("[data-explorer-map]")
+              .getBoundingClientRect();
+          return (
+            node.left >= map.left &&
+            node.top >= map.top &&
+            (phone ? node.bottom < card.top : node.right < card.left)
+          );
+        }, width === 390),
+      `${width}px selected node stays in the exposed graph area`,
+    );
+    assert(
+      await cards.locator("[data-fullscreen]").evaluate((el) => {
+        const a = el.getBoundingClientRect(),
+          b = document
+            .querySelector(".explorer-detail")
+            .getBoundingClientRect();
+        return (
+          a.right <= b.left ||
+          a.left >= b.right ||
+          a.bottom <= b.top ||
+          a.top >= b.bottom
+        );
+      }),
+      `${width}px overlay leaves graph controls exposed`,
+    );
+  }
+  await cards.locator("[data-close]").focus();
+  await cards.keyboard.press("Escape");
+  assert(
+    await cards.locator("[data-explorer-detail]").isHidden(),
+    "Escape closes the floating detail card",
+  );
+  await cards.close();
   assert(errors.length === 0, "no uncaught browser errors");
 } finally {
   console.log(JSON.stringify(checks, null, 2));
