@@ -1,0 +1,807 @@
+Pete (00:00.994)
+All right. Welcome to Intelligence Snacks episode eighty. So we have Mitch with us today, joining us from the wrong side of the country. So Mitch, do you want to introduce yourself and let us know a bit about you?
+
+Pete (00:19.202)
+As he paused as soon as we said that.
+
+Andy David (00:20.656)
+You
+
+Pete (00:23.962)
+Man.
+
+Andy David (00:28.784)
+What a start that is. Off to a flyer.
+
+Pete (00:30.106)
+Yeah.
+
+Dr Mitch - Unveil (00:37.006)
+It's a great start.
+
+Andy David (00:38.298)
+There we go. I think you've just paused for effect.
+
+Pete (00:39.096)
+I mean I don't we might have to leave that in.
+
+Dr Mitch - Unveil (00:40.984)
+So it’s
+
+Dr Mitch - Unveil (00:45.986)
+It was a real dramatic pause.
+
+Andy David (00:48.228)
+Yeah.
+
+Pete (00:49.348)
+That really was a dramatic pause. All right. I'm still recording. Hang on. Welcome to Intelligence Snacks episode eighty. So we just had a hefty dramatic pause from Mitch. So we may or may not have taken that out in the edit. Let's find out. You'll know, dear audience. So Mitch, do you want to introduce yourself, let us know who you are?
+
+Dr Mitch - Unveil (01:10.328)
+Sure. I'm Dr. Mitch. I run a company called Unveil. We predominantly work with SMEs in Australia to help them build their enterprise value, help them with their leadership, their people, build out their systems and infrastructure. Pretty much all the stuff that SMEs are typically pretty shite at if they've got a specialization. They're really good at their specialization, but all of the stuff around it that's the stuff that creates immense value. So we work in that space. That's what I do.
+
+Pete (01:37.433)
+Nice, nice. All right. So there's a thesis we've had on this podcast since day one has been that AI is excellent for SMEs because like they're the most like the most resource constrained people out there that you can imagine, but they also tend to be quite high agency. So I'm curious about your thoughts. Like how do you how do you see AI in the world of SMEs? Like is it useful, is it not? Go.
+
+Dr Mitch - Unveil (02:01.741)
+I think you're bang on in terms of the biggest potential beneficiaries of it. The people that can get the immediate most out of it right now, well arguably yesterday, last six months, last twelve months, is definitely SMEs because they can move super fast. They can change from frontier models, they can jump from ChatGPT to Claude and then to Grocbot, and they can follow the trends without having to worry about getting blocked by a policy or
+
+By kind of, you know, reams of red tape or a hierarchy or org chart or whatever it is that's going to block larger companies. So SMEs have a unique advantage in using AI simply because they can take advantage of the speed in which it's moving. And like even as an example, I was working with a client yesterday, he's gone from just himself man in a van doing sparky stuff. And I've been working with him only for a couple of months. He's now got a couple of other Sparkies on the road.
+
+Pete (02:40.793)
+Yeah.
+
+Dr Mitch - Unveil (03:00.577)
+We've got a CRM going, we've got ads going, and he's four or five X'd his business in terms of gross revenue within just a couple of months, just by pulling a few levers, just me helping him close the gaps that he he he didn't know how to close before. And he's immediately hitting that next bottleneck, which is a now I've got too much stuff coming in. My god, what do I do? Mitch, should I hire an admin person? Which is the classic, like
+
+Pete (03:28.354)
+Yeah.
+
+Dr Mitch - Unveil (03:28.471)
+We're four or five people into our SME. Do we get an executive assistant? Do we get an office manager? Do we get an ops manager? Do we get an admin person? What do we do? And it was probably the first time that I had 100% confidence to go, absolutely not, you do not need an admin person for that idea of like, what do I do with my leads? How do I sequence my calendar? How do I get back to everyone? How can I keep across everything that's going on?
+
+That stuff up until I genuinely believe up until six months ago was still something that was too convoluted to for a an owner of a busy SME to construct themselves. Now it's become you still have to jump through some hoops, but the hoops are half a day's worth of hoops or a day's worth of hoops compared to a couple of weeks' worth of hoops. Now I can go back to them and go, no, use these prompts. Let's investigate your whole architecture, the whole chain of how your business operates.
+
+Pete (04:02.234)
+Mm-hmm.
+
+Dr Mitch - Unveil (04:26.325)
+Let's measure what those gaps are and let's automate a significant proportion of them so that you can be going from this job over here to that job on the other side of town and go ding into voice mode on whatever LLM you want and go, Who have I missed today? Who's coming through my email? Just like you would call back to the office and call back to dispatch and go, Who's called through? Can I see anyone on the way to this job? Should be able to go bing and it goes, pulling from ServiceM8, pulling from GoHighLevel, pulling from your Meta ads.
+
+Looking at your Outlook, looking at your call history, you've missed this person. They're actually on the map between this job and that job. You could quote them in the next fifteen minutes and you might win that job. That is something that I think was near impossible to fathom for an SME owner and operator six months ago. Now it is half a day's worth of setup. If that.
+
+That was a that was a long answer.
+
+Pete (05:20.409)
+Where do you Yeah, I one thing that I kinda wonder if a lot of people I know we have like some viewers out of the States and places like this, but they might not realize like just how expensive like having like a full time admin person would be in somewhere like Australia as well. Like like you're you're all in costs. It would be what would be like a hundred grand or something like this just to add an extra seat into the business. So
+
+Dr Mitch - Unveil (05:44.481)
+Yeah. A hundred grand, like if you consider that the base salary for a junior admin person for a full timer would be around seventy K, and then you've got superannuation on top of that. You've got all of the insurance implications. If you've got a big enough business, you're paying payroll tax. So all of a sudden a seventy K junior admin who's in their second year of uni looking for a job while they do their night classes, all of a sudden that person is a hundred grand overhead. And unless you can justify the return of that overhead
+
+Pete (06:00.572)
+Mm-hmm.
+
+Dr Mitch - Unveil (06:14.113)
+What are we doing here? Kind of thing. And yeah, it's different it is different everywhere, but you know, it really is that thing of hiring domestic labor is extremely expensive in Australia for a reason. We've got we've got great systems for a reason. We've got great employee protections for a reason. Like they are all there in place, but it is expensive to run a business. Also, the last couple of years there's been this massive influx of
+
+Pete (06:16.207)
+Yeah.
+
+Pete (06:33.157)
+No.
+
+Andy David (06:36.57)
+You
+
+Dr Mitch - Unveil (06:43.969)
+You know, offshoring your administrative needs, offshoring your accounts, offshoring some of your sales, and they forget, and this is highly controversial, and I often I often say this with the with the d with the door closed, right? Is that businesses have either experienced or will experience the pain of the ingrained xenophobia that we have within in this country, that if you call up a company
+
+Pete (06:54.277)
+No, that's fine. Go with it.
+
+Dr Mitch - Unveil (07:10.219)
+And you are asking them a question about a service that you've paid for or a quote that you want. And if you don't hear an Australian accent on the other side that is very clearly Australian accent, the odds of you actually landing that work is going to plummet dramatically. And it's literally the nature of Australian culture is if it doesn't sound like us on the phone, even though they're we're one of the biggest multicultural countries in the world, if it doesn't sound like us on the other side.
+
+Pete (07:26.491)
+Mm-hmm.
+
+Dr Mitch - Unveil (07:40.141)
+You're gonna struggle. As soon as we hear the twang of an offshore accent, people are gonna go, Mm, they're gonna get that back up because everybody knows. Like everybody knows what you're doing and people will lower their trust of your business. And there's no point arguing that 'cause it's it's the way it is, you know what I mean?
+
+Pete (07:56.774)
+Is that why you're affecting this heavy Australian twang right now, Mitch? Are you trying to you're trying to like whi
+
+Dr Mitch - Unveil (08:00.303)
+Yeah, I don't know what you're talking about, Mike. Nor
+
+Andy David (08:04.559)
+Hehehe.
+
+Pete (08:05.359)
+Yeah nah. I mean I as a Brit, like obviously that explains so any issue that I've had now I can just just put up to that.
+
+Dr Mitch - Unveil (08:06.635)
+You know, you know, you know, yeah.
+
+Andy David (08:07.184)
+That was...
+
+Andy David (08:13.793)
+While you were...
+
+Dr Mitch - Unveil (08:14.039)
+And it's the thing, right? Like I don't I don't like when there's something obvious that doesn't get spoken about. And you know, like I've got a couple of guys that I help advise at the moment. They're building their company. Both they're young guys from India. They're both lovely guys. One of them has an incredibly thick accent and the other one does not. Has a very clean, fairly polished English English British almost accent. And when I was talking to them about their pitch and how they're getting in front of customers, they had not heard this bit of feedback at all. But I was like
+
+Pete (08:31.449)
+Yeah.
+
+Pete (08:43.835)
+Yeah.
+
+Dr Mitch - Unveil (08:44.193)
+Hey guys, out of the two of you, you have to be the one that presents because there are people in the room that will not accept your accent. They will not trust you. And it sucks that is the case. Like it's shit that happens. But if we ignored it, that would set them up for a disadvantage. I was the first person that ever gave them feedback for that. It's like now we've got to work on what's the best use of your resources so you can get the best possible outcome.
+
+It's no point ignoring it. You know what I mean? So I see that as something that businesses have run into that trouble trying to offshore so many of their critical back-end services, and they've been burned by it. Or it's just it's ended up not really saving them that much money anyway. Or they've got stung with the changes that have happened with there's big changes that have happened with the Philippines in terms of their awareness campaign campaigns for anyone doing virtual work. It's been heaps of changes there. So why this circles back to AI is.
+
+There is immense opportunity now to literally cover a significant proportion of that cost with smart use of AI. Without going over the top, just going, hey, when someone clicks your ad and drops into your funnel, what happens next? Because if your process in the past was it goes offshore and they call and your conversion rate's terrible, well, let's look at a chain of where it can respond to them. And you know, AI chatbots are getting super advanced these days where it can hit them up and go, hey,
+
+Pete (09:49.922)
+Mm-hmm.
+
+Dr Mitch - Unveil (10:12.885)
+It's Mitch, notice you clicked on my ad. Are you free for a call today? Here's my calendar. It's like those kind of things that have always been possible. They're just so much easier. They're so much accessible. Like, you know, like I remember the first time I looked at a Zapier or a or a make.com chain. And I'm a pretty tech savvy guy, but I remember looking at it, I'm like, my God. Like another stupid technical platform that I've got to try and wrap my head around. And now I can just go into Claude and go, hey, I need this automation.
+
+What's the best place to build it? It's like here, it's like do it. It's like, I can't do it. It's like use my browser and do it. And it's like, all right. It's like it's just just kind of gotta bully it into a bit of action. Then it's in my browser and it's setting up the automatic and I just watch it and I literally do it. It's like, sweet, thanks. Thanks, Claude. Thanks, buddy.
+
+Andy David (10:53.923)
+You
+
+Dr Mitch - Unveil (11:04.823)
+So I promised you I'd give waffly long answers. So here we are. I'm I'm living up to my promise.
+
+Andy David (11:08.752)
+No, this is good. I like it. I like it. Keep it, keep it going. Think what, with your example of, you know, going to automate the admin roles, right? Like you mentioned offshoring. This has been a trend for a couple of decades. I think the, where the big opportunity is, is actually in more specialized functions in the business. And like, so when Pete was describing the thesis that we've brought up about kind of value, just disseminating out to, to SMEs, you know, it's probably like quite useful to define
+
+What small is in terms of a business. Because like most people would go, okay, yeah, small business. Maybe you get up into that one to $10 million kind of range. That was traditionally a bit of a valley of death because all of a sudden you'd need to go and hire and then you've got to actually factor the return on the capital investment of actually hiring that seat. And that's where you tend to get this stagnation in the enterprise. I'm kind of more curious about these specialized functions because now it feels like,
+
+You can have a small business in terms of headcount, small being two, three, four people with enterprise like returns. And all of a sudden, like you've just removed a whole heap of constraints. So we traditionally have trapped a bunch of businesses in that like valley of death. And now all of a sudden they can go and they can just go and compete with the big boys. And like, I think that's less about like automating on the fringes and automating your admin and going, well, hang on. Now we have intelligence. The intelligence used to sit with like a bunch of people that we'd have to compete for, pay a lot of money for.
+
+And now all of a sudden, like, we have that capability in-house that we wouldn't have been able to compete for in the past. And I'm curious, like, how do you see this, like, definition of SMEs? Do you think it's, a kind of a fair assessment of where things might go? Do you think it's, like, overstating things? Like, how do you... What's your sense of this?
+
+Dr Mitch - Unveil (12:56.961)
+Well, I mean there's the official designation of what a small to medium enterprise is in Australia and always forget the exact numbers, but we've got the micro micro factor as well. So we've got the micro business, which I think is typically businesses under five to ten people headcount wise. And then we've got the small range, which is then measured I think it's five to twenty five or someth. I can't I can't actually remember because everybody's got their own different versions of it. But there is the official designation. I can't can't remember what the exact
+
+Pete (13:14.822)
+You can't.
+
+Dr Mitch - Unveil (13:26.601)
+Numbers are. But regardless of the designation, to your point, Andy, I think we are on the cusp of seeing maybe one of the biggest explosions of microbusiness economy ever, because of what you described. That idea of being able to get really high level potential returns from your company without having to significantly increase your overheads by hiring a stack of people, that is
+
+That's not coming that like that's already here. Like that potential is already there. And I think it's largely untapped. And I think we are right at the front edge of the wave of seeing a micro business boom. I and I mean we've always had a massive amount of small business in Australia. I think we've got two point seven million small businesses currently, or that's the latest stats. That is a shitload of small businesses. And of that two point
+
+Andy David (14:18.608)
+Hmm.
+
+Pete (14:19.067)
+About sixty percent GDP as well.
+
+Dr Mitch - Unveil (14:21.803)
+That's what I mean. It's like the lifeblood of how the country runs. It operates on small business, essentially trading back and forth with each other. I think we're gonna see an explosion of even more micro businesses, particularly in service based businesses, which is which is where I do the majority of my work. I do a bit of work with tech businesses, but it's majority service based that will require a human physically involved in the chain somewhere along the line. So whether that's a trades business, like I mentioned before, Sparkies, like
+
+You can't have AI, you know, solder in a new RCD or unplug unplug your switchboard and swap out to a new switchboard. And we're probably a couple of decades away from robots doing it, right? So we're Yeah, yeah, right. Right. So we've got service-based businesses that typically would either be micro forever and really struggle struggle to grow, or they'd have to bring in significant capital or significant contracts for them to jump up the ladder. And now we have the ability for a
+
+Pete (15:00.879)
+Best not to, maybe.
+
+Andy David (15:01.636)
+Yeah.
+
+Dr Mitch - Unveil (15:21.429)
+A solo, a duo, a trio, a five person, a seven person, a ten person, a twelve person operation to compete with what used to take fifty people, because they don't need as much dispatch staff. They don't need as much people running the admin logistics. They don't need, you know, one main accountant who's in house and then two bookkeepers that are doing the invoicing and chasing up clients. Like all of that, all of that functionality that was
+
+Manual data entry or semi-automated data entry that was one of the biggest expensive burdens for again like a Sparky company. It's like we just want to go out and we just want to do electrical work, but 30% of our staff are in back end administrative support. And that's a typical ratio. It's like 30 to 40% people in the office. Cause then the Sparkies on the field go, why am I slogging my guts out, jumping into a roof in a 40 degree day?
+
+And cooking, running these cables, someone's in an air conditioned office and they're earning not that much less than me. Like this doesn't seem real fair. And I think we're gonna see a lot of those ratios start to change because of how much of that can get largely solved by a proper AI implementation.
+
+Pete (16:38.374)
+So we often talk about and I know when I was pulling up like this because you're a hundred grand for an admin person, and it's it's not in like some sort of vulgar, like, I can't believe it cost this money, but it's interesting to think about at those smaller scales and in SMEs that like you can only grow in these like steps where you have to go like every new person is a hundred grand, two hundred grand, like the all the rolled in costs of those people are actually pretty high. Whereas like when you start as a one person, you just go like, All right, I'm just not earning
+
+Anything. And then I can slowly like get up to that. But when you add people to the organization, they you have these steps of cost that means you kind of have to be over earning by like a huge amount to then even consider like that next person that you could add to the business. And like one of you so one of the reasons we call this like intelligence snacks was this concept that we had, which was that like it used to be that you could only buy intelligence in like human shaped size.
+
+You know, it did cost like a hundred grand a year or like you have to have contracts and then you don't get to own any of the intelligence. Whereas now all of a sudden you can buy intelligence in like hundred dollar, two hundred dollar chunks that can do huge amounts of stuff. And like if nothing else, that just smooths that curve where you can start making all of these changes to your business where you can become more efficient, you can introduce new processes, you can have new like people, you can automate all this stuff, whereas previously we just push it to a person.
+
+But now you can do it in chunks where it might cost you like five grand for over the course of a year versus a hundred grand. And it's a huge difference to how you would grow that company.
+
+Dr Mitch - Unveil (18:16.417)
+Hundred percent. Yeah, and one of the things that often gets forgotten when it comes to adding more headcount to your business is not just the raw cost of it, but the risk, the additional risk that you create within your business with every extra person headcount wise. And the risk is not just a raw business one, because there is the raw business one when it comes down to the cost of it and you directing your business and looking at the fiduciary responsibilities and going.
+
+Pete (18:28.688)
+Mm-hmm.
+
+Andy David (18:39.088)
+
+
+Dr Mitch - Unveil (18:45.985)
+Well, we need X amount more revenue to pay all these people, right? But it's also the ethical risk that you carry because then a lot of the owners that I work with, they have teams that they proper care about. They properly care about these people. And the idea of adding it's like having like I hate the idea of our businesses like a family, but a lot of people think think of it that way, right? It's like if the business does operate like a family, it's like every person in the headcount, it's like adding another
+
+Another kid to your family that then you're responsible as the business owner for feeding. And as much as that sounds like a condescending viewpoint, it's the nature of how the business operates. You can't pay them, they can't put food on the table, they have to go and find another job, right? So then you're bringing on double risk. Risk to the business from all of the business side, and then ethical risk of going, I've gone through the process of hiring this person, I know this person.
+
+Pete (19:17.476)
+Yeah.
+
+Pete (19:25.936)
+Yeah, yeah.
+
+Dr Mitch - Unveil (19:42.219)
+I know I know what their spouse's name is and I know they've got kids and I know we're coming up to Christmas and shit if I don't do anything for the revenue wise, I'm gonna have to lay them off and then their Christmas is cooked and I'm gonna be their enemy for the rest of their life and they're gonna badmouth me for the— even if I do it as gently as possible, it will sour their holidays just because we don't have the cash for it. So that headcount risk has always existed there, and if we can minimize that risk
+
+Pete (19:58.267)
+Yeah.
+
+Mm-hmm.
+
+Dr Mitch - Unveil (20:12.065)
+By not taking on these risky positions that are changing so rapidly as well, they're evolving so quickly, you have a better potential for growth.
+
+Andy David (20:22.786)
+Interesting. Yeah, I mean the
+
+Dr Mitch - Unveil (20:22.977)
+I actually don't know if there was a question or if I answered it or
+
+Pete (20:26.139)
+Yeah.
+
+Andy David (20:26.424)
+No, it's fine. We just riff for the most part. That's this podcast. Welcome to Intelligence Snacks. That's what we do here. It's interesting though, right? Because in some respects, the company, if you take what a company is, it's kind of like the original super intelligence to some degree, right? Because you've got a long dated goal and you bring together a bunch of people who in the aggregate are, know, they're more, they're better positioned to be able to go and solve that.
+
+Dr Mitch - Unveil (20:31.751)
+Riffin was Griffin? Yeah, that's what it is. Yeah.
+
+Pete (20:50.031)
+Yeah, I'm sorry.
+
+Andy David (20:55.184)
+That long dated problem than say an individual on their own, right? Cause it's combinations of different capabilities and skills and whatnot. But like, I think when we're describing this, like being able to like, you know, get packets of intelligence for, you know, a few dollars here and there, that feels like a multi-agent system all of a sudden. And now you've got one person or two people with their unique skills, their domain expertise, and then all of a sudden, like, you know, the reach of thousands of agents.
+
+And you just think, yeah, shit, like you could go and out compete a lot of big incumbent businesses that are now having to carry the headcount of, you know, tens, hundreds, potentially thousands of people. And that feels like it's a real paradigm shift. And it feels like this is like now advantage SME all of a sudden. There's like the power is in, or the ball is in your court now. It's an exciting, it's like a...
+
+Dr Mitch - Unveil (21:47.873)
+Hundred percent.
+
+Andy David (21:52.687)
+It's a concerning time and it's also like a super exciting time. I'm super bullish on what this means for SMEs at the same time.
+
+Dr Mitch - Unveil (22:00.449)
+No, you're spot on. Like the speed at which you can arrive at a multiple outcome exit in such a short period of time for such a short amount of cash or such a small amount of cash is unprecedented in the last couple of decades, probably only precursed by the explosion of the internet, and emails and what that did in terms of the rate of communication, speed of communication, the sheer volume and velocity of it. We're seeing the same thing happen here.
+
+And everybody will all catch up and it will become normalized. But it's exactly what you said. It's like right now, like even even today as an example, I needed to go and check out a new pair of boots because my boots have fallen apart. So I went to the mall, which felt like an archaic activity unto itself, like going through the shopping mall and going, Jesus, like this is crazy. Ghost town. And
+
+While I was there, I've got my AirPods in and I'm dictating into Claude, going, Hey, pull from my transcripts from yesterday. I know that I had to do this, this, and this. I want you to prepare them so that they're ready for me to validate when I get back. So I was gone for an hour or hour and a half, and I come back to multiple parts of the project complete and ready to read through and approve. Even that as an idea was not practical.
+
+For an SME owner six plus months ago. Like I know it was there. I know some people tapped into it really early. But again, if I think of the businesses that I mostly work with, which are service based businesses, tradies, lawyers, accountants, education professionals, they're not the ones that are spending days and hours unpicking how to make a multi agentic harness to automate all of their back end systems. They need as much user friendliness as possible, right?
+
+Pete (23:54.331)
+Yeah,
+
+Dr Mitch - Unveil (23:57.057)
+The fact that I can be stomping around in the mall browsing through shit in David Jones, RIP, i if I can browse through that and then build actual outcomes, I'm building proposals and service agreements, because I've done all of the work on the back end. So it's just tapping on my resources and pulling from the Unveil vault and going, I know what your service agreements look like, I know what these roadmaps look like, I know that this person is a stage four, so I know what it looks like in the template that I've I've gone through
+
+The process of building that. I've built the skills, I've built the processes, I've built the systems there. I'm just like spamming the button to go create, create, create, create, create, and I become the director. By the time I got back here, three years ago when I first joined Unveil, almost four years ago now, the stuff that I got done in an hour and a half this morning while I was trotting around the mall would have been minimum a week's worth of activity, manual activity.
+
+Pete (24:35.313)
+Yeah.
+
+Okay.
+
+Dr Mitch - Unveil (24:54.561)
+Going through our templates, dropping stuff into Canva, pulling out Excel, going through our budget templates there, pulling out a SharePoint, grabbing our NDA from there and making sure it's got the right logo and branding on it for the new customer that's got to sign, going through our service agreement template, but making sure we've got the, you know, the updated version three version, not the version two that doesn't have the right coloring of it. It's like that process was mostly manual data entry and it wasn't none of it was
+
+The value that I'd promise to customers and clients anyway. It's like the promise that I'm going to give you is I will help your business grow and increase its enterprise value. That is the promise that I make. The back-end stuff isn't actually providing the value to the customer. It's just stuff that has to happen in the course of the business. So if I can take a week's worth of that work and compress it down to an hour of stuff that I'm doing while I'm doing something else.
+
+The advantage that gives me as a business owner is insane. And this is why I think it's now at the level where the potential was there and has been there for a good while, but the interfacing of it was still annoying. Like, I mean, it was only recently that Claude finally folded in Cowork. And it's like Cowork was the bridge between Claude Chat and Claude Code. And they went, people can't people that aren't technical can't get Claude Code, so let's let's put a bridge in between. And now it's so integrated that it's like I'm doing
+
+Pete (25:55.484)
+Yeah.
+
+Dr Mitch - Unveil (26:21.909)
+99% of my stuff just in Claude Chat because I can just do it on my phone. It's easy and it can tap into Claude Code whenever it needs. So it's it's become so much more user-friendly and it will continue to do so. Like they're only going to make it more user-friendly. They're not going to make it harder to use. They're going to make it significantly easier. So the advantage potential that gives to an SME owner, to a busy professional trying to do their stuff is insane. And I know there's so much AI hype.
+
+Pete (26:35.388)
+Yeah.
+
+Dr Mitch - Unveil (26:51.697)
+As you guys know as well. And I'm not sure if the I guess the lackluster approach to AI that I'm seeing in the industry or industries or the fear of AI or the ethical quandaries or any of that. But what I have pinned it down to as well is the amount of companies that I'm like, are you integrating AI? Because I run AI training, I do AI implementation, but it's all part of, you know, growing your business. And they go
+
+We tried it at the start of the year and it didn't work for us. So we haven't tried again since. It's like, my God, if you haven't tried it again and you tried it back in Feb when we first started seeing like the frontier models started really kind of swinging hard and getting more user friendly, but they're still lumpy and annoying and very forgetful. And it's like n like now? It's like it's not been ten months. It might as well have been ten years worth of
+
+Pete (27:30.684)
+It's
+
+Dr Mitch - Unveil (27:50.049)
+Development and like that exponential kind of advancement that's happened. So it's like you tried it back then and it didn't work. I'm trying it now. Like it's changed. If you've got a policy written about it, change your policy. Like this is crazy. Again, long answer. Suz. You bring the guy on to ramble and he rambles.
+
+Pete (27:53.094)
+Yeah, yeah, yeah.
+
+Pete (28:02.652)
+Yeah.
+
+Pete (28:10.044)
+How so how do you find the response? Yeah. How do you find the response then from these SMEs? Because like this is certainly an area where I've seen where like the what I there's that meme where you've got like people asking questions to ChatGPT and though this is the one guy that's like whip in all the agents and going and I feel like I've kind of lived that life for like the last, I don't know, year and a half now where most of the stuff that's becoming easier now
+
+Dr Mitch - Unveil (28:29.719)
+Yeah, yeah, yeah.
+
+Pete (28:37.553)
+I've just had in place because I built it for myself a while ago. And it's so I trying to bridge that gap back to people. It's like, no, this this is like huge and it can do so much for you. But there's a little there's a little bit of effort to get started. I mean, like where do you find like how do people get excited about this? Like what are the things that are resonating that you see?
+
+Dr Mitch - Unveil (28:59.393)
+Yeah. The response at the moment is really interesting and if I summarized if I summarized the entire response of what small to medium businesses are doing in terms of their response to AI is that they are waiting. Like that like in a nutshell it's like they're all waiting. They're they're waiting to see does it get better, does it break? D this bubble, is it a bubble and will it pop? Like the dot com
+
+Bubble and bust, will it be the same or will it sustain? Will one of these major companies have a grievous kind of breakdown and a leak of data and it will it will change policy? Like like people are in this holding pattern. There's definitely a huge chunk of fear around it. Fear of I'm gonna lose my job if I use this, so I'll just never touch it. My job will never be replaced. There is definitely the fear of
+
+We tested it six months ago and we put a bunch of allocation into it and we reviewed it and we wasted that money. We're not gonna we're not gonna play that card again. But a significant proportion of people that are simply like it's not quite as it's not quite as dramatic as head in the sand, but for lack of a better word, it is a bit of let's wait this out and see where the dust set like particularly now in November it's like let's see where the dust settles on the other side of Christmas, like
+
+Pete (29:59.484)
+Mm-hmm.
+
+Pete (30:17.196)
+Hmm.
+
+Dr Mitch - Unveil (30:21.645)
+Let's just, we're not going to make any decisions now. Let's see what kind of updates roll out. Because I think a lot of people got burned by the Yeah, it's like waiting is the big one. And people have been burned along the way. So they've they were burned when ChatGPT was the best, and then they got told to jump to Claude, which I've got some videos on like how to jump from ChatGPT to Claude. I went through that process as well, you know, in what, Easter or something when there was that big kind of push. And then since it's like,
+
+Pete (30:28.092)
+No, that word waiting resonates. Yeah.
+
+Dr Mitch - Unveil (30:51.029)
+No, then Claude Ast ChatGPT Astra comes out and it's better than Claude and then Dots comes out and then Grokbot comes out and pee I find that people are waiting because they're like, Can you all shut up and just when the dust settles, tell me just is there something that's useful? Or are you just gonna fight over the best frontier model and we'll just wait for you to finish your pissing contest? Kind of thing. So I have a lot of people who are like, I switched to Claude, I found it confusing.
+
+Kind of background ChatGPT. I do not know what to do next, so I'm waiting. I'm just in a holding pattern. So I'm seeing a lot of that response. A lot of people got sucked into some of those early things of like they bought a program of it from someone who was, you know, a pioneer or said that they were a pioneer on the internet. It's like, I'll change your business with AI, and then they jumped onto the one-hour Ebble webinar and got nothing out of it. So now it's
+
+Andy David (31:28.878)
+What are you doing?
+
+Dr Mitch - Unveil (31:46.775)
+Dirty the name even further because when there's a tech wave coming out, there's always people that are trying to make a quick buck and they dirty the tech wave even further. So there's a lot of that kind of people people are waiting and they're cautious because of the hype in a nutshell. Like that's really what it comes down to. The hype worries people and they go, too risky when it's this hype. Is it the next Bitcoin? Is it the next non fungible token? Like a
+
+Which one of these technologies that will revolutionize the world? Like which one of it is this? Is it one or is it not? And people are so distrustful of it now that they're just waiting. They're just playing a waiting game. And in reality, I do not blame them. Like if I was running a fifty person company, I'd been burned six months ago and spent some cash on an implementation that now nobody was using and I'd
+
+You know, bought a second brain that no longer connects to the day-to-day operations, I would also go, you know what, we're not gonna allocate any significant cash to this until the dust settles, at least until other side of calendar year, or let's rebudget as we go into next financial year, because so much is gonna happen between now and then. I'm not gonna risk getting my hand bitten again.
+
+Andy David (33:04.44)
+Yeah, you've also got government stepping in now talking about regulating the model providers as well on the ground over here. So that adds another layer of risk for the bigger companies. What are you doing internally? You're not waiting, right? So what are the things that you're doing? Then how do you go and show what you're doing to some of the people you're working with to get them on this journey?
+
+Dr Mitch - Unveil (33:29.325)
+I'm not waiting for AI to boom or bust or bubble or whatever simply because I have the ability to move fast and I have the appetite for the risk. So I'm gonna go after it because the potential reward is too high to ignore. And I've already seen the results of that. And I know that's a bit of a pithy answer, but it really is that thing of, you know, if we were I'm not a betting guy and I'm certainly not a horse racers guy, but it's like if I was betting on a horse, this is like the up and coming horse that is
+
+Pete (33:50.812)
+Hmm.
+
+Dr Mitch - Unveil (33:58.449)
+Smashing all of the prelims and it's the fastest horse that has ever lived. I might just go for a little bit of, you know, I might dabble early while while the dollar figure is low because this thing has huge potential. So I'm willing to run that risk because I don't carry as much risk in the business because I don't have a huge cohort of staff. So I don't have to worry about, hey, if I lose my $200 a month subscription, it's not going to kill me. You know what I mean? Like it's not going to be a
+
+Pete (34:05.988)
+Okay.
+
+Pete (34:10.524)
+Yeah.
+
+Dr Mitch - Unveil (34:28.017)
+A dramatic like if that sinks my business, I don't have a business, right? So it is very low risk relative to the potential gains. So that's why I'm moving fast. In terms of how I show people how I do it, because I about twenty percent of the work that I do at the moment is some in some way AI deployment or or AI training. So I'm partner with a company we're doing AI training for enterprise for Copilot because if they're stuck using Copilot
+
+Which a lot of them are just by policy, which I get it from an enterprise perspective. They carry even more risk changing to any of the other frontier models. There's too much risk involved for them. So they're like, we're paying for Copilot. Let's just sit on there. We can always blame Microsoft if things go wrong and we've been using it now for decades. We've factored the cost in a million times. Let's look at what we can do with the resource. That's the opportunity to then jump in there and go, hey, the
+
+Copilot’s actually come a long way and it is highly functional if you know what you're doing and you have people point in the right direction, right? So that is a big chunk of the work that I'm doing now with Xeniaus, the AI company that I've partnered with over in Perth, over your side of the country actually. Which is good because those those businesses need help as well, because otherwise they're gonna fall behind. One of the other ways I do it is about seventy percent of the clients that I work with are in the micro or small bucket.
+
+So under twenty people in the company. That's the majority of businesses that I'm currently working with. And I'll always at some stage in the conversation go, Hey CEO, hey owner, hey MD, hey GM, hey ops manager, hey team leader, are you guys using AI? And if so, how? And I'll just have a direct conversation. We'll map out all of the opportunities in their business of where they probably could save
+
+Pete (36:17.065)
+A
+
+Dr Mitch - Unveil (36:19.989)
+Money or increase productivity or just remove or reduce the administrative burden. That's some of the quickest potential wins for an SME right now is going, let's run an opportunity mapping of our business. Let's see where AI might be able to help us and let's test it in little increments. Let's not do the thing that everyone's got trapped in. Let's not go, hey, we've been using HubSpot for the last two years and we hate it.
+
+Pete (36:47.141)
+Yeah.
+
+Dr Mitch - Unveil (36:49.257)
+Let's spend six months rebuilding HubSpot with our own home baked solution. It's like, no, you're not gonna get an outcome quick enough. And by the time you've done that, like you'll be able to just like right now I can run a cash flow analysis in my Claude Chat and it's pretty bloody good. And it's like six months ago you would have to build a full dashboard for it and you'd have to run APIs, you'd have to do all kinds of shit to keep it in balance. And now you functionally don't. If you want to move fast, you don't have to.
+
+So I will often show those business owners by going, Hey, you know how we got off the call before? And I immediately sent you some customized material and a checklist and things for you to fill out. I didn't open Word, I didn't open Excel, I didn't open Canva, none of that was manual handling. It took all of my words, parked it with all of the construction that I've done, and it gave me a custom thing that I could review.
+
+Pete (37:26.469)
+Yeah.
+
+Dr Mitch - Unveil (37:45.025)
+And I could send to you. So it's no longer a generic template that's been marked up. It's now yours because I've put in the architecture to make this happen. And then they go, Can I do this for my clients? Can we build a quoting framework? I'm like, yes, you can. Thank God you asked. Like, let's go through this, let's add that to what we can do next. So then instead of running like a shitty-looking quote from ServiceM8, so that's that's the classic one that a lot of tradies use.
+
+Instead of using those shitty garbage looking templates that never feel like they're yours, they never feel like they're on point, they're never personalized enough, their templates suck as much as you can get good ones. They suck. It's like we can do something that is entirely you, or if you're a very client focused business, make it entirely them with your badge in the corner. You can essentially white label your entire process from end to end. You just have to go through probably
+
+Couple of days worth of setting it up, and then it's a jump on your phone as you come out of the client meeting and go, Hey, I just did this, have this conversation, run our proposal builder, the price point is this, the service we're doing is this, the roadmap is this, watch out for this thing, offer this as an upsell, have this as the as the service agreement. And you know what? We don't need to use any of the Adobe signing apps anymore. Use our signatory block that has an NDA and our terms and conditions attached to it with a check block.
+
+So that when they sign it up, it sends them an email and me and out. Like all of this stuff is possible to just take it in-house and not have to use one of these shitty systems that nobody liked ever. You know what I mean? Like, and I'll I'll give you an example. Like I have a business that I helped them to s I'm not sure if I should say the name actually. I helped them to stop using a HR subscription platform that they were using.
+
+You'd know it. The and one of the reasons why they didn't like it is because of the layout of the app. They did they found it confusing. And the color scheme was an aggressive purple. And then the font that they used, it always had it must have had opacity set to like 80%. So black text would appear like grey and too small. So it was hard to read. So the functionality of this.
+
+Pete (39:46.572)
+Yeah.
+
+Dr Mitch - Unveil (40:06.273)
+This kind of app that thousands of business in Australia are still using. They hated using it. And when I worked out, it's like, you're just using it to like run your employment contracts and answer like have your interview template for recruiting and then do the police check. Like these are all basic automations. Let's build one in your branding, your colors, your font, the size so you can read it, opacity at 100% so it's not gray, so that you can
+
+Pete (40:33.243)
+Mm-hmm.
+
+Dr Mitch - Unveil (40:34.773)
+You actually like using it's got big clicky buttons for the for the owner who's who's getting on and has you know, Coke-bottle glasses so he can barely see his life. Big buttons. You can't really go wrong. And we've made a custom solution for them, which means they've switched off this subscription. They've got a custom solution for relatively the same price and they're bloody using it. And that's the big difference. It's like you can make something that's useful rather than doing something 'cause you have to and you hate.
+
+Pete (41:05.123)
+Yeah, I think software that is a joy to work with is one of those things that's been it just didn't exist in most businesses, right? Like it was it was very rare. Most people use stuff that feels crap and that they hate using and they kind of force themselves into it. So just moving stuff into this world where you can be like, Well, why not have something that just feels nice to use it? Because you're more likely to use it. It's like when you buy like the when I first bought like a Mac computer versus
+
+Dr Mitch - Unveil (41:23.605)
+Hundred percent.
+
+Pete (41:34.636)
+A Windows computer. I was like, this thing is like it feels nice. It was aluminium. It was well machined. And I was like, there's something about this is a nicer computer to use. And it's like barely like I mean like you can probably buy like a nice enough machine to put Windows on, but then you put Windows on it and that's horrible. You could probably get away get around it with some of the Linux stuff. But it's yeah, there's something about it. It's nice to have a machine that does what you want.
+
+Dr Mitch - Unveil (41:54.828)
+Yep.
+
+Pete (42:04.684)
+Like and that you can you can adjust it to do what you want. It's interestingly, I just decided to move away from iPhones because I'm just like I am just so sick of this thing not doing exactly what I want it to do. And I've been meaning to move for a while from like just the general privacy and hygiene points of view. And I was like, I don't even want to install half the apps that are on my iPhone. I don't want to install all these. Like I am just gonna create
+
+Dr Mitch - Unveil (42:05.461)
+Hundred percent.
+
+Pete (42:32.778)
+New versions of the things that I want to be like just directly onto my phone, managed by me, that if they go wrong, I say, Rick, fix this. This is what's wrong with it. And then it appears on my phone. That's I'm done. I'm done with the gatekeeping.
+
+Dr Mitch - Unveil (42:48.619)
+It there's something that you mentioned there that I think actually ties back to what we've already talked about, right? Which is that idea of SME growth, right? Small to medium business in Australia used to have a fairly set and well trodden pathway. And it was like when you get to this size, you kinda have to do this thing. And then when you get to this size, you kinda have to hire this type of person. And when you mentioned like, you know, software.
+
+Pete (43:02.254)
+Mm.
+
+Dr Mitch - Unveil (43:18.669)
+That gives you joy to use. It's the same when it comes to you know running a business that's it's not necessarily going to be joyful all of the time. Like that's that's a bit fanciful, but it's like, how do you want to grow? Well let's try and grow it so it is as enjoyable as possible. Like d i if it brings you joy to hire an admin staff, do it. But if it doesn't, now you've got options. You know some people are some people are very happy to wear
+
+The hundred K cost and all of the risks that we've already talked about to hire someone in because they want and need people around them. And that is perfectly fine. But there's also the opposite of that where people had to do it and they didn't want to and they didn't like it and they went, my gosh, another mouth to feed, another personality to deal with, I'm not that good at it. I just want this business to grow and I want it to be functional. Now those people have genuine options to create a growth journey
+
+Pete (44:14.467)
+Yeah.
+
+Dr Mitch - Unveil (44:14.583)
+That does bring them joy because it's no longer one set pathway. And we're seeing that pathway getting unstitched every day. You know, even like another simple example, like the amount of businesses that I know that have offshored their basic bookkeeping. So it's like, you know, they're doing reconciliation, they're processing invoices and bills and all of that standard stuff, which is manual data entry. Now it's like even Xero can automate that natively. So it's
+
+Pete (44:39.373)
+Mm-hmm.
+
+Dr Mitch - Unveil (44:43.201)
+So it's these things that it's like no one really liked offshoring their bookkeeping needs to any other country just so people could click the reconciliation button or like code things to the right kind of accounts and all of that. No one liked doing that. It didn't bring them joy when they did it in-house. It didn't bring them joy to offshore it. So it's like now we have the option, yes we can employ someone else and yes we can pay them. But we don't have to when we've got choice. And that's what I
+
+Andy David (44:44.4)
+Hmm.
+
+Dr Mitch - Unveil (45:12.951)
+That's what I think that's where I think people get trapped in the AI conversation as well. They're like, but now I have to use AI for everything. It's like, no, no, no, you have a you have a choice, a and a legitimate choice. It's like you can choose to a use AI and you'll have this set of pros and you'll have this set of cons. Like, and I again I'll give you an example. At the moment, I'm doing a massive content strategy with my own content. We're going for a massive
+
+Pete (45:34.021)
+Yeah.
+
+Dr Mitch - Unveil (45:40.319)
+Saturation play, like I'm putting out minimum 10 pieces of content a day and spend even more on trial reels and testing it. So I'm doing heaps of that. I have very deliberately hired a short form video specialist in the Philippines when I know that I could build a Claude agent that would probably do eighty, eighty-five, maybe even ninety percent of the job. But I wanted someone that was creatively minded like me that I could back and forth wa with and have
+
+Pete (45:48.779)
+In the price.
+
+Dr Mitch - Unveil (46:10.239)
+A genuine laugh and a chat. It turns out he's a DJ. So my background being in music, I'm like, we chat about DJ stuff, and then it's okay, what are we gonna do for our video content this month? Like, what are some ideas? What are you seeing? And as much as you know, you can have chats with LLMs and it can scrape and it can pull info, it can't actually be your mate and it can't have the dynamics of a relationship. Maybe you will get there, maybe it already is there. I just maybe I'm underselling it.
+
+Pete (46:31.289)
+Yeah.
+
+Dr Mitch - Unveil (46:38.645)
+Everyone's got their own view on it. But for me it was a deliberate choice 'cause it brings me more joy to have a conversation with a human about it. So I'm willing to pay for the inconvenience. Yeah, go on, go on.
+
+Pete (46:48.059)
+I mean I definitely want to make a joke about
+
+Sorry, I was gonna say I definitely feel the need to make a joke about you buying your friends from the Philippines, but like that's we can I don't know if that's better or worse than the AI at the moment. But I
+
+Andy David (46:58.583)
+Hahaha.
+
+Dr Mitch - Unveil (46:58.999)
+Ha ha.
+
+Dr Mitch - Unveil (47:05.559)
+A little column A, a little column B.
+
+Pete (47:10.029)
+No, but there's definitely as you said about the it's like the spark and joy thing though, right? Like it's just it's nicer to work with humans than not humans. Like it was a real it was a real issue during like all the lockdown nonsense that we you were forced into being alone at home. You know, there was suicides, there was depression, there's a lot of downstream consequences from that. There's a reason why solitary confinement is a punishment in prison, right? It's just
+
+Not how humans are so you know like I don't oof ouch yeah you had the some of the worst but yeah like it's there's something about humans right you just you need that connection like I don't think we go to this world where it's like just YOLO one person necessarily I think every person like finds their the small tribe of other people that they'll they'll work with I mean it does feel like it's a
+
+Dr Mitch - Unveil (47:40.353)
+Man, I was in Melbourne for the lockdowns, I know what you're saying. It was brutal.
+
+Pete (48:06.852)
+Bit of an unanswered question at the moment is how do you have really good co working spaces amongst lots of people using AIs versus just like one person? Like 'cause a lot of it works super well for one person. And then as soon as you start sharing stuff, you realize like, you know, how do I do the security or like how do I set groups around this sort of stuff? Cause it's like, shit, I don't need
+
+You to know everything about me. I because I also I'm talking about all this stuff that I probably shouldn't be talking. Like how do I segregate all these different bits so that, you know, I hire a guy from the Philippines who now has got access to my bank account details. It's like, whoops there's so it's there's definitely like a question there to be answered, I think. But I mean I'd be curious Yeah, okay, go.
+
+Dr Mitch - Unveil (48:50.505)
+It's funny you mentioned that one, right? 'Cause that I have I have people that go, have you have you connected your AI to Xero and your VA has access to your Claude as well? Like, does that mean he can see your stuff and isn't that a bit of a risk? And again, there's risk everywhere. And there's like the other side of the risk, which is are you risking, you know, processing some of that data using Claude? But what if the data leaks or what if it gets something wrong? I'm like
+
+Have you worked with humans before? You know what I mean? It's like they leak data and get things wrong too. Like this idea of like, but if you use AI, like it'll make mistakes. I'm like, have you never run a team? Like, have you never run like at my largest team was 36 people I had on staff, and the majority of my time was spent in some way, shape, or form helping close the gaps that emerged in the team.
+
+Pete (49:37.742)
+Yeah.
+
+Dr Mitch - Unveil (49:49.537)
+Like that was just what it was. And I had a very I had a shitty approach to the leadership at the time, which was a huge failing on my part. So I was putting out spot fires all the time instead of fixing the underlying root cause, which took me years and years to understand that's what actually happened. But it's like I was running a team of thirty six that were highly talented, very specialized, very capable people that made mistakes every single day and data got leaked.
+
+Confidential information got lost and leaked and shared with competitors or shared with stakeholders that shouldn't have seen it. Because humans make errors too. So this idea of, but you if you use AI, like you have to check it for mistakes, it's like, yeah, have you run a team before? Have you done QAQC on a project before? Your whole job is looking for mistakes that you will find. So this idea of it being like a I can't put it in there because it's risky, it's like
+
+Everything you do in business is risky. Everything you do. The idea of just like head in the sand 'cause it's like, ooh, but what if there's a data leak? It's like, you know that Microsoft has data leaks too and all of your information is on SharePoint. Like it's crazy. Like I had a conversation with someone the other day about about sovereign data storage and they're like 'cause I was talking about a tech platform that I use that's homegrown based in Perth. Actually it was actually I won't mention their name, but you guys know it 'cause it's where we met.
+
+Pete (50:49.05)
+Yeah.
+
+Dr Mitch - Unveil (51:15.327)
+We're talking about data storage. Like where's where's their data stored? And I went and asked, like, where's the data stored? And it's like, a bunch of it's Australia, but a bunch of it's Singapore, because it's very hard to migrate data storage to Australia because it's extremely expensive and there's limited amounts of it, et cetera. And I went back to the person that had asked me and I gave them the answer and they went, Ooh, a lot of businesses that I know would prefer a hundred percent Australian. And I went, Do they use Microsoft? She's Yeah. It's like, okay, you know that.
+
+Andy David (51:24.176)
+
+
+Pete (51:39.759)
+Yeah.
+
+Dr Mitch - Unveil (51:42.795)
+A huge chunk of their data is not in Australia. It's in Singapore. So this this idea of even sovereign data storage, because Microsoft will often say it's like, you know, Australian clients will get the Australian data. But if you press them and the bandwidth shrinks, it goes off to Singapore. So it's like people have these flash in the pan surface judgments that they've probably heard a soundbite of and go, my gosh, what if my data is in China? And it's like, do you own a smart TV? Your info's in China.
+
+Are you on the meta platform? Your info's in China. Like, come on, stop taking the piss. I heard someone just today in my co-working space go, what were they talking about? They were talking about something about meta ads and they're like, Mitch, if I click on this, will it mean that they'll like understand more about me and my profile and they'll know stuff? I'm like, they already know. Like the idea of like, the tech giants, they're looking for my info. They've got your info.
+
+Andy David (52:13.946)
+Okay.
+
+Pete (52:31.564)
+They already know who you are.
+
+Dr Mitch - Unveil (52:41.655)
+They're just they're looking for more all the time 'cause it's capital for them. But the idea of you being like a digital a digital ghost or a digital nomad and you not existing on databases somewhere is insane. You're everywhere. Like ever everyone knows your shit. It's everywhere. Like it's crazy.
+
+Pete (53:01.508)
+That said, 'cause this is this is we might have differing opinions, 'cause I'm very much in a it shouldn't be. And we should build stuff in a way that we don't do that to people. But like yeah, okay, cool. So one of the things that you know, you talked a lot about Claude. Like I have a bit of a bee in my bonnet around Claude in the sense that you have this like curly headed guy. It's there's always like a curly headed effective altruist behind all the scams, right? And then this one is Dario.
+
+Dr Mitch - Unveil (53:10.935)
+Different argument.
+
+Pete (53:30.523)
+Previously we had Sam, you know, there's always one around. And what I find interesting is that this guy goes on TV constantly and to pump up the value of his own company, effectively says that, yeah, we're just gonna steal everybody else's company and we're gonna be the only company left. So you probably like want to get on board. And you're like, All right, that's that's a bit tone deaf and I don't know what I want to say about that. But I do find it kind of worrying to a certain extent, like how much
+
+Like small businesses are willing to YOLO all of that information into Claude and actually like have it manage all of that on their behalf, as opposed to exploring like different ways where they can retain some sovereignty over that. Because at some point, if like a lot of the intelligent work in your business is being done by that by that third party, by Claude, then there is a question around, well, is this really your business anymore or does it now belong to Dario? Like how do you feel about how do you think about that as a as a risk?
+
+Dr Mitch - Unveil (54:26.797)
+Yeah, look.
+
+Dr Mitch - Unveil (54:30.913)
+Think if you're in a primarily tech business or software based business or anything to do with technical side, this is this is probably the deepest dire straits you've ever been in from an ethical quandary perspective. If you're in the service-based industry, which is again a vast majority of my clients are climbing into roofs or they're meeting with families who are getting divorced or they're meeting with business partners who have separated and they're suing each other.
+
+Pete (54:44.932)
+Hm.
+
+Pete (54:53.209)
+Mm.
+
+Dr Mitch - Unveil (55:00.767)
+Which still requires the human in the room. And as much as there's, you know, there's doom and gloom about the legal industry will be gone because it's so data driven, the regulation will not allow that to happen. It's it's one of those industries that there's no fucking way with the amount of ex-lawyers that make up government, you think they're gonna let that entire industry crumble to automation? No way, no foul. Like it's not gonna happen. So I think service-based businesses, the risk of their data getting scooped away.
+
+And repurposed, I think is so minimal in real world terms. Because the majority of their job is knocking on the door, going into the building and swapping out the PowerPoints. So if AI knows what your pricing model is and it knows what your competition is and it can feed them some data on it, that has always existed by going to the pub and having a yarn with their subcontractors anyway. It's just changed the way of how it's operating.
+
+So I think from a trades business perspective, you've got a lot of people that are worried about, you know, the risk of like, but Mitch, what happens if I connect Claude through to Xero? Like it can read my numbers and it's like, do you really think any software platform is Fort Knox and it's and it's uncrackable? Like the idea of that is ludicrous because the amount of chains that your information goes through and whether it's as simple as, hey,
+
+Eventually all of these dollar figures are going to get pushed through to the ATO, which has been breached numerous times. Like who are we kidding here? You know what I mean? It's like, you know, I don't want my data to get stolen. The data's already stolen, you know? And again, different story. If you're generating genuine IP in the tech space and you're trying to generate solutions, those are the people that ha that carry an enormous amount of risk.
+
+Pete (56:27.332)
+Yeah.
+
+Pete (56:48.344)
+Yeah.
+
+Dr Mitch - Unveil (56:49.887)
+Around plugging their IP into a system that was built on harvesting IP. That is a an incredible ethical quandary that you have to try and navigate from a risk perspective. Which again, it was an industry that was largely protected from this sort of thing for a long time. There's always been hacks, there's always been data leaks, there's always been IP breaches, they've always existed. But I mean I'm not sure if you've seen the stats on on the reverse engineer anything
+
+GitHub repo in comparison. It's it's like the most regularly saved and starred repo of the last like 12 months. It's like you see the curve of it. It's just like REA was nothing and then in October it just went boom and it's overtaken almost any free repo source for open source technology. Because you can I'm not sure if you guys have mucked around with it at all, but any tech business, I would, I would genuinely be worried. Like genuinely be worried. If you are tech business
+
+Pete (57:46.852)
+Mm-hmm.
+
+Dr Mitch - Unveil (57:47.741)
+Only, if you are subscription only, and if there's a no interface with a human that is actually providing genuine real world value, not not like lip service value, but genuine value, I would be concerned and I would be worried about where you plug that IP into. At the same time, baby it's probably gone. Like the idea that it's like Fort Knox art, like I think that is that is problematic 'cause as soon as you go to publish, it's out there anyway.
+
+You know, publishes in the public. You know?
+
+Pete (58:17.742)
+Yeah. I mean to me I think it's probably more of a it's less about a data breach point of view. I think we make too much maybe about the data breach angle, but what I what I generally want is the sovereignty and the control. Like you talk about sovereign data, I'm like, well, unless you control that data yourself and like, you know, it was encrypted to you in some way, I don't really think it's that sovereign. And given we're currently in the furrows of the largest sustained
+
+Vulnerability disclosures in history, like literally everything on the internet is getting hacked right now and you've probably lost all sorts of data and it is out of your control. And I agree with that. I think the bit that was interesting for me would be where you see somebody like Claude and they've done this on like a large scale with somebody like Figma, where they just move in and they sit on the board in Figma. They had a close working relationship with them and then they just took that product and created a new one and then ousted them to get their own values.
+
+So it strikes me as a quite an unethical company that is willing to like turn people off and like do double dealing on stuff. And so I would look at and say there could be a point in time where your industry is the one that is now in the sights because they're not really going after companies. They just they don't necessarily want your data. It's more that there's like certain processes that they want to be the only company that runs.
+
+So I think there is a risk of just
+
+Swathes of industry just being turned off from Claude. And we have got some precedent in the export control licenses that were put on MIFOS because it was so dangerous like eight months ago. Apparently it's fine now to just export to everybody. But what we saw is that other countries could not use that model. It was just you were turned off from that model and you got the retard instead. So now you just gotta make do with Ralph Wiggum. So it could be, I think there's like risks around like
+
+Dr Mitch - Unveil (59:55.991)
+Great marketing campaign, wasn't it?
+
+Pete (01:00:09.475)
+You know, geopolitical risks of like, well, how does this shake out between, you know, if Australia is friendly with China and the US is against China, well then does that mean that we don't get access to like OpenAI and Claude for a period of time because we're in some sort of fight about that? Like is it the Claude or OpenAI suddenly turn round and they're like, well, we want to enter this industry, so we just start slowly retarding all of your all of your models in the background and you just it just suddenly doesn't work as well anymore.
+
+And don't know why, or maybe they just turn you off some completely. So I always think there's a certain amount of your business that needs to exist outside of that. Like and then you should be able to, you know, you can turn Claude on if you Claude to do the work. You turn on GPT if you want it to do the work. And then you can move seamlessly into like a Kimi K three point one or a GLM four point five five point four or whatever and it should flow.
+
+And that should be under your control, but the things that you need to maintain control of is this is supposed to be your relationships, your processes. So they should be able to run even if you take out that provider.
+
+Dr Mitch - Unveil (01:01:19.553)
+Yeah, if you've got the actual running of the business run run by AI and there is no way to switch it off and recover it, yeah, you are cooked. A hundred percent. Like you're you are I mean, again it comes down to risk, right? You just significantly increase your risk. I would definitely posit that has always existed. Like the same idea of I run all of my books through Xero, that is inherently risky. That is one single point of concentration.
+
+Now, arguably the industry would go, yeah, but it's secure and it's got this and it's got da-da-da. But from a from an overall top-level risk perspective, if Xero went down right now, I would be scrambling to get across my books, and there would be tens of, if not I don't know how many hundreds of thousands of customers they've got in Australia, but there would be hundreds of thousands of companies that would be affected because there is no backup and there is no there is no fallback mechanism for that. But that is
+
+One portion of a business that many people have just decided to accept, if you then cascade that risk across every single part of the operation of your business, you are just stacking risk on risk on risk on risk on risk on risk. And that's where it gets dumb. So, like the idea of what I described before of you know, I can trot through them all dictating into my phone and it's running a whole bunch of the back-end stuff, it can do that, and I'm willing to take the risk for the reward of speed, because I know.
+
+That if the Claude or if the AI bubble bursts and all of these systems get switched off, I know that my processes are there and I can return back to the old models, which it'll never be the old model again. It will be a new invention of it. Like let's say the regulation hammer came down, which it wouldn't because it's just not gonna it's not gonna come down that hard that'll stymie the growth that much. I think that there's a big
+
+There's big hype against that, like all government's gonna regulate it into the ground. They won't. There's too much growth opportunity for the economy. They will not regulate it into the ground. They'll just slow it down and they'll protect some industries from complete collapse, which will be banking and accounting and legal. Like they'll protect these sectors and they'll they'll, you know, tie it into yeah, all all the ones all the ones that are like heavy data set kind of industries, they will protect them and that will happen. But there won't be enough
+
+Pete (01:03:24.778)
+Okay.
+
+Pete (01:03:30.394)
+All the ones we don't wanna protect, but you know.
+
+Dr Mitch - Unveil (01:03:41.687)
+Hardcore regulation to stop again like service based businesses from going, We're gonna use Claude to help us run our quoting scammer or w we're gonna use ChatGPT or whichever the next one is. Or Grocbot's answering our leads and it's running a an AI bot that's gonna back and forth and in it's gonna be a digital setter rather than using a an offshore setter contractor or something like that. So I think
+
+If you are running the entire business off it and there is no fallback mechanism and you never had it to begin with, yeah, your business will collapse overnight when something explodes and Anthropic goes down, or they get pulled up for anti ethics, which arguably is every LLM in existence has a has an ethical question mark over it kind of thing. It's a and the ethics side is a really tricky one as well, because we are
+
+We are overly selective when it comes to what we decide to be ethical about and what we don't. It's like running an using an iPhone is inherently unethical because of the way that the minerals that construct the screens and the chips in it, how they're pulled out of the ground. Highly unethical. You know what I mean? And like another example, I'm a I'm a pescatarian, right? So I'm a vegetarian who eats fish, which is a very imperfect ethical stance. Incredibly unethical.
+
+Pete (01:04:54.587)
+Mm-hmm.
+
+Dr Mitch - Unveil (01:05:05.143)
+And it's like, I'm a vegetarian who drinks milk and eats eggs. Incredibly unethical and inconsistent. I am not a perfect vegetarian and for some reason I've decided ethically it's okay to say, fuck fish, I'll eat them. Right? Where whereas I'll also draw the ethical line and go, I don't want to eat a cow or a chicken anymore, kind of thing. So our ethical boundaries, and this is nothing new either.
+
+Our ethical boundaries are inherently flawed and inherently flimsy, and we'll decide where our ethical ground lies. So Anthropic is a good example, right? So my almost my entire background is as a creative artist in some way, shape, or form since I was a kid. I've been in a band since I was a kid. So the advent of something like Suno that comes out from scraped IP, you know, harvesting millions and millions of bits of art so that other people can generate.
+
+Pete (01:05:55.907)
+Okay.
+
+Dr Mitch - Unveil (01:06:00.663)
+Bits of art, that should be an affront to my ethical senses. And it is, but only to a degree where I go, well, that fucking sucks. But I've also been a creative since I was a kid, and I know that we've been shat on forever. So the idea of like a rallying cry against these monstrously sized industries that are steamrolling over these different areas
+
+Pete (01:06:21.379)
+Mm.
+
+Dr Mitch - Unveil (01:06:29.249)
+And thinking that me waving my arms about it is going to make a difference when the IP has already been harvested and they can't put the smoke back in the jar. Like the smoke's out. They've scraped the data they've learned from even at the moment, like I know there's a bit of noise going on about I think it's like a bunch of some of some of the old school Australian acts that are, you know, appealing to Albanese, going, we have to go after these companies for scraping all of our creative rights. The IP is
+
+Gone. The idea of like retrospectively putting it back in the bottle and looking for reparations, look how well we've done with reparations historically. That's a decades-long argument. Like that's like we might get payback for our IP that was scraped maybe in 15 years, if at all, and we'll get pennies on the dollar. Like like I understand why people are upset about it, but again, when we carve these very wonky, you know
+
+Pete (01:07:06.768)
+Yeah.
+
+Dr Mitch - Unveil (01:07:23.755)
+Ephemeral kind of ethical lines, we get an ephemeral result. You know what I mean? Like that was a bit of a wishy washy abstract answer.
+
+Andy David (01:07:30.35)
+Yeah, but this is also, but this is actually exactly why I kind of disagree with you about the legal industry, about accounting, about banking. These industries, like if you take them in their totality, you just think, yeah, behemoth, right? But like each of these industries has been like disintermediated progressively over the last two or three decades. Like banking as a behemoth, like we had FinTech, right? FinTech came around and started like nibbling away at the ecosystem.
+
+Pete (01:07:55.877)
+Yeah.
+
+Andy David (01:07:58.897)
+Carving out value in certain areas and the traditional banks, the way they responded to it was to go and buy them. It's like, okay, well, if we can just deploy our capital to control the ecosystem, well, that works as well. But that disintermediation, I think, accelerates whether government regulates or not. Like, Anthropic doesn't have to come out and go, yeah, okay, now we dominate the entire legal industry, but they might dominate personal injury law.
+
+Or they might dominate banking law, which is like a very like specific, you know, there are very like specific carve outs here where you can just completely disintermediate these industries. And then they don't exist in the totality that we see them in today. And I think like in the same, like in the same way you're arguing about like the toothpaste being out of the tube, like I 100 % agree, like no amount of government regulation at this point is going to do anything about this. So I think, but I equally think if you're in those sectors, like
+
+There is no protection for you here. Like, I mean, some of these companies, like look at Harvey, right? Harvey's trying to go and own the stack. They're like, okay, well now what we're going to do is buy law firms. So we'll run, we've got the tech infrastructure and we'll be at the coalface and we'll go and own the kind of the credibility, the reputations, the personal brands that exist in this space. They're all partners in these firms, we'll own them, right?
+
+Pete (01:08:59.076)
+Yeah.
+
+Andy David (01:09:22.416)
+I just think like, why wouldn't these companies, why wouldn't Anthropic go and do something similar? Why wouldn't OpenAI go and do something similar? Like, I think it's just going to happen. And I don't know that like we can say that any of these services sectors are safe.
+
+Dr Mitch - Unveil (01:09:32.269)
+Struggling to find the point where we disagree, Andy, 'cause I think you're bang on.
+
+Pete (01:09:35.852)
+Yeah.
+
+Andy David (01:09:37.682)
+No, I just think like, I don't necessarily think they're safe, right? Just because government steps in and regulates, just because they're lawyers or accountants or bankers, like I think they're all like equally at risk.
+
+Dr Mitch - Unveil (01:09:44.929)
+Yeah. They'll they'll try.
+
+Pete (01:09:47.324)
+If you regulate against the technology, you just put the technology behind a person that uses the technology and then boom, you've still got the efficiency. Like it's yeah.
+
+Dr Mitch - Unveil (01:09:52.737)
+Yeah. It's like the Barbra Streisand effect is right. It's like, don't look at this thing, let's protect this thing and all of a sudden there we go. I and one point on that Andy I think as well, that I think this point has been significantly undersold in this idea of you know, AI is going to take our jobs, we will lose our jobs, these sectors will be gone, these industries will be gone, they'll be rolled through. I that is not new.
+
+Like this is the evolution of the workforce. People have always been burned by technological change and it doesn't make it any nicer. Or, you know, it like if you're a if you're a third or fourth year computer science major right now, you are probably looking at this thing going, my god, the industry has fundamentally changed and that hurts and that sucks, but it has changed. Just like you don't see many Coopers anymore.
+
+Andy David (01:10:42.789)
+Yeah.
+
+Dr Mitch - Unveil (01:10:48.983)
+Who used to be 80 years ago a huge part of our society? People making barrels. Where are the cobblers that are fixing our shoes? Like, where are they? So the workplace and what jobs look like constantly evolves and it constantly changes. Like again, in my world from the music world, when I first got involved in music production, which was in the 90s, we were just seeing the change from tape-based studios into digital tape-based studios.
+
+Andy David (01:11:00.248)
+Hmm.
+
+Dr Mitch - Unveil (01:11:18.903)
+That put tape engineers out of work. And then we moved from digital tape across to computer systems and we saw all of these major studios that collapsed because people didn't need to go to the studio anymore. And now, even the digital iterations of it, it's now become a hyper boutique industry because anyone that's got a MacBook has a recording studio. And as much as the stalwarts of the industry could rally against that either from an ethical perspective or a
+
+Pete (01:11:41.953)
+Okay.
+
+Dr Mitch - Unveil (01:11:47.595)
+Or a subjective view on on like the artist output, because that's always a an argument that does not have a singular answer as well. But the evolution of work has always happened and it's always been triggered in some way by a major cataclysmic world event or economic event, or by technology, or by both. You know, like the implementation of the nine to five, right? It's like that got triggered out of World War One and then into World War Two.
+
+It didn't exist before that. You just kept working until the job was done. You'd work 12-hour shifts, 14-hour shifts, seven days a week. Like, or you wouldn't, because it there wasn't a standardization. So it followed a cataclysmic event, hyper-industrialization, which evolved the way that work occurred. We're just we're seeing a new iteration of that. Just like people that were like my mom. Here's an example. My mom was a
+
+Pete (01:12:27.014)
+Sure.
+
+Dr Mitch - Unveil (01:12:39.391)
+Secretary in the eighties and nineties and learnt shorthands, like physical shorthands, like with the symbols and stuff like that. The late 90s come along and computers come out. No more shorthand. What happened to all the shorthand secretaries that went to TAFE or went to I can't remember what they called it, tech? Was it called Tech School or something? Whatever it was called back in the day? It's like, what happened to their jobs? They didn't go, they changed. They shifted to something else. So
+
+We're just on the front of seeing a major change right now. Like you know, relative recent news. It's like Canva lays off twelve hundred people. A lot of them, I imagine, are gonna be supremely talented and I mean credit to Canva for handling the PR side incredibly well compared to all the other other examples. In it handled it incredibly well. There's gonna be a thousand to twelve hundred people, the number keeps kind of wonking around, that are gonna go, my god.
+
+What do I do? I've come from Canva. What am I gonna step down to some kind of shitty local company when they see I've been laid off from Can like where's my value? They'll find their value, it will just change, it will shift. That will also mean there's twelve hundred potential micro businesses that all can go out there and go, Hey, I'm a specialist, I've got Canva as my backing. I can probably start a little boutique service, maybe grab a couple of the other ex-Canva employees and go, We're really good at this thing.
+
+Let's go change the micro and small business economy, whereas before we were at enterprise level. So we'll ha have another potential explosion of micro business. So I think we're seeing this gigantic evolution.
+
+Pete (01:14:10.123)
+I couldn't agree more. That's
+
+Pete (01:14:14.609)
+I think that's exactly why you end up with more small businesses. Like the larger businesses find the savings, they lay people off. People are gonna do the thing they were doing before and they'll say, Well, I'll just I can do it in a way that they couldn't do it in that business because they were too big. And then you end up with just smaller businesses and we just go down the chain. But
+
+Dr Mitch - Unveil (01:14:32.621)
+And it's it's not gonna be the pathway for everyone, but neither was corporate in the first place. Like you guys are running a small business, I'm running a small business. All three of us could easily go and get a high-paid job at an enterprise. Well, it might be different now, you know, as we're seeing the landscape shift and change, right? But it's like we could go and do that journey, but for some reason we've decided it's not for us. And there will be people that get laid off from Canva and it will break them and they will not know what to do or where to go.
+
+Pete (01:14:39.58)
+Yeah.
+
+Pete (01:14:55.517)
+Yeah.
+
+Dr Mitch - Unveil (01:14:59.597)
+And then on the flip side, there'll be entrepreneurs that go, my God, you know, I was getting paid 120K a year. I've got six months of salary in hand. This is the opportunity of a lifetime for me with this kind of redundancy package. And I can still tap on the ex-Canva kind of experience. My God, I'll never get a shot like this again. So you'll see all of these different responses because there is no singular response.
+
+And yes, some people will get destroyed by it, which happens with any redundancy, whether a coal mine shuts because, you know, renewables have cropped up in the area and it's changed the nature of energy, or Canva lays off people because AI has changed the nature of what we need to get good engineering done. Like it will we'll keep seeing this and people are wrapped up into it because it is the biggest bubble of our generation for sure. So it will bring with it a lot of people, and there'll be a lot of casualties to it, but there will be an extreme amount of beneficiaries to it.
+
+Pete (01:15:40.423)
+Yeah.
+
+Dr Mitch - Unveil (01:15:55.809)
+And those that are on the front foot and will go, my god, this is my opportunity to build that business I've always wanted and I've got sixty K in hand and ex-Canva to my name, this is my shot, let's go for it. Let's use the technology that ousted me from a job to go and create my next role. That's where like true entrepreneurship will live.
+
+Pete (01:16:12.775)
+Yeah.
+
+Andy David (01:16:16.014)
+Here we go.
+
+Pete (01:16:16.559)
+I couldn't agree more. I think on that note, let's let's call that your Intelligence Snack.
+
+Dr Mitch - Unveil (01:16:24.631)
+Yum yum yum.
