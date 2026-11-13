@@ -1,15 +1,21 @@
 ---
 name: "Rod Bishop"
-role: "Episode 68 guest"
-shortBio: "Startup founder and listco CEO, New Zealander (kiwi) expat living in Australia, #nostr #austrich , dad."
+role: "Founder, Shosho"
+shortBio: "Founder of Shosho and co-founder of Jayride, exploring how AI and open networks change the economics of building a business."
 image: "/images/rod-bishop-voxel.webp"
 socialLinks:
   x: "https://x.com/rodbishop"
   nostr: "https://primal.net/p/nprofile1qqsphkn7raeed0dz68hejqea4r7jmsmzsyrephumuch4jypchwtufkggqxk8a"
+
+externalUrl: "https://shosho.live/"
 ---
 
-Rod Bishop is the founder of Shosho, a mobile live-streaming and marketplace application built on the decentralized Nostr network, that allows creators to broadcast directly from their phone camera or connect via RTMP/OBS, interact with viewers through live chat, and receive zaps. 
+Rod Bishop is the founder of [Shosho](https://shosho.live/), a mobile live-streaming and marketplace application built on Nostr. Shosho brings together broadcasting, conversation and Bitcoin Lightning payments so creators can connect with audiences and receive payments within the same application.
 
-Rod also founded Jayride.com the world’s leading publicly listed airport transfers marketplace, where travellers compare and book rides around the world. 
+Rod previously co-founded Jayride, the airport-transfer marketplace. His experience building a company with investment and engineering teams informs his current work with AI-assisted development. On Intelligence Snacks, he compares those approaches and explores how a founder can test ideas and build products with fewer people and less capital, while still making the commercial decisions that turn software into a business.
 
-Rod is a thought-leader on transport technology, a non-executive director of Sydney’s leading startup community Fishburners, and an active voice in Sydney’s technology startup ecosystem.
+### Connect
+
+- [X](https://x.com/rodbishop)
+- [Nostr](https://primal.net/p/nprofile1qqsphkn7raeed0dz68hejqea4r7jmsmzsyrephumuch4jypchwtufkggqxk8a)
+- [Website](https://shosho.live/)

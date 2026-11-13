@@ -1,15 +1,18 @@
 ---
 name: "Paul Itoi"
-role: "Episode 71 guest"
-shortBio: "Paul Itoi is the founder and CEO of Stakwork and has been building technology companies since the mid 1990s."
+role: "Co-founder and CEO, Stakwork"
+shortBio: "Technology entrepreneur and Stakwork co-founder building systems that coordinate people, software and AI to complete complex work."
 image: "/images/paul-itoi-voxel.webp"
-externalUrl: "https://stakwork.com/"
+externalUrl: "https://stakwork.ai/"
 socialLinks:
   x: "https://x.com/paulitoi"
 ---
 
-Paul Itoi is the founder and CEO of Stakwork and has been building technology companies since the mid 1990s. Stakwork is building infrastructure for turning complex cognitive work into reliable, repeatable systems of humans, agents, software and memory.
+Paul Itoi is co-founder and CEO of Stakwork and has worked as a technology entrepreneur since the mid-1990s. His work focuses on breaking complex tasks into smaller steps that can be coordinated across people and software. He also helped create [Sphinx](https://sphinx.chat/), an open-source communications platform using Bitcoin's Lightning Network.
 
-Paul is also closely associated with Sphinx, the open source Lightning Network project that combined encrypted communication, payments and machine mediated work. 
+At [Stakwork](https://stakwork.ai/), that work connects with AI orchestration and repeatable business workflows. On Intelligence Snacks, Paul argues for evaluating AI through dependable results, visible working and business value, with people able to inspect sources, calculations and decisions before relying on an output.
 
-Long before the current agent boom, Paul was already working on systems that decomposed complex tasks into smaller units, routed those units between humans and machines, paid people globally for completing them, and accumulated the resulting knowledge into reusable structures.
+### Connect
+
+- [X](https://x.com/paulitoi)
+- [Website](https://stakwork.ai/)

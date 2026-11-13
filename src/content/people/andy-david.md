@@ -1,12 +1,23 @@
 ---
 name: Andy David
-role: Host and co-founder
-shortBio: Co-host of Intelligence Snacks and co-founder of Other Stuff.
+role: "Co-host and co-founder, Other Stuff"
+shortBio: "Co-host of Intelligence Snacks and co-founder of Other Stuff, helping businesses turn AI capabilities into practical products and workflows."
 image: /images/andy-david-voxel.webp
 socialLinks:
   x: https://x.com/andymdavid
   linkedin: https://www.linkedin.com/in/andymdavid/
   nostr: https://primal.net/andydavid
+
+externalUrl: "https://otherstuff.ai/"
 ---
 
-Andy explores how AI changes software, organisations and the practical work of building new systems.
+Andy David is co-founder of [Other Stuff](https://otherstuff.ai/about), an AI product studio based in Perth, and co-host of Intelligence Snacks. His background spans venture design, management consulting and technology startups, including process improvement for both large organisations and small businesses.
+
+At Other Stuff, Andy works on helping teams apply AI to the way their businesses operate. His conversations on Intelligence Snacks explore building software with agents, designing useful workflows and keeping business knowledge and decisions under the owner's control. He also writes the show's [newsletter](https://otherstuff.beehiiv.com/).
+
+### Connect
+
+- [X](https://x.com/andymdavid)
+- [LinkedIn](https://www.linkedin.com/in/andymdavid/)
+- [Nostr](https://primal.net/andydavid)
+- [Website](https://otherstuff.ai/)
