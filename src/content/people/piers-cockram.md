@@ -12,6 +12,8 @@ socialLinks:
 
 Piers Cockram is the founder of [mineracks](https://www.mineracks.com/), a Brisbane-based Bitcoin business offering self-custody education and mining infrastructure. Its one-to-one training covers hardware signing devices, wallets, backups and the practical skills needed to hold Bitcoin without handing over control of private keys.
 
+The practical teaching at mineracks starts with the user's own equipment and experience. Sessions cover creating seed words, comparing hardware signing devices, choosing wallet arrangements and planning backups. Its training model is designed so the trainer never needs to know the customer's private keys. That emphasis on learning to operate the tools, rather than outsourcing custody, helps explain Piers's wider interest in systems people can own and run themselves.
+
 Piers brings a hands-on perspective to conversations about sovereign technology. On Intelligence Snacks, he explores Bitcoin infrastructure, private computing and what it means for AI agents to interact with money, including the responsibilities that remain with the people deploying them.
 
 [Find mineracks on Telegram](https://t.me/mineracks).

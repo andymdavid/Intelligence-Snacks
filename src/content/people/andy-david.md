@@ -15,6 +15,8 @@ Andy David is co-founder of [Other Stuff](https://otherstuff.ai/about), an AI pr
 
 At Other Stuff, Andy works on helping teams apply AI to the way their businesses operate. His conversations on Intelligence Snacks explore building software with agents, designing useful workflows and keeping business knowledge and decisions under the owner's control. He also writes the show's [newsletter](https://otherstuff.beehiiv.com/).
 
+In his Beyond the Brief interview with Jarrad Grigg, Andy describes starting with an owner's actual problem rather than arriving with a predetermined AI solution. He and Pete built Wingman around their own working needs and those of small businesses, with familiar ways to organise tasks and collaborate with agents. For Andy, the useful test is whether a tool can become part of productive work, rather than simply produce an impressive demonstration.
+
 ### Connect
 
 - [X](https://x.com/andymdavid)

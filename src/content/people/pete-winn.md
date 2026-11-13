@@ -15,6 +15,8 @@ Pete Winn is co-founder of [Other Stuff](https://otherstuff.ai/about), an AI pro
 
 Pete brings that systems perspective to the practical use of AI. At Other Stuff and on Intelligence Snacks, he explores how agents fit into business processes, where reliable software should guide the work, and how organisations can develop their own capability while retaining control of their tools and knowledge.
 
+In a Beyond the Brief interview, Pete describes the challenge of using several agents at once without losing track of the work or becoming absorbed in the tools themselves. That experience feeds into Other Stuff's development of Wingman and its focus on helping people coordinate agent work. His concern extends beyond efficiency to who owns the resulting capability and whether small businesses can use AI without surrendering their knowledge to a few large providers.
+
 ### Connect
 
 - [X](https://x.com/Pete_Winn)
