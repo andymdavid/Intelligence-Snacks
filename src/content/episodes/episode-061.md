@@ -14,7 +14,7 @@ themes:
   - knowledge-memory
   - software-systems
 originalPublishedAt: "2026-06-11"
-youtubeUrl: "https://www.youtube.com/watch?v=2Es21QIvqL4&t=4s"
+youtubeUrl: "https://www.youtube.com/watch?v=2Es21QIvqL4"
 transcript: episode-061
 featured: false
 fixture: false

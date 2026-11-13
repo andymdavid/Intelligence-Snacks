@@ -1,6 +1,7 @@
 ---
 number: 72
 title: "The Internet We Deserve"
+youtubeUrl: "https://www.youtube.com/watch?v=5mNhaiwZMX0"
 summary: "FIPS gives computers direct, secure addresses so their files and services can be reached without first moving them into the cloud. FIPS lets peers find a path to a computer or application, then carries IPv6 traffic across whatever underlying connection is available."
 thumbnail: "/images/episodes/episode-072-thumbnail.webp"
 status: published

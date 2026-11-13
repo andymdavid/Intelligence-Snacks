@@ -14,7 +14,7 @@ themes:
   - business-markets
   - software-systems
 originalPublishedAt: "2026-09-24"
-youtubeUrl: "https://youtu.be/uLm2T9ERuT0"
+youtubeUrl: "https://www.youtube.com/watch?v=uLm2T9ERuT0"
 transcript: episode-073
 featured: false
 fixture: false

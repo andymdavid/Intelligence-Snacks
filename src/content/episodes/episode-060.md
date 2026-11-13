@@ -13,7 +13,7 @@ themes:
   - ai-models-infrastructure
   - business-markets
 originalPublishedAt: "2026-06-04"
-youtubeUrl: "https://www.youtube.com/watch?v=cvsH7GmSheU&t=4s"
+youtubeUrl: "https://www.youtube.com/watch?v=cvsH7GmSheU"
 transcript: episode-060
 featured: false
 fixture: false

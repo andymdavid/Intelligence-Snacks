@@ -13,7 +13,7 @@ themes:
   - knowledge-memory
   - software-systems
 originalPublishedAt: "2026-06-25"
-youtubeUrl: "https://www.youtube.com/watch?v=oxmgClT2DmA&t=6s"
+youtubeUrl: "https://www.youtube.com/watch?v=oxmgClT2DmA"
 transcript: episode-063
 featured: false
 fixture: false

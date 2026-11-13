@@ -1,6 +1,7 @@
 ---
 number: 79
 title: "Cloud Agents"
+youtubeUrl: "https://www.youtube.com/watch?v=ppybb1EPyiA"
 summary: "Trying an AI-built business development app helped Andy pin down a requirement he hadn't been able to describe in advance. Andy wants Lara to run Snack Studio's production pipeline while he keeps the app for editing, much as Pete keeps Wingman available to inspect delegated work."
 thumbnail: "/images/episodes/episode-079-thumbnail.webp"
 status: published

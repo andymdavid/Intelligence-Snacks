@@ -15,7 +15,7 @@ themes:
   - privacy-security
   - software-systems
 originalPublishedAt: "2026-07-30"
-youtubeUrl: "https://www.youtube.com/watch?v=RNHGfJQX070&t=8s"
+youtubeUrl: "https://www.youtube.com/watch?v=RNHGfJQX070"
 transcript: episode-065
 featured: false
 fixture: false

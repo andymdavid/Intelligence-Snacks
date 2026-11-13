@@ -15,7 +15,7 @@ themes:
   - knowledge-memory
   - privacy-security
 originalPublishedAt: "2026-08-13"
-youtubeUrl: "https://youtu.be/yfNEayLmJOk"
+youtubeUrl: "https://www.youtube.com/watch?v=yfNEayLmJOk"
 transcript: episode-067
 featured: false
 fixture: false

@@ -14,7 +14,7 @@ themes:
   - privacy-security
   - software-systems
 originalPublishedAt: "2026-10-07"
-youtubeUrl: "https://youtu.be/9LKYRB849O4"
+youtubeUrl: "https://www.youtube.com/watch?v=9LKYRB849O4"
 transcript: episode-075
 featured: false
 fixture: false

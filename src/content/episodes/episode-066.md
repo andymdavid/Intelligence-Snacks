@@ -12,7 +12,7 @@ themes:
   - knowledge-memory
   - privacy-security
 originalPublishedAt: "2026-08-06"
-youtubeUrl: "https://www.youtube.com/watch?v=s4WBSoNO9qs&t=1s"
+youtubeUrl: "https://www.youtube.com/watch?v=s4WBSoNO9qs"
 transcript: episode-066
 featured: false
 fixture: false

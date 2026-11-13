@@ -1,6 +1,7 @@
 ---
 number: 76
 title: "Humanmaxxing"
+youtubeUrl: "https://www.youtube.com/watch?v=YHAVm_6owKg"
 summary: "Good taste isn't necessarily difficult to explain. Knowing when to exercise it is another matter. Instead of navigating the same screens and menus every day, people could have AI agents create software around whatever they need to do."
 thumbnail: "/images/episodes/episode-076-thumbnail.webp"
 status: published

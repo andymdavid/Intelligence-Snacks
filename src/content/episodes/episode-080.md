@@ -1,6 +1,7 @@
 ---
 number: 80
 title: "Rise of the Microbusinesses"
+youtubeUrl: "https://www.youtube.com/watch?v=SYb4Us5ce5Q"
 summary: "Dr Mitch proposes linking unanswered enquiries with job locations so a tradesperson could stop and quote between scheduled visits. Pete argues that buying AI capability in small amounts can help a business grow without committing to another salary each time the workload increases."
 thumbnail: "/images/episodes/episode-080-thumbnail.webp"
 status: published

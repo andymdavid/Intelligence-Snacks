@@ -15,7 +15,7 @@ themes:
   - privacy-security
   - software-systems
 originalPublishedAt: "2026-09-03"
-youtubeUrl: "https://www.youtube.com/watch?v=KVwnWUrZYMY&t=1s"
+youtubeUrl: "https://www.youtube.com/watch?v=KVwnWUrZYMY"
 transcript: episode-070
 featured: false
 fixture: false
