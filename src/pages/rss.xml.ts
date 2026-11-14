@@ -1,11 +1,10 @@
 import rss from '@astrojs/rss';
+import { snacksNewestEpisodeFirst } from '../lib/content';
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async (context) => {
-  const snacks = (await getCollection('snacks'))
-    .filter(({ data }) => data.status === 'published')
-    .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0));
+  const snacks = snacksNewestEpisodeFirst((await getCollection('snacks')).filter(({ data }) => data.status === 'published'), await getCollection('episodes'));
 
   return rss({
     title: 'Intelligence Snacks',

@@ -2,7 +2,7 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SnackVisual from '@/components/SnackVisual.astro';
-import { isVisible } from '@/lib/content';
+import { isVisible, snacksNewestEpisodeFirst } from '@/lib/content';
 
 export async function getStaticPaths() {
   return (await getCollection('people')).map((person) => ({ params: { id: person.id }, props: { person } }));
@@ -16,13 +16,7 @@ const episodes = allEpisodes
   .filter(({ data }) => isVisible(data.status) && data.participants.some(({ id }) => id === person.id))
   .sort((a, b) => b.data.number - a.data.number);
 const episodeIds = new Set(episodes.map(({ id }) => id));
-const episodeNumbers = new Map(episodes.map(({ id, data }) => [id, data.number]));
-const snacks = (await getCollection('snacks'))
-  .filter(({ data }) => isVisible(data.status) && episodeIds.has(data.sourceEpisode.id))
-  .sort((a, b) => {
-    const publishedDifference = (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0);
-    return publishedDifference || (episodeNumbers.get(b.data.sourceEpisode.id) ?? 0) - (episodeNumbers.get(a.data.sourceEpisode.id) ?? 0);
-  });
+const snacks = snacksNewestEpisodeFirst((await getCollection('snacks')).filter(({ data }) => isVisible(data.status) && episodeIds.has(data.sourceEpisode.id)), allEpisodes);
 const isHost = person.id === 'pete-winn' || person.id === 'andy-david';
 const visibleEpisodes = isHost ? episodes.slice(0, 3) : episodes;
 const visibleSnacks = isHost ? snacks.slice(0, 3) : snacks;
