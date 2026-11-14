@@ -1,0 +1,490 @@
+Pete (00:00)
+All right, and welcome to The Good Stuff, the big episode 59. That's the one. 59. Yep. All right. And if you missed the pod before the pod, I don't know what to tell you. It was a good one. You know, we've only done like the pre-hour of chat. Not quite. Almost. All right.
+
+So topics this week. We were just saying like one of the things that was coming up a lot is there seems to be more hate in the world about AI.
+
+Andy (00:28)
+Just generally.
+
+Pete (00:29)
+Yeah, okay, that's true.
+
+Andy (00:32)
+But particularly toward AI.
+
+Pete (00:33)
+Yeah, so maybe we start there and see. Maybe we can solve that by the end of the pod. Can we solve hatred towards AI?
+
+Andy (00:42)
+It's interesting, isn't it? Because I feel like it's the most visceral kind of hate toward AI. You start to see more agitators toward AI, especially younger people. I think the big examples the last couple of weeks have been these graduation ceremonies where like speakers have mentioned AI
+
+Pete (00:59)
+and then they just get booed.
+
+Andy (01:01)
+And I was like, okay, interesting.
+
+Pete (01:03)
+I don't know if you ever listened to the Tim Dillon show, which if you don't, you should start listening to the Tim Dillon show on your Sunday mornings. It's hilarious. Cue it up. He's very funny. He's very right about all that stuff. He's a good guy.
+
+But he was talking about this a lot. And he talked about this, like, there was a Goldman Sachs DJ, like former Goldman Sachs president or whatever. Oh, yeah. He's then like DJ D-Sol or something, and he was there telling everybody about how they're fucked
+
+Andy (01:31)
+because of him. It's quite motivating for graduation. There's a lot to hate here about this prick. Yeah, It comes with the territory, I think. Yeah, I mean you already knew you kind of hated
+
+Pete (01:43)
+Him at Goldman Sachs CEO. He's probably a little bit out of touch, and you're like, oh, he's going to go and talk about his new songs that he's DJing and about how you have no future. Like, oh, that doesn't seem like it's going to land. Yeah.
+
+Andy (01:57)
+It's a know-your-demographic, I think.
+
+Pete (02:00)
+I've had some advice that, like, you know, when you're talking to an audience, you're not really talking about you. You're talking about them and how they can see part of what they want in your story. And I was like, yeah, that guy didn't get that advice.
+
+Andy (02:11)
+Completely went over his head. Yeah, it's interesting, isn't it? Because it just feels like we're at a moment now. I didn't notice this quite so much, like two or three months ago. I feel like it's really kind of reared its head in the last few weeks. Maybe it's just because there have been graduation ceremonies and this naturally kind of binds to that, where people are like, I'm stepping out of university now, I'm going to get a job. Oh, it's hard to get a job, and everyone's talking about how AI is going to take all those entry-level jobs. So maybe it does kind of just make sense that it binds to this moment.
+
+Pete (02:40)
+I think anybody that's listened to the pod, we're not fully subscribed to that being a doomerish thing for young people particularly I actually don't think that's how this would play out.
+
+But it certainly is the narrative that's out there in the world. I mean, there's also been free attacks on Sam Altman's house in the past. So it's even beyond just people being a bit annoyed, there's actual agitation. I think there's data center. Yeah, you kind of wonder because it's almost like anything that happens, everything's so political, particularly in the US, that if one side is doing something and the other side is like actively against it until they swap and then they swap roles for all those straightaways.
+
+Andy (03:26)
+Like how—maybe we don't need to go into those files. You kind of see this even with, like, the Luddite movement, right? This was, like, typical of that to some degree. I just don't know if it's a case of this will swing around again and it's a bit of a storm in a teapot for now, and will people get over it when they realize that actually there's still plenty of opportunity? I think when you have...
+
+Pete (03:50)
+People, like, if you don't have any money and then there's some billionaire on the TV with all the money saying, I am going to put you out of your job. I'm just going to steal everything of yours. Like, I mean, I don't believe in intellectual property as a thing. It's not a thing, it's made up. I don't think it's useful for society. But, you know, if you're going to put, like, Aaron Swartz was, like, driven to suicide because of intellectual property law, whereas Sam and Dario can steal as much as they like and it's fine and make billions of dollars off it, and you're like, well, yeah, I don't think that's—that's unfair, quite clearly.
+
+But then they turn around and they say, oh, we're just going to take everyone's jobs now, and like we're going to steal all the information. Everything that you do in our systems is ours and we're just going to keep it all, and we're going to put you better jobs. And yeah, I mean, I feel like the answer to this is, like, you shouldn't support them. Like, I don't know if it's necessarily that AI is bad. Yeah. But, like, they are the worst representatives of this technology that you could possibly ask for. Like, it's really bad. You think, you kind of wonder why there's not a little bit of just, I don't know, self-reflection.
+
+Andy (05:09)
+Yeah. I think that's definitely an element. Then there's also like an element of this where most people don't know who Sam and Dario are. And they still have these kind of negative views on AI. There was like a great example I saw this week. Someone posted a picture of a—I can't remember the artist's name. Maybe it was, for the sake of this discussion, it's going to be Monet. Okay. Can't remember. And he said, oh, it's, you know, like I just generated this, like, this flawless version of a Monet, and people were commenting on it and going, yeah, it's clearly AI, and like, you know, this brushstroke here...
+
+Pete (05:43)
+So he literally got a Monet and just reposted it.
+
+Andy (05:45)
+It was an original, yeah. And so then he was like, well, actually, it's an original, guys. So, like, all of your fake outrage and analysis is completely wrong. So it is interesting that you're going to get that hatred irrespective and I'm going to go out on a limb here and say most of these people don't know who Sam and Dario are. They may not even know the companies involved. They just know ChatGPT. And basically the hatred is there.
+
+And then the other thing I think, the other important point you just mentioned, I touched on as well, is a broader economic point here as well. Like, I just think there's just a lot of corruption, like theft. Yes. And I think AI is like the easy bogeyman to just be like, oh, it's AI, you know?
+
+Pete (06:31)
+So let's just blame AI for a lot of this stuff. True. True. So, I mean, I do think, like, it's mine. Maybe people don't. I think people know Sam better than Dario, probably. Yeah, just because he was always the first one in ChatGPT, who got so big so quickly. I think people are aware that, like, the head of Anthropic or the head of the AI labs—and, like, to be honest, they may as well all be the same Gru from Despicable Me sort of character, except not reformed. Yeah. Not liable or something. Yeah, just a whatever. Yeah. I've only shot at the podcast last week, and I was like, oh, should I have been disclaiming myself? No. Don't worry about it.
+
+And it was yeah, it's the, like, they know, there's definitely a narrative of like the leaders of the AI lab say you're all fucked and we're having your jobs. And we're going to take, not even your jobs, it's like we're going to take away your whole industry. And I don't think it's really true. I don't think you can do it better from one central location. We've covered this like ad infinitum on the pod, but
+
+Yeah, I do feel like the general feeling of hatred is pretty more rooted in. There's just been an awful lot of corruption and really naked corruption and stealing over the last 20 years, pretty much. So, I mean, probably even earlier.
+
+There's like a lot of the theft that came clear in the banking crisis in 2008, which would be like a formative moment for us in our careers, sort of thing. That was all executed. All the theft happened beforehand. It's like they stole all the money as credit. And then when it turned out that they didn't have anything to pay it back, we just wiped the debt. The wiping of the debt was more the closing of the theft, not the theft. Like, it was just like, but we just let them off the hook. And said, ah, yeah, it's fine. You guys can just steal as much as you need. We'll just pay for the bill instead. And you're like, oh. We'll pay for the bill. Yeah, exactly. Yeah. So I mean, yeah, we'll pay for the bill. Us literally not. Yeah, literally us. Like literally everybody just gave money to a bunch of bankers and like nobody went to prison. You're like, all right, well, that probably set the stage for the next 20 years.
+
+And what happened is that we just got larger and larger bailouts of rich people. Generally, most people are just in a pretty bad position. And it's kind of hard when you see the interest rates growing up and the food prices going up.
+
+And what I believe will just be more massive spikes in food prices, given what's happened out of Iran with fertilizer issues and just general oil. I mean, how do you feel about oil? It's how all the food gets from the farm to your supermarket. So even if you don't drive around in a car or you've got a Tesla or whatever, fine. But there's no Teslas delivering all the carrots. So your carrots are going to get more expensive.
+
+I feel like we're going to have a pretty rough time. And it leads to a lot of hate. And generally, it's useful to have things to put the hate on. And then if you've got a few people that stand up there pretty much telling everyone they're going to take their jobs, I think it's quite understandable. Yeah, I think so. There's a lot of hate there. I don't think it's correct, but I think it's very understandable.
+
+Andy (09:51)
+You can separate out the usefulness of the tool and the technology with the people that are maybe driving some of the narrative. Yeah. And, like, the narrative doesn't need to be—it doesn't really make too much sense for most people to listen to Dario going, yeah, we're going to come and take basically every industry, and we're going to roll it up into Anthropic, and Anthropic's going to be this multiple trillion dollar entity. That's not useful for most people to hear. And also it's just not practical.
+
+Pete (10:21)
+I think the problem is that the answer is nuanced in the sense that it's not that, it's like saying should you hate J.P. Morgan? Probably. Large evil bank. Basically Evil Corp from like, what's it, Mr. Robot? Which you should. E-Corp.
+
+Andy (10:40)
+Classic.
+
+Pete (10:41)
+Yeah. Should you hate JPMorgan? Probably. Should you hate a small regional bank in the same way because it's also a bank? No. No, it's a very different thing.
+
+In general, the problem is the large centralized version of the thing, not the thing itself. And I think that extends to AI kind of nicely as well, which is that this can be a tool that you can use to gain incredible agency and leverage, actually improve your life. However, it's not that useful if we just let one massive company do it.
+
+So I think it would probably be fair to say like, oh yeah, okay, you're one company that thinks you're going to just do everything in the world and you're going to do your best to add, you know, like regulation stuff to capture those markets and make it so only you can do it and you're going to bribe the politicians. And if we know anything from effective altruism and people like Dario, it's that they do like bribing politicians. That's what we learned from the whole SBF scandal is. And I think you should be pissed off at that, and you shouldn't want to work with those people.
+
+I think the answer to that is not that everything that they have birthed into the world and the tools and the techniques should be discarded. I think you should take those weapons and just use them to empower yourself, as opposed to ignore it. Ignoring it is going to be incredibly dangerous.
+
+Andy (12:07)
+Yeah, agreed. The other issue is, you know, JP Morgan's of the world are all faceless institutions. It's like, in some ways, easier to ignore them. But once you put a human face on there, all of a sudden you've got someone you can direct your hate to in a more visceral sort of way.
+
+Also, these movements have existed in the past. I mean, you did have, like, Occupy Wall Street came along, disappeared. You've had others. They have their moments. They disappear.
+
+Pete (12:33)
+I don't know.
+
+Andy (12:33)
+I don't know if this, like...
+
+Pete (12:34)
+I feel like Occupy Wall Street was correct.
+
+Andy (12:37)
+Yeah.
+
+Pete (12:38)
+It was wrong in the sense that the riling against capitalism I think is incorrect, but against the big capitalism I think is correct. It's like the idea of socialism on a very small scale. If you're an anarcho-syndicalist, I think it's probably fine. If you're a state socialist, I think that should be avoided.
+
+Andy (13:03)
+Yeah, and to be honest, there was probably some conflating of all of those ideologies in that movement, which is probably why these movements don't tend to have staying power, because they don't have a central anchor.
+
+But yeah, this feels more of a widespread grassroots feeling, especially amongst younger people. And it's like we talk about, okay, it's not necessarily our view that this will come and take everyone's jobs. But there is also some, I don't know, there's like some unevenness about which jobs you probably want to go and consider.
+
+I mean, we spoke last week with Sean, friend of the pod, great pod, go listen to that one. Big episode, 58. 58, yep, that's it. And, you know, I think we started.
+
+Pete (13:54)
+That's a thing, isn't it? Is that a thing? No, I don't know. I wouldn't even know if it was. But maybe if we say it...
+
+Andy (14:00)
+We'll look out and it'll be a thing. Trying to tap into a younger audience, clearly. You'll see a big Gen Z. We'll have the cauliflower haircuts. I do need a haircut, as you can see on the little sprite next to the fly there. What was I saying?
+
+Pete (14:23)
+You were talking about Sean's thing. We were talking about John's...
+
+Andy (14:25)
+We kind of started off the pod by saying, like, oh, maybe you don't want to go into law, even though he did mention someone considering an associate salary of, like, 300 grand, which I must admit I was surprised by. Big numbers. Salaries in the US have got out of hand. Yeah, for sure. But yeah, I don't know, like, law as well. Interesting. Maybe that would be a bit choppy to get into.
+
+Yeah, I mentioned this last week, but I feel like there are some domains where you can, like, they benefit mavericks. You can be young. You can explore and experiment. You can build skills. And it's very permissionless. You don't actually need to be inside of an environment to build those skills. Law is probably not one of those. You tend to need to be inside of a firm. You can't go and practice on your own. There's a whole bunch of regulatory requirements around that. So, you know, it's harder to go and build those skills as a junior.
+
+But if you're a designer, nothing stops you from designing stuff. Your tools are generally available to you. So that's potentially quite high agency. I think there's just going to be this unevenness across different industries.
+
+And I think the broader question is the universities have become these kind of... They manufacture a lot of legal degrees because it's easy for them and there's still enough prestige behind them.
+
+Pete (15:49)
+I don't necessarily know if that's going to be the best opportunity. There's whole races of people that will say, how many Indian friends have you had where they say, I've got Indian parents, so obviously I had to be an accountant or a lawyer or a doctor. It's like, okay. This is ingrained in lots of ways. I think there's reasons why people do this. It's an instant status job for people. Oh, I'm a lawyer. Okay, well then I have a bunch of baggage I associate with that.
+
+Andy (16:17)
+I'd be concerned about the longevity of two of those. Yeah. Yeah, I think so. So, you know, so yeah, when we say like these things are not going to come and take everyone's jobs, it's like, well, it's probably going to change a lot of these jobs.
+
+Pete (16:28)
+Yeah. Especially at entry levels. I mean, I think it would be dishonest to say that there's no impact on jobs. Yeah. I think the sort of honest take on it is to say tasks are different. Like a job and a task are generally different things. Sometimes like what you do in a job, what you really do in a job that's valuable and what you get done as tasks are quite different. Sometimes the how you do it is what separates out, say, the senior from the junior and stuff like this.
+
+But I feel like certainly a lot of tasks can now be completed by AIs and more tasks will be possible. But it's not clear, like, not everybody's job is just a set of tasks.
+
+Andy (17:12)
+No, that's true. But equally, some of those jobs, now a client can bring 30%, 40%, 60% of those tasks completed to the professional. And that changes the value dynamic as well. I think so. I don't disagree with any of that.
+
+Pete (17:29)
+I think the reason I bring up the task component is it's not obvious that there's no requirement. The requirement for human goes away if you remove the job. But often, throughout all software, it's always been about automating tasks from people. And it's so difficult to remove a person. Yeah, of course. In the way that, throughout the history of all the projects that I've done, I've all got business cases that say at the end of it, "Well, you've got 20 people doing this work and then they wouldn't have to do that work and that would be a saving of blah, or they can move to higher order tasks." People, like, kind of never go. I feel like maybe there's something there, like Sean was saying, or came up in the discussion last week. We said, like, it's like a kind of risk mitigation to going and hiring a lawyer because you're not always, like, it doesn't matter what's written in there. You kind of just want somebody else to take on the risk of, like—or an accountant, maybe it's a better one, where, so like, I want you to sign off these accounts that they are correct. And it's really about kind of mitigating that risk and having somebody else with enough background pay attention to something.
+
+I think that's what a lot of what people do is that I can't, I only have so much space even if other agents are doing the work for me. I still only pay attention to so much stuff. So I need an amount of people with enough attention to pay across all these things. You can aggregate it all up to me eventually for a million agents but it's just going to be too much. So there's still going to be numbers of people, but I think a lot of stuff does get displaced. Yeah, like, it's not obvious to me that industries look the same, but then they just don't. Like, you know, the industries that we have in—if you took somewhere like Britain from agricultural time through the Industrial Revolution, through into, like, just hollowing out its entire manufacturing base, and now it's just basically London plus the BBC up north. It's like they literally had to move the BBC to Manchester so that there were some jobs in the north.
+
+Apart from that, everything was the city financial center, which was basically just a tax arbitrage. Yeah. I'm like, that's quite a change. Like we used to build stuff, it's like, you know, like, I watched Peaky Blinders quite recently. And I was like, yeah, there used to just be a lot of manufacturing in the middle of the country. And like, it's literally none of it is there. It's like, what do we do? Everything just turned out in the country. Like when I was in the UK, I went to London to, I guess I did do some manufacturing at Rolls-Royce, but that's quite a different thing. It was a German company by that point. Yeah.
+
+But yeah, like I moved to the financial center because I was like, well, kind of need to work in finance and derivatives of. It's like when you're in Perth, you work in resources and derivatives of.
+
+I don't know, industries change. Yeah. I think you need to move a bit. But they will, yeah, it's going to change the makeup of the stuff. I don't think it means that there's no jobs though, because I think there's always just different work.
+
+Andy (20:44)
+I think the models change pretty drastically. I think there were some good examples, I mean we spoke about law firms a lot last week, but there were some good examples, like even with, like I used the example of Pentagram in our newsletter. Go and sign up for the newsletter as well. I've signed up for it four times, Andy. I know. You're doing a lot of heavy lifting.
+
+Pete (21:04)
+I've done all my testing camps. I'm hoping some of our listeners might help out. Yeah, we have a newsletter, guys. You can sign up for the newsletter. Go to otherstuff.ai and you'll find the newsletter there.
+
+Andy (21:14)
+2,000 interesting words last week following the discussion with Sean. It was very good.
+
+Anyway, Pentagram, interesting firm structure. It's basically they've built their entire firm around a cohort of very, very senior people, who are all partners. But they've all got an existing body of work that they've kind of individually built their brands on. So they're all known for things. And I just thought, that's really interesting. It's like the inverse of that pyramid. It's like you've got a bunch of core people that are doing the work, but they also have a lot of skin in the game, a lot of credibility, a lot of leverage, and they can charge more. They're not these kind of commodity factories that are just pumping up design at a low level.
+
+And it's the same with law. I think law, you probably end up... I mean, if these become underwriting businesses, to some degree you need to guarantee the outcome. I think that's very hard with law, but to some degree you need to be able to go, I'll take this on because I am 80, 90% certain of the outcome here. I mean, you kind of see this with like no fee, no pay type scenarios in some areas of law, which are kind of like personal injury and things like that, which are a little bit more like matrix rubric driven anyway. But I think the more you have to like shift into that underwriting business, the less likely you are to rely on a junior's interpretation of the work. Because ultimately, it will be the senior partner that is underwriting the outcome. So they will probably go, well, I'm just going to do the work here. And so the firm structure becomes much flatter.
+
+And I think the question there is, how do you get into positions where through accumulation of tasks, you have enough experience to be able to go and have confidence underwriting an outcome? They've had decades of that stuff. And I think that's the bit. If you streamline a lot of that work, yeah, some of those building blocks are no longer there for the juniors.
+
+Pete (22:58)
+I could see people being apprenticeships again. Yeah, no, for sure. I'm sure we'll work it out. I've got to admit, I don't find the law thing that interesting because I'm kind of happy to get rid of lawyers.
+
+Andy (23:13)
+Yeah, there's just a need to find equilibrium. We've probably got a massive oversupply of lawyers. I think we have too many lawyers. So to some degree, like in order for this to, and it's kind of interestingly remained valuable and expensive despite that oversupply, which is kind of weird. So it's like the market has just agreed on a price for these guys. And it's like, well, there's so many of you that we could go to now. It just doesn't really make sense that you should be charging as much as you do.
+
+But anyway, I'd expect that to like find a kind of a lower equilibrium at some point where you've got fewer of these guys and it just becomes more valuable. It's more of a, you know, insurance policy, or I need you to underwrite the risk here, or, you know, something like that. Because, again, I think a lot of people are going to be like, a first run of a contract, most people will just do it themselves now for most use cases, instead of going and paying a few thousand dollars for contract review.
+
+Accounting as well, I think the opportunity with accounting is quite interesting. I'd quite like to have an accountant that's always on. You know, three months or six months, which I can't do much about now. That's backward looking. It'd be really good if you were just in the business more, and you were able to go and potentially diagnose problems or guide on tax strategy or give us some financial advice that's actually going to be quite meaningful for next week.
+
+Pete (24:35)
+And then what you get is you get firms-- small accounting firms will say, we're going to be more strategic and useful to our clients. Then you go to them with a question, And they go, oh yeah, I could do some research and look into that for you. And it's like, oh right, so this is gonna cost me five grand speculatively for you to read the internet.
+
+So what's the fucking point? Like I don't need that. It's like, so I can see that I just, I won't do this. It's pointless. I can just take a minute and explore the space with an AI and just say like, okay, let's just explore this question.
+
+And it will, like, you know, as things said, like, the things can be quite sycophantic, and it will come back and say, oh, it's a great idea, we should do this. And it's like, no, no, no, like, that doesn't smell right. That doesn't smell right. I think that's wrong. And he goes, yeah, yeah, no, it kind of is. And you go, okay, well, let's, you know, you have to guide the thing. But you can get a long way. Yeah, of course you can. With these things, just inquiring with them. And they don't judge you. They don't charge you anything. You've got a flat fee for it.
+
+So, you know, like I say, clearly it's going to have an impact on what work gets done. But there's certainly still work to be done. Like, I mean, that's the bit that I don't get too worried about. It's like, if you've gone and done a law degree, like, maybe there is a period of time where you've probably made a calculation, which is, this law degree is worth, you know, three hundred thousand dollars, as Sean was saying, by the time I become an associate. You know, maybe that's after your junior thing. So you're still punting, like, five years down the line, and you assumed that there was 100,000 of those jobs, and there's actually now going to be 50,000 of those jobs and it's way more competitive. I mean, it was always kind of competitive anyway. Maybe, like, for the 100,000 jobs there was 200,000 people. Now for 50,000 jobs there's 200,000 people, yeah, that are coming through. Or maybe it's higher, maybe it's lower. Like, really what matters is that you're a young person that's learned some stuff. And I just think a law degree would be fairly flexible in where you can apply. Like, a lot of it would be about, you know, argumentation and understanding things, research and logic. These are useful. You know, if there's no requirement for that job, there's no requirement for that job. Go do something else. There's still...
+
+Andy (26:51)
+Plenty of work to do. Like, the world's pretty fucked in many ways. Yeah. It's not like we figure out the rest of the stuff. We're not absent problems, and like...
+
+Pete (27:02)
+There's been no easier moment to retrain. Now, it doesn't change the fact that taking out a massive loan that is going to put you in debt forever for the rest of your life is a good deal. Yeah. You've probably been mis-sold that.
+
+Andy (27:14)
+Yeah. Yeah, for sure. I think that's where a lot of this comes from as well. That home ownership aspect. There is to some degree, there is this feeling of security, having a roof over your head, if you've got a massive mortgage. I think that is maybe a bit overdone to some degree. Because-- The home ownership question. Yeah. Yeah, for most people, it's still like-- it's a requirement, right? You want to own your own home, even though the bank owns it for the most part. Yeah.
+
+Pete (27:47)
+Home ownership is not quite everything that-- Yeah, that is cracked up to be. Well, ownership is good. Yeah, for sure. Even then, in the US, right, you pay property tax regularly on everything. So if you sit there for 100 years, you don't have a home anymore. Yeah.
+
+Andy (28:00)
+Unless you pay it. I mean, mortgage rates are fixed as well for the life of the mortgage, which I think is quite useful in the US. Whereas here, it's not. You can get fixed for a short period of time, but it's for the most part variable. I think that's altogether a different risk. I think even that, right?
+
+Pete (28:16)
+There's so many countries in the world where you don't have mortgages. It's just not a thing. You just save up and you buy the house.
+
+Andy (28:23)
+Yeah. I think to some degree it's that generation coming through has looked at all the generations that have gone before. Do you know what, the opportunities that they've all had, I don't have. And so rightly or wrongly, but I think probably understandably, it creates some angst. And it's natural to then turn the direction of that angst towards the new shiny thing, which is AI. It is actually just an incredibly valuable tool. And it's really useful for agency and being permissionless.
+
+Pete (28:54)
+It is kind of weird, though, that you point the angst at the new thing, not the scam that's been running for the last 50 years.
+
+Andy (29:05)
+Yeah, it's like...
+
+Pete (29:08)
+Of all the things, why be mad at the people that stole all the money? It's like, instead of the thing that might help you moving forward.
+
+Andy (29:17)
+but yeah yeah exactly I mean I kind of understand if your expectation is that you'd get the same the same ride that every other generation had. And you have to go through the same steps, jumps through the same hoops. If that's your base expectation, then yeah, I can understand why you might feel a bit aggrieved
+
+Pete (29:40)
+as a Gen Z coming through.
+
+Andy (29:40)
+As I said, it's all understandable, right?
+
+Pete (29:42)
+You've been sold a bill of goods that appears to be incorrect. Now you've arrived at that point in time.
+
+And I think going into university now, you would want to question, like how much debt are you taking on? Like what are you doing? Do you need to go to that university? How could you get the same if it's, I mean, even just in the world of YouTube, for the past 10 years, I think it's been maybe 20, it's probably been fairly sketchy whether you actually needed to go to university.
+
+Andy (30:08)
+Yeah.
+
+Pete (30:09)
+I know when I went, I felt like I kind of had to. And if I think back about people that did go, people that didn't, people that went to university left my hometown.
+
+The people that didn't go to university are still broadly all still there. Yeah. Element of, like, mobility and, like, I'm just moving into new areas and up in the world. It was quite a poor area, I guess, so you could say moving up in the world. You know, here I am sat in a van in Perth. Yeah. But it's, yeah, like, it sort of felt like you had to. Like, almost as soon as I was finished, I was like, you know, I'm not sure if I needed to have done that. Yeah, like five years after I was done, I would have reconsidered it.
+
+Certainly ten years ago, I felt like it's like the internet was broad enough and the amount of learning and opportunities you had, yeah, I think you'd be better off just skipping it and going straight into business. And then these days, I'm like, I feel like in university you're just putting—you're gonna learn a 10-year-old syllabus for something, for a world that doesn't exist anymore. Yeah. And so right now, I think if you go to university now, you're kind of—there's enough information here that you don't need to do...
+
+Andy (31:21)
+this. Well, that is part of what's driving that misalignment, I think, because if you are living inside that environment, inside the university, then you enter the real world, you're like, well, hang on a minute, this isn't what everyone told me it was going to be. Yes, and you probably entered
+
+Pete (31:37)
+It like five years ago. And again, I think there was probably enough going on that you could have skipped it. I guess if you're leaving now as well, maybe you probably were impacted in the COVID stuff as well. There's been, like, a bunch of people that, like, thought they were going to go to university for the parties, and they just sat in their room. Whatever. You know, I loved being at university. It was a great time of life, but it wasn't necessarily about what I learned. I agree. Yeah.
+
+Andy (32:07)
+It certainly didn't need to be so long, was the other thing. I kind of enjoyed it. Yeah, no, no, it was, I mean, purely from a learning perspective, you know, yeah, I think it could have been condensed. Like, I always thought we had semesters, and I was always like, well, there's a good chunk of the year here. We're not really doing anything. We can at least get trimesters and then get stuff done much faster. But yeah, it didn't seem to--
+
+Pete (32:28)
+I think there's elements in society where you need coming of age type ceremonies and things. And university became a bit of one of those for a lot of people. I don't think it was a good one necessarily, but I think that's a role that it played, where you're a child, and then you went off to university and then you came back four years later, and then you're kind of still a child. So it didn't work very well, but it kind of worked because now you go into a job and then you end in the workforce. And it's kind of a, like, okay, that was your period of adjustment there, where you did that.
+
+But, like, that doesn't—I mean, if you don't come into a job and then you go back and you end up now you're in debt and you're back at your parents' house, or if you're in West Australia, you apparently never seem to leave your parents' house. I find that so odd here. People have students and they're living at home. And I'm like, isn't that the whole point of uni is to fuck them off to a different city?
+
+But, you know, obviously if you're here, there's no other city. There's only one place. So why would you go live down the road when you need to live in your parents' house?
+
+Andy (33:34)
+Yeah. Yeah, so anyway, that was something that I'd noticed the last... I felt like this has been a rising movement. Definitely.
+
+Pete (33:44)
+There seems to be more of an organized response to data center build out. That's true, too. There's more pushback about it. I can see it. I think it's somewhat reasonable. I think the correct response, in my mind, is you need to start backing local, homegrown, organic AI. It's hard to compete in the terms of the model serving at the moment. That's useful to go and get the big models from the big corps and stuff. Yeah.
+
+But you certainly, I feel like this is where we want to be in the wingman space, right? Is that there's a version of this that gives you more agency and control, and then there's a version of this that doesn't. So you should make a choice and use the one that does. And there's many people, I think, looking in that space and trying to figure that out. And the more popular it becomes, the better those services will be. So go support your local homegrown organic AI project. Yeah.
+
+Andy (34:43)
+Yeah. Organic AI.
+
+Pete (34:45)
+If you don't have the local organic project, reach out. We were just discussing in the pod before the pod before the pod about some more commercial deployments of Wingman that I think we could do simpler. So we'll tease that here and see if anyone's interested.
+
+Andy (35:02)
+Yes. Well, it's all useful, right? Because it just makes it more available to more people.
+
+Pete (35:09)
+The more we dig in, the more we learn, the more we go, okay, we could do it like this and this would be useful and we'll deliver it like that.
+
+Andy (35:17)
+Yeah. I think, yeah, my one concern would be like, hopefully people don't push back entirely against technology. That was kind of my concern coming through in some of the responses I was seeing. It was like, ah, you just, like, it was basically fuck the technology. Like, this is not, this is not a net good. Yeah. And I was like, hmm, okay. Like, that kind of view permeating is, like, you are essentially then robbing yourself of the, like, the tool that is going to give you more agency in the world. So I'm not sure, I feel like that, that attitude is, like, maybe misdirected. But again, it's, like, not something that I would, I would say I don't understand. I can appreciate why the feeling is there.
+
+And then it was like, oh, okay, you're going to see a bunch of businesses that are, like, you know, really leaning into the anti-AI label. It's, like, you know, crafted by humans and all that kind of stuff. And, like, there is some, like, something positive to take away from that as well, I'm sure. But equally, it's like, yeah, to what degree are you, like, robbing yourself of an amazing opportunity here as well?
+
+Pete (36:27)
+Yeah, I mean, I think a lot of stuff is so, like the idea of like, oh, this is, let's ignore AI. It's like, well, a lot of jobs have got a human interface, right? So I ask somebody to do something.
+
+Andy (36:42)
+I never know how they've done it in the background.
+
+Pete (36:46)
+So I think the idea that you would just go, oh, I'll only work with people that don't use AI. It's like, well, it's quite likely. I think what you'll probably do is still select on price and output, and the person that is using AI probably has a better price output than the next person. So it's going to be very hard to protect against that.
+
+I think in the early episodes, we talked about something like accounting. There's regulation here. It's like, yeah, it's regulated to the person, but not necessarily the tool. So a person using Excel can do accounting quicker than a person that does everything in a book. Yeah, sure. A person that uses AI can do it quicker than the person that uses Excel. So the person is just going to use the AI inside the accounting firm, and that's how you would get around the regulations to a certain extent.
+
+And then maybe we need to then regulate how everybody does their jobs, but that never goes well. This is what we learned from you. You can't have one big central planner that tells everybody what to do. It doesn't work, and it doesn't scale, and it just gets out-competed and loses. So it's probably a losing battle, that one.
+
+But it's pretty, as I said, I think it's fair to be worried. I think it's pretty fair to look at what you've set up. It could be a university degree. It could just be a job. Like maybe you've spent your whole life doing a task, and you look at that task and you go, shit, this task could be done by a robot. So what else have I got? And then maybe if you're the sole breadwinner on a mortgage or something like that, You know, that's scary because you can just lose your home.
+
+So that's probably even more scary than being a student because if you've got nothing, it's the smaller fall. But, you know, obviously the student wouldn't say that because, oh, you've already got a home. You sell your home and you're rich. Yeah.
+
+Andy (38:34)
+It's also messy. I think it's a subset of the same problem, but I think people who are, like, in that latter camp where they're, like, let's say they're kind of, like, mid-level professionals with a mortgage. And I think for a lot of those guys, view is that this is just a bubble. It's not going to meaningfully change anything.
+
+Pete (38:51)
+That, I think, is just entirely incorrect. I think so too.
+
+Andy (38:55)
+But I think there is that. That worldview has also been building. You see it kind of playing out in places like LinkedIn, and you've got all of these kind of takes that appear. And you're just like, yeah, you're in for a rude shock, I think. The companies might suffer from a financial bubble, but the technology is here to stay.
+
+Pete (39:13)
+So there's maybe an interesting way we can take this around. So there's a developer YouTube account I watch called ThePrimeagen. And he would often talk about, is there even like enough GPUs in the world to do all this work? It's like we're kind of constrained on the amount of compute we've got and the amount of energy. And we just would kind of make all these predictions
+
+Andy (39:36)
+as though that's infinite.
+
+Pete (39:38)
+And it just goes up forever. But another one we could throw in the mix would be with Tony. So Mark's a business partner. It says, look, it costs about $20,000 in the Western world to raise a child on average. That's something through into an educated child. And that would be cheaper elsewhere in the world.
+
+So if we're going to have like humanoid robots and we're going to have like AIs and they're going to take all of the tasks, like you need to be able to do it cheaper than that. Because otherwise you're not like, why would I want this robot? What is it about that that makes it preferable to just people doing the work? There is a flaw to get the work done. And people are incredibly versatile in a particular job that they can do. You've got to replace all these people with all this compute.
+
+And then you look at some like, Peter Steinberger was running his experiments. And he had screenshotted his usage in OpenAI. He'd spent, I think it was something like 1.5 or 1.8 million dollars in token usage in a month. And you're like, well, that's like a whole, like, okay, yeah, you've got some stuff done, and it probably still doesn't quite work around the edges. And you're just pointing, like, and I get his point, it's like, look, this is just a pure experiment to say, like, where is the furthest that we could push this right now? It's interesting, like, if you wanted to close down, like, an open source project that was gaining some momentum, like, just sidetracking them into useless experiments, it's probably a good way to do it. But it was, you're like, yeah, like, that's not useful. Like, that's not gonna replace anyone's job. Yeah, because you'd have to replace the entire organizations at the same burn rate. Yeah, exactly. It's not obvious.
+
+Or like, NVIDIA comes out, like Jensen comes out and says, oh, you know, we expect our engineers earning a quarter of a million dollars a year to be spending 500,000 on tokens. It's like, well, what's the fucking point? Yeah. Like, you just have three engineers. Like, I don't know. There's a lot of just, it's almost assumed like the costs of AI are free. Yeah. In a lot of these things.
+
+And I feel like at our level, right, like if me and you are using, particularly if you just use like a subscription to Codex or Claude Code or something like, and that is itself heavily subsidized, then it feels basically free to get several people's work done. And you go, okay, well, scale that up. Makes sense. But it just doesn't seem to be how it actually works at the larger scale.
+
+Like for years, we've been getting told that it's just going to get cheaper and cheaper. Every model that comes out is more expensive. I know I make this point with no real evidence to it, but I swear that a lot of the models I don't think are straight model improvements so much as they are. It's not the same completion type test that you would have done at the start. It costs more because it runs five times in the background. So I think you're almost getting five requests for every request that you would have compared it to originally. Yeah.
+
+Andy (42:57)
+So you don't need the thinking model for most of this stuff, but we keep it on anyway.
+
+Pete (43:02)
+Yeah, and we haven't really got into that point of really tuning models for tasks.
+
+Another point I saw was I said, yeah, there's all these 10 to 100x engineers apparently now, and everyone's one of these. So where's it showing up? Where is this productivity in the bottom line? I mean, I guess you could say in someone like Block, they fire half the staff and the stock price goes up. Well, okay, maybe it shows up there. But there is no massive pull through of productivity yet.
+
+I think what we're seeing is that you can kind of see where it's going. You can see that this stuff is really useful and you can imagine a bunch of use cases for it. But it still hasn't really found that product market fit. I think part of that is the tools are not quite correct yet, which probably goes back to the discussion we were having at the start. It's that it's hard to figure out exactly how to implement this in a business. It's a big question.
+
+The fact that it looks like you can is enough for Twitter. So you have Greg Eisenberg going, "Ah, blah, blah, blah, blah, blah, blah." You're talking to billionaires, and this is the thing. And it's like, you haven't done it, though, have you? You just talk about it. So you get those guys.
+
+But it's not real yet. It's not realized. It's all pre-planning and hype right now. It could come crashing down. Maybe we're all going back to hand coding. I mean, I don't think I will. It's interesting, isn't it? Is it all nonsense?
+
+Andy (44:44)
+It's a bigger question. Even the job cuts from Block and a bunch of these companies, to what degree is that actually AI? Or has it just been like years of overhiring?
+
+Pete (44:53)
+Is that really AI productivity showing up? There's no way to know exactly. Yeah, I feel like they could have done it. It's like when Elon cut Twitter down to 20% of what it was. Same CEO.
+
+Andy (45:06)
+Yeah, this is the number. I like Jack. Well, it's not just Jack. It's a bunch of companies. Most tech companies overhired. As I say, that's like a byproduct of the model. If you are taking on venture capital.
+
+Pete (45:16)
+I think you made so much money, it was irrelevant.
+
+Andy (45:20)
+Well, they're growth signals though, right? Like when you have priced rounds, you need growth signals because you don't rely on your financials for the most part. So the growth signal is headcount and we're just buying computers and we're putting bums in seats and look at how fast we're growing. Therefore, let's do another round. Like that was the whole model.
+
+I think to a large degree, that's just SERP clearing itself out. And AI is like, again, it's like a convenient target. We just go, we use this as an excuse. This is air cover. Let's shed a bunch of people who we just didn't need inside this business.
+
+Pete (45:54)
+So what's real then? Because I think we both broadly agree. This is like the most useful thing that I've ever had access to. I feel like we do more than ever.
+
+Andy (46:03)
+Yeah. Like, I don't feel like this is the thing with the job loss stuff. It's like, where is this time? We're getting back. I don't, I don't, I feel like I work longer hours. I mean, admittedly, I feel like I'm having more fun.
+
+Pete (46:16)
+Yeah. My job is more fun with this, which is, doesn't get talked about very often.
+
+Andy (46:20)
+It doesn't necessarily translate into more dollars in the bank.
+
+Pete (46:24)
+I was listening to some, like Naval's had some podcasts recently. I didn't know he started putting any out again. It was a couple of months ago. I think he talked a bit more about just one of the nice things about AI is it does remove the amount of permission that you need to ask for stuff to do.
+
+If you were just a hardware guy, but you needed to talk to the software guys, you used to have to wait six months for something to get done. But now you can have a crack at it, and you can get a lot of the way there. Even if it's not done, you understand more of the process because you can dip into their job a bit. They can dip into your job a bit. Like designers can do some coding. Like coding guys can do some design. Like everybody fills in the bits that they couldn't do.
+
+So like their sphere of experimentation gets bigger. So there's just, if you think about the amount of time that's just like lost in, this is how I think it could play out. Is that a lot of industries, you lose a lot of time by waiting for people and having to ask and get onto each other's to-do lists and ordering stuff. Like a lot of work just sits idle until it's quickly done.
+
+And I think you could have just a lot more stuff worked out quickly to like 80% and then finished competently by people. And then that would make a big difference. And it might look-- it's not that you get rid of the designer. It's just that maybe the coders are doing more of the design on the fly than the designer comes in and finishes off at the end. Or likewise, it's like your bottleneck was the coders and the ability to implement your designs. You can shit out designs all day long. Well, now you can 80% implement them.
+
+And in the implementation, it's in the doing is where you learn stuff. You don't-- you never learn stuff with more planning. You learn stuff when you do something and it interacts with reality and you get punched in the face and you go, "That seemed like a good idea but it doesn't work." It's like all the stuff you read on Twitter where you go, "Yeah, but I get it. It looks like that's the thing, but it's not, is it?" Because of the human element or because of the change management component or because of the legal component or something else about the world means that there's a reason that's not how it is and why you think it's this gigantic opportunity.
+
+Maybe it's just like you think it's this gigantic opportunity but none of the people that would buy that actually exist. And that if you try and sell it to them, they go, "Oh, no, that's the antithesis of what I want." There's always a lot. It's just...
+
+Andy (48:53)
+It's also not necessarily a forefront question. Design's really interesting. There seems like there's... I'm kind of just a passive observer to all of this stuff, but it seems like there's a Civil War on Twitter at the moment amongst designers. Oh, really? Like one camp of designers who will generally like, you know, push out like very high quality work. It's craft. And then there are others that will push out like blatant copies of the same stuff. Yeah. And then, you know, many of those guys will use AI as well. And it's quite obvious at times. And so the guys who are like crafting this stuff get very annoyed and then will just basically like, you know, quote, tweet those copies to try and like shit on them.
+
+And it's quite interesting because I'm like, if you speak to developers, it just seems like those guys use each other's code all the time. You know, like that's just not a thing. When it comes to design, it's like, how dare you copy my thing that like I've taken inspiration from like two other things as well. But let's not talk about that. You know, it's like that I find really odd.
+
+But like AI almost doesn't need to factor into that work at all. Like, you know, what does the client even care about AI? I don't think they do. I just think they want something that is able to speak to their brand and their existence and actually do something that's functional. Like drive revenue or drive signups or whatever it is. I think that's what people want. It's not, let's talk about AI all the time. It's like, what is this actually doing for me?
+
+A better use case for this stuff would be like, what's the manual repetitive work inside the business that actually doesn't require you to go on manual rounds of review back and forth with an agent? It's just like we have stock takes and we have to do reordering of stock on a pretty dependable basis because we've been doing it for 15 years. And we know generally when things run out and when they don't. But we've got like, you know, a stock ordering system. But we still have to get Linda to go and count everything manually and walk around with a clipboard and then go and like manually count everything and then put that into a system.
+
+And then once she's put that into a system, she needs to do the reconciliation with the system. All this stuff doesn't need to exist.
+
+Pete (51:02)
+Or even if you had to walk around. Yeah. Maybe you walk around and then everything else happens. Yeah.
+
+I think this is the bit that comes out when we talk about services and software. That's the point of that is to say that most of that probably should be software. There's a set of rules that need to happen. And then there's a couple of decision points in there. So that should just be a software program that runs. And then when you get to the decision points, that's the bit that Linda would be pushing the button on. And maybe Linda is now Glinda and it's a robot. Yeah. Goose Linda is Glinda.
+
+Andy (51:46)
+Yeah, yeah, yeah. It's not like that.
+
+Pete (51:48)
+Yeah, good. Blinda is... Blord? Glinda. Oh dear. Yeah.
+
+Andy (51:57)
+Then that makes sense.
+
+Pete (51:58)
+You know what I mean? That's a new thing.
+
+Andy (52:00)
+It almost doesn't matter talking about it to some degree. It almost doesn't matter. Like it doesn't need to be part of your brand actually. Like the craft is kind of in what you deliver to a customer.
+
+And this is why even last week I mentioned this as an example. It's like, I'm actually quite bullish on designers who produce stuff that's high value because we can all create websites now. Like we will all just shit out a bunch of highly commoditized websites. And so you want to stand out. The guys who are like really good at this stuff. Like I was looking at Maple's website, right? So that was Skylar.
+
+Pete (52:31)
+Maybe I should reach out to Skylar and see if he wants to come on the pod. Absolutely. I'd be curious how he thinks about this.
+
+Andy (52:35)
+So he works with him. He's very, yeah. Feddy, right? Yeah. So I've not met Skylar. He's a very good designer. But I feel like I can see his fingerprints now on the work that he does. And I'm like, that is what you pay for. Like that is, it's elite. You know, I'm a huge fan of that. When you can spot someone's like, you know, creative intent in the work. You can't do that with Codex. I can't do that. There's no way.
+
+And so I'm really bullish on that. Yeah. And I think he wouldn't-- even if he used AI-- like, I don't know if he does. But even if he used AI parts of his work-- I wouldn't be surprised. It wouldn't matter.
+
+Pete (53:13)
+Yeah, exactly. Who cares? There's still somebody else that's driving the thing. I mean, I know that he used to bemoan the lack of originality in a lot of stuff. He would often talk about fonts and companies and everybody's logo is the same.
+
+He did some work with the Satoshi Nakamoto Institute and that is really old school, the proper fancy serif fonts, the ones that are also really like, it's the sort of thing that would not stamp well on buildings. It's almost like proper custom letterhead type feel to the place. I was like, "Yeah, this fits what the guys behind that would want." I could see it.
+
+And then the work with Maple is just different. And the work with Feddy was very different. I've obviously worked with him for a bunch of design stuff. He's like, yeah, he's got a good head for figuring this stuff out. And there's always a lot more reasoning behind the decisions that have been made than you see on the page. And you never see that.
+
+And I do think this is a thing with-- everybody else's job is really easy to automate, right? Except mine. Because I know how hard my job is. I'm sure there's a name for this. Yeah. But I think people look at designs and go, yeah, it's pretty pictures on the thing. That's all I need it for. But they resonate because of something else that happened beforehand. And that's going to be harder for AI to do.
+
+Maybe it goes the photography way, right? So it used to be for thousands of years, art was all about getting finer and finer reproductions of real life. But then we got photos, and then art became about something completely different. Because now that's the thing that's unique. Because it's become, even with image generation now, getting really good quality images that do a specific thing or a particular setup, maybe that's what a lot of photography became about composition. It's like you capture the perfect photo and it's composed really well.
+
+Composition just became free because you can just describe the composition you want. You don't have to go to the Amazon to track down the monkey to have a look into the camera and get the selfie. New sort of thing. Although that was actually a Highland manga base, so that was in Africa. So that's not a good example.
+
+Andy (55:35)
+I know my monkeys. It is mad. Do you know what? Just on that, there was an actor-- I saw a clip from this. I can't remember who it is. No, this is terrible. But it's not an actor that I've necessarily seen in anything. So maybe that's why I don't remember. But he made this point about like, oh, he'd seen someone take a photo from like the top of Everest. And he was like, I shouldn't have seen this. I've gotten like a visual of something that I've put no work into achieving. And it's wrong that I can see this. It's robbed me of like what should have been the reward for climbing Everest because this guy has now just taken this full panorama from the top and now I know what it looks like. And I was like, oh, that's quite interesting, actually.
+
+We probably live our lives through our phones a little bit too much. We don't go out and actually experience this stuff as much. Maybe that's just an aside to everything we're talking about. Maybe it's just an experience.
+
+Pete (56:29)
+This episode's been a bit of an aside.
+
+Andy (56:30)
+Yeah, yeah. No, no, but this is the same as like, I mean, this feels like a kind of a Rick Rubin tangent. It's like a lot of this stuff is born out of your experience. It's not like taste is developed to some degree out of your collective experience. What you feel and what you like.
+
+Pete (56:46)
+I feel like what you saw in that departure, like modern art became that the expression and the ideas became way more important. We went from just hyper-realism to bang, now it's just cubists' faces and stuff. And we explored emotion and feelings and stuff inside art became more important than just like can I paint this exactly as it is? Because the exactly as it is is now commoditized, everybody's got it.
+
+So I think you see this in various places, right? When you could just shit out as many, you could publish whatever you wanted and words became cheap, then you started to go to like, well, what's a really well-crafted essay becomes really popular. That's the things that stick out or anybody can talk and make podcasts, but Joe Rogan does it really well, so it's very popular. There's always something that then is a bit different that becomes scarce.
+
+So I think if an image generation, if composition is free, we're probably not going to look for that as a cool thing in photography anymore. Photography is going to have to find something different. There'll be something about it that's very unique you do. I don't know what it is, but I think that's always the point is that if you care about these things, you explore those things. I don't think people would have said, it's obvious that you go from hyper-realistic paintings to Picasso overnight. You would go, huh, that's like a reaction to a thing.
+
+Whenever you take a complex system and you jab into it and just intercept it, like you cause reactions that you just don't know.
+
+Because what I think we're going to see with a lot of the AI is I think a lot of task work becomes commodity and effectively free. And therefore, the next question is, what's the non-task-based work that you did?
+
+So we've said it a lot of times with developers. Good developers were never about the code. So if code is free, thinking about what to write the code about, thinking about the actual problem, understanding the concepts that you're trying to solve with the code, That becomes very important to good code. That's probably the scarce space there.
+
+Similarly, like design, it was never about the pictures. Yes, you want a designer that can make stuff look pretty and match colors and stuff. But even a lot of that, you could already have guidelines. You could have frameworks that you work within. As long as something is constrained, it will have a good feel to it. And often in the constraint, you then create the better stuff. So it wasn't really about the pictures that they get out. It was about understanding the problem.
+
+And again, this is a conversation I've had a number of times with Skylar, where it was like, look, what's the problem we're trying to solve here? What's the actual user? What are they experiencing day to day? How can we get closer to that? How can we get them to tell us? Is there ways that we can capture this? Do we need to be there? How do we really understand what they've got? And then we can solve exactly that.
+
+So I think they're almost like two peas in a pod, like the design of the developer. They both just need better experience of what is it that we're doing here. That's the bit I think we've said for 30, 40 episodes now is the bit that's kind of left at the end.
+
+There's a reason these agents haven't solved all the problems. We can just look at the world. There's plenty of problems that they haven't solved yet. So why not? Well, it's because no one's paying attention to them and solving them. But it needs somebody to experience it.
+
+Last place to wrap. I think so. There you go. Go and experience the world. Subscribe to the Good Stuff Newsletter. And have a great week. That's the good stuff.
