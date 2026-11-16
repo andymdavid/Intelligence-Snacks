@@ -1,6 +1,6 @@
 ---
 number: 58
-title: "AI and the Future of Professional Services with Shawn Yeager"
+title: "The Future of Professional Services"
 summary: "Shawn Yeager joins Pete and Andy to discuss what professional services firms can sell as AI compresses billable work. They examine trust, judgement, hiring and junior training, changing project scope, and the value of keeping business workflows portable."
 thumbnail: "/images/episodes/episode-058-thumbnail.webp"
 status: published
