@@ -1,0 +1,1025 @@
+Pete (00:05.736)
+Alright, welcome to episode 58 of Intelligence Snacks. The big episode 58, joined this week by Shawn Yeager. Shawn, you wanna give us a quick intro?
+
+Shawn Yeager (00:21.224)
+Yes, thank you both for having me. Shawn Yeager, as we have covered. So I have been working in emerging technology for about 30 years. And so that for me has meant a few waves, starting on Microsoft's first browser team, which definitely dates me through to cloud, SaaS, mobile.
+
+Five years and counting in Bitcoin and over the past year or so in AI. And so my through line has really been new technology, new markets, and how do you generate revenue from all of that disruption. So over the last several months, my focus has been on a new endeavor called Upshift where I am
+
+Andy (00:45.993)
+
+Shawn Yeager (01:05.366)
+Working primarily with mid-market professional services firms to help them figure out what to sell after AI. And so clearly the technology is crucial. But my thesis is that if you, in essence, AI killed the billable hour. And that now the work to do is to, as I know you both have in current and previous lives, to sort of apply the lean startup approach and say, all right, what does the market want? What are the problems that are out there? Can we validate them?
+
+Can we build solutions for them? And then for these firms, can we rethink how we package, price, and sell? Again, because the hours are getting compressed and if that's how you make your money, you got to figure out how to change that.
+
+Pete (01:49.626)
+Right.
+
+Andy (01:50.267)
+Nice. So what's, let me ask you a question, Shawn. Like we just did the pod before the pod. So I feel like I might know the answer or I might be able to infer the answer, but I'm actually going to stick on the AI killing the billable hour. Cause actually this is a really interesting thread to pull on. But let's take a law firm, example, mid-market law firm. know, they traditionally have that pyramid structure where you've got the big
+
+Shawn Yeager (02:02.336)
+I'll try a fresh take.
+
+Andy (02:20.242)
+You know, the big base of junior talent that sits at the bottom, tend to hoover up all the work and receive all of the instruction from, you know, a couple of partners at the top. tend to be rainmakers. They'll go out and find the work or direct the work. How does that, what happens with that kind of a structure? Like presumably the work doesn't go away completely. It's just the kind of the framing of the firm has to change. The product has to change. Like, how do you feel about this? Like, where is it going? What does it look like? I mean, I'm using the legal example.
+
+But feel free to dovetail into any other examples that you think are relevant.
+
+Shawn Yeager (02:57.31)
+It is a, yeah, no, it's a prime one, Andy. And I think, as I had mentioned, I spoke at a mergers and acquisitions, an M&A event last Thursday, and the gentleman interviewing me moderating is a senior lawyer at a 1,500-person firm in the US. And as he put it,
+
+Professional services and law in particular are in the business of white-collar manufacturing. And I thought that was quite amazing for him to offer up freely. And that ultimately what they sell is trust. And as we got into the conversation and as we talked after, where the conversation went to your question is he said, am now evaluating whether I hire that.
+
+First-year associate at $300,000 US a year, which kind of blew my mind. I'm out of that loop. Or, yes, right? So maybe it's time for us to find new careers, to go back to school. No, now is not the time. No, I kid. And for the reasons that we're discussing now. And so his evaluation now is, do I do that or do I hire a systems engineer?
+
+Pete (03:52.216)
+First year associate. Gosh, that's moved since I last worked with him.
+
+Andy (03:57.801)
+
+Pete (04:00.038)
+Now is not the time to jump into law, that's the junior associate
+
+Shawn Yeager (04:12.736)
+To document processes and workflows and wrap scaffolding around that, the very thing that you guys build. And I think he is indicative of an increasing number of conversations I'm having with maybe mid-career sharp individuals. He's got a background in economics and engineering. And that is all to say he is applying that mindset, that problem-solving, systems-oriented mindset.
+
+And saying, I can get better leverage out of building, documenting these workflows. And so I think that's a conversation that's going to happen increasingly. I'm really beyond law, I'm seeing it primarily in accounting and marketing. Marketing largely agencies sell deliverables. We all know on this recording that generating those deliverables is easier and easier.
+
+Andy (04:51.849)
+Hmm.
+
+Shawn Yeager (05:12.142)
+It doesn't mean I'm a designer. It doesn't mean I've got those chops, but I can do as you can, anyone can, some pretty amazing things with the right set of plugins and skills and time and effort. so I think it's reorienting firms to have to think about selling outcomes instead of hours is, I think, the punchline.
+
+Pete (05:35.634)
+I feel like that's been an increasing trend in that sort of mid-market professional services for about 15 years or so now, but it never lands, Because we, I remember being in firms that used to try and differentiate themselves like 10, 15 years ago by saying, no, we sell outcomes. But then the problem was the entire market would go, that's fantastic. But I would like five people in those chairs. because you didn't sell stuff like that, you just.
+
+Andy (05:35.817)
+Mm.
+
+Shawn Yeager (05:43.366)
+Absolutely. Yes.
+
+Andy (05:59.964)
+Okay.
+
+Pete (06:02.948)
+Lost out to these complete body shop firms that would just be hiring people into jazz and it's it's
+
+Andy (06:06.238)
+Mm-hmm.
+
+Shawn Yeager (06:09.866)
+And it's a great point, right? This is not a new conversation, but I think AI is rapidly accelerating that.
+
+A managing director, a firm partner walks into a room with a client and that client's bringing 80% of the work done and asking for judgment call on the final deliverable, you know, and that is happening. And so I think it is becoming much more real than it has in the past much more quickly.
+
+Andy (06:30.171)
+Mm.
+
+Andy (06:38.173)
+So do you think the outcome, like maybe let's dig into what an outcome actually looks like for mid-market services firm. Like is the outcome, let's say in a law firm, just here's a contract, we'll review it and we've reviewed it now, we've given you a set of our recommendations. Or do these kinds of businesses essentially need to like effectively like an underwriting service where, know, like
+
+A law firm has enough AI capability they could go and you're essentially paying per resolved contract or claim you're able to put.
+
+A value on cycle time or like accuracy of what might be the output be of that claim? You know, things like that. Like is that the same with accounting strategy and tax strategy, that kind of stuff? Like are they essentially just underwriting the outcome because they know they can generate with a certain degree of, or a percentage or probability of certainty that this is going to be the outcome.
+
+Shawn Yeager (07:41.61)
+Think that's an interesting way to frame it as underwriting and I am not an expert in that category of financial service. I'm thinking to a couple of conversations again with senior law firm professionals, partners who understand that they're generating documents. That is really they're a document factory in some ways. But I think what they're beginning to see and appreciate, well, they appreciate it, but now they see that it really is the crux of what they do is they are
+
+The person who takes the call at 4 p.m. when their client realizes they executed an agreement without review, without due diligence, and now they've got a binding contract. What do you do now? And so that isn't selling an outcome, that's selling trust and judgment and relationship. And as one chief commercial officer at a financial institution told me recently, he hires lawyers for a well-regulated nervous system.
+
+Andy (08:18.579)
+Hmm.
+
+Andy (08:22.472)
+Yeah.
+
+Shawn Yeager (08:39.838)
+And so these are ways just to illustrate that ultimately that's what they have always done. That's why any of us ever call on a lawyer. And so I think if you work it backward and you look at, accounting and you look at tax compliance or you look at marketing and you think about sort of brand stewardship, these are outcomes. Like can an agent using
+
+We'll jump in the weeds for a minute. You've got a design.md and a product.md file. And now someone with less sophisticated taste can execute an outcome, a deliverable, by taking advantage of those central assets in those files, in those simple, humble, plain text files. And then perhaps on the legal side, that example is
+
+Andy (09:30.76)
+Hmm.
+
+Shawn Yeager (09:36.938)
+Continuous compliance, right? So agents running, systems running in the background that are monitoring in regulated environments, regulated industries, new legislation, new proposed legislation. And so, you know, one of the things that I'll talk about is one of the shifts is moving from being, waiting for the call to making the call. And I use that sort of metaphorically, which is,
+
+So many of the projects in professional services firms, you the client calls, the client emails, you work out the project, you take the project, you get the scope of work, statement of work rather, nailed down and off you go. Well, how about we invert that and you're watching for an event to reach out to the client and make that first call inbound to the client or outbound rather to the client. So all this to say, I think there's a number of ways of shifting to the inner loop.
+
+Andy (10:20.403)
+
+Shawn Yeager (10:29.15)
+You know, that so-called inner loop, which I simply must go back and figure out who I took that from. But I do love that sort of metaphor of the outer loop is what touches the client. That's relationship, and that's crucial. In all but the most transactional of engagements, that is still important. The inner loop is the essence of what clients pay you for, what customers pay you for. Everything in between is up for grabs.
+
+Andy (10:53.992)
+Mm-hmm.
+
+Shawn Yeager (10:54.374)
+And so I think that's the exercise, and I'm a bit of a broken record on this, but the exercise is to certainly appreciate that that outer loop, those client relationships are critical. And if you don't, can't build rapport and build relationships, you're probably in a low value commoditized business anyway. But assuming you can, it's sort of drilling into the center and saying, what are they really paying me for? What are they really paying us for? And then everything in between.
+
+No sacred cows, right? You've got to evaluate all of that.
+
+Andy (11:28.371)
+So does that mean that the firm structure just flattened? It ceases being that labor arbitrage and just becomes a bunch of senior partners with all the tools.
+
+Shawn Yeager (11:41.14)
+I do believe and I can only sort of relay the conversations I'm having, but one in particular, and I think I've seen a few remarks like this on LinkedIn and elsewhere is it's a good time to be an IC, an individual contributor. That it is the force multiplier that these tools provide if you know how to wield them, that if you have pattern recognition and judgment and some experience make you formidable.
+
+And if you are merely in air quotes traffic controller in the way of a lower value sort of managerial level, it's going to get tough.
+
+Pete (12:24.111)
+All right, I'm gonna come in in defense of the manager. I think one of the most, I think it was one of the more popular ones that we, podcasts that we have was we talked about the rise of the generalist. And the concept was that, and I think it speaks to what you were saying a moment ago about these tools where you said, look, like all of a sudden somebody that's not an expert in design or an expert in marketing can actually use these tools to get good output.
+
+And I think part of that is that's almost always what happened in the sense of like, nobody's done like a marketing campaign for small business without the head of that business being the person that talked about, right, well, who are we and what are we trying to show to the market? And then it's just that we used to filter those things through often multiple layers of people.
+
+To figure out, what does he mean? Let's generate some ideas. Let's push them back. Let's review them internally. Let's do it again. Let's iterate a bit. And then it comes back to that manager. But it was always that sort of the person that carried that vision of like, what is it that we're trying to achieve and where we're going that then dictated like, yes, no, is this the right brand for us going forwards? Is this a marketing campaign that's not gonna then messes up somewhere else? And I feel like one of the things that I've noticed is, you know me from my,
+
+Like product management work, guess, Shawn, back in the day. it was coming from like a product space, you're very much like a dog's body manager to everybody from like every different direction just in the middle. I'll not make any references. then, yeah, that's your job. And then all of a sudden, I started to pick up these tools a few years ago and I was like, hang on a minute. Like I don't.
+
+Shawn Yeager (13:48.008)
+Absolutely.
+
+Shawn Yeager (13:55.221)
+Absolutely.
+
+Shawn Yeager (14:00.112)
+Ha ha ha! I got that. I pick up what you're putting down.
+
+Pete (14:14.575)
+I can do a lot of the design work myself. I can do a lot of the development work myself. I always had a technical background there to lean on. I just didn't like syntax and writing code, for instance, but the structuring, the building stuff was always there. And it allowed me then to focus more on the outcome of being the product. And in a way, I would feel like, I was effectively like a middle manager. I just built the whole business around myself, because that was the bit.
+
+That I could focus on. Whereas I wasn't, you if you were just a straight developer, I think you're kind of losing a little bit in that game unless you can elevate yourself to that level.
+
+Shawn Yeager (14:45.29)
+Well, and I, go ahead, sorry.
+
+Shawn Yeager (14:52.694)
+Well, and I would say, you at the risk of blowing sunshine at you, I think everyone's got to be a product manager now. I think that that is an invaluable skill. I, pardon me, I'll tend to say sort of capital P product, is your thinking about, know, that word gets thrown around a lot, but someone who can own product, own a product, I think is...
+
+That generalist that you mentioned who has the design sensibility, who has the customer empathy, who has at least enough of the technical depth to appreciate what's possible. And I think what's interesting, and it could just be my own bias and filter because that's not a product manager but a computer science background. I think that people like I'm mentioning who are thriving as I see it,
+
+Are taking that sort of approach. They're looking at what is delivered as a product. There's some wrapper around it. There's some bundle. And maybe back to the point of management.
+
+I think what I took you to mean, Andy, is that that, or perhaps you said it, Pete, that inverted triangle, maybe it just gets a lot shorter, that there are just far fewer layers. And I don't know that we necessarily, there are all these stories floating around about the one person billion dollar. think there's a guy and his brother that have built an Ozempic style sort of pharma startup that
+
+Is on track to do a billion. Those are clearly going to be few and far between. It makes great hustle culture content, but I think it's going to be pretty impressive to see what 5, 10, 15 people can do.
+
+Pete (16:40.487)
+Yeah, we've always said there's going to be a lot of 21 millionaires, not necessarily a whole bunch of like one person billionaires. It'll be there's I think we can raise the standard of a lot of people, but also it's a lot of stuff just changes. It's not that the work goes or comes. It's just that we're to have to find different ways to be valuable. And I feel like all of those ways are probably going to involve like, well, how would you build a team around yourself?
+
+Shawn Yeager (16:46.538)
+Yes. Yes. Yeah. And I think, you know, it's...
+
+Pete (17:09.861)
+To fill in your own issue, like all the gaps that you have that you're not very good at. How do you fill those in with these tools? How do you then? Yeah.
+
+Shawn Yeager (17:17.158)
+Absolutely. tend to, I think I referenced with this audience last week, I don't know that it landed frankly, but I said, imagine you've got five or 10 hyperactive, incredibly smart attention deficit interns. These are just agents, right? And so,
+
+Pete (17:39.271)
+Okay.
+
+Shawn Yeager (17:42.118)
+I think the, as I know is a big part of your work these days, the scaffolding, the harnesses, all of the things that keep them in bounds, on track, on task are so important and they'll continue to improve. But in essence, yes, that is my TLDR to a lot of people is what would you do if you had five or 10 more employees?
+
+Andy (18:07.005)
+I think the interesting point though here is that in many of these cases, it's the billing model that is going to change essentially. A lot of them are charging by the hour. You mentioned that AI kills the billable hour. And I think this is still where a lot of firms just haven't quite caught up because they're still thinking about value delivery in terms of how many units it takes and how many like six-minute increments it takes them to actually deliver that outcome rather than like, we getting
+
+Shawn Yeager (18:33.696)
+Right.
+
+Andy (18:35.281)
+Are we getting paid for judgment and systems? It's like, how do we wrap up that judgment in our system? And then what is it worth? Because I think you probably have like some bifurcation there that exists in a lot of the service delivery where like a bunch of it just gets so commoditized that you really can't charge for it. And then other parts of it become super valuable because fewer people have access to it, that the price goes up. And then I think the other side of the...
+
+The coin with some of this stuff is that like, you do get a flattening of the firm, then you just don't have like, you don't have the talent availability coming through the pipe that you're probably going to need at some point. Cause a lot of these guys will just retire and opt out of the system. And you won't have anyone coming through with the same degree of expertise and experience. know, like a lot of these guys have built up the experience from just time on the tools, so to speak, know, time at the desk. And so
+
+Shawn Yeager (19:31.518)
+Absolutely. And I think it's another great point. Yeah, please go ahead.
+
+Andy (19:34.409)
+No, no, that was it. Yeah, was just like, how do we account for these dynamic shifts, I guess?
+
+Shawn Yeager (19:36.916)
+Yeah, and it.
+
+And there's so many of these gotchas and gaps that I will certainly say I don't have my head all the way around. And I think you raise a great one is what does it look like to nurture, to grow talent if you sort of either come in at the mid-tier or above, or you don't get in at all? And I think that that's...
+
+Yeah, it's a big gap, it's a big question. And then what happens when you've got a firm run by individuals who, know, maybe they're five years from retirement and they're just gonna ride it out and hey, who can blame them? So I think both ends.
+
+Andy (20:19.475)
+Think it's a unique one as well. Like a law firm, a law firm's, and I say this as like someone who saw the light and got out of law mercifully quite early in my career. Yeah, no, but it was one of these, it's one of these areas where I'm like, okay, I can understand how the firm flattens here.
+
+Pete (20:19.846)
+Amen.
+
+Shawn Yeager (20:28.623)
+Did you? I confess I did not know this, Andy, so.
+
+Andy (20:39.057)
+And then the availability of talent kind of just dries up over time. But then if you look at something like a design firm or like a marketing agency or something like that, feel like...
+
+Those are like kind of high agency disciplines to the degree that you can get your hands dirty on your own. You can go and win clients on your own. You don't need to be within this kind of scaffolded, highly regulated environment like a law firm. And so you can go and build. And oftentimes those guys, the Mavericks have the best experience. They've literally just experimented with everything so deeply that they're often the best people.
+
+Shawn Yeager (20:58.667)
+Yes.
+
+Shawn Yeager (21:06.569)
+Right.
+
+Andy (21:19.465)
+And then they'll go off and build their own shops. I think like this is, when I think about like the experience for say a design agency, I think you can see a lot of commoditization with like say a website build. know, like more and more people can go and throw up a website really easily with agents. it is just, it's so simple. And so you might look at it and go, okay, well the opportunity for a web design agency just isn't there.
+
+Shawn Yeager (21:40.555)
+Yes.
+
+Andy (21:45.351)
+But then taste and craft, because now you have to stand out in a sea of highly commoditized websites where everyone has one. How do you do that? Well, I've got to rely on narrative formation. I've got to rely on craft and taste.
+
+And all of these other kind of like search dynamics, I think probably flow into this as well that requires some degree of skill. And so I actually think like firms that design agencies lean into that probably end up making more money potentially. But I don't see the same dynamic for say a law firm or an accounting firm. I see the like, where is the talent pipeline?
+
+Shawn Yeager (22:15.656)
+Absolutely. And I think, you
+
+Shawn Yeager (22:20.916)
+Yeah.
+
+And the thing I think is difficult, you know, really is very difficult in law and accounting is the cost of being wrong. You know, the cost of being wrong in an ad agency or a marketing firm is, I don't like that. As this same gentleman I referenced, said here in the U.S., the cost of being wrong on a Medicare claim is fraud, know, accusations of fraud. And so I do not envy them in that regard. And I think it is
+
+Andy (22:37.15)
+Yeah.
+
+Andy (22:45.289)
+Mm.
+
+Shawn Yeager (22:53.374)
+It is tough. You look at the downward pressures from the large firms. You look at the likes of Harvey and others who are rapidly selling those outcomes. Everyone by now has probably seen reference to the Sequoia piece, the thesis, suppose, that, and for those who don't know, Sequoia is one of the preeminent Silicon Valley venture capital firms. They, in essence, as I...
+
+As I wrote, put a trillion dollar bounty on professional services in that they think the next trillion dollar company will be a technology startup that sells the outcomes that these sectors within professional services deliver today. And it will not be evenly distributed, to go back to your point, Andy. So now that I know that you're a former lawyer, I presume you're not practicing. Yeah, no, no, no, no, no. Nobody likes lawyers until they need one, right? That's the trick. And so.
+
+Andy (23:40.809)
+Thank
+
+Don't hold it against me.
+
+Yeah, that's true.
+
+Pete (23:50.438)
+
+Shawn Yeager (23:51.444)
+And I think partly tongue in cheek, that doesn't go away. I also could theoretically handle most of my tax filing, but I'll walk up to the red line, but never over. And that's my own disposition. So I will continue to happily pay for that. so whereas flip side, I'll YOLO that new logo or that new web design.
+
+Andy (24:16.805)
+Mm. Yep.
+
+Shawn Yeager (24:18.528)
+You know, because the stakes are different. So I think the pros and cons there are quite unique depending upon the risk of being wrong.
+
+Pete (24:27.815)
+So I had a thought while I was listening to this is that I think one thing that we might see here is a little bit of a death of the commodity career. I mean, you talked about talent pipelines a minute ago, Andy, and in my head, I just saw this image of like a conveyor belt of like people with.
+
+I don't know, freedom and agency being having it beaten out of them on this conveyor belt as they turn them into lawyers. They come out all looking sort of gray in the same future. And I thought there's this, there's this view that like that's that sort of society, right? Like this is how we shape people since the Industrial Revolution to go. All right, worker unit number 429.
+
+Andy (24:49.822)
+Yeah.
+
+Andy (24:55.785)
+That's our education system, yeah.
+
+Shawn Yeager (24:58.078)
+Yes. Yeah, there's that Bitcoin origin story we're getting into there. Yeah. Yeah, absolutely.
+
+Pete (25:14.619)
+What are you gonna be? And then we push you through this process to try and get you there. And I think a lot of that is going to die because if you're the same as everybody else, then you're doing some sort of commodity work. That is exactly the sort of thing that I can boil down into a set of like code pipelines and agent calls in order to replace. And so what you need to be is somewhat unique.
+
+Shawn Yeager (25:16.308)
+Yes.
+
+Shawn Yeager (25:36.554)
+Yes.
+
+Yes.
+
+Pete (25:44.067)
+In this world if you want to stand out in any way.
+
+Shawn Yeager (25:44.074)
+Yes. In fact, I recall seeing on X and I don't know who said it and they phrased it in a way that I won't do justice to. But in essence, was two groups of individuals are going to be just fine. Those who have craftsmanship and generally hands-on physical craftsmanship and the neurodivergent.
+
+And that was not tongue in cheek, right? And I think it goes to your point is that if you can think uniquely, if you can problem solve uniquely, if you look at the world in different ways, that will continue or rather it will increasingly be a rare skill.
+
+Andy (26:23.145)
+
+Andy (26:29.225)
+It's interesting, isn't it? Because I feel like some of these disciplines, like, they actively try to do the opposite, right? I mean, from a risk perspective, it's like, if you're thinking like a maverick, we actually can't afford that. That feels like an uncomfortable amount of risk that we're introducing into our business or our firm. It's interesting that that's the folly of these businesses. This is where they're going to get caught out.
+
+Pete (26:30.051)
+I mean, I-
+
+Shawn Yeager (26:55.318)
+Yes, and I'm over indexing because it's a recent conversation, but thinking about this moderator and his, he was just, he was eyes on fire. Like this guy sees it, he gets it, he's using the tools, he knows he's got great relationships, he knows he's got nerves of steel, he knows he's the guy that these clients call at 12 a.m.
+
+You know, at midnight to solve a thorny problem. And so, doesn't mean it's gonna be a good time for everyone and I don't dismiss or take that lightly, but I think there is a whole lot of reason to have a positive outlook if you have been coloring outside the lines.
+
+Pete (27:45.032)
+Yeah, and I don't think it has to be like, I mean, talk about the neurodivergent thing. It's not that I think you have to be crazy or you have to be like just completely orthogonal to everybody else, but I think everybody is somewhat unique. Like, you know, like everybody's taken a-
+
+Shawn Yeager (27:55.038)
+Right, good word, orthogonal. Yeah.
+
+Pete (28:00.34)
+It's like that wait, why thing where you see the path through the world and it all looks different. Everybody's had a different path to where they are right now and it gives them some sort of unique perspective on something. then they will be like, even if everybody can fill in the gaps around them with these tools and these agents and stuff, they'll have like a particular way that they form this company around themselves that says like, okay, this is the unique.
+
+Shawn Yeager (28:24.075)
+Right.
+
+Pete (28:26.075)
+Value where I sit and I'll be the right person for a set of people that like this. Like there's certain people that wouldn't want to ever do work with me. And that's fine because I probably don't want to work with you either and that's okay. I mean this is why I think we end up with more, I think AI is good for small business. Like small medium enterprise. think it's...
+
+Shawn Yeager (28:43.07)
+Right. Yeah.
+
+Shawn Yeager (28:51.548)
+Absolutely. Absolutely.
+
+Pete (28:54.523)
+On the one hand, it looks like they're about to have the worst time in the world, but I think what they're going to do when they come out the other end is, like the people that start these businesses and run them are high agency people that know how to do stuff. so I think they're going to take advantage of it much better than like large enterprises. But I think they, are somewhat unique. They know how to brand themselves in this way that they've always been like, well, why would I go with you as opposed to this bigger name that I can know and trust to do the risk mitigation.
+
+Shawn Yeager (29:11.424)
+Yes, yes.
+
+Shawn Yeager (29:21.91)
+They are necessarily scrappy, right? I haven't worked it out in my head yet, but I have this sort of idea that I have a former life in the music industry, music tech, and as most would know, there's this idea of the thousand true fans. And I think that might've been Derek Sivers. I may have misattributed, but thank you, of course, right, right. Derek Sivers was the first
+
+Pete (29:24.412)
+Yeah.
+
+Pete (29:39.545)
+Mm. Kelly Kelly.
+
+Andy (29:42.291)
+Kevin Kelly.
+
+Shawn Yeager (29:50.038)
+First, what is it that, you know, it's that video of one person dancing on a green at a concert and then the first follower, the first follower. So point being, much as there was, and I guess to a large degree still is this rubric of a thousand true fans, I think that there is on the flip side now, so if that's the demand side, then on the supply side, you know, there's 10 good agents, right?
+
+Pete (30:16.54)
+Yeah.
+
+Shawn Yeager (30:17.064)
+And so I think that is the force multiplier that allows you to serve your thousand true fans, your thousand true customers. And I haven't fully baked it, but it feels like that's sort of the other side of that equation to your point about the position of small businesses.
+
+Pete (30:31.847)
+Yep. I mean, another thing that struck me was that I actually think most people don't...
+
+They're not buying what you're selling often. You know what mean? So we talked about this with particularly the billable hour being like nobody...
+
+Nobody wants to purchase billable hours. It's never been a thing, right? Like what? I think the thing to me with accountants and lawyers was always risk mitigation is what I was after. I had some form of exposure that would be worth X to me. And then I come to you to try and get comfortable and you charge me less than X in order that I can, all right, I'm probably going to be okay with this. This is a decision that I need to make.
+
+Shawn Yeager (31:02.368)
+Yes, yes.
+
+Pete (31:21.129)
+Interesting thing is you pretty much always had to make the decision yourself anyway to say, am I comfortable with this or not? So you can't fully offload it, but it was often something like that. Or like for design, really what I wanted was, I wanted to buy your artistic talent, but I can't do that. So you sell me hours in order to do it.
+
+Shawn Yeager (31:42.548)
+Right, or I want it, I can speak to my own psyche, I suppose, or psychology, which is to buy the judgment that it's good enough, right? And that's probably a deeper conversation outside the scope of today's chat. But the point is, like if it is some sort of subjective measure or subjective...
+
+Pete (31:52.998)
+Yeah.
+
+Pete (32:03.782)
+Hmm.
+
+Shawn Yeager (32:06.934)
+Take on something, you is this good enough? Does this, is this something I want to put into the world as my brand, as my company's identity, et cetera? So I think to your point, and I like what you said earlier, Andy, about it effectively being underwriting. I think that that's another way of looking at it. So you raise, think, a great point, Pete, that is beginning to pop up in some of these conversations I'm having, which is the hour, you know, much as perhaps in the software industry,
+
+Andy (32:19.305)
+Hmm.
+
+Shawn Yeager (32:35.208)
+SaaS industry, they're struggling with moving from per-seat to effectively token consumption. Same as in services, the token on one side or the seat or the hour on the other is just a temporary measure to hold a place that we don't have a name for yet. Like here we are having a conversation, is it underwriting, is it risk mitigation, is it trust, it?
+
+Andy (32:40.008)
+Mm-hmm.
+
+Pete (32:56.23)
+Yeah.
+
+Shawn Yeager (33:01.302)
+A well-regulated nervous system, it's all these things. And so what do we call that? Ultimately, probably an outcome, but it's a lot harder to say that than it is to accomplish it.
+
+Andy (33:08.489)
+Mm.
+
+Pete (33:12.933)
+So let me dig into that then, because this was always my issue with selling outcomes. Again, like say 15 years ago in management consulting was in order to sell somebody an outcome, what you actually needed was a very more sophisticated buyer of that.
+
+Andy (33:12.937)
+There's also.
+
+Pete (33:32.007)
+Because what you've done is that you've kind of offloading a lot of the thinking upfront to that buyer to say, all right, you know you want to achieve something. I need you to think through how it might be achieved, the amount you might pay for it and how much is worth to you in order to get that done versus somebody that's just gonna go, I'm gonna go hire a team. It's like, I'll just get like roughly two, three, four people in, they'll figure it out on the way. Like they haven't done any of the thinking. They've not really rationalized the thing up front.
+
+And so I often think that what we have is all of these proxies for like, so the guy that's selling something, like the transaction is about, as you say, it's about like risk mitigation or value or taste or something. But we literally have not figured out as a society how to sell that to each other. So we have like one person on one side that's like, I want something like this, but I don't know. And then one person on the other side that's like, well, I want to sell this and this is why I'm valuable. But yet they converge on something like hours.
+
+Because, but then they're even not sophisticated enough in each other's areas or they can't measure the value or it's just too difficult. I don't quite know what it is. I just find it intriguing that like, maybe we don't get away from it somehow or maybe like something weird comes in to say like, all right, now we're gonna sell cricket bats or something because I don't know what to say. Hmm.
+
+Shawn Yeager (34:41.96)
+Yeah, I'm feeling...
+
+Shawn Yeager (34:49.3)
+Yeah, and it
+
+Shawn Yeager (34:54.516)
+Right. Well, I find myself wanting to fall back on our Bitcoin training, which is right is, you know, are hours fungible. Are they the most saleable good? You know, but again, another conversation for another day, perhaps. But I think it's a really interesting point in that I had a brief stint at Accenture and ran an infrastructure transformation. Here we go again, practice. And this ultimately was, as anyone with this background would know.
+
+It's doable to your point because you've done it enough that you can size it, scope it. Of course, you know, those firms always put a risk, so-called risk premium on it, which is just, you know, basically a trampoline that if they fall, they'll, they'll be caught and bounce back. But I think it's having done the reps and having done the projects, you can say it's about the size of, you know, it's bigger than a breadbasket and, and here's the price we're going to put on it. But my point, I think, is that where,
+
+Where services firms, I think have a great opportunity, is not we're going to sell the outcome of a major transformation, because of the scope and the complexity and just how much that can slide and go wrong, but we're going to sell the outcome of compliance. We're going to sell the outcome of brand messaging, well here again, compliance, right? So an agency being able to say, okay, well,
+
+Pete (36:09.404)
+
+Shawn Yeager (36:21.064)
+You as the client may be producing deliverables. You may be producing assets and PDFs and documents and all these things. We're going to ingest those and we're going to flag things that are off brand. We're gonna flag things that are off message. And so that becomes a service. I think some, I've got whiffs of some firms doing that, but my long-winded point is I think so much of this comes down to the scope of the outcome. The outcome is not,
+
+Pete (36:38.471)
+Hmm.
+
+Shawn Yeager (36:51.19)
+You are going to be in tax compliance all year. It is, you know, maybe great. That's where we get, that's the ultimate outcome, right? But it is, you know, the bite-sized chunks that get you there.
+
+Pete (37:04.775)
+So, on, I want to just jump in with something because it's, I think it might help here, which was Derek Sivers, who we just talked about a moment ago, just had a recent article in the last couple of days that was on time. What he said is that geography is four-dimensional. And his point was that like, we think about it as a three-dimensional thing, like London is like this, Tokyo is like this, San Francisco is like this. And he's like, it's...
+
+Andy (37:05.095)
+It's some of this stuff.
+
+Pete (37:32.549)
+It's not true. Like it changes depending on like the particular year you went to that place and like, know, associated with the 90s and 80s. Exactly. Very different places. Like similarly New York, know early 2000s versus 80s would be very different risk profiles on stuff like that. And I think maybe that's...
+
+Shawn Yeager (37:38.624)
+You said LA in the 80s or LA in the 90s, for example, right?
+
+Shawn Yeager (37:50.068)
+Yes, very different.
+
+Pete (37:54.376)
+This could be why we back into time so often in these things, because you said like transformation program. And the first thing I thought was like, yeah, you scope up the thing. You have this high level scope. You spend ages doing it. You literally can't know enough about the other person's business to do it correctly. So you make a whole bunch of guesses and assumptions. And then the first thing you do is you spend the next like three years just raising change requests. And the whole thing becomes a completely different thing over time.
+
+Shawn Yeager (38:12.47)
+Mm-hmm.
+
+Shawn Yeager (38:19.359)
+Right.
+
+Pete (38:23.639)
+And I thought, you know what, like, maybe like any contract is actually four dimensional in a way that we don't necessarily credit it with when we start. even like, let's say something like the, you're creating a design for me. It's like, don't until I can give you a brief and you can give me the design and that would be like one transaction. But as soon as you give me that back, I've now changed my mind and I want something else. And it's not wrong to do that. It's just how.
+
+Shawn Yeager (38:50.592)
+Mm-hmm.
+
+Sure.
+
+Pete (38:53.701)
+People grow and interact and you know we are time-based to some degree.
+
+That you just sort of think, well, yeah, maybe that's, you can sort of see where this proxy comes from. And we say, well, we literally can't know enough to charge these things as outcomes in any meaningful way. There's always going to be a fiddle here and it either comes out as like, right, I'll just pay you as I go or okay, we'll, we'll pretend that we're going to pay this figure. But what we'll actually do is just change request it, or I will scope it and bound it in a way that that's out of scope. And now there's extra stuff that comes in. it's.
+
+Shawn Yeager (39:12.502)
+Yes.
+
+Shawn Yeager (39:21.94)
+Right.
+
+Pete (39:28.495)
+It all seems...
+
+Shawn Yeager (39:28.564)
+Yeah, and I think for that reason, consulting, my take would be consulting will be one of the last to go. Because to your point, these tend to be larger projects and it's tough. And I think the example you raised earlier, which I have experienced both as a buyer and a seller, is it just feels safer to say that's about three headcount, that's about four people on a project. Because I understand that and I...
+
+Feel like I can manage that and I can move them around according to shifting project requirements, as you said. So, you know, and think the other possibility, quite probable in some situations, is it will be a hybrid. There will be, to go back to law again, there will be those boutique firms with the very valuable brand attorneys.
+
+Pete (40:09.863)
+Hmm.
+
+Shawn Yeager (40:22.902)
+Who can continue to command $700,000, $800,000 an hour and good for them. But I think those will be fewer hours. I think that's the trick is I think so much of it will be commoditized that what is left may be high dollar, but ultimately there will be fewer hours to sell.
+
+Shawn Yeager (40:44.138)
+We shall see.
+
+Pete (40:45.391)
+Yeah. I mean, it's, think it's hard to be specific about these things. Like I don't think we know what we will look like. I think it's hard to say that something won't change just because the client can suddenly do more work themselves. The, you know, the individual contributor can do more work themselves. Now all of a sudden the manager can do half the jobs that they used to have a team of individual contributors doing. So.
+
+Shawn Yeager (41:14.678)
+Well, one thing I do know is I don't know. so the work that I'm doing, lest it seem like I think I'm Nostradamus, is effectively...
+
+Pete (41:15.494)
+It's.
+
+Yes.
+
+Shawn Yeager (41:28.138)
+Discovering product-market fit, right? Where there has already been, there's already a market, there's already a product, there's been a fit. And now the question is, what does it look like? What do clients want? What do they value ultimately? guiding these firms and these partners through a process of understanding, where do we, for example, consume and bill the most hours that require the least senior talent?
+
+There's a heuristic, where conversely, do we have the highest billable rates on the fewest hours that are continuing to be kind of a premium offer? And so I think for those of us who've been in startup land, who've gone through problem-solution, product-market fit, who are continually trying to assure that we can achieve and keep that fit because the scales keep sliding.
+
+That I think that's the exercise, right? mean, one of the other remarks that I'll tend to make is that professional services firms are now in the business of business models. That, you know, it's not just that we're gonna ride this for the next 10, 15 years, it's going to be an evolutionary process.
+
+Pete (42:43.163)
+So you obviously spend a lot more time in commercialization of these new technologies as they come through and trying to help people understand how do you go to market with these things. So we're in WA in Perth, and as you can see by the sun, lighting Andy’s face as we've been going through this conversation is the most beautiful place in the world. Not necessarily at the forefront of all emerging technologies. Some we do, right. Yeah.
+
+Shawn Yeager (43:04.412)
+Absolutely.
+
+Shawn Yeager (43:09.238)
+There are trade-offs. You get the views.
+
+Pete (43:13.199)
+Now, obviously the US tends to be a little bit more aggressive in picking these things up, but what's the sentiment in the market over there? What are people finding that seems to work or how are people thinking about it? Where are the clients at? How sophisticated are people? That sort of thing.
+
+Shawn Yeager (43:29.802)
+Well, think most of this is against, mean, as may be obvious to you and your listeners perhaps, this is against a backdrop of fear, uncertainty, and doubt. And I say that with, you know, I'm not glib at all. I appreciate it. I saw a stat just about an hour ago that some extremely large percentage of Americans are within five miles of a data center today. And that surprised me.
+
+I think, is it Darius Amode? I always mess up his name, OpenAI’s, or no, Anthropic’s chief, excuse me. Seems to take Darius right, and I think, you know, there are probably more charitable interpretations, but I think it is reasonable to say that he appears to take joy in declaring that AI's coming for you.
+
+Pete (44:08.817)
+I just got it, Gary.
+
+Shawn Yeager (44:27.056)
+And so he's not helping himself. And there are others that are waving it as a kind of a perverse stick and saying it's going to get ugly. And so that's a judgment call, I suppose, as to what is a judicious warning and then what is just fear-mongering. But the point being, I think we have communities in the United States that are being overrun by data center
+
+Construction. They are in some cases, I think it was Salt Lake, no, excuse me, was Lake Tahoe, I think, or a community outside of Lake Tahoe, Utah, has literally been told that within the next several months, some dominant percentage of their electricity, of their energy is going to be cut off and routed to data centers. And so I'm not an alarmist, I'm not a, you know, the sky's falling kind of guy, but I'm very appreciative of the fact that these are
+
+Conversations being had, and these are realities that people are living in to say nothing of the layoffs. And so there is understandably a great deal of concern and fear. You know, I saw a lot of, I'll say, paralysis in some recent talks that I've given and conversations I've had as just, you know, what do we do? I don't know.
+
+So that is on one side, the other, I'm thinking about some signal chats that for all I know you guys are in, where it is getting us about what's possible and what can one build. And so I think there tend to be these two poles. And then in between, you know, hard to say, you know, the likes of a Tucker Carlson, think of him what you will.
+
+For example, but here in the United States, know, he's a pretty popular character and he is raising alarm bells, right, about what it will mean for the future of America writ large. So it's complex. You know, I think there's a lot of complexity to how it reads depending on where you are and your familiarity with the technology.
+
+Pete (46:23.687)
+
+Pete (46:51.623)
+It's interesting. I mean, I think there's definitely this view of marketing via fear that comes out of these major labs. Because particularly when you see it ratchet up before any major fundraise, it seems to be like, we're going to take your jobs. would make the comment, like, if there's a guy that gets on telly like every five minutes and he's got two faces and on one face he's telling you he's going to take your jobs and steal your business from your kids. And then the other face he says, do you want to use my product?
+
+Shawn Yeager (47:06.1)
+Yes.
+
+Pete (47:21.691)
+Don't use that guy's product. Like just think about what he's saying and like how he's going to take your business when you start using his stuff. But the interesting...
+
+Shawn Yeager (47:30.656)
+Yes. Which opens up the conversation about the centralization into the hands of four or five corporate entities. And what does it mean that as I give credit to Peter McCormick, I forget his guests, but I was watching one of his episodes last night and he's got a couple of brothers who are, I think they escaped Russia and they built a couple of startups and sold one to Snapchat. point being, they've presumably been there, done that.
+
+And they were calling out that on the one hand, I think to your point, Pete, these companies are saying inference, the thing that LLMs do is ultimately going to be like electricity. It will flow like electricity. It will be billed like electricity. But on the other, he pointed out that once again, our friend Darius at Anthropic is hinting that they may bill at different rates depending on what you do with the electricity.
+
+And so this fellow on McCormick's show was saying, imagine if I could discern that you're using electricity to wash your dishes versus light the house, and I'm going to charge you more to light the house than to wash your dishes. And so back to your point about sort of two faces on TV, it's euphoric on the one hand.
+
+But if you pause long enough, which I will confess I need to do more of, I think you start to look at the fact that it is going to be very important to be able to effectively produce your own inference. It's going to be the off-grid equivalent of being able to produce your own electricity.
+
+Andy (49:15.913)
+Yeah, I wonder if there's also just an element of, you know, like we were talking about kind of bifurcation of like service delivery earlier as well, you know, in terms of value, like, I wonder if it's just a case of you end up with a three tier economy and you've got like the AI native firms at like one end of the spectrum, you've got the some AI in the middle and you've got the no AI on the other end of the spectrum.
+
+Pete (49:16.124)
+Yeah.
+
+Andy (49:44.529)
+I kind of wonder, this goes to your point about the 1000 true fans. I sometimes think about this in terms of the big four accounting firms. The big four accounting firms probably have 1000 government departments that are their 1000 true fans. And they're not gonna want all that much AI. And so they're probably all just competing for the 1000 government departments. And they will probably carve out quite an effective niche there and quite a valuable one.
+
+And maybe like the risks that we're discussing here are a bit overblown in their respect because they might adopt AI to some degree to help them do this stuff with better margins, but they probably end up charging the same amount, if not more, than they ever have in the past because their customer technically has bottomless pockets. And I just wonder if like that's, it must be lovely, but I just wonder if that's like.
+
+Shawn Yeager (50:30.4)
+Why, isn't that a good place to be?
+
+Mm-hmm.
+
+Andy (50:38.109)
+Going to be a driving factor in all of this. You know, you've just got customers who are like, do you know what? Like, I know Bill, Bill's a great guy. I trust Bill. He looks after all of my wealth management. I'm going to continue to work with Bill. How he does it is up to him. And I just wonder if like some of this stuff is a bit overblown in that respect. know, like as Pete was saying, like a lot of it is just marketing spin. It certainly gets Dario on the front page of every newspaper in the country.
+
+Shawn Yeager (51:04.662)
+Well, you know, it's interesting you raised the point of say a retirement investment advisor, a certified financial planner, you know, choose your acronym depending on where you are in the world. But at least on our end of the globe, it tends to be basis points on assets under management, right, or a client's net worth. so, you know, isn't it interesting that to your point, Andy, I could if I'm paying BIPs, if I'm paying, you know, a percentage of what
+
+My investment advisor is managing on my behalf, I don't care. I care about the outcome, right? So as my assets grow, as my wealth grows, that individual makes more money. And so, you know, that's sort of an interesting observation. I think on the point of either be it captive government contracts, in which case budget is unlimited and growing every year, which, you know, is this, it's own perverse incentive, of course,
+
+And then on the other hand, and I'm thinking again to this episode I watched last night, they raised the point of in their mind sort of a dual economy. One is we're in this new economy and each of us is racing.
+
+Quite possibly literally through the application of robotics and robots and AI to augment ourselves, you know, and to be able to do more, deliver more, earn more. And then there will be this category of individual who, as I saw someone in a signal group, you know, sort of half-jokingly do, is they were creating a certified organic.
+
+Style label for certified organic matter, you know, like it was no AI made by a human. And so I could see that, you know, I could see that there could be to your point, this bifurcation and that insert. Absolutely.
+
+Andy (52:42.761)
+Okay.
+
+Andy (52:49.907)
+There's also brand, right? I mean, we were talking about like, yeah, like value, like who determines what value is? Like a lot of it is just like, it's preconceived. know, like for instance, like everyone wants to work with Rick Rubin because he has taste and everyone seemingly wants to work with Jony Ive.
+
+Shawn Yeager (53:12.896)
+Yes.
+
+Andy (53:15.965)
+And I might be the only person on the planet who doesn't like what Jony Ive has done with Ferrari. It's just, I don't like it, but people do, you know? And I think, you know, to Pete's point earlier, it's like, you know, these projects evolve, you you might come in with one kind of design intent and then it evolves. There's also subjectivity that clients bring to these processes. But I actually think like it'd be less, there'd be less subjectivity if you walked into a meeting with Jony Ive and said, here's my design brief.
+
+I'd like you to go away and execute this. John, I imagine Jony Ive would sit, yeah, I imagine he'd sit there and be like, you're in the wrong room. Yeah, you're in the wrong room. And I just think like, we'll see a bit of that as well, know? Whereas someone brings me a design brief and they're be like, look, this is how you have to do it. And that's, you know, I'm not Jony Ive. I don't have his wealth of expertise and experience. you know, I think, right.
+
+Shawn Yeager (53:48.992)
+Imagine that.
+
+Pete (53:51.277)
+Oi Johnny, sit down.
+
+Shawn Yeager (53:54.799)
+Absolutely. Yeah.
+
+Shawn Yeager (54:10.728)
+It's also not your domain, right? So perhaps someone's gonna come in and say, you should create this agentic workflow in this way, and you're probably, tell me if I'm wrong, you're going to have a similar response, which is to politely explain that you've got more insight there than they do.
+
+Andy (54:20.424)
+Yeah.
+
+Pete (54:32.799)
+I think that domain is a really interesting point, is right. So I think this is to me what picks apart Darius's fair argument is that we can just inquire on that argument and just say like, okay, what he's saying is that effectively like Anthropic can do some law. Therefore law will not exist in five to 10 years, because they'll just do all the law for everybody.
+
+But law isn't something that's equally applied like everywhere in the world. It tends to be highly contextual. It's all about like the level of, again, like no lawyer says yes or no. They say, these are the risks. Are you willing to take those risks? So there's always this subjective piece. There's always an amount of risk management in it. I think what he's effectively saying is that because I can do some of this, I can do the whole thing and I can know.
+
+Shawn Yeager (55:12.372)
+Yes.
+
+Pete (55:23.299)
+Every context better than you can know. And I think I honestly think that's that's sort of bullshit. Like it came up with Mark last week when we were talking about
+
+Know, Dorsey mode intelligence as a business sort of thing. it's like, I don't think these things are centralizable in the way that somebody like a Darius says they are. Like I think the person that practices law and understands, you know, me understands like the clients understands the context of like the environment in say Perth, West Australia and like, like, you know, what the media outcry would be about various different things. Like, I don't think it's, you can properly intuit and understand those things without being
+
+In that context and I think again if intelligence becomes a commodity somebody that takes that intelligence and instead of staying in San Francisco goes to that place and just applies it locally there is going to be better than the person that tries to do it from San Francisco which is the Anthropic claim is that as you said like it's it's it's just untrue on the face of it because they're saying like look this is all a commodity and everyone gets access to it but I can also know all the information on the planet better than you and that is
+
+Shawn Yeager (56:04.094)
+Absolutely.
+
+Shawn Yeager (56:31.766)
+Ha
+
+Pete (56:32.025)
+Consistently been proven to be wrong and that you know if nothing else there's a time delay for the information to get from here back to there and it's clearly not in your model at any particular time so you're always going have yeah so I think you have to be distributed to actually do the work correctly like it's always going to be we used to say this and I think in like episode one or two or so it's about it in terms of small business instead if anybody can code anything and i don't need to go to San Francisco
+
+Shawn Yeager (56:34.678)
+Yes.
+
+Shawn Yeager (56:37.964)
+Absolutely.
+
+The future has already arrived. It's just not evenly distributed.
+
+Shawn Yeager (56:49.706)
+Yes.
+
+Pete (57:01.807)
+To go and build this app that I need to manage my supply chain and inventory, then why would I not just buy it from the guy that I can punch in the face? Because if nothing else, I've got that as a fallback, which is, dickhead, back. Like it's just, yeah, exactly like it's, like you have no recourse. Like if Salesforce don't wanna do something that you want them to do, they do not give a shit and they will never do it. But.
+
+Shawn Yeager (57:15.83)
+Throat to choke, as they say. Yeah, yeah.
+
+Pete (57:26.629)
+You could have the exact thing that you wanted to do and you could have somebody else who can hold accountable for it at a local level. I just see this pushing out. I think it's just a lie that's... I think they probably know they're lying as well because they contradict themselves too often.
+
+Shawn Yeager (57:39.158)
+And
+
+Yeah, well, and you know what, I, the risk of being a fanboy, I will say that I think one of the brilliant moves Anthropic has made.
+
+Is over the course of about 10 days, they made a series of, think, five or six announcements. And I believe the first was this multi-billion dollar deal with Blackstone and Goldman Sachs and the deployment company. So here they are. And they are not thinking about small to mid-size. They're thinking about enterprise. So on the one hand, they've said, f it, we'll do it ourselves. We're going to go build. We're going to go stand up this Goliath to deploy.
+
+Anthropic into large enterprise. And on the other hand, we're going to ship all these skills and plugins and workflows to drive consumption of said supply. So I think that they've worked.
+
+Both sides of that supply and demand curve pretty brilliantly. We'll see how it plays out. So I think that that's sort of one element of it. The other is, as I also heard last week, this fellow called it the judgment sandwich, right? Which is you need judgment to aim the tools, to aim the agents and the technology at the right problems.
+
+Shawn Yeager (58:56.842)
+You need to run the workflows, and then you need judgment on the backside to say, was that the right outcome? And if not, how do I guide it? How do I steer it? And there is a loop there that can be quite positive and can refine and be iterated on. But in both ends, there's judgment. And I think to your point, if you lack that judgment and that judgment is born of experience and time and turns and mistakes, then yeah, there's just no amount of tooling.
+
+That's going to fix that. And then the last thing I would say is I think that the last category of business to be greatly commoditized by AI will probably be vertically integrated, regulated industries. And so back to what's the cost of getting it wrong? If I'm in financial services, if I'm in healthcare, if I'm in telecom, wherever I am, and the cost of getting it wrong means some regulatory body
+
+Comes and drops the hammer on me, then A, that risk is too high to just sort of yolo that with OpenClaw. And also, there's just so many people who actually have that experience and can codify some percentage of it into some sort of agentic workflows.
+
+Pete (01:00:14.255)
+Yeah, I mean, I think to call back to the Derek Sivers four dimensional geography, I think it's like the correct answer to these products is five, six dimensional, right? It's like it matters where it matters, like the context that you're in, matters the size of the business. like, I mean, we've talked about like AI in over here where we are like in Perth, a resource town, like it's, it's three big companies.
+
+Shawn Yeager (01:00:21.909)
+Mm.
+
+Pete (01:00:41.543)
+In the place that effectively hire everybody in the sense that you're either hired directly by them or you're a derivative in like a service service industry into one of those businesses or you work for the government which is effectively taking the tax money from those businesses and then putting out and regulating them. So there's basically three large companies. Now, if you take those three large companies and you say, okay, get rid of 50% of the people in all those three companies. Okay, now you've just decimated the entire population.
+
+This whole half of Australia and you say, well, what's, can you do that in any meaningful way? I think the answer is no. Even if, well, I just don't think you, I don't think you could do that. Like you might be able to, like, no offense, you might be able to do something like that in the States. I don't think you can do that in Australia. You don't have the same like social license here to do, like it's, would be hard to fire 10% of your workforce.
+
+Shawn Yeager (01:01:17.622)
+Without UBI, probably not.
+
+Shawn Yeager (01:01:28.532)
+No, none taken.
+
+Pete (01:01:39.748)
+In a year, like there will be mass outcry, there will be issues associated with this, there'll be like additional like clamping down on stuff. Like I don't think these larger companies can actually deal with it. And then you've got what I think is probably even harder, is that I've ran like several like multiple hundreds of millions of dollars like change management projects in some of these businesses. It's very difficult to get them to change like even once more.
+
+Working part of their business over the course of many years to actually move the whole business into this new manner of operating, which is kind of like the, you know, the Anthropic and Goldman hammer comes down and now we're all going to do this. To do that correctly, to readjust people, to make the people redundant that you need to do to capture the benefits that they're talking about it. I don't think this is a...
+
+Shawn Yeager (01:02:09.59)
+Yes.
+
+Pete (01:02:30.649)
+I don't see them doing this in five years, for instance. Whereas if I look at the scale of adoption for an individual or a team of five or even a team of a hundred, I think those sort of size businesses are going to start eating the lunch of all of these larger enterprises. I almost think it'd be more of lie.
+
+Shawn Yeager (01:02:39.414)
+
+Shawn Yeager (01:02:51.262)
+I tend to agree. Now, in fact, I just was looking for a post, a quote that I put on LinkedIn earlier, and it's Sir Martin Sorrell, who is just a legend in advertising and marketing. And the quote is, the far more important thing is what is going to be the pace of AI adoption, because the simple fact is consumers have adopted AI faster than companies.
+
+And companies aren't doing it because it's not just about technology or workflow, it's about change management. Just as you said.
+
+Pete (01:03:24.379)
+Hmm. Yeah, I think it's like, I don't know, Darius doesn't strike me as a guy that knows anything about that. Like, I don't think he's spent the last sort of 20 years of his career dealing with people. I think he's done a lot of robots and being evil and, you know, constructing Death Stars and various different things. That seems to be his vibe.
+
+Shawn Yeager (01:03:38.678)
+Worrying about that, yes.
+
+Shawn Yeager (01:03:44.822)
+It one well and you know lest the lawyers and speaking of lawyers land on us you know we'll we'll say this is not slander but but you know i and i you know it's taking taking pot shots at Sam Altman is just too easy right i mean and I think
+
+Pete (01:03:55.974)
+Yeah.
+
+Well, I mean, he literally made a mini Death Star to scan your face and your eyes like, come on.
+
+Shawn Yeager (01:04:02.934)
+Oh, right, right, right, right. Yeah, yeah, just wow. And that is, whether it's in scope or not, it is a very, important other conversation about centralization, right? And as tends to go the way, our Canadian, your Commonwealth...
+
+Brother, Cory Doctorow, hailing from Toronto, having written about this and coined the term enshittification, if we can say that on this pod, he calls out pattern after pattern, be it Amazon, be it Uber, be it whomever, who ultimately offer something of immense value to consumers. They centralize that supply and demand, they gain power, and then they shift and capture, they capture that value.
+
+Pete (01:04:36.933)
+We say webs.
+
+Andy (01:04:38.001)
+Yeah.
+
+Pete (01:04:40.401)
+Yeah.
+
+Shawn Yeager (01:04:57.896)
+And shift it over to businesses and they get businesses captive, you know, sort of supply demand. And then they take that value and extract it and they shift it over to advertisers. And then in the course of all this, the quality of service goes down and you know, there are already things happening with, with Anthropic and the developer community that most, most anyone paying attention perhaps knows about. But the point being that is a very, very real, I think potentially existential problem. I put forward this little
+
+You know, sort of fanciful project where I mocked a status indicator that most tech companies have, right, status.whatever.com, but instead it was a GDP indicator. So in the United States, gross domestic product is our key measure, as is a lot of companies or other countries. And so the point being, I can see a time where Anthropic going down, OpenAI going down is directly correlated with GDP.
+
+And so the centralization, the dependency, these are big, big, big thorny problems. And then that goes to your point to who's in charge. And those personalities and their makeup becomes of immense importance to how we all go about our days.
+
+Pete (01:06:12.367)
+Yeah, I don't think that there's a path there where we have to centralise all this power into OpenAI and Anthropic. I think that there's a certain, you can scare people enough and offer them the solution, I think you can capture that stuff. And I think it's a real shame that people will go for that. But I mean, one point that we like to make is like, if your whole business is...
+
+Shawn Yeager (01:06:19.753)
+One hopes.
+
+Pete (01:06:38.487)
+In Claude, it's all defined inside Cowork and it's all defined, it all only runs on Claude models. And they could just turn you off, increase the price and shitify the product, which we've seen them do all of these things to people. We've seen them turn people off. We've seen them reduce the quality of the product and not tell you about it. They constantly mess around with all the prompts inside Claude Code. So that all changes on the daily.
+
+Shawn Yeager (01:06:51.786)
+Yes, yes.
+
+Shawn Yeager (01:07:00.788)
+Right.
+
+Pete (01:07:03.533)
+They already do all these and we've seen them increase the prices or lower your rates or whatnot. But the question becomes like, do you really, what do you have left as a business owner in that world? Yeah.
+
+Shawn Yeager (01:07:12.616)
+Right. Yeah, it's like locking out half your employees, you know, back in the day when it was all show up and do the work. mean, it would be the equivalent of, you know, just preventing half your team, half your employee base from going to work. Yeah, I wish I were more bullish on that aspect. I mean, I think, you know, our shared time, our backgrounds in Bitcoin, my time in personal data privacy,
+
+Has shown me the nature of human nature, which is most people will give it away for a free slice of pizza. And so I don't know, but I am hopeful in the sense that open models and thinking of our friend Mark and Maple as an example, your last episode, they just keep getting better and there does not seem to be any near term end.
+
+Pete (01:08:06.824)
+Mm-hmm.
+
+Shawn Yeager (01:08:12.15)
+To the capability of these models and the hardware, the chips, the fabs are beginning to sort of rise up to meet that. So, is it gonna happen on your phone anytime soon? Not at, I think, at a production level, but can you buy a $2,000 piece of hardware and do really impressive things on it? Absolutely. And that's, to me, quite encouraging, and I think it will only get better.
+
+Pete (01:08:33.798)
+Yeah.
+
+I think the weird thing is there's almost this weird, there's this dichotomy where it's like, all right, unless I can run an absolute world-class frontier model on my laptop, Mac mini, whatever, then it has to be OpenAI. And it's like, no, no, no, we can have.
+
+Community run models, know, like, yeah, could we run everything like in my house? No, maybe not. But maybe we just stand up one for Perth and that becomes the small business model. okay, this is the version of OpenAI that isn't going to steal your business. We're just going to provide the electricity for you. It's going to be easy enough to do this. That's the, mean, that's what I like about, I know the team from Rats for reasonably well. And like, you know, they just have reselling of models by anybody with reputation systems and everything else built in, which
+
+Shawn Yeager (01:09:04.767)
+Yes.
+
+Shawn Yeager (01:09:09.64)
+Right. Yes.
+
+Shawn Yeager (01:09:23.497)
+Right.
+
+Pete (01:09:24.169)
+A great platform to build something like that on. Yeah, it's...
+
+Shawn Yeager (01:09:28.138)
+Yeah, pooling inference. And there's a couple. I don't know the details, but I know that one of them, unfortunately, has got a token associated with it. I write it off as a pre-mine, but the idea of incentivizing the pooling of GPU capacity. And that may, this is pure conjecture, but at least in the US, if there is a significant backlash and or
+
+Pete (01:09:38.405)
+So that's safe.
+
+Shawn Yeager (01:09:56.768)
+Just delay and drag on data center construction, maybe market dynamics will push that way, and that it will need to be more decentralized.
+
+Pete (01:10:05.992)
+Yeah, well, mean, Block have been looking at the decentralized inference as well, right, with the Mesh LLM and the idea that, like, if we're going to have 10, like, well, used to be 10,000, 5,000 people now deployed around the world with GPUs inside their machines, well, can we just take advantage of that? Like, why do we need to go and pay for Block? It makes sense for people to own more of these things, I think, as you go into this world. Whereas, like, it's one thing to...
+
+Shawn Yeager (01:10:30.868)
+Yes.
+
+Pete (01:10:35.623)
+It's like, you know, particularly the US, a lot of the US got hollowed out from outsourcing manufacturing. I mean, I say that like Australia's any better at keeping manufacturing in-house. That's not the case. But like it's you realize that there's a consequence to this. Like you're now dependent on this, this other person. But I think if you like, if we're talking about intelligence, like in a way it's like kind of like your brain and it's like, do you really?
+
+Want your brain to be dependent on this other thing or do you want to own as much of that as you can? Like what else, I mean what is your business at this point if you outsource all your intelligence, you outsource all the activity to do the thing, like yeah you just become a bit of a, I don't know, it's like you're just selling commission at this point which is probably not why you got into this business. So you should own as much of this stuff as you can that's important.
+
+Shawn Yeager (01:11:09.257)
+Outsourced.
+
+Yeah.
+
+Shawn Yeager (01:11:20.118)
+And somebody can flip it off.
+
+Pete (01:11:34.737)
+To the unique parts of your business. I think.
+
+Shawn Yeager (01:11:37.258)
+Yes, and you know, and my take on this, you know, if I sort of zoom back out a bit and some of the conversations that I have.
+
+They, these, you know, the folks that I'm speaking with aren't generally.
+
+Interested in having the conversation about owning the actual inference. That's just outside of the scope of what they've considered. I do certainly encourage that there's only so much you can buy off the shelf. There are any number of products. Every SaaS products now got an agent baked in. And so we're all getting, for those who use those products, you're paying three, four, five times what you could if you, you centrally, well, if you coordinated that, I should say, not centralized, but if you centralized it for your company. But my point being,
+
+The workflows, the scaffolding, the scheduling mechanisms, the orchestration, probably the better word. I think building and owning that is at least a good step in the direction that you're indicating, which is you have not outsourced to your point the capability and the intellect and the intelligence of a large function or a portion of your business. You can take inference as a commodity. You can swap it in and out because
+
+And here too, it's in the weeds, but I'm heartened by some of these standards, these open standards, these simple text files that you can point various tools at and still have assets that will drive a lot of that output. Even if it's a choice of four or five companies, at least you're not locked into one.
+
+Pete (01:13:13.595)
+Yeah, and I think you can draw that analogy back to how does a business operate? Is that we do take random inference of random qualities to get them to do tasks. And we call that hiring people. It's not the, if you're like a 10 person business in.
+
+Shawn Yeager (01:13:29.194)
+Right. Right.
+
+Pete (01:13:33.889)
+In Perth, West Australia. Like it's not that like you could only have run this business with those 10 individuals that happen to be within a reasonable commuting distance of your business. It just turns out that you can define the work and the processes and everything around like what the business actually is and then slot in whatever 10 brains are the best suited from that area. Like it's, I think we should be thinking about these agents and these like Claude Code or Codex and all this stuff in that way.
+
+Shawn Yeager (01:13:50.303)
+Yes.
+
+Shawn Yeager (01:13:55.581)
+Absolutely.
+
+Yeah, and I think to that point, for those companies that do have, and I think as you said Andy, there will be, well, as you both mentioned and Pete, this sort of multi-dimensional approach is kind of rattling in the back of my head now, but if you're a large, large, large company, if you're a large enterprise, maybe you have tons of standard operating procedures and documented processes, et cetera. Maybe they're in a file cabinet, maybe they're in
+
+Microsoft SharePoint drive that nobody looks at. So they're as good as not there, you know. But if you're a more nimble firm and you have taken the time to your point, Pete, to think about, hey, I don't want core intellectual property walking out the door if somebody quits or at least process and workflow. So I've done it. You know, I've documented these things. I've got that maturity. They are the companies, the firms who will be further ahead. And to your point, I think able to employ agents much more readily.
+
+Than someone who, know, God bless them, has got a family run business where everybody trusts everybody and that's great, but they've just never taken the time to document this stuff.
+
+Pete (01:15:06.449)
+Yep. This is why we built our Wingman products, not to shill, but you know, we're at the end of the episode. Which is that I think this is the most important thing to retain control of. It's like the core bit of like, what is the business is it's a set of, it's boring, but it is a set of like processes, workflows, everything else that defines how work gets done here. And then like you should be able to, if...
+
+Shawn Yeager (01:15:12.352)
+Chill man. Yeah, it's your podcast.
+
+Shawn Yeager (01:15:30.804)
+Yes.
+
+Pete (01:15:34.577)
+Claude is offline, you should move to Codex or Pi or Goose or whatever and local models and it should not affect things meaningfully.
+
+Shawn Yeager (01:15:39.538)
+Absolutely.
+
+Shawn Yeager (01:15:43.37)
+Yes, and I think if you pair that with sort of my end of the spectrum is largely about the business model and there's a particular sort of tool, the business model canvas, and that defines these nine building blocks, right? I mean, things like value propositions, customer segments, channels, all these things that determine how you take everything you've just described and get it to market and generate revenue and do so profitably. And so I think...
+
+You know, those perhaps are the bookends. you know, then there's all of the talent and the teamwork and everything that supports it. But if you can understand those two kind of categories, I think, of work, you're in a much better situation to take advantage of this technology.
+
+Pete (01:16:32.069)
+Yeah. Good news.
+
+Andy (01:16:32.169)
+I think your point about the open model is really important as well because part of my thinking about this as well is that your Anthropics and OpenAI is like they're just going to stop subsidizing the cost of tokens at some point. And so it's going to become more expensive for smaller businesses. And this maybe links back to what Pete was talking about as well with Anthropics not able to go and own the value chain without the
+
+Shawn Yeager (01:16:50.762)
+Got to.
+
+Andy (01:16:59.251)
+The kind of the domain expertise on the ground, like would they want to? I don't know that they even need to, you know, like, it almost doesn't matter, like what Dario and Sam actually say, you just need to look at what they do. And what they're doing is focusing more on partnerships that give them more access into enterprise, forward deployed engineering, and building skill around implementation. And I think their MO at this point is just to go and own like the big part of
+
+Shawn Yeager (01:17:20.191)
+Absolutely.
+
+Andy (01:17:28.669)
+You know, big enterprise, because that's where all the high value, high value client work is. Once you've got your, this is like the Palantir model, right? Like once you've got your, your, your clause like embedded in that, in that big end of town, then like they've satisfied to their investors that they've got a viable business. They can go public, they can make a bunch of money. And ultimately they'll just pull the ladder up on, most small businesses. And I think that's like where the disintermediate, disintermediation risk actually exists. It's like,
+
+Shawn Yeager (01:17:30.41)
+Yes.
+
+Andy (01:17:58.529)
+You almost can't rely on these things. They're super convenient now, but the more dependency you build into these models, the more at risk you are, like in three to five years when these guys are no longer interested in you.
+
+Shawn Yeager (01:18:09.554)
+Absolutely. Interested in you. Yeah. And I think one could argue that Anthropic has already indicated a certain amount of disdain for small indie development shops. mean, to your point, they don't need, the conversation about electricity is interesting. On the one hand, it's.
+
+It's comforting in that, everybody's got electricity, it just flows, you do whatever you want with it. On the other, know, remember when there were regional monopolies in the United States, for those of us in the US, where you had, you know, in large to large degree, you've only got one option. So the point is, if they turn you off, you're in trouble. So it's one thing to say it's electricity, everybody's got it, it's a commodity. It's another to say that you've got a choice as to where you source it from. So, you know, it's, as the saying goes, it's good to be the king.
+
+Andy (01:19:09.107)
+
+Pete (01:19:09.315)
+Yeah, I think that hopefully the counterbalance to a lot of this stuff is that the option is there for small businesses to keep control of these things. And I guess my hope is that if you've spent many decades establishing a successful business, it's not something that you want to just give away for free.
+
+Shawn Yeager (01:19:32.883)
+No.
+
+Pete (01:19:33.679)
+You will take that opportunity to retain that. If nothing else, it's probably the single biggest capital asset that you own. So you would be certainly not financially sensible to give that away because it could cost you, you know, like 90 cents on the dollar for your tokens as opposed to paying the full price.
+
+Shawn Yeager (01:19:42.294)
+Highly motivated.
+
+Shawn Yeager (01:19:52.278)
+I mean, I will say, and I forget the name of the firm, and I've seen a couple of these, pardon me, I should say lab, that are hiring the highest of the highest skilled doctors and scientists and others to come in for, I don't know, two, three, four, or $500,000 a year and just train their models.
+
+So I think that that now that is not to say that a small business is the same as say a pediatrician or a radiologist or what have you. But I think that that extraction, that willing extraction by those who are getting paid a lot of money to essentially do a Vulcan mind meld, it's happening. And so.
+
+Yeah, I continue to be, I would wind my thoughts on this into saying again that I continue to be very bullish on high touch.
+
+High quality service businesses continuing to do well because they will be valued for the thing that they've always been greatly valued for. And I believe that many of them can increase their margins by automating away a lot of the stuff that was effectively back office. It's not to say that the people working in the back office don't matter. I think that's a whole can of worms, but I think it is inevitable that
+
+As I said during my last conversation like this, bookkeeping, that is just not going to be a thing. And there are many, many, categories of work, I think, that will go that way.
+
+Pete (01:21:31.847)
+Yeah, I think that's it. It shifts the work. I think good businesses that have a lot of agency and want to adopt, I think it can do very well. I probably used to be a little bit more like binary in my view of like, no, this is how it's going to play out. And then I think in the last year, I've gone, know what? I can, I've predicted a lot of stuff on a trend, I think, and we both have that is broadly correct, but I think also we're just learning more and more that like...
+
+This is just gonna look different. It's not clear what happens here. There's always... Yeah.
+
+Shawn Yeager (01:22:04.498)
+And yeah, and I think your point about the multi-dimensional effects of it are the perspective is probably the most spot on take. At best we have patterns. Yes, yes.
+
+Pete (01:22:13.351)
+And there's second orders, right? For every junior lawyer that now is no longer a lawyer, but has enough legal training to understand stuff.
+
+Well, there's a whole new category of company that can exist there for somebody that's motivated, understands just more than you do, and understands the AI, for instance. That's somebody that might be better at using the AI to get you legal outcomes and then keeping the partner to account. So maybe you interact with that person. It's hard to know what the flow-on effects of all this displacement are.
+
+Shawn Yeager (01:22:41.3)
+Yes.
+
+Shawn Yeager (01:22:46.75)
+And I have seen examples of swarms of young, sharp professional services professionals being recruited into these startups, right? The ones, again, that are building technology to sell the outcomes. understand that they need. They're going to hire that sharp junior CPA to come in and actually be
+
+A customer success professional, you know, they're going to do customer success, they're going to do product management. And so the point is they're taking that very precious domain expertise, even if it's someone who's more junior and doesn't perhaps have all that experience, they've got enough and they get the hustle and they get the technology and they're willing to learn and they're melding that into a whole new role.
+
+Pete (01:23:28.039)
+Hmm.
+
+Pete (01:23:39.109)
+Yeah, no, I agree. It's hard for me not to hear the words customer success and not just think about somebody that's supposed to be there to help you, but is instead just upselling you constantly.
+
+Shawn Yeager (01:23:50.142)
+Yeah, there is that. There is that. Or I think about my, you know, an hour before I call, or call my attempt to get service out of Apple and being connected to a call center somewhere across the world, and it was the opposite. But I digress. I digress. Right, right, right.
+
+Andy (01:23:50.217)
+Ha
+
+Pete (01:24:00.26)
+Success! We're here for your success, Alright. Is there anything else that you want to cover off while we're here,
+
+Shawn Yeager (01:24:11.292)
+No, I’d like to say thank you and it has been a delight to watch myself chatter by the campfire here during our conversation. I love this, this is cool. I love it, man, I love it. Absolutely, don't anyone think that this has been done remote? No, I appreciate it guys, it's been a lot of fun and I think there is so much to be excited about, there's so much to be humbled by, to your point.
+
+Andy (01:24:18.707)
+
+Pete (01:24:19.703)
+This is where we are, Shawn, like let's not pretend we're not meeting in VR here.
+
+Andy (01:24:21.865)
+
+Pete (01:24:28.252)
+Yeah.
+
+Shawn Yeager (01:24:39.658)
+Yeah, I'm just happy to be along for the ride.
+
+Pete (01:24:42.855)
+Alright, well and on that note... sorry.
+
+Andy (01:24:43.667)
+Thanks for coming on. No, thanks for coming on, Shawn. Come on anytime. Hopefully we'll turn you into a repeat guest.
+
+Shawn Yeager (01:24:48.522)
+Pleasure. Will do. Absolutely love to. Thanks, guys.
+
+Pete (01:24:49.711)
+Alright, yeah.
+
+Pete (01:24:53.862)
+Thank you for being here on the beach and that's Intelligence Snacks.
