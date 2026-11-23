@@ -1,0 +1,1065 @@
+Pete (00:00.516)
+All right. And welcome to Intelligence Snacks episode eighty-one. We have a guest with us today. Lincoln, do you wanna introduce yourself?
+
+Linc Elliot (00:12.425)
+Absolutely. So Lincoln Elliot, I am the executive director and founder of Lexcen Consulting. We do all sorts of strategy, operating model design, customer experience, digital transformation, the standard sort of stuff, but an independent consultancy. So really around that networked consultancy outside of the corporate structures of the places from whence we've come. So Accentures and
+
+see our partners in the world, which were a great training ground, but in the modern life that we live in, having a lot more fun working outside of those structures and I think delivering better for clients and also the people between us. And then beyond that, I also chair a CEO group of 12 bank CEOs who join us once a month for half a day, really great.
+
+Pete (00:43.96)
+Mm-hmm.
+
+Linc Elliot (01:06.979)
+to link in with the community. So it's a small business group and a good way for me to be able to connect with those guys and help at that level. And then...
+
+I'm just about to launch Leen, which is the independent platform for independent consultants so that they have somewhere to come to connect and we provide them with a bunch of BD tools to go and beat the big guys. So it's all about the collective undercurrent of the independents.
+
+Andy David (01:41.347)
+Well, let's chat more on this because this sounds like you're playing off the theme of like the unbundling of the firm, which I don't know, that feels like a theme that predates AI anyway, right? It feels like the firm was kind of being unbundled a little bit, maybe even like a decade ago, maybe a bit more even. And AI has just been this like massive accelerant that's just like swept through. Like, when I think of the firm, I'm like, there's a bunch of collective benefits, right? There's like the brand.
+
+Linc Elliot (01:48.117)
+Thank
+
+Pete (01:51.585)
+Mm-hmm.
+
+Linc Elliot (01:59.427)
+Yeah.
+
+Andy David (02:09.166)
+that is quite useful that the individual can't necessarily build on their own as quickly. And then, you know, the kind of coordination of different skill sets and obviously like that internalizing of knowledge and coordination. That seems like it was always the pro argument for the firm, but like how are you seeing this play out now that AI is on the scene?
+
+Linc Elliot (02:31.954)
+It's interesting, right? I think that even as you said, unbundling, and unbundling is a nice way to put it, but it's happened well before I think they've done a really good job of unbundling themselves in terms of, yeah, you look at all the stories in the paper and, you know, sort of, it might just be a few bad actors that have turned things in the wrong way. And I'm not here to hate shoot on those guys either and really just become all negative, but the...
+
+Pete (02:51.073)
+Yeah,
+
+Linc Elliot (03:02.338)
+Those larger corporations, I think sometimes make it difficult to actually live by the values that you might've stood for as you were getting bigger. As those organisations get big to have the right values and make sure that the behaviours flow from them is increasingly difficult. They've found themselves in some tricky spots and they have over time. But I think where AI is actually making the difference now is that it's not an apology and then it's forgotten a couple of...
+
+Pete (03:25.503)
+Yeah.
+
+Linc Elliot (03:29.602)
+or years later, it to be years now, it seems like the cycle of apologies and we're kicking you out of government and then you're back in there shortly afterwards is starting to stick because there are a lot of people I think leaving those firms who are very capable, really experienced operators who have been trained well and that's one thing, those organisations that I got my training at have, really good training systems and...
+
+of developers with people, but the people are starting to see that they can live and create a life with a lot more agency and delivering to clients that actually fit their own personal values as well. And with that, I think the key thing that's actually coming to the forefront with AI and proliferation of that is trust and experience where...
+
+I know that with my individual clients that I work with, they often will come to me and say, like, you've been doing this over here. Could you help us with that over there? And they trust me enough for me to not say, yes, I'll do everything. But also to say, well, actually, it's not your wheelhouse, I'd rather you actually went and found someone and brought them in and you've got our corporate knowledge. You understand our culture and how we
+
+get me an app cadence, I think. And so the opportunity for me to go and do that is, and bring in the right people is limited by the number of people I know and whether or not they're available. And so that's where Leen and the system behind that, for me, it's really about saying, how do I connect all of those individuals who are out there doing this stuff, of which there are more and more consistently.
+
+Pete (05:12.158)
+Okay, that was a
+
+Pete (05:21.576)
+Mm-hmm.
+
+Linc Elliot (05:22.386)
+and do it in a meaningful way where they're connecting around work and not just like on a LinkedIn fashion where it's, you know, God, the necessary evil of going and sprouting about my work to try and gather attention of clients where actually what we're doing is building a connected army of these consultants who they're good enough to go and find work and bring it in, but also to share it around in a way where
+
+actually the people that benefit are the clients and those consultants themselves. So that's a little bit on the philosophy of it and where we're at. And it's actually just something that I wish existed when I went out and went on.
+
+Andy David (06:01.452)
+Yeah, how do you feel about whether or not the actual entity or the body of a firm needs to exist? Because what you're describing sounds really fluid. Does it need to exist in its current form or can it just be a network that you're describing?
+
+Pete (06:14.476)
+Linc Elliot (06:24.45)
+I think it's an interesting one because it's, you know, I think it's the brand name used to carry a lot. And people bought big brand names as well. And I feel like even in the last 20 years, brands have been built to be succeeded anyway. So people want something that's a little bit more unique. They like to find that brand that is going to actually align with them and that not just for everyone.
+
+Andy David (06:30.36)
+Yeah.
+
+Linc Elliot (06:53.472)
+So on that level, I kind of look at, there's always a place for those big brands as well. I don't foresee the end of consulting by any sense, but I definitely think the shape of it is ready for change. So, yeah, those big organisations, the one thing that I remember when I joined Accenture that I was super impressed with, I think it was, you know, we...
+
+two or three, I was in a job and I was filling in for someone else down in Melbourne, another analyst. Then the MD sort of pulled me aside and said, look, I want you to hop on this operating model thing for doing a QA operating model for the contact centre. And I said, look, I don't really know that much about that. And she said, well, speak to this person in Canada, this person in London overnight, just stay up late.
+
+and wake up early in the morning and they will give you a bit of an education on it. They will also provide you with a bunch of the frameworks and how to do it and da da da. And it was awesome. So that connectivity of knowledgeable people to share, that was what I saw as the key point of difference. And that's what I think can actually happen without the corporate structure, which is kind of in my view, it just gets in the way.
+
+Andy David (08:15.585)
+Hmm.
+
+Linc Elliot (08:16.674)
+And so I think, like I said, there'll always be a place for that. I think that some people will still wanna shop around the big brands and they feel that that de-risks them. I think that a lot of people going to employers will still probably want that as well and be searching for that big sort of name on their CV as they grow older. But more and more, I think actually the next generation are often looking for that too. And I think that's what we're gonna be looking towards. What are the next generation of consultants going to desire as a lifestyle, not just as a job, because that's what this is.
+
+Pete (08:46.264)
+It's interesting that like learning experience you had that revolved around staying up late and talking to somebody in a different country that you could kind of see like, right there, the disintermediation of something like AI where you can take
+
+Andy David (09:00.844)
+Yeah.
+
+Pete (09:15.763)
+all of the knowledge that's in that knowledge base and now Lincoln doesn't have to wait twenty-four hours, he doesn't have to stay up late, he can just ask the questions like there's no—you remove a lot of those like social barriers that sometimes it's kind of hard to just get on the phone and you know, give a call to the practice manager of said fit contact center operating models or whatever in that's in Canada. You're like, who am I? Like I'm just like Johnny Nobody. Like I can't just do that. Whereas just asking like the AI about it.
+
+Linc Elliot (09:40.137)
+Yeah.
+
+Pete (09:44.885)
+And just having it guide you through those things is such a great use case for using these tools.
+
+Linc Elliot (09:50.089)
+Absolutely, I mean, the cost of knowledge has come to zero. I mean, and this is where online we have a proposal generator, which helps you to create a good proposal. Now, that's a tool that will be really helpful for a lot of people. And it builds off the knowledge of your own case studies, which it also helps you to build.
+
+and your experience in the taxonomy of that capability set that you hold. So that would be really useful for people to be able to go in and go bang and do that. But I'm not under any impression that...
+
+that tool couldn't just be recreated by a court or something like that. The benefit of what this tool does is as you're building out the proposal, it'll say to you, yeah, you're covering off about 70, 80% of this and you actually are struggling with capacity or capability in this space. Here, go and add these guys to the proposal in the network. So that way you're adding people at the time of proposal where you're actually engaging around work to go and do it. And that's where I think that...
+
+Pete (10:27.519)
+Yeah.
+
+Linc Elliot (10:53.922)
+lack of cost around knowledge means anyone could do a mere proposal that had the right answer in terms of the approach and the methodology that you're going to use. Show me where you've done it before is what clients will be asking. So having the case studies in there, which are yours, and what we do at Leen is we independently verify them as well. You can, once you've created those case studies, you can send it off to the client that worked on that with you. They can choose to anonymise it as well, but they can...
+
+Pete (11:11.955)
+Yeah.
+
+Linc Elliot (11:23.33)
+verify it. So we have a third party verification system on experience, which builds trust and goes, all right, you've stepped on the landmines. I know that you're good and you can come in and you'll be able to come in and do this work. Whilst also, you know, I think, you know, they are
+
+able to go to one person that they have worked with before that they trust and understands them well enough that they go great that person's bringing in those people they're going to be able to make sure that this thing works. you know that that proliferation of knowledge out there is an interesting one in that sense but it's also really interesting on the other sense of the learning experience that I got when I'm
+
+Pete (11:44.446)
+Yeah.
+
+Pete (11:52.187)
+Mm-hmm.
+
+Linc Elliot (12:07.018)
+was really valuable. And that was, yes, I had the information, but I also had the contacts. Then when I went into the room and developed the approach, I worked with that managing director to get that approach right. I went into the room with a client, with that managing director who really demonstrated how she managed the room and did that. And I learned from that. And she came back and told me about that. She asked, well, what did you take from that? There was that.
+
+that learning, which I think is the stuff that is very hard to replace. And so I'm really not concerned, but I think there is a big need and an opportunity to fill the gap for those new grads who are coming out of universities to go, all right, what is the way that we train you now? It's not about giving you the grant look, just do the PowerPoint and build that out.
+
+It is about how do I bring you into the room and help you to learn the critical thinking and the communication skills to be able to have those. So I'm actually working with a couple of universities at the moment to design programs for grads and uni students who are in there to be able to find consultants online to partner with.
+
+and have those kind of grant programs happening at that level as well. So, you know, and that's where I think we, if I'm creating something, I want to create something that has social impact and actually moves us towards a better future. And so it's been really fun being able to take the time to think about what are the ways that we can think about how we're going to work in the future and what role we can play to connect the right people with the right.
+
+Pete (13:36.305)
+Yeah.
+
+Andy David (13:57.391)
+But what is the model then for integrating grads or juniors into your play? Because it sounds like it's a pretty flat structure rather than the traditional pyramids, inverse pyramids.
+
+Linc Elliot (14:09.11)
+Yeah, well, we do have boutiques on there as well. So I'm limiting the size of any boutique. I actually really like.
+
+Pete (14:15.824)
+Good size. Okay.
+
+Linc Elliot (14:22.562)
+joined a boutique, was about 20 people. We grew that to 55 and did it. And yeah, it was wonderful. We grew it to 55 and sold it to a...
+
+global multinational. And everyone has their place and I really love those guys. I learned a lot from them as well. But I just felt that that boutique size was also really good for clients. Now boutiques often, whenever we were in there and we were at 20, let's say we were 20, we would have probably...
+
+Pete (14:37.136)
+Thanks.
+
+Pete (14:50.305)
+Yeah.
+
+Linc Elliot (14:54.836)
+five or six contractors as well who didn't really want to be part of the fabric but they wanted to be out there and so they were those independent consultants so connecting the independents with those guys and some of them might go actually I do want to go and work for this boutique as well and that's great really happy to make that connection because I feel like they're doing the right thing or you know not the right thing because no one's doing the wrong thing but it's more in keeping with the values and the operating system that I envision.
+
+Pete (14:58.138)
+Yeah.
+
+Linc Elliot (15:24.79)
+But so then I guess with the grads, there could be the opportunity that they are going to some of those boutiques. But I do actually think it's more exciting that they would be going and working with some of the solo independents. They're often teaming up with each other anyway, so they work in, you know, project teams. And to be exposed to somebody that's entrepreneurial enough to be going out there and winning the work.
+
+and then delivering the work and then looking after the financial aspects and the technology aspects of their own business. I think it's such a valuable opportunity to at least get a window into what that kind of a life looks like. Even if they didn't jump straight to it.
+
+Pete (15:55.998)
+Yeah.
+
+Pete (16:09.004)
+Mm.
+
+Pete (16:12.789)
+It's interesting to think like what the role of the the consultant is, right? 'Cause I guess this speaks to, you know, what you teach the grads as well. And I know I did like fifteen years of management consulting out of university, so I have a similar sort of vibe in my background. But we used to make jokes that like the job of the management consultant is to read the book that the client's reading, but you're about two pages ahead. And so it's and it always felt like you're kinda selling like secret knowledge.
+
+Linc Elliot (16:37.056)
+Yeah.
+
+Linc Elliot (16:42.64)
+Hmm. Yeah.
+
+Pete (16:42.891)
+And that's been destroyed as a, as a, you know, like that's not what we're doing anymore. So like what is it that you feel that people are gonna continue to buy or like where's the value in outsourcing this to the consultant as opposed to pursuing it yourself?
+
+Linc Elliot (16:51.776)
+Yeah.
+
+Linc Elliot (16:58.114)
+It's a great question. when I left to start Lexcen, because I've got a history in marketing as well. And customer experience, my first thing was, well, what is it about me that's different? Or what is it about the way that consulting should be not just me, but what is it that I can do that is unique and clients will continue to buy and
+
+When I spoke to a lot of my past clients, a couple of them said something similar and one of them said it exactly was that it's not that you're the smartest guy in the room, which I took some offense to. I didn't actually take offense to it because I already knew that anyway. But it was, you know, he said, it's not about, it's not always about the fact that, you come in and you have a deep.
+
+Pete (17:38.987)
+Just to start with that. It's like
+
+Andy David (17:43.467)
+You
+
+Linc Elliot (17:55.263)
+in that business and you never profess to and nor should any consultant profess to actually understand the business of a client any better than them. But they said, what I'm good at is being able to create a space where people can come together and be creative and feel comfortable enough to challenge themselves to push their ideas a little bit further. But I've also armed them with the right intelligence before we get in that room.
+
+to make sure that everyone, so for example, if we've got a board of directors around the table and we're doing a strategy session, how do I make sure that I've brought in the voice of all of the staff, of all of the customers, all of the financial aspects of the business, the ins and outs of operations, so that every board member, at least their knowledge can be lifted to this level and make decisions on an objective basis rather than a gut-busting.
+
+And so, you know, that kind of combination of how do I, how do you do that? You don't just throw as much information into them as you can, you need to be able to condense that and to be able to communicate it in a...
+
+a written way, but also verbally when you get there to help people to come from a position of confidence and knowledge and also make a room feel safe. And a lot of that comes down to personal style and the way that you manage things. So for consulting, I see actually the future is in the human aspects of all of it. It's not about the PowerPoint deck. It's not about knowing that I'm this framework ahead of that person.
+
+There are like a million frameworks out there that anyone can, and so in Leen actually, it's funny because I was looking at some other sort of consultant type platforms and there's one that cost a fortune and it's like just frameworks, it's all frameworks and I just wrote them all down, I'm just giving them away. So if you join Leen, you can have like.
+
+Pete (19:55.347)
+Mm-hmm.
+
+Linc Elliot (19:55.607)
+I'll send it to you guys now, you can send it out to anyone. If you don't know how to implement them, you know, there's your problem. And to be able to do that, you have to have actually run the...
+
+with another consultant. So that's where I kind of see it. There's the opportunity to breed the next round of consultants is actually within this kind of a network where it's, yeah, there's always going to be people who are more senior and less senior, but it doesn't, the one thing I was saying to our creative director was like, you don't have to own people to have a team.
+
+Pete (20:09.519)
+And
+
+Pete (20:17.138)
+Yeah.
+
+Pete (20:31.932)
+Mm.
+
+Linc Elliot (20:33.058)
+If you've created a space and an opportunity for people to flourish together, then that team will come together pretty naturally. And often, I think what happens in the larger corporates is that...
+
+they, because they've got the structure around it, they don't create that space and that opportunity and that creates unhappiness and people don't always get treated the way that they see as fair and that then results in bad behaviour.
+
+Pete (21:06.269)
+Like it sounds more like a sort of digital apprenticeship type model. It's like, you know, it's more mentoring than pyramid schemes as you might have gotten some of the old ones. But that's interesting because there's a lot of talk about like, you know, juniors are just gonna die. And you're like, there's no need for a junior anymore. And you're like, well, I mean there's no way that we just go from having
+
+Linc Elliot (21:10.082)
+Mmm.
+
+Linc Elliot (21:14.732)
+Cheers.
+
+Linc Elliot (21:21.996)
+Okay.
+
+Pete (21:28.484)
+People are hired to all right, if you come out of university, there's literally nothing to do. Because of course they're gonna go and do stuff. So we might not know the shape of what it looks like, but I could really imagine that 'cause like I know when I work with AI agents, like I only have so much attention and capacity to work with them and guide them to where I want to go. And I can imagine having somebody else alongside me that I could just talk to, engage with, like
+
+Linc Elliot (21:33.695)
+Hmm.
+
+Linc Elliot (21:50.626)
+Thank
+
+Pete (21:56.963)
+get them across how I'm working with it. And then it's like my capacity grows but just sideways. And you can have a few more people. I can see, yeah, like it's you might even do the same work between those two levels. It's just the juniors learning like how to guide somebody. That's interesting.
+
+Linc Elliot (22:08.51)
+Absolutely. Yeah.
+
+Linc Elliot (22:13.706)
+And get them up to speed quicker, right? And giving them the exposure and the responsibility will actually, if you believe in people and you give them the chance, they'll grow quickly. And, you know, when they fall, have someone there to help them through that. And people remember that as well. You know, that's another person that's also out there selling your wares. You know, when I think about that training of those individuals, a colleague of mine,
+
+Pete (22:16.975)
+Mm.
+
+Linc Elliot (22:43.586)
+who I think he was my mentee when he started at the boutique that I was at beforehand, Sam Richards, he left consulting, went into an internal strategy role, it was comfortable, it was safe, he's just left about two weeks ago to start his own business which is going to organisations and working with their new younger people.
+
+because it's less about the deep knowledge base of a specific area or industry, but here's some framework on how you can actually, you know, sort of think about critical thinking and to help you get it. But then it becomes practice. And so how, okay, well, great. Well, now I've done that. How do you practice it? And you're not always going to have the opportunity or the time to do that within those organisations, it's it's a skill. I think, you know, I would push to get his kind of...
+
+expertise alongside juniors in this field as well. So where do we create that? How do we create an ecosystem where these people can find each other and use each other? Not necessarily sell into each other. It's about how do we solve problems together.
+
+Pete (23:55.395)
+Mm.
+
+Andy David (23:58.98)
+Yeah.
+
+And so it's been about the marrying of skills, though. You know, there's a base assumption that because you're young and you haven't had experience, you don't have skills. And I think what was interesting was, before the pandemic, I actually was running an education technology company, and our mission was essentially to bridge work-integrated learning because we'd noticed that there were these growing
+
+Linc Elliot (24:06.434)
+Mm-hmm.
+
+Linc Elliot (24:12.311)
+Hmm.
+
+Andy David (24:28.022)
+tangents from where the university track was taking people and the demands of enterprise and what they actually required from their graduates. And if you spoke to a lot of these people that were running these grad programs, they'd say, well, the juniors coming through, we kind of have to treat them like blank slates and basically hire for fit and aptitude and then go and invest in their development anyway. And so what was really interesting about this is what we started to do was actually
+
+Linc Elliot (24:48.725)
+Mm-hmm.
+
+Andy David (24:57.858)
+design cross-functional teams. For instance, you take a big engineering firm that has a transport planning team, and we'd go, okay, what we'll do is we'll set up your summer internship program built around work that you actually have scope for in-house right now. And so we'd put teams to them, basically, and we did an A-B test. So we went the traditional route and we put a bunch of planning engineers together and said,
+
+these guys are third and fourth year, work with them. And these guys over here are a mix. You had a biology student in there, a teacher, there was a master, a PhD, engineering PhD, and there was someone else. And they got way better outcomes from having a team that was completely cross-functional. And they ended up hiring out of that pool, which was quite interesting. And it was the kind of thing that you could do if you just went and broke all of the kind of
+
+Linc Elliot (25:30.166)
+Hmm.
+
+Linc Elliot (25:35.744)
+Yeah, cool.
+
+Linc Elliot (25:51.19)
+That's fascinating.
+
+Andy David (25:57.039)
+traditional HR thinking around how do we hire and what are we actually going to do with these people once we've brought them into the company? And I think if you then apply that to where we're at now, it's like, well, young people with agency probably know a lot more about AI and are experimenting with it a lot more because they're completely unshackled from the enterprise, right? So they're not being forced to work. Exactly. Yeah. So if you're
+
+Linc Elliot (26:00.822)
+Mmm.
+
+Linc Elliot (26:19.478)
+And they're not doing it because they have to. Yeah, exactly. Yeah.
+
+Andy David (26:24.726)
+If you're an experienced consultant, all of a sudden you're like, well, do you know what? I could probably learn a thing or two about how to put some of these agents to good use that maybe I've not thought about before, you know? And sometimes you just need that cross-functional experience to come through and allow it the space to just see where it takes you.
+
+Linc Elliot (26:45.602)
+Where it goes, exactly. It's anyone's guess where all of this is going. It's a bit, no one's, I don't think anyone really, really knows. You know, I mean, that idea of setting up those cross-functional teams before they start is great. I think that's a really key point. I think, you know, everyone learns differently. And for me, I learn by
+
+Pete (26:56.809)
+Yeah.
+
+Linc Elliot (27:15.752)
+having a challenge that I need to get around. And I think that even starting Leen and working on that, which has been the last year of my life outside of Lexcen and the Vistage Group, which hasn't left a lot of time. But by getting into that space,
+
+Pete (27:34.994)
+Yeah.
+
+Linc Elliot (27:39.401)
+and forcing myself to actually deeply understand the technology that's behind it and really notice the pace of change. In the last year since we've been developing it, it's like, maybe we should have started four weeks ago. But there's a lot of things that you just sort of go, well, that's almost, you know, wasted time and burned.
+
+It was because you're kind of learning the building blocks along the way. And also just having that exposure to it has been a really useful thing for me because it's impacted the way that I think about my consulting business and the product that I can develop for my clients as well. I mean, everyone's a tech person now. Like, I actually don't think, you know, I was always, we had strategy and I was strategy and maybe I'd do up a model, but then there was the technology transformation
+
+group over there, and now it's like every single job requires some level of understanding of a tech transformation. So if you're not across all of them, and I think every tech business as well, they always need to be strategically minded. So there is no separation of those typical silos, which probably makes me need to revisit some of the messaging on my website.
+
+Andy David (28:57.678)
+But there must be a repricing of this stuff. Like Pete was talking about, intelligence is just freely accessible now, right? So in theory, this must just lead to the collapse of pricing if you are providing a service that is built on that intelligence. Like, what is the model, I guess? I mean, I know people are kind of shifting to outcomes and going like, okay,
+
+Linc Elliot (29:02.304)
+Hmm.
+
+Linc Elliot (29:08.066)
+Yeah.
+
+Linc Elliot (29:15.636)
+Absolutely. Yeah.
+
+Linc Elliot (29:23.628)
+Yeah.
+
+Andy David (29:24.194)
+There's this discussion amongst lawyers at the moment around, like, the need to shift more to outcomes and bill based on the outcome rather than on the billable hour and shift into that kind of approach. But presumably that breaks a lot of these traditional structures that are rigidly enforced around that pricing model.
+
+Pete (29:24.796)
+Yeah, yeah.
+
+Linc Elliot (29:30.754)
+Hmm.
+
+Linc Elliot (29:43.893)
+Absolutely, and it works until those outcomes can be reproduced without you. So I think that we've always been outcome focused, but pricing on head hours is just easier for people to understand.
+
+Pete (29:59.405)
+I feel like the consulting industry has tried to move to outcomes for like twenty years, and the clients of the consulting industry have said, no. No.
+
+Andy David (30:03.032)
+Yeah.
+
+Linc Elliot (30:09.09)
+Thanks.
+
+Pete (30:10.811)
+That just sounds like you want to charge me more for something I don't understand. Tell me how many people it takes.
+
+Linc Elliot (30:16.738)
+And man, I think the best clients that I've had, you know, long-term clients of mine, I've sort of helped them out and sort of all tried to some work and, you know, set them on the right path. And sometimes they've got, we're just going to try, we're just going to do it internally, Linc.
+
+Pete (30:21.499)
+Mm-hmm.
+
+Linc Elliot (30:36.418)
+And usually those people give me a call in about five months and go, this is really hard. You know, send me everything you've developed and I'll try and piece through it and we'll put something together and then prove the fact that, you know, people need to understand that this isn't as easy as just chucking it into the claw. And I think even the consultants forget what they've learned and that they're doing things in a good way. So it's easy to give away that,
+
+that based off head hours because actually it's buying, you're buying the collective hours of experience you've had over your lifetime. Clients will continue to pay people that are delivering those outcomes. It's just about whether or not you can get new clients and prove to them that you're going to. And that's, I think, going to be the big challenge.
+
+Pete (31:13.241)
+Mm.
+
+Linc Elliot (31:31.004)
+And where you can cut costs, and this is something that I do at Lexham every day of the week, right? If I'm taking money out of grant work that I'm not bringing on a journey
+
+to sort of help with the grunt work thing. But I would like to have someone there who I can bounce ideas off. And yes, that doesn't cost as much. And so our prices are lower. I can also work across more clients that way, which is actually better for you guys as well, because I'm getting insights into all of these different other industries, which gives me a view of what's happening in the market more broadly.
+
+So by being that person that is able to be a little bit thinner across a lot of jobs, then you're also freeing yourself, you're making sure that you're going to be able to get repeat business in all of those different ones. So you're securing your, the revenue cliff that we all fear so greatly. And you are becoming more relevant in an industry and marketplace intelligence sense in terms of understanding what are other people thinking about and talking about and doing.
+
+So there's a little bit of an education program there for some of the solo independent consultants who aren't doing this. The temptation is to take all of the money off the table for yourself in every project that you get because, you know, I've got school fees, I've got mouths to feed, you know, cost of living is going crazy. So the temptation is that I do that. But the really long-term sustainability comes from
+
+making sure that you bring others in on path with you. And they will continue to bring you in reverse. And I've seen that happen in my work. I subcontract to other people who I also have jobs working underneath me at the moment. And that gives you, it also gives you human contact and people to bounce off of. Because consultants, I'm absolutely certain that consultants working together are better than
+
+Linc Elliot (33:27.582)
+just an individual. It also just gives you that breadth, it gives you security, and you know, so that element of the model I think is absolutely right. It's just about the fact that it can be federated now.
+
+Pete (33:33.494)
+I mean, I think there's definitely something there around that distributed cognition element of just when you bring multiple people into one, particularly a physical space where you can gather, you talk, you discuss problems, you go backwards and forwards on it, you do develop different points of view and different solutions that you would never have
+
+otherwise. I think that's infinitely valuable. Any hard problem struggles to be solved unless you can do that. Because you'll just go with your first option. It's in the discussion and trying to explain it to someone else that you realize all the weak points. Hmm.
+
+Linc Elliot (34:03.372)
+Yeah.
+
+All right.
+
+Linc Elliot (34:15.394)
+Man. And how much more fun is it? I mean, you know, if you've ever had an aha moment on your own, what did you do? You went and told someone. You know, you've got no one to tell it to. Yeah, it doesn't matter. But, you know, it's like surfing. I mean, you know, if you get a barrel and your mates don't see it, does it really matter? It certainly does.
+
+Pete (34:25.672)
+Yeah. Jump out the bath and you go naked down the Greek streets, yeah.
+
+Andy David (34:29.25)
+Yeah.
+
+Andy David (34:36.564)
+Account.
+
+Yeah.
+
+Linc Elliot (34:45.314)
+No, I just think, you know, it'll be interesting to see where society goes as a whole and you guys must get a great perspective of hearing from lots of people. Particularly, you know, this is episode 81, well, calling out my birthday. And to keep having those conversations, I think is something that you guys must take into your jobs and your everyday job that keeps
+
+your finger on the pulse, keeps questioning your own thoughts probably and helps to shape them as well and connects you with the community. You know, that's just, you guys are doing something on a massive scale. What's been the big sort of, you know, I guess the shape of the trends over those 80-odd episodes for you guys that you sort of started to see and started to make you stop and think?
+
+Pete (35:32.823)
+Hmm.
+
+Pete (35:40.016)
+I feel like a lot of our opinions have been, we had several theses that appear to have been pretty sticky throughout. I think one of the things that's been more impactful for me necessarily is probably just realizing how detached I was from a regular person on a lot of this stuff, like where
+
+Linc Elliot (35:47.788)
+Okay.
+
+Linc Elliot (36:03.66)
+Yeah.
+
+Pete (36:05.958)
+You know, we've been doing some quite advanced work with a group out in the US for a while and then coming back from that and going like, all right, well, this is cool, everyone's gonna love this, and you're like, this just sounds like science fiction when you talk to people. And you, okay, so you kind of take a step back and you take a step back, you take a step back, and you try and figure out, like, where are people at? What do people actually wanna hear about? What makes sense to people? What seems like it is real life? That's been quite a discovery, I think.
+
+Andy David (36:14.599)
+Nope.
+
+Linc Elliot (36:17.036)
+They're not ready for that.
+
+Linc Elliot (36:35.412)
+Mmm, that's a rip-up.
+
+Pete (36:36.1)
+So I don't know, what do you reckon, Andy? What's coming up for you?
+
+Andy David (36:39.074)
+Yeah, 100%. There's definitely a divergence in where people are at with this stuff. Not necessarily geographically, although I like to say that out west here we are a little bit behind at the best of times, but I think it exists everywhere. And you've got the regulatory aspect to it as well. I mean, I would say, yeah, I'd say some of the big themes that we've produced on the show, I think we're pretty comfortable sticking by. Like I know a big one is
+
+Linc Elliot (36:55.745)
+Hmm.
+
+Andy David (37:06.624)
+is that we just think a lot of the value kind of goes towards smaller companies. So we're obviously really bullish on supporting SMEs. That's always been a part of our ethos. You know, we'll continue doing that wherever we can. But I must admit, personally, I feel like I'm less certain about pretty much everything
+
+than I was a couple of years ago. Like I definitely have a bull case and I have a bear case and there are a bunch of theories that sit in between. But I'll often sometimes just have these more existential chats with friends and I'm like, I just don't know what's going to happen in two years, you know? Yeah. And it might be, you've just seen someone release something and you're like, or Anthropic comes out with something else that is just
+
+Pete (37:28.953)
+Hm.
+
+Linc Elliot (37:45.888)
+Yeah, depends how I feel today.
+
+Linc Elliot (37:54.604)
+Hmm.
+
+Andy David (37:57.027)
+you know, eliminated another thousand startups and you're like, cool, yep, I don't know. I don't know.
+
+Linc Elliot (38:01.878)
+Yeah.
+
+Pete (38:03.757)
+It's really not obvious how to play the transition, which I think we did say early on was like, it feels like this is gonna be great in ten years once it's all settled down. And it's interesting now because it's moving so fast and changing. But how we get into that world and what jobs look like and how we arrange society and the rest of it, that feels super messy. And so I get all the dread comes in that period. I'm like, I reckon it's gonna be fine afterwards.
+
+Linc Elliot (38:25.527)
+Yeah.
+
+Pete (38:32.472)
+God knows what happens in between here, and trying to pick what's the next thing that goes and what's the thing you should invest your time into and build is really hard to pick.
+
+Linc Elliot (38:34.806)
+Yeah.
+
+Andy David (38:41.634)
+Yeah. I must say, my theory on this, so this is where a lot of this conversation has been focused on the consulting end of the equation. And then if you just think about, okay, who are you serving as a consultant and how are they evolving? You know, that's the other big piece of the equation. And a theory that I've got is that
+
+Linc Elliot (38:52.418)
+Hmm.
+
+Linc Elliot (38:58.134)
+Yeah.
+
+Pete (38:59.778)
+Mm.
+
+Andy David (39:06.222)
+Do you remember during the pandemic where people were working half a dozen jobs for different people remotely and no one knew? And then they would just gloat about it online and they'd be like, yeah, I'm working seven jobs earning $4 million. I almost feel like that exposed a lot of work that may or may not need to exist in certain organizations. And that supports the theory that I think we get leaner and we have more proliferation of small businesses.
+
+Linc Elliot (39:11.626)
+Yeah. Yeah. Yeah. Yeah. Yeah.
+
+Pete (39:12.526)
+Yeah.
+
+Pete (39:24.258)
+Mm.
+
+Linc Elliot (39:24.854)
+Yeah.
+
+Linc Elliot (39:28.578)
+By the way.
+
+Linc Elliot (39:32.514)
+Okay.
+
+Andy David (39:35.961)
+But I also think businesses could end up just having a shelf life. Whereas in the past you go, okay, I'm starting a company and the aim of the company is I'm going to agglomerate all of this talent and capital and skill and we're going to go after a particular long-dated vision and we're going to build towards that and grow. And now I'm like, well, maybe it's ephemeral and actually there's an opportunity and the arbitrage is limited and you've got to set up an entity today.
+
+Linc Elliot (39:40.918)
+Hmm.
+Linc Elliot (39:48.352)
+Mm-hmm.
+
+Linc Elliot (39:59.777)
+Yeah.
+
+Andy David (40:05.09)
+And it's heavily reliant on who you are as an individual and your brand. And then you go and execute on that, and then three months later you wind the whole thing down because you've executed on it, and then you do it again, or you have pods of these things. And I think when you start to think about going after opportunities, I just put my entrepreneur hat on and I'm like, this is cool because we're rewriting all the rules. And then at the same time I'm like, holy shit.
+
+Pete (40:10.07)
+Mm-hmm.
+
+Linc Elliot (40:14.464)
+Yeah. Yeah.
+
+Pete (40:21.045)
+Skin piece.
+
+Pete (40:26.86)
+Mm-hmm.
+
+Pete (40:33.268)
+We're just gonna go insane. It's like I was just thinking about it, but yeah.
+
+Linc Elliot (40:33.986)
+Yeah, it's like disposable businesses, just disposable businesses that you go about. I mean, that's what software is doing, right? So like, well, actually, I'll just build that software to do that. And then when it's finished, I'll just throw it away because you can just build another one. There's a lot to unpack there. But from those things, because I always think about, like, for Lexcen, as I grow that, and I go grow...
+
+Andy David (40:34.528)
+Yeah, how do we do this?
+
+How do we do this? Yeah.
+
+Pete (40:43.862)
+Mm.
+
+Linc Elliot (41:03.554)
+Happy to have some employees in the business and grow that. I kind of thought if it gets to nine or 10, then it should be a four split and they become two different businesses that can then grow to 10 max as well. And then they go away and give them away to the people who go into those next ones because
+
+Pete (41:15.873)
+Yes.
+
+Linc Elliot (41:24.806)
+I want a business that's bigger than that. It's just more, it's a personal taste, right? And then there's that piece that you were talking about, right around the, not everyone is at that stage of readiness and not everyone also wants the same things that you want. When I started Lexcen, I had an exterior facing purpose around what...
+
+I actually strive to do, which is creating purpose-led businesses and seeing where people flourish. And my vision, which I was less explicit about, was about freeing as many consultants from the corporate matrix of consulting that exists, right? And I kind of got to the point where I was like, well, I can't free that many with Lexcen, so I'm gonna start Leen. But it's also not that—it's not what everyone wants, right? Maybe consulting environments are dynamic and they probably are.
+
+Pete (41:55.434)
+Mm-hmm.
+
+Pete (42:17.928)
+Yeah.
+
+Linc Elliot (42:21.666)
+But then I look at—I do a lot of work with government, with larger organisations. And for me, I used to go in and I would see people at their desk with a flower on the desk and I was like, I've got to save that person. But they're very happy. They're fine. They haven't got the same level of ADHD as me. So this is not for everyone and nothing will be or ever should be. And I think I was listening to Seth Godin talk the other day about this and about, you know, sort of finding
+
+Pete (42:41.074)
+Mm.
+
+Mm.
+
+Linc Elliot (42:55.46)
+the niche of people that your thing is really valuable for and really good for. And if that's the world that you wanna inherit and you wanna live in and you wanna be in and then bill for that, absolutely. Whether it's a commercial success depends on how many of those people there are and all of that sort of stuff. But regardless of that, at least you're finding a market that you think you can live in and that
+
+and then you'll be able to continue to build for. And that's 100% what I've been trying to do for the last sort of probably 10 months or so in terms of creating a brand for Leen before even telling anyone what it was and then getting people slowly over time with a few words on a page, getting people to register and then reaching out and having conversations with them, understanding if they're the right people and building up that network. And we've got a bit of a... we've got...
+
+Pete (43:31.376)
+Mm-hmm.
+
+Linc Elliot (43:54.691)
+Around 260 or a bit over, people who have registered now and are interested in being part of it. Some of them have come on Outputcast and many of them are early testers and things like that. You know, I want to create a community out of this stuff and I want to have them in person as well. We looked at, you know, this won't work if it is just digital connection.
+
+I would love for the people that are working together on these things to be together physically where they can and where they can't, even just for networking so that we can create, you know, lean in on locations we're calling them, where we can just set up a couple of hours for a sundown or a breakfast where we can bring those people into cities where we know those people are located nearby each other. And so let's get together and understand each other a little bit.
+
+Linc Elliot (44:48.822)
+Just something that brings us together as
+
+Pete (44:52.05)
+I mean, it just improves the trust, right, inside those things. So particularly if you're handing work off to each other, that's gonna be a hundred times easier if you go down that route.
+
+Linc Elliot (44:54.53)
+Yeah.
+
+Linc Elliot (45:01.41)
+Yeah, definitely. Definitely another learning from COVID, right? Like you said, that's sort of like the flow back. I went for—I did some exercise this morning. I've actually done my MCO on Monday, so it wasn't very exercising, but I still went because of COVID.
+
+I've been in Perth for a couple of years, didn't know heaps of people, but a friend of my wife said, there's an exercise truck up the road, it's going to be 10 bucks. I went up there, paid my 10 bucks, did that, COVID hit. And then the guy was kind of like, I'm never going to do it again. But there was a WhatsApp group with a couple of people that I didn't know. And there was about five of us, I think. And we said, well, do you guys got any whites? We'll just take them down the beach and we'll go for a run.
+
+or some rocks underwater or whatever. And that was like six years ago and we haven't missed a week. There were about 14 of us down there this morning. There's probably about 30 on there. We go away for weekends together. And that flow back to physical communities who, I didn't even know what half of them did for a living for a long time.
+
+Pete (45:53.686)
+Nice.
+
+Andy David (45:53.912)
+You
+
+Linc Elliot (46:16.866)
+It was nice, and so the more that we can find those opportunities to connect that way in a way that doesn't feel forced, it's something you want to do, then the world will be a better place.
+
+Pete (46:27.331)
+Mm.
+
+I think I like what you're saying about finding a community. This has been a common theme across this podcast. I think it's partly a bias that like we both think that way. But like there is like this element of you know, it feels like a lot of stuff's gonna change, and we don't know what it looks like afterwards. But there's some things that probably won't go away that are somewhat fundamental, which is that like people will have problems. So we know that after all this is done, we'll still have a bunch of problems because we can look back the last
+
+Linc Elliot (46:35.901)
+Mm. Yeah.
+
+Linc Elliot (46:46.754)
+Hmm.
+
+Pete (46:59.533)
+you know, like five thousand years and go, yeah, everything got progressively—like if we had all the shit that we that we've got now, like five thousand years ago, we'd have thought, my God, this is like magic. So we've basically had magic and we still have problems. So all right, there's still problems. And then you go and there's also going to be a differentiation between some people will want to solve those problems and some people won't and some people will be better at it. And so there's clearly going to be like a person that's good
+
+Linc Elliot (47:05.386)
+Yeah, yeah, they mustn't have any problems.
+
+Yeah.
+
+Pete (47:28.191)
+solving problems for people that are a bit like this is gonna be able to solve problems for people that are a bit like that. Like that feels like that must still exist as a role in the future, right? It's just
+
+Linc Elliot (47:35.425)
+Yeah.
+
+Our problem would be that there won't be enough problems. People inherently like solving problems and if we take away the problems then there's lots of problems again. Yeah, we're a funny bunch of these humans. No wonder all the animals are just sort of sitting there watching us going, whatever, carry on.
+
+Pete (47:44.075)
+There'd be tons of problems. Yeah.
+
+Andy David (48:00.431)
+You
+
+Pete (48:01.461)
+I mean, I think if nothing else, the thing that the AI doesn't have, it's like it's the experience of the problem. Like it can't understand it better than you can, seemingly. So even if like it's almost like the entire business is just AIs, there's still somebody that needs to front it and just go, that's why it's bad and like help like translate it into the AI like I
+
+Linc Elliot (48:08.268)
+Yes.
+
+Mm.
+
+Linc Elliot (48:26.091)
+Yeah.
+
+Pete (48:28.296)
+We've said a few times, it feels like that's like if there's a last job, it's that. It's the and it's almost like every individual is just—it's like everybody is a ten thousand person business with the amount that they could get done, but there's still a person that has to drive it forwards, you know? Like we wouldn't have the rockets going up unless Elon was there necessarily, right? There's a person that's driving these things at the end of it.
+
+Linc Elliot (48:32.738)
+Thank you.
+
+Linc Elliot (48:47.495)
+Yeah, awesome. Absolutely.
+
+I mean, we're inherently illogical in some senses as well, right? And so if AI solves every problem completely logically, that doesn't necessarily satisfy us. I know that when I drive somewhere, I like to drive back a different way. And I know that one of those ways is shorter than the other one. But for some reason, I like doing this. Now, these are the confessions of my...
+
+Andy David (49:15.0)
+You
+
+Pete (49:15.104)
+Hmm.
+
+Linc Elliot (49:20.866)
+craziness, but, you know, and I'm sure that there's lots of people who do little things that, you know, they don't really make sense. And you kind of know they don't, but I still like doing them for some reason. So how do you actually have, you know, only a human can understand that other human trait in that way. And to know that a particular individual enjoys it that way.
+
+It takes time to connect with them and to get to know them. And whether or not you enjoy that they have that idiosyncrasy or not is up to you. And that's the thing that just be replaced by any kind of technology, which is a good thing. But like you said, it's getting through the mess and I keep on ebbing and flowing from that.
+
+Pete (49:46.94)
+Yeah.
+
+Linc Elliot (50:10.794)
+You were saying earlier, yeah, look, it's not gonna be as fast as we think because, you know, the adoption rates are gonna be lower because some people aren't actually up to speed. I've got a friend who's got an AI consultancy. He was saying to me, mate, like, you've got no idea, I'm giving...
+
+Pete (50:12.614)
+Mm.
+
+Linc Elliot (50:36.866)
+presentations through the Chamber of Commerce in Victoria somewhere. And I've got endless work to go and basically tell these people how to turn on Claude and use Claude. And they're so thankful that I'm there doing that. Which is nice, right? Because you get the human emotion of like, actually, I did need to know that, which is great. So that kind of thing, I think about that. I go, well, we're not going to be, you know, that's obviously the uptake's not going to be there.
+
+Pete (51:05.712)
+Yeah.
+
+Linc Elliot (51:06.462)
+I just don't think that with the bigger end of the way that Anthropic in particular is pushing product out and pushing it forwards at such a rate, I think that the proliferation of it will happen to the people.
+
+that's actually happening to them. And I start to edge towards that feeling of, yeah, there'll be displacement and all that sort of stuff. Whether UBI looks like UBI or whether it's actually just like the, I think there was a bill that they were trying to get passed in parliament.
+
+Pete (51:29.244)
+Mm.
+
+Linc Elliot (51:40.023)
+in Australia only last week, which was around our organisations, if they profit from using AI, to share it with the staff. So that is inherently, immediately a, right, well, we're getting more money, but that means we can't get rid of the staff, we've got to share it with them. And if there are less of them, then they get more. Yeah. Yeah. And how do you, how do you record it? Yeah.
+
+Pete (51:52.221)
+Mm-hmm.
+
+Pete (51:59.984)
+That's really awkward. At what point are you sort of banning people from getting rid of a redundant person, right? So redundancy is illegal? That's kinda awkward. Yeah.
+
+Linc Elliot (52:08.994)
+Yeah, exactly. What is the, you know, it's in that sense, it starts to go also being a small business becomes a lot easier to grow, because being a big business to get smaller is a lot harder. But also, then you're carrying all of these people when you can have competitors who are actually one and two person shops that are doing the same thing. And that kind of regulation, I just don't think really works.
+
+Pete (52:20.817)
+Yeah.
+
+Pete (52:30.939)
+Maybe.
+
+Pete (52:35.056)
+I feel like it's yet another small like regulation that it just punishes people for trying to employ people. Like I mean we we're in a we we basically run as a two-person team and we're not really that interested in having employees 'cause just the liability that you have to take on in Australia it's just insane. Yeah.
+
+Linc Elliot (52:40.79)
+Yeah.
+
+Linc Elliot (52:47.778)
+Yeah, payroll tax is a nightmare. I live in E.A. First more business with, you know, even just, you know, and I look at paternity leave. I wish I had it. I had twins and I had just started a new job
+
+at a large insurance company. I think it's great for the structures that afford it, but if it breaks an organisation, then that's not right either. So how do you get fluidity into that regulatory system, which maybe you can get that if you can actually make those government bodies work more efficiently and the intelligence.
+
+the reporting that can come back to them is faster and all that sort of stuff but it's a bit of a yeah how do you get them?
+
+Andy David (53:36.214)
+Well, it would help if the people who are coming up with the policies had ever worked in a private sector organization that might help them have some perspective. There's that. There's that. There's that too. There's that too. Yeah.
+
+Linc Elliot (53:42.422)
+Yeah.
+
+Pete (53:44.045)
+You could have just stopped with how it ever worked, Andy. Come on. Let's not, let's not.
+
+Linc Elliot (53:47.136)
+Thank
+
+Linc Elliot (53:51.403)
+That's interesting, you know, because I know some really good people in government and there are a lot of really hard workers as well. And it's hard because there is that sentiment around government as well. But I mean, it's a system that's been layered and layered and layered upon system upon system. You still use this command and control in terms of the way that it runs, which is rigid, which is archaic. And I don't know how you get there from here in terms of changing it.
+
+And it's not, you know, I definitely don't blame the people in it. I do think that the system is not meeting the needs of what society requires, but yeah, how to make that change, that is a massive question, I think.
+
+Pete (54:38.37)
+Yeah. Yeah, it's like command and control with no feedback mechanism where, you know, if you make a decision that's wrong, like nothing happens, like you can do it again, like we just get more money, like it's, yeah, it's tough.
+
+Linc Elliot (54:43.552)
+Yeah, or ability.
+
+No feedback, no ability to reward people when they do really well in there or vice versa.
+
+Pete (54:56.95)
+Yeah.
+
+I think I find it frustrating when like there's a lot of like well meaning sounding regulations, but it almost invariably—and you'll know this—it almost always punishes small business at the expense of like a large business that can easily absorb any of these things. It's like I just wish we didn't have to believe all the good versions.
+
+Linc Elliot (55:05.346)
+Mmm.
+
+Linc Elliot (55:10.914)
+Mm.
+
+Linc Elliot (55:15.65)
+Yeah, look.
+
+Andy David (55:19.406)
+I mean, that's kind of the system working as intended, right? Because you have like lobbyists exist for a reason and the money is all with big lobbyists. So you end up with policy that works for the benefit of the big enterprise and not the SME can actually compete in money terms. So that feels like that's the system just doing what it's designed to do to some degree. But I think the bigger problem with regulation is just like how...
+
+Linc Elliot (55:20.442)
+after all.
+
+Pete (55:24.351)
+I think so. Hmm.
+
+Linc Elliot (55:30.774)
+and
+
+Linc Elliot (55:43.582)
+Yeah.
+
+Andy David (55:46.317)
+How could you feel confident regulating something that is changing so rapidly? That's my problem with it. I have very little confidence in where anything is going because the way I work is constantly changing and the way I'm using the tools is constantly evolving. How could you go, okay, this is the line in the sand, now we're going to establish a hard policy? It's like, this is nonsense. Yeah.
+
+Linc Elliot (55:51.264)
+Get it.
+
+Linc Elliot (56:04.992)
+Yeah.
+
+Pete (56:05.772)
+Yep.
+
+Linc Elliot (56:08.468)
+I'm changing the rules on myself. How am I going to do it for all these others? That's so true. The pace of change doesn't meet the system and the structure that has come to set it up, but it's the only one that we know. Andy?
+
+Pete (56:22.879)
+Mm-hmm.
+
+Pete (56:26.332)
+And as you said, there's so many workarounds as well, right? You take something like, all right, if you save money because of AI, then you've got to share the money with the staff, right? If you implement new software, do you have to do that? Like if somebody else implements new software and they used AI, now do you have to? You can't ever get rid of a staff? Do I now have to go and hire somebody to get the mail even though I have email? It's weird. It's odd, like you...
+
+Linc Elliot (56:40.844)
+Yeah. Yeah. Yeah. Yeah.
+
+Linc Elliot (56:49.346)
+Yeah, well, it's almost like that trust marker now that they've got, that this work has been touched by AI, as if that trust marker is not going to be on everything.
+
+Because at some point everything's... I mean, I saw a stat the other day and, you know, very dangerous, probably saw it on a LinkedIn post somewhere or something, but it was something like the percentage of bots' activity on the internet was like 68% bots or something in terms of actual activity. And I could believe that, because they go a hell of a lot faster. There's plenty of people using them and, you know, I mean...
+
+Pete (57:00.424)
+Yeah, it's ridiculous.
+
+Pete (57:24.308)
+Mm-hmm.
+
+Linc Elliot (57:28.802)
+At what point is it 99%? I actually think, like, I was saying this to my CTO in Leen. Well, he and I, we talk about this sort of stuff all the time and he probably said it to me first and I repeated it back to him and thought it was my own. It was around, you know, this could be probably the last time that we actually developed a nice-looking UI for Pebble because...
+
+Pete (57:35.156)
+Yeah.
+
+Andy David (57:47.758)
+Thank.
+
+Linc Elliot (57:56.789)
+Yes, it just might be a point. You know, like, it might be that people are coming to Leen to use our UI to connect with each other. It's actually they've got their agents plugged into that system, which is the community and the network. And we provide the in-person service and stuff like that. But everything else runs through, could be Claude, could be, you know, all of those different ones. So is the UI actually going to be important at all in the next round, in a couple of years' time?
+
+Pete (58:24.734)
+Mm, I might fade that one. I think I would... Well, no, I felt like a few years ago that it felt like where it was gonna go, because you say, like, what's a better UX than not doing any of the work and just saying, "Oi, slave, do the work for me"? That feels like that would be the simplest way to do it. But when you do that you give up so much.
+
+Linc Elliot (58:27.754)
+Getting too far ahead.
+
+Linc Elliot (58:37.506)
+Hmm.
+
+Hmm.
+
+Pete (58:49.838)
+Like knowledge and context of what's going on, that you don't see what's happening. And then what I found is that if your only UI then becomes the chat history of what's going on, that is just too real-time. There's not enough expression in it. There's no structure to anything that gets done. So invariably I've had to then go and create a bunch of UIs for myself that are correct to how I appreciate the work is getting done.
+
+Linc Elliot (59:11.97)
+But will it be your UI that you have for yourself and everything that you do, but you don't use anyone else's?
+
+Pete (59:17.219)
+So I think, no, I think what you'll do is there'll be beautiful, beautiful UIs for smaller groups of people. I just don't think it goes away. I don't think it stays, but I don't think we end up with SaaS UIs, which are basically, can we have one UI that pisses off everybody in the world, that nobody's happy with? And I think we'll have... Yeah. Yeah.
+
+Linc Elliot (59:26.027)
+Hmm.
+
+Yeah.
+
+Linc Elliot (59:37.854)
+Yeah. Because we put everyone's stuff in there. We've met the needs of everyone and so everyone hates it. Yeah. That's a good point.
+
+Andy David (59:40.739)
+Listen.
+
+Pete (59:44.847)
+We're trying to make it work for everybody and it works for nobody. Yeah.
+
+Andy David (59:47.789)
+Yeah, ironically, we're having a conversation about UI, but really what we're discussing is UX, which I think was always greater. Those two things always got coupled together from a design perspective, but UX was always the master. If you don't nail the experience, then it doesn't really matter what your interface looks like. It just doesn't. So I think this is right, especially if you have some kind of organizing principle that exists for a firm. It's like, how do you manage the work?
+
+Linc Elliot (59:53.984)
+Yes, you're right.
+
+Okay.
+
+Linc Elliot (01:00:06.954)
+Yeah. Yeah.
+
+Linc Elliot (01:00:15.392)
+Mm. Mm.
+
+Andy David (01:00:16.898)
+You still need some kind of experience and it has to be delightful because you're working with them, right? So it can't just be a screen. I still see people churning out really traditional dashboard-type interfaces and I'm looking at it going, shit, that is just so busy. I do not want to wake up and look at that. That is the last thing I want. So yeah, it's still experience, right?
+
+Pete (01:00:21.882)
+Yes.
+
+Linc Elliot (01:00:22.018)
+Definitely.
+
+Linc Elliot (01:00:34.306)
+Yeah.
+
+Pete (01:00:37.284)
+Well, I mean, maybe to layer on that, if you create something that works but isn't delightful and somebody else can experience that and go, this could be delightful, well, everyone's just gonna go over there. So I think it's still gonna matter quite a lot. I just think it matters on smaller scales and with different niches of community. But yeah, that would be my guess on that one.
+
+Linc Elliot (01:00:50.338)
+Yeah.
+
+Linc Elliot (01:00:55.348)
+Yeah.
+
+Linc Elliot (01:01:01.122)
+You're right. I, you know, I had a post a couple of days ago actually, just a reflection on something Rick Rubin was saying, because I just like that now. He's my constant go-to for, you know, if anyone gets a Christmas present, it's The Creative Act. It's a wonderful book.
+
+Pete (01:01:15.792)
+Amen.
+
+Pete (01:01:19.952)
+I love that book. Yeah.
+
+Linc Elliot (01:01:21.314)
+Man, it's so good. But here's sort of the whole thing about the importance of taste and actually you should be creating for you. It is around, if you create something that is beautiful, that might not be the big commercial success either. But to be honest, when you try and solve for what you want people to like, it's like, you know, and yeah, Marvel's very successful and da-da-da-da.
+
+Stuff's just boring as all hell. Yeah, because it's formulaic and it's that thing for everyone. But again, it's me. So, do you want to be a commercial success or do you want to solve the challenges that you will feel really satisfied in solving? And I'm trying to create a world in which I live those moments.
+
+Pete (01:02:09.464)
+Mm-hmm.
+
+Linc Elliot (01:02:16.386)
+And so that comes down to again, if you were to be able to create multiple, you know, you have an experience but you've got different users who respond to things differently. How do you help them to actually develop their own view of how they see that and apply their own taste to receive it in the way that they want and compare with their mates and go, look at the one I created?
+
+Pete (01:02:23.758)
+Mm.
+
+Linc Elliot (01:02:46.402)
+Still want to be creative and I want to sort of, you know, some people want to just get to the point, but we'll see. I operate out of a terminal called Ghostty and that feeds off to Obsidian for my sort of second brain and that can touch into all my AI, but it's...
+
+It's black and white, it looks like coding and I've actually built a UI over the top of it and named it Harness and it has all of these really cool bells and whistles and stuff like that. Because I was thinking about how we could use it as a product that we could put into our... We've got a consultant capability hub in the platform which gives people access to these tools that might help you with the doing of the work because that's not really our thing.
+
+And also, you know, could go into there, but I just actually haven't used it and I've just found myself going back to the... Because I actually think the simplicity of this thing that just sort of feeds out stuff that looks like the Matrix that I can write is quite nice. But yeah, it was that easy for me to spin up my own UI and I'm not a UI developer. And so people will be able to do that sort of stuff, but maybe that's revert back to what do they all get?
+
+Pete (01:04:06.026)
+Yeah.
+
+Yeah, I mean, my guess is that people will share that sort of stuff for the UI and the UX stuff. It'll probably revolve around those community levels, or some sort of... I think the niches become smaller and then you get better solutions for those niches. But I do think that only people... I go back to the Rick Rubin stuff about designing for yourself. I don't think you can make something that's really good and beautiful and efficient in that way...
+
+Linc Elliot (01:04:18.902)
+Hmm.
+
+Linc Elliot (01:04:29.664)
+Thank you.
+
+Pete (01:04:37.446)
+Unless it's a problem that you have. You're just too disconnected from it. So I think we'll see more people creating for their own communities as being how we end up there. And then you go, well, why bother? He's already done it. This is great. This does everything that I need here within the stamps. Yeah.
+
+Linc Elliot (01:04:51.092)
+Yeah, yeah, yeah, exactly. Yeah. And probably, and it depends if there's a financial incentive to be doing that. But that comes back again to what is the financial model of the future? We get through the next 10 years. Yeah, yeah.
+
+Pete (01:05:04.805)
+There's always gonna be a division of labor, right? It's gotta be. I don't mean division of labor goes away. I don't think problems go away. So someone's gonna do bits of it. It's more a case of, well, where's the value? A lot of people went and became software engineers because it was a place you could go and get paid a lot of money because it was a rare skill. And it's no longer a rare skill. Feels like most skills don't feel like they're gonna be that rare and you can...
+
+Linc Elliot (01:05:11.628)
+You.
+
+Linc Elliot (01:05:14.924)
+Hmm.
+
+Pete (01:05:31.229)
+You can do any of them. So is it more important to choose a community and an area to focus on and to live in that way? And then whichever one of those you get, that maybe defines how successful it is. I don't know. These are all the areas where it's like there's a bunch of stuff that shouldn't change, but there's definitely things that are gonna change and you're not necessarily gonna continue with the life you have exactly now...
+
+Linc Elliot (01:05:39.553)
+Mm.
+
+Pete (01:05:59.869)
+For the next five to ten years, just because you've always done it. It might just go away and you have to be something else. And we don't know where your place in society goes. I mean, that's why people are so scared. It's like, I've done everything I was supposed to do and I sit around and I put the numbers in this spreadsheet, into this spreadsheet, and now I lose my house. Like, what? That feels weird. It's just...
+
+Linc Elliot (01:06:06.871)
+Yeah.
+
+Linc Elliot (01:06:12.162)
+Thank.
+
+Linc Elliot (01:06:17.602)
+Yeah, absolutely. You know, there's only one way to find out, boys, and that's to, you know, I think understand what you do well, do more of it and try and learn something new at the same time. Yeah, exactly. And do it with people you like.
+
+Pete (01:06:31.878)
+Hm. And find your place.
+
+Pete (01:06:40.102)
+All right. I'm gonna remember to do something we never remember, which is, so you mentioned you had a podcast and you got your platforms. Where would people find out about this?
+
+Andy David (01:06:40.461)
+Nice.
+
+Andy David (01:06:43.991)
+Yeah.
+
+Linc Elliot (01:06:46.527)
+Hey.
+
+Yeah, so we've got, look, I think I'm gonna need many more than 81 to become as good as you guys are doing this. So if you wanna go and look at the early ones which I've put out there, really good guests on Lenin with Link, it's called, which is L-E-E-N, which is the name of the business. len.consulting is the website. You know, absolutely go on there, have a look and make fun of the poor values of which I've enabled, but you will learn something from the great consultants that are on there.
+
+I'm speaking to independent and solo and boutique owners and really just trying to understand first of all what they're doing now and give them an opportunity to talk about their business because it's important for me to help them get out there. And then we go back in time to understand what that leap to actually going independent was like for them. What were the challenges? What were the, even before you went, what were the fears? Who went with you? How did you get through the harder times? And then musing on the future a little bit like we are now in terms of, you know, where does it all go? And we'll make some wild predictions that if we make enough of them, one of us might be right one day.
+
+Pete (01:07:52.251)
+Yeah.
+
+Andy David (01:08:06.403)
+Thanks.
+
+Pete (01:08:07.57)
+But you make all the predictions and then just save them all separately on different Twitter accounts.
+
+Linc Elliot (01:08:10.402)
+Exactly. There you go. I'll just cut out the ones that turn right. I'll run a bunch of sections. Going to see, told you. There we go. Awesome. Thank you, guys. I just want to say I appreciate you offering to actually get the word out there about that. I would have forgotten about it as well. So I appreciate it.
+
+Pete (01:08:17.988)
+Nice. All right. Anything else, Andy?
+
+Pete (01:08:33.88)
+No, no worries, we all are the worst at kind of the weather on suspect we.
+
+Linc Elliot (01:08:35.126)
+Thank you, Abby.
+
+Andy David (01:08:36.256)
+Yeah, I think that's twice we've done this in 81 episodes, so we've got some improvement left in us.
+
+Linc Elliot (01:08:41.378)
+Yeah, nice. I'm stoked. Thanks to you both, boys. It's been great meeting you only in the recent past and looking forward to more conversations like this, whether they're on the screen or in front of each other. Hopefully, hopefully more in person.
+
+Pete (01:08:42.328)
+We're nailing it. We're pioneered those low production values.
+
+Andy David (01:08:46.263)
+You.
+
+Pete (01:09:01.88)
+All right, let's... I'm over in Sydney at the moment, but when I get back let's go for a coffee or a beer, one of those Sundanas. All right, mate. All right. On that note...
+
+Andy David (01:09:06.518)
+IRL.
+
+Linc Elliot (01:09:07.105)
+Yeah, sounds good. Yeah, beautiful. All right, guys, get set.
+
+Andy David (01:09:09.582)
+Awesome. Thanks. Thanks, guys.
