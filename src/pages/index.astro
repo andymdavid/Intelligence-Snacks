@@ -98,7 +98,7 @@ const jsonLd = {
 </BaseLayout>
 
 <style>
-  .home-intro { position: relative; min-height: 56.25vw; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(26rem, .92fr); align-items: center; gap: clamp(3rem, 6vw, 8rem); padding-block: clamp(3rem, 6vw, 6rem); }
+  .home-intro { position: relative; min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(26rem, .92fr); align-items: center; gap: clamp(3rem, 6vw, 8rem); padding-block: clamp(3rem, 6vw, 6rem); }
   .home-intro__content { display: grid; align-self: center; align-content: center; gap: clamp(1.5rem, 3.2vh, 2.6rem); min-width: 0; transform: translateY(-5%); }
   .home-intro { isolation: isolate; color: #f5f4ef; }
   .home-intro::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: url('/images/hero-conversation.png') center bottom / 80% auto no-repeat; mask-image: linear-gradient(to right, transparent 10%, black 18%, black 82%, transparent 90%), linear-gradient(to bottom, transparent 20%, black 32%); mask-composite: intersect; }
@@ -140,7 +140,7 @@ const jsonLd = {
   .subscribe-form__label { margin-bottom: .7rem; font-family: var(--font-mono); font-size: var(--type-label); text-transform: uppercase; letter-spacing: -.03em; }
   .subscribe-form > p:last-child { font-size: .8rem; margin-top: .5rem; }
   @media (max-width: 1050px) {
-    .home-intro { min-height: 660px; grid-template-columns: 1fr; }
+    .home-intro { grid-template-columns: 1fr; }
     .hero-testimonial-slot { position: static; margin-top: .35rem; }
     .scroll-indicator { display: none; }
   }
@@ -148,7 +148,7 @@ const jsonLd = {
     .feature, .episode-feature__inner, .subscribe-panel { grid-template-columns: 1fr; }
   }
   @media (max-width: 620px) {
-    .home-intro { min-height: calc(100svh - 58px); display: flex; flex-direction: column; justify-content: center; padding-block: 4rem 8rem; }
+    .home-intro { display: flex; flex-direction: column; justify-content: center; padding-block: 4rem 8rem; }
     .home-intro__content { width: 100%; transform: translateY(-2vh); }
     .hero-testimonial-slot { position: absolute; right: var(--page-pad); bottom: 1.5rem; left: var(--page-pad); margin: 0; }
     .subscribe-form :global(.email-signup__controls) { flex-direction: column; }
