@@ -34,7 +34,7 @@ const jsonLd = {
     <div class="home-intro__content">
       <h1>Big Ideas Compound</h1>
       <div class="home-intro__signup">
-        <p>For people building and running modern businesses, Intelligence Snacks helps you quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.</p>
+        <p>For people building modern businesses, Intelligence Snacks helps you digest the big ideas from the world of AI, delivered to your inbox weekly.</p>
         <EmailSignup id="hero-email" source="homepage-hero" buttonLabel="Send me snacks" />
       </div>
     </div>
@@ -161,5 +161,18 @@ const jsonLd = {
     .hero-testimonial-slot { position: absolute; right: var(--page-pad); bottom: 1.5rem; left: var(--page-pad); margin: 0; }
     .subscribe-form :global(.email-signup__controls) { flex-direction: column; }
     .subscribe-form :global(.email-signup button) { width: 100%; }
+  }
+</style>
+
+<style>
+  /* Compact upper hero composition. */
+  .home-intro.page-shell { padding-block: clamp(4rem, 14vh, 10rem) 8rem; }
+  .home-intro .home-intro__content { align-self: start; transform: none; }
+  .home-intro .home-intro__signup :global(.email-signup) { width: min(100%, 30rem); justify-self: center; }
+  .home-intro .home-intro__signup :global(.email-signup__controls) { min-height: 2.375rem; }
+  .home-intro .home-intro__signup :global(.email-signup button) { height: 2.375rem; padding: .375rem .75rem; }
+  .home-intro .home-intro__signup :global(.email-signup input[type='email']) { height: 2.375rem; padding: .375rem .75rem; font-family: var(--font-mono); font-size: .75rem; }
+  @media (max-width: 620px) {
+    .home-intro.page-shell { justify-content: flex-start; padding-block: 4rem 8rem; }
   }
 </style>

@@ -41,7 +41,10 @@ The hero H1 uses self-hosted Geist Serif Regular (400), from the official
 vercel/geist-font repository, with its SIL Open Font License included beside the font.
 Its size is `clamp(2.65625rem, 6.63vw, 5.95rem)` (42.5–95.2px at a 16px root),
 15% smaller than the original. Hero description is 16px. Hero signup controls are
-44px high, with a 13px Geist Mono button; other signup instances keep their styling.
+38px high and limited to 30rem wide, with a 12px Geist Mono input and 13px Geist Mono button; other signup instances keep their styling.
 
 The H1, description and email signup are centred horizontally across the hero,
 with centred heading/description text and the existing 38rem signup width limit.
+
+The content group sits in the upper hero area above the people/table artwork.
+Description: For people building modern businesses, Intelligence Snacks helps you digest the big ideas from the world of AI, delivered to your inbox weekly.
