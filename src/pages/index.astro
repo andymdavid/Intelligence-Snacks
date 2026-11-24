@@ -114,7 +114,6 @@ const jsonLd = {
   .home-intro :global(.email-signup input[type='email']) { height: 2.75rem; padding: .5rem .875rem; border-color: rgba(245, 244, 239, .6); background: rgba(11, 16, 23, .65); color: #f5f4ef; }
   .home-intro :global(.email-signup input[type='email']::placeholder) { color: rgba(245, 244, 239, .75); }
   .home-intro :global(.email-signup input[type='email']:focus-visible) { border-color: #f5f4ef; }
-  .home-intro :global(.email-signup button:hover:not(:disabled)) { background: #f5f4ef; color: var(--ink); }
   .home-intro h1 { max-width: 1400px; margin: 0; font-family: 'Geist Serif', Georgia, serif; font-size: clamp(2.65625rem, 6.63vw, 5.95rem); font-weight: 400; line-height: var(--leading-hero); letter-spacing: -.04em; }
   .home-intro__signup { width: min(100%, 38rem); display: grid; gap: 1rem; }
   .home-intro__signup > p { max-width: 38rem; margin: 0; font-size: 1rem; color: inherit; }
@@ -167,6 +166,8 @@ const jsonLd = {
   .home-intro .home-intro__signup :global(.email-signup) { width: min(100%, 30rem); justify-self: center; }
   .home-intro .home-intro__signup :global(.email-signup__controls) { min-height: 2.375rem; }
   .home-intro .home-intro__signup :global(.email-signup button) { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; background: #fc2f04; height: 2.375rem; padding: .375rem .75rem; line-height: 1; }
+  .home-intro .home-intro__signup :global(.email-signup button:hover:not(:disabled)),
+  .home-intro .home-intro__signup :global(.email-signup button:focus-visible:not(:disabled)) { background: transparent; color: #fff; }
   .home-intro .home-intro__signup :global(.email-signup button span) { display: flex; align-items: center; margin-left: 0; }
   .home-intro .home-intro__signup :global(.email-signup input[type='email']) { height: 2.375rem; padding: .375rem .75rem; font-family: var(--font-mono); font-size: .75rem; }
   @media (max-width: 620px) {
