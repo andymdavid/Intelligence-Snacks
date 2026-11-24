@@ -32,6 +32,7 @@ const subscriptionDevRoute = {
 export default defineConfig({
   site: 'https://intelligencesnacks.com',
   output: 'static',
+  devToolbar: { enabled: false },
   redirects: {
     '/people/[id]': '/contributors/[id]',
   },
