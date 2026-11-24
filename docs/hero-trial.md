@@ -6,7 +6,7 @@ This is an unmerged design experiment; production remains on its existing versio
 Changes: use the supplied `Intelligence-Snacks-Hero-upscaled.png` unchanged as a
 full-width homepage hero background, remove the `AI · Software · Business · Work`
 eyebrow, and use light hero text and email-field styling for the dark background.
-The right-hand hero snack cards are removed. The headline, copy and testimonial remain. The hero has a minimum height of `calc(100vh - 58px)` on desktop and mobile,
+The right-hand hero snack cards are removed. The headline and copy remain; the testimonial now sits in the bottom signup CTA. The hero has a minimum height of `calc(100vh - 58px)` on desktop and mobile,
 so the hero and 58px header together fit one viewport. The image is displayed at 80% of the full hero width, aligned bottom centre,
 to reduce the apparent size of the people and table while preserving the full image.
 
@@ -59,3 +59,8 @@ Kanit Medium (500) is the selected wordmark font, loaded through Google Fonts.
 Header and menu wordmarks share the same font.
 Native dialog provides keyboard focus containment and Escape dismissal; closing
 restores focus to Menu. Homepage header uses light text; internal pages dark text.
+
+The testimonial is a readable18–22px quotation under the bottom CTA heading,
+beside the signup form on desktop and stacked above it on mobile. Attribution is
+below the unchanged quote; the relative timestamp and floating card styling are removed.
+The homepage CTA uses unique section/input IDs so its labels do not collide with the site footer.
