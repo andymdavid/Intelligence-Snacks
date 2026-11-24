@@ -98,6 +98,13 @@ const jsonLd = {
 </BaseLayout>
 
 <style>
+  @font-face {
+    font-family: 'Geist Serif';
+    src: url('/fonts/GeistSerif-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
   .home-intro { position: relative; min-height: calc(100vh - 58px); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(26rem, .92fr); align-items: center; gap: clamp(3rem, 6vw, 8rem); padding-block: clamp(3rem, 6vw, 6rem); }
   .home-intro__content { display: grid; align-self: center; align-content: center; gap: clamp(1.5rem, 3.2vh, 2.6rem); min-width: 0; transform: translateY(-5%); }
   .home-intro { isolation: isolate; color: #f5f4ef; }
@@ -107,7 +114,7 @@ const jsonLd = {
   .home-intro :global(.email-signup input[type='email']::placeholder) { color: rgba(245, 244, 239, .75); }
   .home-intro :global(.email-signup input[type='email']:focus-visible) { border-color: #f5f4ef; }
   .home-intro :global(.email-signup button:hover:not(:disabled)) { background: #f5f4ef; color: var(--ink); }
-  .home-intro h1 { max-width: 1400px; margin: 0; font-size: clamp(3.125rem, 7.8vw, 7rem); font-weight: 700; line-height: var(--leading-hero); letter-spacing: -.04em; }
+  .home-intro h1 { max-width: 1400px; margin: 0; font-family: 'Geist Serif', Georgia, serif; font-size: clamp(3.125rem, 7.8vw, 7rem); font-weight: 400; line-height: var(--leading-hero); letter-spacing: -.04em; }
   .home-intro__signup { width: min(100%, 38rem); display: grid; gap: 1.25rem; }
   .home-intro__signup > p { max-width: 38rem; margin: 0; font-size: var(--type-body-large); color: inherit; }
   .hero-testimonial-slot { position: absolute; left: calc(var(--page-pad) - max(0px, (100vw - 1600px) / 2)); bottom: 2rem; }

@@ -36,3 +36,7 @@ git diff 13ffcad...design/hero-background-trial -- src/pages/index.astro public/
 ```
 
 Source image SHA-256: `733406fc270c979c100fa019de8858410efa6710c2534f124b094bf26aebd10a`.
+
+The hero H1 uses self-hosted Geist Serif Regular (400), from the official
+vercel/geist-font repository, with its SIL Open Font License included beside the font.
+Its existing size remains `clamp(3.125rem, 7.8vw, 7rem)` (50–112px at a 16px root).
