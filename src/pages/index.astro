@@ -42,7 +42,6 @@ const jsonLd = {
 <BaseLayout {jsonLd} active="latest">
   <section class="home-intro page-shell">
     <div class="home-intro__content">
-      <p class="eyebrow">AI · Software · Business · Work</p>
       <h1>Big Ideas Compound</h1>
       <div class="home-intro__signup">
         <p>For people building and running modern businesses, Intelligence Snacks helps you quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.</p>
@@ -112,12 +111,17 @@ const jsonLd = {
 <style>
   .home-intro { position: relative; min-height: max(760px, calc(100vh - 58px)); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(26rem, .92fr); align-items: center; gap: clamp(3rem, 6vw, 8rem); padding-block: clamp(3rem, 6vw, 6rem); }
   .home-intro__content { display: grid; align-self: center; align-content: center; gap: clamp(1.5rem, 3.2vh, 2.6rem); min-width: 0; transform: translateY(-5%); }
-  .home-intro__content > .eyebrow { margin-bottom: 0; }
+  .home-intro { isolation: isolate; color: #f5f4ef; }
+  .home-intro::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: #0b1017 url('/images/hero-conversation.png') center bottom / cover no-repeat; }
+  .home-intro :global(.email-signup input[type='email']) { border-color: rgba(245, 244, 239, .6); background: rgba(11, 16, 23, .65); color: #f5f4ef; }
+  .home-intro :global(.email-signup input[type='email']::placeholder) { color: rgba(245, 244, 239, .75); }
+  .home-intro :global(.email-signup input[type='email']:focus-visible) { border-color: #f5f4ef; }
+  .home-intro :global(.email-signup button:hover:not(:disabled)) { background: #f5f4ef; color: var(--ink); }
   .home-intro h1 { max-width: 1400px; margin: 0; font-size: clamp(3.125rem, 7.8vw, 7rem); font-weight: 700; line-height: var(--leading-hero); letter-spacing: -.04em; }
   .home-intro__signup { width: min(100%, 38rem); display: grid; gap: 1.25rem; }
-  .home-intro__signup > p { max-width: 38rem; margin: 0; font-size: var(--type-body-large); color: var(--text-primary); }
+  .home-intro__signup > p { max-width: 38rem; margin: 0; font-size: var(--type-body-large); color: inherit; }
   .hero-testimonial-slot { position: absolute; left: calc(var(--page-pad) - max(0px, (100vw - 1600px) / 2)); bottom: 2rem; }
-  .scroll-indicator { position: absolute; left: 50%; bottom: 1rem; display: flex; flex-direction: column; align-items: center; gap: .25rem; color: var(--ink); transform: translateX(-50%); }
+  .scroll-indicator { position: absolute; left: 50%; bottom: 1rem; display: flex; flex-direction: column; align-items: center; gap: .25rem; color: inherit; transform: translateX(-50%); }
   .scroll-indicator span { font-family: var(--font-mono); font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
   .scroll-indicator svg { width: 1rem; height: 1rem; }
   .feature { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 8rem); align-items: center; }

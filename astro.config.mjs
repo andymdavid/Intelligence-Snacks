@@ -41,7 +41,7 @@ export default defineConfig({
   },
   vite: {
     server: {
-      allowedHosts: ['slim-tea-rose.lara1.runwingman.com'],
+      allowedHosts: ['slim-tea-rose.lara1.runwingman.com', 'fast-log-cube.lara.runwingman.com'],
     },
   },
   integrations: [subscriptionDevRoute],
