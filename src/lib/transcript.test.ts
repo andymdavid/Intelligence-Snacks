@@ -29,3 +29,5 @@ test('reads colon-free legacy bracket headers and locates only unique long inter
  expect(evidenceTurnIndex(turns,{excerpt:`An original opening with several filler words that differ from the edited publication. ${phrase}`})).toBe(0);
  expect(evidenceTurnIndex([...turns,...turns],{excerpt:`Different opening. ${phrase}`})).toBe(-1);
 });
+
+test('untimed speaker turns retain paragraphs and unknown labels without invented timecodes',()=>{expect(parseTranscript('Pete\nHello.\n\nMore.\n\nMark\nReply.\n\nSpeaker 4\nYes.')).toEqual([{speaker:'Pete',timestamp:'',text:'Hello. More.'},{speaker:'Mark',timestamp:'',text:'Reply.'},{speaker:'Speaker 4',timestamp:'',text:'Yes.'}]);});

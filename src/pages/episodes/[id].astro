@@ -28,7 +28,7 @@ const transcriptSource = episode.data.transcript
   : undefined;
 const transcriptTurns = parseTranscript(transcriptSource ?? '');
 const timestampSeconds = (timestamp: string) => timestamp.split(':').reverse().reduce((total, part, index) => total + Number(part) * (60 ** index), 0);
-const durationSeconds = transcriptTurns.length ? timestampSeconds(transcriptTurns.at(-1)!.timestamp) : undefined;
+const durationSeconds = transcriptTurns.at(-1)?.timestamp ? timestampSeconds(transcriptTurns.at(-1)!.timestamp) : undefined;
 const isoDuration = durationSeconds ? `PT${Math.floor(durationSeconds / 3600) ? `${Math.floor(durationSeconds / 3600)}H` : ''}${Math.floor((durationSeconds % 3600) / 60)}M${durationSeconds % 60}S` : undefined;
 const youtubeId = episode.data.youtubeUrl
   ? new URL(episode.data.youtubeUrl).searchParams.get('v') ?? episode.data.youtubeUrl.split('/').filter(Boolean).pop()
@@ -97,7 +97,7 @@ const jsonLd = [{
         <div class="transcript-turns">
           {transcriptTurns.map((turn, index) => (
             <article class="transcript-turn" id={`transcript-turn-${index}`}>
-              <div><strong>{turn.speaker}</strong>{episode.data.youtubeUrl ? <a href={`${episode.data.youtubeUrl}&t=${timestampSeconds(turn.timestamp)}s`} rel="external" aria-label={`Watch ${turn.speaker} at ${turn.timestamp} on YouTube`}>{turn.timestamp}</a> : <span>{turn.timestamp}</span>}</div>
+              <div><strong>{turn.speaker}</strong>{episode.data.youtubeUrl && turn.timestamp ? <a href={`${episode.data.youtubeUrl}&t=${timestampSeconds(turn.timestamp)}s`} rel="external" aria-label={`Watch ${turn.speaker} at ${turn.timestamp} on YouTube`}>{turn.timestamp}</a> : <span>{turn.timestamp}</span>}</div>
               <p>{turn.text}</p>
             </article>
           ))}

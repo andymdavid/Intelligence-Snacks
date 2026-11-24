@@ -1,5 +1,7 @@
 export function parseTranscript(source: string) {
-  const headers = [...source.matchAll(/^(?:(.+?) \((\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\)|\[(\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\] (.+?)(?::|$))[ \t]*/gm)];
+  let headers = [...source.matchAll(/^(?:(.+?) \((\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\)|\[(\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\] (.+?)(?::|$))[ \t]*/gm)];
+  // Untimed uploads retain explicit speaker boundaries without invented timecodes.
+  if (!headers.length) headers = [...source.matchAll(/^(Pete|Andy|Mark|Speaker \d+)[ \t]*\r?$/gm)].map(h => Object.assign([h[0], h[1], '', '', ''], {index:h.index, input:h.input})) as RegExpExecArray[];
   return headers.map((header, index) => ({
     speaker: (header[1] || header[4])!.trim(),
     timestamp: (header[2] || header[3])!,
