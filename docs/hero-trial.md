@@ -49,14 +49,13 @@ with centred heading/description text and the existing 38rem signup width limit.
 The content group sits in the upper hero area above the people/table artwork.
 Description: For people building modern businesses, Intelligence Snacks helps you digest the big ideas from the world of AI, delivered to your inbox weekly.
 
-Header/navigation trial: cassette plus uppercase Switzer Regular wordmark, transparent 58px
+Header/navigation trial: cassette plus uppercase Kanit Regular wordmark, transparent 58px
 header, and a bordered Menu button alongside a search icon. Inspired by https://www.openresidency.com/ and
 https://preymaker.com plus the supplied menu screenshot. Menu opens a light modal
 panel with large page links, Explore and Listen & watch groups, Search and signup.
 Menu and Close share the same top-right position; their SVG icons align with the labels.
 The reference CSS declares Suisse BP Intl, while its wordmark is an outlined SVG.
-Switzer Regular (400) is the selected wordmark font, served from the official
-Fontshare CDN under the ITF Free Font License. Font files are not redistributed in
-the repository. Header and menu wordmarks share the same font.
+Kanit Regular (400) is the selected wordmark font, loaded through Google Fonts.
+Header and menu wordmarks share the same font.
 Native dialog provides keyboard focus containment and Escape dismissal; closing
 restores focus to Menu. Homepage header uses light text; internal pages dark text.
