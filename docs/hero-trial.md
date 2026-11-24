@@ -49,9 +49,12 @@ with centred heading/description text and the existing 38rem signup width limit.
 The content group sits in the upper hero area above the people/table artwork.
 Description: For people building modern businesses, Intelligence Snacks helps you digest the big ideas from the world of AI, delivered to your inbox weekly.
 
-Header/navigation trial: cassette plus uppercase Geist wordmark, transparent 58px
-header, and one Menu control. Inspired by https://www.openresidency.com/ and
+Header/navigation trial: cassette plus uppercase Neue Montreal Regular wordmark, transparent 58px
+header, and a bordered Menu button alongside a search icon. Inspired by https://www.openresidency.com/ and
 https://preymaker.com plus the supplied menu screenshot. Menu opens a light modal
 panel with large page links, Explore and Listen & watch groups, Search and signup.
+Menu and Close share the same top-right position; their SVG icons align with the labels.
+The reference CSS declares Suisse BP Intl, while its wordmark is an outlined SVG.
+Neue Montreal Regular is the selected local approximation.
 Native dialog provides keyboard focus containment and Escape dismissal; closing
 restores focus to Menu. Homepage header uses light text; internal pages dark text.
