@@ -101,7 +101,8 @@ const jsonLd = {
   .home-intro { position: relative; min-height: 56.25vw; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(26rem, .92fr); align-items: center; gap: clamp(3rem, 6vw, 8rem); padding-block: clamp(3rem, 6vw, 6rem); }
   .home-intro__content { display: grid; align-self: center; align-content: center; gap: clamp(1.5rem, 3.2vh, 2.6rem); min-width: 0; transform: translateY(-5%); }
   .home-intro { isolation: isolate; color: #f5f4ef; }
-  .home-intro::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: #0b1017 url('/images/hero-conversation.png') center bottom / contain no-repeat; }
+  .home-intro::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: url('/images/hero-conversation.png') center bottom / 80% auto no-repeat; mask-image: linear-gradient(to right, transparent 10%, black 18%, black 82%, transparent 90%), linear-gradient(to bottom, transparent 20%, black 32%); mask-composite: intersect; }
+  .home-intro::after { content: ''; position: absolute; z-index: -2; inset-block: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: #0b1017; }
   .home-intro :global(.email-signup input[type='email']) { border-color: rgba(245, 244, 239, .6); background: rgba(11, 16, 23, .65); color: #f5f4ef; }
   .home-intro :global(.email-signup input[type='email']::placeholder) { color: rgba(245, 244, 239, .75); }
   .home-intro :global(.email-signup input[type='email']:focus-visible) { border-color: #f5f4ef; }
