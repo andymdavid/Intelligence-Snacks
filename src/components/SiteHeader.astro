@@ -1,45 +1,80 @@
 ---
 const { active = '' } = Astro.props;
-const links: Array<readonly [string, string]> = [
-  ['Latest', '/'],
-  ['Snacks', '/snacks/'],
-  ['Episodes', '/episodes/'],
-  ['Topics', '/topics/'],
-  ['Contributors', '/contributors/'],
-];
+const isHome = Astro.url.pathname === '/';
+const links: Array<readonly [string, string]> = [['Latest', '/'], ['Snacks', '/snacks/'], ['Episodes', '/episodes/'], ['Topics', '/topics/'], ['Contributors', '/contributors/']];
+const explore: Array<readonly [string, string]> = [['About', '/about/'], ['Graph', '/graph/'], ['Shared ideas', '/ideas/'], ['For agents', '/for-agents/']];
 ---
 
-<header class="site-header">
-  <a class="wordmark" href="/" aria-label="Intelligence Snacks home">
-    <img
-      class="wordmark__mark"
-      src="/images/intelligence-snacks-logo.webp"
-      alt=""
-      width="960"
-      height="640"
-      fetchpriority="high"
-      decoding="async"
-    />
-    <span class="wordmark__text">
-      <span>Intelligence</span><span>Snacks</span>
-    </span>
+<header class:list={['trial-header', { 'trial-header--home': isHome }]}>
+  <a class="trial-brand" href="/" aria-label="Intelligence Snacks home">
+    <img src="/images/intelligence-snacks-cassette-transparent.webp" alt="" width="192" height="128" fetchpriority="high" />
+    <span>Intelligence Snacks</span>
   </a>
-  <nav class="primary-nav" aria-label="Primary navigation">
-    {links.map(([label, href]) => (
-      <a href={href} aria-current={active === label.toLowerCase() ? 'page' : undefined}>{label}</a>
-    ))}
-  </nav>
-  <div class="header-actions">
-    <a class="search-link" href="/search/" aria-label="Search Intelligence Snacks">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.25 4.25"></path></svg>
-    </a>
-    <details class="mobile-menu">
-      <summary aria-label="Open navigation"><span></span><span></span></summary>
-      <nav aria-label="Mobile navigation">
-        {links.map(([label, href]) => <a href={href} aria-current={active === label.toLowerCase() ? 'page' : undefined}>{label}</a>)}
-        <button type="button" data-open-signup>Send me snacks <span aria-hidden="true">↗</span></button>
-      </nav>
-    </details>
-    <button class="subscribe-button" type="button" data-open-signup>Send me snacks <span aria-hidden="true">↗</span></button>
-  </div>
+  <button class="trial-menu-button" type="button" data-menu-open aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false"><span aria-hidden="true">+</span> Menu</button>
 </header>
+
+<dialog class="trial-menu" id="site-menu" aria-label="Site navigation">
+  <div class="trial-menu-top">
+    <a class="trial-brand" href="/" aria-label="Intelligence Snacks home"><img src="/images/intelligence-snacks-cassette-transparent.webp" alt="" width="192" height="128" /><span>Intelligence Snacks</span></a>
+    <button class="trial-menu-button" type="button" data-menu-close autofocus>Close <span aria-hidden="true">×</span></button>
+    <a class="trial-search" href="/search/">Search <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="trial-menu-grid">
+    <nav class="trial-menu-pages" aria-label="Primary navigation">
+      <p class="trial-menu-label">Pages</p>
+      {links.map(([label, href]) => <a href={href} aria-current={active === label.toLowerCase() ? 'page' : undefined}>{label}</a>)}
+    </nav>
+    <div class="trial-menu-secondary">
+      <nav aria-label="Explore"><p class="trial-menu-label">Explore</p>{explore.map(([label, href]) => <a href={href}>{label}</a>)}<button type="button" data-menu-subscribe>Send me snacks ↗</button></nav>
+      <nav aria-label="Listen and watch"><p class="trial-menu-label">Listen &amp; watch</p><a href="https://www.youtube.com/@IntelligenceSnacks" rel="external">YouTube ↗</a><a href="https://open.spotify.com/show/5mhoDNtKg1A0j0IZIw0fIv" rel="external">Spotify ↗</a></nav>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const menu = document.querySelector<HTMLDialogElement>('#site-menu');
+  const trigger = document.querySelector<HTMLButtonElement>('[data-menu-open]');
+  if (menu && trigger) {
+    const close = () => menu.close();
+    trigger.addEventListener('click', () => { menu.showModal(); trigger.setAttribute('aria-expanded', 'true'); document.documentElement.classList.add('navigation-open'); });
+    menu.querySelector('[data-menu-close]')?.addEventListener('click', close);
+    menu.addEventListener('click', (event) => { if (event.target === menu) close(); });
+    menu.addEventListener('close', () => { trigger.setAttribute('aria-expanded', 'false'); document.documentElement.classList.remove('navigation-open'); trigger.focus(); });
+    menu.querySelector('[data-menu-subscribe]')?.addEventListener('click', () => { close(); const signup = document.querySelector<HTMLDialogElement>('[data-signup-modal]'); signup?.showModal(); signup?.querySelector<HTMLInputElement>('input[type=email]')?.focus(); });
+  }
+</script>
+
+<style>
+  .trial-header { height: 58px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-inline: var(--page-pad); position: relative; z-index: 20; background: transparent; color: var(--ink); }
+  .trial-header--home { color: #f5f4ef; }
+  .trial-brand { display: inline-flex; align-items: center; gap: .7rem; width: max-content; max-width: 100%; font-family: var(--font-body); font-size: clamp(.9rem, 1.4vw, 1.125rem); font-weight: 500; line-height: 1; letter-spacing: -.045em; text-transform: uppercase; white-space: nowrap; }
+  .trial-brand img { width: 3.25rem; height: auto; border-radius: 0; flex: none; }
+  .trial-menu-button, .trial-search { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 44px; padding: .5rem 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: 500 .75rem/1 var(--font-mono); text-transform: uppercase; cursor: pointer; }
+  .trial-menu-button span { font-size: 1.1rem; }
+  .trial-menu { position: fixed; inset: 0 0 auto; width: 100%; max-width: none; max-height: 100dvh; margin: 0; padding: 0 var(--page-pad) clamp(3rem, 6vw, 6rem); border: 0; background: #f1f3f3; color: #0b1017; overflow-y: auto; }
+  .trial-menu::backdrop { background: rgba(0,0,0,.45); }
+  .trial-menu-top { min-height: 58px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; }
+  .trial-search { justify-self: end; }
+  .trial-menu-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 2rem; width: 64%; margin: clamp(3rem, 6vw, 6rem) 0 0 auto; }
+  .trial-menu-label { padding-bottom: .65rem; margin: 0 0 1rem; border-bottom: 1px solid currentColor; font-size: .875rem; font-weight: 400; }
+  .trial-menu-pages a { display: block; width: fit-content; font: 600 clamp(2rem, 3.4vw, 3.5rem)/1.15 var(--font-body); letter-spacing: -.05em; margin-bottom: .25rem; }
+  .trial-menu-secondary { display: grid; align-content: start; gap: 2.75rem; }
+  .trial-menu-secondary a, .trial-menu-secondary button { display: block; width: fit-content; padding: 0; border: 0; background: transparent; color: inherit; font: 500 clamp(1rem, 1.6vw, 1.5rem)/1.35 var(--font-body); letter-spacing: -.035em; text-align: left; cursor: pointer; }
+  .trial-menu a:hover, .trial-menu button:hover { opacity: .6; }
+  @media (max-width: 700px) {
+    .trial-menu-pages a { font-size: clamp(1.4rem, 8vw, 2rem); }
+    .trial-brand { gap: .45rem; font-size: .875rem; }
+    .trial-brand img { width: 2.5rem; }
+    .trial-menu-top { grid-template-columns: 1fr auto; }
+    .trial-menu-top .trial-brand { grid-column: 1 / -1; padding-top: .75rem; }
+    .trial-menu-top .trial-menu-button { justify-self: start; }
+    .trial-menu-grid { width: 100%; margin-top: 2rem; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 1rem; }
+  }
+  @media (max-width: 360px) { .trial-brand { font-size: .75rem; } }
+</style>
+
+<style is:global>
+  html.navigation-open { overflow: hidden; }
+  body:has(.trial-header--home) { background: #0b1017; }
+  body:has(.trial-header--home) main { background: var(--paper); }
+</style>
