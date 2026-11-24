@@ -6,7 +6,8 @@ This is an unmerged design experiment; production remains on its existing versio
 Changes: use the supplied `Intelligence-Snacks-Hero-upscaled.png` unchanged as a
 full-width homepage hero background, remove the `AI · Software · Business · Work`
 eyebrow, and use light hero text and email-field styling for the dark background.
-The right-hand hero snack cards are removed. The headline, copy and testimonial remain. The hero has a minimum height of 100vh on desktop and mobile. The image is displayed at 80% of the full hero width, aligned bottom centre,
+The right-hand hero snack cards are removed. The headline, copy and testimonial remain. The hero has a minimum height of `calc(100vh - 58px)` on desktop and mobile,
+so the hero and 58px header together fit one viewport. The image is displayed at 80% of the full hero width, aligned bottom centre,
 to reduce the apparent size of the people and table while preserving the full image.
 
 ## Run locally
