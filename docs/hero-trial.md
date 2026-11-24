@@ -42,3 +42,6 @@ vercel/geist-font repository, with its SIL Open Font License included beside the
 Its size is `clamp(2.65625rem, 6.63vw, 5.95rem)` (42.5–95.2px at a 16px root),
 15% smaller than the original. Hero description is 16px. Hero signup controls are
 44px high, with a 13px Geist Mono button; other signup instances keep their styling.
+
+The H1, description and email signup are centred horizontally across the hero,
+with centred heading/description text and the existing 38rem signup width limit.
