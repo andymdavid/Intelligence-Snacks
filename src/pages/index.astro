@@ -4,7 +4,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import SnackVisual from '@/components/SnackVisual.astro';
 import EpisodeSnackRail from '@/components/EpisodeSnackRail.astro';
 import EmailSignup from '@/components/EmailSignup.astro';
-import HeroSnackStack from '@/components/HeroSnackStack.astro';
 import HeroTestimonial from '@/components/HeroTestimonial.astro';
 import { episodesNewestFirst, isVisible, snacksInEpisodeOrder } from '@/lib/content';
 
@@ -21,15 +20,6 @@ const featuredTopic = featured ? topics.get(featured.data.theme.id) : undefined;
 const episodeThemes = latestEpisode ? latestEpisode.data.themes.map(({ id }) => topics.get(id)).filter((theme) => theme !== undefined) : [];
 const displayedEpisodeThemes = episodeThemes.slice(0, 3);
 const episodeTopic = episodeThemes[0];
-const people = new Map((await getCollection('people')).map((person) => [person.id, person]));
-const heroContributors = ['pete-winn', 'andy-david'].map((id) => people.get(id)).filter((person) => person !== undefined);
-const heroSnacks = featured
-  ? [
-      featured,
-      snacks.find(({ id, data }) => id !== featured.id && data.theme.id === 'agents'),
-      snacks.find(({ id, data }) => id !== featured.id && data.theme.id === 'software-systems'),
-    ].filter((snack) => snack !== undefined)
-  : [];
 const homeUrl = new URL('/', Astro.site).href;
 const jsonLd = {
   '@context': 'https://schema.org', '@type': 'WebPage', '@id': homeUrl, url: homeUrl,
@@ -49,7 +39,6 @@ const jsonLd = {
       </div>
     </div>
     <div class="hero-testimonial-slot"><HeroTestimonial /></div>
-    {latestEpisode && heroSnacks.length === 3 && <HeroSnackStack snacks={heroSnacks} topics={topics} contributors={heroContributors} episodeNumber={latestEpisode.data.number} />}
     <a href="#latest" class="scroll-indicator">
       <span>Scroll to explore</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -151,7 +140,6 @@ const jsonLd = {
   .subscribe-form > p:last-child { font-size: .8rem; margin-top: .5rem; }
   @media (max-width: 1050px) {
     .home-intro { min-height: 660px; grid-template-columns: 1fr; }
-    .home-intro :global(.snack-stack) { display: none; }
     .hero-testimonial-slot { position: static; margin-top: .35rem; }
     .scroll-indicator { display: none; }
   }
