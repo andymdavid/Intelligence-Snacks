@@ -14,7 +14,7 @@ const { id, source, class: className = '', buttonLabel = 'Get the weekly edition
     <label class="visually-hidden" for={id}>Email address</label>
     <input id={id} name="email" type="email" inputmode="email" autocomplete="email" placeholder="Your email address" required />
     <input class="email-signup__honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
-    <button type="submit">{buttonLabel} <span aria-hidden="true">↗</span></button>
+    <button type="submit">{buttonLabel} <span aria-hidden="true"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12 12 4M4 4h8v8" /></svg></span></button>
   </div>
   <p class="email-signup__message" data-signup-message aria-live="polite"></p>
 </form>
@@ -83,7 +83,7 @@ const { id, source, class: className = '', buttonLabel = 'Get the weekly edition
   .email-signup input[type='email']::placeholder { color: var(--muted); }
   .email-signup input[type='email']:focus-visible { border-color: var(--ink); }
   .email-signup button { flex: none; border: 0; border-radius: var(--radius-small); background: var(--coral); padding: .85rem 1.15rem; color: var(--ink); font-family: var(--font-display); font-size: .95rem; font-weight: 500; cursor: pointer; white-space: nowrap; transition: background-color .2s ease, color .2s ease; }
-  .email-signup button span { margin-left: .55rem; }
+  .email-signup button span { display: inline-flex; vertical-align: middle; margin-left: .55rem; }
   .email-signup button:hover:not(:disabled) { background: var(--ink); color: white; }
   .email-signup--panel button { background: var(--ink); color: white; }
   .email-signup--panel button:hover:not(:disabled) { background: white; color: var(--ink); }
