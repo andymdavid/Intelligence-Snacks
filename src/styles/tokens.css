@@ -10,6 +10,7 @@
   --header-line: #dedede;
   --coral: #fe7141;
   --radius-small: 3px;
+  --font-page-title: 'Geist Serif', Georgia, serif;
   --font-display: 'Neue Montreal', Arial, sans-serif;
   --font-body: 'Geist', Arial, sans-serif;
   --font-mono: 'Geist Mono', monospace;
@@ -20,7 +21,8 @@
   --type-card: clamp(1.5rem, 2.2vw, 2rem);
   --type-section: clamp(2.5rem, 3.5vw, 3.125rem);
   --type-feature: clamp(2.5rem, 4.5vw, 4rem);
-  --type-page: clamp(3rem, 6.25vw, 5.625rem);
+  --type-page-title: clamp(2.125rem, 5.3125vw, 4.78125rem);
+  --type-page: clamp(2.5rem, 6.25vw, 5.625rem);
   --type-hero: clamp(3.125rem, 8.35vw, 7.5rem);
   --leading-body: 1.4;
   --leading-display: 1;
