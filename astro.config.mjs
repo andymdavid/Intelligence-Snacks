@@ -38,12 +38,8 @@ export default defineConfig({
   },
   server: {
     host: true,
+    allowedHosts: ['slim-tea-rose.lara1.runwingman.com', 'fast-log-cube.lara.runwingman.com'],
     port: Number(process.env.PORT ?? 4321),
-  },
-  vite: {
-    server: {
-      allowedHosts: ['slim-tea-rose.lara1.runwingman.com', 'fast-log-cube.lara.runwingman.com'],
-    },
   },
   integrations: [subscriptionDevRoute],
   build: {
