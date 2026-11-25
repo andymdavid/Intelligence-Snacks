@@ -91,7 +91,8 @@ const { id, source, class: className = '', buttonLabel = 'Get the weekly edition
   .email-signup--compact button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; height: 2.375rem; padding: .375rem .75rem; background: #fc2f04; color: var(--ink); font: 500 .8125rem/1 var(--font-mono); }
   .email-signup--compact button span { display: flex; align-items: center; margin-left: 0; }
   .email-signup--compact button:hover:not(:disabled), .email-signup--compact button:focus-visible:not(:disabled) { background: transparent; color: #fff; }
-  .email-signup--compact.email-signup--panel button:hover:not(:disabled), .email-signup--compact.email-signup--panel button:focus-visible:not(:disabled) { color: var(--ink); }
+  .email-signup--compact.email-signup--panel button { background: var(--ink); color: white; }
+  .email-signup--compact.email-signup--panel button:hover:not(:disabled), .email-signup--compact.email-signup--panel button:focus-visible:not(:disabled) { background: white; color: var(--ink); }
   .email-signup button:disabled { cursor: wait; opacity: .55; }
   .email-signup__message { min-height: 1.4em; margin: .65rem 0 0; font-size: .8125rem; }
   .email-signup__message:empty { display: none; }
