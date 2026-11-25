@@ -32,6 +32,7 @@ const subscriptionDevRoute = {
 export default defineConfig({
   site: 'https://intelligencesnacks.com',
   output: 'static',
+  devToolbar: { enabled: false },
   redirects: {
     '/people/[id]': '/contributors/[id]',
   },
@@ -41,7 +42,7 @@ export default defineConfig({
   },
   vite: {
     server: {
-      allowedHosts: ['slim-tea-rose.lara1.runwingman.com'],
+      allowedHosts: ['slim-tea-rose.lara1.runwingman.com', 'fast-log-cube.lara.runwingman.com'],
     },
   },
   integrations: [subscriptionDevRoute],

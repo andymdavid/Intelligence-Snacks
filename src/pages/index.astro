@@ -4,8 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import SnackVisual from '@/components/SnackVisual.astro';
 import EpisodeSnackRail from '@/components/EpisodeSnackRail.astro';
 import EmailSignup from '@/components/EmailSignup.astro';
-import HeroSnackStack from '@/components/HeroSnackStack.astro';
-import HeroTestimonial from '@/components/HeroTestimonial.astro';
+import SignupTestimonial from '@/components/SignupTestimonial.astro';
 import { episodesNewestFirst, isVisible, snacksInEpisodeOrder } from '@/lib/content';
 
 const snacks = (await getCollection('snacks')).filter(({ data }) => isVisible(data.status));
@@ -21,15 +20,6 @@ const featuredTopic = featured ? topics.get(featured.data.theme.id) : undefined;
 const episodeThemes = latestEpisode ? latestEpisode.data.themes.map(({ id }) => topics.get(id)).filter((theme) => theme !== undefined) : [];
 const displayedEpisodeThemes = episodeThemes.slice(0, 3);
 const episodeTopic = episodeThemes[0];
-const people = new Map((await getCollection('people')).map((person) => [person.id, person]));
-const heroContributors = ['pete-winn', 'andy-david'].map((id) => people.get(id)).filter((person) => person !== undefined);
-const heroSnacks = featured
-  ? [
-      featured,
-      snacks.find(({ id, data }) => id !== featured.id && data.theme.id === 'agents'),
-      snacks.find(({ id, data }) => id !== featured.id && data.theme.id === 'software-systems'),
-    ].filter((snack) => snack !== undefined)
-  : [];
 const homeUrl = new URL('/', Astro.site).href;
 const jsonLd = {
   '@context': 'https://schema.org', '@type': 'WebPage', '@id': homeUrl, url: homeUrl,
@@ -42,15 +32,12 @@ const jsonLd = {
 <BaseLayout {jsonLd} active="latest">
   <section class="home-intro page-shell">
     <div class="home-intro__content">
-      <p class="eyebrow">AI · Software · Business · Work</p>
       <h1>Big Ideas Compound</h1>
       <div class="home-intro__signup">
-        <p>For people building and running modern businesses, Intelligence Snacks helps you quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.</p>
-        <EmailSignup id="hero-email" source="homepage-hero" buttonLabel="Send me snacks" />
+        <p>For people building modern businesses, Intelligence Snacks helps you digest the big ideas from the world of AI, delivered to your inbox weekly.</p>
+        <EmailSignup id="hero-email" source="homepage-hero" class="email-signup--compact" buttonLabel="Send me snacks" />
       </div>
     </div>
-    <div class="hero-testimonial-slot"><HeroTestimonial /></div>
-    {latestEpisode && heroSnacks.length === 3 && <HeroSnackStack snacks={heroSnacks} topics={topics} contributors={heroContributors} episodeNumber={latestEpisode.data.number} />}
     <a href="#latest" class="scroll-indicator">
       <span>Scroll to explore</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -99,25 +86,38 @@ const jsonLd = {
     </section>
   )}
 
-  <section class="subscribe-panel page-shell section" id="subscribe">
-    <div><p class="eyebrow">Weekly Intelligence</p><h2>Get next week’s<br />Intelligence Snacks</h2></div>
+  <section class="subscribe-panel page-shell section" id="weekly-signup">
+    <div class="subscribe-panel__copy"><p class="eyebrow">Weekly Intelligence</p><h2>Get next week’s<br />Intelligence Snacks</h2><SignupTestimonial /></div>
     <div class="subscribe-form">
       <p class="subscribe-form__label">Email address</p>
-      <EmailSignup id="footer-email" source="homepage-footer" class="email-signup--panel" />
+      <EmailSignup id="homepage-signup-email" source="homepage-footer" class="email-signup--compact email-signup--panel" />
       <p>A handful of snacks from each week’s podcast.</p>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .home-intro { position: relative; min-height: max(760px, calc(100vh - 58px)); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(26rem, .92fr); align-items: center; gap: clamp(3rem, 6vw, 8rem); padding-block: clamp(3rem, 6vw, 6rem); }
-  .home-intro__content { display: grid; align-self: center; align-content: center; gap: clamp(1.5rem, 3.2vh, 2.6rem); min-width: 0; transform: translateY(-5%); }
-  .home-intro__content > .eyebrow { margin-bottom: 0; }
-  .home-intro h1 { max-width: 1400px; margin: 0; font-size: clamp(3.125rem, 7.8vw, 7rem); font-weight: 700; line-height: var(--leading-hero); letter-spacing: -.04em; }
-  .home-intro__signup { width: min(100%, 38rem); display: grid; gap: 1.25rem; }
-  .home-intro__signup > p { max-width: 38rem; margin: 0; font-size: var(--type-body-large); color: var(--text-primary); }
-  .hero-testimonial-slot { position: absolute; left: calc(var(--page-pad) - max(0px, (100vw - 1600px) / 2)); bottom: 2rem; }
-  .scroll-indicator { position: absolute; left: 50%; bottom: 1rem; display: flex; flex-direction: column; align-items: center; gap: .25rem; color: var(--ink); transform: translateX(-50%); }
+  @font-face {
+    font-family: 'Geist Serif';
+    src: url('/fonts/GeistSerif-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  .home-intro { position: relative; min-height: calc(100vh - 58px); display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: clamp(3rem, 6vw, 8rem); padding-block: clamp(3rem, 6vw, 6rem); }
+  .home-intro__content { display: grid; align-self: center; align-content: center; justify-items: center; text-align: center; gap: clamp(1.5rem, 3.2vh, 2.6rem); min-width: 0; transform: translateY(-5%); }
+  .home-intro { isolation: isolate; color: #f5f4ef; }
+  .home-intro::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: url('/images/hero-conversation.png') center bottom / 80% auto no-repeat; mask-image: linear-gradient(to right, transparent 10%, black 18%, black 82%, transparent 90%), linear-gradient(to bottom, transparent 20%, black 32%); mask-composite: intersect; }
+  .home-intro::after { content: ''; position: absolute; z-index: -2; inset-block: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: #0b1017; }
+  .home-intro :global(.email-signup__controls) { min-height: 2.75rem; gap: .5rem; }
+  .home-intro :global(.email-signup button) { height: 2.75rem; padding: .5rem .875rem; font-family: var(--font-mono); font-size: .8125rem; }
+  .home-intro :global(.email-signup input[type='email']) { height: 2.75rem; padding: .5rem .875rem; border-color: rgba(245, 244, 239, .6); background: rgba(11, 16, 23, .65); color: #f5f4ef; }
+  .home-intro :global(.email-signup input[type='email']::placeholder) { color: rgba(245, 244, 239, .75); }
+  .home-intro :global(.email-signup input[type='email']:focus-visible) { border-color: #f5f4ef; }
+  .home-intro h1 { max-width: 1400px; margin: 0; font-family: 'Geist Serif', Georgia, serif; font-size: clamp(2.65625rem, 6.63vw, 5.95rem); font-weight: 400; line-height: var(--leading-hero); letter-spacing: -.04em; }
+  .home-intro__signup { width: min(100%, 38rem); display: grid; gap: 1rem; }
+  .home-intro__signup > p { max-width: 38rem; margin: 0; font-size: 1rem; color: inherit; }
+  .scroll-indicator { position: absolute; left: 50%; bottom: 1rem; display: flex; flex-direction: column; align-items: center; gap: .25rem; color: inherit; transform: translateX(-50%); }
   .scroll-indicator span { font-family: var(--font-mono); font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
   .scroll-indicator svg { width: 1rem; height: 1rem; }
   .feature { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 8rem); align-items: center; }
@@ -146,19 +146,31 @@ const jsonLd = {
   .subscribe-form__label { margin-bottom: .7rem; font-family: var(--font-mono); font-size: var(--type-label); text-transform: uppercase; letter-spacing: -.03em; }
   .subscribe-form > p:last-child { font-size: .8rem; margin-top: .5rem; }
   @media (max-width: 1050px) {
-    .home-intro { min-height: 660px; grid-template-columns: 1fr; }
-    .home-intro :global(.snack-stack) { display: none; }
-    .hero-testimonial-slot { position: static; margin-top: .35rem; }
     .scroll-indicator { display: none; }
   }
   @media (max-width: 900px) {
     .feature, .episode-feature__inner, .subscribe-panel { grid-template-columns: 1fr; }
   }
   @media (max-width: 620px) {
-    .home-intro { min-height: calc(100svh - 58px); display: flex; flex-direction: column; justify-content: center; padding-block: 4rem 8rem; }
+    .home-intro { display: flex; flex-direction: column; justify-content: center; padding-block: 4rem 8rem; }
     .home-intro__content { width: 100%; transform: translateY(-2vh); }
-    .hero-testimonial-slot { position: absolute; right: var(--page-pad); bottom: 1.5rem; left: var(--page-pad); margin: 0; }
     .subscribe-form :global(.email-signup__controls) { flex-direction: column; }
     .subscribe-form :global(.email-signup button) { width: 100%; }
+  }
+</style>
+
+<style>
+  /* Compact upper hero composition. */
+  .home-intro.page-shell { padding-block: clamp(4rem, 14vh, 10rem) 8rem; }
+  .home-intro .home-intro__content { align-self: start; transform: none; }
+  .home-intro .home-intro__signup :global(.email-signup) { width: min(100%, 30rem); justify-self: center; }
+  .home-intro .home-intro__signup :global(.email-signup__controls) { min-height: 2.375rem; }
+  .home-intro .home-intro__signup :global(.email-signup button) { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; background: #fc2f04; height: 2.375rem; padding: .375rem .75rem; line-height: 1; }
+  .home-intro .home-intro__signup :global(.email-signup button:hover:not(:disabled)),
+  .home-intro .home-intro__signup :global(.email-signup button:focus-visible:not(:disabled)) { background: transparent; color: #fff; }
+  .home-intro .home-intro__signup :global(.email-signup button span) { display: flex; align-items: center; margin-left: 0; }
+  .home-intro .home-intro__signup :global(.email-signup input[type='email']) { height: 2.375rem; padding: .375rem .75rem; font-family: var(--font-mono); font-size: .75rem; }
+  @media (max-width: 620px) {
+    .home-intro.page-shell { justify-content: flex-start; padding-block: 4rem 8rem; }
   }
 </style>

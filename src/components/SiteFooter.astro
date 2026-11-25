@@ -7,12 +7,12 @@ import EmailSignup from './EmailSignup.astro';
     <div class="footer-brand-column">
       <a class="footer-wordmark" href="/" aria-label="Intelligence Snacks home">
         <img src="/images/intelligence-snacks-logo.webp" alt="" width="960" height="640" loading="lazy" decoding="async" />
-        <span><span>Intelligence</span><span>Snacks</span></span>
+        <span>Intelligence Snacks</span>
       </a>
       <p>Long conversations about AI, software and business, developed into useful ideas for people building and running modern businesses.</p>
       <div class="footer-signup">
         <p class="footer-label">Get weekly Intelligence Snacks in your inbox</p>
-        <EmailSignup id="footer-email" source="site-footer" buttonLabel="Send me snacks" />
+        <EmailSignup id="footer-email" source="site-footer" class="email-signup--compact" buttonLabel="Send me snacks" />
       </div>
     </div>
 
@@ -42,6 +42,7 @@ import EmailSignup from './EmailSignup.astro';
               <span><strong>Intelligence Snacks</strong><em>Podcast and publication</em></span>
             </a>
             <div class="founder-profile__social" aria-label="Intelligence Snacks social links">
+              <a href="https://x.com/Intelsnacks" rel="me external" aria-label="Intelligence Snacks on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22H17l-4.86-6.35L6.58 22H3.47l7.22-8.25L3.05 2h6.31l4.39 5.8L18.9 2Zm-1.09 17.84h1.72L8.42 4.05H6.58l11.23 15.79Z"/></svg></a>
               <a href="https://open.spotify.com/show/5mhoDNtKg1A0j0IZIw0fIv" rel="me external" aria-label="Intelligence Snacks on Spotify">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5A10.5 10.5 0 1 0 12 22.5 10.5 10.5 0 0 0 12 1.5Zm4.82 15.15a.65.65 0 0 1-.9.22c-2.47-1.51-5.58-1.85-9.24-1.01a.66.66 0 0 1-.29-1.28c4-.91 7.45-.52 10.21 1.16.31.19.41.6.22.91Zm1.28-2.85a.82.82 0 0 1-1.13.27c-2.83-1.74-7.15-2.24-10.5-1.23a.82.82 0 1 1-.48-1.57c3.83-1.16 8.59-.6 11.84 1.4.38.23.5.74.27 1.13Zm.11-2.97C14.81 8.81 9.2 8.62 5.96 9.6a.98.98 0 1 1-.57-1.88c3.72-1.13 9.92-.9 13.82 1.42a.98.98 0 0 1-1 1.69Z"/></svg>
               </a>
@@ -87,20 +88,18 @@ import EmailSignup from './EmailSignup.astro';
   .site-footer { padding: clamp(3rem, 6vw, 6rem) var(--page-pad) 2rem; background: var(--ink); color: #f5f4ef; }
   .footer-main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(420px, 1fr); gap: clamp(4rem, 10vw, 10rem); padding-bottom: clamp(4rem, 8vw, 8rem); }
   .footer-brand-column { max-width: 38rem; }
-  .footer-wordmark { width: max-content; display: flex; align-items: center; gap: .8rem; font-family: var(--font-pixel); font-size: 1.8rem; line-height: .72; letter-spacing: -.025em; text-transform: uppercase; }
+  .footer-wordmark { width: max-content; display: flex; align-items: center; gap: .8rem; font-family: 'Kanit', Arial, sans-serif; font-size: clamp(.9rem, 1.4vw, 1.125rem); font-weight: 500; line-height: 1; letter-spacing: -.025em; text-transform: uppercase; }
   .footer-wordmark > img { width: 5.4rem; height: auto; border-radius: 0; }
-  .footer-wordmark > span { width: min-content; }
-  .footer-wordmark > span span { display: block; }
   .footer-brand-column > p { max-width: 31rem; margin: 1.5rem 0 2.5rem; color: rgba(245, 244, 239, .65); font-size: .95rem; line-height: 1.55; }
   .footer-label, .footer-column h2 { margin: 0 0 1rem; font-family: var(--font-mono); font-size: .72rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
   .footer-signup { max-width: 32rem; }
-  .footer-signup :global(.email-signup) { width: 100%; }
-  .footer-signup :global(.email-signup__controls) { min-height: 2.8rem; }
+  .footer-signup :global(.email-signup) { width: min(100%, 30rem); }
+
   .footer-signup :global(input[type='email']) { border-color: rgba(245, 244, 239, .38) !important; background: rgba(245, 244, 239, .08) !important; color: #f5f4ef !important; }
   .footer-signup :global(input[type='email']::placeholder) { color: rgba(245, 244, 239, .68) !important; }
   .footer-signup :global(input[type='email']:hover) { border-color: rgba(245, 244, 239, .55) !important; }
   .footer-signup :global(input[type='email']:focus-visible) { border-color: rgba(245, 244, 239, .8) !important; background: rgba(245, 244, 239, .11) !important; }
-  .footer-signup :global(button) { min-width: 9.5rem; background: var(--coral); color: var(--ink); }
+
   .footer-signup :global(.email-signup__message.is-success) { color: #f5f4ef; }
   .footer-navigation { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(2rem, 5vw, 5rem); }
   .footer-column { display: flex; flex-direction: column; align-items: flex-start; }
