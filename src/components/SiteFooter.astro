@@ -7,7 +7,7 @@ import EmailSignup from './EmailSignup.astro';
     <div class="footer-brand-column">
       <a class="footer-wordmark" href="/" aria-label="Intelligence Snacks home">
         <img src="/images/intelligence-snacks-logo.webp" alt="" width="960" height="640" loading="lazy" decoding="async" />
-        <span><span>Intelligence</span><span>Snacks</span></span>
+        <span>Intelligence Snacks</span>
       </a>
       <p>Long conversations about AI, software and business, developed into useful ideas for people building and running modern businesses.</p>
       <div class="footer-signup">
@@ -88,10 +88,8 @@ import EmailSignup from './EmailSignup.astro';
   .site-footer { padding: clamp(3rem, 6vw, 6rem) var(--page-pad) 2rem; background: var(--ink); color: #f5f4ef; }
   .footer-main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(420px, 1fr); gap: clamp(4rem, 10vw, 10rem); padding-bottom: clamp(4rem, 8vw, 8rem); }
   .footer-brand-column { max-width: 38rem; }
-  .footer-wordmark { width: max-content; display: flex; align-items: center; gap: .8rem; font-family: var(--font-pixel); font-size: 1.8rem; line-height: .72; letter-spacing: -.025em; text-transform: uppercase; }
+  .footer-wordmark { width: max-content; display: flex; align-items: center; gap: .8rem; font-family: 'Kanit', Arial, sans-serif; font-size: clamp(.9rem, 1.4vw, 1.125rem); font-weight: 500; line-height: 1; letter-spacing: -.025em; text-transform: uppercase; }
   .footer-wordmark > img { width: 5.4rem; height: auto; border-radius: 0; }
-  .footer-wordmark > span { width: min-content; }
-  .footer-wordmark > span span { display: block; }
   .footer-brand-column > p { max-width: 31rem; margin: 1.5rem 0 2.5rem; color: rgba(245, 244, 239, .65); font-size: .95rem; line-height: 1.55; }
   .footer-label, .footer-column h2 { margin: 0 0 1rem; font-family: var(--font-mono); font-size: .72rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
   .footer-signup { max-width: 32rem; }
