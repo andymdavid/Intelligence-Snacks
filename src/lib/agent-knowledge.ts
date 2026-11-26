@@ -288,7 +288,7 @@ export function researchIndex() {
     scope:
       "Accepted public shared themes and extracted observations; themes are agent-editorial groupings, not independent verification of source claims.",
     searchMode:
-      "Download this static index and search title/summary locally; URL query parameters do not filter these files.",
+      "Use /api/knowledge/v1/search?q=words for evidence search, or download this static index and search title/summary locally. Query parameters do not filter static files.",
     counts: {
       ideas: data.ideas.length,
       observations: data.observations.length,

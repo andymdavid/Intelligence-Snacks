@@ -1,10 +1,18 @@
 import { defineConfig } from 'astro/config';
 import { subscribe } from './server/index.ts';
+import { knowledgeSearch } from './server/knowledge-search.ts';
+import { researchData } from './src/lib/agent-knowledge.ts';
 
 const subscriptionDevRoute = {
   name: 'intelligence-snacks-subscription-dev-route',
   hooks: {
     'astro:server:setup': ({ server }) => {
+      server.middlewares.use('/api/knowledge/v1/search', (request, response) => {
+        const result = knowledgeSearch(new Request(new URL(request.url, 'http://localhost/api/knowledge/v1/search'), { method: request.method }), researchData());
+        response.statusCode = result.status;
+        result.headers.forEach((value, key) => response.setHeader(key, value));
+        result.text().then(body => response.end(body));
+      });
       server.middlewares.use('/api/subscribe', async (request, response) => {
         if (request.method !== 'POST') {
           response.statusCode = 405;
