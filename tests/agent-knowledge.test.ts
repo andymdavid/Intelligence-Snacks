@@ -23,11 +23,10 @@ describe("public research records", () => {
       expect(node.title).toBe(source.title);
       expect(node.summary).toBe(source.summary);
       expect(node.transcriptRevisionId).toBe(source.sourceTranscriptRevisionId);
-      expect(node.evidence.map((e) => [e.id, e.excerpt, e.speaker])).toEqual(
+      expect(node.evidence.map((e) => [e.id, e.excerpt])).toEqual(
         source.evidence.map((e: any) => [
           e.id,
           e.excerpt,
-          e.speaker?.trim() || null,
         ]),
       );
     }
@@ -42,6 +41,12 @@ describe("public research records", () => {
         const original = old[node.id].evidence.find(
           (e: any) => e.id === evidence.id,
         );
+        if (evidence.attributionStatus === "multiple-speakers") {
+          expect(evidence.speaker).toBeNull();
+          expect(evidence.contributorUrl).toBeNull();
+          expect(evidence.locator).toBe("episode");
+          continue;
+        }
         expect(evidence.sourceUrl).toBe(
           new URL(original.sourceHref, "https://intelligencesnacks.com").href,
         );
@@ -115,7 +120,8 @@ describe("public research records", () => {
 
  test('mixed-speaker evidence is not presented as one person’s quotation', () => {
  const evidence = researchData().ideas.find(i=>i.id==='attention-bottleneck')!.sources.find(s=>s.observation.id==='knowledge:1df0dabb-28b8-4159-8f72-84d57b7ec8e8')!.observation.evidence[0]!;
- expect(evidence.speaker).toBe('Kane');
+ expect(evidence.speaker).toBeNull();
+ expect(evidence.attributionStatus).toBe('multiple-speakers');
  expect(evidenceAttribution(evidence)).toBe('Multiple speakers — see transcript');
  expect(evidenceAttribution({excerpt:'Pete\n04:30\nAn example.',speaker:'Pete'})).toBe('Pete');
  expect(evidenceAttribution({excerpt:'An unlabeled passage.',speaker:null})).toBe('Speaker not identified');

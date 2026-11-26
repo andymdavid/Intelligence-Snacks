@@ -30,7 +30,7 @@ const results = [];
 for (const {entry,score} of matches) {
   const record = await get(new URL(new URL(entry.url).pathname, base));
   const sources = record.sources ? record.sources.map(source=>source.observation) : [record];
-  results.push({id:entry.id,title:entry.title,score,citationUrl:entry.citationUrl,recordUrl:entry.url,summary:record.summary,readingNotes:record.readingNotes||[],sources:sources.map(node=>({title:node.title,episode:node.episode,evidence:node.evidence.map(e=>({speaker:e.speaker,excerpt:e.excerpt,url:e.sourceUrl,locator:e.locator,timestamp:e.timestamp}))}))});
+  results.push({id:entry.id,title:entry.title,score,citationUrl:entry.citationUrl,recordUrl:entry.url,summary:record.summary,readingNotes:record.readingNotes||[],sources:sources.map(node=>({title:node.title,episode:node.episode,evidence:node.evidence.map(e=>({speaker:e.speaker,attributionStatus:e.attributionStatus,excerpt:e.excerpt,url:e.sourceUrl,locator:e.locator,timestamp:e.timestamp}))}))});
 }
 console.log(JSON.stringify({schemaVersion:index.schemaVersion,contentRevision:index.contentRevision,query,method:'Local lexical matching with whole words, stopword removal and corpus-frequency weighting; scores are relevance hints, not truth or semantic agreement.',results},null,2));
 }
