@@ -24,14 +24,16 @@ const query = process.argv[2];
 if (!query) { console.error('Usage: node research.mjs "search words" [base URL]'); process.exit(1); }
 const base = process.argv[3] || 'https://intelligencesnacks.com';
 const get = async url => { const response = await fetch(url); if (!response.ok) throw new Error(`${response.status}: ${url}`); return response.json(); };
-const index = await get(new URL('/api/knowledge/v1/index.json', base));
-const matches = rankEntries(index.entries, query);
+const searchUrl = new URL('/api/knowledge/v1/search', base);
+searchUrl.searchParams.set('q', query);
+const index = await get(searchUrl);
+const matches = index.results.map(entry => ({ entry: { ...entry, url: entry.recordUrl }, score: entry.score }));
 const results = [];
 for (const {entry,score} of matches) {
   const record = await get(new URL(new URL(entry.url).pathname, base));
   const sources = record.sources ? record.sources.map(source=>source.observation) : [record];
-  results.push({id:entry.id,title:entry.title,score,citationUrl:entry.citationUrl,recordUrl:entry.url,summary:record.summary,readingNotes:record.readingNotes||[],sources:sources.map(node=>({title:node.title,episode:node.episode,evidence:node.evidence.map(e=>({speaker:e.speaker,excerpt:e.excerpt,url:e.sourceUrl,locator:e.locator,timestamp:e.timestamp}))}))});
+  results.push({id:entry.id,title:entry.title,score,citationUrl:entry.citationUrl,recordUrl:entry.url,summary:record.summary,readingNotes:record.readingNotes||[],sources:sources.map(node=>({title:node.title,episode:node.episode,evidence:node.evidence.map(e=>({speaker:e.speaker,attributionStatus:e.attributionStatus,excerpt:e.excerpt,url:e.sourceUrl,locator:e.locator,timestamp:e.timestamp}))}))});
 }
-console.log(JSON.stringify({schemaVersion:index.schemaVersion,contentRevision:index.contentRevision,query,method:'Local lexical matching with whole words, stopword removal and corpus-frequency weighting; scores are relevance hints, not truth or semantic agreement.',results},null,2));
+console.log(JSON.stringify({schemaVersion:index.schemaVersion,contentRevision:index.contentRevision,query,method:index.method,results},null,2));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main();

@@ -11,5 +11,6 @@ FROM oven/bun:1.4.4-alpine
 WORKDIR /app
 COPY --from=build /app/dist ./dist
 COPY server ./server
+COPY public/agents/research.mjs ./public/agents/research.mjs
 EXPOSE 80
 CMD ["bun", "run", "server/index.ts"]

@@ -6,6 +6,7 @@ import guides from "../data/idea-guides.json";
 import { canonicalPublicGraph } from "./public-graph-data";
 import { buildKnowledgeModel } from "./graph-model";
 import { evidenceTurnIndex, parseTranscript } from "./transcript";
+import { evidenceAttribution } from "./evidence-attribution";
 
 export const site = "https://intelligencesnacks.com";
 export const pilotIdeaIds = [
@@ -29,6 +30,7 @@ export type Evidence = {
   id: string;
   excerpt: string;
   speaker: string | null;
+  attributionStatus: "single-speaker" | "multiple-speakers" | "unidentified";
   contributorUrl: string | null;
   timestamp: string | null;
   sourceUrl: string;
@@ -139,8 +141,12 @@ function buildResearch() {
       transcripts.set(episode.id, turns);
     }
     const evidence: Evidence[] = node.evidence.map((item: any) => {
-      const turn = evidenceTurnIndex(turns!, item);
-      const speaker = String(item.speaker || "").trim();
+      const extractedSpeaker = String(item.speaker || "").trim();
+      const attribution = evidenceAttribution({ excerpt: item.excerpt, speaker: extractedSpeaker || null });
+      const multiple = attribution === "Multiple speakers — see transcript";
+      const speaker = multiple ? "" : extractedSpeaker;
+      // A multi-turn excerpt cannot be represented by a single transcript anchor.
+      const turn = multiple ? -1 : evidenceTurnIndex(turns!, item);
       const normalise = (text: string) => text.toLowerCase().trim();
       const person = raw.contributors.find((p: any) =>
         [p.name, ...(p.aliases || [])].some(
@@ -151,6 +157,7 @@ function buildResearch() {
         id: item.id,
         excerpt: item.excerpt,
         speaker: speaker || null,
+        attributionStatus: multiple ? "multiple-speakers" : speaker ? "single-speaker" : "unidentified",
         contributorUrl: person ? absolute(person.href) : null,
         timestamp: turn >= 0 ? turns![turn]!.timestamp : null,
         sourceUrl:
@@ -281,7 +288,7 @@ export function researchIndex() {
     scope:
       "Accepted public shared themes and extracted observations; themes are agent-editorial groupings, not independent verification of source claims.",
     searchMode:
-      "Download this static index and search title/summary locally; URL query parameters do not filter these files.",
+      "Use /api/knowledge/v1/search?q=words for evidence search, or download this static index and search title/summary locally. Query parameters do not filter static files.",
     counts: {
       ideas: data.ideas.length,
       observations: data.observations.length,

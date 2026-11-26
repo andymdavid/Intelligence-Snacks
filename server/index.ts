@@ -1,3 +1,4 @@
+import { knowledgeSearch } from './knowledge-search';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -139,12 +140,19 @@ async function staticResponse(request: Request) {
   return new Response(await notFound.exists() ? notFound : 'Not found', { status: 404, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' } });
 }
 
+let searchCorpus: Promise<any> | undefined;
+export async function search(request: Request) {
+  searchCorpus ||= Bun.file(join(distDirectory, 'api/knowledge/v1/search-corpus.json')).json();
+  return knowledgeSearch(request, await searchCorpus);
+}
+
 if (import.meta.main) {
   Bun.serve({
     port,
     hostname: '0.0.0.0',
     async fetch(request) {
       const { pathname } = new URL(request.url);
+      if (pathname === '/api/knowledge/v1/search') return search(request);
       if (pathname === '/healthz') return new Response('ok');
       if (pathname === '/api/subscribe') {
         if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405);
