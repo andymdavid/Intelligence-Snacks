@@ -3,11 +3,10 @@ name: "Jarrad Grigg"
 role: "Founder, OVRFLO"
 shortBio: "Digital product designer and founder of OVRFLO, combining product strategy, UX and hands-on development with AI tools."
 image: "/images/jarrad-grigg-voxel.webp"
-socialLinks:
-  linkedin: "https://www.linkedin.com/in/jarradgrigg/"
-  x: "https://x.com/jarradgrigg"
-
 externalUrl: "https://www.ovrflo.studio/"
+socialLinks:
+  x: "https://x.com/jarradgrigg"
+  linkedin: "https://www.linkedin.com/in/jarradgrigg/"
 ---
 
 Jarrad Grigg is the founder of [OVRFLO](https://www.ovrflo.studio/), an AI-native digital product studio in Fremantle. He works across product strategy, user experience, interface design and development, helping businesses take ideas through to working websites and applications.

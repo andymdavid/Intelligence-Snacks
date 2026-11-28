@@ -1,0 +1,821 @@
+Pete Winn (00:01.235)
+All right. Welcome to Intelligence Snacks episode eighty-two. Returning guest, Jarrad in the house. Do you want to say hello?
+
+Jarrad Grigg (00:08.921)
+Hello, hello. It's good to be back, guys. Good to see ya.
+
+Pete Winn (00:12.467)
+Nice, nice. All right, Andy, you had a question for Jarrad a minute ago when we were doing the pod before the pod for the Patreon gold tier members. Yeah. No, I haven't started the live stream. No.
+
+Andy David (00:21.972)
+Yes. Find
+
+Jarrad Grigg (00:22.339)
+Is this live streamed as well?
+
+Andy David (00:25.868)
+No. Well I think we've missed the live stream the last like month or so. We'll bring it back at some point. But yeah, Jarrad, obviously welcome back. Was it April I think we last spoke to you on the pod? So I figured like a good place to start would be I mean obviously so much has changed in this space, like week to week, day to day. But what did you like what did you believe strongly back in April that we might have spoken about that you've kind of just completely changed?
+
+Jarrad Grigg (00:26.897)
+Okay.
+
+Pete Winn (00:29.865)
+Yeah, I haven't done it for a little while.
+
+Jarrad Grigg (00:45.379)
+Yeah.
+
+Yeah.
+
+Andy David (00:55.628)
+Your mind on now.
+
+Jarrad Grigg (00:57.167)
+Yeah, I mean that's a really good question. And things have changed so much. It's just like there's a new paradigm shift every few weeks now. I put this piece out a long time ago where I kind of said that roles would collapse into like teams would collapse into two roles where you kind of have one person who's sort of the marketer and the product thinker, and then one person that's this kind of engineering lead that would manage the infrastructure. I think that's still true.
+
+Although the thing that I've been thinking about a lot lately, probably the last couple of weeks, especially with the release of Neon, is that I thought that I would be in the loop a lot with the work. So constantly checking in, making key decisions, guiding these systems through, and making sure the output's great. And I'm finding that is probably less the case now. So a practical example is I built a capacity management system for something I'm working on. And I spent about two, three hours just kind of planning it out, just back and forth. And once I was satisfied with the plan, I said go. And this took about a week, like it was a continuous effort, like it's a pretty, pretty big feature. And it started kind of working through the work.
+
+Asking me questions where the recommended option was the best option. So you know how you know your models come up, they give three options, and like this one we recommend. And I ended up finding that I just was hitting and saying yes. I literally, yeah, that's good. Yes, that's good. And probably halfway through I changed its approach to say, okay, instead of asking me questions, bounce it off like neon, fable, or Astra.
+
+Andy David (02:38.968)
+Mm-hmm.
+
+Jarrad Grigg (02:54.435)
+And get consensus and proceed. And that just blasted through everything. And what I got at the end was I also asked it to summarize the key decisions it had made so I could review them once it was built. And that required like no input from me. And I was really satisfied with the results. Like, yes, there was some small tweaks that were needed and some testing, but I guess to answer your question.
+
+I thought I would be needed a lot more in the workflow and I'm finding that I'm needed less and less. So this idea that engineering is something that has to be heavily hands-on throughout the approach, I think is probably not the case anymore. Because of the quality of what I'm seeing and the intelligence sort of increase with every model release.
+
+So I don't know if that means that like software becomes like ephemeral or liquid. You can spin things up quickly and you don't have to think about it. Like Claude just released this thing yet last night. I think it was basically turn out any artifact into a desktop app. So you can kind of right click an artifact and it becomes an app on your machine. And I don't know, it's just I thought that at that enterprise level there would still be a lot more hand-holding and guiding, but I'm finding that
+
+The models are that sharp now that the recommendations are very sound and we're needed less and less. So I don't really know what that means. Like you still have to have the thought of what it should be and how it should work in the initial phase, but it's definitely accelerated my workflow. Like I can work on multiple major features at once and not have to be involved. So that's probably another thing to answer your question was
+
+You know, I had this view previously that you're context switching a lot and as you're working on multiple things, you're just kind of going through the sessions and you know, you're having to make all these decisions. And I thought that would be fine, but I'm finding with the heavy volume that it's almost like you hit this kind of AI psychosis a point where by the end of the week you're just fried. Like it's actually really difficult to handle that much concurrency as well.
+
+Andy David (05:12.718)
+Mm-hmm.
+
+Jarrad Grigg (05:17.861)
+I'm doing a lot more than I ever was in terms of output, but it's also harder work. I generally think that because you're doing so many things, it's a lot harder to move as fast as this than I thought it would be.
+
+Pete Winn (05:24.139)
+Mm-hmm.
+
+Andy David (05:35.842)
+Yeah. So when you're describing that you're just allowing the agent to just make more decisions, is this functionally around design? Is it around architecture? Like what parts are you finding you're just delegating to the agent?
+
+Pete Winn (05:50.771)
+Yeah, like where do you spend your time, for instance, as well, I'd be curious.
+
+Jarrad Grigg (05:54.059)
+Yeah. A lot in the planning phase. So I, you know, I'll still use Figma or Pen.dev. I don't really care what the work surface is anymore, as long as it's got a great MCP and the agent can use it and I can see something. Find the latest version of pen.dev is really good, like really fast. So I'll still plan things out as a PRD and then I'll get it to visualize the flows.
+
+And that's a lot of conversation. So again, I'm not touching the interface. I'm not clicking on any of the boxes anymore, dragging any sliders or anything like that. I haven't done that for some time. So I'll just chat to the agent about the output and I'll refine it until I'm more or less satisfied. It still doesn't have to be a hundred percent. And so there's still a lot of decisions in the design phase for me, obviously, as a designer, and I find the UX is getting very good. The thinking is there, and you nudge it in the right directions. You can more or less get something pretty quickly that is suitable, but it still requires back and forth. In terms of the engineering, once you've got your like for a product, if you have your architecture set up right, like all the different components and where it's hosted and how it all works, the models are good enough just to work within that. I don't really need to spend too much time on that. And
+
+If I am concerned, I just ask, you know. I try to tell people, you know, you show them what's possible and you ask me questions like how do you actually do that? Like you just ask it. So that's still true. But yeah, less in that side of things actually, less in the engineering and spending more time just determining the experience that I want. Yeah.
+
+Andy David (07:44.716)
+I remember you saying back on the last pod, like, from a design perspective, maybe like you need to be like in order to be effective, you need to be closer to the code. So I find this is interesting because there's been obviously a debate on Twitter about this stuff as well and whether or not like, you know, Figma's dead. And I mean I know my personal approach is just to just go straight to code, let me see it, let me visualize it, because I'll probably change my mind directionally half a dozen times anyway.
+
+Jarrad Grigg (08:12.441)
+Yeah.
+
+Andy David (08:14.81)
+And the course correction is so cheap and it's so fast that it almost doesn't matter. So let's just get something functional that I can play with. Does it make sense to me? Is it intuitive? Does it look good? Which is kind of like tertiary, I think, to the other two. And then, yeah, course correct. And you just do it so fast that I don't even bother with the intermediary tools. That and the models can spin up mock ups pretty well.
+
+Jarrad Grigg (08:39.269)
+Yeah.
+
+Andy David (08:39.436)
+Themselves and they don't actually even need they can just, you know, spit out HTML and you open it in your browser and you're having a look at it and you're like, okay, that looks pretty good. I hadn't thought of that, you know, and then integrate this part and don't worry about that bit and then you're off to the races.
+
+Jarrad Grigg (08:45.647)
+Yeah.
+
+Jarrad Grigg (08:52.783)
+Yeah. Yeah, I mean it you're right. They the sometimes the artifacts you get in the chat are good enough. They still require a lot of honing because you know, I find that every model still spits out a lot of useless text in the UI. So you know you've got to you've got to put some guardrails. Yeah.
+
+Pete Winn (09:11.709)
+It's usually a description of the process that you've been through to say like, I've got text here 'cause you said we should have a header and you're like, Why have you done
+
+Jarrad Grigg (09:18.367)
+Yeah. I don't know. And it's always way too explanatory. So, you know, but yeah, so it's a combination. I agree. Like I'll oftentimes just rely on the design that it puts in chat and talk through that. If it's a bigger feature and I need to see flows, I will use like Pen.dev or Figma. But also having this like really robust
+
+Andy David (09:18.392)
+Yeah.
+
+Jarrad Grigg (09:44.783)
+Figma file with your entire design system and every flow. I don't necessarily need that anymore. It's more like that's a transient artifact to get to the actual product. To your point, you know, you kind of want to just build the actual thing. So I'll just I'll use that as a surface to see what the experience would be. And once I'm happy with that, it's gone. It doesn't really matter. Like my Pen files are exceptionally messy, but I just don't care because the only thing that really matters in terms of like rigidity is like the actual design system.
+
+In the product itself. You know, you want to set rules around things like don't hard code style values. You know, make sure you use components and variables and things like that and you have something that's clean. And yeah, if that's right, then more or less you can expect the result that you get to be pretty good from a one shot
+
+Andy David (10:21.987)
+Mm.
+
+Pete Winn (10:36.565)
+Can I ask like so you were talking about you doing like a capacity management system for somebody and then obviously you do your own software as well. Like do you find that like the amount that you're involved in your own software is different to the amount that you might be involved in, like say something you're building to a spec?
+
+Jarrad Grigg (10:54.361)
+Good question. If it's my own product, I work a lot faster. And I can I have a broader amount of things that I focus on at once because when you're building for others, you're adding that coordination tax. As soon as you introduce another human, those decisions need to be in sync, you know, and you'll have an architecture, you have to get it validated. You know, is this
+
+Are you happy with this? Is this the right direction that you want to go in? And someone has to check that. So as soon as you do that, you just it ends up slowing things down considerably. But it's still a lot faster than it used to be. Like if you have an organization where you have someone who's somewhat AI fluent, you know, you can just show you can just flick them a markdown file. They punch that into their agent and they ask their agent questions about it and they say yes or no. You know, that's seems to be the way to go. It's not like you need to have an hour-long meeting with a whiteboard drawing out diagrams anymore.
+
+But yeah, so yeah, to answer your question, when it's me, I go I try to I can go a lot faster, I guess, just because it's just it's all in here.
+
+Andy David (11:58.561)
+Yeah.
+
+Pete Winn (11:58.911)
+I mean, do you find you're more in the loop in that in those decisions as well then? I guess that's where I was going. 'Cause I'm I was surprised to hear your feedback. So I was like, interesting. I don't remove myself from the loop in any of the stuff that I do for personally like for my stuff, 'cause I really care about like how it gets there and the direction it takes. That's what I was kinda trying to tweak at.
+
+Jarrad Grigg (12:21.719)
+Yeah, I mean if it was I guess if I was starting from scratch from nothing, yes. I'd want to be involved in all the decisions. But once I know that I have a product that's set up a certain way, I'm less I guess the point I'm trying to make is I'm less concerned about the models going rogue and just doing their own thing, right? Like I used to have a harness that I built and I wrote a post about it on my website and it was this complex
+
+Pete Winn (12:39.561)
+Hm, okay.
+
+Jarrad Grigg (12:50.769)
+Set of scripts that I created so that models acted a certain way when I was building software because they would always just run off and do their own thing and they just wouldn't follow the standards. And it worked well for a time. But then I found after a while things were getting really slow and really expensive. I couldn't quite work out why. And I thought, why don't I just strip the harness out? Like my thought process was, it feels like
+
+Pete Winn (13:09.098)
+Yeah.
+
+Jarrad Grigg (13:17.239)
+Standing over the shoulder of a very talented engineer and telling him to type things a certain way. You know? And once I got rid of it, I was getting better results faster because you're just kind of freeing the agent. I guess they got more intelligent and they needed less hand holding. So once you have that for me, once you have things set up a certain way in the code base, like, this is exactly how I want it built, I worry less about them going, I'll just do it like this instead. They tend to follow that path. So
+
+Pete Winn (13:44.363)
+Hm. Yeah, they're better at exploring the code base before they make the changes and stuff like this, I think.
+
+Jarrad Grigg (13:50.849)
+Yeah. And the frontier models will argue with each other as well. So if you say Fable, go duke it out with Astra and find a credible solution, like a good solution, they do spend some time working out what the most appropriate thing would be. So I usually have like one orchestrator for the session, then I have like different frontier models kind of fighting, and then the orchestrator will go, okay, that makes sense. We'll do it this way. And that's been probably another little aside is I used T3 Code months ago.
+
+And it didn't quite click for me, but in the last probably three weeks I've returned to it and it's been a bit of a game changer for me. Previously I was running, you know, a clawed max or whatever it's called now, Ultra, GPT Max 20, or basically Codex Clawed Cursor subscriptions and now Google AI Ultra.
+
+And trying to use all their different IDEs and they're all they're all a little bit different was just really painful. And managing sessions across different ones for the same products was really hard. And then T3 Code basically solved that for me. So I just run that, I connect all my subscriptions and I can just have the different model frontier models duke it out. It's been, yeah, really I quite like it. If you haven't tried it, I think it's quite good.
+
+Andy David (15:13.879)
+What kind of decisions are you like requiring the models to go to combat into? Like what what are the hard decisions that they that you delegate to them and like what do just do yourself?
+
+Pete Winn (15:14.826)
+Yeah.
+
+Pete Winn (15:21.547)
+Yeah.
+
+Jarrad Grigg (15:25.517)
+Well, I mean like one example would be encryption. So I'm working on a product that encrypts sort of local context and anything that's critical there, like they kind of you know I had one feature where they kind of overcooked it. So I let them go. And it was way too it was almost too secure. The experience was really difficult. So I had to back that off a bit. But
+
+Usually flow-based work. So if, you know, it was say something like, do you want the feature to work this way or that way? Or how would it work with this role? So, you know, you're doing RBAC, you know, this role, how would they interact with this particular piece of data? And here are the three options. I'll just normally I'll just let it try and figure out what it thinks should be best based on best practice.
+
+And always get it like I said always get it to summarize for me with the decisions it's made so I can check it later. Because I find like the more you're away from these things, you end up being the bottleneck, right? I don't think that's a bad thing though. Like I have said this before. I think I think you being the bottleneck is actually what it should be. But sometimes you're just away for something from a day for a day and you didn't need to be because the decision was not that crucial.
+
+Pete Winn (16:44.683)
+Yeah.
+
+Pete Winn (16:49.333)
+Yeah. So I had a post on Nostr earlier this week, you know, 'cause I wanted to [unclear]. And I'd I put out that I think that there's such a thing as I call the slop horizon, which is that there's there's a point at which like good software, like really good software that's really cared about is like can't go any faster than you can have like a single individual effectively just testing and verifying.
+
+What's going on in the direction. It's not necessarily about reading the code, but it's about just actually working and using the software. This is why I was asking about your personal stuff. Because I think when you're like making changes to something that you're using all the time, you'll you're like really in there and you're constantly very you know you're not running tests, but you're kind of constantly just testing every aspect of that software. And you go, that's I never use that. Get rid of it. Sort of stuff. And you strip it back and the software becomes
+
+Good in a way that I don't think you get without any of that human intent because it's human software, right? Like I don't think the machines can do that. And so I think there's a limit to what you can get there. And then I think beyond that, when you just push further and further, you can definitely go quicker with the software, but it becomes these bigger systems. And they can do stuff. And it's not to say that like it's bad necessarily, because for a lot of stuff, you know, like you're
+
+Microsoft have been slopping out content for years and people use it, right? Like it's not to say that like there's no value there, but there's some difference, I think, between like the stuff that has the human intent and use constantly and the stuff that would be, you know, maybe like just more broadly that enterprise software that no one's using this on a day to day basis. Like it's you can use it, it's maybe a bit painful, it doesn't quite make sense in the same way it could do if somebody sat down and focused on it 'cause I kinda 'cause that then led me towards like, okay, so maybe software doesn't become free. It's just the 'cause the process between like okay, here's a sloppy version of thing beyond the slop horizon and then here's the thing that somebody cared about. It's like, well, why wouldn't I just I'd probably just pay for the one that somebody cared about, if you know what I mean. Like
+
+Jarrad Grigg (18:56.133)
+Yeah.
+
+Jarrad Grigg (19:03.927)
+Yeah. I mean you raised a really good point. Like in my view, there's no such thing as AI slop. It's human slop because you decided to release that, right? You lack of care. That's right. You just spat a prompt in, you got something out, and you went, that'll do, right? And so you see it with like restaurant posters and you know, logo designs and it's the same with any technology. Once something becomes, you know, accessible enough.
+
+Pete Winn (19:11.179)
+Mm.
+
+Pete Winn (19:16.073)
+Yeah. It's the lack of care in the human is the difference. Yeah.
+
+Jarrad Grigg (19:33.731)
+Masses you're gonna get people that don't care and they just punch out slop. And yeah, you're right. Like care is what matters. So I'm in my own tools all day, every day. And I've cut features because I didn't use them, as you've said. I'm tuning very, very small things every day. And yeah, and the reason why you can move fast is because you're very opinionated about what good is because you use it every day. And I actually also, you know, I don't think the SaaS apocalypse
+
+Is here. I, you know, there was this notion for a while, it probably goes back to your first question, Andy, where, you know, everyone thought, well, everyone's gonna create software internally at these companies and it's all going to cost nothing. And I just don't think that's the case. I'm seeing this, you know, wash through enterprise, and maintaining a codebase is hard. And keeping it like if you have a team of
+
+10 absolutely cracked engineers and designers, right, working on a single problem with this tooling, with AI tooling. They are going to do a far better job than some internal team that's split across roles across, you know, their own function plus maintaining this internal software. And they're probably going to manage the security better. They're probably going to manage the performance, the experience. So, you know, businesses will still shortcut by paying. You know, I would prefer to pay for software where I know that team is focused.
+
+Solely on that problem and doing it really, really well, rather than me just bashing out some sort of, you know, really sloppy thing that's gonna break in three months time. So I think that the economics of what products cost is different, but I still feel that paying for products is not going away now. That's that's probably a perspective that's changed. And I think that all pricing models for these for any product that has AI in it, I think like the per seat model is dead.
+
+I think it's all it all comes down to inference use. So your pricing becomes more around how much AI have you used, and you pay for that usage. So it just seems to be a more natural
+
+Pete Winn (21:38.475)
+Mm.
+
+Andy David (21:44.961)
+Which is better because you can align to your power users, right? Which is always the problem. You'd always have like a very small number of power users, but then you'd still have to build for this like really broad base of users. Like the area I'd agree with you on is that like SaaS isn't dead, but I would disagree in the sense that I think VC SaaS is dead. I think that model doesn't exist anymore. And that's why that's where the dominant narrative around the SaaS apocalypse comes from, because people are looking at
+
+At SaaS as a way to like go and raise hundreds of millions of dollars, go and you know establish this like dominant market position, have this huge enterprise value, and then you know, try and establish moats, all of those things are gone. But you can still build a very good product that is perfectly tailored to a small group of power users who are prepared to pay because that is the solution they need. And you can build a very good business around that. Just doesn't work for venture capitalists.
+
+Jarrad Grigg (22:26.669)
+Mm-hmm. Yeah.
+
+Jarrad Grigg (22:42.201)
+Yeah, because software's cheap. Right. So you previously had to pump a lot of money in it to try and capture some sort of unique take or niche. But now it's not. So you can just sort of produce things a lot quicker. And the and also like the per seat pricing model, it's kind of feels like a tax on success. You know, it's like why should businesses be penalized for doing well? You know, I feel like it
+
+Pete Winn (23:02.827)
+Hmm.
+
+Jarrad Grigg (23:11.107)
+The model of building something really useful and generating revenue through like a margin on AI usage is far better than like per seat because as soon as someone does it and it catches on, that becomes a new price floor for these types of products. I'm already seeing it. It just makes more sense, I think.
+
+Pete Winn (23:31.211)
+Hmm. Well, it's more like a capital good as well, right? That you take AI, which is capital good, you take servers, you take storage, you take all this knowledge thing, you bundle it all together and say, All right, I'll I've bundled this in a way where I charge twenty one percent on it and it does your job. And you go, Okay, cool. I can just buy for what I need, but yeah.
+
+Jarrad Grigg (23:50.383)
+I will pay that. Yeah, exactly. Make the pain go away is still true. You know. Find the pain point the customers have, build something that solves it and charge for it.
+
+Pete Winn (24:00.543)
+Yeah. And so I think if we go back to that slop horizon idea as well, like it kind of points towards it's kind of like why big SaaS is bad, but small SaaS might be fine, which is the cause the advantage you have if you're a small SaaS. It's like Salesforce may be fucked, Basecamp probably fine. And like when you hear the Basecamp guys talk about their like how they design their products, it's all about like, well we're just building products for us.
+
+That's why they don't look like other people's products. They kind of act a bit differently. A bunch of people like this. And we've managed to find those people. And you're like, yeah, they're probably going to continue to like the stuff that you build for yourself that works for them as well. And they'll get some value out of it. But you can imagine that like a lot more, there's a lot more niches out there than maybe existed previously. And people are going to be like, okay. So I think almost like the own I was having this conversation with a product team the other day.
+
+Jarrad Grigg (24:38.991)
+Yeah.
+
+Jarrad Grigg (24:46.105)
+Mm.
+
+Pete Winn (24:53.589)
+When I was over East and I was just sort of saying like you know, I think you guys need to stop thinking about how you can build a product for like normies and because you're not normies like in this particular niche, you should think about how do you build the product that you guys want and then just never elaborate. Like just it's just for you. We're not pretending it's for anybody, it's for you guys, and you just fucking nail it. And then all the people that are a bit like you around the world are gonna come out the woodwork and be like, Finally.
+
+Jarrad Grigg (25:03.077)
+Yeah.
+
+Jarrad Grigg (25:17.701)
+Yeah.
+
+Jarrad Grigg (25:22.019)
+Yeah. Yeah. Because the economics has changed. You can do that, right? Be more opinionated. I like opinionated software, you know, something a little bit
+
+Pete Winn (25:23.431)
+It's someone's done it.
+
+Pete Winn (25:29.035)
+I think so.
+
+And then that's what differentiates it from the slop, right? It's the opinions and that human care that went into it is the bit that you go, Yeah, this is this is why I align with these people.
+
+Jarrad Grigg (25:40.899)
+Yeah. Yeah, yeah. I will say though that there's a lot of hard work going into deslopifying UIs and giving agents the ability to produce something a lot cleaner out of the box. And so any sort of modern SaaS, you know, they'll more or less follow certain conventions like the Apple Human Interface Guidelines, for instance, are brilliant. Same with Google's documentation for Material Three. So you can just point your agents to that and you can get
+
+Half decent result. So UIs now I think are getting close to being solved in the sense that the agents are pretty good at understanding what good looks like. They're not there yet. But where they where they're massively falling over and I kind of I'm kind of seeing this resurgence in the design space is like craft in terms of graphic design making a bit of a comeback. So like SaaS UI, you know, you've
+
+Yeah everyone knows what it looks like, right? It's just you've got a box and a button and you've got different states and blah blah blah. But people are now creating, you know, their websites, for instance, are very craft driven. They're very unique. They have a lot more sort of 3D and texture and interactive elements. And same with design, you know, people are exploring more of that human craft. It seems to be making a bit of a resurgence, I guess. And to your point, it's Pete it's what stands out.
+
+So as soon as the zeitgeist shifts to everyone can do this now, everyone sort of shifts this way and starts exploring that angle. So I hope it grows more. I quite like that. Like poster design, for instance, making a comeback would be really cool.
+
+Andy David (27:16.335)
+Well there's no point.
+
+Andy David (27:21.826)
+Yeah. There's no there's no real point in being middle of the road though, especially on web because dominant number of users are agents. So either you build exclusively for agents or you really go the other end of the spectrum and build something that's delightful for humans. You know, like being middle of the road is just completely pointless. Yeah.
+
+Jarrad Grigg (27:36.707)
+Yeah.
+
+That's where you get it in your life.
+
+Pete Winn (27:40.939)
+Hmm. I maybe there is one differentiation there where you end up with like there's agents build agent software and we're just not that involved because I'm like I don't have much to add here beyond you just set up what you need and then but when it hits the human, you're just like, All right, you need a human to translate this bit for you. Like you can't because you can't be a human, at least if nothing else. You need me to translate how does it feel?
+
+Jarrad Grigg (27:51.768)
+Mm.
+
+Jarrad Grigg (28:06.681)
+Yeah.
+
+Pete Winn (28:09.589)
+What's going wrong? Why is this wrong? Why do I need this and not that? Like why's that feel odd in this situation? Like mm.
+
+Jarrad Grigg (28:16.015)
+Yeah. Yeah, I've had that exact conversation. Everything you've just said. This you know, a typical prompt might be, I'm not sure why this isn't working, but it doesn't feel right. You know, let's explore that. Can we come up with some different variations? Can we do some research? You know. And then you get like Yes. Sometimes if I'm lazy, yeah, this is shit. Make better.
+
+Andy David (28:16.878)
+Completely.
+
+Pete Winn (28:25.909)
+Mm.
+
+Pete Winn (28:31.199)
+Yeah. Dear Claude, have you considered making this not shit?
+
+Andy David (28:35.183)
+I think there's
+
+Andy David (28:41.998)
+There's also like this notion that like finished isn't finished anymore. You know, like we would think of like designing UX for a human user and we're like, great, now we've achieved it, it's good, now all we need to do is tinker. And I'm kind of going like maybe there's like a circle. This is like circular development, the sense that now I know what the UX should be because I'm developing a framework for how someone should be working, whether that's a human or an agent, right?
+
+You get to a point where you've dialed in the steps in the workflow, and then you're like, well, I actually don't need all of the UX. So now we need to deconstruct back to its like minimum viable scaffolding for just an agent to run through. Because now I don't want to be sat here in front of another interface. So that's something I've been doing with a couple of things. So I've mentioned this in the past with Snack Studio, which is our like app for running this podcast and producing all the written content, the website, all that kind of stuff.
+
+Jarrad Grigg (29:28.026)
+Mm.
+
+Andy David (29:38.637)
+Like I developed that as an app and then basically got to a point where I had to like reverse engineer it back down to like something I don't interact with at all. And so each pipeline in that app, like I'd set up meticulously just so I could test it and make sure that I had enough confidence that it would produce an output that I wanted that was acceptable to me. And now it's like, okay, now an agent has to work through each of those steps to produce the output and I'm confident it'll do it.
+
+In fact, in some cases it's better. Like I've actually been pleasantly surprised, like especially with asset generation. So thumbnails for snacks look awesome. Way better than when I was doing it. And similarly with real contents, I've got this other app called Ari. And that is like I've tried to just step through and make it really delightful to use. And now I'm like, okay, I've hit the peak. And what I want to do is completely deconstruct this down so an agent can just take this and run with it and I can just send an instruction. Here's a transcript, here's a video source, off you go.
+
+Pete Winn (30:17.835)
+Mm.
+
+Andy David (30:37.752)
+Run it end to end.
+
+Jarrad Grigg (30:37.797)
+Yeah. But that's like your that's brilliant. It's like your it's like your standard product lifecycle work, right? Like that hasn't changed. You didn't start at that end result. You had to explore it and feel it and see the pain points and the problems and get it to a point. Yeah. You don't know until you start working through it, right? So that doesn't change. Like these and I'll say it again, this these these models they sit idle, they don't do anything until you interact with them. And you use them as a tool to create things.
+
+Andy David (30:46.392)
+Exactly.
+
+Andy David (30:51.214)
+Well I didn't know. I didn't know what it was. Yeah.
+
+Jarrad Grigg (31:06.819)
+And you iterate on that creation. You know, it's no different to how it used to be. It's just a lot cheaper and a lot faster.
+
+Pete Winn (31:12.555)
+Yeah, I mean I found a similar thing with even like the whole Wingman suite that we built. Like that was originally I guess it was somewhat similar to how T3 Code works where I wanted access to every harness and every model and I wanted it to like you know, it does all sorts of stuff. But that was the genesis of the thing. And then I just kept layering like more and more stuff into that one UI. So I had somewhere where I could go and work with all the things.
+
+Whereas these days I interact almost entirely through like our Ambulando app, which is just mostly chats, and then everything happens under the hood. Interestingly, I've never got rid of the UI for it. I still like it because if something's going wrong, like I want to kind of dig in and go and see where things are. And sometimes I'll go and set stuff up myself, but for the most part, I just tell like Rick, Rick do this, Rick do that, Rick do that.
+
+And then when I go in there I can see that all the stuff's there and it's where I expect it to be. But yeah, it's kind of it's interesting. There's a similar lifecycle where it's now it's effectively disappeared as like back end infrastructure to me.
+
+Jarrad Grigg (32:25.027)
+Yeah. I've I have a similar experience in that I prefer working with agents and chatting to them and you do this, you do this, you do this. But I still want to see. Like if I'm working on a project, right, and we're just working through all the phases of that I would traditionally I'd use a website as an example, right? You've got all the different phases of a job. I kind of roughly know where we are, but I want to see what's remaining. And so I'll still use a Kanban board.
+
+And a timeline view that I've created in my own product. And so when I spin up a project, it knows the steps we plan it out. It'll just dump it all in that product and we'll work through it as an agent, but then I can come back to that board and see where it's at. I it's not like I need to actually initialize all the work in that board. Like I think the idea of creating a task and a Kanban board now and dragging it across the columns is ridiculous. But you want I still want to see it, you know. I still at times wanna have confidence, okay.
+
+Want to meet October, there's these phases we get it through. These are the discrete chunks of work that the agents are working through. And you don't really get that in Claude or ChatGPT. Like it they're just sessions. And the other thing I find with those apps is they don't really work very well in a team. You know, like it's not a team based system. They're just you know unique user sessions and everything's chat. So yeah I agree with you. Yeah, that's kinda how I like to work as well. It's like I need to see it as still because I'm a human and I think visually, I guess.
+
+Pete Winn (33:59.465)
+I have a similar vibe with the Kanbans, which is I still have them. I still kinda like them every now and again. But they're they're almost overwhelming in a way. Like when you know, when it moved slow through the Kanban board, it made sense to get up there once a day, where are we at? That was a visual reminder. Whereas now it tends to be more of a right, I just need to check in. I'm almost like checking if anything's stuck. Like I've been, why's that sat in ready? Like should be sort of done. Come on, what's going on here? Like what the hell? And then
+
+Jarrad Grigg (34:07.171)
+Yeah.
+
+Pete Winn (34:29.759)
+But like yeah, like it just you end up with just like a massive stack of stuff just in review and done. And you're like, I'm not gonna review all that. It works. Bang, everything. Check it off. But
+
+Jarrad Grigg (34:35.813)
+Yeah.
+
+Andy David (34:38.933)
+Jarrad Grigg (34:39.541)
+You don't need to sit there and go through it, right? Which is like interesting thought of like at what point are we not needed? You know? Like there are all the math breakthroughs that have been happening lately. What's it, the Riemann hypothesis or something? And the proof, the Lean proof was so large that people think they'll never actually get through and review it and verify the proof. And I just think that's such an interesting thought of like.
+
+These models will complete the work and they'll say it's done and it's done perfectly. And at what point do we say, okay, I'm not gonna bother looking or I'm not gonna try I'm just gonna blindly trust. Will that ever happen? Seems like it's going that way with these these breakthroughs and these proofs.
+
+Pete Winn (35:26.719)
+I mean, I think it's a slightly different thing because it's not experiential like the Riemann hypothesis proof is not an experiential thing that we need to feel, if you know what I mean. It's a formal it's a formal verification. And we have formal verification for the reason that there are certain things in like maths or cryptography or computer programming that we need to know are true given these axioms. And so I think for anything like that, like
+
+The formal verification is more important than the human verification. If you know what I mean. Like, you know, if you've got your you've got some Bitcoin sat on a hardware wallet, you're more interested in the formal verification of the security than you are the vibe that no one's nicked it yet. You know, this is this is the thing. So I think that's why they're going hard in maths. I always felt like this is a little like I wonder, I think maybe this one came up when we were talking to Skylar, but you kinda like wonder like what's the what what is intelligence
+
+Andy David (36:09.374)
+Mm-hmm.
+
+Jarrad Grigg (36:09.814)
+Yeah, that's fair.
+
+Pete Winn (36:24.457)
+Like, 'cause you would just go, maths hard intelligence. But in a way, they're not being that intelligent necessarily. They're just like really brute forcing the thing. You know, you would when you when you think of like a mathematician being intelligent, you don't just imagine them scribbling like every possible option down and evaluating them and scribbling them again and just like you see that as more like it's almost like an ugly
+
+Jarrad Grigg (36:25.517)
+Yeah.
+
+Jarrad Grigg (36:35.279)
+Mm.
+
+Jarrad Grigg (36:46.341)
+Yeah.
+
+Pete Winn (36:53.553)
+Machiny brute forceness to the to the answer where you go. Yeah, it's impressive that you got there. You kinda cheated because you did it a hundred million times. You didn't you didn't get this like flash of inspiration sort of thing. But Yeah, like there's something about it that feels like you kinda wonder like there's whole domains that we would say, if you were good at maths you were intelligent. If you were good at science, you're intelligent. But perhaps what we're going to end up doing is reducing those
+
+Jarrad Grigg (36:56.046)
+Yes.
+
+Andy David (36:56.47)
+Mm-hmm.
+
+Jarrad Grigg (37:04.293)
+Yeah. Ten thousand of the world's best mathematicians at once, you know.
+
+Jarrad Grigg (37:18.829)
+Yeah.
+
+Pete Winn (37:22.879)
+To this just brute force model of the thing that we then verify. And like, does something else feel more intelligent or more human or more like real in our minds? And like I wonder, I wonder what's gonna happen there.
+
+Jarrad Grigg (37:26.692)
+Yeah.
+
+Jarrad Grigg (37:35.973)
+Mm.
+
+Andy David (37:37.228)
+Yeah. The problem with the human element with the maths problems is the humans were just acting as gatekeepers, which is actually one of the reasons why we never solved these things. It's not because we couldn't, it's because there was no like underlying desire to go and solve it because it was seen to be something that was prized by a small group of people. And that's why when like you OpenAI started cracking some of these math problems, you had these academics who were coming out and saying, Hey, we didn't ask for this. You don't have a right to come and solve these problems. Like, you know, they were very defensive about it.
+
+Pete Winn (37:59.499)
+Came out.
+
+Andy David (38:06.168)
+And it's like that is partly human, right? That is, you know, that is one of the control mechanisms human place humans place around, you know, around their intelligence. So I think in some respects it's almost good that you can just break through some of those barriers. But yeah, I a hundred percent agree with Pete on this. Like you have to experience the world. One of the things I've changed my mind on since we last spoke about was about frontier intelligence.
+
+Jarrad Grigg (38:21.262)
+Yeah.
+
+Andy David (38:32.823)
+So if I go back six or seven months, I was like, none of it really matters. Like sonnet was good enough for everything. And I still think that's true. I think for everything that exists, it's more than enough. But it's for all the things I can't yet envisage existing. And we need the frontier intelligence for that. Like when we talk about like the SaaS apocalypse and stuff like that, I think this is just a lack of ambition for the most part. It's everyone is still producing the nth version of something that already exists.
+
+Jarrad Grigg (39:01.605)
+Mm.
+
+Andy David (39:02.006)
+And there's a bunch of stuff that probably does need to exist that we haven't been building because we don't we haven't got the lived experience around the problem. But there are now a group of people who wouldn't have had the technical ability to go and solve a particular problem that could go and solve it, but probably do need frontier intelligence for stuff like that. I think it just makes it easier for them to go and solve that problem and to do it in a way which is like really effective for other people who might have the same problem too.
+
+Jarrad Grigg (39:25.103)
+Mm.
+
+Andy David (39:30.178)
+So that's where like I agree with you on like SaaS isn't dead and there's still huge opportunities. But I also think, do you know what? It's gonna be more useful to just keep pushing the envelope with the in with the intelligence because there's gonna be whole new problems, right, that we need to solve and we don't yet know what they look like and how we should solve them.
+
+Jarrad Grigg (39:40.409)
+Yeah. We don't know where it's gonna go. Yeah.
+
+But it's like the argument is why does NASA need so much money? You know, why does space need so much money? Because advancements happen. Well that was the argument, you know, the nineties or whatever, right? Why we put why is America? Yeah.
+
+Pete Winn (39:53.94)
+Because of the corruption.
+
+Andy David (39:55.521)
+Yeah.
+
+Ha ha.
+
+Pete Winn (40:00.052)
+I mean we then let a private individual do it and it was way cheaper and quicker and we actually got somewhere, but you know, just
+
+Jarrad Grigg (40:04.913)
+Funny that. But like you the argument was that, you know, advances will happen in, you know, sciences that will trickle down to the rest of society. And I guess you're kind of making the same argument here with this technology. And I
+
+Andy David (40:06.488)
+Mm-hmm.
+
+Pete Winn (40:18.549)
+Man, I have literal experience and evidence of knowing scientists though 'cause I used to help fund this sort of stuff. And they would they would find something and they would publish like the first ten percent of it and then they'd sit on it to drip feed it over the next ten years. I've met people that had data sets and like approaches to stuff that could be literal cures for cancer that are just hidden away in some like back end data set that they won't release because their egos were so big.
+
+It is like this there's this notion that like scientists and people sat in universities are just completely in it for the love of the game. They're just like sharing everything amongst themselves and they're all there for like the future of advancement. And it is just I think the fact that a computer just comes along, does an ugly brute force and they go, fuck. Like and then all of a sudden they start publishing their own versions of the stuff that they were basically there with, but they just wouldn't share with anybody because they just wanted to be the hero in the limelight. It's
+
+Andy David (41:08.046)
+Mm-hmm.
+
+Jarrad Grigg (41:10.821)
+Mm-hmm.
+
+Jarrad Grigg (41:16.773)
+Yeah.
+
+Pete Winn (41:17.267)
+I think we're gonna like peel back some of the covers around that. That sort of vibe. Yeah. Yeah, I think so. Like it's we all humanity wins, like if we open the stuff up, but
+
+Jarrad Grigg (41:20.953)
+Good. Yeah. I mean
+
+Jarrad Grigg (41:25.933)
+Yeah. I think it happens in every profession and I see it even in what we do, right? Like designers, engineers, you know, there's a certain cohort that just get their back up against the wall and think, Well, this is what I've always done and you're taking it away from me. And it would be the same for every field that this technology comes for. But I just don't even have that view. I just think it's an amazing tool to come up with new things and do things better and it's transformative. So I can understand that at a human level.
+
+Why people get frustrated. But I don't think it's something to be concerned about. I just I do find it a little bit odd. It's like you're protecting something that probably shouldn't have been gate kept anyway, you know. And as you say, you know, we now have like intelligence on tap, you know, electricity in intelligence out. And that's pretty profound. I think it's amazing.
+
+Pete Winn (42:18.643)
+Mean it's s I see it as similar to how I would see IP. Like I would see IP laws are generally bad and they just restrict competition to like who can keep a secret and like somebody can't do something, so you know you extract at this like higher level and whereas if you get rid of the IP law and everybody just has access to the same sort of tech, which is kind of where we're heading with this stuff, you have to you have to compete on service and actually just providing a good experience for the person that's buying.
+
+Jarrad Grigg (42:29.253)
+Mm-hmm.
+
+Pete Winn (42:48.809)
+Whatever that thing is that you're selling. You know, there's no magic sauce anymore. There's no magic secret that somebody else can't do. There's no magic code that can't be written. There's something about doing the work in this way that I think leads to just a better experience longer term. So if you're not getting the experience you want with one person, you can try with somebody else and that's better. Then you're a better fit. Then work with those people.
+
+Jarrad Grigg (42:51.781)
+Mm.
+
+Jarrad Grigg (43:12.249)
+Yeah. Infinite competition. Yeah. Yeah. It's funny. It's a little segue, but like I don't know where your thoughts are on this, but you know, Anthropic, OpenAI, they seem to be heading down the Microsoft model, right? Well, I think it was in the nineties when they released Windows and they said, No, we're never gonna have a word processor and then I can't remember that. Was it Lotus Notes? I don't know. There was a there was a Word app that got developed and then lo and behold, Microsoft Word comes along.
+
+And I think it's I'm seeing this with like Anthropic, they just keep releasing all these apps, you know. No, now we're now we're doing meetings and now we're doing design tools and now they're using their technology to create competitors across every area in the market. And I mean I can kind of get it, but it really pisses me off. It's like can you just stick to creating the models and the experience around the models and let other people benefit from that? It's not a winner takes all. I don't
+
+Andy David (44:07.032)
+They can't, right?
+
+Pete Winn (44:08.607)
+You know, I think it's gonna be their downfall as well. I mean, I agree they're doing all this and it's because they're evil and they've set out their evil plan, which is to be the only company. And we should look at that and go, You're evil. And we should probably start pulling away from them where we can. But it's also true that OpenAI, like eighteen months ago, when they were absolutely in the driver's seat and Anthropic was nowhere behind. Barely anybody was using Claude.
+
+Like OpenAI would come in and go, we've got the best video model and we've got the best whatever model. All these different types of model that spread themselves really thin. And the thing that worked for Anthropic was that they went really hard on Claude Code. And they had like one good product that was better than the competition, which then found in the market. So I kind of wonder if this sort of like diversifying into we're gonna be like the slot basis for.
+
+Every different industry on earth just means that they're gonna be kinda crap at everything in the same way that Microsoft is shit. Like the thing that Microsoft are good at is getting you to sign up for one subscription and then pretending that everything's free when it costs you about a million dollars of consultants to come in and configure it for you. Like it's just
+
+Jarrad Grigg (45:10.991)
+Yeah, absolutely.
+
+Andy David (45:12.12)
+Yeah. But it
+
+Jarrad Grigg (45:25.283)
+Yeah, yeah, yeah, yeah, yeah.
+
+Andy David (45:26.03)
+But look how sticky Microsoft is in the enterprise, right? That's so I agree. And this may or may not be their downfall. I think Jarrad, you and I were going back and forth on this one. But the models commoditize, they have to find a way to increase switching costs. Otherwise, they cannot defend their enterprise value. So the only way to do that is to get into the app layer, is to hoover up as much of your data as possible about how things are done, and then go like stage these competitors. And then hopefully, it doesn't really matter at that point, like what
+
+Pete Winn (45:28.607)
+Yeah.
+
+Jarrad Grigg (45:29.817)
+Yeah.
+
+Andy David (45:55.436)
+Changes occur with the models, like OpenAI increases, like they release a slightly better version. And then, you know, cause what was happening in the past was everyone was just like, cool, I'm gonna cancel my Claude subscription, go to OpenAI. And then three months later you were back, and it was this ping-pong ball effect, right? And that you cannot build a public company around that. It's just not not feasible at all. So the only way to increase switching costs is to just develop the app layer and own it. And then the model becomes just commoditized like electricity at that point, right? So
+
+Jarrad Grigg (46:00.463)
+Mm-hmm.
+
+Jarrad Grigg (46:09.679)
+Yep.
+
+Jarrad Grigg (46:20.175)
+Yeah.
+
+Jarrad Grigg (46:24.581)
+Yeah. I don't disagree. It just pisses me off.
+
+Pete Winn (46:25.419)
+But at the same time the app layer
+
+Andy David (46:31.498)
+Yeah, me too. Yeah.
+
+Pete Winn (46:31.963)
+I think the thing is though, the app layer is the bit that is the hardest to get right. It's like that's the bit that's the hardest to be the SaaS version, right? And the again, the anthropic view is like we will be the one company, we'll be the one SaaS that you have for every one of these different niches. And so you already know from that like okay, the easiest thing to like niche down and get people to move on is the app, because you can just be the version where you have slightly more care.
+
+Jarrad Grigg (46:47.141)
+Yeah.
+
+Pete Winn (47:00.565)
+Than whatever anthropic of fro have sloped out.
+
+Jarrad Grigg (47:00.869)
+Mm.
+
+Andy David (47:03.232)
+It also depends on the use case, right? Like so OpenAI came out with their accounting tool, plug-in, whatever it is, right? And I was like, okay, this is actually quite good because this is just a Pareto principle, right? This will cover 80% of like all of the tasks that exist in accounting. For the vast majority of people, that's all they need. It's the edge case. And I think that's like that is the bit that requires care because the edge case is like too small.
+
+For Anthropic and OpenAI to figure out it's that 20% gap in the Pareto. And that's where I think the opportunities are for everyone right now. But if you are like just a run-of-the-mill bookkeeper, like I don't know how you can defend your pricing at that point. Like people will just use OpenAI because it's simple, it's easy, it's convenient, and they will get an answer that works for them because there isn't much complexity in the problem that they're trying to solve. But
+
+Jarrad Grigg (48:00.654)
+Mm.
+
+Andy David (48:01.728)
+As I say, like it will be much more difficult for Anthropic or OpenAI to then go, Okay, what's the twenty percent? That other piece of the Pareto that we couldn't previously touch. And I think that's where the opportunities are.
+
+Jarrad Grigg (48:17.103)
+Yeah, yeah, I think you're right. Like the they will they will continue to do it and they'll release they'll try and kill as many startups as they can. But I think you're right, like they there is an element of them stretching themselves too thin with this. I've seen these product launches now and I've been pretty dissatisfied with some of their results. Like ChatGPT's dot I didn't think was very good. Claude Design was awful.
+
+Andy David (48:39.895)
+Yeah.
+
+Jarrad Grigg (48:43.845)
+I think they might have even shut that down now and just rolled it straight into the product itself. And I just you can't people can't look at these companies as some sort of mythical, you know, unicorn type organization. They're just people with these tools. And in order to create great products, you need to have like a dedicated team that understands the problem really, really well and focuses on it using the tools. And at some point, they're probably going to stretch themselves too thin. I'm already seeing it.
+
+Andy David (48:48.6)
+Yeah.
+
+Jarrad Grigg (49:13.487)
+But I like the idea of them actually trying to support others, you know, using creating products around their tooling, not, you know, just taking everything. So I don't really have an answer, but no, your video feeds still cut out.
+
+Pete Winn (49:25.623)
+Am I back, guys, or not? I can't tell. So my video's out, but my voice is back. Okay. Right, that's more or less what I've got. Okay. I'll work on that in the background, but if if need be I'll you'll just have the weird view of me like staring into my camera. Yeah.
+
+Andy David (49:27.445)
+[unclear]
+
+Jarrad Grigg (49:31.779)
+I can hear you. Yeah, that's right.
+
+Jarrad Grigg (49:41.765)
+The Andy and Jarrad show now. Back to two hosts.
+
+Pete Winn (49:46.535)
+Nice.
+
+Andy David (49:47.64)
+So how are you feeling about I know this was something else we talked about back in April was one person businesses or one person agencies. Like you've obviously been running OVRFLO now for quite a little while. How are you how are you finding like running a one person business with AI?
+
+Jarrad Grigg (49:47.833)
+Yeah.
+
+Jarrad Grigg (50:02.361)
+Yeah.
+
+Jarrad Grigg (50:07.327)
+I mean, I'm so grateful that I've been able to get where I have. I've sort of achieved my first year goals. You know, looking back, what I had set out to do, I've achieved faster than I thought, which is I'm really, really pleased. And as a one man sort of agency, I love it. I absolutely love it. I can just change and work on whatever I want.
+
+There is no slowing down. And I can identify a service that my clients would want and I can quite quickly build something that will support that service for them. So a practical example is SEO. So throughout my career I've I've had to optimize a lot of websites and I understand all the principles of SEO. You're back, Pete. And it's something I do take.
+
+Pete Winn (51:04.907)
+[unclear]
+
+Jarrad Grigg (51:06.649)
+Really seriously with my web builds, you know, like I've seen a lot of launches go horribly wrong. There was a news story a few weeks ago about a cosmetics company over East that I think she folded even because of the this awful migration. So I am very respectful of that and try my best to make sure that, you know, launches go well. So I just built a system around it myself, you know, using Open SEO, a self-hosted solution, do all the research. I basically just have a repository that
+
+Andy David (51:16.11)
+So that.
+
+Jarrad Grigg (51:36.193)
+Spins up when I launch a when I start a new site and all the research is there from AI questions and audits to the existing sitemap and all the metadata and what pages are performing well and not and you know and I but I to do that in a traditional business would take so long and you'd have to coordinate amongst all these teams. And I don't have to do that at all. I spent probably two or three days just getting that system running. And now I'm just like
+
+Pete Winn (51:58.963)
+[unclear]
+
+Jarrad Grigg (52:04.557)
+Maintaining it at a simple level. And so when I run these reports on an initial project up front, I get a lot of value very, very quickly. And it's across everything, you know, like I'll tend to spend more time up front building something to support that function in an automated way than trying to do it manually over time. Like Grok Bot was a real game changer as well.
+
+I mean, I'd used Hermes and I'd used OpenClaw and I tried a bunch of different systems, but nothing has really clicked like Grok Bot has. I use it basically I have groups for different clients and I have bots within those groups that serve different functions. You know, like an engineer, security, SEO, like different functions of the work that I do. And they have, you know, different amounts of knowledge given to them based on
+
+Andy David (52:41.452)
+Yeah, how are you using it?
+
+Jarrad Grigg (53:01.55)
+You know, my history and they do a lot of the repeating work. So every Monday I get my reports for my clients. They're generated as artifacts, which gets pumped into my own product that I review. So they do a lot of that and I have them, you know, my security bot it looks at open vulnerabilities that are known so scours the web, looks for vulnerabilities that gets announced, patches my infrastructure.
+
+So sort of on the fly. So as much as possible I automate that type of work. And it's not like I spend a lot of time sitting in there chatting with them. I just kind of use them as as you know, automating routines and things like that.
+
+Andy David (53:45.046)
+It is interesting. I've noticed that a lot of small business owners are really enjoying Grok Bot. I think maybe because it's so role delineated, like you've got like a bot with each role and then it just seems to be containerized and it seems to be intuitive if you're running a business. You're not asking someone to like reinterpret how to work with these things. It's just like having additional staff members. So I found that's been quite interesting to just see play out. I've not really used it.
+
+Jarrad Grigg (53:51.311)
+Yeah.
+
+Andy David (54:14.828)
+I've not had like a an obvious need to go and use it. So I'm always curious when other people are.
+
+Jarrad Grigg (54:21.271)
+I've rolled it out for numerous businesses now, as part of what I do. And they it just clicks with them. They just get it, especially the app. You know, because it's just like chatting in Messenger or Telegram. And once you show them, you set up connectors to their software, for instance, once you get that going and you show them, hey, you can create this thing in your software through chatting or even voice in the app. And they see it happen live.
+
+Andy David (54:31.619)
+Yeah.
+
+Andy David (54:35.052)
+Yeah, yeah, yeah.
+
+Andy David (54:48.556)
+Yeah.
+
+Jarrad Grigg (54:51.415)
+It just clicks. You know, there was this one client I introduced, I set it up for them. And then a week later I said, How's it all going? And he sent me this incredible email of all the things that he's automated. And then at the bottom of it said, This was written by Grok Bot. Right. So he [unclear]. And it's just amazing. So yeah, I think it that as a product has been a great launch by the [unclear] team. I think it's fantastic. And yeah, small businesses are really getting a lot of use out of that.
+
+Andy David (54:52.494)
+Yeah.
+
+Andy David (55:02.829)
+Yeah.
+
+All right.
+
+Andy David (55:16.088)
+Yeah.
+
+Jarrad Grigg (55:21.293)
+In my opinion, than other systems. It just works better.
+
+Andy David (55:23.98)
+Yeah. This interesting because like the something I've talked about on the pod a lot is like it's almost like the boomer way of doing business was just like I'm just gonna delegate via WhatsApp and I've got a bunch of people in the WhatsApp and I'm just gonna fire off the instructions and then the humans gonna go off and interpret the instruction, they're gonna come back with some kind of artifact. And it's like not dissimilar to like Yeah, yeah. So it almost it almost feels like something like Grok Bot just
+
+Jarrad Grigg (55:39.834)
+Yeah.
+
+Jarrad Grigg (55:48.001)
+It's wholly the same. We're all boomers.
+
+Andy David (55:53.199)
+Intuits for someone like that who is just run busy running a business. Which is also like the
+
+Jarrad Grigg (55:57.675)
+Yep. Because they've never had they don't they've never had time to jump into the software and click the buttons. And that's what they pay people for. And so it's exactly natural. And their skepticism goes away when they see the result. And they the experience of chatting with these bots now is just that it's they're that good. So yeah, it I see it take well, it already has taken off a lot, I guess, for businesses, but it is a layer that I have is that sort of
+
+Andy David (56:01.782)
+Exactly. Exactly.
+
+Andy David (56:11.032)
+Yeah.
+
+Jarrad Grigg (56:26.145)
+Light chat experience into my products. And like I say, I use it for all my sort of automated routines and things like that across all my products. And it works really well. And I like the fact that they all have their own machine, you know, you can just click that little button and see the machine they have access to. It's a great tool.
+
+Pete Winn (56:46.622)
+I can't tell if I'm in or out of this conversation at the moment. Like I'm just like it seems to keep going, so I'm gonna like let you guys bring it in. Just sit here.
+
+Jarrad Grigg (56:48.355)
+You're in, you're back.
+
+Andy David (56:48.76)
+You're back. You're back.
+
+Jarrad Grigg (56:58.415)
+Yeah. I don't know.
+
+Andy David (57:00.045)
+Nah, so fingers crossed, mate, but it's looking good right now. But yeah, we're just chatting about Grok Bot. I think there the genius of Grok Bot is that I think it just perfectly intuits for a business owner because that's just how they're used to working and they don't want the greater resolution on a lot of stuff because that's just noise and it's more work and they have to kind of maintain their fifty thousand foot view of what's going on in order to keep the business motoring.
+
+And so and this was always the argument about the kind of the software factory as well, where it's like most business owners are too busy in the weeds to think about like, you know, they barely have time to like intuit the problem. They're just powering through the problem because they don't have time. They don't have the bandwidth to sit and think about like, okay, what's the best way to work through this? Which is why the consultant exists. You know, it's the consultant exists because it's like, hey, we're too busy, we're underpowered, we need help, you know, you guys can help us.
+
+Come and solve the problem for us and just let us keep running the business, but also don't make too many changes because we're running the business over here, you know? So I that's where I think like Grok Bot maybe a stroke of genius. As I said, I've not really used it. I'd be kind of keen to experiment, but I just think that the way they've gone about that suits really well for a business. And I've seen so many people talking about it.
+
+Jarrad Grigg (58:00.325)
+Mm.
+
+Jarrad Grigg (58:15.189)
+Should.
+
+Jarrad Grigg (58:22.319)
+Just the simplicity of it. It's hard to explain until you use it over the others. It just works and it doesn't try to be too much. So yeah, it's fantastic.
+
+Andy David (58:31.01)
+Yeah.
+
+Pete Winn (58:34.872)
+I think it's often the hardest bit to get right. Right, is the how do you deliver this into the market and particularly at that scale where it does just work for people. 'Cause I feel like I've had a lot of the like the functionality and all like the things you can do I've had for so long now. But they're very power user and they don't like I can't just deliver it to like a million people. Like it just doesn't work like that. But it's they managed to get it.
+
+Jarrad Grigg (58:45.135)
+Yeah.
+
+Jarrad Grigg (59:01.206)
+Yeah, that's a real infrastructure problem, right? Yeah. And that to your point, I think that's again why, you know, software is not dead. Is it's hard to solve this stuff at scale. Like an interface like Grok Bot is so simple. But under the hood, that'd be a pretty serious piece of kit. Very, very hard to do. Yeah.
+
+Andy David (59:26.894)
+There we go. I think we're bang on the hour. So is there anything that you wanna—we didn't do this last time, Jarrad. This is new. So we are evolving as a podcast, but like we like to hand over and let you shill whatever you wanna shill at this point.
+
+Jarrad Grigg (59:32.325)
+Thanks, differences better.
+
+Jarrad Grigg (59:44.585)
+Shill my services. I should probably be better at shilling my own services. But I mean if anyone is listening, that would be then No, I mean I guess I'm a one-man product studio. I have nearly 20 years experience in designing and building software, whether it be websites, mobile apps, web applications.
+
+Andy David (59:51.693)
+Likewise.
+
+Pete Winn (59:58.06)
+They're not. That's don't worry it.
+
+Jarrad Grigg (01:00:13.293)
+And I absolutely love it. I love working really closely with decision makers and I move very fast. So you know, within the first meeting, we've got really the direction we want to go in and you know, I can get results pretty quick, especially with web. I love using this technology for websites because I can lift the quality bar really high now. It doesn't look like slop. And you know you don't need a ten man, five man team and you don't need to charge
+
+Be charged a hundred grand to do this work. So I love working with small to medium sized business owners that have like problems that they want to solve. That the there's some sort of blockage in the business or they there's some sort of inefficiency or some sort of problem. I love just sitting down, chatting to business owners, figuring out what is and building a solution to that.
+
+It's been a wild ride. I think it's been like 10 months so far. And it's been the best decision I've ever made. I'm really, really enjoying my role and the clients I get to work with and the diversity of the work as well. Technology's allowed me to broaden my capability a lot. So yeah, I mean I really have three kind of key offerings. The first is a sort of a proof of concept. So for a smaller cost.
+
+We have a meeting, we figure out where this technology could be deployed, and I validate that with a proof of concept. So it might be testing something, you can see the benefit. Like one example was a report that used to take my client nearly a week to do. And I've got the creation process down to about three minutes. So once the inputs all the data, all the live field data, the report is created.
+
+Dynamically and he just has to review it and make changes from there. So that's like a proof of concept is find that low hanging fruit, solve that with a proof of concept. Then it would be either a project based engagement or an ongoing based engagement. So maybe you just want to scope something out for a quarter, we'll do that as a project, or if you have continuous work that's needed or I've demonstrated value through the project, I just come on as part of the team and you get an entire studio in one person. So
+
+Jarrad Grigg (01:02:34.661)
+That's sort of my value proposition.
+
+Pete Winn (01:02:37.582)
+Nice.
+
+Andy David (01:02:38.191)
+Nice, comprehensive. I like it.
+
+Jarrad Grigg (01:02:40.195)
+And I do have a product coming out soon. I'll shill it. All of my clients have raised this, so I'm solving it. They use Claude, they use OpenAI, they use all these different tools, and their context is everywhere. Different staff members have different plans and they want to know where all their stuff lives. Where does their context live? So I've built a locally running product that.
+
+Andy David (01:02:43.266)
+There we go.
+
+Jarrad Grigg (01:03:07.855)
+Connects to all of your services, ingests in a continuous basis all of your contexts, encrypts it across your organization. So you could have someone on an iPhone, someone on a laptop, someone on a web browser, anywhere in the world, and it will sync all of your context in one place. And it's agent native. So you can plug in Claude to it and talk to it if you want. But it's all stored there. Even I can't see it on my servers, so it's all encrypted.
+
+And it has a suite of work surfaces for a company. So projects, tasks, schedules, a CRM, you know, ops boards, [unclear] contracts, just all the standard tools that you would need as a business in one place. So watch this space. I said I'd release it months ago, but it's required a lot more work than I thought. So hopefully, hopefully December or January. I'll
+
+Andy David (01:03:57.005)
+Always does.
+
+Pete Winn (01:03:57.379)
+Mm-hmm.
+
+It's away.
+
+Jarrad Grigg (01:04:02.789)
+Thanks for letting me shill it. No worries, guys. Pleasure.
+
+Andy David (01:04:02.988)
+Nice one. Thanks for coming back.
+
+Pete Winn (01:04:04.334)
+All right.
+
+Pete Winn (01:04:08.066)
+Alright, and on that note, that's your intelligence snack for this week.
